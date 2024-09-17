@@ -20,6 +20,7 @@ type Action = {
   setSortCharacterList: (title: string, ascending: boolean) => void;
   selectedHandler: (name: string) => void;
   reset: (nameList: string[], callback: () => void) => void;
+  clear: () => void;
 };
 
 export const useCharacterStore = create<State & Action>((set) => {
@@ -47,7 +48,7 @@ export const useCharacterStore = create<State & Action>((set) => {
             newCharacters,
           );
 
-          return { characters: updatedCharacterList };
+          return { characters: updatedCharacterList.slice(0, 8) };
         } else {
           const updatedCharacterList = state?.characters?.some(
             (c) => c.name === characterData.name,
@@ -56,7 +57,7 @@ export const useCharacterStore = create<State & Action>((set) => {
                 c.name === characterData.name ? characterData : c,
               )
             : [...state.characters, characterData];
-          return { characters: updatedCharacterList };
+          return { characters: updatedCharacterList.slice(0, 8) };
         }
       }),
 
@@ -106,6 +107,13 @@ export const useCharacterStore = create<State & Action>((set) => {
         setWaitingRoomCharactersInfo(newCharacters);
         cllaback();
         return { characters: newCharacters as MergedCharacter[] };
+      });
+    },
+
+    clear: () => {
+      set(() => {
+        setWaitingRoomCharactersInfo([]);
+        return { characters: [] };
       });
     },
   };
