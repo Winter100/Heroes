@@ -12,7 +12,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <TanstackProvider>
         <ToastProvider>
           <Header />
-          <MainSection className="flex-1">{children}</MainSection>
+          <MainSection className="flex flex-1 justify-center">
+            {children}
+          </MainSection>
           <Footer />
         </ToastProvider>
       </TanstackProvider>
