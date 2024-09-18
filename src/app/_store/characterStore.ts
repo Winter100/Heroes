@@ -18,7 +18,7 @@ type Action = {
   ) => void;
   setDropCharacterList: (start: number, end: number) => void;
   setSortCharacterList: (title: string, ascending: boolean) => void;
-  selectedHandler: (name: string) => void;
+  selectedHandler: (name: string | null) => void;
   reset: (nameList: string[], callback: () => void) => void;
   clear: () => void;
 };
@@ -62,9 +62,9 @@ export const useCharacterStore = create<State & Action>((set) => {
       }),
 
     // 선택한 캐릭터의 정보만 넣음
-    selectedHandler: (name: string) => {
+    selectedHandler: (name) => {
       set((state) => {
-        if (state.selectedCharacter?.name === name) {
+        if (state.selectedCharacter?.name === name || name === null) {
           return { selectedCharacter: null };
         }
         return {

@@ -4,13 +4,28 @@ import { CiTrash } from "react-icons/ci";
 import Button from "@/app/_components/common/Button";
 import { useCharacterStore } from "@/app/_store/characterStore";
 import { useCheckStore } from "@/app/_store/checkStore";
+import { useDetailStore } from "@/app/_store/DetailStore";
 
 const ResetBtn = () => {
   const reset = useCharacterStore((state) => state.reset);
   const checkedList = useCheckStore((state) => state.checkedList);
   const clearCheckList = useCheckStore((state) => state.clearCheckList);
 
+  const selectedCharacter = useCharacterStore(
+    (state) => state.selectedCharacter,
+  );
+  const selectedHandler = useCharacterStore((state) => state.selectedHandler);
+  const detailReset = useDetailStore((state) => state.reset);
+
   const onReset = () => {
+    const isCheckedListInSelectedCharacter = checkedList.some(
+      (c) => c === selectedCharacter?.name,
+    );
+
+    if (isCheckedListInSelectedCharacter) {
+      selectedHandler(null);
+      detailReset();
+    }
     reset(checkedList, clearCheckList);
   };
 

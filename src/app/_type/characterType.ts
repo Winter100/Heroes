@@ -31,8 +31,15 @@ export interface Guild {
   guild_name: string;
 }
 
+export interface Skill {
+  skill_name: string;
+  item_name: string;
+}
+
 export interface MergedCharacter {
   name: string;
+  basic: Stat[];
   info: Stat[];
   stat: Stat[];
+  skill: Skill[];
 }

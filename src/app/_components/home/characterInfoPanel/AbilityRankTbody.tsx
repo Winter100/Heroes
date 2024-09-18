@@ -42,6 +42,11 @@ const AbilityRankTbody = () => {
   const checkedList = useCheckStore((state) => state.checkedList);
   const setChecked = useCheckStore((state) => state.setChecked);
 
+  const onCheck = (e: React.MouseEvent<HTMLDivElement>, name: string) => {
+    e.stopPropagation();
+    setChecked(name);
+  };
+
   useEffect(() => {
     const waitingList =
       getLocalStorageItems<MergedCharacter[]>(LOCALSTORAGE_KEY.waiting) ?? [];
@@ -68,7 +73,7 @@ const AbilityRankTbody = () => {
         >
           {/* 체크박스 */}
           <td className="flex h-full w-12 items-center justify-center">
-            <div onClick={() => setChecked(c?.name ?? "")}>
+            <div onClick={(e) => onCheck(e, c?.name ?? "")}>
               <CheckBox checked={checkedList.includes(c?.name ?? "")} />
             </div>
           </td>
