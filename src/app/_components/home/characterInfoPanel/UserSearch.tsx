@@ -19,15 +19,23 @@ const UserSearch = () => {
 
   const onClickHandler = async (e: FormEvent) => {
     e.preventDefault();
-    if (!characters || characters.length >= 8) {
+    const characterLength = characters.length;
+    if (!characters || characterLength >= 8) {
       toast.error("캐릭터는 최대 8명까지 등록 가능합니다.");
       return;
     }
     if (inputRef.current) {
-      const cleanedCharacterName = inputRef.current.value.replace(/\s/g, "");
-
-      if (cleanedCharacterName) {
-        await handleCharacterInfo(cleanedCharacterName);
+      const inputValue = inputRef.current.value;
+      const resultArray = inputValue
+        .trim()
+        .replace(/\s+/g, " ")
+        .split(" ")
+        .filter(Boolean)
+        .slice(0, 8 - characterLength);
+      if (resultArray.length >= 1) {
+        for (const item of resultArray) {
+          await handleCharacterInfo(item);
+        }
       } else {
         inputRef.current.focus();
         toast.error("캐릭터 이름을 입력해주세요.", {
