@@ -1,0 +1,28 @@
+export const dummyCharacter = {
+  name: "",
+  basic: {
+    class: "",
+    guild: "",
+    level: "",
+    name: "",
+  },
+  stat: [
+    { stat_id: "공격력", stat_value: "" },
+    { stat_id: "방어력", stat_value: "" },
+    { stat_id: "힘", stat_value: "" },
+    { stat_id: "민첩", stat_value: "" },
+    { stat_id: "지능", stat_value: "" },
+    { stat_id: "의지", stat_value: "" },
+    { stat_id: "행운", stat_value: "" },
+    { stat_id: "최대 생명력", stat_value: "" },
+    { stat_id: "최대 스태미나", stat_value: "" },
+    { stat_id: "공격 속도", stat_value: "" },
+    { stat_id: "추가피해", stat_value: "" },
+    { stat_id: "크리티컬", stat_value: "" },
+    { stat_id: "크리티컬 피해량", stat_value: "" },
+    { stat_id: "크리티컬 저항", stat_value: "" },
+    { stat_id: "밸런스", stat_value: "" },
+    { stat_id: "공격력 제한 해제", stat_value: "" },
+    { stat_id: "대항력", stat_value: "" },
+  ],
+};
