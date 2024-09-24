@@ -8,7 +8,7 @@ import Footer from "../_components/layout/Footer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="m-auto flex h-full w-full max-w-[1800px] flex-col gap-1 p-2">
+    <div className="m-auto flex h-full w-full max-w-[1600px] flex-col gap-1 p-2">
       <TanstackProvider>
         <ToastProvider>
           <Header />
