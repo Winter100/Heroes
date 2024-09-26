@@ -1,14 +1,15 @@
-import { useCharacterStore } from "@/app/_store/characterStore";
 import { ComponentProps } from "react";
+import { Stat } from "@/app/_type/characterType";
 
-interface StatsProps extends ComponentProps<"div"> {}
+interface StatsProps extends ComponentProps<"div"> {
+  stats: Stat[];
+}
 
-const Stats = ({ ...props }: StatsProps) => {
-  const stats = useCharacterStore((state) => state.selectedCharacter?.stat);
+const Stats = ({ stats, className, ...props }: StatsProps) => {
   return (
     <div
+      className={`grid h-full grid-cols-2 items-center justify-items-center ${className}`}
       {...props}
-      className="grid h-full grid-cols-2 items-center justify-items-center text-white"
     >
       {stats?.map((stat) => (
         <div
