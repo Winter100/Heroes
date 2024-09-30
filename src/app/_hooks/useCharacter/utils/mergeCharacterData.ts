@@ -4,10 +4,9 @@ export const mergeCharacterData = (
   basic: Basic,
   stat: Stat[],
   guild: Guild = { guild_name: "" },
-  name: string,
 ) => {
   const mergedCharacterData: MergedCharacter = {
-    name: name,
+    name: basic?.character_name,
     basic: [
       {
         stat_name: "이름",

@@ -1,9 +1,4 @@
 const infusions = {
-  none: {
-    rank: "",
-    stat_name: "없음",
-    stat_value: [{ stat_name: "", stat_value: "" }],
-  },
   critical_1: {
     rank: "",
     stat_name: "크리티컬 1",
@@ -71,7 +66,6 @@ export const preview_infusion = [
   {
     equipment: ["Right Hand", "Left Hand"],
     value: [
-      infusions.none,
       infusions.critical_1,
       infusions.critical_2,
       infusions.critical_3,
@@ -84,7 +78,6 @@ export const preview_infusion = [
   {
     equipment: ["Head", "Upper", "Lower", "Hand", "Leg"],
     value: [
-      infusions.none,
       infusions.criticalResistance_1,
       infusions.criticalResistance_2,
       infusions.defense_1,
@@ -102,7 +95,6 @@ export const preview_infusion = [
       "Necklace",
     ],
     value: [
-      infusions.none,
       infusions.critical_1,
       infusions.critical_2,
       infusions.critical_3,
