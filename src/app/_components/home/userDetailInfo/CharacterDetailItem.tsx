@@ -9,6 +9,8 @@ import { useCharacterStore } from "@/app/_store/characterStore";
 
 const CharacterDetailItem = () => {
   const title = useDetailStore((state) => state.stats);
+  const basic =
+    useCharacterStore((state) => state.selectedCharacter?.basic) ?? [];
   const stats =
     useCharacterStore((state) => state.selectedCharacter?.stat) ?? [];
 
@@ -16,7 +18,10 @@ const CharacterDetailItem = () => {
     <Column className="h-full w-80 gap-1 p-1 text-xs">
       {title && (
         <>
-          <CharacterInfoBox className="h-full max-h-32 rounded-lg border border-gray-600 p-1" />
+          <CharacterInfoBox
+            basic={basic}
+            className="h-full max-h-32 rounded-lg border border-gray-600 p-1"
+          />
           <Stats
             className="h-full rounded-lg border border-gray-600 p-2 text-white"
             stats={stats}
