@@ -21,17 +21,6 @@ export const prefix_enchant_options = [
       { stat_name: "밸런스", stat_value: "2" },
     ],
   },
-  // {
-  //   rank: "6",
-  //   stat_name: "차분한",
-  //   stat_value: [
-  //     { stat_name: "공격력", stat_value: "-280" },
-  //     { stat_name: "마법공격력", stat_value: "-280" },
-  //     { stat_name: "공격속도", stat_value: "4" },
-  //     { stat_name: "일정 확률(2%)로 SP 125 회복", stat_value: "" },
-  //     { stat_name: "밸런스", stat_value: "5" },
-  //   ],
-  // },
   {
     rank: "6",
     stat_name: "혼돈의",
@@ -135,7 +124,7 @@ export const prefix_enchant_options = [
     stat_name: "수호의",
     stat_value: [
       { stat_name: "방어력", stat_value: "112" },
-      { stat_name: "생명력", stat_value: "50" },
+      { stat_name: "최대 생명력", stat_value: "50" },
     ],
   },
   {
@@ -143,7 +132,7 @@ export const prefix_enchant_options = [
     stat_name: "노력의",
     stat_value: [
       { stat_name: "방어력", stat_value: "35" },
-      { stat_name: "생명력", stat_value: "50" },
+      { stat_name: "최대 생명력", stat_value: "50" },
       { stat_name: "공격속도", stat_value: "1" },
     ],
   },
@@ -160,15 +149,15 @@ export const prefix_enchant_options = [
   {
     rank: "8",
     stat_name: "꾸준한",
-    stat_value: [{ stat_name: "스태미나", stat_value: "15" }],
+    stat_value: [{ stat_name: "최대 스태미나", stat_value: "15" }],
   },
   {
     rank: "7",
     stat_name: "시간의",
     stat_value: [
       { stat_name: "방어력", stat_value: "160" },
-      { stat_name: "생명력", stat_value: "50" },
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 생명력", stat_value: "50" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "크리티컬", stat_value: "4" },
       { stat_name: "크리티컬 저항", stat_value: "6" },
       { stat_name: "밸런스", stat_value: "-3" },
@@ -179,8 +168,8 @@ export const prefix_enchant_options = [
     stat_name: "무한의",
     stat_value: [
       { stat_name: "방어력", stat_value: "160" },
-      { stat_name: "생명력", stat_value: "50" },
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 생명력", stat_value: "50" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "크리티컬", stat_value: "5" },
       { stat_name: "크리티컬 저항", stat_value: "8" },
       { stat_name: "밸런스", stat_value: "-3" },
@@ -191,8 +180,8 @@ export const prefix_enchant_options = [
     stat_name: "고결한",
     stat_value: [
       { stat_name: "방어력", stat_value: "160" },
-      { stat_name: "생명력", stat_value: "100" },
-      { stat_name: "스태미나", stat_value: "8" },
+      { stat_name: "최대 생명력", stat_value: "100" },
+      { stat_name: "최대 스태미나", stat_value: "8" },
       { stat_name: "크리티컬", stat_value: "6" },
       { stat_name: "크리티컬 저항", stat_value: "10" },
       { stat_name: "밸런스", stat_value: "-3" },
@@ -203,8 +192,8 @@ export const prefix_enchant_options = [
     stat_name: "예언의",
     stat_value: [
       { stat_name: "방어력", stat_value: "160" },
-      { stat_name: "생명력", stat_value: "100" },
-      { stat_name: "스태미나", stat_value: "8" },
+      { stat_name: "최대 생명력", stat_value: "100" },
+      { stat_name: "최대 스태미나", stat_value: "8" },
       { stat_name: "크리티컬", stat_value: "7" },
       { stat_name: "크리티컬 저항", stat_value: "12" },
       { stat_name: "밸런스", stat_value: "-3" },
@@ -319,7 +308,7 @@ export const prefix_enchant_options = [
     stat_name: "강인한",
     stat_value: [
       { stat_name: "방어력", stat_value: "35" },
-      { stat_name: "스태미나", stat_value: "2" },
+      { stat_name: "최대 스태미나", stat_value: "2" },
       { stat_name: "힘", stat_value: "9" },
       { stat_name: "지능", stat_value: "9" },
     ],
@@ -373,13 +362,17 @@ export const prefix_enchant_options = [
   {
     rank: "8",
     stat_name: "반짝이는",
-    stat_value: [{ stat_name: "생명력", stat_value: "-280" }],
+    stat_value: [
+      { stat_name: "최대 생명력", stat_value: "-280" },
+      { stat_name: "크리티컬 저항", stat_value: "-3" },
+      { stat_name: "밸런스", stat_value: "2" },
+    ],
   },
   {
     rank: "7",
     stat_name: "죽은자의",
     stat_value: [
-      { stat_name: "생명력", stat_value: "-450" },
+      { stat_name: "최대 생명력", stat_value: "-450" },
       { stat_name: "힘", stat_value: "-40" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "5" },
@@ -389,7 +382,7 @@ export const prefix_enchant_options = [
     rank: "5",
     stat_name: "추적자의",
     stat_value: [
-      { stat_name: "생명력", stat_value: "-450" },
+      { stat_name: "최대 생명력", stat_value: "-450" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "7" },
     ],
@@ -398,10 +391,9 @@ export const prefix_enchant_options = [
     rank: "4",
     stat_name: "대적자의",
     stat_value: [
-      { stat_name: "생명력", stat_value: "-450" },
+      { stat_name: "최대 생명력", stat_value: "-450" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "9" },
-      { stat_name: "밸런스", stat_value: "2" },
     ],
   },
   {
@@ -417,7 +409,7 @@ export const prefix_enchant_options = [
     rank: "7",
     stat_name: "은은한",
     stat_value: [
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬", stat_value: "2" },
       { stat_name: "크리티컬 저항", stat_value: "-3" },
@@ -427,7 +419,7 @@ export const prefix_enchant_options = [
     rank: "5",
     stat_name: "강렬한",
     stat_value: [
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬", stat_value: "3" },
       { stat_name: "크리티컬 저항", stat_value: "-3" },
@@ -437,7 +429,7 @@ export const prefix_enchant_options = [
   {
     rank: "4",
     stat_name: "고대의",
-    stat_value: [{ stat_name: "스태미나", stat_value: "5" }],
+    stat_value: [{ stat_name: "최대 스태미나", stat_value: "5" }],
   },
   {
     rank: "5",
@@ -461,9 +453,9 @@ export const prefix_enchant_options = [
       { stat_name: "마법공격력", stat_value: "-280" },
       { stat_name: "공격속도", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "7" },
-      { stat_name: "공격력 제한 해제", stat_value: "50" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "일정 확률로 SP 회복", stat_value: "125" },
+      { stat_name: "해제", stat_value: "50" },
     ],
   },
   {
@@ -500,7 +492,7 @@ export const prefix_enchant_options = [
       { stat_name: "밸런스", stat_value: "7" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "매 초마다 마나 회복", stat_value: "2" },
-      { stat_name: "공격력 제한 해제", stat_value: "50" },
+      { stat_name: "해제", stat_value: "50" },
     ],
   },
   {
@@ -537,7 +529,7 @@ export const prefix_enchant_options = [
       { stat_name: "밸런스", stat_value: "7" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "높은 확률로 SP 회복", stat_value: "125" },
-      { stat_name: "공격력 제한 해제", stat_value: "50" },
+      { stat_name: "해제", stat_value: "50" },
     ],
   },
   {
@@ -567,7 +559,10 @@ export const prefix_enchant_options = [
   {
     rank: "A",
     stat_name: "맷집 좋은",
-    stat_value: [{ stat_name: "방어력", stat_value: "190" }],
+    stat_value: [
+      { stat_name: "방어력", stat_value: "190" },
+      { stat_name: "방패, 캐스틀릿, 그랜드타지", stat_value: "" },
+    ],
   },
   {
     rank: "A",
@@ -576,6 +571,7 @@ export const prefix_enchant_options = [
       { stat_name: "민첩", stat_value: "-6" },
       { stat_name: "힘", stat_value: "15" },
       { stat_name: "지능", stat_value: "21" },
+      { stat_name: "수호부", stat_value: "" },
     ],
   },
   {
@@ -585,6 +581,7 @@ export const prefix_enchant_options = [
       { stat_name: "방어력", stat_value: "145" },
       { stat_name: "크리티컬", stat_value: "1" },
       { stat_name: "크리티컬 저항", stat_value: "-3" },
+      { stat_name: "방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
   {
@@ -594,6 +591,7 @@ export const prefix_enchant_options = [
       { stat_name: "공격력", stat_value: "55" },
       { stat_name: "마법공격력", stat_value: "55" },
       { stat_name: "공격속도", stat_value: "3" },
+      { stat_name: "방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
   {
@@ -602,26 +600,29 @@ export const prefix_enchant_options = [
     stat_value: [
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "방어력", stat_value: "500" },
+      { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
   {
     rank: "5",
     stat_name: "격렬한",
     stat_value: [
-      { stat_name: "방어력", stat_value: "800" },
       { stat_name: "공격속도", stat_value: "1" },
+      { stat_name: "방어력", stat_value: "800" },
       { stat_name: "크리티컬", stat_value: "1" },
       { stat_name: "크리티컬 저항", stat_value: "3" },
+      { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
   {
     rank: "4",
     stat_name: "승자의",
     stat_value: [
-      { stat_name: "방어력", stat_value: "800" },
       { stat_name: "공격속도", stat_value: "1" },
+      { stat_name: "방어력", stat_value: "800" },
       { stat_name: "크리티컬", stat_value: "2" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
+      { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
 ];
@@ -772,7 +773,7 @@ export const suffix_enchant_options = [
     stat_name: "아르마딜로",
     stat_value: [
       { stat_name: "방어력", stat_value: "336" },
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "1" },
       {
         stat_name: "일정 확률로 60초간 크리티컬 저항 증가",
@@ -837,7 +838,7 @@ export const suffix_enchant_options = [
     stat_name: "낙인",
     stat_value: [
       { stat_name: "방어력", stat_value: "70" },
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "크리티컬", stat_value: "6" },
       { stat_name: "크리티컬 저항", stat_value: "7" },
       { stat_name: "밸런스", stat_value: "-1" },
@@ -848,7 +849,7 @@ export const suffix_enchant_options = [
     stat_name: "결계",
     stat_value: [
       { stat_name: "방어력", stat_value: "120" },
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "크리티컬", stat_value: "7" },
       { stat_name: "크리티컬 저항", stat_value: "8" },
       { stat_name: "밸런스", stat_value: "-1" },
@@ -859,7 +860,7 @@ export const suffix_enchant_options = [
     stat_name: "한탄",
     stat_value: [
       { stat_name: "방어력", stat_value: "120" },
-      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "크리티컬", stat_value: "9" },
       { stat_name: "크리티컬 저항", stat_value: "10" },
       { stat_name: "밸런스", stat_value: "-1" },
@@ -952,7 +953,7 @@ export const suffix_enchant_options = [
       { stat_name: "공격력", stat_value: "10" },
       { stat_name: "마법공격력", stat_value: "10" },
       { stat_name: "방어력", stat_value: "20" },
-      { stat_name: "생명력", stat_value: "-5" },
+      { stat_name: "최대 생명력", stat_value: "-5" },
     ],
   },
   {
@@ -960,7 +961,7 @@ export const suffix_enchant_options = [
     stat_name: "활력",
     stat_value: [
       { stat_name: "방어력", stat_value: "130" },
-      { stat_name: "생명력", stat_value: "12" },
+      { stat_name: "최대 생명력", stat_value: "12" },
     ],
   },
   {
@@ -968,7 +969,7 @@ export const suffix_enchant_options = [
     stat_name: "열망",
     stat_value: [
       { stat_name: "방어력", stat_value: "200" },
-      { stat_name: "스태미나", stat_value: "2" },
+      { stat_name: "최대 스태미나", stat_value: "2" },
     ],
   },
   {
@@ -985,7 +986,7 @@ export const suffix_enchant_options = [
     stat_name: "소망",
     stat_value: [
       { stat_name: "방어력", stat_value: "300" },
-      { stat_name: "스태미나", stat_value: "2" },
+      { stat_name: "최대 스태미나", stat_value: "2" },
       { stat_name: "크리티컬 저항", stat_value: "1" },
     ],
   },
@@ -994,7 +995,7 @@ export const suffix_enchant_options = [
     stat_name: "격노",
     stat_value: [
       { stat_name: "방어력", stat_value: "400" },
-      { stat_name: "스태미나", stat_value: "2" },
+      { stat_name: "최대 스태미나", stat_value: "2" },
       { stat_name: "크리티컬 저항", stat_value: "2" },
     ],
   },
@@ -1012,18 +1013,18 @@ export const suffix_enchant_options = [
     rank: "5",
     stat_name: "돌진",
     stat_value: [
-      { stat_name: "고유 그룹", stat_value: "공격 속도 증가" },
-      { stat_name: "발동시 공격 속도 증가", stat_value: "" },
       { stat_name: "크리티컬", stat_value: "2" },
-      { stat_name: "공격력 제한 해제", stat_value: "100" },
+      { stat_name: "해제", stat_value: "100" },
+      { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
+      { stat_name: "발동시 ", stat_value: "공격속도 증가" },
     ],
   },
   {
     rank: "6",
     stat_name: "질주",
     stat_value: [
-      { stat_name: "고유 그룹", stat_value: "공격 속도 증가" },
-      { stat_name: "발동시 공격 속도 증가", stat_value: "" },
+      { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
+      { stat_name: "발동시", stat_value: "공격속도 증가" },
     ],
   },
   {
@@ -1032,32 +1033,32 @@ export const suffix_enchant_options = [
     stat_value: [
       { stat_name: "크리티컬", stat_value: "-1" },
       { stat_name: "크리티컬 저항", stat_value: "-1" },
-      { stat_name: "고유 그룹", stat_value: "공격 속도 증가" },
-      { stat_name: "발동시 공격 속도 증가", stat_value: "" },
+      { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
+      { stat_name: "발동시", stat_value: "공격속도 증가" },
     ],
   },
   {
     rank: "5",
     stat_name: "격돌",
     stat_value: [
-      { stat_name: "고유 그룹", stat_value: "공격 속도 증가" },
-      {
-        stat_name: "발동시 공격속도 증가",
-        stat_value: "",
-      },
       { stat_name: "크리티컬", stat_value: "2" },
-      { stat_name: "공격력 제한 해제", stat_value: "100" },
+      { stat_name: "해제", stat_value: "100" },
+      { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
+      {
+        stat_name: "발동시 (쿨 30초)",
+        stat_value: "공격속도 증가",
+      },
     ],
   },
   {
     rank: "6",
     stat_name: "폭렬",
     stat_value: [
+      { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
       {
-        stat_name: "발동시 공격속도 증가",
-        stat_value: "",
+        stat_name: "발동시 (쿨 30초)",
+        stat_value: "공격속도 증가",
       },
-      { stat_name: "고유 그룹", stat_value: "공격 속도 증가" },
     ],
   },
   {
@@ -1068,9 +1069,73 @@ export const suffix_enchant_options = [
       { stat_name: "크리티컬 저항", stat_value: "-1" },
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
       {
-        stat_name: "발동시 공격속도 증가",
-        stat_value: "",
+        stat_name: "발동시 (쿨 30초)",
+        stat_value: "공격속도 증가",
       },
+    ],
+  },
+
+  {
+    rank: "A",
+    stat_name: "코볼트",
+    stat_value: [
+      { stat_name: "공격력", stat_value: "30" },
+      { stat_name: "마법공격력", stat_value: "30" },
+      { stat_name: "방패, 캐스틀릿, 그랜드타지", stat_value: "" },
+    ],
+  },
+
+  {
+    rank: "A",
+    stat_name: "장대비",
+    stat_value: [
+      { stat_name: "발동 시 마법공격력 증가", stat_value: "" },
+      { stat_name: "마법서", stat_value: "" },
+    ],
+  },
+
+  {
+    rank: "9",
+    stat_name: "금강석",
+    stat_value: [
+      { stat_name: "방어력", stat_value: "62" },
+      { stat_name: "최대 생명력", stat_value: "-50" },
+      { stat_name: "크리티컬 저항", stat_value: "3" },
+      { stat_name: "방패, 캐스틀릿, 그랜드타지", stat_value: "" },
+    ],
+  },
+
+  {
+    rank: "7",
+    stat_name: "진실",
+    stat_value: [
+      { stat_name: "공격력", stat_value: "230" },
+      { stat_name: "마법공격력", stat_value: "230" },
+      { stat_name: "크리티컬 저항", stat_value: "5" },
+      { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
+    ],
+  },
+
+  {
+    rank: "5",
+    stat_name: "광기",
+    stat_value: [
+      { stat_name: "공격력", stat_value: "230" },
+      { stat_name: "마법공격력", stat_value: "230" },
+      { stat_name: "크리티컬", stat_value: "2" },
+      { stat_name: "크리티컬 저항", stat_value: "5" },
+      { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
+    ],
+  },
+  {
+    rank: "4",
+    stat_name: "찬미",
+    stat_value: [
+      { stat_name: "공격력", stat_value: "230" },
+      { stat_name: "마법공격력", stat_value: "230" },
+      { stat_name: "크리티컬", stat_value: "4" },
+      { stat_name: "크리티컬 저항", stat_value: "9" },
+      { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
 ];
@@ -1094,7 +1159,18 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
       "고풍스러운",
     ],
   },
-  { name: ["Left Hand"], list: [] },
+  {
+    name: ["Left Hand"],
+    list: [
+      "맷집 좋은",
+      "현자의",
+      "짜릿한",
+      "산뜻한",
+      "봉인된",
+      "격렬한",
+      "승자의",
+    ],
+  },
   {
     name: ["Head", "Lower"],
     list: [
@@ -1200,7 +1276,10 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
       "약화",
     ],
   },
-  { name: ["Left Hand"], list: [] },
+  {
+    name: ["Left Hand"],
+    list: ["코볼트", "장대비", "금강석", "진실", "광기", "찬미"],
+  },
   {
     name: ["Head", "Lower"],
     list: [
@@ -1263,4 +1342,22 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
     name: ["Rhod"],
     list: ["격돌", "돌진", "폭렬", "질주", "열렬", "산책"],
   },
+];
+
+export const left_hand_prefix_enchant_list = [
+  { name: "맷집 좋은", item: ["방패", "캐스틀릿", "그랜드타지"] },
+  { name: "현자의", item: ["수호부"] },
+  { name: "짜릿한", item: ["방패", "캐스틀릿", "그랜드타지"] },
+  { name: "산뜻한", item: ["방패", "캐스틀릿", "그랜드타지"] },
+  { name: "봉인된", item: ["수호부", "방패", "캐스틀릿", "그랜드타지"] },
+  { name: "격렬한", item: ["수호부", "방패", "캐스틀릿", "그랜드타지"] },
+  { name: "승자의", item: ["수호부", "방패", "캐스틀릿", "그랜드타지"] },
+];
+export const left_hand_suffix_enchant_list = [
+  { name: "코볼트", item: ["방패", "캐스틀릿", "그랜드타지"] },
+  { name: "장대비", item: ["마법서"] },
+  { name: "금강석", item: ["방패", "캐스틀릿", "그랜드타지"] },
+  { name: "진실", item: ["수호부", "방패", "캐스틀릿", "그랜드타지"] },
+  { name: "광기", item: ["수호부", "방패", "캐스틀릿", "그랜드타지"] },
+  { name: "찬미", item: ["수호부", "방패", "캐스틀릿", "그랜드타지"] },
 ];
