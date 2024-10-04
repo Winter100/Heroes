@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import Button from "@/app/_components/common/Button";
 import BottomArrow from "@/app/_components/common/BottomArrow";
-import { useOutsideClick } from "@/app/_hooks/useOutsideClick/useOutsideClick";
 import { raidList } from "@/app/_constant/raidList";
+import { useOutsideClick } from "@/app/_hooks/useOutsideClick/useOutsideClick";
 import { useRaidStore } from "@/app/_store/raidStore";
 
 const RaidDropDownMenu = () => {
@@ -17,6 +18,10 @@ const RaidDropDownMenu = () => {
   const outSideRef = useOutsideClick(() => {
     setView(false);
   });
+
+  useEffect(() => {
+    resetRaid();
+  }, []);
 
   const raidOnclick = (raidName: string) => {
     if (activeRaid === raidName) {
@@ -49,18 +54,18 @@ const RaidDropDownMenu = () => {
             <div key={r.raid_name} className="relative">
               <button
                 onClick={() => raidOnclick(r.raid_name)}
-                className={`h-8 w-full ${activeRaid === r.raid_name ? "text-blue-300" : ""} hover:bg-zinc-700`}
+                className={`h-8 w-full ${activeRaid === r.raid_name ? "text-blue-300" : ""} rounded-lg hover:bg-zinc-700`}
               >
                 {r.raid_name}
               </button>
               {/* 하위 메뉴: 몬스터 이름 렌더링 */}
               {activeRaid === r.raid_name && (
-                <div className="absolute left-32 top-0 z-20 w-28 bg-black">
+                <div className="absolute left-32 top-0 z-20 w-28 rounded-lg bg-black">
                   {r.monsters.map((monster) => (
                     <button
                       onClick={() => setSelectBoss(r?.raid_name, monster?.name)}
                       key={monster.name}
-                      className={`${selectedBoss?.name === monster?.name ? "text-blue-300" : "text-white"} h-8 w-full hover:bg-zinc-700`}
+                      className={`${selectedBoss?.name === monster?.name ? "text-blue-300" : "text-white"} h-8 w-full rounded-lg hover:bg-zinc-700`}
                     >
                       {monster.name}
                     </button>

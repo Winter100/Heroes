@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      alignContent: {
+        "space-around": "space-around",
+      },
       animation: {
         fadeIn: "fadeIn 0.5s ease-out forwards",
       },
