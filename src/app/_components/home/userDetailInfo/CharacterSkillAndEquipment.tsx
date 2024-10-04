@@ -22,7 +22,7 @@ const CharacterSkillAndEquipment = () => {
       <DetailMenu />
       <Row className="flex h-full w-full">
         <div>{stats && <UserDetailInfo />}</div>
-        <div className="flex-1">
+        <div className="min-h-[500px] flex-1">
           {item === "skill" && <Skill />}
           {item === "item" && (
             <ItemEquipment isLoading={isLoading} items={bag} />

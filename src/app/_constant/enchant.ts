@@ -429,7 +429,13 @@ export const prefix_enchant_options = [
   {
     rank: "4",
     stat_name: "고대의",
-    stat_value: [{ stat_name: "최대 스태미나", stat_value: "5" }],
+    stat_value: [
+      { stat_name: "최대 스태미나", stat_value: "5" },
+      { stat_name: "공격속도", stat_value: "1" },
+      { stat_name: "크리티컬", stat_value: "4" },
+      { stat_name: "크리티컬 저항", stat_value: "-3" },
+      { stat_name: "밸런스", stat_value: "2" },
+    ],
   },
   {
     rank: "5",
@@ -491,7 +497,7 @@ export const prefix_enchant_options = [
       { stat_name: "공격속도", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "7" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
-      { stat_name: "매 초마다 마나 회복", stat_value: "2" },
+      { stat_name: "매초 마나 회복", stat_value: "2" },
       { stat_name: "해제", stat_value: "50" },
     ],
   },
@@ -504,7 +510,7 @@ export const prefix_enchant_options = [
       { stat_name: "밸런스", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "4" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
-      { stat_name: "매 초마다 마나 회복", stat_value: "2" },
+      { stat_name: "매초 마나 회복", stat_value: "2" },
     ],
   },
   {
@@ -516,7 +522,7 @@ export const prefix_enchant_options = [
       { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "공격속도", stat_value: "3" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
-      { stat_name: "매 초마다 마나 회복", stat_value: "2" },
+      { stat_name: "매초 마나 회복", stat_value: "2" },
     ],
   },
   {
@@ -776,7 +782,7 @@ export const suffix_enchant_options = [
       { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "1" },
       {
-        stat_name: "일정 확률로 60초간 크리티컬 저항 증가",
+        stat_name: "일정 확률로 크리티컬 저항 증가",
         stat_value: "50%",
       },
     ],
@@ -809,7 +815,7 @@ export const suffix_enchant_options = [
       { stat_name: "크리티컬", stat_value: "1" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
       {
-        stat_name: "일정 확률로 10초간 1초 마다 생명력 회복",
+        stat_name: "일정 확률로 1초마다 생명력 회복",
         stat_value: "50",
       },
     ],

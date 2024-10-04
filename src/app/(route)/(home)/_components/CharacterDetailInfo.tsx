@@ -25,7 +25,7 @@ const CharacterDetailInfo = () => {
       </Row>
       {moreView && (
         <Row className="h-full w-full flex-1 gap-1">
-          <Column className="min-w-[500px] flex-1 cursor-default rounded-lg bg-zinc-800">
+          <Column className="max-h-[600px] min-w-[500px] flex-1 cursor-default rounded-lg bg-zinc-800">
             <UserSkillAndEquipment />
           </Column>
         </Row>
