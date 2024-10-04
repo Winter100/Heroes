@@ -1,5 +1,10 @@
-export const calculateStatsDifference = (data, combinedStats) => {
-  const resultStats = [];
+import { Stat } from "@/app/_type/previewType";
+
+export const calculateStatsDifference = (
+  data: Stat[],
+  combinedStats: Stat[],
+): Stat[] => {
+  const resultStats: Stat[] = [];
 
   for (const dataItem of data) {
     const combinedItem = combinedStats.find(
@@ -9,7 +14,7 @@ export const calculateStatsDifference = (data, combinedStats) => {
     let statValue = parseInt(dataItem.stat_value);
 
     if (combinedItem) {
-      statValue -= parseInt(combinedItem.stat_value); // 일치하는 combinedStats 값을 빼기
+      statValue -= parseInt(combinedItem.stat_value);
     }
 
     resultStats.push({
