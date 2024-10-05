@@ -78,6 +78,7 @@ export const usePreviewStore = create<State & Action>((set) => {
           afterStats: [],
           beforeStats: [],
           totalPriceItem: [],
+          previewAllStats: [],
         };
       });
     },
