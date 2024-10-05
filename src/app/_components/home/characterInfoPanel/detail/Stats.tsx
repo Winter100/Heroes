@@ -1,14 +1,16 @@
-import { useCharacterStore } from "@/app/_store/characterStore";
 import { ComponentProps } from "react";
+import { Stat } from "@/app/_type/characterType";
 
-interface StatsProps extends ComponentProps<"div"> {}
+interface StatsProps extends ComponentProps<"div"> {
+  stats: Stat[];
+  statDifference?: Stat[];
+}
 
-const Stats = ({ ...props }: StatsProps) => {
-  const stats = useCharacterStore((state) => state.selectedCharacter?.stat);
+const Stats = ({ stats, statDifference, className, ...props }: StatsProps) => {
   return (
     <div
+      className={`grid h-full grid-cols-2 items-center justify-items-center ${className}`}
       {...props}
-      className="grid h-full grid-cols-2 items-center justify-items-center text-white"
     >
       {stats?.map((stat) => (
         <div
@@ -17,9 +19,33 @@ const Stats = ({ ...props }: StatsProps) => {
         >
           <div className="flex flex-1">
             <p className="min-w-20 text-center">{stat.stat_name}</p>
-            <p className="flex flex-1 items-center justify-center">
-              {stat.stat_value}
-            </p>
+
+            <div className="flex flex-1 flex-col items-center justify-center">
+              <p className="text-xs">{stat.stat_value}</p>
+              {statDifference &&
+                (() => {
+                  const statValue = Number(
+                    statDifference.find((i) => i.stat_name === stat.stat_name)
+                      ?.stat_value,
+                  );
+
+                  if (statValue !== 0) {
+                    return (
+                      <p
+                        className={
+                          statValue >= 1 ? "text-green-300" : "text-red-300"
+                        }
+                      >
+                        {statValue !== null && statValue >= 0
+                          ? `+${statValue}`
+                          : statValue}
+                      </p>
+                    );
+                  }
+
+                  return null;
+                })()}
+            </div>
           </div>
         </div>
       ))}

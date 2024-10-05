@@ -10,7 +10,6 @@ export const limitCalculator = (
     case "공격력": {
       const Mstat = monsterInfo?.limit?.find((s) => s?.stat_name === "공격력");
       const limit = user_limit_stat !== null ? Number(user_limit_stat) : 0;
-      // 해제가 존재한다면 MStat은 해당 캐릭터의 해제가 포함된 값이어야함
       return Number(user_stat_value) - (Number(Mstat?.stat_value) + limit);
     }
 
@@ -31,6 +30,10 @@ export const limitCalculator = (
         (s) => s?.stat_name === "대항력 저항",
       );
       return Number(user_stat_value) - (Number(Mstat?.stat_value) + 100);
+    }
+    case "크리티컬 저항": {
+      const Mstat = monsterInfo?.limit?.find((s) => s.stat_name === "크리티컬");
+      return Number(user_stat_value) - (Number(Mstat?.stat_value) - 3);
     }
 
     default:

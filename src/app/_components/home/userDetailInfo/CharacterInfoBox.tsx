@@ -1,15 +1,17 @@
 "use client";
 
-import { useCharacterStore } from "@/app/_store/characterStore";
+import { Stat } from "@/app/_type/characterType";
 import { ComponentProps } from "react";
 
-interface CharacterInfoBoxProps extends ComponentProps<"div"> {}
+interface CharacterInfoBoxProps extends ComponentProps<"div"> {
+  basic: Stat[];
+}
 
 const CharacterInfoBox = ({
   className = "",
+  basic,
   ...props
 }: CharacterInfoBoxProps) => {
-  const basic = useCharacterStore((state) => state.selectedCharacter?.basic);
   return (
     <div
       className={`flex items-center justify-center gap-4 text-white ${className}`}

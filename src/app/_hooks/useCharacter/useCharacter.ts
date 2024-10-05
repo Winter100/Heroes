@@ -23,6 +23,7 @@ export const useCharacter = () => {
       setLoading(true);
 
       try {
+        // 탄스택 쿼리로 바꾸기?
         const ocid = await getOcid(characterName);
         const [basic, stat, guild] = await Promise.all([
           getBasic(ocid),
@@ -36,7 +37,6 @@ export const useCharacter = () => {
           basic,
           translatedStats,
           guild,
-          characterName,
         );
 
         addWaitingRoomCharacterInfo(mergedChrarcterData);

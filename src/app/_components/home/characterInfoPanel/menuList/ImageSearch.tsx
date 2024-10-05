@@ -15,7 +15,7 @@ import Loading from "@/app/_components/common/Loading";
 import { toast } from "react-toastify";
 
 const overlay = {
-  backgroundColor: "rgba(0,0,0,0.6)",
+  backgroundColor: "rgba(0,0,0,0.7)",
 };
 
 const content = {
