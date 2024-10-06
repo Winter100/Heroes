@@ -1,9 +1,10 @@
-"use client";
+import { Metadata } from "next";
 
-import Column from "@/app/_components/layout/Column";
-
+export const metadata: Metadata = {
+  title: "장비 세팅",
+};
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return <Column className="h-full w-full max-w-6xl gap-1">{children}</Column>;
+  return <>{children}</>;
 };
 
 export default Layout;

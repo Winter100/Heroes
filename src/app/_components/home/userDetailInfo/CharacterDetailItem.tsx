@@ -20,10 +20,10 @@ const CharacterDetailItem = () => {
         <>
           <CharacterInfoBox
             basic={basic}
-            className="h-full max-h-32 rounded-lg border border-gray-600 p-1"
+            className="h-28 rounded-lg border border-gray-600 p-1"
           />
           <Stats
-            className="h-full min-h-[400px] rounded-lg border border-gray-600 p-2 text-white"
+            className="h-full flex-1 rounded-lg border border-gray-600 p-2 text-white"
             stats={stats}
           />
         </>
