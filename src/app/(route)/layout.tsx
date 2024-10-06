@@ -5,20 +5,24 @@ import ToastProvider from "../_provider/ToastProvider";
 import Header from "../_components/layout/Header";
 import MainSection from "../_components/layout/Main";
 import Footer from "../_components/layout/Footer";
-import LeftAd from "../_components/ad/LeftAd";
+import Aside from "../_components/layout/Aside";
+import Column from "../_components/layout/Column";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="m-auto flex h-full w-full flex-col items-center justify-center gap-1 p-2">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-1">
       <TanstackProvider>
         <ToastProvider>
           <Header />
-          <div className="flex h-full w-full max-w-[1600px] justify-center">
-            {/* <LeftAd /> */}
-            <MainSection className="flex flex-1 items-center justify-center">
+
+          <MainSection className="flex h-full w-full flex-1 items-center justify-center">
+            <Aside className="h-full flex-1"></Aside>
+            <Column className="h-full w-full max-w-6xl gap-1">
               {children}
-            </MainSection>
-          </div>
+            </Column>
+            <Aside className="h-full flex-1"></Aside>
+          </MainSection>
+
           <Footer />
         </ToastProvider>
       </TanstackProvider>

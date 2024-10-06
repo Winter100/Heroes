@@ -1,7 +1,11 @@
-import Column from "@/app/_components/layout/Column";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "상한 조회",
+};
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return <Column className="h-full w-full max-w-6xl gap-1">{children}</Column>;
+  return <>{children}</>;
 };
 
 export default Layout;

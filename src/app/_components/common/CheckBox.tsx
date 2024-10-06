@@ -11,7 +11,7 @@ const CheckBox = ({ checked = false }: CheckBoxProps) => {
           readOnly
           checked={checked}
           type="checkbox"
-          className="peer h-3.5 w-3.5 cursor-pointer appearance-none rounded bg-zinc-100 shadow transition-all hover:shadow-md"
+          className="peer h-3 w-3 cursor-pointer appearance-none rounded bg-zinc-100 shadow transition-all hover:shadow-md"
         />
         <span className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-black opacity-0 peer-checked:opacity-100">
           <svg
