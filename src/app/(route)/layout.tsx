@@ -5,8 +5,9 @@ import ToastProvider from "../_provider/ToastProvider";
 import Header from "../_components/layout/Header";
 import MainSection from "../_components/layout/Main";
 import Footer from "../_components/layout/Footer";
-import Aside from "../_components/layout/Aside";
+
 import Column from "../_components/layout/Column";
+import Aside from "../_components/layout/Aside";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
