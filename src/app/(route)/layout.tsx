@@ -6,15 +6,24 @@ import Header from "../_components/layout/Header";
 import MainSection from "../_components/layout/Main";
 import Footer from "../_components/layout/Footer";
 
+import Column from "../_components/layout/Column";
+import Aside from "../_components/layout/Aside";
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="m-auto flex h-full w-full max-w-[1800px] flex-col gap-1 p-2">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-1">
       <TanstackProvider>
         <ToastProvider>
           <Header />
-          <MainSection className="flex flex-1 justify-center">
-            {children}
+
+          <MainSection className="flex h-full w-full flex-1 items-center justify-center">
+            <Aside className="h-full flex-1"></Aside>
+            <Column className="h-full w-full max-w-6xl gap-1">
+              {children}
+            </Column>
+            <Aside className="h-full flex-1"></Aside>
           </MainSection>
+
           <Footer />
         </ToastProvider>
       </TanstackProvider>

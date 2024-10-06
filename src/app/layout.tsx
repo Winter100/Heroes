@@ -7,20 +7,38 @@ import GoogleAnalytics from "./_lib/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "망디",
-  description: "마비노기 영웅전의 캐릭터를 조회할 수 있습니다.",
+  applicationName: "망디",
+  title: {
+    template: "%s - 망디",
+    default: "망디",
+  },
+  keywords: [
+    "마비노기 영웅전",
+    "마영전",
+    "마영전 장비 세팅",
+    "마영전 세팅",
+    "마영전 상한",
+    "마영전 캐릭터",
+  ],
+  description:
+    "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
   verification: {
-    google: "XEKLkprFU_FjAz8RnHxU-q2pj8f_4TW7LqHk30hheRA",
+    google: "NWuO_jx2ujHe0lQeiHDEolhbhews2UnrQccL0yPX4RY",
     other: {
-      "naver-site-verification": "d93d7ebabf56290525673cefca5def85cb1b0d5a",
+      "naver-site-verification": "0414ca73ae92a7ac7f450520ab44cc825197f7d4",
     },
   },
+  authors: [{ name: "망디" }, { name: "망디", url: "https://heroes-dev.com/" }],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "망디",
-    description: "마비노기 영웅전의 캐릭터를 조회할 수 있습니다.",
+    title: {
+      template: "%s - 망디",
+      default: "망디",
+    },
+    description:
+      "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
     type: "website",
     images: [
       {
@@ -32,8 +50,12 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "망디",
-    description: "마비노기 영웅전의 캐릭터를 조회할 수 있습니다.",
+    title: {
+      template: "%s - 망디",
+      default: "망디",
+    },
+    description:
+      "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
     images: [
       {
         url: "/meta2.png",

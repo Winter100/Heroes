@@ -1,17 +1,15 @@
 import { getEquipment } from "@/app/_services/getEquipment";
-import { useCharacterStore } from "@/app/_store/characterStore";
 import { Item_equipment } from "@/app/_type/equipmentType";
-import { findOcidByName } from "@/app/_utils/localStorage";
 import { useQuery } from "@tanstack/react-query";
+import { useOcid } from "../useOcid/useOcid";
 
-export const useEquipment = () => {
-  const name =
-    useCharacterStore((state) => state.selectedCharacter?.name) ?? "";
-  const ocid = findOcidByName(name) ?? "";
+export const useEquipment = (name: string) => {
+  const { data: ocid } = useOcid(name);
+
   const { data, isLoading } = useQuery<Item_equipment>({
-    enabled: name ? true : false,
-    queryKey: [name],
-    queryFn: () => getEquipment(ocid),
+    enabled: !!ocid,
+    queryKey: [ocid, "장비"],
+    queryFn: () => getEquipment(ocid ?? ""),
   });
 
   const items = data?.item_equipment;
