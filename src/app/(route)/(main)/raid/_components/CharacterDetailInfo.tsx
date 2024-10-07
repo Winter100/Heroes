@@ -13,7 +13,7 @@ const CharacterDetailInfo = () => {
   const [moreView, setMoreView] = useState(true);
 
   return (
-    <Column className="min-h-[630px] w-full p-2">
+    <Column className="h-full w-full p-2">
       <Row className="my-1 items-center justify-center">
         <Button
           onClick={() => setMoreView((pre) => !pre)}
