@@ -13,7 +13,7 @@ const CharacterDetailInfo = () => {
   const [moreView, setMoreView] = useState(true);
 
   return (
-    <Column className="h-full w-full">
+    <Column className="min-h-[630px] w-full p-2">
       <Row className="my-1 items-center justify-center">
         <Button
           onClick={() => setMoreView((pre) => !pre)}
@@ -23,11 +23,9 @@ const CharacterDetailInfo = () => {
         </Button>
       </Row>
       {moreView && (
-        <Row className="h-full w-full flex-1 gap-1">
-          <Column className="flex-1 cursor-default rounded-lg bg-zinc-800">
-            <UserSkillAndEquipment />
-          </Column>
-        </Row>
+        <div className="flex h-full w-full flex-1 cursor-default flex-col gap-1 rounded-lg border border-borderColor">
+          <UserSkillAndEquipment />
+        </div>
       )}
     </Column>
   );

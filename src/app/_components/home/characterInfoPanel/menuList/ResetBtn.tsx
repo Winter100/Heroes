@@ -34,7 +34,7 @@ const ResetBtn = () => {
   return (
     <Button
       disabled={disabled}
-      className={`${disabled ? "border-none bg-gray-200 transition-none" : "text-red-600"} flex h-full w-10 items-center justify-center`}
+      className={`${disabled ? "hover:text-fontColor border-none transition-none hover:border-none hover:bg-none" : "text-red-600 hover:border-red-600 hover:text-red-600"} flex h-full w-10 items-center justify-center`}
       onClick={onReset}
     >
       <CiTrash className="text-xl" />

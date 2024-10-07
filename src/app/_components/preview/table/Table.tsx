@@ -23,19 +23,22 @@ const Table = () => {
   )?.stat_value;
 
   return (
-    <table className="flex h-full w-full table-fixed flex-col gap-1 text-white">
+    <table className="flex h-full w-full table-fixed flex-col gap-1 py-2 text-[9px] md:text-xs">
       <caption className="hidden">미리보기</caption>
-      <thead className="flex items-center justify-center text-xs">
-        <tr className="flex w-full">
+      <thead className="flex items-center justify-center">
+        <tr className="flex w-full items-center justify-center">
           {previewInitialTitleList.map((item) => (
-            <th className="flex-1" key={item.stat_name}>
+            <th
+              className="flex flex-1 items-center justify-center text-[9px] md:text-xs"
+              key={item.stat_name}
+            >
               {item.stat_name}
             </th>
           ))}
         </tr>
       </thead>
       <tbody className="flex h-full items-center justify-center text-xs">
-        <tr className="flex h-full w-full">
+        <tr className="flex h-full w-full items-center justify-center">
           {filteredStats.map((item) => (
             <td
               className="flex w-full flex-1 flex-col items-center justify-center"

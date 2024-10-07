@@ -73,9 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <GoogleAnalytics />
-      <body className={`${inter.className} bg-zinc-100`}>{children}</body>
+      <body className={`${inter.className} h-dvh bg-background text-fontColor`}>
+        {children}
+      </body>
     </html>
   );
 }

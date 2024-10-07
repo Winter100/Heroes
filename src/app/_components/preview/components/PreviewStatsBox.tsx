@@ -16,7 +16,8 @@ const PreviewStatsBox = ({
 }: StatsProps) => {
   return (
     <div
-      className={`flex h-full flex-col items-center justify-items-center text-[11px] ${className}`}
+      className={`flex h-full flex-col items-center justify-center text-xs ${className}`}
+      // className={`flex h-full flex-col items-center justify-items-center text-[11px] ${className}`}
       {...props}
     >
       {stats?.map((stat) => (
@@ -49,7 +50,7 @@ const PreviewStatsBox = ({
               </p>
             )}
 
-            <div className="flex flex-1 flex-row items-center justify-between gap-1">
+            <div className="flex flex-1 items-center justify-between gap-1">
               <p>{stat.stat_value}</p>
               <>
                 {statDifference &&
