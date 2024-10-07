@@ -7,7 +7,7 @@ interface SectionProps extends ComponentProps<"section"> {
 const Section = ({ children, className, ...props }: SectionProps) => {
   return (
     <section
-      className={`flex h-full w-full flex-col rounded-lg bg-white p-2 shadow-sm ${className}`}
+      className={`flex h-full w-full flex-col rounded-lg p-2 shadow-sm ${className}`}
       {...props}
     >
       {children}

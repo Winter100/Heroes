@@ -34,12 +34,14 @@ const RaidDropDownMenu = () => {
   };
 
   return (
-    <div className="inline-block h-full w-32" ref={outSideRef}>
+    <div className="inline-block h-full w-24 sm:w-32" ref={outSideRef}>
       <Button
         onClick={() => setView((pre) => !pre)}
         className="flex h-full w-full items-center justify-center"
       >
-        <span>{selectedBoss?.name || "상한"}</span>
+        <span className="text-[9px] sm:text-xs">
+          {selectedBoss?.name || "상한"}
+        </span>
         <BottomArrow />
       </Button>
       <div

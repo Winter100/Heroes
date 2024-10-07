@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col items-center justify-center p-2 text-xs">
+    <footer className="flex w-full items-center justify-center bg-background py-1 text-xs">
       <p>
         Data based on
         <Link

@@ -15,19 +15,12 @@ const CharacterDetailItem = () => {
     useCharacterStore((state) => state.selectedCharacter?.stat) ?? [];
 
   return (
-    <Column className="h-full w-80 gap-1 p-1 text-xs">
-      {title && (
-        <>
-          <CharacterInfoBox
-            basic={basic}
-            className="h-28 rounded-lg border border-gray-600 p-1"
-          />
-          <Stats
-            className="h-full flex-1 rounded-lg border border-gray-600 p-2 text-white"
-            stats={stats}
-          />
-        </>
-      )}
+    <Column className="flex h-full w-52 items-center justify-center gap-1 p-1 text-[10px] sm:w-72 sm:text-xs">
+      <CharacterInfoBox
+        basic={basic}
+        className="h-28 rounded-lg border border-gray-600 p-1 sm:h-40"
+      />
+      <Stats className="rounded-lg border border-gray-600 p-2" stats={stats} />
     </Column>
   );
 };

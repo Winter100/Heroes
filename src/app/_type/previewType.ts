@@ -43,8 +43,6 @@ export interface ModalProps {
   overlay: any;
   content: any;
   slot?: string;
-  openModal: boolean;
-  setOpenModal: (isView: boolean) => void;
   options: {
     rank: string;
     stat_name: string;

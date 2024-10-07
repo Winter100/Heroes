@@ -12,9 +12,12 @@ const AbilityRankHeader = () => {
     useNameSearch();
 
   return (
-    <Row className="grid grid-cols-3">
-      <Row className="h-full w-12" />
-      <Row className="flex items-center justify-center gap-1">
+    <Row className="flex h-10 flex-row items-center gap-1 py-1 md:grid md:grid-cols-3">
+      <Row className="flex h-full items-center justify-center gap-1">
+        <RaidDropDownMenu />
+        <StatDropDownMenu />
+      </Row>
+      <Row className="flex h-full w-full items-center justify-center gap-1">
         <ImageSearch />
         <UserSearch
           inputRef={inputRef}
@@ -25,10 +28,7 @@ const AbilityRankHeader = () => {
         />
         <ResetBtn />
       </Row>
-      <Row className="flex h-full justify-end gap-1">
-        <RaidDropDownMenu />
-        <StatDropDownMenu />
-      </Row>
+      <Row className="h-full w-12 md:hidden" />
     </Row>
   );
 };

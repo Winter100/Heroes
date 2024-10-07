@@ -10,8 +10,14 @@ const AvgPrice = ({ name }: { name: string }) => {
 
   return (
     <>
-      <Row className="min-h-6 items-stretch justify-center rounded-lg bg-zinc-800 p-1 text-[10px] text-white">
-        {sumAvg !== 0 && name && `${"예상 가격: "} ${sumAvg?.toLocaleString()}`}
+      <Row
+        className={`${sumAvg !== 0 ? "border-t" : ""} flex min-h-6 w-full items-center justify-end border-borderColor pt-2`}
+      >
+        <Row className="flex w-36 items-center justify-center text-[11px] text-white">
+          {sumAvg !== 0 &&
+            name &&
+            `${"예상 가격: "} ${sumAvg?.toLocaleString()}`}
+        </Row>
       </Row>
     </>
   );
