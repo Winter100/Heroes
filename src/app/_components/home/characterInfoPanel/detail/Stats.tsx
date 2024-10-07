@@ -18,7 +18,7 @@ const Stats = ({ stats, statDifference, className, ...props }: StatsProps) => {
           className="flex w-full max-w-32 items-center justify-center"
         >
           <div className="flex flex-1">
-            <p className="min-w-20 text-center">{stat.stat_name}</p>
+            <p className="flex-1 text-center sm:min-w-20">{stat.stat_name}</p>
 
             <div className="flex flex-1 flex-col items-center justify-center">
               <p className="text-[10px] sm:text-xs">{stat.stat_value}</p>
