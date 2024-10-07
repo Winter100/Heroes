@@ -3,13 +3,19 @@ import { MetadataRoute } from "next";
 export const sitemap = (): MetadataRoute.Sitemap => {
   return [
     {
-      url: "https://heroes-dev.com/",
+      url: "https://www.heroes-dev.com/",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://heroes-dev.com/preview",
+      url: "https://www.heroes-dev.com/raid",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.heroes-dev.com/preview",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,

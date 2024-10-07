@@ -24,7 +24,7 @@ const UserSearch = ({
 }: UserSearchProps) => {
   return (
     <Row
-      className={`${isFocused ? "border-blue-300" : ""} ${loading ? "bg-gray-200 opacity-60" : ""} outline-blue-300" h-8 w-60 gap-1 rounded-lg border-2 text-sm text-black shadow-sm`}
+      className={`${isFocused ? "border-blue-300" : "border-borderColor"} ${loading ? "bg-backgroundTwo" : ""} outline-blue-300" h-8 w-full gap-1 rounded-lg border text-sm shadow-sm`}
     >
       <form
         id="search"
@@ -36,7 +36,7 @@ const UserSearch = ({
           ref={inputRef}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="h-full w-full flex-1 border-none bg-inherit text-xs outline-none"
+          className="h-full w-full flex-1 border-none bg-inherit text-[10px] outline-none md:text-xs"
           placeholder="캐릭터 이름을 입력해주세요."
           disabled={loading}
         />

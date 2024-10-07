@@ -3,7 +3,7 @@ import Row from "../layout/Row";
 
 const PreviewHeader = () => {
   return (
-    <Row className="h-12 gap-2 rounded-lg bg-zinc-800 p-2 text-white">
+    <Row className="border-borderColor h-12 gap-2 rounded-lg border p-2 text-white">
       <BeforeAndAfter>
         <BeforeAndAfter.Title className="font-semibold">
           아이템

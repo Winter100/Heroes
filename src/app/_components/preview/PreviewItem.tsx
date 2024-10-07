@@ -121,7 +121,7 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
           <BeforeAndAfter.Before>{preInfusions}</BeforeAndAfter.Before>
 
           <BeforeAndAfter.After
-            className={`${infusions?.length >= 1 ? "border border-zinc-600" : ""} text-blue-300`}
+            className={`${infusions?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-blue-300 sm:text-xs`}
           >
             {infusions?.length >= 1 && (
               <PreviewModal
@@ -142,7 +142,7 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before>{beforePrefixName}</BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${sortedPrefixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-blue-300`}
+            className={`${sortedPrefixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-blue-300 sm:text-xs`}
           >
             {sortedPrefixEnchant?.length >= 1 && (
               <PreviewModal
@@ -163,7 +163,7 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before>{beforeSuffixName}</BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${sortedSuffixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-blue-300`}
+            className={`${sortedSuffixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-blue-300 sm:text-xs`}
           >
             {sortedSuffixEnchant?.length >= 1 && (
               <PreviewModal

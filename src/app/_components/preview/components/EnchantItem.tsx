@@ -84,7 +84,7 @@ const EnchantItem = ({
           </Row>
         </div>
       </Row>
-      <Column className="flex-1 rounded-md border border-zinc-400 p-1 text-[11px]">
+      <Column className="min-h-24 flex-1 rounded-md border border-zinc-400 p-1 text-[11px]">
         {stat_value.map((option) => (
           <div
             className="flex items-center px-1"

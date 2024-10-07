@@ -55,10 +55,10 @@ const AbilityRankThead = () => {
     characterLength === allChecked && characterLength >= 1 && allChecked >= 1;
 
   return (
-    <thead className="min-h-8 w-full items-center justify-center rounded-lg bg-zinc-800">
+    <thead className="h-8 w-full items-center justify-center rounded-lg border border-borderColor">
       <tr className="relative flex h-full w-full items-center justify-center rounded-lg">
         {rankTitleList[0] && (
-          <th className="flex h-full w-12 items-center justify-center text-xl">
+          <th className="flex h-full w-12 items-center justify-center text-xs md:text-xl">
             <div
               onClick={onAllCheck}
               className="flex items-center justify-center"
@@ -82,14 +82,14 @@ const AbilityRankThead = () => {
               >
                 <div className="relative h-full w-full">
                   <span
-                    className={` ${selectedRankTitle?.titleName === t.stat_name ? (selectedRankTitle.ascending === false ? "text-green-300" : "text-red-300") : "text-white"} flex h-full w-full items-center justify-center rounded-lg hover:bg-zinc-600`}
+                    className={` ${selectedRankTitle?.titleName === t.stat_name ? (selectedRankTitle.ascending === false ? "text-green-300" : "text-red-300") : "text-white"} flex h-full w-full items-center justify-center rounded-lg text-[10px] hover:bg-zinc-600 md:text-xs`}
                   >
                     {t?.stat_name}
                   </span>
                   {t.stat_name !== "이름" && (
                     <button
                       onClick={(e) => onRemove(e, t?.stat_name)}
-                      className="absolute right-0 top-0 flex h-5 w-5 items-center justify-center rounded-lg border-none text-[10px] text-red-200 hover:text-red-400"
+                      className="absolute right-0 top-0 hidden h-5 w-5 items-center justify-center rounded-lg border-none text-[10px] text-red-200 hover:text-red-400 sm:block"
                     >
                       X
                     </button>

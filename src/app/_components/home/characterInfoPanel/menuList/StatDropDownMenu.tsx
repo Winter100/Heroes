@@ -31,13 +31,13 @@ const StatDropDownMenu = () => {
   }, [setInitialTitleList]);
 
   return (
-    <div className="inline-block h-full w-20" ref={outSideRef}>
+    <div className="inline-block h-full w-12 sm:w-20" ref={outSideRef}>
       <Button
         onClick={() => setView((pre) => !pre)}
         className="flex h-full w-full items-center justify-center gap-1"
       >
         <CiFilter className="text-lg" />
-        <span>필터</span>
+        <span className="hidden sm:block">필터</span>
         <BottomArrow />
       </Button>
       <div

@@ -79,6 +79,7 @@ export const usePreviewStore = create<State & Action>((set) => {
           beforeStats: [],
           totalPriceItem: [],
           previewAllStats: [],
+          StatDifference: [],
         };
       });
     },

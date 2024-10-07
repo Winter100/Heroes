@@ -8,17 +8,27 @@ import InfusionsModal from "./InfusionsModal";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { PreviewModalProps } from "@/app/_type/previewType";
 
+// const overlay = {
+//   backgroundColor: "rgba(0,0,0,0.85)",
+// };
+
+// const content = {
+//   width: "1050px",
+//   height: "900px",
+//   margin: "auto",
+//   zIndex: 100,
+//   border: "1px solid gray",
+//   backgroundColor: "rgb(20,21,23)",
+// };
+
 const overlay = {
   backgroundColor: "rgba(0,0,0,0.85)",
 };
 
 const content = {
-  width: "1050px",
-  height: "900px",
-  margin: "auto",
-  zIndex: 100,
-  border: "1px solid gray",
-  backgroundColor: "rgb(20,21,23)",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 };
 
 const PreviewModal = ({
@@ -30,7 +40,6 @@ const PreviewModal = ({
   before,
   enchantList,
 }: PreviewModalProps) => {
-  const [openModal, setOpenModal] = useState(false);
   const setAfterStats = usePreviewStore((state) => state.setAfterStats);
   const beforeStats = usePreviewStore((state) => state.setBeforeStats);
 
@@ -64,13 +73,6 @@ const PreviewModal = ({
 
   return (
     <div className="h-full w-full">
-      <button
-        className="flex h-full w-full flex-row items-center justify-center"
-        onClick={() => setOpenModal((pre) => !pre)}
-      >
-        {selectedName ? selectedName : ""}
-        <BottomArrow />
-      </button>
       {previewName === "infusions" ? (
         <InfusionsModal
           beforeName={beforeName}
@@ -81,8 +83,6 @@ const PreviewModal = ({
           options={options}
           overlay={overlay}
           content={content}
-          setOpenModal={setOpenModal}
-          openModal={openModal}
         />
       ) : (
         <EnchantModal
@@ -96,8 +96,6 @@ const PreviewModal = ({
           options={options}
           overlay={overlay}
           content={content}
-          setOpenModal={setOpenModal}
-          openModal={openModal}
         />
       )}
     </div>
