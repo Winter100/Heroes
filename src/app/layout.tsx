@@ -75,7 +75,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className="dark">
       <GoogleAnalytics />
-      <body className={`${inter.className} h-dvh bg-background text-fontColor`}>
+      <body
+        className={`${inter.className} h-full bg-background text-fontColor`}
+      >
         {children}
       </body>
     </html>
