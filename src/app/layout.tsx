@@ -8,10 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   applicationName: "망디",
-  title: {
-    template: "%s - 망디",
-    default: "망디",
-  },
+  title: "망디",
   keywords: [
     "마비노기 영웅전",
     "마영전",
@@ -30,19 +27,16 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "망디" }, { name: "망디", url: "https://heroes-dev.com/" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
   openGraph: {
-    title: {
-      template: "%s - 망디",
-      default: "망디",
-    },
+    title: "망디",
     description:
       "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
     type: "website",
     images: [
       {
-        url: "/meta2.png",
+        url: "/bg.jpg",
         width: 1200,
         height: 630,
         alt: "이미지",
@@ -50,15 +44,12 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: {
-      template: "%s - 망디",
-      default: "망디",
-    },
+    title: "망디",
     description:
       "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
     images: [
       {
-        url: "/meta2.png",
+        url: "/bg.jpg",
         width: 1200,
         height: 630,
         alt: "이미지",
