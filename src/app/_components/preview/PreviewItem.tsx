@@ -106,22 +106,25 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
       : item.item_option?.suffix_enchant_preset_2;
 
   return (
-    <Row className="h-full flex-1 gap-2 rounded-lg text-sm text-white">
-      <BeforeAndAfter>
+    <Row className="flex h-full w-full items-center gap-2 text-sm">
+      <BeforeAndAfter className="w-10 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
         {/* <BeforeAndAfter.Title>아이템 이름</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before>
+          <BeforeAndAfter.Before className="items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40">
             {itemName.level} {itemName.name}
           </BeforeAndAfter.Before>
         </BeforeAndAfter.Content>
       </BeforeAndAfter>
-      <BeforeAndAfter>
+
+      <BeforeAndAfter className="flex-1">
         {/* <BeforeAndAfter.Title>정령</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before>{preInfusions}</BeforeAndAfter.Before>
+          <BeforeAndAfter.Before className="flex items-center justify-center">
+            {preInfusions}
+          </BeforeAndAfter.Before>
 
           <BeforeAndAfter.After
-            className={`${infusions?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-blue-300 sm:text-xs`}
+            className={`${infusions?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
             {infusions?.length >= 1 && (
               <PreviewModal
@@ -137,12 +140,15 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
         </BeforeAndAfter.Content>
       </BeforeAndAfter>
 
-      <BeforeAndAfter>
+      <BeforeAndAfter className="flex-1">
         {/* <BeforeAndAfter.Title>접두</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before>{beforePrefixName}</BeforeAndAfter.Before>
+          <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
+            {/* <BeforeAndAfter.Before className="items-center overflow-hidden text-ellipsis whitespace-nowrap sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40"> */}
+            {beforePrefixName}
+          </BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${sortedPrefixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-blue-300 sm:text-xs`}
+            className={`${sortedPrefixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
             {sortedPrefixEnchant?.length >= 1 && (
               <PreviewModal
@@ -158,12 +164,16 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
           </BeforeAndAfter.After>
         </BeforeAndAfter.Content>
       </BeforeAndAfter>
-      <BeforeAndAfter>
+
+      <BeforeAndAfter className="flex-1">
         {/* <BeforeAndAfter.Title>접미</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before>{beforeSuffixName}</BeforeAndAfter.Before>
+          <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
+            {/* <BeforeAndAfter.Before className="flex w-full items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap"> */}
+            {beforeSuffixName}
+          </BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${sortedSuffixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-blue-300 sm:text-xs`}
+            className={`${sortedSuffixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
             {sortedSuffixEnchant?.length >= 1 && (
               <PreviewModal

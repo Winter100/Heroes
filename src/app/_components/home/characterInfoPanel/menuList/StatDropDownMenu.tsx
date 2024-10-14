@@ -41,21 +41,23 @@ const StatDropDownMenu = () => {
         <BottomArrow />
       </Button>
       <div
-        className={`absolute z-10 mt-1 flex w-20 flex-col rounded-lg bg-black transition-all duration-300 ease-in-out ${view ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-[10px] opacity-0"} `}
+        className={`absolute z-10 mt-1 flex w-20 flex-col items-center justify-center bg-black transition-all duration-300 ease-in-out ${view ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-[10px] opacity-0"} `}
       >
         {rankTitleList?.map((t, i) => (
-          <button
-            draggable={t.isView}
-            key={t.stat_name}
-            onClick={() => toggleView(t.stat_name)}
-            onDragStart={(e) => dragStart(e, i)}
-            onDragOver={dragOver}
-            onDragEnter={() => dragEnter(i)}
-            onDragEnd={() => dragEnd()}
-            className={`h-8 rounded-lg hover:bg-zinc-700 ${t.isView === true ? "text-blue-300" : "text-red-300"}`}
-          >
-            {t.stat_name}
-          </button>
+          <div key={t.stat_name}>
+            <button
+              draggable={t.isView}
+              key={t.stat_name}
+              onClick={() => toggleView(t.stat_name)}
+              onDragStart={(e) => dragStart(e, i)}
+              onDragOver={dragOver}
+              onDragEnter={() => dragEnter(i)}
+              onDragEnd={() => dragEnd()}
+              className={`h-8 w-24 rounded-lg hover:text-white ${t.isView === true ? "text-blue-300" : "text-red-300"}`}
+            >
+              {t.stat_name}
+            </button>
+          </div>
         ))}
       </div>
     </div>

@@ -28,7 +28,13 @@ const LimitStat = (props: {
     return "0";
   });
 
-  const stat = limitCalculator(selectedBoss, statName, statValue, limitValue);
+  const stat = limitCalculator(
+    selectedBoss,
+    "상한",
+    statName,
+    statValue,
+    limitValue,
+  );
 
   return (
     <>

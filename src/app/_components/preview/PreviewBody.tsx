@@ -6,6 +6,8 @@ import PreviewItem from "./PreviewItem";
 import { useEnchant } from "@/app/_hooks/useEnchant/useEnchant";
 import AvgPrice from "./AvgPrice";
 import { useStats } from "@/app/_hooks/useStats/useStats";
+import Column from "../layout/Column";
+import OneTable from "./table/OneTable";
 
 const PreviewBody = ({ name }: { name: string }) => {
   const { bag, isLoading } = useEquipment(name);
@@ -22,9 +24,9 @@ const PreviewBody = ({ name }: { name: string }) => {
   }
 
   return (
-    <ul className="flex h-full w-full flex-col rounded-lg p-2">
+    <ul className="h-full w-full p-2">
       {bag?.map((item) => (
-        <li className="flex-1" key={item?.item_equipment_slot_name}>
+        <li className="h-12 sm:h-14" key={item?.item_equipment_slot_name}>
           <PreviewItem
             enchant={enchantList ?? []}
             item={item}
@@ -33,6 +35,9 @@ const PreviewBody = ({ name }: { name: string }) => {
         </li>
       ))}
       <AvgPrice name={name} />
+      <Column className="flex items-center justify-center text-white">
+        <OneTable />
+      </Column>
     </ul>
   );
 };

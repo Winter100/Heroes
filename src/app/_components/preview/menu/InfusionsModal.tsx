@@ -1,5 +1,3 @@
-import Row from "../../layout/Row";
-import Table from "../table/Table";
 import Column from "../../layout/Column";
 import InfusionsItem from "../components/InfusionsItem";
 
@@ -8,6 +6,7 @@ import { groupByStatName } from "../utils/groupByStatName";
 import { Button, Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { useState } from "react";
 import BottomArrow from "../../common/BottomArrow";
+import OneTable from "../table/OneTable";
 
 const InfusionsModal = ({
   beforeName,
@@ -25,7 +24,8 @@ const InfusionsModal = ({
         className="flex h-full w-full items-center justify-center"
         onClick={() => setOpen((pre) => !pre)}
       >
-        {selectedValue ? selectedValue : ""}
+        <p>{selectedValue ? selectedValue : ""}</p>
+
         <BottomArrow />
       </Button>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -38,7 +38,7 @@ const InfusionsModal = ({
           <div className="flex min-h-full items-end justify-center p-2 text-center sm:items-center">
             <DialogPanel
               transition
-              className="relative mx-auto w-full transform overflow-hidden rounded-lg border bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+              className="relative mx-auto w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
             >
               <div className="bg-backgroundOne px-1 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <Column className="flex h-full justify-around">
@@ -91,10 +91,7 @@ const InfusionsModal = ({
                         ))}
                     </ul>
                   </div>
-
-                  <Row className="h-20 rounded-lg border bg-zinc-800 text-white">
-                    <Table />
-                  </Row>
+                  <OneTable />
                 </Column>
 
                 <div className="my-2 flex items-center justify-center md:hidden">

@@ -10,11 +10,11 @@ import Row from "@/app/_components/layout/Row";
 import Button from "@/app/_components/common/Button";
 
 const CharacterDetailInfo = () => {
-  const [moreView, setMoreView] = useState(true);
+  const [moreView, setMoreView] = useState(false);
 
   return (
     <Column className="h-full w-full p-2">
-      <Row className="my-1 items-center justify-center">
+      <Row className="my-1 h-5 items-center justify-center">
         <Button
           onClick={() => setMoreView((pre) => !pre)}
           className="flex h-full w-8 items-center justify-center"

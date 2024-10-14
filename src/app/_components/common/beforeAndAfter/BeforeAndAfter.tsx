@@ -7,11 +7,11 @@ import BeforeAndAfterContent from "./BeforeAndAfterContent";
 
 interface BeforeAndAfter extends ComponentProps<"div"> {}
 
-// 주스탠드로 상태 관리하기??
 const BeforeAndAfter = ({ children, className, ...props }: BeforeAndAfter) => {
   return (
     <div
-      className={`flex h-full w-full flex-1 flex-col items-center justify-center text-xs ${className}`}
+      // className={`text-xs ${className}`}
+      className={`flex h-full flex-col items-center justify-center text-xs ${className}`}
       {...props}
     >
       {children}
