@@ -9,11 +9,8 @@ const ResultModal = ({ name }: { name: string }) => {
 
   return (
     <>
-      <Button
-        className="w-12 text-[9px] sm:text-xs"
-        onClick={() => setOpen((pre) => !pre)}
-      >
-        능력치
+      <Button className="w-12 text-xs" onClick={() => setOpen((pre) => !pre)}>
+        스텟
       </Button>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
         <DialogBackdrop
@@ -25,7 +22,7 @@ const ResultModal = ({ name }: { name: string }) => {
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:p-0 md:items-center">
             <DialogPanel
               transition
-              className="relative mx-auto mb-6 transform overflow-hidden rounded-lg border border-borderColor bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+              className="relative mx-auto mb-6 transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
             >
               <div className="bg-backgroundOne px-4 pb-4 pt-5 md:p-6 md:pb-4">
                 {name ? (

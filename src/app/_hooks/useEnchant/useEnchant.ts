@@ -7,7 +7,6 @@ export const useEnchant = (name: string) => {
     enabled: !!name,
     queryKey: ["enchant"],
     queryFn: () => getEnchantPrice(),
-    staleTime: 1000 * 60 * 60,
     gcTime: 1000 * 60 * 60,
   });
 

@@ -66,6 +66,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="dark">
       <GoogleAnalytics />
+
       <body
         className={`${inter.className} h-full bg-background text-fontColor`}
       >

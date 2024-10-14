@@ -10,7 +10,7 @@ const link = [
 const Header = () => {
   const pathName = usePathname();
   return (
-    <header className="flex h-12 w-full items-center justify-center rounded-lg bg-backgroundOne shadow-sm">
+    <header className="flex h-10 w-full items-center justify-center rounded-lg bg-backgroundOne shadow-sm">
       <nav className="flex h-full w-full max-w-7xl flex-row">
         <div className="flex w-full flex-1 items-center justify-center gap-10 font-sans text-xs">
           {link.map((l) => (

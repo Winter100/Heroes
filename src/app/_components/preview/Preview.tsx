@@ -1,14 +1,22 @@
 "use client";
 import { useEffect } from "react";
+
 import PreviewHeader from "./PreviewHeader";
 import PreviewBody from "./PreviewBody";
 import Column from "../layout/Column";
-import Row from "../layout/Row";
-import Table from "./table/Table";
 import { usePreviewStore } from "@/app/_store/previewStore";
+import { useRaidStore } from "@/app/_store/raidStore";
 
 const Preview = ({ name }: { name: string }) => {
   const reset = usePreviewStore((state) => state.reset);
+  const resetRaid = useRaidStore((state) => state.resetRaid);
+
+  useEffect(() => {
+    resetRaid();
+    return () => {
+      resetRaid();
+    };
+  }, []);
 
   useEffect(() => {
     reset();
@@ -16,20 +24,13 @@ const Preview = ({ name }: { name: string }) => {
 
   return (
     <>
-      <Column className="h-full w-full gap-1 rounded-lg">
-        <Row className="h-full w-full gap-1">
-          <Column className="h-full w-full gap-1 text-xs">
-            {name && (
-              <>
-                <PreviewHeader />
-                <PreviewBody name={name} />
-                <Row className="h-20 rounded-lg border border-borderColor p-2 text-white">
-                  <Table />
-                </Row>
-              </>
-            )}
-          </Column>
-        </Row>
+      <Column className="h-full w-full gap-1 rounded-lg text-fontColor">
+        {name && (
+          <>
+            <PreviewHeader />
+            <PreviewBody name={name} />
+          </>
+        )}
       </Column>
     </>
   );

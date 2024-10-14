@@ -9,7 +9,8 @@ const BeforeAndAfterContent = ({
 }: BeforeAndAfterContentProps) => {
   return (
     <div
-      className={`flex min-h-6 w-full items-center justify-center ${className}`}
+      // className={`flex w-full items-center justify-center ${className}`}
+      className={`flex w-full items-center justify-center ${className}`}
       {...props}
     >
       {children}
