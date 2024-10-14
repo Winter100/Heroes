@@ -14,8 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <TanstackProvider>
         <ToastProvider>
           <Header />
-
-          <MainSection className="flex h-full w-full flex-1 items-center justify-center bg-background">
+          <MainSection className="flex w-full flex-col items-center justify-center bg-background">
             <Aside className="h-full flex-1"></Aside>
             <Column className="h-full w-full max-w-6xl gap-1">
               {children}

@@ -68,6 +68,7 @@ const EnchantItem = ({
       onClick={() => onClick(avgPrice)}
       onDoubleClick={() => setOpenModal(false)}
       className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
+      // className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
     >
       <Row className="h-8 items-center gap-2">
         <div className="relative h-full w-8">

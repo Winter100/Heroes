@@ -69,7 +69,7 @@ const AbilityRankTbody = () => {
           onDragEnd={dragEnd}
           onDragOver={dragOver}
           onDragEnter={() => dragEnter(i)}
-          className={`flex flex-1 ${selectedCharacter?.name === c?.name ? "text-blue-300" : ""} w-full items-center justify-center rounded-lg hover:cursor-pointer hover:bg-zinc-600`}
+          className={`flex flex-1 ${selectedCharacter?.name === c?.name ? "text-blue-300" : ""} min-h-10 w-full items-center justify-center rounded-lg hover:cursor-pointer hover:bg-zinc-600`}
         >
           {/* 체크박스 */}
           <td className="flex h-full w-12 items-center justify-center">
