@@ -35,10 +35,11 @@ const InfusionsModal = ({
         />
 
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-end justify-center p-2 text-center sm:items-center">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:p-0 md:items-center">
             <DialogPanel
               transition
-              className="relative mx-auto w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+              className="relative mx-2 mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:max-w-[800px]"
+              // className="relative mx-auto w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
             >
               <div className="bg-backgroundOne px-1 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <Column className="flex h-full justify-around">
@@ -91,18 +92,18 @@ const InfusionsModal = ({
                         ))}
                     </ul>
                   </div>
-                  <OneTable />
                 </Column>
 
-                <div className="my-2 flex items-center justify-center md:hidden">
+                <div className="my-2 flex items-center justify-center">
                   <button
                     onClick={() => setOpen(false)}
-                    className="m-auto flex h-10 w-20 items-center justify-center rounded-lg border border-borderColor text-center text-sm text-white hover:text-blue-300 sm:text-end"
+                    className="m-auto flex h-10 w-16 items-center justify-center rounded-lg border border-borderColor text-center text-sm text-white hover:text-blue-300 sm:text-end"
                   >
                     확인
                   </button>
                 </div>
               </div>
+              <OneTable />
             </DialogPanel>
           </div>
         </div>

@@ -363,37 +363,37 @@ export const prefix_enchant_options = [
     rank: "8",
     stat_name: "반짝이는",
     stat_value: [
-      { stat_name: "최대 생명력", stat_value: "-280" },
-      { stat_name: "크리티컬 저항", stat_value: "-3" },
       { stat_name: "밸런스", stat_value: "2" },
+      { stat_name: "크리티컬 저항", stat_value: "-3" },
+      { stat_name: "최대 생명력", stat_value: "-280" },
     ],
   },
   {
     rank: "7",
     stat_name: "죽은자의",
     stat_value: [
+      { stat_name: "밸런스", stat_value: "5" },
+      { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "최대 생명력", stat_value: "-450" },
       { stat_name: "힘", stat_value: "-40" },
-      { stat_name: "크리티컬 저항", stat_value: "5" },
-      { stat_name: "밸런스", stat_value: "5" },
     ],
   },
   {
     rank: "5",
     stat_name: "추적자의",
     stat_value: [
-      { stat_name: "최대 생명력", stat_value: "-450" },
-      { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "7" },
+      { stat_name: "크리티컬 저항", stat_value: "5" },
+      { stat_name: "최대 생명력", stat_value: "-450" },
     ],
   },
   {
     rank: "4",
     stat_name: "대적자의",
     stat_value: [
-      { stat_name: "최대 생명력", stat_value: "-450" },
-      { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "밸런스", stat_value: "9" },
+      { stat_name: "크리티컬 저항", stat_value: "5" },
+      { stat_name: "최대 생명력", stat_value: "-450" },
     ],
   },
   {
@@ -409,32 +409,32 @@ export const prefix_enchant_options = [
     rank: "7",
     stat_name: "은은한",
     stat_value: [
-      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬", stat_value: "2" },
       { stat_name: "크리티컬 저항", stat_value: "-3" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
     ],
   },
   {
     rank: "5",
     stat_name: "강렬한",
     stat_value: [
-      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬", stat_value: "3" },
       { stat_name: "크리티컬 저항", stat_value: "-3" },
       { stat_name: "밸런스", stat_value: "1" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
     ],
   },
   {
     rank: "4",
     stat_name: "고대의",
     stat_value: [
-      { stat_name: "최대 스태미나", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬", stat_value: "4" },
       { stat_name: "크리티컬 저항", stat_value: "-3" },
       { stat_name: "밸런스", stat_value: "2" },
+      { stat_name: "최대 스태미나", stat_value: "5" },
     ],
   },
   {
@@ -482,8 +482,8 @@ export const prefix_enchant_options = [
     stat_value: [
       { stat_name: "공격력", stat_value: "-280" },
       { stat_name: "마법공격력", stat_value: "-280" },
-      { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "공격속도", stat_value: "3" },
+      { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "일정 확률로 SP 회복", stat_value: "125" },
     ],
@@ -507,8 +507,8 @@ export const prefix_enchant_options = [
     stat_value: [
       { stat_name: "공격력", stat_value: "-280" },
       { stat_name: "마법공격력", stat_value: "-280" },
-      { stat_name: "밸런스", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "4" },
+      { stat_name: "밸런스", stat_value: "5" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "매초 마나 회복", stat_value: "2" },
     ],
@@ -519,8 +519,8 @@ export const prefix_enchant_options = [
     stat_value: [
       { stat_name: "공격력", stat_value: "-280" },
       { stat_name: "마법공격력", stat_value: "-280" },
-      { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "공격속도", stat_value: "3" },
+      { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "매초 마나 회복", stat_value: "2" },
     ],
@@ -544,8 +544,8 @@ export const prefix_enchant_options = [
     stat_value: [
       { stat_name: "공격력", stat_value: "-280" },
       { stat_name: "마법공격력", stat_value: "-280" },
-      { stat_name: "밸런스", stat_value: "5" },
       { stat_name: "공격속도", stat_value: "4" },
+      { stat_name: "밸런스", stat_value: "5" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "높은 확률로 SP 회복", stat_value: "125" },
     ],
@@ -556,8 +556,8 @@ export const prefix_enchant_options = [
     stat_value: [
       { stat_name: "공격력", stat_value: "-280" },
       { stat_name: "마법공격력", stat_value: "-280" },
-      { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "공격속도", stat_value: "3" },
+      { stat_name: "밸런스", stat_value: "4" },
       { stat_name: "고유 그룹", stat_value: "자원 회복" },
       { stat_name: "높은 확률로 SP 회복", stat_value: "125" },
     ],

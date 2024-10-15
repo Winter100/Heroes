@@ -11,7 +11,7 @@ const AvgPrice = ({ name }: { name: string }) => {
   return (
     <>
       <Row
-        className={`${sumAvg !== 0 ? "border-t" : ""} flex min-h-6 w-full items-center justify-end border-borderColor pt-2`}
+        className={`${sumAvg !== 0 ? "border-t" : ""} flex min-h-6 w-full items-center justify-end border-borderColor py-2`}
       >
         <Row className="flex w-36 items-center justify-center text-[11px] text-white">
           {sumAvg !== 0 &&

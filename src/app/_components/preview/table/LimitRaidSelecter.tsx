@@ -27,9 +27,6 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   return (
     <Column className="h-full w-full gap-4">
       <>
-        <div className="block sm:hidden">
-          <button onClick={() => setOpen(false)}>X</button>
-        </div>
         <div className="flex h-8 items-center justify-center gap-4 text-xs">
           <div
             className={` ${
@@ -55,28 +52,24 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
               <h2>{item?.raid_name}</h2>
             </div>
             <div className="flex flex-col gap-4">
-              {item.monsters.map((raid) => (
-                <div
-                  key={raid.name}
-                  className="flex items-center justify-center gap-1"
+              {item?.monsters.map((raid) => (
+                <button
+                  onClick={() => onClick(item?.raid_name, raid.name, entry)}
+                  key={raid?.name}
+                  className={`flex w-full items-center justify-center gap-2 hover:text-blue-300 ${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? "text-blue-300" : ""} `}
                 >
                   <Image
                     src={raid?.image ?? ""}
                     width={40}
                     height={24}
-                    alt={raid.name}
+                    alt={raid?.name}
                     style={{ width: "40px", height: "24px" }}
                   />
 
-                  <p className="flex h-full flex-1 items-center text-center text-xs text-fontColor">
-                    <button
-                      onClick={() => onClick(item?.raid_name, raid.name, entry)}
-                      className={`${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? "text-blue-300" : ""} hover:text-blue-300`}
-                    >
-                      {raid.name}
-                    </button>
-                  </p>
-                </div>
+                  <div className="flex h-full flex-1 items-center text-xs">
+                    {raid.name}
+                  </div>
+                </button>
               ))}
             </div>
           </div>

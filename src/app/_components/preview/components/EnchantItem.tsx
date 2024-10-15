@@ -67,25 +67,33 @@ const EnchantItem = ({
     <Column
       onClick={() => onClick(avgPrice)}
       onDoubleClick={() => setOpenModal(false)}
-      className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
+      className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-1 font-mono text-xs`}
       // className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
     >
       <Row className="h-8 items-center gap-2">
-        <div className="relative h-full w-8">
-          <Image className="object-cover" src={src} fill alt="인챈트" />
-        </div>
+        <Image
+          width={32}
+          height={32}
+          style={{ width: "32px", height: "32px" }}
+          className="rounded-md object-cover"
+          src={src}
+          alt="인챈트"
+        />
+
         <div className="h-full flex-1">
-          <Row className="flex h-full gap-2">
-            <p className="flex h-full w-4 items-center justify-center text-[11px]">
+          <Row className="flex h-full gap-1">
+            <p className="hidden h-full items-center justify-center text-[10px] lg:flex">
               ({rank})
             </p>
-            <p className="flex items-center justify-center text-[11px]">
-              {stat_name} 인챈트 스크롤
-            </p>
+            <span className="flex items-center justify-center gap-1 text-[11px]">
+              <p>{stat_name}</p>
+              <p className="hidden lg:flex">인챈트 스크롤</p>
+            </span>
           </Row>
         </div>
       </Row>
-      <Column className="min-h-24 flex-1 rounded-md border border-zinc-400 p-1 text-[11px]">
+      <Column className="min-h-24 flex-1 rounded-md border border-borderColor p-1 text-[11px]">
+        {/* <Column className="min-h-24 flex-1 rounded-md border border-zinc-400 p-1 text-[11px]"> */}
         {stat_value.map((option) => (
           <div
             className="flex items-center px-1"
@@ -100,12 +108,12 @@ const EnchantItem = ({
       </Column>
       <Row className="flex h-5 items-center justify-center gap-1 text-[11px]">
         {avgPrice !== 0 ? (
-          <>
-            <Row className="items-center justify-center">평균 거래 가격:</Row>
-            <Row className="items-center justify-center">
+          <Row>
+            <p className="items-center justify-center">평균 거래가:</p>
+            <p className="items-center justify-center">
               {avgPrice?.toLocaleString()}
-            </Row>
-          </>
+            </p>
+          </Row>
         ) : (
           <Row className="items-center justify-center">
             최근 거래가 없습니다

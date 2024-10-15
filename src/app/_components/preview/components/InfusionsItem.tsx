@@ -17,9 +17,15 @@ const InfusionsItem = ({
       className={`${selected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
     >
       <Row className="h-8 items-center gap-2">
-        <div className="relative h-full w-8">
-          <Image className="object-cover" src={src} fill alt="정령석" />
-        </div>
+        <Image
+          width={32}
+          height={32}
+          style={{ width: "32px", height: "32px" }}
+          className="rounded-md object-cover"
+          src={src}
+          alt="정령석"
+        />
+
         <div className="h-full flex-1">
           <Row className="flex h-full gap-2">
             <p className="flex items-center justify-center text-[11px]">
@@ -28,7 +34,8 @@ const InfusionsItem = ({
           </Row>
         </div>
       </Row>
-      <Column className="flex-1 rounded-md border border-zinc-400 p-1 text-[11px]">
+      <Column className="min-h-24 flex-1 rounded-md border border-borderColor p-1 text-[11px]">
+        {/* <Column className="flex-1 rounded-md border border-zinc-400 p-1 text-[11px]"> */}
         {stat_value.map((option) => (
           <div
             className="flex items-center px-1"

@@ -14,7 +14,7 @@ const CharacterInfoBox = ({
 }: CharacterInfoBoxProps) => {
   return (
     <div
-      className={`flex w-full items-center justify-center gap-4 text-white ${className}`}
+      className={`flex w-full items-center justify-center gap-4 ${className}`}
       {...props}
     >
       {/* <div className="m-auto h-full rounded-lg">캐릭터 이미지</div> */}
@@ -24,10 +24,10 @@ const CharacterInfoBox = ({
             key={item.stat_name}
             className="flex w-full items-center justify-center gap-2"
           >
-            <p className="flex flex-1 items-center justify-center sm:min-w-32">
+            <p className="flex flex-1 items-center justify-center">
               {item.stat_name}
             </p>
-            <p className="flex w-full flex-1 items-center justify-center">
+            <p className="flex flex-1 items-center justify-center">
               {item.stat_value}
             </p>
           </div>
