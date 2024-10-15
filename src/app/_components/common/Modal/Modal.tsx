@@ -1,6 +1,7 @@
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 import ModalOpenBtn from "./ModalOpenBtn";
 import ModalBody from "./ModalBody";
+import ModalCloseBtn from "./ModalCloseBtn";
 
 interface ModalProps {
   open: boolean;
@@ -26,4 +27,5 @@ const Modal = ({ children, open, setOpen }: ModalProps) => {
 export default Modal;
 
 Modal.Open = ModalOpenBtn;
+Modal.Close = ModalCloseBtn;
 Modal.Body = ModalBody;

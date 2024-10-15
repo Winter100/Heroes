@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+
 import Modal from "../../common/Modal/Modal";
 import { Button } from "@headlessui/react";
 import { useRaidStore } from "@/app/_store/raidStore";
@@ -21,15 +23,41 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
           className="flex h-full w-full items-center justify-center text-xs"
           onClick={() => setOpen((pre) => !pre)}
         >
-          {ButtonTitle} <BottomArrow />
+          <div className="flex w-full flex-col items-center justify-center">
+            {isAllBtn && (
+              <p className="text-[10px] text-gray-400">{raidString.entry}</p>
+            )}
+
+            <div className="flex flex-row">
+              <div className="flex w-6 items-center justify-center">
+                <Image
+                  src={raidString.image}
+                  width={16}
+                  height={13}
+                  alt={raidString.monsterName}
+                  style={{ width: "16px", height: "13px" }}
+                />
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <div className="flex w-full items-center justify-center">
+                  {ButtonTitle} <BottomArrow />
+                </div>
+              </div>
+            </div>
+          </div>
         </Button>
       </Modal.Open>
       <Modal.Body>
-        {isAllBtn ? (
-          <RaidSelecter setOpen={setOpen} />
-        ) : (
-          <LimitRaidSelecter setOpen={setOpen} />
-        )}
+        <>
+          <div className="block sm:hidden">
+            <button onClick={() => setOpen(false)}>X</button>
+          </div>
+          {isAllBtn ? (
+            <RaidSelecter setOpen={setOpen} />
+          ) : (
+            <LimitRaidSelecter setOpen={setOpen} />
+          )}
+        </>
       </Modal.Body>
     </Modal>
   );

@@ -4,12 +4,10 @@ import AbilityRankList from "@/app/_components/home/characterInfoPanel/AbilityRa
 
 const CharacterInfoPanel = () => {
   return (
-    <div className="h-full w-full gap-1 p-2 text-xs text-gray-300">
-      <Column className="h-full w-full gap-1">
-        <AbilityRankHeader />
-        <AbilityRankList />
-      </Column>
-    </div>
+    <Column className="h-full w-full gap-1 text-xs">
+      <AbilityRankHeader />
+      <AbilityRankList />
+    </Column>
   );
 };
 

@@ -54,7 +54,9 @@ const AbilityRankTbody = () => {
   }, [addCharacter]);
 
   return (
-    <tbody className="grid h-full w-full grid-rows-8 rounded-lg border border-borderColor text-[10px] sm:text-xs">
+    <tbody
+      className={`${characters.length >= 1 ? "border" : "border-none"} grid h-full w-full grid-rows-8 rounded-lg border-borderColor text-[10px] sm:text-xs`}
+    >
       {filteredCharacters.slice(0, 8).map((c, i) => (
         <tr
           key={uuidv4()}

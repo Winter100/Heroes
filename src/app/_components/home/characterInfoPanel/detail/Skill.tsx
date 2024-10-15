@@ -8,11 +8,11 @@ const Skill = ({ ...props }: SkillProps) => {
   return (
     <ul
       {...props}
-      className="grid h-full grid-cols-2 gap-1 p-2 text-[8px] text-white sm:text-xs"
+      className="grid h-full grid-cols-2 gap-1 border border-red-600 p-2 text-[8px] text-white sm:text-xs"
     >
       {skill?.map((s) => (
         <li
-          className="flex flex-1 flex-col items-center justify-center gap-1 truncate rounded-lg border border-gray-600 hover:text-blue-300 sm:flex-col md:flex-1"
+          className="flex flex-1 flex-col items-center justify-center gap-1 truncate rounded-lg border border-borderColor hover:text-blue-300 sm:flex-col md:flex-1"
           key={s.skill_name}
         >
           <p className="flex items-center justify-center">{s.skill_name}</p>

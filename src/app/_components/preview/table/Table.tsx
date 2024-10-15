@@ -1,4 +1,5 @@
 "use client";
+
 import { previewInitialTitleList } from "@/app/_constant/rankTitleList";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { limitCalculator } from "../../home/characterInfoPanel/utils/limitCalculator";
@@ -30,10 +31,10 @@ const Table = ({ boss, bossEntry }: TableProps) => {
       <caption className="hidden">미리보기</caption>
       <thead className="flex items-center justify-center">
         <tr className="flex w-full items-center justify-center">
-          {previewInitialTitleList.map((item) => (
+          {previewInitialTitleList?.map((item) => (
             <th
               className="flex flex-1 items-center justify-center text-[10px] font-normal"
-              key={item.stat_name}
+              key={item?.stat_name}
             >
               {item.stat_name}
             </th>
@@ -42,10 +43,10 @@ const Table = ({ boss, bossEntry }: TableProps) => {
       </thead>
       <tbody className="flex h-full items-center justify-center text-xs">
         <tr className="flex h-full w-full items-center justify-center">
-          {filteredStats.map((item) => (
+          {filteredStats?.map((item) => (
             <td
               className="flex w-full flex-1 flex-col items-center justify-center"
-              key={item.stat_name}
+              key={item?.stat_name + item?.stat_value}
             >
               <p className="flex items-center justify-center">
                 {item.stat_value}
