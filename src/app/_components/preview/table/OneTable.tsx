@@ -1,4 +1,5 @@
 "use client";
+
 import RaidSelecterModal from "../menu/RaidSelecterModal";
 
 import { previewInitialTitleList } from "@/app/_constant/rankTitleList";
@@ -26,12 +27,9 @@ const OneTable = () => {
     (i) => i.stat_name === "해제",
   )?.stat_value;
 
-  const entry = raidString.entry === "빠른전투" ? "빠전 컷" : raidString.entry;
-  const title = raidString.monsterName;
-
   const boss = filterRaidList(raidString.entry)
     .find((raid) => {
-      return raid.monsters.some(
+      return raid?.monsters.some(
         (monster) => monster.name === raidString.monsterName,
       );
     })
@@ -40,16 +38,9 @@ const OneTable = () => {
     ) as MonstersType;
 
   return (
-    <div className="relative w-full border-t border-borderColor pt-2 text-white">
+    <div className="relative w-full border-t border-borderColor pt-1 text-white">
       <RaidSelecterModal isAllBtn={true} />
 
-      {title && (
-        <span
-          className={`${entry === "빠전 컷" ? "bg-black" : "bg-backgroundOne"} absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full px-2 py-1 text-xs text-white`}
-        >
-          {entry}
-        </span>
-      )}
       <table className="flex h-full w-full table-fixed flex-col gap-1 py-2 text-[9px] md:text-xs">
         <caption className="hidden">미리보기</caption>
         <thead>
@@ -71,7 +62,7 @@ const OneTable = () => {
             {filteredStats.map((item) => (
               <td
                 className="flex w-full flex-1 flex-col items-center justify-center text-[9px] md:text-xs"
-                key={item.stat_name}
+                key={item.stat_name + item.stat_value}
               >
                 <p className="flex items-center justify-center">
                   {item.stat_value}

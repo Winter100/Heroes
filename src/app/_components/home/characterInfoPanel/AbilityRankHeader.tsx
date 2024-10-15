@@ -14,7 +14,7 @@ const AbilityRankHeader = () => {
   return (
     <Row className="flex h-10 flex-row items-center gap-1 py-1 md:grid md:grid-cols-3">
       <Row className="flex h-full items-center justify-center gap-2">
-        <div className="h-full w-40 rounded-lg border border-borderColor transition ease-in-out hover:border-blue-300">
+        <div className="flex h-full w-44 items-center justify-center rounded-lg border border-borderColor transition ease-in-out hover:border-blue-300">
           <RaidSelecterModal isAllBtn={false} />
         </div>
         <StatDropDownMenu />
@@ -30,7 +30,6 @@ const AbilityRankHeader = () => {
         />
         <ResetBtn />
       </Row>
-      <Row className="h-full w-12 md:hidden" />
     </Row>
   );
 };

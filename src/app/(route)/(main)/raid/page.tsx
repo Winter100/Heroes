@@ -1,15 +1,16 @@
 import CharacterInfoPanel from "./_components/CharacterInfoPanel";
-// import CharacterDetailInfo from "./_components/CharacterDetailInfo";
+import UserSkillAndEquipment from "@/app/_components/home/userDetailInfo/CharacterSkillAndEquipment";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center">
-      <div className="w-full">
+    <div className="h-full w-full flex-col">
+      <div className="h-full w-full p-2">
         <CharacterInfoPanel />
       </div>
-      {/* <div className="h-full w-full sm:min-h-[650px]">
-        <CharacterDetailInfo />
-      </div> */}
+      <div className="h-full w-full p-2">
+        <UserSkillAndEquipment />
+      </div>
     </div>
   );
-}
+};
+export default Home;

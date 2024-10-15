@@ -9,19 +9,20 @@ interface StatsProps extends ComponentProps<"div"> {
 const Stats = ({ stats, statDifference, className, ...props }: StatsProps) => {
   return (
     <div
-      className={`grid h-full w-full grid-cols-2 items-center justify-items-center text-white ${className}`}
+      className={`grid h-full w-full grid-cols-2 items-center justify-items-center ${className}`}
       {...props}
     >
       {stats?.map((stat) => (
         <div
           key={stat.stat_name}
-          className="flex w-full max-w-32 items-center justify-center"
+          className="flex min-h-10 w-full items-center justify-center sm:h-full"
+          // className="flex min-h-10 w-full max-w-32 items-center justify-center"
         >
-          <div className="flex flex-1">
-            <p className="flex-1 text-center sm:min-w-20">{stat.stat_name}</p>
+          <div className="flex flex-1 text-xs">
+            <p className="flex-1">{stat.stat_name}</p>
 
-            <div className="flex flex-1 flex-col items-center justify-center">
-              <p className="text-[10px] sm:text-xs">{stat.stat_value}</p>
+            <div className="flex min-w-12 items-center justify-center">
+              <p>{stat.stat_value}</p>
               {statDifference &&
                 (() => {
                   const statValue = Number(

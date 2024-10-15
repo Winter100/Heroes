@@ -42,10 +42,10 @@ export const limitCalculator = (
         );
         return Number(user_stat_value) - (Number(Mstat?.stat_value) - 3);
       }
-      case "방어력": {
-        const Mstat = 36000;
-        return Number(user_stat_value) - Number(Mstat);
-      }
+      // case "방어력": {
+      //   const Mstat = 36000;
+      //   return Number(user_stat_value) - Number(Mstat);
+      // }
 
       default:
         return null;

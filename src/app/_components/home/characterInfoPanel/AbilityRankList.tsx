@@ -7,7 +7,7 @@ const NoSSRAbilityRankTbody = dynamic(() => import("./AbilityRankTbody"), {
 
 const AbilityRankList = () => {
   return (
-    <table className="flex h-full w-full table-auto flex-col gap-1">
+    <table className="flex h-full w-full flex-1 table-auto flex-col gap-1">
       <caption className="hidden">캐릭터 리스트</caption>
       <AbilityRankThead />
       <NoSSRAbilityRankTbody />

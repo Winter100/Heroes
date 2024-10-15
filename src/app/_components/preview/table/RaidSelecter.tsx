@@ -6,7 +6,6 @@ import Column from "../../layout/Column";
 import Button from "../../common/Button";
 import { useRaidStore } from "@/app/_store/raidStore";
 import { filterRaidList } from "@/app/_utils/filterRaidList";
-
 const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   const [entry, setEntry] = useState<"빠른전투" | "상한">("빠른전투");
   const raidString = useRaidStore((state) => state.raidString);
@@ -31,9 +30,6 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   return (
     <Column className="h-full w-full gap-4">
       <>
-        <div className="block sm:hidden">
-          <button onClick={() => setOpen(false)}>X</button>
-        </div>
         <div className="flex h-8 items-center justify-center gap-4 text-xs">
           <div
             className={` ${
@@ -75,11 +71,13 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
             <div className="flex w-full items-center justify-center text-white">
               <h2>{item?.raid_name}</h2>
             </div>
-            <div className="flex flex-col gap-4">
-              {item.monsters.map((raid) => (
-                <div
-                  key={raid.name}
-                  className="flex items-center justify-center gap-1"
+            <div className="flex flex-col gap-4 sm:grid sm:grid-rows-5">
+              {/* <div className="flex flex-col gap-4"> */}
+              {item?.monsters.map((raid) => (
+                <button
+                  onClick={() => onClick(item?.raid_name, raid.name, entry)}
+                  key={raid?.name}
+                  className={`flex w-full items-center justify-center gap-2 hover:text-blue-300 ${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? "text-blue-300" : ""} `}
                 >
                   <Image
                     src={raid?.image ?? ""}
@@ -89,15 +87,10 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
                     style={{ width: "40px", height: "24px" }}
                   />
 
-                  <p className="flex h-full flex-1 items-center text-center text-xs text-fontColor">
-                    <button
-                      onClick={() => onClick(item?.raid_name, raid.name, entry)}
-                      className={`${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? "text-blue-300" : ""} hover:text-blue-300`}
-                    >
-                      {raid.name}
-                    </button>
-                  </p>
-                </div>
+                  <div className="flex h-full flex-1 items-center text-xs">
+                    {raid.name}
+                  </div>
+                </button>
               ))}
             </div>
           </div>

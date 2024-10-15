@@ -8,9 +8,9 @@ const BeforeAndAfterTitle = ({
   ...props
 }: BeforeAndAfterTitle) => {
   return (
-    <p className={`flex items-center justify-center ${className}`} {...props}>
+    <div className={`flex items-center justify-center ${className}`} {...props}>
       {children}
-    </p>
+    </div>
   );
 };
 
