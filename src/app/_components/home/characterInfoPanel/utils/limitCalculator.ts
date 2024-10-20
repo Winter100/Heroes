@@ -89,6 +89,10 @@ export const limitCalculator = (
         const Mstat = monsterInfo?.entry?.find((s) => s.stat_name === "방어력");
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
+      case "해제": {
+        const Mstat = monsterInfo?.entry?.find((s) => s.stat_name === "해제");
+        return Number(user_stat_value) - Number(Mstat?.stat_value);
+      }
 
       default:
         return null;
