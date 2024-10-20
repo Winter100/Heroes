@@ -446,9 +446,6 @@ export const prefix_enchant_options = [
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "추가피해", stat_value: "100" },
-      { stat_name: "크리티컬", stat_value: "4" },
-      { stat_name: "크리티컬 저항", stat_value: "-3" },
-      { stat_name: "밸런스", stat_value: "2" },
     ],
   },
   {
@@ -1230,7 +1227,19 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
     ],
   },
   {
-    name: ["Earring", "Charm", "Necklace", "Artifact"],
+    name: ["Charm"],
+    list: [
+      "시공의",
+      "뒤틀린",
+      "뜻깊은",
+      "의미있는",
+      "신속한",
+      "호기심 많은",
+      "강인한",
+    ],
+  },
+  {
+    name: ["Earring", "Necklace", "Artifact"],
     list: ["뒤틀린", "뜻깊은", "의미있는", "신속한", "호기심 많은", "강인한"],
   },
   {
@@ -1248,6 +1257,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
       "강인한",
     ],
   },
+
   {
     name: ["Rhod"],
     list: [
