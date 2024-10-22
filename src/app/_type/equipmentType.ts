@@ -1,26 +1,18 @@
 export interface Item_equipment {
   item_equipment: EquipmentType[];
 }
+
+interface Tuning_stat {
+  stat_name: string;
+  stat_value: string;
+}
 export interface EquipmentType {
   item_equipment_page: string;
   item_equipment_slot_name: string;
   item_name: string;
   item_option: {
     enhancement_level: null;
-    tuning_stat: [
-      {
-        stat_name: string;
-        stat_value: string;
-      },
-      {
-        stat_name: string;
-        stat_value: string;
-      },
-      {
-        stat_name: string;
-        stat_value: string;
-      },
-    ];
+    tuning_stat: Tuning_stat[];
     ability_name: string;
     prefix_enchant_use_preset_no: number;
     suffix_enchant_use_preset_no: number;
