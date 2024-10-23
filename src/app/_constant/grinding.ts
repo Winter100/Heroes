@@ -1,9 +1,25 @@
+export interface oneGrindingType {
+  title: string;
+  item: {
+    item_slot: string[];
+    item_value: {
+      stat_name: string;
+      stat_value: string;
+      stat_max_value: string;
+      one_ingredient: {
+        stat_name: string;
+        stat_value: string;
+      }[];
+    }[];
+  }[];
+}
+[];
 export const oneGrinding = [
   {
-    name: "아르드리",
+    title: "아르드리",
     item: [
       {
-        item_name: "무기",
+        item_slot: ["Right Hand"],
         item_value: [
           {
             stat_name: "해제",
@@ -27,10 +43,10 @@ export const oneGrinding = [
         ],
       },
       {
-        item_name: "방어구 (머리/손/발)",
+        item_slot: ["Head", "Hand", "Leg"],
         item_value: [
           {
-            stat_name: "해제",
+            stat_name: "공격력 제한 해제",
             stat_value: "20",
             stat_max_value: "480",
             one_ingredient: [
@@ -51,10 +67,10 @@ export const oneGrinding = [
         ],
       },
       {
-        item_name: "방어구 (가슴/다리)",
+        item_slot: ["Upper", "Lower"],
         item_value: [
           {
-            stat_name: "해제",
+            stat_name: "공격력 제한 해제",
             stat_value: "20",
             stat_max_value: "680",
             one_ingredient: [
@@ -77,10 +93,10 @@ export const oneGrinding = [
     ],
   },
   {
-    name: "오르나",
+    title: "오르나",
     item: [
       {
-        item_name: "무기",
+        item_slot: ["Right Hand"],
         item_value: [
           {
             stat_name: "공격력",
@@ -180,7 +196,7 @@ export const oneGrinding = [
         ],
       },
       {
-        item_name: "방어구 (머리/손/발)",
+        item_slot: ["Head", "Hand", "Leg"],
         item_value: [
           {
             stat_name: "방어력",
@@ -242,7 +258,7 @@ export const oneGrinding = [
         ],
       },
       {
-        item_name: "방어구 (가슴/다리)",
+        item_slot: ["Upper", "Lower"],
         item_value: [
           {
             stat_name: "방어력",
@@ -307,10 +323,10 @@ export const oneGrinding = [
   },
 
   {
-    name: "와드네",
+    title: "와드네",
     item: [
       {
-        item_name: "무기",
+        item_slot: ["Right Hand"],
         item_value: [
           {
             stat_name: "공격력",
@@ -410,7 +426,7 @@ export const oneGrinding = [
         ],
       },
       {
-        item_name: "방어구 (머리/손/발)",
+        item_slot: ["Head", "Hand", "Leg"],
         item_value: [
           {
             stat_name: "방어력",
@@ -491,7 +507,7 @@ export const oneGrinding = [
         ],
       },
       {
-        item_name: "방어구 (가슴/다리)",
+        item_slot: ["Upper", "Lower"],
         item_value: [
           {
             stat_name: "방어력",
