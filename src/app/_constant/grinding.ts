@@ -22,8 +22,8 @@ export const oneGrinding = [
         item_slot: ["Right Hand"],
         item_value: [
           {
-            stat_name: "해제",
-            stat_value: "72",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "72",
             stat_max_value: "4032",
             one_ingredient: [
               { stat_name: "골드", stat_value: "1000000" },
@@ -47,7 +47,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "공격력 제한 해제",
-            stat_value: "20",
+            stat_one_value: "20",
             stat_max_value: "480",
             one_ingredient: [
               { stat_name: "골드", stat_value: "400000" },
@@ -71,7 +71,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "공격력 제한 해제",
-            stat_value: "20",
+            stat_one_value: "20",
             stat_max_value: "680",
             one_ingredient: [
               { stat_name: "골드", stat_value: "400000" },
@@ -100,7 +100,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "공격력",
-            stat_value: "14",
+            stat_one_value: "14",
             stat_max_value: "2156",
             one_ingredient: [
               { stat_name: "골드", stat_value: "150000" },
@@ -119,7 +119,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "공격속도",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "2",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3000000" },
@@ -138,7 +138,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "밸런스",
-            stat_value: "1",
+            stat_stat_one_valuevalue: "1",
             stat_max_value: "7",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3000000" },
@@ -157,7 +157,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "크리티컬",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "15",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3000000" },
@@ -175,8 +175,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제",
-            stat_value: "50",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "50",
             stat_max_value: "5400",
             one_ingredient: [
               { stat_name: "골드", stat_value: "1000000" },
@@ -200,7 +200,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "방어력",
-            stat_value: "10",
+            stat_one_value: "10",
             stat_max_value: "505",
             one_ingredient: [
               { stat_name: "골드", stat_value: "150000" },
@@ -219,7 +219,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "크리티컬 저항",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "6",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3000000" },
@@ -237,8 +237,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제",
-            stat_value: "14",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "14",
             stat_max_value: "700",
             one_ingredient: [
               { stat_name: "골드", stat_value: "400000" },
@@ -262,7 +262,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "방어력",
-            stat_value: "10",
+            stat_one_value: "10",
             stat_max_value: "467",
             one_ingredient: [
               { stat_name: "골드", stat_value: "150000" },
@@ -281,7 +281,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "크리티컬 저항",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "13",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3000000" },
@@ -299,8 +299,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제",
-            stat_value: "14",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "14",
             stat_max_value: "1050",
             one_ingredient: [
               { stat_name: "골드", stat_value: "400000" },
@@ -330,7 +330,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "공격력",
-            stat_value: "10",
+            stat_one_value: "10",
             stat_max_value: "2000",
             one_ingredient: [
               { stat_name: "골드", stat_value: "1500000" },
@@ -349,7 +349,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "밸런스",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "4",
             one_ingredient: [
               { stat_name: "골드", stat_value: "9000000" },
@@ -368,7 +368,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "크리티컬",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "4",
             one_ingredient: [
               { stat_name: "골드", stat_value: "9000000" },
@@ -386,8 +386,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제",
-            stat_value: "50",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "50",
             stat_max_value: "5400",
             one_ingredient: [
               { stat_name: "골드", stat_value: "1000000" },
@@ -405,8 +405,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제 2",
-            stat_value: "15",
+            stat_name: "공격력 제한 해제 2",
+            stat_one_value: "15",
             stat_max_value: "1500",
             one_ingredient: [
               { stat_name: "골드", stat_value: "8600000" },
@@ -430,7 +430,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "방어력",
-            stat_value: "10",
+            stat_one_value: "10",
             stat_max_value: "479",
             one_ingredient: [
               { stat_name: "골드", stat_value: "1500000" },
@@ -449,7 +449,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "크리티컬 저항",
-            stat_value: "1",
+            stat_one_value: "1",
             stat_max_value: "3",
             one_ingredient: [
               { stat_name: "골드", stat_value: "9500000" },
@@ -467,8 +467,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제",
-            stat_value: "14",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "14",
             stat_max_value: "700",
             one_ingredient: [
               { stat_name: "골드", stat_value: "400000" },
@@ -486,8 +486,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제 2",
-            stat_value: "5",
+            stat_name: "공격력 제한 해제 2",
+            stat_one_value: "5",
             stat_max_value: "440",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3700000" },
@@ -511,7 +511,7 @@ export const oneGrinding = [
         item_value: [
           {
             stat_name: "방어력",
-            stat_value: "0",
+            stat_one_value: "0",
             stat_max_value: "0",
             one_ingredient: [
               { stat_name: "골드", stat_value: "0" },
@@ -530,7 +530,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "크리티컬 저항",
-            stat_value: "0",
+            stat_one_value: "0",
             stat_max_value: "0",
             one_ingredient: [
               { stat_name: "골드", stat_value: "0" },
@@ -548,8 +548,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제",
-            stat_value: "0",
+            stat_name: "공격력 제한 해제",
+            stat_one_value: "0",
             stat_max_value: "0",
             one_ingredient: [
               { stat_name: "골드", stat_value: "0" },
@@ -567,8 +567,8 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: "해제 2",
-            stat_value: "0",
+            stat_name: "공격력 제한 해제 2",
+            stat_one_value: "0",
             stat_max_value: "0",
             one_ingredient: [
               { stat_name: "골드", stat_value: "0" },
