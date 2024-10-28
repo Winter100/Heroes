@@ -2,6 +2,8 @@ import { getEquipment } from "@/app/_services/getEquipment";
 import { Item_equipment } from "@/app/_type/equipmentType";
 import { useQuery } from "@tanstack/react-query";
 import { useOcid } from "../useOcid/useOcid";
+import { bagList } from "@/app/_components/preview/utils/bagList";
+import { getNewTuning } from "@/app/_components/preview/utils/getNewTuning";
 
 export const useEquipment = (name: string) => {
   const { data: ocid } = useOcid(name);
@@ -10,12 +12,24 @@ export const useEquipment = (name: string) => {
     enabled: !!ocid,
     queryKey: [ocid, "장비"],
     queryFn: () => getEquipment(ocid ?? ""),
+    refetchOnWindowFocus: false,
   });
 
   const items = data?.item_equipment;
 
-  const bag = items?.filter((i) => i.item_equipment_page === "Bag") ?? [];
+  const b = items?.filter((i) => i.item_equipment_page === "Bag") ?? [];
   const cash = items?.filter((i) => i.item_equipment_page === "Cash") ?? [];
+
+  // const bag = bagList(b);
+  const bag = bagList(b).map((item) => {
+    const newTuning = getNewTuning(item);
+    return {
+      ...item,
+      item_option: { ...item.item_option, tuning_stat: newTuning ?? null },
+    };
+  });
+
+  console.log("bag", bag);
 
   return { bag, cash, isLoading };
 };

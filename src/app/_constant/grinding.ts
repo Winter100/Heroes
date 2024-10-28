@@ -100,7 +100,7 @@ export const oneGrinding = [
           },
           {
             stat_name: "밸런스",
-            stat_stat_one_valuevalue: "1",
+            stat_one_value: "1",
             stat_max_value: "7",
             one_ingredient: [
               { stat_name: "골드", stat_value: "3000000" },

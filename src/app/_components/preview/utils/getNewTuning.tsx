@@ -12,7 +12,7 @@ export const getNewTuning = (item: EquipmentType) => {
 
   const tuning_stat = grinding?.item_value.map((stat) => {
     const tuning_stat = item?.item_option?.tuning_stat;
-    const findStat = tuning_stat.find((s) => s.stat_name === stat.stat_name);
+    const findStat = tuning_stat?.find((s) => s.stat_name === stat.stat_name);
 
     if (findStat) {
       return { ...stat, ...findStat };

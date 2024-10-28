@@ -1,5 +1,5 @@
 import { EnchantPrice, EnchantPriceType } from "./enchantPriceType";
-import { EquipmentType } from "./equipmentType";
+import { EquipmentType, NewEquipmentType } from "./equipmentType";
 
 export interface PreviewStatsType {
   stat_name: string;
@@ -15,7 +15,7 @@ export interface PreviewSelectedType {
 
 export interface PrviewItemProps {
   enchant: EnchantPriceType[];
-  item: EquipmentType;
+  item: NewEquipmentType;
   slot: string;
 }
 

@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { PreviewSelectedType, PriceData } from "../_type/previewType";
 import { Stat } from "../_type/characterType";
+import { NewEquipmentType, NewTuning_stat } from "../_type/equipmentType";
 
 type State = {
   characterName: string;
@@ -8,6 +9,9 @@ type State = {
   beforeStats: PreviewSelectedType[];
   totalPriceItem: PriceData[];
   previewAllStats: Stat[];
+
+  items: NewEquipmentType[];
+  preItems: NewEquipmentType[];
 };
 
 type Action = {
@@ -17,6 +21,10 @@ type Action = {
   reset: () => void;
   setTotalPrice: (price: PriceData) => void;
   setPreviewAllStats: (value: Stat[]) => void;
+
+  setItems: (value: NewEquipmentType[]) => void;
+  setIncreaseStat: (slot: string, statName: string) => void;
+  setDecreaseStat: (slot: string, statName: string) => void;
 };
 
 export const usePreviewStore = create<State & Action>((set) => {
@@ -26,6 +34,8 @@ export const usePreviewStore = create<State & Action>((set) => {
     beforeStats: [],
     totalPriceItem: [],
     previewAllStats: [],
+    items: [],
+    preItems: [],
     setCharacterName: (value) => {
       set(() => {
         return { characterName: value };
@@ -107,6 +117,86 @@ export const usePreviewStore = create<State & Action>((set) => {
     setPreviewAllStats: (value) => {
       set(() => {
         return { previewAllStats: value };
+      });
+    },
+
+    setItems: (value) => {
+      set(() => {
+        return { items: value, preItems: value };
+      });
+    },
+
+    setIncreaseStat: (slot, statName) => {
+      set((state) => {
+        const updatedItems = state.items.map((item) => {
+          if (item.item_equipment_slot_name === slot) {
+            if (item.item_option?.tuning_stat) {
+              const updatedTuningStat = item.item_option.tuning_stat.map(
+                (stat) => {
+                  if (stat.stat_name === statName) {
+                    const newStatValue = Math.min(
+                      Number(stat.stat_value) + Number(stat.stat_one_value),
+                      Number(stat.stat_max_value),
+                    ).toString();
+                    return {
+                      ...stat,
+                      stat_value: newStatValue,
+                    };
+                  }
+                  return stat;
+                },
+              );
+
+              return {
+                ...item,
+                item_option: {
+                  ...item.item_option,
+                  tuning_stat: updatedTuningStat,
+                },
+              };
+            }
+          }
+          return item;
+        });
+
+        return { items: updatedItems };
+      });
+    },
+
+    setDecreaseStat: (slot, statName) => {
+      set((state) => {
+        const updatedItems = state.items.map((item) => {
+          if (item.item_equipment_slot_name === slot) {
+            if (item.item_option?.tuning_stat) {
+              const updatedTuningStat = item.item_option.tuning_stat.map(
+                (stat) => {
+                  if (stat.stat_name === statName) {
+                    const newStatValue = Math.max(
+                      0,
+                      Number(stat.stat_value) - Number(stat.stat_one_value),
+                    ).toString();
+                    return {
+                      ...stat,
+                      stat_value: newStatValue,
+                    };
+                  }
+                  return stat;
+                },
+              );
+
+              return {
+                ...item,
+                item_option: {
+                  ...item.item_option,
+                  tuning_stat: updatedTuningStat,
+                },
+              };
+            }
+          }
+          return item;
+        });
+
+        return { items: updatedItems };
       });
     },
   };
