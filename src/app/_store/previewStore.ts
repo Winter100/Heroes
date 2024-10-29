@@ -11,7 +11,7 @@ type State = {
   previewAllStats: Stat[];
 
   items: NewEquipmentType[];
-  preItems: NewEquipmentType[];
+  afterItems: NewEquipmentType[];
 };
 
 type Action = {
@@ -35,7 +35,7 @@ export const usePreviewStore = create<State & Action>((set) => {
     totalPriceItem: [],
     previewAllStats: [],
     items: [],
-    preItems: [],
+    afterItems: [],
     setCharacterName: (value) => {
       set(() => {
         return { characterName: value };
@@ -63,6 +63,7 @@ export const usePreviewStore = create<State & Action>((set) => {
     },
     setBeforeStats: (value) => {
       set((state) => {
+        console.log("value", value);
         const beforeStats = [...state.beforeStats];
         const existsInBeforeStats = beforeStats.some(
           (stat) =>
@@ -90,6 +91,8 @@ export const usePreviewStore = create<State & Action>((set) => {
           totalPriceItem: [],
           previewAllStats: [],
           StatDifference: [],
+          items: [],
+          afterItems: [],
         };
       });
     },
@@ -122,10 +125,9 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setItems: (value) => {
       set(() => {
-        return { items: value, preItems: value };
+        return { items: value, afterItems: value };
       });
     },
-
     setIncreaseStat: (slot, statName) => {
       set((state) => {
         const updatedItems = state.items.map((item) => {
@@ -159,7 +161,63 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        return { items: updatedItems };
+        const beforeStat = updatedItems
+          .find((item) => item.item_equipment_slot_name === slot)
+          ?.item_option.tuning_stat?.map((stat) => {
+            return {
+              stat_name: stat.stat_name,
+              stat_value: stat.stat_min_value,
+            };
+          });
+
+        const afterStats = updatedItems
+          .find((item) => item.item_equipment_slot_name === slot)
+          ?.item_option.tuning_stat?.map((stat) => {
+            return { stat_name: stat.stat_name, stat_value: stat.stat_value };
+          });
+
+        const before = {
+          previewName: "grinding",
+          slot: slot,
+          stat_name: slot,
+          stat_value: beforeStat ?? [],
+        };
+        const after = {
+          previewName: "grinding",
+          slot: slot,
+          stat_name: slot,
+          stat_value: afterStats ?? [],
+        };
+
+        const be = [...state.beforeStats];
+        const beIndex = be.findIndex(
+          (item) =>
+            item.previewName === before.previewName &&
+            item.slot === before.slot,
+        );
+
+        if (beIndex !== -1) {
+          be[beIndex] = before;
+        } else {
+          be.push(before);
+        }
+        const af = [...state.afterStats];
+        const afIndex = af.findIndex(
+          (item) =>
+            item.previewName === after.previewName && item.slot === after.slot,
+        );
+
+        if (afIndex !== -1) {
+          af[afIndex] = after;
+        } else {
+          af.push(after);
+        }
+
+        return {
+          items: updatedItems,
+          beforeStats: [...be],
+          afterStats: [...af],
+        };
       });
     },
 
@@ -172,7 +230,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                 (stat) => {
                   if (stat.stat_name === statName) {
                     const newStatValue = Math.max(
-                      0,
+                      Number(stat.stat_min_value),
                       Number(stat.stat_value) - Number(stat.stat_one_value),
                     ).toString();
                     return {
@@ -196,7 +254,65 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        return { items: updatedItems };
+        const beforeStat = updatedItems
+          .find((item) => item.item_equipment_slot_name === slot)
+          ?.item_option.tuning_stat?.map((stat) => {
+            return {
+              stat_name: stat.stat_name,
+              stat_value: stat.stat_min_value,
+            };
+          });
+
+        const afterStats = updatedItems
+          .find((item) => item.item_equipment_slot_name === slot)
+          ?.item_option.tuning_stat?.map((stat) => {
+            return {
+              stat_name: stat.stat_name,
+              stat_value: stat.stat_value,
+            };
+          });
+
+        const before = {
+          previewName: "grinding",
+          slot: slot,
+          stat_name: slot,
+          stat_value: beforeStat ?? [],
+        };
+        const after = {
+          previewName: "grinding",
+          slot: slot,
+          stat_name: slot,
+          stat_value: afterStats ?? [],
+        };
+
+        const be = [...state.beforeStats];
+        const beIndex = be.findIndex(
+          (item) =>
+            item.previewName === before.previewName &&
+            item.slot === before.slot,
+        );
+        if (beIndex !== -1) {
+          be[beIndex] = before;
+        } else {
+          be.push(before);
+        }
+        const af = [...state.afterStats];
+        const afIndex = af.findIndex(
+          (item) =>
+            item.previewName === after.previewName && item.slot === after.slot,
+        );
+
+        if (afIndex !== -1) {
+          af[afIndex] = after;
+        } else {
+          af.push(after);
+        }
+
+        return {
+          items: updatedItems,
+          beforeStats: [...be],
+          afterStats: [...af],
+        };
       });
     },
   };

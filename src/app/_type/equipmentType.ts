@@ -7,6 +7,7 @@ export interface NewTuning_stat {
   stat_value: string;
   stat_one_value: string;
   stat_max_value: string;
+  stat_min_value: string;
   one_ingredient: { stat_name: string; stat_value: string }[];
 }
 

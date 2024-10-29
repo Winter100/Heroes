@@ -1,3 +1,4 @@
+import { Item_equipment } from "./../../../_type/equipmentType";
 import { EquipmentType } from "@/app/_type/equipmentType";
 
 const slot_name = [
@@ -27,7 +28,17 @@ export const bagList = (bag: EquipmentType[]) => {
     );
 
     return foundItem
-      ? { ...foundItem }
+      ? {
+          ...foundItem,
+          item_option: {
+            ...foundItem.item_option,
+            tuning_stat: foundItem.item_option.tuning_stat.map((stat) =>
+              stat.stat_name === "공격력 제한 해제"
+                ? { ...stat, stat_name: "해제" }
+                : stat,
+            ),
+          },
+        }
       : {
           item_equipment_page: "Bag",
           item_equipment_slot_name: slot.item_slot,

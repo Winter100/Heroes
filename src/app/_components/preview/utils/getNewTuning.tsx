@@ -15,11 +15,16 @@ export const getNewTuning = (item: EquipmentType) => {
     const findStat = tuning_stat?.find((s) => s.stat_name === stat.stat_name);
 
     if (findStat) {
-      return { ...stat, ...findStat };
+      return {
+        ...stat,
+        ...findStat,
+        stat_min_value: findStat.stat_value ?? "0",
+      };
     } else {
       return {
         ...stat,
         stat_value: "0",
+        stat_min_value: "0",
       };
     }
   });

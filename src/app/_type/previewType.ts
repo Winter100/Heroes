@@ -1,5 +1,5 @@
 import { EnchantPrice, EnchantPriceType } from "./enchantPriceType";
-import { EquipmentType, NewEquipmentType } from "./equipmentType";
+import { NewEquipmentType } from "./equipmentType";
 
 export interface PreviewStatsType {
   stat_name: string;
