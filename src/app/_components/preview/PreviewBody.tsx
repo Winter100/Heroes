@@ -3,26 +3,14 @@
 import { useEquipment } from "@/app/_hooks/useEquipment/useEquipment";
 import Loading from "../common/Loading";
 import AvgPrice from "./AvgPrice";
-import { useStats } from "@/app/_hooks/useStats/useStats";
 import Column from "../layout/Column";
 import OneTable from "./table/OneTable";
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { useEffect } from "react";
 import PreivewList from "./PreivewList";
 
 const PreviewBody = ({ name }: { name: string }) => {
-  const { bag, isLoading } = useEquipment(name);
-  const { isLoading: StatsLoading } = useStats(name);
+  const { isLoading } = useEquipment(name);
 
-  const setItems = usePreviewStore((state) => state.setItems);
-
-  useEffect(() => {
-    if (bag) {
-      setItems(bag);
-    }
-  }, [bag, setItems]);
-
-  if (isLoading || StatsLoading) {
+  if (isLoading) {
     return (
       <div className="flex h-full w-full items-center justify-center rounded-lg p-2">
         <Loading width="10" height="10" />

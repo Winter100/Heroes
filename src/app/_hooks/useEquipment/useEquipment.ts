@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useOcid } from "../useOcid/useOcid";
 import { bagList } from "@/app/_components/preview/utils/bagList";
 import { getNewTuning } from "@/app/_components/preview/utils/getNewTuning";
+import { usePreviewStore } from "@/app/_store/previewStore";
+import { useEffect } from "react";
 
 export const useEquipment = (name: string) => {
   const { data: ocid } = useOcid(name);
@@ -20,7 +22,6 @@ export const useEquipment = (name: string) => {
   const b = items?.filter((i) => i.item_equipment_page === "Bag") ?? [];
   const cash = items?.filter((i) => i.item_equipment_page === "Cash") ?? [];
 
-  // const bag = bagList(b);
   const bag = bagList(b).map((item) => {
     const newTuning = getNewTuning(item);
     return {
@@ -29,7 +30,13 @@ export const useEquipment = (name: string) => {
     };
   });
 
-  console.log("bag", bag);
+  const setItems = usePreviewStore((state) => state.setItems);
+
+  useEffect(() => {
+    if (bag) {
+      setItems(bag);
+    }
+  }, [bag, setItems]);
 
   return { bag, cash, isLoading };
 };

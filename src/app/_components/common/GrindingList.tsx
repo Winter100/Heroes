@@ -10,6 +10,8 @@ interface GrindingProps {
 const GrindingList = ({ item }: GrindingProps) => {
   const setIncreaseStat = usePreviewStore((state) => state.setIncreaseStat);
   const setDecreaseStat = usePreviewStore((state) => state.setDecreaseStat);
+  const setMin = usePreviewStore((state) => state.setMin);
+  const setMax = usePreviewStore((state) => state.setMax);
   return (
     <>
       {item.item_option.tuning_stat?.map((stat) => (
@@ -27,6 +29,8 @@ const GrindingList = ({ item }: GrindingProps) => {
           onDecrease={() =>
             setDecreaseStat(item.item_equipment_slot_name, stat.stat_name)
           }
+          onMin={() => setMin(item.item_equipment_slot_name, stat.stat_name)}
+          onMax={() => setMax(item.item_equipment_slot_name, stat.stat_name)}
         />
       ))}
     </>

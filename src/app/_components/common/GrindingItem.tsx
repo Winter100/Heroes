@@ -7,6 +7,8 @@ interface GrindingItemProps {
   maxValue: string;
   onIncrease: () => void;
   onDecrease: () => void;
+  onMin: () => void;
+  onMax: () => void;
 }
 
 const GrindingItem = ({
@@ -16,6 +18,8 @@ const GrindingItem = ({
   maxValue,
   onIncrease,
   onDecrease,
+  onMin,
+  onMax,
 }: GrindingItemProps) => {
   return (
     <div className="grid w-[600px] grid-cols-4 items-center justify-items-center text-sm">
@@ -43,13 +47,18 @@ const GrindingItem = ({
       </div>
 
       <div>
+        <button onClick={onMin} className="h-full w-8">
+          Min
+        </button>
         <button onClick={onDecrease} className="h-full w-8">
           -
         </button>
         <button onClick={onIncrease} className="h-full w-8">
           +
         </button>
-        <button className="h-full w-8">Max</button>
+        <button onClick={onMax} className="h-full w-8">
+          Max
+        </button>
       </div>
     </div>
   );
