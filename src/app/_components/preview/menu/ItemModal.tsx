@@ -38,7 +38,7 @@ const ItemModal = ({ item }: { item: NewEquipmentType }) => {
                 <div className="flex w-full items-center justify-start lg:justify-end">
                   <button onClick={() => setOpen(false)}>X</button>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-7">
                   <div className="text-center">
                     <div>
                       {itemName.level} {itemName.name}
@@ -47,7 +47,7 @@ const ItemModal = ({ item }: { item: NewEquipmentType }) => {
                   <div className="flex flex-col items-center justify-center">
                     <GrindingList item={item} />
                   </div>
-                  <div className="flex items-center justify-center">
+                  <div className="flex min-h-56 items-center justify-center">
                     <IngredientList item={item} />
                   </div>
                 </div>

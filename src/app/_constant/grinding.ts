@@ -496,7 +496,7 @@ export const oneGrinding = [
           {
             stat_name: "해제 2",
             stat_one_value: "5",
-            stat_max_value: "440",
+            stat_max_value: "740",
             one_ingredient: [
               { stat_name: "골드", stat_value: "1000000" },
               { stat_name: "힘이 주입된 뉴에라의 옷감", stat_value: "25" },
