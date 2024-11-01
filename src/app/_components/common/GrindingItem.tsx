@@ -27,72 +27,90 @@ const GrindingItem = ({
       ? (stat_max_value === stat_value) === isView
       : stat_max_value === stat_value;
 
-  const percentage = Math.floor(
+  const increaseValue = Number(stat_value) - Number(stat_min_value);
+
+  const minPercentage = (Number(stat_min_value) / Number(stat_max_value)) * 100;
+  const reMainPercentage = Math.floor(
     (Number(stat_value) / Number(stat_max_value)) * 100,
   );
-  const increaseValue = Number(stat_value) - Number(stat_min_value);
 
   return (
     <div
-      className={`${isView ? "" : "opacity-40"} flex w-[750px] flex-row items-center gap-4 text-sm`}
+      className={`${isView ? "" : "opacity-40"} flex w-full flex-col text-sm`}
     >
-      {/* <div className="grid w-[650px] grid-cols-5 items-center justify-items-center text-sm"> */}
-      <div className="w-52 text-center">
-        <p>{stat_name}</p>
+      <div className="flex gap-4">
+        <p className="w-24">{stat_name}</p>
       </div>
 
-      <div className="flex w-full items-center gap-1">
-        <div className="h-2 flex-1 bg-gray-600">
-          <div
-            className="h-2 bg-green-500"
-            style={{ width: `${percentage}%` }}
-          ></div>
+      <div className="flex w-full flex-row items-center justify-center">
+        <div className="flex flex-1 items-center gap-2">
+          <div className="h-2 w-full flex-1 bg-gray-600">
+            <div
+              className="h-2"
+              style={{
+                width: `${100}%`,
+                background: `linear-gradient(to right, 
+                  #047857 0%, 
+                  #047857 ${minPercentage}%,
+
+                  #4ADE80 ${minPercentage}%,
+                  #4ADE80 ${reMainPercentage}%,
+
+                  transparent ${reMainPercentage}%,
+                  transparent ${100}%
+
+                  )`,
+              }}
+            ></div>
+          </div>
+
+          <p className="flex w-8 items-center justify-center">
+            {reMainPercentage}%
+          </p>
         </div>
 
-        <p className="flex w-8 items-center justify-center">{percentage}%</p>
-      </div>
-
-      <div className="flex w-48 items-center justify-center">
-        <div className="flex w-full items-center justify-center gap-2">
-          <p>{stat_value}</p>
-          <p>{`/`}</p>
-          <p>{stat_max_value}</p>
+        <div className="flex w-20 items-center justify-center sm:w-24">
+          <div className="flex w-full items-center justify-center gap-1 px-3">
+            <p className="flex-1 text-center">{stat_value}</p>
+            <p className="flex-1 text-center">{`/`}</p>
+            <p className="flex-1 text-center">{stat_max_value}</p>
+          </div>
         </div>
-      </div>
 
-      <div className="flex w-48 flex-row text-xs">
-        <button
-          disabled={isMin}
-          onClick={onMin}
-          className={`${isMin ? "opacity-40" : "hover:text-white"} h-full w-7 border-none`}
-        >
-          Min
-        </button>
-        <button
-          disabled={isMin}
-          onClick={onDecrease}
-          className={`${isMin ? "opacity-40" : "hover:text-white"} h-full w-7 border-none`}
-        >
-          -
-        </button>
-        <button
-          disabled={isMax}
-          onClick={onIncrease}
-          className={`${isMax ? "opacity-40" : "hover:text-white"} h-full w-7 border-none`}
-        >
-          +
-        </button>
-        <button
-          disabled={isMax}
-          onClick={onMax}
-          className={`${isMax ? "opacity-40" : "hover:text-white"} h-full w-7 border-none`}
-        >
-          Max
-        </button>
-      </div>
+        <div className="flex flex-row items-center justify-center gap-1 text-xs">
+          <button
+            disabled={isMin}
+            onClick={onMin}
+            className={`${isMin ? "opacity-40" : "hover:text-white"} h-full w-8 rounded-sm bg-background`}
+          >
+            Min
+          </button>
+          <button
+            disabled={isMin}
+            onClick={onDecrease}
+            className={`${isMin ? "opacity-40" : "hover:text-white"} h-full w-8 rounded-sm bg-background`}
+          >
+            -
+          </button>
+          <button
+            disabled={isMax}
+            onClick={onIncrease}
+            className={`${isMax ? "opacity-40" : "hover:text-white"} h-full w-8 rounded-sm bg-background`}
+          >
+            +
+          </button>
+          <button
+            disabled={isMax}
+            onClick={onMax}
+            className={`${isMax ? "opacity-40" : "hover:text-white"} h-full w-8 rounded-sm bg-background`}
+          >
+            Max
+          </button>
+        </div>
 
-      <div className="flex w-24 items-center justify-center text-green-300">
-        <p>{increaseValue}</p>
+        <div className="flex w-10 items-center justify-center text-green-300">
+          <p>{increaseValue}</p>
+        </div>
       </div>
     </div>
   );

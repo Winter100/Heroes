@@ -42,7 +42,7 @@ const GrindingList = ({ item }: GrindingProps) => {
   ]);
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex w-full flex-col gap-4">
       {newTuning?.map((stat) => (
         <GrindingItem
           key={stat.stat_name}

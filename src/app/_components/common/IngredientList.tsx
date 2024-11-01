@@ -12,9 +12,10 @@ const IngredientList = ({ item }: IngredientListProps) => {
     return {
       stat_name: stat.stat_name,
       one_ingredient: stat.one_ingredient,
-      grindingNumber:
+      grindingNumber: Math.ceil(
         (Number(stat.stat_value) - Number(stat.stat_min_value)) /
-        Number(stat.stat_one_value),
+          Number(stat.stat_one_value),
+      ),
     };
   });
 
@@ -44,7 +45,7 @@ const IngredientList = ({ item }: IngredientListProps) => {
   // const materia = materialsArray.filter((item) => item.value);
 
   return (
-    <div className="grid w-2/3 grid-cols-4 items-start justify-items-center gap-4">
+    <div className="grid w-full grid-cols-4 items-start justify-items-center gap-4">
       {materialsArray.map((item) => (
         <IngredientItem key={item.name} {...item} />
       ))}
