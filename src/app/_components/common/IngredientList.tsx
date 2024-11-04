@@ -42,10 +42,8 @@ const IngredientList = ({ item }: IngredientListProps) => {
     }))
     .sort((a, b) => a.name.localeCompare(b.name, "ko"));
 
-  // const materia = materialsArray.filter((item) => item.value);
-
   return (
-    <div className="grid w-full grid-cols-4 items-start justify-items-center gap-4">
+    <div className="grid w-full grid-cols-2 items-start justify-items-center gap-4 md:grid-cols-4">
       {materialsArray.map((item) => (
         <IngredientItem key={item.name} {...item} />
       ))}

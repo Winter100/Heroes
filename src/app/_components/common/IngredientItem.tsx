@@ -5,23 +5,25 @@ interface IngredientItemProps {
   src: string;
   value: number;
 }
-const IngredientItem = ({ name, value, src }: IngredientItemProps) => {
+const IngredientItem = ({
+  name = "",
+  value = 0,
+  src = "",
+}: IngredientItemProps) => {
   const isZeroValue = value === 0;
   return (
     <div
-      className={`${isZeroValue ? "opacity-40" : ""} flex w-full flex-col items-center justify-center gap-2 text-sm hover:cursor-default`}
+      className={`${isZeroValue ? "opacity-40" : "text-white"} flex w-full flex-col items-center justify-center gap-2 text-sm hover:cursor-default`}
     >
-      <div className="flex h-2 items-center justify-center text-xs">{name}</div>
+      <div className="flex items-center justify-center text-xs">{name}</div>
       <div className="flex w-full flex-row gap-2 rounded-lg bg-background p-1">
         <div className="flex h-5 w-5 items-center justify-center">
           <Image
-            className="rounded-sm object-cover"
+            className="h-auto w-auto rounded-sm object-cover"
             width={20}
-            height={20}
-            style={{ width: "20", height: "20" }}
+            height={0}
             src={src}
             alt={name}
-            priority={true}
             title={name}
           />
         </div>
