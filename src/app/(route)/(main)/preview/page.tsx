@@ -6,6 +6,7 @@ import PreviewUserSearch from "@/app/_components/home/userDetailInfo/PreviewUser
 import Preview from "@/app/_components/preview/Preview";
 import ResultModal from "@/app/_components/preview/menu/ResultModal";
 import RaidLimitModal from "@/app/_components/preview/menu/RaidLimitModal";
+import GrindingResultModal from "@/app/_components/preview/menu/GrindingResultModal";
 
 const Page = ({ searchParams }: { searchParams: { name: string } }) => {
   const name = searchParams.name;
@@ -17,9 +18,10 @@ const Page = ({ searchParams }: { searchParams: { name: string } }) => {
           <Row className="h-full w-full items-center justify-center sm:flex-1">
             <PreviewUserSearch />
           </Row>
-          <Row className="flex h-full w-24 items-center justify-center gap-1">
+          <Row className="flex h-full w-32 items-center justify-center gap-1">
             <RaidLimitModal />
             <ResultModal name={name} />
+            <GrindingResultModal />
           </Row>
         </Row>
         <Preview name={name} />
