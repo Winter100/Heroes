@@ -1,25 +1,8 @@
 "use client";
-
-import { useState } from "react";
-
-import BottomArrow from "../../common/BottomArrow";
 import EnchantModal from "./EnchantModal";
 import InfusionsModal from "./InfusionsModal";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { PreviewModalProps } from "@/app/_type/previewType";
-
-// const overlay = {
-//   backgroundColor: "rgba(0,0,0,0.85)",
-// };
-
-// const content = {
-//   width: "1050px",
-//   height: "900px",
-//   margin: "auto",
-//   zIndex: 100,
-//   border: "1px solid gray",
-//   backgroundColor: "rgb(20,21,23)",
-// };
 
 const overlay = {
   backgroundColor: "rgba(0,0,0,0.85)",
@@ -41,7 +24,7 @@ const PreviewModal = ({
   enchantList,
 }: PreviewModalProps) => {
   const setAfterStats = usePreviewStore((state) => state.setAfterStats);
-  const beforeStats = usePreviewStore((state) => state.setBeforeStats);
+  const setBeforeStats = usePreviewStore((state) => state.setBeforeStats);
 
   const afterStats = usePreviewStore((state) => state.afterStats);
 
@@ -67,7 +50,7 @@ const PreviewModal = ({
       stat_value: before?.stat_value,
     };
 
-    beforeStats(beforeValue);
+    setBeforeStats(beforeValue);
     setAfterStats(afterValue);
   };
 

@@ -17,6 +17,7 @@ import {
   PrviewItemProps,
 } from "@/app/_type/previewType";
 import PreviewModal from "./menu/PreviewModal";
+import ItemModal from "./menu/ItemModal";
 
 const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
   const prefix_list =
@@ -111,7 +112,13 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>아이템 이름</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40">
-            {itemName.level} {itemName.name}
+            {item.item_option.tuning_stat !== null ? (
+              <ItemModal item={item} />
+            ) : (
+              <>
+                {item?.item_option?.enhancement_level} {item?.item_name}
+              </>
+            )}
           </BeforeAndAfter.Before>
         </BeforeAndAfter.Content>
       </BeforeAndAfter>

@@ -2,11 +2,21 @@
 
 import { usePreviewStore } from "@/app/_store/previewStore";
 import Row from "../layout/Row";
+import { useStats } from "@/app/_hooks/useStats/useStats";
+import Loading from "../common/Loading";
 
 const AvgPrice = ({ name }: { name: string }) => {
   const totalPriceItem = usePreviewStore((state) => state.totalPriceItem);
-
+  const { isLoading: StatsLoading } = useStats(name);
   const sumAvg = totalPriceItem?.reduce((acc, cur) => acc + cur.price, 0);
+
+  if (StatsLoading) {
+    return (
+      <div className="flex h-full w-full items-center justify-center rounded-lg p-2">
+        <Loading width="10" height="10" />
+      </div>
+    );
+  }
 
   return (
     <>

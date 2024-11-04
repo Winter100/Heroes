@@ -18,6 +18,7 @@ export const useStats = (name: string) => {
     enabled: !!ocid,
     queryKey: [ocid, "스텟"],
     queryFn: () => getStats(ocid ?? ""),
+    refetchOnWindowFocus: false,
     select: (data) => {
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);
@@ -51,6 +52,7 @@ export const useStats = (name: string) => {
 
   const mergedStats =
     data && someStats(data, before as Stat[], after as Stat[]);
+
   const statDifference =
     mergedStats && calculateStatsDifference(mergedStats, data);
 

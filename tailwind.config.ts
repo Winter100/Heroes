@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateRows: {
+        "17": "repeat(17, minmax(0,1fr))",
+      },
       alignContent: {
         "space-around": "space-around",
       },
