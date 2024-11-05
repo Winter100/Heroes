@@ -33,7 +33,7 @@ const ItemModal = ({ item }: { item: NewEquipmentType }) => {
               transition
               className="relative mx-2 mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:max-w-[700px]"
             >
-              <div className="w-full bg-backgroundOne px-2 pb-4 pt-5 md:p-2 md:pb-4">
+              <div className="w-full bg-backgroundOne px-2 pb-4 pt-5 md:pb-4">
                 <div className="flex w-full items-center justify-start lg:justify-end">
                   <button onClick={() => setOpen(false)}>X</button>
                 </div>
@@ -47,6 +47,7 @@ const ItemModal = ({ item }: { item: NewEquipmentType }) => {
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center rounded-lg bg-background p-2">
+                    {/* <div className="flex flex-col items-center justify-center rounded-lg bg-background p-2"> */}
                     <GrindingList item={item} />
                   </div>
 

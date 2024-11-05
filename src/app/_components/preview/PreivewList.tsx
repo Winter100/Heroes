@@ -3,9 +3,12 @@
 import { usePreviewStore } from "@/app/_store/previewStore";
 import PreviewItem from "./PreviewItem";
 import { useEnchant } from "@/app/_hooks/useEnchant/useEnchant";
+import { useSearchParams } from "next/navigation";
 
-const PreivewList = ({ name }: { name: string }) => {
+const PreivewList = () => {
   const items = usePreviewStore((state) => state.items);
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") ?? "";
   const { data: enchantList } = useEnchant(name);
   return (
     <ul className="grid grid-rows-17 p-2">

@@ -7,10 +7,11 @@ import Column from "../../layout/Column";
 import { Button } from "@headlessui/react";
 import { MonstersType } from "@/app/_constant/raidList";
 import { filterRaidList } from "@/app/_utils/filterRaidList";
+import { usePreviewStore } from "@/app/_store/previewStore";
 
 const TableList = () => {
   const [entry, setEntry] = useState<"빠른전투" | "상한">("빠른전투");
-
+  const previewAllStats = usePreviewStore((state) => state.previewAllStats);
   const boss = filterRaidList(entry);
   return (
     <Column className="h-full w-full gap-4">
@@ -39,7 +40,8 @@ const TableList = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 lg:grid lg:grid-cols-2">
+      <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2 lg:grid lg:grid-cols-2"> */}
         {boss.map((item) => (
           <div key={item?.raid_name} className="h-full w-full">
             {item !== null && (
@@ -65,7 +67,11 @@ const TableList = () => {
                           {raid.name}
                         </p>
                       </div>
-                      <Table boss={raid as MonstersType} bossEntry={entry} />
+                      <Table
+                        boss={raid as MonstersType}
+                        bossEntry={entry}
+                        previewAllStats={previewAllStats}
+                      />
                     </div>
                   ))}
                 </div>

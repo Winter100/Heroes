@@ -4,10 +4,13 @@ import { usePreviewStore } from "@/app/_store/previewStore";
 import Row from "../layout/Row";
 import { useStats } from "@/app/_hooks/useStats/useStats";
 import Loading from "../common/Loading";
+import { useSearchParams } from "next/navigation";
 
-const AvgPrice = ({ name }: { name: string }) => {
+const AvgPrice = () => {
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") ?? "";
   const totalPriceItem = usePreviewStore((state) => state.totalPriceItem);
-  const { isLoading: StatsLoading } = useStats(name);
+  const { isLoading: StatsLoading } = useStats();
   const sumAvg = totalPriceItem?.reduce((acc, cur) => acc + cur.price, 0);
 
   if (StatsLoading) {

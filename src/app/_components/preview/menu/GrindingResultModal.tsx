@@ -68,36 +68,48 @@ const GrindingResultModal = () => {
 
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="mx-2 flex min-h-full items-end justify-center text-center sm:p-0 md:items-center">
-            <DialogPanel
-              transition
-              className="relative mx-2 mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:max-w-[1050px]"
-            >
-              <div className="w-full bg-backgroundOne px-2 pb-4 pt-5 md:pb-4">
-                <div className="flex w-full items-center justify-start lg:justify-end">
-                  <button onClick={() => setOpen(false)}>X</button>
-                </div>
-                {materialsArray.length >= 1 ? (
+            {grindingItems.length >= 1 ? (
+              <DialogPanel
+                transition
+                className="relative mb-6 transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:mx-6 sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:w-[1500px]"
+              >
+                <div className="bg-backgroundOne px-4 pb-4 pt-5 md:p-6 md:pb-4">
+                  <div className="flex w-full items-center justify-start lg:justify-end">
+                    <button onClick={() => setOpen(false)}>X</button>
+                  </div>
                   <div className="flex flex-col gap-4">
                     <GrindingResult
                       grindingItems={grindingItems}
                       materialsArray={materialsArray}
                     />
                   </div>
-                ) : (
-                  <div className="flex items-center justify-center">
-                    연마 가능한 장비가 없습니다.
+
+                  <div className="flex items-center justify-center text-sm sm:hidden">
+                    <button onClick={() => setOpen(false)}>확인</button>
+                  </div>
+                </div>
+                {grindingItems.length >= 1 && (
+                  <div className="pb-2">
+                    <OneTable />
                   </div>
                 )}
+              </DialogPanel>
+            ) : (
+              <DialogPanel
+                transition
+                className="relative mx-auto mb-6 transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+              >
+                <div className="bg-backgroundOne px-4 pb-4 pt-5 md:p-6 md:pb-4">
+                  <div className="flex items-center justify-start lg:justify-end">
+                    <button onClick={() => setOpen(false)}>X</button>
+                  </div>
 
-                <div className="flex items-center justify-center text-sm sm:hidden">
-                  <button onClick={() => setOpen(false)}>확인</button>
+                  <div className="flex items-center justify-center text-sm">
+                    연마 가능한 장비가 없습니다.
+                  </div>
                 </div>
-              </div>
-
-              <div className="pb-2">
-                <OneTable />
-              </div>
-            </DialogPanel>
+              </DialogPanel>
+            )}
           </div>
         </div>
       </Dialog>
