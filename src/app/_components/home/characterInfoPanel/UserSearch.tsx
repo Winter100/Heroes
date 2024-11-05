@@ -6,6 +6,7 @@ import { GoSearch } from "react-icons/go";
 import Row from "../../layout/Row";
 import Input from "../../common/Input";
 import Loading from "../../common/Loading";
+import { useSearchParams } from "next/navigation";
 
 interface UserSearchProps {
   inputRef: RefObject<HTMLInputElement>;
@@ -22,15 +23,23 @@ const UserSearch = ({
   onSubmitHandler,
   setIsFocused,
 }: UserSearchProps) => {
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") ?? "";
+
+  const onSubmit = (e: FormEvent) => {
+    if (inputRef.current?.value === name) {
+      e.preventDefault();
+      inputRef.current.focus();
+      return;
+    } else {
+      onSubmitHandler(e);
+    }
+  };
   return (
     <Row
       className={`${isFocused ? "border-blue-300" : "border-borderColor"} ${loading ? "bg-backgroundTwo" : ""} outline-blue-300" h-8 w-full gap-1 rounded-lg border text-sm shadow-sm`}
     >
-      <form
-        id="search"
-        onSubmit={onSubmitHandler}
-        className="flex h-full w-full pl-2"
-      >
+      <form id="search" onSubmit={onSubmit} className="flex h-full w-full pl-2">
         <Input
           spellCheck="false"
           ref={inputRef}

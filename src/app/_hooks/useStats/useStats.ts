@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "next/navigation";
 
 import { useOcid } from "../useOcid/useOcid";
 import { getStats } from "@/app/_services/getStats";
@@ -10,20 +13,21 @@ import { someStats } from "@/app/_components/preview/utils/someStats";
 import { Stat } from "@/app/_type/previewType";
 import { calculateStatsDifference } from "@/app/_components/preview/utils/calculateStatsDifference";
 
-export const useStats = (name: string) => {
+export const useStats = () => {
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") ?? "";
   const { data: ocid } = useOcid(name);
 
   const { mergeAtkAndMatk, translatedStats } = mergeStats();
   const { data, isLoading, error } = useQuery({
     enabled: !!ocid,
-    queryKey: [ocid, "스텟"],
+    queryKey: [ocid, name, "스텟"],
     queryFn: () => getStats(ocid ?? ""),
     refetchOnWindowFocus: false,
     select: (data) => {
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);
     },
-    staleTime: 10 * 1000,
   });
 
   const afterStats = usePreviewStore((state) => state.afterStats);
@@ -51,14 +55,16 @@ export const useStats = (name: string) => {
   }));
 
   const mergedStats =
-    data && someStats(data, before as Stat[], after as Stat[]);
+    data && someStats(data ?? [], before as Stat[], after as Stat[]);
 
   const statDifference =
-    mergedStats && calculateStatsDifference(mergedStats, data);
+    mergedStats && calculateStatsDifference(mergedStats ?? [], data ?? []);
 
   useEffect(() => {
-    mergedStats && setPreviewAllStats(mergedStats as Stat[]);
-  }, [mergedStats, setPreviewAllStats]);
+    if (!isLoading) {
+      mergedStats && setPreviewAllStats((mergedStats as Stat[]) ?? []);
+    }
+  }, [mergedStats, setPreviewAllStats, isLoading]);
 
   return { data, isLoading, error, mergedStats, statDifference };
 };

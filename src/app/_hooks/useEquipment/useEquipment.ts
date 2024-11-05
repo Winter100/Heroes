@@ -1,19 +1,19 @@
+import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+
 import { getEquipment } from "@/app/_services/getEquipment";
 import { Item_equipment } from "@/app/_type/equipmentType";
-import { useQuery } from "@tanstack/react-query";
-import { useOcid } from "../useOcid/useOcid";
 import { bagList } from "@/app/_components/preview/utils/bagList";
 import { getNewTuning } from "@/app/_components/preview/utils/getNewTuning";
 import { usePreviewStore } from "@/app/_store/previewStore";
-import { useEffect } from "react";
 
-export const useEquipment = (name: string) => {
-  const { data: ocid } = useOcid(name);
-
-  const { data, isLoading } = useQuery<Item_equipment>({
+export const useEquipment = (ocid: string) => {
+  const { data, isLoading, error } = useQuery<Item_equipment>({
     enabled: !!ocid,
     queryKey: [ocid, "장비"],
     queryFn: () => getEquipment(ocid ?? ""),
+    gcTime: 1000 * 5,
+    staleTime: 1000 * 5,
     refetchOnWindowFocus: false,
   });
 
@@ -34,9 +34,9 @@ export const useEquipment = (name: string) => {
 
   useEffect(() => {
     if (bag) {
-      setItems(bag);
+      setItems(bag ?? []);
     }
   }, [bag, setItems]);
 
-  return { bag, cash, isLoading };
+  return { bag, cash, isLoading, data, error };
 };

@@ -1,17 +1,16 @@
 "use client";
 
 import { previewInitialTitleList } from "@/app/_constant/rankTitleList";
-import { usePreviewStore } from "@/app/_store/previewStore";
 import { limitCalculator } from "../../home/characterInfoPanel/utils/limitCalculator";
 import { MonstersType } from "@/app/_constant/raidList";
+import { Stat } from "@/app/_type/previewType";
 
 interface TableProps {
   boss: MonstersType;
   bossEntry: "상한" | "빠른전투";
+  previewAllStats: Stat[];
 }
-const Table = ({ boss, bossEntry }: TableProps) => {
-  const previewAllStats = usePreviewStore((state) => state.previewAllStats);
-
+const Table = ({ boss, bossEntry, previewAllStats }: TableProps) => {
   const filteredStats = previewAllStats
     .filter((stat) =>
       previewInitialTitleList.some((c) => c.stat_name === stat.stat_name),

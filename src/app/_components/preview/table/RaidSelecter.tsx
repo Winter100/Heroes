@@ -22,8 +22,8 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   };
 
   useEffect(() => {
-    raidString && setEntry(raidString.entry);
-  }, []);
+    raidString?.entry && setEntry(raidString.entry);
+  }, [raidString?.entry]);
 
   const boss = filterRaidList(entry);
 

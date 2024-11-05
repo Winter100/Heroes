@@ -36,8 +36,11 @@ const GrindingList = ({ item }: GrindingProps) => {
         };
       }
     } else if (stat.stat_name === "해제 2") {
-      const limit1 = arr.find((s) => s.stat_name === "해제");
-      const isLimitTrue = limit1?.stat_max_value === limit1?.stat_value;
+      // const limit1 = arr.find((s) => s.stat_name === "해제");
+      // const isLimitTrue = limit1?.stat_max_value === limit1?.stat_value;
+      const isLimitTrue = arr
+        .filter((s) => s.stat_name !== "해제 2")
+        .every((s) => s.stat_max_value === s.stat_value);
       return {
         ...stat,
         isView: isLimitTrue,
@@ -53,7 +56,9 @@ const GrindingList = ({ item }: GrindingProps) => {
     )
     .every((s) => s?.stat_max_value === s?.stat_value);
 
-  const limit1 = newTuning?.find((stat) => stat.stat_name === "해제");
+  const isLimit2Every = item.item_option.tuning_stat
+    ?.filter((stat) => stat.stat_name !== "해제 2")
+    .every((s) => s.stat_max_value === s.stat_value);
 
   useEffect(() => {
     if (!item.item_name.includes("와드네") && !isLimit1Every) {
@@ -67,18 +72,13 @@ const GrindingList = ({ item }: GrindingProps) => {
   ]);
 
   useEffect(() => {
-    if (limit1?.stat_value !== limit1?.stat_max_value) {
+    if (!isLimit2Every) {
       setLimit2Zero(item.item_equipment_slot_name);
     }
-  }, [
-    limit1?.stat_value,
-    limit1?.stat_max_value,
-    item.item_equipment_slot_name,
-    setLimit2Zero,
-  ]);
+  }, [item.item_equipment_slot_name, isLimit2Every, setLimit2Zero]);
 
   return (
-    <div className="flex w-full cursor-default flex-col gap-2 p-2 md:gap-4">
+    <div className="flex w-full cursor-default flex-col gap-2 p-1 md:gap-4">
       {newTuning?.map((stat) => (
         <GrindingItem
           key={stat.stat_name}
