@@ -1128,7 +1128,7 @@ export const suffix_enchant_options = [
       { stat_name: "공격력", stat_value: "230" },
       { stat_name: "마법공격력", stat_value: "230" },
       { stat_name: "크리티컬", stat_value: "2" },
-      { stat_name: "크리티컬 저항", stat_value: "5" },
+      { stat_name: "크리티컬 저항", stat_value: "7" },
       { stat_name: "수호부, 방패, 캐스틀릿, 그랜드타지", stat_value: "" },
     ],
   },
