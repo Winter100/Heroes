@@ -1,21 +1,30 @@
-"use client";
+import { Suspense } from "react";
 import PreviewUserSearch from "../_components/home/userDetailInfo/PreviewUserSearch";
 import Header from "../_components/layout/Header";
+import Loading from "../_components/common/Loading";
 
 const Page = () => {
   return (
-    <div className="flex h-full w-full flex-col justify-center">
-      <Header />
-      <div className="m-auto my-40 flex w-96 cursor-default flex-col gap-4">
-        <h1 className="text-center font-sans text-7xl">망디</h1>
-        <div className="flex items-center justify-center text-xs">
-          <p>마비노기 영웅전 캐릭터를 조회하고 장비를 세팅해보세요</p>
+    <Suspense
+      fallback={
+        <div className="flex h-full w-full items-center justify-center">
+          <Loading />
         </div>
-        <div>
-          <PreviewUserSearch />
+      }
+    >
+      <div className="flex h-full w-full flex-col justify-center">
+        <Header />
+        <div className="m-auto my-40 flex w-96 cursor-default flex-col gap-4">
+          <h1 className="text-center font-sans text-7xl">망디</h1>
+          <div className="flex items-center justify-center text-xs">
+            <p>마비노기 영웅전 캐릭터를 조회하고 장비를 세팅해보세요</p>
+          </div>
+          <div>
+            <PreviewUserSearch />
+          </div>
         </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 

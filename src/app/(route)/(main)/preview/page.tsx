@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Section from "@/app/_components/layout/Section";
 import Column from "@/app/_components/layout/Column";
 import Row from "@/app/_components/layout/Row";
@@ -7,26 +8,33 @@ import Preview from "@/app/_components/preview/Preview";
 import ResultModal from "@/app/_components/preview/menu/ResultModal";
 import RaidLimitModal from "@/app/_components/preview/menu/RaidLimitModal";
 import GrindingResultModal from "@/app/_components/preview/menu/GrindingResultModal";
+import Loading from "@/app/_components/common/Loading";
 
-const Page = ({ searchParams }: { searchParams: { name: string } }) => {
-  const name = searchParams.name;
-
+const Page = () => {
   return (
-    <Section className="h-full w-full">
-      <Column className="flex h-full w-full gap-1">
-        <Row className="h-8 w-full items-center justify-between gap-1">
-          <Row className="h-full w-full items-center justify-center sm:flex-1">
-            <PreviewUserSearch />
+    <Suspense
+      fallback={
+        <div className="flex h-full w-full items-center justify-center">
+          <Loading />
+        </div>
+      }
+    >
+      <Section className="h-full w-full">
+        <Column className="flex h-full w-full gap-1">
+          <Row className="h-8 w-full items-center justify-between gap-1">
+            <Row className="h-full w-full items-center justify-center sm:flex-1">
+              <PreviewUserSearch />
+            </Row>
+            <Row className="flex h-full w-32 items-center justify-center gap-1">
+              <RaidLimitModal />
+              <ResultModal />
+              <GrindingResultModal />
+            </Row>
           </Row>
-          <Row className="flex h-full w-32 items-center justify-center gap-1">
-            <RaidLimitModal />
-            <ResultModal name={name} />
-            <GrindingResultModal />
-          </Row>
-        </Row>
-        <Preview name={name} />
-      </Column>
-    </Section>
+          <Preview />
+        </Column>
+      </Section>
+    </Suspense>
   );
 };
 
