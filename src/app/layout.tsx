@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   applicationName: "망디",
+  metadataBase: new URL("https://heroes-dev.com/"),
   title: "망디",
   keywords: [
     "마비노기 영웅전",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     "마영전 캐릭터",
   ],
   description:
-    "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
+    "마비노기 영웅전(마영전) 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.",
   verification: {
     google: "NWuO_jx2ujHe0lQeiHDEolhbhews2UnrQccL0yPX4RY",
     other: {
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "망디",
     description:
-      "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
+      "마비노기 영웅전(마영전)의 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.",
     type: "website",
     images: [
       {
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "망디",
     description:
-      "마비노기 영웅전의 캐릭터를 조회하고 장비를 세팅해 볼 수 있습니다.",
+      "마비노기 영웅전(마영전)의 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.",
     images: [
       {
         url: "/bg.jpg",
