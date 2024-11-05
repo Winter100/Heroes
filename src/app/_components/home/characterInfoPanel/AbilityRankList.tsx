@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import AbilityRankThead from "./AbilityRankThead";
 
 const NoSSRAbilityRankTbody = dynamic(() => import("./AbilityRankTbody"), {
-  ssr: false,
+  ssr: true,
 });
 
 const AbilityRankList = () => {

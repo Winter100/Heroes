@@ -12,6 +12,7 @@ import DetailCashHeader from "../characterInfoPanel/detail/DetailCashHeader";
 import DetailCashItem from "../characterInfoPanel/detail/DetailCashItem";
 import DetailSkillHeader from "../characterInfoPanel/detail/DetailSkillHeader";
 import DetailSkillItem from "../characterInfoPanel/detail/DetailSkillItem";
+import { useOcid } from "@/app/_hooks/useOcid/useOcid";
 
 const CharacterSkillAndEquipment = () => {
   const stats = useDetailStore((state) => state.stats);
@@ -20,10 +21,11 @@ const CharacterSkillAndEquipment = () => {
   const name =
     useCharacterStore((state) => state.selectedCharacter?.name) ?? "";
 
-  const { bag, cash, isLoading } = useEquipment(name ?? "");
+  const { data: ocid, isLoading: ocidLoading } = useOcid(name);
+  const { bag, cash, isLoading } = useEquipment(ocid ?? "");
   const skill = useCharacterStore((state) => state.selectedCharacter?.skill);
 
-  if (isLoading) {
+  if (ocidLoading || isLoading) {
     return <Loading width="10" height="10" />;
   }
 

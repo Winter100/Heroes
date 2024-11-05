@@ -435,6 +435,7 @@ export const prefix_enchant_options = [
       { stat_name: "크리티컬 저항", stat_value: "-3" },
       { stat_name: "밸런스", stat_value: "2" },
       { stat_name: "최대 스태미나", stat_value: "5" },
+      { stat_name: "110레벨 이상 아이템", stat_value: "5" },
     ],
   },
   {
@@ -446,6 +447,7 @@ export const prefix_enchant_options = [
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
       { stat_name: "추가피해", stat_value: "100" },
+      { stat_name: "110레벨 이상 아이템", stat_value: "" },
     ],
   },
   {

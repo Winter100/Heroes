@@ -202,7 +202,7 @@ export const oneGrinding = [
             one_ingredient: [
               { stat_name: "골드", stat_value: "1000000" },
               { stat_name: "뉴에라의 광석", stat_value: "25" },
-              { stat_name: "뉴에라의 오브", stat_value: "25" },
+              { stat_name: "뉴에라의 오브", stat_value: "20" },
               { stat_name: "미지의 조각 3단계", stat_value: "3" },
             ],
           },

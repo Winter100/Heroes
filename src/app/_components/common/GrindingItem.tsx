@@ -88,7 +88,7 @@ const GrindingItem = ({
         </div>
       </div>
 
-      <div className="flex w-full flex-col items-center justify-center gap-2 md:flex-row md:gap-4">
+      <div className="flex w-full flex-col items-center justify-center gap-2">
         <div className="flex w-full items-center gap-2">
           <div className="h-2 w-full flex-1 bg-gray-600">
             <div
@@ -121,28 +121,28 @@ const GrindingItem = ({
             <button
               disabled={isMin}
               onClick={onMin}
-              className={`${isMin ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-8`}
+              className={`${isMin ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               Min
             </button>
             <button
               disabled={isMin}
               onClick={onDecrease}
-              className={`${isMin ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-8`}
+              className={`${isMin ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               -
             </button>
             <button
               disabled={isMax}
               onClick={onIncrease}
-              className={`${isMax ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-8`}
+              className={`${isMax ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               +
             </button>
             <button
               disabled={isMax}
               onClick={onMax}
-              className={`${isMax ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-8`}
+              className={`${isMax ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               Max
             </button>
