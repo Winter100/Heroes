@@ -14,7 +14,7 @@ const RaidLimitModal = () => {
 
   return (
     <>
-      <Button className="w-12 text-xs" onClick={() => setOpen((pre) => !pre)}>
+      <Button className="flex-1 text-xs" onClick={() => setOpen((pre) => !pre)}>
         순회
       </Button>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
