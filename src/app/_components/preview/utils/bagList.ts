@@ -1,4 +1,3 @@
-import { Item_equipment } from "./../../../_type/equipmentType";
 import { EquipmentType } from "@/app/_type/equipmentType";
 
 const slot_name = [

@@ -9,6 +9,7 @@ import ResultModal from "@/app/_components/preview/menu/ResultModal";
 import RaidLimitModal from "@/app/_components/preview/menu/RaidLimitModal";
 import GrindingResultModal from "@/app/_components/preview/menu/GrindingResultModal";
 import Loading from "@/app/_components/common/Loading";
+import Partholn from "@/app/_components/preview/menu/Partholn";
 
 const Page = () => {
   return (
@@ -25,9 +26,10 @@ const Page = () => {
             <Row className="h-full w-full items-center justify-center sm:flex-1">
               <PreviewUserSearch />
             </Row>
-            <Row className="flex h-full w-32 items-center justify-center gap-1">
+            <Row className="flex h-full w-60 items-center justify-center gap-1">
               <RaidLimitModal />
               <ResultModal />
+              <Partholn />
               <GrindingResultModal />
             </Row>
           </Row>
