@@ -15,6 +15,7 @@ const EnchantItem = ({
   previewName = "",
   selectedValue,
   setOpenModal,
+  description,
 }: EnchantItemProps) => {
   const rank = Number.isNaN(Number(enchantRank)) ? 7 : Number(enchantRank);
   const setTotalPrice = usePreviewStore((state) => state.setTotalPrice);
@@ -68,9 +69,8 @@ const EnchantItem = ({
       onClick={() => onClick(avgPrice)}
       onDoubleClick={() => setOpenModal(false)}
       className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-1 font-mono text-xs`}
-      // className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
     >
-      <Row className="h-8 items-center gap-2">
+      <Row className="w-full items-center justify-center">
         <Image
           width={32}
           height={32}
@@ -80,20 +80,26 @@ const EnchantItem = ({
           alt="인챈트"
         />
 
-        <div className="h-full flex-1">
-          <Row className="flex h-full gap-1">
-            <p className="hidden h-full items-center justify-center text-[10px] lg:flex">
-              ({rank})
-            </p>
-            <span className="flex items-center justify-center gap-1 text-[11px]">
-              <p>{stat_name}</p>
-              <p className="hidden lg:flex">인챈트 스크롤</p>
-            </span>
+        <div className="flex h-full w-full flex-col">
+          <Row className="flex h-full w-full items-center justify-center">
+            <div className="flex h-full w-full flex-col items-center justify-center text-xs">
+              <div className="flex h-full w-full flex-row items-center justify-center gap-1">
+                <p className="hidden h-full items-center justify-center text-[10px] lg:flex">
+                  ({rank})
+                </p>
+                <p>{stat_name}</p>
+                <p className="hidden lg:flex">인챈트 스크롤</p>
+              </div>
+              {description && (
+                <div className="text-[10px] opacity-80 sm:text-[11px]">
+                  {description}
+                </div>
+              )}
+            </div>
           </Row>
         </div>
       </Row>
-      <Column className="min-h-24 flex-1 rounded-md border border-borderColor p-1 text-[11px]">
-        {/* <Column className="min-h-24 flex-1 rounded-md border border-zinc-400 p-1 text-[11px]"> */}
+      <Column className="min-h-24 flex-1 rounded-md border border-borderColor p-1 text-xs">
         {stat_value.map((option) => (
           <div
             className="flex items-center px-1"
@@ -106,10 +112,12 @@ const EnchantItem = ({
           </div>
         ))}
       </Column>
-      <Row className="flex h-5 items-center justify-center gap-1 text-[11px]">
+      <Row className="flex h-5 items-center justify-center gap-1 text-xs">
         {avgPrice !== 0 ? (
           <Row>
-            <p className="items-center justify-center">평균 거래가:</p>
+            <p className="hidden items-center justify-center sm:flex">
+              평균 거래가:
+            </p>
             <p className="items-center justify-center">
               {avgPrice?.toLocaleString()}
             </p>
