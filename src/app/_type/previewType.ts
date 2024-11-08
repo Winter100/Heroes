@@ -31,6 +31,7 @@ export interface beforeAndAfterStatsType {
 
 export type OptionsType = {
   rank: string;
+  description: string;
   stat_name: string;
   stat_value: {
     stat_name: string;
@@ -63,7 +64,6 @@ export interface ModalProps {
   enchantList?: EnchantPrice[];
   previewName?: string;
   selectedValue?: string;
-  description?: string;
 }
 
 export interface PreviewModalProps {
@@ -77,6 +77,7 @@ export interface PreviewModalProps {
   options?: {
     rank: string;
     stat_name: string;
+    description: string;
     stat_value: { stat_name: string; stat_value: string }[];
   }[];
   before: {
@@ -89,7 +90,6 @@ export interface PreviewModalProps {
     previewName: string;
   };
   enchantList?: EnchantPrice[];
-  description?: string;
 }
 
 export interface EnchantItemProps {
