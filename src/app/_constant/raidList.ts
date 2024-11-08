@@ -610,7 +610,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "이름", stat_value: "주시자 요르드라" },
           { stat_name: "레벨", stat_value: "120" },
           { stat_name: "공격력", stat_value: "55000" },
-          { stat_name: "크리티컬", stat_value: "330" },
+          { stat_name: "크리티컬", stat_value: "365" },
           { stat_name: "크리티컬 저항", stat_value: "305" },
           { stat_name: "대항력 저항", stat_value: "300" },
           { stat_name: "밸런스 저항", stat_value: "100" },
