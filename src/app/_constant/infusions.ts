@@ -3,61 +3,73 @@ const infusions = {
     rank: "",
     stat_name: "크리티컬 1",
     stat_value: [{ stat_name: "크리티컬", stat_value: "1" }],
+    description: "",
   },
   critical_2: {
     rank: "",
     stat_name: "크리티컬 2",
     stat_value: [{ stat_name: "크리티컬", stat_value: "2" }],
+    description: "",
   },
   critical_3: {
     rank: "",
     stat_name: "크리티컬 3",
     stat_value: [{ stat_name: "크리티컬", stat_value: "3" }],
+    description: "",
   },
   balance_1: {
     rank: "",
     stat_name: "밸런스 1",
     stat_value: [{ stat_name: "밸런스", stat_value: "1" }],
+    description: "",
   },
   balance_2: {
     rank: "",
     stat_name: "밸런스 2",
     stat_value: [{ stat_name: "밸런스", stat_value: "2" }],
+    description: "",
   },
   balance_3: {
     rank: "",
     stat_name: "밸런스 3",
     stat_value: [{ stat_name: "밸런스", stat_value: "3" }],
+    description: "",
   },
   incSpeed: {
     rank: "",
     stat_name: "공격속도 1",
     stat_value: [{ stat_name: "공격속도", stat_value: "1" }],
+    description: "",
   },
   defense_1: {
     rank: "",
     stat_name: "방어력 101",
     stat_value: [{ stat_name: "방어력", stat_value: "101" }],
+    description: "",
   },
   defense_2: {
     rank: "",
     stat_name: "방어력 102",
     stat_value: [{ stat_name: "방어력", stat_value: "102" }],
+    description: "",
   },
   defense_3: {
     rank: "",
     stat_name: "방어력 103",
     stat_value: [{ stat_name: "방어력", stat_value: "103" }],
+    description: "",
   },
   criticalResistance_1: {
     rank: "",
     stat_name: "크리티컬 저항 1",
     stat_value: [{ stat_name: "크리티컬 저항", stat_value: "1" }],
+    description: "",
   },
   criticalResistance_2: {
     rank: "",
     stat_name: "크리티컬 저항 2",
     stat_value: [{ stat_name: "크리티컬 저항", stat_value: "2" }],
+    description: "",
   },
 };
 
