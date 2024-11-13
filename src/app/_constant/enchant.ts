@@ -1145,6 +1145,7 @@ export const suffix_enchant_options = [
     stat_value: [
       { stat_name: "공격력", stat_value: "30" },
       { stat_name: "마법공격력", stat_value: "30" },
+      { stat_name: "고유 그룹", stat_value: "스태미나 회복" },
       { stat_name: "스태미나 소량 회복 2단계", stat_value: "" },
     ],
   },
@@ -1187,7 +1188,7 @@ export const suffix_enchant_options = [
       { stat_name: "크리티컬", stat_value: "2" },
       { stat_name: "해제", stat_value: "100" },
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
-      { stat_name: "발동시 ", stat_value: "공격속도 증가" },
+      { stat_name: "발동시 공격속도 증가", stat_value: "" },
     ],
   },
   {
@@ -1196,7 +1197,7 @@ export const suffix_enchant_options = [
     description: "",
     stat_value: [
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
-      { stat_name: "발동시", stat_value: "공격속도 증가" },
+      { stat_name: "발동시 공격속도 증가", stat_value: "" },
     ],
   },
   {
@@ -1207,7 +1208,7 @@ export const suffix_enchant_options = [
       { stat_name: "크리티컬", stat_value: "-1" },
       { stat_name: "크리티컬 저항", stat_value: "-1" },
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
-      { stat_name: "발동시", stat_value: "공격속도 증가" },
+      { stat_name: "발동시 공격속도 증가", stat_value: "" },
     ],
   },
   {
@@ -1219,8 +1220,8 @@ export const suffix_enchant_options = [
       { stat_name: "해제", stat_value: "100" },
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
       {
-        stat_name: "발동시 (쿨 30초)",
-        stat_value: "공격속도 증가",
+        stat_name: "발동시 (쿨 30초) 공격속도 증가",
+        stat_value: "",
       },
     ],
   },
@@ -1231,8 +1232,8 @@ export const suffix_enchant_options = [
     stat_value: [
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
       {
-        stat_name: "발동시 (쿨 30초)",
-        stat_value: "공격속도 증가",
+        stat_name: "발동시 (쿨 30초) 공격속도 증가",
+        stat_value: "",
       },
     ],
   },
@@ -1245,8 +1246,8 @@ export const suffix_enchant_options = [
       { stat_name: "크리티컬 저항", stat_value: "-1" },
       { stat_name: "고유 그룹", stat_value: "공격속도 증가" },
       {
-        stat_name: "발동시 (쿨 30초)",
-        stat_value: "공격속도 증가",
+        stat_name: "발동시 (쿨 30초) 공격속도 증가",
+        stat_value: "",
       },
     ],
   },
@@ -1313,6 +1314,18 @@ export const suffix_enchant_options = [
       { stat_name: "마법공격력", stat_value: "230" },
       { stat_name: "크리티컬", stat_value: "4" },
       { stat_name: "크리티컬 저항", stat_value: "9" },
+    ],
+  },
+  {
+    rank: "4",
+    stat_name: "물결",
+    description: "110 레벨 이상 아이템",
+    stat_value: [
+      { stat_name: "공격력", stat_value: "300" },
+      { stat_name: "마법공격력", stat_value: "300" },
+      { stat_name: "크리티컬 저항", stat_value: "3" },
+      { stat_name: "고유 그룹", stat_value: "스태미나 회복" },
+      { stat_name: "스태미나 소량 회복 3단계", stat_value: "" },
     ],
   },
 ];
@@ -1538,15 +1551,15 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
   },
   {
     name: ["Right Finger", "Left Finger", "Belt"],
-    list: ["신비", "격노", "소망", "마음", "열망", "활력", "고통"],
+    list: ["신비", "격노", "소망", "마음", "열망", "활력", "고통", "물결"],
   },
   {
     name: ["Earring", "Charm", "Necklace"],
-    list: ["격노", "소망", "마음", "열망", "활력", "고통"],
+    list: ["격노", "소망", "마음", "열망", "활력", "고통", "물결"],
   },
   {
     name: ["Artifact"],
-    list: ["격노", "소망", "마음", "열망", "활력", "고통"],
+    list: ["격노", "소망", "마음", "열망", "활력", "고통", "물결"],
   },
   {
     name: ["Rhod"],
