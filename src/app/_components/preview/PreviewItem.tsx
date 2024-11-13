@@ -91,11 +91,7 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
     level: item?.item_option?.enhancement_level ?? "",
   };
 
-  const beforeinfusionName =
-    item?.item_option?.power_infusion_preset_1?.stat_name;
-  const beforeInfusionValue =
-    item?.item_option?.power_infusion_preset_1?.stat_value;
-  const beforeinFusion = `${beforeinfusionName} ${beforeInfusionValue}`;
+  const beforeinFusion = `${infusion_name} ${infusion_value}`;
 
   const beforePrefixName =
     item?.item_option?.prefix_enchant_use_preset_no === 1

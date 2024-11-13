@@ -5,8 +5,9 @@ import { EnchantPriceType } from "@/app/_type/enchantPriceType";
 export const useEnchant = (name: string) => {
   const { data, isLoading } = useQuery<EnchantPriceType[]>({
     enabled: !!name,
-    queryKey: [name, "enchant"],
+    queryKey: ["enchant"],
     queryFn: () => getEnchantPrice(),
+    refetchOnWindowFocus: false,
   });
 
   return { data, isLoading };
