@@ -10,6 +10,7 @@ export const nexonInstance = axios.create({
   baseURL,
   method: "GET",
   headers: {
+    "Cache-Control": "no-cache",
     "x-nxopen-api-key": process.env.NEXT_PUBLIC_API_KEY as string,
   },
 });
