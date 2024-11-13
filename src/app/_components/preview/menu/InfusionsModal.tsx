@@ -16,8 +16,9 @@ const InfusionsModal = ({
   previewName,
   selectedValue,
 }: ModalProps) => {
-  const selected = selectedValue !== undefined ? selectedValue : beforeName;
+  const selected = selectedValue ? selectedValue : beforeName;
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <Button
@@ -39,7 +40,6 @@ const InfusionsModal = ({
             <DialogPanel
               transition
               className="relative mx-2 mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:max-w-[800px]"
-              // className="relative mx-auto w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
             >
               <div className="bg-backgroundOne px-1 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <Column className="flex h-full justify-around">
@@ -59,7 +59,7 @@ const InfusionsModal = ({
                       {Object.keys(groupByStatName(options))
                         ?.sort((a, b) => a.localeCompare(b))
                         .map((statName) => (
-                          <div key={statName} className="my-4">
+                          <li key={statName} className="my-4">
                             <h3 className="text-base font-semibold text-white">
                               {statName}
                             </h3>
@@ -67,20 +67,18 @@ const InfusionsModal = ({
                               {groupByStatName(options)[statName]?.map(
                                 (item, i) => (
                                   <li
-                                    onClick={() =>
+                                    onClick={() => {
                                       selectedHandler(
                                         item?.stat_name,
                                         item?.stat_value,
-                                      )
-                                    }
+                                      );
+                                    }}
                                     className="flex w-full rounded-lg shadow-md transition-shadow duration-300 hover:cursor-pointer hover:shadow-xl"
                                     key={item?.stat_name + i}
                                   >
                                     <InfusionsItem
                                       setOpenModal={setOpen}
-                                      selected={
-                                        selected === `${item.stat_name}`
-                                      }
+                                      selectedValue={selected ?? ""}
                                       previewName={previewName}
                                       {...item}
                                     />
@@ -88,7 +86,7 @@ const InfusionsModal = ({
                                 ),
                               )}
                             </ul>
-                          </div>
+                          </li>
                         ))}
                     </ul>
                   </div>

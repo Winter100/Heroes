@@ -131,7 +131,7 @@ export type CombinedStats = {
 };
 
 export interface InfusionsItemProps {
-  selected: boolean;
+  selectedValue: string;
   stat_name: string;
   stat_value: {
     stat_name: string;
