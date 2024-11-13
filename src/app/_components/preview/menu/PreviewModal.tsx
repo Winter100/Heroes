@@ -43,11 +43,17 @@ const PreviewModal = ({
       stat_value: value,
     };
 
+    const name = beforeName?.split(" ")[0];
+    const statValue = beforeName?.split(" ")[1];
+    const beforeStats = [
+      { stat_name: name ?? "", stat_value: statValue ?? "" },
+    ];
+
     const beforeValue = {
       slot,
       previewName,
       stat_name: before?.stat_name,
-      stat_value: before?.stat_value,
+      stat_value: before.stat_name ? before?.stat_value : beforeStats,
     };
 
     setBeforeStats(beforeValue);

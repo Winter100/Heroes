@@ -4,17 +4,16 @@ import Row from "../../layout/Row";
 import { InfusionsItemProps } from "@/app/_type/previewType";
 
 const InfusionsItem = ({
-  selected,
+  selectedValue,
   stat_name,
   stat_value,
   setOpenModal,
 }: InfusionsItemProps) => {
   const src = "/images/enchant/infusion.png";
-
   return (
     <Column
       onDoubleClick={() => setOpenModal(false)}
-      className={`${selected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
+      className={`${selectedValue === stat_name ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
     >
       <Row className="h-8 items-center gap-2">
         <Image
@@ -35,7 +34,6 @@ const InfusionsItem = ({
         </div>
       </Row>
       <Column className="min-h-24 flex-1 rounded-md border border-borderColor p-1 text-[11px]">
-        {/* <Column className="flex-1 rounded-md border border-zinc-400 p-1 text-[11px]"> */}
         {stat_value.map((option) => (
           <div
             className="flex items-center px-1"
