@@ -616,7 +616,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "100" },
         ],
         drop_items: [],
-        image: "/images/헤레타.png",
+        image: "/monster/주시자의신전.png",
       },
     ],
   },
