@@ -14,6 +14,7 @@ interface UserSearchProps {
   loading: boolean;
   onSubmitHandler: (e: FormEvent) => Promise<void>;
   setIsFocused: Dispatch<SetStateAction<boolean>>;
+  className?: string;
 }
 
 const UserSearch = ({
@@ -22,6 +23,7 @@ const UserSearch = ({
   loading,
   onSubmitHandler,
   setIsFocused,
+  className = "",
 }: UserSearchProps) => {
   const searchParams = useSearchParams();
   const name = searchParams.get("name") ?? "";
@@ -37,7 +39,7 @@ const UserSearch = ({
   };
   return (
     <Row
-      className={`${isFocused ? "border-blue-300" : "border-borderColor"} ${loading ? "bg-backgroundTwo" : ""} outline-blue-300" h-8 w-full gap-1 rounded-lg border text-sm shadow-sm`}
+      className={`${isFocused ? "border-blue-300" : "border-borderColor"} ${loading ? "bg-backgroundTwo" : ""} h-8 gap-1 rounded-lg border text-sm shadow-sm outline-blue-300 ${className}`}
     >
       <form id="search" onSubmit={onSubmit} className="flex h-full w-full pl-2">
         <Input
