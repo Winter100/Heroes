@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 const link = [
   { name: "상한 조회", href: "/raid" },
   { name: "장비 세팅", href: "/preview" },
+  { name: "골드 거래소 순위", href: "/gold" },
 ];
 
 const Header = () => {

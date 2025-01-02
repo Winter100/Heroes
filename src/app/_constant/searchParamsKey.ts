@@ -4,4 +4,5 @@ export const SEARCH_PARAMS_KEY = {
   stat: "stat",
   guild: "guild",
   character_name: "character_name",
+  type: "type",
 };

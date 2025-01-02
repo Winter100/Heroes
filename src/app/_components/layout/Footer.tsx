@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="flex w-full flex-col items-center justify-center gap-1 bg-background py-1 text-xs">
-      <p>버그 제보 및 문의 100taeng@gmail.com</p>
+      <p>건의사항: 100taeng@gmail.com</p>
       <p>
         Data based on
         <Link
