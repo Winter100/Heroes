@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import PreviewUserSearch from "../_components/home/userDetailInfo/PreviewUserSearch";
 import Header from "../_components/layout/Header";
 import Loading from "../_components/common/Loading";
+import PreviewUserSearch from "../_components/preview/search/PreviewUserSearch";
 
 const Page = () => {
   return (

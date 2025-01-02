@@ -9,7 +9,7 @@ const PreviewUserSearch = () => {
   return (
     <Row className="flex w-full items-center justify-center">
       <UserSearch
-        className="w-96"
+        className="w-full"
         inputRef={inputRef}
         isFocused={isFocused}
         setIsFocused={setIsFocused}

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-import PreviewHeader from "./PreviewHeader";
+import PreviewTitle from "./PreviewTitle";
 import PreviewBody from "./PreviewBody";
 import Column from "../layout/Column";
 import { usePreviewStore } from "@/app/_store/previewStore";
@@ -30,16 +30,14 @@ const Preview = () => {
   }, [reset]);
 
   return (
-    <>
-      <Column className="h-full w-full gap-1 rounded-lg text-fontColor">
-        {name && (
-          <>
-            <PreviewHeader />
-            <PreviewBody />
-          </>
-        )}
-      </Column>
-    </>
+    <Column className="h-full w-full gap-1 rounded-lg text-fontColor">
+      {name && (
+        <>
+          <PreviewTitle />
+          <PreviewBody />
+        </>
+      )}
+    </Column>
   );
 };
 
