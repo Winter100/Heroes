@@ -5,6 +5,7 @@ import BottomArrow from "../../common/BottomArrow";
 import GrindingList from "../../common/GrindingList";
 import IngredientList from "../../common/IngredientList";
 import OneTable from "../table/OneTable";
+import Ability from "../ability/Ability";
 
 const ItemModal = ({ item }: { item: NewEquipmentType }) => {
   const [open, setOpen] = useState(false);
@@ -13,6 +14,8 @@ const ItemModal = ({ item }: { item: NewEquipmentType }) => {
     name: item?.item_name ?? "",
     level: item?.item_option?.enhancement_level ?? "",
   };
+
+  const isAbility = !!item.item_option.ability_name;
 
   return (
     <>
@@ -46,6 +49,11 @@ const ItemModal = ({ item }: { item: NewEquipmentType }) => {
                       </p>
                     </div>
                   </div>
+                  {isAbility && (
+                    <div className="flex flex-col items-center justify-center rounded-lg bg-background p-2">
+                      <Ability item={item} />
+                    </div>
+                  )}
                   <div className="flex flex-col items-center justify-center rounded-lg bg-background p-2">
                     {/* <div className="flex flex-col items-center justify-center rounded-lg bg-background p-2"> */}
                     <GrindingList item={item} />
