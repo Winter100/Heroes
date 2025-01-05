@@ -11,7 +11,7 @@ type State = {
   previewAllStats: Stat[];
 
   items: NewEquipmentType[];
-  afterItems: NewEquipmentType[];
+  beforeItems: NewEquipmentType[];
 };
 
 type Action = {
@@ -40,7 +40,7 @@ export const usePreviewStore = create<State & Action>((set) => {
     totalPriceItem: [],
     previewAllStats: [],
     items: [],
-    afterItems: [],
+    beforeItems: [],
     setCharacterName: (value) => {
       set(() => {
         return { characterName: value };
@@ -96,7 +96,7 @@ export const usePreviewStore = create<State & Action>((set) => {
           previewAllStats: [],
           StatDifference: [],
           items: [],
-          afterItems: [],
+          beforeItems: [],
         };
       });
     },
@@ -129,7 +129,7 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setItems: (value) => {
       set(() => {
-        return { items: value, afterItems: value };
+        return { items: value, beforeItems: value };
       });
     },
 
@@ -153,7 +153,6 @@ export const usePreviewStore = create<State & Action>((set) => {
                   return stat;
                 },
               );
-
               return {
                 ...item,
                 item_option: {

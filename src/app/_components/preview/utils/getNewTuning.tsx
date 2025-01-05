@@ -9,8 +9,8 @@ interface UpdateStats {
   stat_one_value: string;
   stat_max_value: string;
   one_ingredient: {
-    stat_name: string;
-    stat_value: string;
+    name: string;
+    quantity: string;
   }[];
 }
 [];

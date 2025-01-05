@@ -171,7 +171,7 @@ export const getAbilityList = (
 
 const getAbilityIngredIent = {
   ardri: [
-    { name: "골드", quantity: "5000000" },
+    { name: "골드", quantity: "3000000" },
     { name: "뉴에라의 옷감", quantity: "20" },
     { name: "뉴에라의 가죽", quantity: "20" },
     { name: "뉴에라의 광석", quantity: "20" },
@@ -179,7 +179,7 @@ const getAbilityIngredIent = {
     { name: "봉인의 힘 파편", quantity: "450" },
   ],
   orna: [
-    { name: "골드", quantity: "5000000" },
+    { name: "골드", quantity: "3000000" },
     { name: "뉴에라의 옷감", quantity: "20" },
     { name: "뉴에라의 가죽", quantity: "20" },
     { name: "뉴에라의 광석", quantity: "20" },

@@ -1,5 +1,6 @@
 import { NewEquipmentType } from "@/app/_type/equipmentType";
 import IngredientItem from "./IngredientItem";
+import { useAbilityStore } from "@/app/_store/abilityStore";
 
 interface IngredientListProps {
   item: NewEquipmentType;
@@ -8,7 +9,22 @@ interface IngredientListProps {
 const IngredientList = ({ item }: IngredientListProps) => {
   const tuningStats = item?.item_option?.tuning_stat?.map((stat) => stat);
 
-  const t = tuningStats?.map((stat) => {
+  const ability = useAbilityStore((state) => state.ability);
+  const slot = item.item_equipment_slot_name;
+
+  const findAbility = ability.find((ab) => ab.slot === slot);
+  const abilityType = {
+    stat_max_value: "1",
+    stat_min_value: "1",
+    stat_name: findAbility?.name ?? "",
+    stat_one_value: "1",
+    stat_value: "2",
+    one_ingredient: findAbility?.ingredient ?? [],
+  };
+
+  const mergedItems = tuningStats?.concat(abilityType) || [abilityType];
+
+  const t = mergedItems?.map((stat) => {
     return {
       stat_name: stat.stat_name,
       one_ingredient: stat.one_ingredient,
@@ -24,13 +40,13 @@ const IngredientList = ({ item }: IngredientListProps) => {
   t?.forEach((stat) => {
     const grindingNumber = stat.grindingNumber;
     stat.one_ingredient.forEach((ingredient) => {
-      const { stat_name, stat_value } = ingredient;
-      const value = Number(stat_value) * grindingNumber;
+      const { name, quantity } = ingredient;
+      const value = Number(quantity) * grindingNumber;
 
-      if (!materialTotals[stat_name]) {
-        materialTotals[stat_name] = 0;
+      if (!materialTotals[name]) {
+        materialTotals[name] = 0;
       }
-      materialTotals[stat_name] += value;
+      materialTotals[name] += value;
     });
   });
 
