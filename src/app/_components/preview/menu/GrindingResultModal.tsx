@@ -5,55 +5,36 @@ import Button from "../../common/Button";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import GrindingResult from "./GrindingResult";
 import OneTable from "../table/OneTable";
+import { getMaterials } from "../utils/getMaterials";
+import { useAbilityStore } from "@/app/_store/abilityStore";
 
 const GrindingResultModal = () => {
   const [open, setOpen] = useState(false);
 
   const items = usePreviewStore((state) => state.items);
-
   const grindingItems = items.filter((item) => item.item_option.tuning_stat);
 
   const ingredientItems = grindingItems.map(
     (item) => item.item_option.tuning_stat,
   );
 
-  const t = ingredientItems?.map((stat) => {
-    return stat?.map((s) => {
-      return {
-        stat_name: s.stat_name,
-        one_ingredient: s.one_ingredient,
-        grindingNumber: Math.ceil(
-          (Number(s.stat_value) - Number(s.stat_min_value)) /
-            Number(s.stat_one_value),
-        ),
-      };
-    });
+  const ability = useAbilityStore((state) => state.ability);
+
+  const ab = ability.map((ab) => {
+    return {
+      stat_max_value: "1",
+      stat_min_value: "1",
+      stat_name: ab?.name ?? "",
+      stat_one_value: "1",
+      stat_value: "2",
+      one_ingredient: ab?.ingredient ?? [],
+    };
   });
 
-  const materialTotals: Record<string, number> = {};
+  const mergedItems = ingredientItems?.concat([ab]) || [ab];
 
-  t.map((stat) =>
-    stat?.forEach((stat) => {
-      const grindingNumber = stat.grindingNumber;
-      stat.one_ingredient.forEach((ingredient) => {
-        const { stat_name, stat_value } = ingredient;
-        const value = Number(stat_value) * grindingNumber;
-
-        if (!materialTotals[stat_name]) {
-          materialTotals[stat_name] = 0;
-        }
-        materialTotals[stat_name] += value;
-      });
-    }),
-  );
-
-  const materialsArray = Object.keys(materialTotals)
-    .map((name) => ({
-      name,
-      value: materialTotals[name],
-      src: `/images/items/ingredient/${name}.png`,
-    }))
-    .sort((a, b) => a.name.localeCompare(b.name, "ko"));
+  const materialsArray = getMaterials(mergedItems);
+  // const materialsArray = getMaterials(ingredientItems);
 
   return (
     <>
