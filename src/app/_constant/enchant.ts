@@ -1328,6 +1328,17 @@ export const suffix_enchant_options = [
       { stat_name: "스태미나 소량 회복 3단계", stat_value: "" },
     ],
   },
+  {
+    rank: "4",
+    stat_name: "사념",
+    description: "110 레벨 이상 아이템",
+    stat_value: [
+      { stat_name: "밸런스", stat_value: "1" },
+      { stat_name: "방어력", stat_value: "500" },
+      { stat_name: "최대 스태미나", stat_value: "2" },
+      { stat_name: "크리티컬 저항", stat_value: "5" },
+    ],
+  },
 ];
 
 export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
@@ -1551,15 +1562,25 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
   },
   {
     name: ["Right Finger", "Left Finger", "Belt"],
-    list: ["신비", "격노", "소망", "마음", "열망", "활력", "고통", "물결"],
+    list: [
+      "신비",
+      "격노",
+      "소망",
+      "마음",
+      "열망",
+      "활력",
+      "고통",
+      "물결",
+      "사념",
+    ],
   },
   {
     name: ["Earring", "Charm", "Necklace"],
-    list: ["격노", "소망", "마음", "열망", "활력", "고통", "물결"],
+    list: ["격노", "소망", "마음", "열망", "활력", "고통", "물결", "사념"],
   },
   {
     name: ["Artifact"],
-    list: ["격노", "소망", "마음", "열망", "활력", "고통", "물결"],
+    list: ["격노", "소망", "마음", "열망", "활력", "고통", "물결", "사념"],
   },
   {
     name: ["Rhod"],
