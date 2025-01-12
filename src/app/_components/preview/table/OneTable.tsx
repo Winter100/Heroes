@@ -5,9 +5,9 @@ import RaidSelecterModal from "../menu/RaidSelecterModal";
 import { previewInitialTitleList } from "@/app/_constant/rankTitleList";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { useRaidStore } from "@/app/_store/raidStore";
-import { limitCalculator } from "../../home/characterInfoPanel/utils/limitCalculator";
 import { MonstersType } from "@/app/_constant/raidList";
 import { filterRaidList } from "@/app/_utils/filterRaidList";
+import { limitCalculator } from "../../raid/utils/limitCalculator";
 
 const OneTable = () => {
   const previewAllStats = usePreviewStore((state) => state.previewAllStats);

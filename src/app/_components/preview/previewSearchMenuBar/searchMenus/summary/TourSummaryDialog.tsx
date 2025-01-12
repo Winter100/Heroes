@@ -1,5 +1,4 @@
-"use client";
-import BasicDialog from "@/app/_components/common/Dialog/BasicDialog";
+import BasicDialog from "@/app/_components/common/dialog/BasicDialog";
 import TourContent from "../content/TourContent";
 
 const TourSummaryDialog = () => {

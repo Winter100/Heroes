@@ -23,13 +23,17 @@ const InfusionsModal = ({
     <>
       <Button
         className="flex h-full w-full items-center justify-center"
-        onClick={() => setOpen((pre) => !pre)}
+        onClick={() => setOpen(true)}
       >
         <p>{selectedValue ? selectedValue : ""}</p>
 
         <BottomArrow />
       </Button>
-      <Dialog open={open} onClose={setOpen} className="relative z-10">
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        className="relative z-10"
+      >
         <DialogBackdrop
           transition
           className="fixed inset-0 bg-black bg-opacity-85 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"

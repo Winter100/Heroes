@@ -42,7 +42,6 @@ const PreviewModal = ({
       stat_name: title,
       stat_value: value,
     };
-
     const name = beforeName?.split(" ")[0];
     const statValue = beforeName?.split(" ")[1];
     const beforeStats = [

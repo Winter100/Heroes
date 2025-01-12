@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { itemAbility } from "@/app/_constant/itemAbility";

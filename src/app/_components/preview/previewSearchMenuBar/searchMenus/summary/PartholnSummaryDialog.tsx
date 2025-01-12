@@ -1,4 +1,4 @@
-import BasicDialog from "@/app/_components/common/Dialog/BasicDialog";
+import BasicDialog from "@/app/_components/common/dialog/BasicDialog";
 import PartholnContent from "../content/PartholnContent";
 
 const PartholnSummaryDialog = () => {

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import Modal from "../../common/Modal/Modal";
+import Modal from "../../common/modal/Modal";
 import { Button } from "@headlessui/react";
 import { useRaidStore } from "@/app/_store/raidStore";
 import BottomArrow from "../../common/BottomArrow";
