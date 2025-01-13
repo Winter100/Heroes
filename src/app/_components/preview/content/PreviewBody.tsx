@@ -6,18 +6,36 @@ import PreivewList from "../PreivewList";
 import AvgPrice from "../AvgPrice";
 import OneTable from "../table/OneTable";
 import PreviewTitle from "./PreviewTitle";
+import Row from "../../layout/Row";
+
 import ErrorDisplay from "../../common/error/ErrorDisplay";
+import TourSummaryDialog from "../../dialog/TourSummaryDialog";
+import StatsSummaryDialog from "../../dialog/StatsSummaryDialog";
+import PartholnSummaryDialog from "../../dialog/PartholnSummaryDialog";
+import GrindingSummaryDialog from "../../dialog/GrindingSummaryDialog";
 
 const PreviewBody = () => {
-  const { enchantList, error, isLoading, name } = useCharacterData();
+  const { enchantList, isLoading, error, name, enchantLoading } =
+    useCharacterData();
 
   if (isLoading) return <Loading size="10" />;
   if (error) return <ErrorDisplay content={`${name} 조회에 실패했습니다`} />;
 
   return (
     <>
+      <Row className="flex h-7 items-center justify-center sm:justify-end">
+        <div className="flex h-full w-72 gap-2 text-xs">
+          <TourSummaryDialog />
+          <StatsSummaryDialog />
+          <PartholnSummaryDialog />
+          <GrindingSummaryDialog />
+        </div>
+      </Row>
       <PreviewTitle />
-      <PreivewList enchantList={enchantList ?? []} />
+      <PreivewList
+        enchantList={enchantList ?? []}
+        enchantLoading={enchantLoading}
+      />
       <AvgPrice />
       <OneTable />
     </>

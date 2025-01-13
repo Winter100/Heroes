@@ -19,7 +19,12 @@ import {
 import PreviewModal from "./menu/PreviewModal";
 import ItemModal from "./menu/ItemModal";
 
-const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
+const PreviewItem = ({
+  item,
+  slot,
+  enchant,
+  enchantLoading,
+}: PrviewItemProps) => {
   const prefix_list =
     enchant &&
     enchant.map((item) =>
@@ -162,6 +167,7 @@ const PreviewItem = ({ item, slot, enchant }: PrviewItemProps) => {
                 previewName="prefix"
                 slot={slot}
                 options={sortedPrefixEnchant}
+                enchantLoading={enchantLoading}
               />
             )}
           </BeforeAndAfter.After>

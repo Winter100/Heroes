@@ -18,7 +18,7 @@ export const useCharacterData = () => {
   const { error: equipmentError, isLoading: equipmentLoading } = useEquipment(
     ocid ?? "",
   );
-  const { data: enchantList } = useEnchant(name);
+  const { data: enchantList, isLoading: enchantLoading } = useEnchant(name);
   // const items = usePreviewStore((state) => state.items);
 
   return {
@@ -28,5 +28,6 @@ export const useCharacterData = () => {
     // items,
     ocid,
     name,
+    enchantLoading,
   };
 };

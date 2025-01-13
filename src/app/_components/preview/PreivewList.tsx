@@ -4,9 +4,10 @@ import { usePreviewStore } from "@/app/_store/previewStore";
 
 interface PreviewListProps {
   enchantList: EnchantPriceType[];
+  enchantLoading: boolean;
 }
 
-const PreivewList = ({ enchantList }: PreviewListProps) => {
+const PreivewList = ({ enchantList, enchantLoading }: PreviewListProps) => {
   const items = usePreviewStore((state) => state.items);
 
   return (
@@ -15,6 +16,7 @@ const PreivewList = ({ enchantList }: PreviewListProps) => {
         <li className="h-12 sm:h-14" key={item?.item_equipment_slot_name}>
           <PreviewItem
             enchant={enchantList ?? []}
+            enchantLoading={enchantLoading}
             item={item}
             slot={item?.item_equipment_slot_name}
           />

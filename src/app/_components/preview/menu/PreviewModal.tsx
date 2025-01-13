@@ -1,8 +1,9 @@
 "use client";
-import EnchantModal from "./EnchantModal";
+
 import InfusionsModal from "./InfusionsModal";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { PreviewModalProps } from "@/app/_type/previewType";
+import EnchantDialog from "../../dialog/EnchantDialog";
 
 const overlay = {
   backgroundColor: "rgba(0,0,0,0.85)",
@@ -22,6 +23,7 @@ const PreviewModal = ({
   options = [],
   before,
   enchantList,
+  enchantLoading,
 }: PreviewModalProps) => {
   const setAfterStats = usePreviewStore((state) => state.setAfterStats);
   const setBeforeStats = usePreviewStore((state) => state.setBeforeStats);
@@ -73,18 +75,21 @@ const PreviewModal = ({
           content={content}
         />
       ) : (
-        <EnchantModal
-          beforeName={beforeName}
-          slot={slot}
-          selectedValue={selectedName}
-          previewName={previewName}
-          itemName={itemName}
-          enchantList={enchantList}
-          selectedHandler={selectedHandler}
-          options={options}
-          overlay={overlay}
-          content={content}
-        />
+        <>
+          <EnchantDialog
+            label={
+              selectedName !== undefined ? selectedName : (beforeName ?? "")
+            }
+            selectedValue={selectedName ?? ""}
+            slot={slot}
+            upgreadeType={previewName}
+            items={itemName}
+            enchantPriceList={enchantList ?? []}
+            selectedHandler={selectedHandler}
+            enchantList={options}
+            isLoading={enchantLoading ?? false}
+          />
+        </>
       )}
     </div>
   );

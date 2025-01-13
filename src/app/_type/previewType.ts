@@ -17,6 +17,7 @@ export interface PrviewItemProps {
   enchant: EnchantPriceType[];
   item: NewEquipmentType;
   slot: string;
+  enchantLoading: boolean;
 }
 
 export interface beforeAndAfterStatsType {
@@ -64,6 +65,7 @@ export interface ModalProps {
   enchantList?: EnchantPrice[];
   previewName?: string;
   selectedValue?: string;
+  enchantLoading?: boolean;
 }
 
 export interface PreviewModalProps {
@@ -90,21 +92,23 @@ export interface PreviewModalProps {
     previewName: string;
   };
   enchantList?: EnchantPrice[];
+  enchantLoading?: boolean;
 }
 
 export interface EnchantItemProps {
   slot: string;
   rank: string;
-  stat_name: string;
-  stat_value: {
+  enchantName: string;
+  enchantDescriptions: {
     stat_name: string;
     stat_value: string;
   }[];
   enchantList: EnchantPrice[];
   previewName?: string;
-  selectedValue?: string;
+  isSelected?: boolean;
   setOpenModal: (isOpenModal: boolean) => void;
   description: string;
+  enchantLoading: boolean;
 }
 
 export interface PriceData {
