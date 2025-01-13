@@ -2,11 +2,13 @@
 
 import { useDialog } from "@/app/_hooks/useDialog/useDialog";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import Button from "../Button";
+
+import React from "react";
+import Button from "./Button";
 
 interface BasicDialogProps {
   children: React.ReactNode;
-  label: string;
+  label: React.ReactNode;
   size: string;
 }
 
@@ -21,7 +23,10 @@ const BasicDialog = ({
 
   return (
     <>
-      <Button className="flex-1" onClick={onOpen}>
+      <Button
+        className="h-full w-full flex-1 rounded-none border-none"
+        onClick={onOpen}
+      >
         {label}
       </Button>
       <Dialog open={isOpen} onClose={setIsOpen} className="relative z-10">
