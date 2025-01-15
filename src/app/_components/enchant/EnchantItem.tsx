@@ -1,4 +1,3 @@
-
 import EnchantImageAndTitle from "./EnchantImageAndTitle";
 import EnchantDescription from "./EnchantDescription";
 import EnchantPrice from "./EnchantPrice";
@@ -6,23 +5,9 @@ import EnchantPrice from "./EnchantPrice";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { getEnchantImage } from "./utils/getEnchantImage";
 import { getEnchantAvgPrice } from "./utils/getEnchantAvgPrice";
-import { EnchantPrice as EnchantPriceType } from "@/app/_type/enchantPriceType";
-import Column from "../layout/Column";
 
-interface EnchantItemProps {
-  slot: string;
-  rank: string;
-  stat_name: string;
-  description: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  upgreadeType: string;
-  enchantPriceList: EnchantPriceType[];
-  isLoading: boolean;
-  isSelected: boolean;
-}
+import Column from "../layout/Column";
+import { EnchantItemProps } from "@/app/_type/enchantType";
 
 const EnchantItem = ({
   slot,
@@ -31,9 +16,10 @@ const EnchantItem = ({
   description: enchantDescription,
   stat_value: enchantEffects,
   isSelected = false,
-  isLoading,
+  enchantPriceLoading,
   upgreadeType,
   enchantPriceList,
+  selectedHandler,
 }: EnchantItemProps) => {
   const setTotalPrice = usePreviewStore((state) => state.setTotalPrice);
 
@@ -45,8 +31,9 @@ const EnchantItem = ({
   );
 
   const onClick = () => {
+    selectedHandler(enchantName, enchantEffects);
     setTotalPrice({
-      previewName: upgreadeType,
+      upgreadeType,
       slot,
       stat_name: enchantName,
       price: avgPrice,
@@ -55,7 +42,7 @@ const EnchantItem = ({
   // 더블클릭 기능 추가하기?
   return (
     <Column
-      onClick={() => onClick()}
+      onClick={onClick}
       // onDoubleClick={() => setOpenModal(false)}
       className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
     >
@@ -66,7 +53,10 @@ const EnchantItem = ({
         enchantDescription={enchantDescription}
       />
       <EnchantDescription enchantEffects={enchantEffects} />
-      <EnchantPrice avgPrice={avgPrice} isLoading={isLoading} />
+      <EnchantPrice
+        avgPrice={avgPrice}
+        enchantPriceLoading={enchantPriceLoading}
+      />
     </Column>
   );
 };

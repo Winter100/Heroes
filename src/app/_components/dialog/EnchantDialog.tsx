@@ -1,76 +1,54 @@
 import React from "react";
 import EnchantContent from "./content/EnchantContent";
-import { EnchantPrice } from "@/app/_type/enchantPriceType";
 import BasicDialog from "@/app/_components/common/BasicDialog";
 import Row from "../layout/Row";
 import BottomArrow from "../common/BottomArrow";
-
-interface EnchantDialogProps {
-  label: string;
-  slot: string;
-  upgreadeType: string;
-  items: {
-    name: string;
-    level: string;
-  };
-  enchantPriceList: EnchantPrice[];
-  selectedHandler: (
-    enchantName: string,
-    enchantEffects: {
-      stat_name: string;
-      stat_value: string;
-    }[],
-  ) => void;
-  enchantList: {
-    rank: string;
-    stat_name: string; // 스텟네임. 스텟밸류 이름 바꾸기 인챈트 관련으로.
-    description: string;
-    stat_value: {
-      stat_name: string;
-      stat_value: string;
-    }[];
-  }[];
-  isLoading: boolean;
-  selectedValue: string;
-}
+import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
+import ItemTitle from "../common/ItemTitle";
+import { useEnchantPriceStore } from "@/app/_store/enchantPriceStore";
+import { EnchantDialogProps } from "@/app/_type/enchantType";
 
 const EnchantDialog = ({
   items,
   enchantList,
   selectedHandler,
-  enchantPriceList,
   label,
   slot,
   upgreadeType,
-  isLoading,
   selectedValue,
 }: EnchantDialogProps) => {
   const { level, name } = items;
+
+  const prefixPriceList = useEnchantPriceStore((state) => state.prefix);
+  const suffixPriceList = useEnchantPriceStore((state) => state.suffix);
+  const enchantPriceList =
+    upgreadeType === "prefix" ? prefixPriceList : suffixPriceList;
+  const enchantPriceLoading = useEnchantPriceStore(
+    (state) => state.enchantPriceLoading,
+  );
+
   // 확인 버튼 넣기?
   return (
     <BasicDialog
       label={
         <Row className="items-center justify-center">
-          {selectedValue}
+          {label}
           <BottomArrow />
         </Row>
       }
       size="1200px"
     >
-      <div>
-        <div className="flex h-6 items-center justify-center text-sm font-semibold text-white">
-          <h2>{`${level} ${name}`}</h2>
-        </div>
-        <EnchantContent
-          enchantList={enchantList}
-          selectedHandler={selectedHandler}
-          upgreadeType={upgreadeType}
-          enchantPriceList={enchantPriceList}
-          slot={slot}
-          isLoading={isLoading}
-          selectedValue={label}
-        />
-      </div>
+      <ItemTitle level={level} name={name} />
+      <EnchantContent
+        enchantList={enchantList}
+        selectedHandler={selectedHandler}
+        upgreadeType={upgreadeType}
+        slot={slot}
+        enchantPriceList={enchantPriceList ?? []}
+        enchantPriceLoading={enchantPriceLoading}
+        selectedValue={selectedValue}
+      />
+      <RaidSelectorWithStats />
     </BasicDialog>
   );
 };

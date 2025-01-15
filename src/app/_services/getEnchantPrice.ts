@@ -1,5 +1,5 @@
 import axios from "axios";
-import { EnchantPriceType } from "../_type/enchantPriceType";
+import { EnchantPriceType } from "../_type/enchantType";
 
 export const getEnchantPrice = async () => {
   try {
