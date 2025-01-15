@@ -1,4 +1,4 @@
-import { EnchantPrice, EnchantPriceType } from "./enchantPriceType";
+import { EnchantPrice } from "./enchantType";
 import { NewEquipmentType } from "./equipmentType";
 
 export interface PreviewStatsType {
@@ -8,16 +8,14 @@ export interface PreviewStatsType {
 
 export interface PreviewSelectedType {
   slot: string;
-  previewName: string;
+  upgreadeType: string;
   stat_name: string;
   stat_value: PreviewStatsType[];
 }
 
 export interface PrviewItemProps {
-  enchant: EnchantPriceType[];
   item: NewEquipmentType;
   slot: string;
-  enchantLoading: boolean;
 }
 
 export interface beforeAndAfterStatsType {
@@ -27,7 +25,7 @@ export interface beforeAndAfterStatsType {
     stat_name: string;
     stat_value: string;
   }[];
-  previewName: string;
+  upgreadeType: string;
 }
 
 export type OptionsType = {
@@ -63,56 +61,31 @@ export interface ModalProps {
     level: string;
   };
   enchantList?: EnchantPrice[];
-  previewName?: string;
+  upgreadeType?: string;
   selectedValue?: string;
   enchantLoading?: boolean;
 }
 
 export interface PreviewModalProps {
-  beforeName?: string;
   itemName: {
     name: string;
     level: string;
   };
   slot: string;
-  previewName: string;
-  options?: {
+  upgreadeType: string;
+  usableItemList: {
     rank: string;
     stat_name: string;
     description: string;
     stat_value: { stat_name: string; stat_value: string }[];
   }[];
-  before: {
-    rank: string;
-    stat_name: string;
-    stat_value: {
-      stat_name: string;
-      stat_value: string;
-    }[];
-    previewName: string;
-  };
-  enchantList?: EnchantPrice[];
-  enchantLoading?: boolean;
-}
-
-export interface EnchantItemProps {
-  slot: string;
-  rank: string;
-  enchantName: string;
-  enchantDescriptions: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  enchantList: EnchantPrice[];
-  previewName?: string;
-  isSelected?: boolean;
-  setOpenModal: (isOpenModal: boolean) => void;
-  description: string;
-  enchantLoading: boolean;
+  enchantPriceList?: EnchantPrice[];
+  enchantPriceLoading?: boolean;
+  existing: beforeAndAfterStatsType;
 }
 
 export interface PriceData {
-  previewName: string;
+  upgreadeType: string;
   slot: string;
   stat_name: string;
   price: number;
@@ -125,7 +98,7 @@ export type Stat = {
 
 export type Item = {
   slot: string;
-  previewName: string;
+  upgreadeType: string;
   stat_name: string;
   stat_value: Stat[];
 };
@@ -141,6 +114,6 @@ export interface InfusionsItemProps {
     stat_name: string;
     stat_value: string;
   }[];
-  previewName?: string;
+  upgreadeType?: string;
   setOpenModal: (isOpenModal: boolean) => void;
 }
