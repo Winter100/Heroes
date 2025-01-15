@@ -10,7 +10,7 @@ import {
   suffix_enchant_options,
 } from "@/app/_constant/enchant";
 
-import { sortEnchant } from "./utils/sortEnchant";
+import { getUsableItemEnchantList } from "./utils/getUsableItemEnchantList";
 import { preview_infusion } from "@/app/_constant/infusions";
 import {
   beforeAndAfterStatsType,
@@ -18,94 +18,78 @@ import {
 } from "@/app/_type/previewType";
 import PreviewModal from "./menu/PreviewModal";
 import ItemModal from "./menu/ItemModal";
+import { getUsableItemInfusionList } from "./utils/getUsableItemInfusionList";
+import { getOption } from "./utils/getOption";
+import { findMatchingItem } from "./utils/findMatchingItem";
 
-const PreviewItem = ({
-  item,
-  slot,
-  enchant,
-  enchantLoading,
-}: PrviewItemProps) => {
-  const prefix_list =
-    enchant &&
-    enchant.map((item) =>
-      item.item.filter((c) => c.item_option.prefix_enchant_preset_1),
-    );
-  const suffix_list =
-    enchant &&
-    enchant.map((item) =>
-      item.item.filter((c) => c.item_option.suffix_enchant_preset_1),
-    );
-
-  const infusions =
-    preview_infusion.find((item) => item.equipment.includes(slot))?.value ?? [];
-
-  const sortedPrefixEnchant = sortEnchant(
-    prefix_enchant_name_list,
-    prefix_enchant_options,
-    slot,
-  );
-
-  const sortedSuffixEnchant = sortEnchant(
-    suffix_enchant_name_list,
-    suffix_enchant_options,
-    slot,
-  );
-
-  const enchant_list = {
-    prefix: prefix_list.flat(),
-    suffix: suffix_list.flat(),
-  };
-
-  const infusion_name =
-    item.item_option.power_infusion_use_preset_no === 1
-      ? item.item_option?.power_infusion_preset_1?.stat_name
-      : item.item_option?.power_infusion_preset_2?.stat_name;
-
-  const infusion_value =
-    item.item_option.power_infusion_use_preset_no === 1
-      ? item.item_option?.power_infusion_preset_1?.stat_value
-      : item.item_option?.power_infusion_preset_2?.stat_value;
-
-  const preInfusions = `${infusion_name ?? ""} ${infusion_value ?? ""}`;
-
-  const prepreInfusions = infusions.find((i) => i.stat_name === preInfusions);
-  const preSortedPrefixEnchant = sortedPrefixEnchant.find(
-    (i) => i.stat_name === item.item_option?.prefix_enchant_preset_1,
-  );
-  const preSortedSuffixEnchant = sortedSuffixEnchant.find(
-    (i) => i.stat_name === item.item_option.suffix_enchant_preset_1,
-  );
-
-  const preInfuion = {
-    previewName: "infusions",
-    ...prepreInfusions,
-  } as beforeAndAfterStatsType;
-
-  const preFixEnchant = {
-    previewName: "prefix",
-    ...preSortedPrefixEnchant,
-  } as beforeAndAfterStatsType;
-
-  const suffixEnchant = {
-    previewName: "suffix",
-    ...preSortedSuffixEnchant,
-  } as beforeAndAfterStatsType;
-
+const PreviewItem = ({ item, slot }: PrviewItemProps) => {
   const itemName = {
     name: item.item_name ?? "",
     level: item?.item_option?.enhancement_level ?? "",
   };
 
-  const beforeinFusion = `${infusion_name} ${infusion_value}`;
+  const usableInfusionList = getUsableItemInfusionList(preview_infusion, slot);
 
-  const beforePrefixName =
-    item?.item_option?.prefix_enchant_use_preset_no === 1
-      ? item.item_option?.prefix_enchant_preset_1
-      : item.item_option?.prefix_enchant_preset_2;
-  const beforeSuffixName =
-    item?.item_option?.suffix_enchant_use_preset_no === 1
-      ? item.item_option?.suffix_enchant_preset_1
-      : item.item_option?.suffix_enchant_preset_2;
+  const usablePrefixEnchantList = getUsableItemEnchantList(
+    prefix_enchant_name_list,
+    prefix_enchant_options,
+    slot,
+  );
+  const usableSuffixEnchantList = getUsableItemEnchantList(
+    suffix_enchant_name_list,
+    suffix_enchant_options,
+    slot,
+  );
+
+  const existing_infusion_name = getOption<{ stat_name: string }>(
+    item.item_option,
+    "power_infusion_use_preset_no",
+    "power_infusion_preset_1",
+    "power_infusion_preset_2",
+  )?.stat_name;
+
+  const existing_infusion_value = getOption<{ stat_value: string }>(
+    item.item_option,
+    "power_infusion_use_preset_no",
+    "power_infusion_preset_1",
+    "power_infusion_preset_2",
+  )?.stat_value;
+
+  const existing_prefix_enchant_name = getOption<string>(
+    item.item_option,
+    "prefix_enchant_use_preset_no",
+    "prefix_enchant_preset_1",
+    "prefix_enchant_preset_2",
+  );
+
+  const existing_suffix_enchant_name = getOption<string>(
+    item.item_option,
+    "suffix_enchant_use_preset_no",
+    "suffix_enchant_preset_1",
+    "suffix_enchant_preset_2",
+  );
+
+  const existing_infusion = `${existing_infusion_name ?? ""} ${existing_infusion_value ?? ""}`;
+  const existingInfuion = {
+    upgreadeType: "infusions",
+    ...findMatchingItem(usableInfusionList, existing_infusion),
+  } as beforeAndAfterStatsType;
+
+  const existingPrefixEnchant = {
+    upgreadeType: "prefix",
+    ...findMatchingItem(
+      usablePrefixEnchantList,
+      existing_prefix_enchant_name ?? "",
+    ),
+  } as beforeAndAfterStatsType;
+
+  const existingSuffixEnchant = {
+    upgreadeType: "suffix",
+    ...findMatchingItem(
+      usableSuffixEnchantList,
+      existing_suffix_enchant_name ?? "",
+    ),
+  } as beforeAndAfterStatsType;
 
   return (
     <Row className="flex h-full w-full items-center gap-2 text-sm">
@@ -128,20 +112,19 @@ const PreviewItem = ({
         {/* <BeforeAndAfter.Title>정령</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
-            {preInfusions}
+            {existingInfuion.stat_name}
           </BeforeAndAfter.Before>
 
           <BeforeAndAfter.After
-            className={`${infusions?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
+            className={`${usableInfusionList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
-            {infusions?.length >= 1 && (
+            {usableInfusionList?.length >= 1 && (
               <PreviewModal
-                beforeName={beforeinFusion}
                 itemName={itemName}
-                before={preInfuion}
-                previewName="infusions"
+                existing={existingInfuion}
+                upgreadeType="infusions"
                 slot={slot}
-                options={infusions}
+                usableItemList={usableInfusionList}
               />
             )}
           </BeforeAndAfter.After>
@@ -152,22 +135,18 @@ const PreviewItem = ({
         {/* <BeforeAndAfter.Title>접두</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
-            {/* <BeforeAndAfter.Before className="items-center overflow-hidden text-ellipsis whitespace-nowrap sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40"> */}
-            {beforePrefixName}
+            {existingPrefixEnchant.stat_name}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${sortedPrefixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
+            className={`${usablePrefixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
-            {sortedPrefixEnchant?.length >= 1 && (
+            {usablePrefixEnchantList?.length >= 1 && (
               <PreviewModal
-                beforeName={beforePrefixName}
-                enchantList={enchant_list?.prefix}
                 itemName={itemName}
-                before={preFixEnchant}
-                previewName="prefix"
+                existing={existingPrefixEnchant}
+                upgreadeType="prefix"
                 slot={slot}
-                options={sortedPrefixEnchant}
-                enchantLoading={enchantLoading}
+                usableItemList={usablePrefixEnchantList}
               />
             )}
           </BeforeAndAfter.After>
@@ -178,21 +157,18 @@ const PreviewItem = ({
         {/* <BeforeAndAfter.Title>접미</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
-            {/* <BeforeAndAfter.Before className="flex w-full items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap"> */}
-            {beforeSuffixName}
+            {existingSuffixEnchant.stat_name}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${sortedSuffixEnchant?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
+            className={`${usableSuffixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
-            {sortedSuffixEnchant?.length >= 1 && (
+            {usableSuffixEnchantList?.length >= 1 && (
               <PreviewModal
-                beforeName={beforeSuffixName}
-                enchantList={enchant_list.suffix}
                 itemName={itemName}
-                before={suffixEnchant}
-                previewName="suffix"
+                existing={existingSuffixEnchant}
+                upgreadeType="suffix"
                 slot={slot}
-                options={sortedSuffixEnchant}
+                usableItemList={usableSuffixEnchantList}
               />
             )}
           </BeforeAndAfter.After>
