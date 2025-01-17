@@ -1,12 +1,14 @@
 import { NewEquipmentType } from "@/app/_type/equipmentType";
 import IngredientItem from "./IngredientItem";
 import { useAbilityStore } from "@/app/_store/abilityStore";
+import clsx from "clsx";
 
 interface IngredientListProps {
   item: NewEquipmentType;
+  className?: string;
 }
 
-const IngredientList = ({ item }: IngredientListProps) => {
+const IngredientList = ({ item, className }: IngredientListProps) => {
   const tuningStats = item?.item_option?.tuning_stat?.map((stat) => stat);
 
   const ability = useAbilityStore((state) => state.ability);
@@ -59,7 +61,12 @@ const IngredientList = ({ item }: IngredientListProps) => {
     .sort((a, b) => a.name.localeCompare(b.name, "ko"));
 
   return (
-    <div className="grid w-full grid-cols-2 items-start justify-items-center gap-4 md:grid-cols-4">
+    <div
+      className={clsx(
+        "grid w-full grid-cols-2 items-start justify-items-center gap-4 md:grid-cols-4",
+        className,
+      )}
+    >
       {materialsArray.map((item) => (
         <IngredientItem key={item.name} {...item} />
       ))}

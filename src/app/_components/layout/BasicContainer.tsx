@@ -1,11 +1,14 @@
-interface BasicContaienr {
-  children: React.ReactNode;
-  className?: string;
-}
+import clsx from "clsx";
+import { ComponentProps } from "react";
+
+interface BasicContaienr extends ComponentProps<"div"> {}
 const BasicContainer = ({ children, className, ...props }: BasicContaienr) => {
   return (
     <div
-      className={`flex h-full w-full flex-col rounded-lg p-2 shadow-sm ${className}`}
+      className={clsx(
+        "flex h-full w-full flex-col rounded-lg p-2 shadow-sm",
+        className,
+      )}
       {...props}
     >
       {children}

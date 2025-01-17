@@ -3,12 +3,14 @@ import { useEffect } from "react";
 import GrindingItem from "./GrindingItem";
 import { NewEquipmentType } from "@/app/_type/equipmentType";
 import { usePreviewStore } from "@/app/_store/previewStore";
+import clsx from "clsx";
 
 interface GrindingProps {
   item: NewEquipmentType;
+  className?: string;
 }
 
-const GrindingList = ({ item }: GrindingProps) => {
+const GrindingList = ({ item, className }: GrindingProps) => {
   const setIncreaseStat = usePreviewStore((state) => state.setIncreaseStat);
   const setDecreaseStat = usePreviewStore((state) => state.setDecreaseStat);
   const setMin = usePreviewStore((state) => state.setMin);
@@ -78,7 +80,13 @@ const GrindingList = ({ item }: GrindingProps) => {
   }, [item.item_equipment_slot_name, isLimit2Every, setLimit2Zero]);
 
   return (
-    <div className="flex w-full cursor-default flex-col gap-2 p-1 md:gap-4">
+    <div
+      className={clsx(
+        "flex w-full cursor-default flex-col gap-2 p-1 md:gap-4",
+        className,
+      )}
+    >
+      {/* <div className="flex w-full cursor-default flex-col gap-2 p-1 md:gap-4"> */}
       {newTuning?.map((stat) => (
         <GrindingItem
           key={stat.stat_name}
