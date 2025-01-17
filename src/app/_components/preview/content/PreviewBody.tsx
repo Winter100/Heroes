@@ -14,6 +14,7 @@ import PartholnSummaryDialog from "../../dialog/PartholnSummaryDialog";
 import GrindingSummaryDialog from "../../dialog/GrindingSummaryDialog";
 import EnchantTotalPrice from "../../enchant/EnchantTotalPrice";
 import RaidSelectorWithStats from "../table/RaidSelectorWithStats";
+import BasicContainer from "../../layout/BasicContainer";
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
@@ -24,12 +25,12 @@ const PreviewBody = () => {
   return (
     <>
       <Row className="flex h-7 items-center justify-center sm:justify-end">
-        <div className="flex h-full w-72 gap-2 text-xs">
+        <BasicContainer className="flex h-full !w-72 !flex-row items-center justify-center gap-3 !p-0 text-xs">
           <TourSummaryDialog />
           <StatsSummaryDialog />
           <PartholnSummaryDialog />
           <GrindingSummaryDialog />
-        </div>
+        </BasicContainer>
       </Row>
       <PreviewTitle />
       <PreivewList />

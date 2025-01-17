@@ -1,12 +1,13 @@
 import React from "react";
 import EnchantContent from "./content/EnchantContent";
 import BasicDialog from "@/app/_components/common/BasicDialog";
-import Row from "../layout/Row";
 import BottomArrow from "../common/BottomArrow";
 import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
 import ItemTitle from "../common/ItemTitle";
-import { useEnchantPriceStore } from "@/app/_store/enchantPriceStore";
 import { EnchantDialogProps } from "@/app/_type/enchantType";
+import { useDialog } from "@/app/_hooks/useDialog/useDialog";
+import { useFilteredEnchantPriceList } from "./hooks/useFilteredEnchantPriceList";
+import Button from "../common/Button";
 
 const EnchantDialog = ({
   items,
@@ -19,37 +20,35 @@ const EnchantDialog = ({
 }: EnchantDialogProps) => {
   const { level, name } = items;
 
-  const prefixPriceList = useEnchantPriceStore((state) => state.prefix);
-  const suffixPriceList = useEnchantPriceStore((state) => state.suffix);
-  const enchantPriceList =
-    upgreadeType === "prefix" ? prefixPriceList : suffixPriceList;
-  const enchantPriceLoading = useEnchantPriceStore(
-    (state) => state.enchantPriceLoading,
-  );
+  const { isOpen, onClose, onOpen } = useDialog();
+  const { enchantPriceList, enchantPriceLoading } =
+    useFilteredEnchantPriceList(upgreadeType);
 
   // 확인 버튼 넣기?
   return (
-    <BasicDialog
-      label={
-        <Row className="items-center justify-center">
-          {label}
-          <BottomArrow />
-        </Row>
-      }
-      size="1200px"
-    >
-      <ItemTitle level={level} name={name} />
-      <EnchantContent
-        enchantList={enchantList}
-        selectedHandler={selectedHandler}
-        upgreadeType={upgreadeType}
-        slot={slot}
-        enchantPriceList={enchantPriceList ?? []}
-        enchantPriceLoading={enchantPriceLoading}
-        selectedValue={selectedValue}
-      />
-      <RaidSelectorWithStats />
-    </BasicDialog>
+    <>
+      <Button className="text-white" onClick={onOpen}>
+        {label}
+        <BottomArrow />
+      </Button>
+      <BasicDialog isOpen={isOpen} onClose={onClose} size="1200px">
+        <ItemTitle
+          className="text-sm font-medium text-white"
+          level={level}
+          name={name}
+        />
+        <EnchantContent
+          enchantList={enchantList}
+          selectedHandler={selectedHandler}
+          upgreadeType={upgreadeType}
+          slot={slot}
+          enchantPriceList={enchantPriceList || []}
+          enchantPriceLoading={enchantPriceLoading}
+          selectedValue={selectedValue}
+        />
+        <RaidSelectorWithStats />
+      </BasicDialog>
+    </>
   );
 };
 
