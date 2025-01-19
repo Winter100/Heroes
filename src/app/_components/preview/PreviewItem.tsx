@@ -17,10 +17,11 @@ import {
   PrviewItemProps,
 } from "@/app/_type/previewType";
 import PreviewModal from "./menu/PreviewModal";
-import ItemModal from "./menu/ItemModal";
 import { getUsableItemInfusionList } from "./utils/getUsableItemInfusionList";
 import { getOption } from "./utils/getOption";
 import { findMatchingItem } from "./utils/findMatchingItem";
+import ItemTitle from "../common/ItemTitle";
+import OneGrindingDialog from "../dialog/OneGrindingDialog";
 
 const PreviewItem = ({ item, slot }: PrviewItemProps) => {
   const itemName = {
@@ -30,16 +31,16 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
 
   const usableInfusionList = getUsableItemInfusionList(preview_infusion, slot);
 
-  const usablePrefixEnchantList = getUsableItemEnchantList(
-    prefix_enchant_name_list,
-    prefix_enchant_options,
-    slot,
-  );
-  const usableSuffixEnchantList = getUsableItemEnchantList(
-    suffix_enchant_name_list,
-    suffix_enchant_options,
-    slot,
-  );
+  const usablePrefixEnchantList = getUsableItemEnchantList({
+    enchantList: prefix_enchant_name_list,
+    optionsList: prefix_enchant_options,
+    slot: slot,
+  });
+  const usableSuffixEnchantList = getUsableItemEnchantList({
+    enchantList: suffix_enchant_name_list,
+    optionsList: suffix_enchant_options,
+    slot: slot,
+  });
 
   const existing_infusion_name = getOption<{ stat_name: string }>(
     item.item_option,
@@ -96,13 +97,14 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
       <BeforeAndAfter className="w-10 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
         {/* <BeforeAndAfter.Title>아이템 이름</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40">
+          <BeforeAndAfter.Before className="items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap text-xs sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40">
             {item.item_option.tuning_stat !== null ? (
-              <ItemModal item={item} />
+              <OneGrindingDialog item={item} />
             ) : (
-              <>
-                {item?.item_option?.enhancement_level} {item?.item_name}
-              </>
+              <ItemTitle
+                name={item.item_name}
+                level={item?.item_option?.enhancement_level ?? ""}
+              />
             )}
           </BeforeAndAfter.Before>
         </BeforeAndAfter.Content>
@@ -116,7 +118,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
           </BeforeAndAfter.Before>
 
           <BeforeAndAfter.After
-            className={`${usableInfusionList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
+          // className={`${usableInfusionList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
             {usableInfusionList?.length >= 1 && (
               <PreviewModal
@@ -138,7 +140,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
             {existingPrefixEnchant.stat_name}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${usablePrefixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
+          // className={`${usablePrefixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
             {usablePrefixEnchantList?.length >= 1 && (
               <PreviewModal
@@ -160,7 +162,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
             {existingSuffixEnchant.stat_name}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After
-            className={`${usableSuffixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
+          // className={`${usableSuffixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
           >
             {usableSuffixEnchantList?.length >= 1 && (
               <PreviewModal

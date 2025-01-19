@@ -6,8 +6,8 @@ const EnchantTotalPrice = () => {
   const sumAvg = totalPriceItem?.reduce((acc, cur) => acc + cur.price, 0);
   return (
     <EnchantPrice
-      label="예상 가격 :"
-      falseLabel="인챈트 평균 거래가의 합이 이곳에 표시됩니다"
+      label="예상 골드 :"
+      falseLabel=""
       avgPrice={sumAvg}
       enchantPriceLoading={false}
     />

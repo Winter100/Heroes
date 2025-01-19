@@ -24,11 +24,11 @@ const EnchantItem = ({
   const setTotalPrice = usePreviewStore((state) => state.setTotalPrice);
 
   const src = getEnchantImage(rank, upgreadeType);
-  const avgPrice = getEnchantAvgPrice(
+  const avgPrice = getEnchantAvgPrice({
     upgreadeType,
     enchantPriceList,
     enchantName,
-  );
+  });
 
   const onClick = () => {
     selectedHandler(enchantName, enchantEffects);
