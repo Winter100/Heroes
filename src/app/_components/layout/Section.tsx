@@ -1,13 +1,15 @@
+import clsx from "clsx";
 import { ComponentProps } from "react";
 
-interface SectionProps extends ComponentProps<"section"> {
-  className?: string;
-}
+interface SectionProps extends ComponentProps<"section"> {}
 
 const Section = ({ children, className, ...props }: SectionProps) => {
   return (
     <section
-      className={`flex h-full w-full flex-col rounded-lg p-2 shadow-sm ${className}`}
+      className={clsx(
+        "flex h-full w-full flex-col rounded-lg p-2 shadow-sm",
+        className,
+      )}
       {...props}
     >
       {children}

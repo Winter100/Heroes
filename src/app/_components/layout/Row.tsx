@@ -1,9 +1,10 @@
-import { ComponentProps } from 'react';
+import clsx from "clsx";
+import { ComponentProps } from "react";
 
-interface RowProps extends ComponentProps<'div'> {}
+interface RowProps extends ComponentProps<"div"> {}
 const Row = ({ children, className, ...props }: RowProps) => {
   return (
-    <div className={`flex flex-row ${className}`} {...props}>
+    <div className={clsx("flex flex-row", className)} {...props}>
       {children}
     </div>
   );

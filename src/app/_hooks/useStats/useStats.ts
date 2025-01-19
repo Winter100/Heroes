@@ -66,5 +66,5 @@ export const useStats = () => {
     }
   }, [mergedStats, setPreviewAllStats, isLoading]);
 
-  return { data, isLoading, error, mergedStats, statDifference };
+  return { data, isLoading, error, mergedStats, statDifference, name };
 };

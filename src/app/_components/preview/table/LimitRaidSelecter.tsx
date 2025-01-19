@@ -35,7 +35,10 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
                 : ""
             } h-full`}
           >
-            <Button className="w-20" onClick={() => setEntry("상한")}>
+            <Button
+              className="!w-20 cursor-default !rounded-md !border-borderColor p-2 !text-blue-300"
+              onClick={() => setEntry("상한")}
+            >
               상한
             </Button>
           </div>

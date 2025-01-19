@@ -2,12 +2,12 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import Modal from "../../common/Modal/Modal";
 import { Button } from "@headlessui/react";
 import { useRaidStore } from "@/app/_store/raidStore";
 import BottomArrow from "../../common/BottomArrow";
 import LimitRaidSelecter from "../table/LimitRaidSelecter";
 import RaidSelecter from "../table/RaidSelecter";
+import Modal from "../../common/modalR/Modal";
 
 const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
     <Modal open={open} setOpen={setOpen}>
       <Modal.Open className="h-full w-full">
         <Button
-          className="flex h-full w-full items-center justify-center text-xs"
+          className="flex h-full w-full items-center justify-center text-xs hover:text-white"
           onClick={() => setOpen((pre) => !pre)}
         >
           <div className="flex w-full flex-col items-center justify-center">
@@ -38,7 +38,7 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
                   style={{ width: "16px", height: "13px" }}
                 />
               </div>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center justify-center">
                 <div className="flex w-full items-center justify-center">
                   {ButtonTitle} <BottomArrow />
                 </div>
