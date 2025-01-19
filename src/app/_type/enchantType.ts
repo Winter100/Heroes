@@ -180,3 +180,9 @@ export interface getUsableItemEnchantListProps {
   optionsList: Options[];
   slot: string;
 }
+
+export interface getEnchantAvgPricePropsP {
+  upgreadeType: string;
+  enchantPriceList: EnchantPrice[];
+  enchantName: string;
+}

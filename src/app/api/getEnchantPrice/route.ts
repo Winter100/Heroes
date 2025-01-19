@@ -1,5 +1,5 @@
 import { nexonInstance } from "@/app/_services/nexonInstance";
-import { EnchantPriceType } from "@/app/_type/enchantPriceType";
+import { EnchantPriceType } from "@/app/_type/enchantType";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";

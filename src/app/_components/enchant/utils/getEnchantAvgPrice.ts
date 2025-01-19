@@ -1,21 +1,21 @@
 import { calculateAveragePrice } from "@/app/_components/preview/utils/calculateAverage";
-import { EnchantPrice } from "@/app/_type/enchantPriceType";
+import { getEnchantAvgPricePropsP } from "@/app/_type/enchantType";
 
-export const getEnchantAvgPrice = (
-  previewName: string,
-  enchantList: EnchantPrice[],
-  enchantName: string,
-) => {
-  const isPrefix = previewName === "prefix";
+export const getEnchantAvgPrice = ({
+  upgreadeType,
+  enchantPriceList,
+  enchantName,
+}: getEnchantAvgPricePropsP) => {
+  const isPrefix = upgreadeType === "prefix";
 
   if (isPrefix) {
-    const prefixEnchant = enchantList.filter(
+    const prefixEnchant = enchantPriceList.filter(
       (i) => i.item_option.prefix_enchant_preset_1 === enchantName,
     );
 
     return calculateAveragePrice(prefixEnchant).average;
   } else {
-    const suffixEnchant = enchantList.filter(
+    const suffixEnchant = enchantPriceList.filter(
       (i) => i.item_option.suffix_enchant_preset_1 === enchantName,
     );
 
