@@ -8,10 +8,10 @@ const PartholnSummaryDialog = () => {
   const { isOpen, onClose, onOpen } = useDialog();
   return (
     <>
-      <Button className="flex-1 rounded-lg" onClick={onOpen}>
+      <Button className="rounded-lg p-1" onClick={onOpen}>
         파르홀른
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="530px">
+      <BasicDialog isOpen={isOpen} onClose={onClose} size="550px">
         <PartholnContent />
         <RaidSelectorWithStats />
       </BasicDialog>

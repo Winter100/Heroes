@@ -7,7 +7,7 @@ const StatsSummaryDialog = () => {
   const { isOpen, onClose, onOpen } = useDialog();
   return (
     <>
-      <Button className="flex-1 rounded-lg" onClick={onOpen}>
+      <Button className="rounded-lg p-1" onClick={onOpen}>
         스탯
       </Button>
       <BasicDialog isOpen={isOpen} onClose={onClose} size="400px">
