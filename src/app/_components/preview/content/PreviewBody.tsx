@@ -25,7 +25,7 @@ const PreviewBody = () => {
 
   return (
     <>
-      <Row className="absolute end-0 w-full max-w-64 items-center justify-center gap-2 text-xs">
+      <Row className="absolute end-0 w-full max-w-80 items-center justify-center gap-2 text-xs">
         <TourSummaryDialog />
         <StatsSummaryDialog />
         <PartholnSummaryDialog />
