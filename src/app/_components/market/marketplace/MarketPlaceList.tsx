@@ -10,13 +10,7 @@ interface MarketPlaceListProps {
 const MarketPlaceList = ({ type = "buy" }: MarketPlaceListProps) => {
   const { data, isLoading } = useMarketRankList(type);
 
-  if (isLoading) {
-    return (
-      <div className="h-full w-full">
-        <Loading />
-      </div>
-    );
-  }
+  if (isLoading) return <Loading />;
 
   if (!data) return null;
 

@@ -1,24 +1,22 @@
+"use client";
 import { Suspense } from "react";
-import Section from "@/app/_components/layout/Section";
-import Preview from "@/app/_components/preview/Preview";
 import Loading from "@/app/_components/common/Loading";
-import PreviewTop from "@/app/_components/preview/PreviewTop";
+
+import BasicContainer from "@/app/_components/layout/BasicContainer";
+import PreviewLayout from "@/app/_components/preview/layout/PreviewLayout";
+import PreviewBody from "@/app/_components/preview/content/PreviewBody";
+import PreviewSearchBar from "@/app/_components/preview/previewSearchMenuBar/previewSearchBar/PreviewSearchBar";
 
 const Page = () => {
   return (
-    <Suspense
-      fallback={
-        <div className="flex h-full w-full items-center justify-center">
-          <Loading />
-        </div>
-      }
-    >
-      <Section>
-        <PreviewTop />
-        <Preview />
-      </Section>
+    <Suspense fallback={<Loading />}>
+      <BasicContainer className="flex items-center justify-center">
+        <PreviewSearchBar className="mb-2 h-16 w-full" />
+        <PreviewLayout>
+          <PreviewBody />
+        </PreviewLayout>
+      </BasicContainer>
     </Suspense>
   );
 };
-
 export default Page;
