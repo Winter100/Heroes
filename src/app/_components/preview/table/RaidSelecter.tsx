@@ -39,7 +39,7 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
             } h-full`}
           >
             <Button
-              className="w-20 border-none"
+              className="!w-20 border-none p-2"
               onClick={() => setEntry("빠른전투")}
             >
               빠른전투
@@ -53,7 +53,7 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
             } h-full`}
           >
             <Button
-              className="w-20 border-none"
+              className="!w-20 border-none p-2"
               onClick={() => setEntry("상한")}
             >
               상한

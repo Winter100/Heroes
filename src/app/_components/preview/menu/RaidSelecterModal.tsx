@@ -20,7 +20,7 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
     <Modal open={open} setOpen={setOpen}>
       <Modal.Open className="h-full w-full">
         <Button
-          className="flex h-full w-full items-center justify-center text-xs"
+          className="flex h-full w-full items-center justify-center text-xs hover:text-white"
           onClick={() => setOpen((pre) => !pre)}
         >
           <div className="flex w-full flex-col items-center justify-center">
@@ -38,7 +38,7 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
                   style={{ width: "16px", height: "13px" }}
                 />
               </div>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center justify-center">
                 <div className="flex w-full items-center justify-center">
                   {ButtonTitle} <BottomArrow />
                 </div>

@@ -1,9 +1,9 @@
 "use client";
 
 import { previewInitialTitleList } from "@/app/_constant/rankTitleList";
-import { limitCalculator } from "../../home/characterInfoPanel/utils/limitCalculator";
 import { MonstersType } from "@/app/_constant/raidList";
 import { Stat } from "@/app/_type/previewType";
+import { limitCalculator } from "../../raid/utils/limitCalculator";
 
 interface TableProps {
   boss: MonstersType;

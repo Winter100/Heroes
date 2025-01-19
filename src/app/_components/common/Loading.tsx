@@ -1,15 +1,12 @@
-const Loading = ({
-  width = "5",
-  height = "5",
-}: {
-  width?: string;
-  height?: string;
-}) => {
+const Loading = ({ size = "5" }: { size?: string }) => {
   return (
-    <div className="flex items-center justify-center" role="status">
+    <div
+      className="flex h-full w-full items-center justify-center"
+      role="status"
+    >
       <svg
         aria-hidden="true"
-        className={`w-${width} h-${height} animate-spin fill-blue-600 text-gray-200 dark:text-gray-600`}
+        className={`w-${size} h-${size} animate-spin fill-blue-600 text-gray-200 dark:text-gray-600`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

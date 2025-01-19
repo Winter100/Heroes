@@ -1,4 +1,3 @@
-import { initialTitleList } from "../_constant/rankTitleList";
 import { MergedCharacter } from "../_type/characterType";
 import { TitleType } from "../_type/RankTitleListType";
 import { LOCALSTORAGE_KEY } from "./../_constant/localstorage";

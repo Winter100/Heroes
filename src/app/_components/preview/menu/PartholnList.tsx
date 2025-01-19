@@ -19,7 +19,7 @@ const PartholnList = ({
   const onChage = (level: number, stat: Stat[]) => {
     const beforeStat = {
       slot: "partholn",
-      previewName: "partholn",
+      upgreadeType: "partholn",
       stat_name: "partholn",
       stat_value: stat,
     };
@@ -40,15 +40,17 @@ const PartholnList = ({
             onChange={() => onChage(item?.level, item?.stat)}
           />
 
-          <p className="w-12 text-center">{item?.level} 단계</p>
+          <div className="flex w-full max-w-10 flex-row gap-1 text-center">
+            <span>{item?.level} 단계</span>
+          </div>
           <div className="flex flex-1 flex-row items-center gap-2">
             {item?.stat.map((stat) => (
               <div
                 key={stat?.stat_name}
-                className="flex flex-col items-center justify-center gap-1 text-xs sm:flex-row"
+                className="flex flex-row items-center justify-center gap-1"
               >
-                <p>{stat?.stat_name}</p>
-                <p>{stat?.stat_value}</p>
+                <div>{stat?.stat_name}</div>
+                <div>{stat?.stat_value}</div>
               </div>
             ))}
           </div>

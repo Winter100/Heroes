@@ -40,3 +40,7 @@ next-env.d.ts
 delete/*
 
 dummyEnchantList.ts
+
+src/app/_components/testComponents/*
+src/app/(route)/(main)/testpage/*
+delete/*
