@@ -34,7 +34,7 @@ const StatFilterDropDown = () => {
     <div className="inline-block h-full w-full" ref={outSideRef}>
       <Button
         onClick={() => setView((pre) => !pre)}
-        className="flex h-full w-full items-center justify-center gap-1"
+        className="flex h-full w-full items-center justify-center gap-1 !rounded-md"
       >
         <CiFilter className="text-lg" />
         <span className="hidden sm:block">필터</span>

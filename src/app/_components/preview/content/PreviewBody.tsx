@@ -14,7 +14,7 @@ import PartholnSummaryDialog from "../../dialog/PartholnSummaryDialog";
 import GrindingSummaryDialog from "../../dialog/GrindingSummaryDialog";
 import EnchantTotalPrice from "../../enchant/EnchantTotalPrice";
 import RaidSelectorWithStats from "../table/RaidSelectorWithStats";
-import BasicContainer from "../../layout/BasicContainer";
+import Column from "../../layout/Column";
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
@@ -22,23 +22,24 @@ const PreviewBody = () => {
 
   if (isLoading) return <Loading size="10" />;
   if (error) return <ErrorDisplay content={`${name} 조회에 실패했습니다`} />;
+
   return (
     <>
-      <Row className="flex h-7 items-center justify-center sm:justify-end">
-        <BasicContainer className="flex h-full !w-72 !flex-row items-center justify-center gap-3 !p-0 text-xs">
-          <TourSummaryDialog />
-          <StatsSummaryDialog />
-          <PartholnSummaryDialog />
-          <GrindingSummaryDialog />
-        </BasicContainer>
+      <Row className="absolute end-0 w-full max-w-64 items-center justify-center gap-2 text-xs">
+        <TourSummaryDialog />
+        <StatsSummaryDialog />
+        <PartholnSummaryDialog />
+        <GrindingSummaryDialog />
       </Row>
-      <PreviewTitle />
-      <PreivewList />
 
-      <Row className="flex items-center justify-end text-white">
-        <EnchantTotalPrice />
-      </Row>
-      <RaidSelectorWithStats />
+      <Column className="mt-6">
+        <PreviewTitle />
+        <PreivewList />
+        <Row className="flex items-center justify-end text-white">
+          <EnchantTotalPrice />
+        </Row>
+        <RaidSelectorWithStats />
+      </Column>
     </>
   );
 };

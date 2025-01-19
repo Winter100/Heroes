@@ -57,7 +57,7 @@ const Ability = ({ item }: AbilityProps) => {
   };
 
   return (
-    <div className="relative w-52" ref={outRef}>
+    <div className="relative w-56" ref={outRef}>
       <button
         className="w-full bg-backgroundOne px-4 py-2 text-center text-xs"
         onClick={() => setIsOpen((prev) => !prev)}

@@ -33,12 +33,12 @@ const CharacterSkillAndEquipment = () => {
       <div className="flex h-full w-full flex-row gap-1 p-1 text-xs">
         {name && (
           <div className="flex h-full w-full flex-col sm:items-start">
-            <div className="flex w-full items-center justify-center sm:justify-start">
+            <div className="flex w-full items-center justify-center px-1 sm:justify-start">
               <DetailMenu />
             </div>
             <div className="flex h-full w-full flex-col sm:flex-row">
               {stats && (
-                <div className="h-full px-6 sm:w-[300px] sm:p-0">
+                <div className="!sm:w-[300px] h-full px-6 sm:p-0">
                   <UserDetailInfo />
                 </div>
               )}

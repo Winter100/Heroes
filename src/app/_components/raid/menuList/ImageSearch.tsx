@@ -15,19 +15,7 @@ import Loading from "@/app/_components/common/Loading";
 import { toast } from "react-toastify";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 
-const overlay = {
-  backgroundColor: "rgba(0,0,0,0.7)",
-};
-
-const content = {
-  width: "600px",
-  height: "850px",
-  margin: "auto",
-  zIndex: 100,
-};
-
 function ImageSearch() {
-  const [openModal, setOpenModal] = useState(false);
   const characters = useCharacterStore((state) => state.characters);
   const characterLength = characters.length;
   const clear = useCharacterStore((state) => state.clear);
@@ -105,14 +93,12 @@ function ImageSearch() {
         await handleCharacterInfo(item);
       }
     }
-
-    setOpenModal(false);
   };
 
   return (
     <>
       <Button
-        className="flex h-full w-12 items-center justify-center"
+        className="flex h-full !w-12 items-center justify-center !rounded-md"
         onClick={() => setOpen((pre) => !pre)}
       >
         <CiImageOn className="text-lg" />

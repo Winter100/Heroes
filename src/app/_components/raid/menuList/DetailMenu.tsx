@@ -19,7 +19,7 @@ const DetailMenu = () => {
     <div className="flex gap-1 text-xs">
       <Button
         onClick={() => setStats("능력치")}
-        className={`${stats ? "text-blue-300" : "text-white"} h-5 w-14 border border-gray-600 hover:border-gray-600 hover:bg-inherit hover:text-blue-300`}
+        className={`${stats ? "text-blue-300" : "text-inherit"} h-5 !w-14 rounded-md border border-gray-600 p-1 hover:border-gray-600 hover:bg-inherit hover:text-blue-300`}
         key={stats}
       >
         능력치
@@ -27,7 +27,7 @@ const DetailMenu = () => {
       {BtnData.map((btn) => (
         <Button
           onClick={() => setItem(btn.value as BtnValue)}
-          className={`${item === btn.value ? "text-blue-300" : "text-white"} h-5 w-14 border border-gray-600 hover:border-gray-600 hover:bg-inherit hover:text-blue-300`}
+          className={`${item === btn.value ? "text-blue-300" : "text-inherit"} h-5 !w-14 rounded-md border border-gray-600 p-1 hover:border-gray-600 hover:bg-inherit hover:text-blue-300`}
           key={btn.value}
         >
           {btn.name}
