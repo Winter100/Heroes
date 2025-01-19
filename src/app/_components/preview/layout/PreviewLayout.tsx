@@ -26,7 +26,7 @@ const PreviewLayout = ({ children }: { children: React.ReactNode }) => {
   }, [reset]);
 
   return (
-    <Column className="h-full w-full gap-1 rounded-lg text-fontColor">
+    <Column className="relative h-full w-full gap-1 rounded-lg text-fontColor">
       {name && children}
     </Column>
   );
