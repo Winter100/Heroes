@@ -3,7 +3,7 @@ export const getUsableItemInfusionList = (
     equipment: string[];
     value: {
       rank: string;
-      stat_name: string;
+      name: string;
       stat_value: {
         stat_name: string;
         stat_value: string;

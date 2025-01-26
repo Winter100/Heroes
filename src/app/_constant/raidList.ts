@@ -2,7 +2,7 @@ export interface MonstersType {
   name: string;
   entry: { stat_name: string; stat_value: string }[];
   limit: { stat_name: string; stat_value: string }[];
-  image: string;
+  // image: string;
   drop_items: { item_name: string; item_src: string }[];
 }
 
@@ -46,7 +46,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/왕성토파즈홀.png",
+        // image: "/monster/왕성_토파즈_홀.png",
       },
       {
         name: "잊혀진 제단",
@@ -79,7 +79,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/잊혀진제단.png",
+        // image: "/monster/잊혀진_제단.png",
       },
       {
         name: "죽음의 변증법",
@@ -112,7 +112,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/죽음의변증법.png",
+        // image: "/monster/죽음의_변증법.png",
       },
       {
         name: "원한의 암굴",
@@ -145,7 +145,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/원한의암굴.png",
+        // image: "/monster/원한의_암굴.png",
       },
       {
         name: "위대한 사역",
@@ -178,7 +178,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/위대한사역.png",
+        // image: "/monster/위대한_사역.png",
       },
     ],
   },
@@ -218,7 +218,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/로흘란의바람.png",
+        // image: "/monster/로흘란의_바람.png",
       },
       {
         name: "창조와 파괴의 성소",
@@ -251,7 +251,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/창조와파괴의성소.png",
+        // image: "/monster/창조와_파괴의_성소.png",
       },
 
       {
@@ -286,7 +286,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/검의무덤.png",
+        // image: "/monster/검의_무덤.png",
       },
       {
         name: "시드 별궁",
@@ -319,7 +319,7 @@ export const raidList: RaidListType[] = [
           { item_name: "고급 강화의 비약", item_src: "" },
           { item_name: "자르딘 강철", item_src: "" },
         ],
-        image: "/monster/시드별궁.png",
+        // image: "/monster/시드_별궁.png",
       },
     ],
   },
@@ -387,7 +387,7 @@ export const raidList: RaidListType[] = [
             item_src: "",
           },
         ],
-        image: "/monster/제단을지키는자.png",
+        // image: "/monster/제단을_지키는_자.png",
       },
       {
         name: "그릇된 고해",
@@ -435,7 +435,7 @@ export const raidList: RaidListType[] = [
             item_src: "",
           },
         ],
-        image: "/monster/그릇된고해.png",
+        // image: "/monster/그릇된_고해.png",
       },
       {
         name: "탐욕의 연회장",
@@ -483,7 +483,7 @@ export const raidList: RaidListType[] = [
           //   item_src: "",
           // },
         ],
-        image: "/monster/고르바스.png",
+        // image: "/monster/탐욕의_연회장.png",
       },
     ],
   },
@@ -583,7 +583,7 @@ export const raidList: RaidListType[] = [
             item_src: "",
           },
         ],
-        image: "/monster/스페셜.png",
+        // image: "/monster/스페셜.png",
       },
     ],
   },
@@ -614,7 +614,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "34" },
         ],
         drop_items: [],
-        image: "/monster/혼의찬탈자타로스.png",
+        // image: "/monster/혼의찬탈자타로스.png",
       },
       {
         name: "몰락한 기사의 전당",
@@ -639,7 +639,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "59" },
         ],
         drop_items: [],
-        image: "/monster/몰락자아이젠리터.png",
+        // image: "/monster/몰락자아이젠리터.png",
       },
       {
         name: "주시자의 신전",
@@ -664,7 +664,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "100" },
         ],
         drop_items: [],
-        image: "/monster/주시자의신전.png",
+        // image: "/monster/주시자의신전.png",
       },
     ],
   },
@@ -685,7 +685,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "0" },
         ],
         drop_items: [{ item_name: "신념의 상자: 결사대", item_src: "" }],
-        image: "/monster/사념의바다.png",
+        // image: "/monster/사념의바다.png",
       },
       {
         name: "달의 이면",
@@ -700,7 +700,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "0" },
         ],
         drop_items: [{ item_name: "결의의 상자: 결사대", item_src: "" }],
-        image: "/monster/달의이면.png",
+        // image: "/monster/달의이면.png",
       },
       {
         name: "모루 위의 검",
@@ -715,7 +715,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "0" },
         ],
         drop_items: [{ item_name: "용맹의 상자: 결사대", item_src: "" }],
-        image: "/monster/모루위의검.png",
+        // image: "/monster/모루위의검.png",
       },
       {
         name: "생명의 나무",
@@ -730,7 +730,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "4" },
         ],
         drop_items: [{ item_name: "강림의 상자: 결사대", item_src: "" }],
-        image: "/monster/생명의나무.png",
+        // image: "/monster/생명의나무.png",
       },
     ],
   },
@@ -751,7 +751,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "0" },
         ],
         drop_items: [{ item_name: "신념의 상자: 결사대", item_src: "" }],
-        image: "/monster/사념의바다.png",
+        // image: "/monster/사념의바다.png",
       },
       {
         name: "달의 이면 [헬]",
@@ -766,7 +766,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "0" },
         ],
         drop_items: [{ item_name: "결의의 상자: 결사대", item_src: "" }],
-        image: "/monster/달의이면.png",
+        // image: "/monster/달의이면.png",
       },
       {
         name: "모루 위의 검 [헬]",
@@ -781,7 +781,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "0" },
         ],
         drop_items: [{ item_name: "용맹의 상자: 결사대", item_src: "" }],
-        image: "/monster/모루위의검.png",
+        // image: "/monster/모루위의검.png",
       },
       {
         name: "생명의 나무 [헬]",
@@ -796,7 +796,7 @@ export const raidList: RaidListType[] = [
           { stat_name: "밸런스 저항", stat_value: "17" },
         ],
         drop_items: [{ item_name: "강림의 상자: 결사대", item_src: "" }],
-        image: "/monster/생명의나무.png",
+        // image: "/monster/생명의나무.png",
       },
     ],
   },

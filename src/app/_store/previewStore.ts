@@ -189,13 +189,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 
@@ -286,13 +286,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 
@@ -378,13 +378,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 
@@ -470,13 +470,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 
@@ -563,13 +563,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 
@@ -656,13 +656,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 
@@ -749,13 +749,13 @@ export const usePreviewStore = create<State & Action>((set) => {
         const before = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
           upgreadeType: "grinding",
           slot: slot,
-          stat_name: slot,
+          name: slot,
           stat_value: afterStats ?? [],
         };
 

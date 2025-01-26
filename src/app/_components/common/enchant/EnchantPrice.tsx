@@ -1,6 +1,6 @@
 import { EnchantPriceProps } from "@/app/_type/enchantType";
-import Loading from "../common/Loading";
-import Row from "../layout/Row";
+import Loading from "../Loading";
+import Row from "../../layout/Row";
 
 const EnchantPrice = ({
   label = "평균 거래가 :",

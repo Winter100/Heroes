@@ -36,6 +36,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
     optionsList: prefix_enchant_options,
     slot: slot,
   });
+
   const usableSuffixEnchantList = getUsableItemEnchantList({
     enchantList: suffix_enchant_name_list,
     optionsList: suffix_enchant_options,
@@ -114,7 +115,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>정령</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
-            {existingInfuion.stat_name}
+            {existingInfuion.name}
           </BeforeAndAfter.Before>
 
           <BeforeAndAfter.After
@@ -137,7 +138,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>접두</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
-            {existingPrefixEnchant.stat_name}
+            {existingPrefixEnchant.name}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After
           // className={`${usablePrefixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
@@ -159,7 +160,7 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>접미</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
-            {existingSuffixEnchant.stat_name}
+            {existingSuffixEnchant.name}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After
           // className={`${usableSuffixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}

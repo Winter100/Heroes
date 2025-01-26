@@ -9,16 +9,24 @@ export const getEnchantAvgPrice = ({
   const isPrefix = upgreadeType === "prefix";
 
   if (isPrefix) {
-    const prefixEnchant = enchantPriceList.filter(
+    const lastPrefixEnchant = enchantPriceList.findLast(
       (i) => i.item_option.prefix_enchant_preset_1 === enchantName,
     );
 
-    return calculateAveragePrice(prefixEnchant).average;
+    if (!lastPrefixEnchant) return null;
+
+    return (
+      Math.floor(calculateAveragePrice([lastPrefixEnchant]).average / 100) * 100
+    );
   } else {
-    const suffixEnchant = enchantPriceList.filter(
+    const lastSuffixEnchant = enchantPriceList.findLast(
       (i) => i.item_option.suffix_enchant_preset_1 === enchantName,
     );
 
-    return calculateAveragePrice(suffixEnchant).average;
+    if (!lastSuffixEnchant) return null;
+
+    return (
+      Math.floor(calculateAveragePrice([lastSuffixEnchant]).average / 100) * 100
+    );
   }
 };

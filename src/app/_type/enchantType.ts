@@ -118,7 +118,7 @@ export interface EnchantDialogProps {
   ) => void;
   enchantList: {
     rank: string;
-    stat_name: string;
+    name: string;
     description: string;
     stat_value: {
       stat_name: string;
@@ -137,7 +137,7 @@ export interface EnchantContentProps
 export interface EnchantItemProps {
   slot: string;
   rank: string;
-  stat_name: string;
+  name: string;
   description: string;
   stat_value: {
     stat_name: string;
@@ -167,7 +167,7 @@ interface EnchantList {
 
 interface Options {
   rank: string;
-  stat_name: string;
+  name: string;
   description: string;
   stat_value: {
     stat_name: string;
