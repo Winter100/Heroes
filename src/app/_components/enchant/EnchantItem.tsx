@@ -1,18 +1,21 @@
-import EnchantImageAndTitle from "./EnchantImageAndTitle";
-import EnchantDescription from "./EnchantDescription";
-import EnchantPrice from "./EnchantPrice";
-
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { getEnchantImage } from "./utils/getEnchantImage";
 import { getEnchantAvgPrice } from "./utils/getEnchantAvgPrice";
 
 import Column from "../layout/Column";
 import { EnchantItemProps } from "@/app/_type/enchantType";
+import EnchantEffects from "../common/enchant/EnchantEffects";
+import EnchantPrice from "../common/enchant/EnchantPrice";
+import EnchantRank from "../common/enchant/EnchantRank";
+import EnchantTitle from "../common/enchant/EnchantTitle";
+import EnchantImage from "../common/enchant/EnchantImage";
+import EnchantDescription from "../common/enchant/EnchantDescription";
+import Row from "../layout/Row";
 
 const EnchantItem = ({
   slot,
   rank,
-  stat_name: enchantName,
+  name: enchantName,
   description: enchantDescription,
   stat_value: enchantEffects,
   isSelected = false,
@@ -24,11 +27,12 @@ const EnchantItem = ({
   const setTotalPrice = usePreviewStore((state) => state.setTotalPrice);
 
   const src = getEnchantImage(rank, upgreadeType);
-  const avgPrice = getEnchantAvgPrice({
-    upgreadeType,
-    enchantPriceList,
-    enchantName,
-  });
+  const avgPrice =
+    getEnchantAvgPrice({
+      upgreadeType,
+      enchantPriceList,
+      enchantName,
+    }) || 0;
 
   const onClick = () => {
     selectedHandler(enchantName, enchantEffects);
@@ -46,13 +50,17 @@ const EnchantItem = ({
       // onDoubleClick={() => setOpenModal(false)}
       className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
     >
-      <EnchantImageAndTitle
-        src={src}
-        rank={rank}
-        enchantName={enchantName}
-        enchantDescription={enchantDescription}
-      />
-      <EnchantDescription enchantEffects={enchantEffects} />
+      <Row>
+        <EnchantImage src={src} alt={enchantName} />
+        <Column className="w-full">
+          <Row className="flex h-full w-full items-center justify-center gap-2">
+            <EnchantRank enchantRank={rank} />
+            <EnchantTitle enchantName={enchantName} />
+          </Row>
+          <EnchantDescription enchantDescription={enchantDescription} />
+        </Column>
+      </Row>
+      <EnchantEffects className="min-h-24" enchantEffects={enchantEffects} />
       <EnchantPrice
         avgPrice={avgPrice}
         enchantPriceLoading={enchantPriceLoading}
