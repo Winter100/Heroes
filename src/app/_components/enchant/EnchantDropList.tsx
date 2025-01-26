@@ -18,8 +18,8 @@ const EnchantDropList = ({ enchantData }: EnchantDropListProps) => {
   }
 
   return (
-    <Column className="h-full w-full flex-1 rounded-md border border-borderColor p-2">
-      <ul className="grid w-full grid-cols-3 gap-1 text-sm text-white">
+    <Column className="flex-1 rounded-md border border-borderColor p-2">
+      <ul className="grid h-full w-full grid-cols-3 gap-1 text-sm text-white">
         {enchantData?.drop_item_list?.sort().map((name) => (
           <li
             className="flex flex-col items-center justify-center rounded-md border-borderColor"
@@ -39,7 +39,7 @@ const EnchantDropList = ({ enchantData }: EnchantDropListProps) => {
               />
             </div>
 
-            <span className="w-24 flex-shrink-0 px-2 text-center text-xs">
+            <span className="flex-shrink-0 px-2 text-center text-xs">
               {name}
             </span>
           </li>

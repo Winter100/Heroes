@@ -34,7 +34,7 @@ const EnchantDetailItem = ({
   const type = upgreadeType === "prefix" ? "접두" : "접미";
 
   return (
-    <BasicContainer className="h-[480px] w-full rounded-md border border-borderColor font-sans text-xs">
+    <div className="h-[530px] rounded-md border border-borderColor p-2 font-sans text-xs">
       {/* <BasicContainer className="!h-[500px] !min-h-[500px] w-full rounded-md border border-borderColor font-sans text-xs"> */}
       <Row className="gap-2">
         <div className="h-10 w-10">
@@ -103,7 +103,7 @@ const EnchantDetailItem = ({
         </Row>
         <EnchantEffects className="gap-1 p-2" enchantEffects={stat_value} />
       </Column>
-    </BasicContainer>
+    </div>
   );
 };
 

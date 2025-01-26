@@ -45,7 +45,7 @@ const EnchantRankTable = ({
   selectedEnchant,
 }: EnchantRankTableProps) => {
   return (
-    <table className="w-full table-fixed font-sans">
+    <table className="w-full table-fixed overflow-scroll font-sans">
       <Thead ranking="순위" rank="랭크" name="인챈트" price="가격" />
       <Tbody className="text-sm">
         {enchantData.map((enchant) => (

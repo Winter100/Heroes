@@ -112,8 +112,8 @@ const EnchantPriceRankingList = () => {
   return (
     <BasicContainer className="mt-4 md:mt-20">
       <div className="mx-auto flex w-full max-w-md flex-col justify-center gap-5 rounded-md border border-borderColor p-2 md:max-w-5xl md:flex-row md:p-10">
-        <Column className="z-10 w-full max-w-md border-borderColor">
-          <div className="fixed-scrollbar h-96 w-full overflow-x-hidden overflow-y-scroll md:h-[770px]">
+        <Column className="z-10 max-w-md border-borderColor">
+          <div className="fixed-scrollbar h-96 overflow-x-hidden overflow-y-scroll md:h-[730px]">
             <EnchantRankTable
               handleClick={handleClick}
               selectedEnchant={selectItem?.name ?? ""}
