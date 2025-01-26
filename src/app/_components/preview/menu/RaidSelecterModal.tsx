@@ -8,6 +8,7 @@ import BottomArrow from "../../common/BottomArrow";
 import LimitRaidSelecter from "../table/LimitRaidSelecter";
 import RaidSelecter from "../table/RaidSelecter";
 import Modal from "../../common/modalR/Modal";
+import { getImageByName } from "@/app/_utils/getImageByName";
 
 const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
   const [open, setOpen] = useState(false);
@@ -31,7 +32,8 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
             <div className="flex flex-row">
               <div className="flex w-6 items-center justify-center">
                 <Image
-                  src={raidString.image}
+                  src={getImageByName(raidString.monsterName)}
+                  // src={raidString.image}
                   width={16}
                   height={13}
                   alt={raidString.monsterName}
