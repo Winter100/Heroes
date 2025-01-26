@@ -48,7 +48,8 @@ export const useRaidStore = create<State & Action>((set) => {
             raidName,
             monsterName,
             entry,
-            image: selectedBoss?.image ?? "/images/헤레타.png",
+            image: "/images/헤레타.png",
+            // image: selectedBoss?.image ?? "/images/헤레타.png",
           },
           selectedBoss,
         };

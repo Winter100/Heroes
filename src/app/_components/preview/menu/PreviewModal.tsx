@@ -20,11 +20,11 @@ const PreviewModal = ({
 
   const isExistingStats = existing?.stat_value?.length >= 1;
 
-  const { name, level } = splitStringAndNumber(existing.stat_name);
+  const { name, level } = splitStringAndNumber(existing.name);
 
   const selectedName = afterStats.find(
     (item) => item.slot === slot && item.upgreadeType === upgreadeType,
-  )?.stat_name;
+  )?.name;
 
   const selectedHandler = (
     title: string,
@@ -33,7 +33,7 @@ const PreviewModal = ({
     const beforeValue = {
       slot,
       upgreadeType,
-      stat_name: name,
+      name: name,
       stat_value: isExistingStats
         ? [...existing.stat_value].flat()
         : [{ stat_name: name ?? "", stat_value: level.toString() }],
@@ -42,7 +42,7 @@ const PreviewModal = ({
     const afterValue = {
       slot,
       upgreadeType,
-      stat_name: title,
+      name: title,
       stat_value: value,
     };
 
@@ -58,9 +58,7 @@ const PreviewModal = ({
           items={itemName}
           label={selectedName ?? ""}
           selectedValue={
-            selectedName !== undefined
-              ? selectedName
-              : (existing.stat_name ?? "")
+            selectedName !== undefined ? selectedName : (existing.name ?? "")
           }
           selectedHandler={selectedHandler}
         />
@@ -69,9 +67,7 @@ const PreviewModal = ({
           items={itemName}
           label={selectedName ?? ""}
           selectedValue={
-            selectedName !== undefined
-              ? selectedName
-              : (existing.stat_name ?? "")
+            selectedName !== undefined ? selectedName : (existing.name ?? "")
           }
           slot={slot}
           upgreadeType={upgreadeType}

@@ -2,7 +2,7 @@ import { ItemTitleType } from "./itemTitleType";
 
 export interface InfusionType {
   rank: string;
-  stat_name: string;
+  name: string;
   description: string;
   stat_value: {
     stat_name: string;

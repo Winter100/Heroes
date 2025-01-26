@@ -20,7 +20,7 @@ const PartholnList = ({
     const beforeStat = {
       slot: "partholn",
       upgreadeType: "partholn",
-      stat_name: "partholn",
+      name: "partholn",
       stat_value: stat,
     };
     setLevel(level);
