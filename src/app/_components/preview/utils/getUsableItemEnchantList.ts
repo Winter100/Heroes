@@ -8,8 +8,9 @@ export const getUsableItemEnchantList = ({
   const enchant =
     enchantList.find((item) => item.name.some((c) => c === slot))?.list ?? [];
   const enchant_options = optionsList.filter((item) =>
-    enchant.some((c) => c.includes(item.stat_name)),
+    enchant.some((c) => c.includes(item.name)),
   );
+
   const sorted = enchant_options.sort((a, b) => {
     const rankA = isNaN(parseInt(a.rank))
       ? a.rank.charCodeAt(0)

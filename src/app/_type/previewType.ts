@@ -9,7 +9,7 @@ export interface PreviewStatsType {
 export interface PreviewSelectedType {
   slot: string;
   upgreadeType: string;
-  stat_name: string;
+  name: string;
   stat_value: PreviewStatsType[];
 }
 
@@ -20,7 +20,7 @@ export interface PrviewItemProps {
 
 export interface beforeAndAfterStatsType {
   rank: string;
-  stat_name: string;
+  name: string;
   stat_value: {
     stat_name: string;
     stat_value: string;
@@ -31,7 +31,7 @@ export interface beforeAndAfterStatsType {
 export type OptionsType = {
   rank: string;
   description: string;
-  stat_name: string;
+  name: string;
   stat_value: {
     stat_name: string;
     stat_value: string;
@@ -75,7 +75,7 @@ export interface PreviewModalProps {
   upgreadeType: string;
   usableItemList: {
     rank: string;
-    stat_name: string;
+    name: string;
     description: string;
     stat_value: { stat_name: string; stat_value: string }[];
   }[];
@@ -99,7 +99,7 @@ export type Stat = {
 export type Item = {
   slot: string;
   upgreadeType: string;
-  stat_name: string;
+  name: string;
   stat_value: Stat[];
 };
 

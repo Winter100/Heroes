@@ -6,6 +6,7 @@ import Column from "../../layout/Column";
 import Button from "../../common/Button";
 import { useRaidStore } from "@/app/_store/raidStore";
 import { filterRaidList } from "@/app/_utils/filterRaidList";
+import { getImageByName } from "@/app/_utils/getImageByName";
 
 const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   const [entry, setEntry] = useState<"빠른전투" | "상한">("상한");
@@ -62,7 +63,8 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
                   className={`flex w-full items-center justify-center gap-2 hover:text-blue-300 ${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? "text-blue-300" : ""} `}
                 >
                   <Image
-                    src={raid?.image ?? ""}
+                    src={getImageByName(raid?.name)}
+                    // src={raid?.image ?? ""}
                     width={40}
                     height={24}
                     alt={raid?.name}

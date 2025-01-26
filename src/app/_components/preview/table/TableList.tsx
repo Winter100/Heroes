@@ -8,6 +8,7 @@ import { Button } from "@headlessui/react";
 import { MonstersType } from "@/app/_constant/raidList";
 import { filterRaidList } from "@/app/_utils/filterRaidList";
 import { usePreviewStore } from "@/app/_store/previewStore";
+import { getImageByName } from "@/app/_utils/getImageByName";
 
 const TableList = () => {
   const [entry, setEntry] = useState<"빠른전투" | "상한">("빠른전투");
@@ -57,7 +58,8 @@ const TableList = () => {
                     >
                       <div className="flex w-40 flex-row items-center gap-2">
                         <Image
-                          src={raid?.image ?? ""}
+                          src={getImageByName(raid.name)}
+                          // src={raid?.image ?? ""}
                           width={40}
                           height={24}
                           alt={raid.name}

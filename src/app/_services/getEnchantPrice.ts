@@ -3,7 +3,7 @@ import { EnchantPriceType } from "../_type/enchantType";
 
 export const getEnchantPrice = async () => {
   try {
-    const response = await axios.get(`api/getEnchantPrice`);
+    const response = await axios.get(`/api/getEnchantPrice`);
 
     const data = await response.data;
 
