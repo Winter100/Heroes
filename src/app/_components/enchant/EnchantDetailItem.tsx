@@ -3,17 +3,21 @@ import EnchantEffects from "../common/enchant/EnchantEffects";
 import EnchantImage from "../common/enchant/EnchantImage";
 import EnchantRank from "../common/enchant/EnchantRank";
 import EnchantTitle from "../common/enchant/EnchantTitle";
-import BasicContainer from "../layout/BasicContainer";
 import Column from "../layout/Column";
 import Row from "../layout/Row";
 
 import { findEnchantNames } from "./utils/findEnchantNames";
 import { getEnchantImage } from "./utils/getEnchantImage";
 import { slotNames } from "./utils/getSlotName";
+import { convertToKST } from "@/app/_utils/convertToKST";
 
 export interface EnchantData {
   upgreadeType: string;
-  price: number;
+  price: {
+    avgPrice: number;
+    minPrice: number;
+    maxPrice: number;
+  };
   ranking: number;
   rank: string;
   name: string;
@@ -22,6 +26,7 @@ export interface EnchantData {
     stat_name: string;
     stat_value: string;
   }[];
+  date: string;
 }
 
 const EnchantDetailItem = ({
@@ -30,6 +35,7 @@ const EnchantDetailItem = ({
   price,
   rank,
   stat_value,
+  date,
 }: EnchantData) => {
   const type = upgreadeType === "prefix" ? "접두" : "접미";
 
@@ -45,16 +51,20 @@ const EnchantDetailItem = ({
           />
         </div>
         <Column className="w-full gap-1">
-          <EnchantTitle
-            className="mb-2 text-sm text-green-300"
-            enchantName={`${name}`}
-          />
+          <Row className="mb-2 items-center justify-between">
+            <EnchantTitle
+              className="text-sm text-green-300"
+              enchantName={`${name}`}
+            />
+            <span className="right-0">{convertToKST(date)}</span>
+          </Row>
           <div className="rounded-sm border border-borderColor px-1 py-0.5 text-xs">
             {rank}랭크 {type} 인챈트
           </div>
           <div className="flex items-center justify-between rounded-sm border border-borderColor px-1 py-0.5 text-xs">
             <span>물품거래소 매매가</span>
-            <span>{price?.toLocaleString()}</span>
+
+            <span>{price?.avgPrice.toLocaleString()}</span>
           </div>
           <div className="rounded-sm border border-borderColor px-1 py-0.5 text-xs text-green-300">
             초급 아이템
@@ -112,8 +122,8 @@ const arePropsEqual = (prevProps: EnchantData, nextProps: EnchantData) => {
   return (
     prevProps.upgreadeType === nextProps.upgreadeType &&
     prevProps.name === nextProps.name &&
-    prevProps.price === nextProps.price &&
     prevProps.rank === nextProps.rank &&
+    JSON.stringify(prevProps.price) === JSON.stringify(nextProps.price) &&
     JSON.stringify(prevProps.stat_value) ===
       JSON.stringify(nextProps.stat_value)
   );

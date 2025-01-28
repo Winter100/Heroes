@@ -15,10 +15,16 @@ import BasicContainer from "../layout/BasicContainer";
 import EnchantDropList from "./EnchantDropList";
 import { useEnchantPriceStore } from "@/app/_store/enchantPriceStore";
 import Loading from "../common/Loading";
+import { getEnchantLastDate } from "./utils/getEnchantLastDate";
 
 export interface EnchantData {
   upgreadeType: string;
-  price: number;
+  date: string;
+  price: {
+    avgPrice: number;
+    minPrice: number;
+    maxPrice: number;
+  };
   ranking: number;
   rank: string;
   name: string;
@@ -55,13 +61,19 @@ const EnchantPriceRankingList = () => {
     return {
       ...enchant,
       upgreadeType: keyword.upgreadeType.prefix,
-      price:
-        getEnchantAvgPrice({
+      price: getEnchantAvgPrice({
+        upgreadeType: keyword.upgreadeType.prefix,
+
+        enchantPriceList: prefix,
+        enchantName: enchant.name,
+      }),
+      date:
+        getEnchantLastDate({
           upgreadeType: keyword.upgreadeType.prefix,
 
           enchantPriceList: prefix,
           enchantName: enchant.name,
-        }) || 0,
+        }) || "",
     };
   });
 
@@ -69,13 +81,19 @@ const EnchantPriceRankingList = () => {
     return {
       ...enchant,
       upgreadeType: keyword.upgreadeType.suffix,
-      price:
-        getEnchantAvgPrice({
+      price: getEnchantAvgPrice({
+        upgreadeType: keyword.upgreadeType.suffix,
+
+        enchantPriceList: suffix,
+        enchantName: enchant.name,
+      }),
+      date:
+        getEnchantLastDate({
           upgreadeType: keyword.upgreadeType.suffix,
 
           enchantPriceList: suffix,
           enchantName: enchant.name,
-        }) || 0,
+        }) || "",
     };
   });
 
@@ -83,7 +101,7 @@ const EnchantPriceRankingList = () => {
     ...prefixEnchantPreiceAvg,
     ...suffixEnchantPreiceAvg,
   ]
-    .sort((a, b) => (b.price || 0) - (a.price || 0))
+    .sort((a, b) => (b?.price?.avgPrice || 0) - (a?.price?.avgPrice || 0))
     .map((enchant, i) => {
       return {
         ...enchant,
@@ -94,13 +112,6 @@ const EnchantPriceRankingList = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value.trim());
   };
-
-  const filteredEnchantData = mergedEnchantList.filter((item) =>
-    item.name
-      .replace(/\s+/g, "")
-      .toLowerCase()
-      .includes(inputValue.replace(/\s+/g, "").toLowerCase()),
-  );
 
   if (enchantPriceLoading) {
     return (
@@ -117,7 +128,8 @@ const EnchantPriceRankingList = () => {
             <EnchantRankTable
               handleClick={handleClick}
               selectedEnchant={selectItem?.name ?? ""}
-              enchantData={filteredEnchantData}
+              inputValue={inputValue}
+              enchantData={mergedEnchantList}
             />
           </div>
           <div className="mt-1 flex h-8 items-center justify-center rounded-md border border-borderColor p-1 text-xs text-white">
