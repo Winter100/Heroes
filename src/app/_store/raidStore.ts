@@ -32,7 +32,7 @@ export const useRaidStore = create<State & Action>((set) => {
       raidName: "",
       monsterName: "",
       entry: "빠른전투",
-      image: "/images/헤레타.png",
+      image: "/images/hereta.png",
     },
     setSelectBoss: (raidName, monsterName, entry) => {
       set((state) => {
@@ -48,8 +48,8 @@ export const useRaidStore = create<State & Action>((set) => {
             raidName,
             monsterName,
             entry,
-            image: "/images/헤레타.png",
-            // image: selectedBoss?.image ?? "/images/헤레타.png",
+            image: "/images/hereta.png",
+            // image: selectedBoss?.image ?? "/images/hereta.png",
           },
           selectedBoss,
         };
@@ -63,7 +63,7 @@ export const useRaidStore = create<State & Action>((set) => {
           raidName: "",
           monsterName: "",
           entry: "빠른전투",
-          image: "/images/헤레타.png",
+          image: "/images/hereta.png",
         },
       });
     },
