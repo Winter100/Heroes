@@ -18,8 +18,10 @@ export const transformedEnchantData = (
     ({ item_option, average_price, max_price, min_price, ...rest }) => ({
       ...rest,
       average_price: Math.floor(average_price / 100) * 100,
-      max_price: Math.floor(max_price / 100) * 100,
-      min_price: Math.floor(min_price / 100) * 100,
+      max_price,
+      min_price,
+      // max_price: Math.floor(max_price / 100) * 100,
+      // min_price: Math.floor(min_price / 100) * 100,
       enchant_name:
         type === "prefix"
           ? (item_option?.prefix_enchant_preset_1 ?? "")
