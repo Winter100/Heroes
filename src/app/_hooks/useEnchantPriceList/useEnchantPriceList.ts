@@ -8,7 +8,7 @@ export const useEnchantPriceList = () => {
   const { setEnchantPriceList, setEnchantPriceLoading } =
     useEnchantPriceStore();
 
-  const { data, isLoading, error } = useQuery<EnchantPriceType[]>({
+  const { data, isLoading, isError } = useQuery<EnchantPriceType[]>({
     queryKey: ["enchantPriceList"],
     queryFn: () => getEnchantPrice(),
     gcTime: 10 * 60 * 1000,
@@ -24,5 +24,5 @@ export const useEnchantPriceList = () => {
     setEnchantPriceLoading(isLoading);
   }, [setEnchantPriceLoading, isLoading]);
 
-  return { data, isLoading, error };
+  return { data, isLoading, isError };
 };

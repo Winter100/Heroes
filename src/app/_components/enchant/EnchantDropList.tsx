@@ -2,13 +2,13 @@ import React, { memo } from "react";
 import Column from "../layout/Column";
 import Image from "next/image";
 import { getImageByName } from "@/app/_utils/getImageByName";
-import { EnchantData } from "./EnchantPriceRankingList";
+import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
 
-interface EnchantDropListProps {
-  enchantData: EnchantData;
+interface EnchantDropList {
+  enchantData: EnchantStoreType;
 }
 
-const EnchantDropList = ({ enchantData }: EnchantDropListProps) => {
+const EnchantDropList = ({ enchantData }: EnchantDropList) => {
   if (enchantData.drop_item_list?.length === 0 || !enchantData.drop_item_list) {
     return (
       <div className="flex flex-1 items-center justify-center rounded-md border border-borderColor p-2 font-sans text-sm font-light text-white">
@@ -20,7 +20,7 @@ const EnchantDropList = ({ enchantData }: EnchantDropListProps) => {
   return (
     <Column className="flex-1 rounded-md border border-borderColor p-2">
       <ul className="grid h-full w-full grid-cols-3 gap-1 text-sm text-white">
-        {enchantData?.drop_item_list?.sort().map((name) => (
+        {enchantData.drop_item_list?.sort().map((name) => (
           <li
             className="flex flex-col items-center justify-center rounded-md border-borderColor"
             key={name}
@@ -50,8 +50,8 @@ const EnchantDropList = ({ enchantData }: EnchantDropListProps) => {
 };
 
 const arePropsEqual = (
-  prevProps: EnchantDropListProps,
-  nextProps: EnchantDropListProps,
+  prevProps: EnchantDropList,
+  nextProps: EnchantDropList,
 ) => {
   return (
     JSON.stringify(prevProps.enchantData.drop_item_list) ===

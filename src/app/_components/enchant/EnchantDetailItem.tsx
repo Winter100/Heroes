@@ -10,38 +10,20 @@ import { findEnchantNames } from "./utils/findEnchantNames";
 import { getEnchantImage } from "./utils/getEnchantImage";
 import { slotNames } from "./utils/getSlotName";
 import { convertToKST } from "@/app/_utils/convertToKST";
-
-export interface EnchantData {
-  upgreadeType: string;
-  price: {
-    avgPrice: number;
-    minPrice: number;
-    maxPrice: number;
-  };
-  ranking: number;
-  rank: string;
-  name: string;
-  description: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  date: string;
-}
+import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
 
 const EnchantDetailItem = ({
   upgreadeType,
   name,
-  price,
+  average_price,
   rank,
   stat_value,
-  date,
-}: EnchantData) => {
+  date_update,
+}: EnchantStoreType) => {
   const type = upgreadeType === "prefix" ? "접두" : "접미";
 
   return (
     <div className="h-[530px] rounded-md border border-borderColor p-2 font-sans text-xs">
-      {/* <BasicContainer className="!h-[500px] !min-h-[500px] w-full rounded-md border border-borderColor font-sans text-xs"> */}
       <Row className="gap-2">
         <div className="h-10 w-10">
           <EnchantImage
@@ -56,7 +38,7 @@ const EnchantDetailItem = ({
               className="text-sm text-green-300"
               enchantName={`${name}`}
             />
-            <span className="right-0">{convertToKST(date)}</span>
+            <span className="right-0">{convertToKST(date_update)}</span>
           </Row>
           <div className="rounded-sm border border-borderColor px-1 py-0.5 text-xs">
             {rank}랭크 {type} 인챈트
@@ -64,7 +46,7 @@ const EnchantDetailItem = ({
           <div className="flex items-center justify-between rounded-sm border border-borderColor px-1 py-0.5 text-xs">
             <span>물품거래소 매매가</span>
 
-            <span>{price?.avgPrice.toLocaleString()}</span>
+            <span>{average_price?.toLocaleString() || "0"}</span>
           </div>
           <div className="rounded-sm border border-borderColor px-1 py-0.5 text-xs text-green-300">
             초급 아이템
@@ -117,17 +99,19 @@ const EnchantDetailItem = ({
   );
 };
 
-// props 비교 함수
-const arePropsEqual = (prevProps: EnchantData, nextProps: EnchantData) => {
+const arePropsEqual = (
+  prevProps: EnchantStoreType,
+  nextProps: EnchantStoreType,
+) => {
   return (
     prevProps.upgreadeType === nextProps.upgreadeType &&
     prevProps.name === nextProps.name &&
     prevProps.rank === nextProps.rank &&
-    JSON.stringify(prevProps.price) === JSON.stringify(nextProps.price) &&
+    JSON.stringify(prevProps.average_price) ===
+      JSON.stringify(nextProps.average_price) &&
     JSON.stringify(prevProps.stat_value) ===
       JSON.stringify(nextProps.stat_value)
   );
 };
 
-// React.memo로 감싸기
 export default memo(EnchantDetailItem, arePropsEqual);
