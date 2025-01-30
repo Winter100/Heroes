@@ -3,39 +3,27 @@ import EnchantEffects from "../common/enchant/EnchantEffects";
 import EnchantImage from "../common/enchant/EnchantImage";
 import EnchantRank from "../common/enchant/EnchantRank";
 import EnchantTitle from "../common/enchant/EnchantTitle";
-import BasicContainer from "../layout/BasicContainer";
 import Column from "../layout/Column";
 import Row from "../layout/Row";
 
 import { findEnchantNames } from "./utils/findEnchantNames";
 import { getEnchantImage } from "./utils/getEnchantImage";
 import { slotNames } from "./utils/getSlotName";
-
-export interface EnchantData {
-  upgreadeType: string;
-  price: number;
-  ranking: number;
-  rank: string;
-  name: string;
-  description: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-}
+import { convertToKST } from "@/app/_utils/convertToKST";
+import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
 
 const EnchantDetailItem = ({
   upgreadeType,
   name,
-  price,
+  average_price,
   rank,
   stat_value,
-}: EnchantData) => {
+  date_update,
+}: EnchantStoreType) => {
   const type = upgreadeType === "prefix" ? "접두" : "접미";
 
   return (
     <div className="h-[530px] rounded-md border border-borderColor p-2 font-sans text-xs">
-      {/* <BasicContainer className="!h-[500px] !min-h-[500px] w-full rounded-md border border-borderColor font-sans text-xs"> */}
       <Row className="gap-2">
         <div className="h-10 w-10">
           <EnchantImage
@@ -45,16 +33,20 @@ const EnchantDetailItem = ({
           />
         </div>
         <Column className="w-full gap-1">
-          <EnchantTitle
-            className="mb-2 text-sm text-green-300"
-            enchantName={`${name}`}
-          />
+          <Row className="mb-2 items-center justify-between">
+            <EnchantTitle
+              className="text-sm text-green-300"
+              enchantName={`${name}`}
+            />
+            <span className="right-0">{convertToKST(date_update)}</span>
+          </Row>
           <div className="rounded-sm border border-borderColor px-1 py-0.5 text-xs">
             {rank}랭크 {type} 인챈트
           </div>
           <div className="flex items-center justify-between rounded-sm border border-borderColor px-1 py-0.5 text-xs">
             <span>물품거래소 매매가</span>
-            <span>{price?.toLocaleString()}</span>
+
+            <span>{average_price?.toLocaleString() || "0"}</span>
           </div>
           <div className="rounded-sm border border-borderColor px-1 py-0.5 text-xs text-green-300">
             초급 아이템
@@ -107,17 +99,19 @@ const EnchantDetailItem = ({
   );
 };
 
-// props 비교 함수
-const arePropsEqual = (prevProps: EnchantData, nextProps: EnchantData) => {
+const arePropsEqual = (
+  prevProps: EnchantStoreType,
+  nextProps: EnchantStoreType,
+) => {
   return (
     prevProps.upgreadeType === nextProps.upgreadeType &&
     prevProps.name === nextProps.name &&
-    prevProps.price === nextProps.price &&
     prevProps.rank === nextProps.rank &&
+    JSON.stringify(prevProps.average_price) ===
+      JSON.stringify(nextProps.average_price) &&
     JSON.stringify(prevProps.stat_value) ===
       JSON.stringify(nextProps.stat_value)
   );
 };
 
-// React.memo로 감싸기
 export default memo(EnchantDetailItem, arePropsEqual);

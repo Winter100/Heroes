@@ -27,4 +27,8 @@ export const keyword = {
     prefix: "prefix",
     suffix: "suffix",
   },
+  project: {
+    name: "망스비",
+    url: "https://heroes-dev.com/",
+  },
 };

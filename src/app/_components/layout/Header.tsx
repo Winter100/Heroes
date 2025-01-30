@@ -4,6 +4,8 @@ import { VscMenu } from "react-icons/vsc";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { keyword } from "@/app/_constant/keyword";
+import Image from "next/image";
 
 const link = [
   { name: "상한 조회", href: "/raid" },
@@ -18,7 +20,16 @@ const Header = () => {
     <header className="flex h-10 w-full items-center justify-center rounded-lg bg-backgroundOne">
       <nav className="flex h-full w-full max-w-7xl flex-row">
         <div className="flex h-full w-full flex-row items-center justify-between sm:hidden">
-          <div className="px-4">망디</div>
+          <div className="relative px-4 font-semibold text-white">
+            <Link href={"/"}>
+              <Image
+                width={70}
+                height={40}
+                src={"/images/textLogo.png"}
+                alt={keyword.project.name}
+              />
+            </Link>
+          </div>
           <Menu>
             <MenuButton className="z-50 h-full px-10 text-3xl text-white">
               <VscMenu />
