@@ -28,13 +28,14 @@ import {
   EnchantStoreType,
   useSelectEnchantStore,
 } from "@/app/_store/selectEnchantStore";
+import { useSearchParams } from "next/navigation";
 
 interface EnchantRankTableProps extends ComponentProps<"table"> {
   enchantData: {
     upgreadeType: string;
     rank: string;
     name: string;
-    drop_item_list?: string[];
+    drop_item_list: string[];
     description: string;
     stat_value: {
       stat_name: string;
@@ -57,6 +58,9 @@ const EnchantRankTable = memo(({ enchantData }: EnchantRankTableProps) => {
   const { mergedEnchantPriceList, isLoading } = useEnchantTable();
   const [sortKey, setSortKey] = useState<keyof EnchantData>("rank");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+
+  const searchParams = useSearchParams();
+  const filter = searchParams.get("filter");
 
   const handleSort = useCallback(
     (key: keyof EnchantData) => {
@@ -102,6 +106,22 @@ const EnchantRankTable = memo(({ enchantData }: EnchantRankTableProps) => {
     }
   }, [isLoading, selecteEnchant, sortedData, setEnchant]);
 
+  const filteredData = sortedData.filter((enchant) => {
+    if (filter === "all") {
+      return true;
+    }
+
+    const hasMatchingItems = sortedData.some((enchant) =>
+      enchant.drop_item_list.includes(filter || ""),
+    );
+
+    if (!hasMatchingItems) {
+      return true;
+    }
+
+    return enchant.drop_item_list.includes(filter || "");
+  });
+
   return (
     <table className="w-full table-fixed overflow-scroll font-sans">
       <Thead
@@ -114,7 +134,7 @@ const EnchantRankTable = memo(({ enchantData }: EnchantRankTableProps) => {
         maxminPrice="최대/최소 거래가"
       />
       <Tbody className="text-sm">
-        {sortedData?.map((enchant) => (
+        {filteredData?.map((enchant) => (
           <Tr
             onClick={() => setEnchant(enchant as EnchantStoreType)}
             className={clsx(

@@ -8,6 +8,7 @@ export const sortedEnchantData = (
     name: string;
     rank: string;
     upgreadeType: string;
+    drop_item_list: string[];
   }[],
   key: "rank" | "name" | "average_price" | "max_price" | "min_price",
   order: "asc" | "desc",

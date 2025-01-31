@@ -3,12 +3,26 @@ import Column from "../layout/Column";
 import Image from "next/image";
 import { getImageByName } from "@/app/_utils/getImageByName";
 import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
+import { useRouter, useSearchParams } from "next/navigation";
+import clsx from "clsx";
 
 interface EnchantDropList {
   enchantData: EnchantStoreType;
 }
 
 const EnchantDropList = ({ enchantData }: EnchantDropList) => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const filterValue = searchParams.get("filter");
+
+  const handleSearchParams = (name: string) => {
+    if (filterValue === name) {
+      router.push(`/market/enchant?filter=${"all"}`);
+    } else {
+      router.push(`/market/enchant?filter=${name}`);
+    }
+  };
+
   if (enchantData.drop_item_list?.length === 0 || !enchantData.drop_item_list) {
     return (
       <div className="flex flex-1 items-center justify-center rounded-md border border-borderColor p-2 font-sans text-sm font-light text-white">
@@ -22,10 +36,14 @@ const EnchantDropList = ({ enchantData }: EnchantDropList) => {
       <ul className="grid h-full w-full grid-cols-3 gap-1 text-sm text-white">
         {enchantData.drop_item_list?.sort().map((name) => (
           <li
-            className="flex flex-col items-center justify-center rounded-md border-borderColor"
+            onClick={() => handleSearchParams(name)}
+            className={clsx(
+              "flex cursor-pointer flex-col items-center justify-center rounded-md hover:animate-boundUpDown hover:text-blue-300",
+              filterValue === name && "rounded-md border border-blue-300",
+            )}
             key={name}
           >
-            <div className="flex h-20 items-center justify-center">
+            <div className={clsx("flex h-20 items-center justify-center")}>
               <Image
                 width={70}
                 height={70}
