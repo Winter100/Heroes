@@ -3,25 +3,21 @@ import Column from "../layout/Column";
 import Image from "next/image";
 import { getImageByName } from "@/app/_utils/getImageByName";
 import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
-import { useRouter, useSearchParams } from "next/navigation";
 import clsx from "clsx";
+import EnchantImage from "../common/enchant/EnchantImage";
+import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
 
 interface EnchantDropList {
   enchantData: EnchantStoreType;
 }
 
 const EnchantDropList = ({ enchantData }: EnchantDropList) => {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const filterValue = searchParams.get("filter");
-
-  const handleSearchParams = (name: string) => {
-    if (filterValue === name) {
-      router.push(`/market/enchant?filter=${"all"}`);
-    } else {
-      router.push(`/market/enchant?filter=${name}`);
-    }
-  };
+  const { dropRaidOrItemName, setDropRaidOrItemName } = useEnchantFilterStore(
+    (state) => ({
+      dropRaidOrItemName: state.dropRaidOrItemName,
+      setDropRaidOrItemName: state.setDropRaidOrItemName,
+    }),
+  );
 
   if (enchantData.drop_item_list?.length === 0 || !enchantData.drop_item_list) {
     return (
@@ -36,21 +32,20 @@ const EnchantDropList = ({ enchantData }: EnchantDropList) => {
       <ul className="grid h-full w-full grid-cols-3 gap-1 text-sm text-white">
         {enchantData.drop_item_list?.sort().map((name) => (
           <li
-            onClick={() => handleSearchParams(name)}
+            onClick={() => setDropRaidOrItemName(name)}
             className={clsx(
-              "flex cursor-pointer flex-col items-center justify-center rounded-md hover:animate-boundUpDown hover:text-blue-300",
-              filterValue === name && "rounded-md border border-blue-300",
+              "flex h-28 cursor-pointer flex-col items-center justify-center rounded-md hover:animate-boundUpDown",
+              dropRaidOrItemName === name
+                ? "rounded-md border border-blue-300 text-blue-300"
+                : "hover:outline hover:outline-1 hover:outline-rose-300",
             )}
             key={name}
           >
-            <div className={clsx("flex h-20 items-center justify-center")}>
+            <div className="flex h-20 items-center justify-center">
               <Image
                 width={70}
                 height={70}
-                style={{
-                  objectFit: "scale-down",
-                }}
-                quality={100}
+                className="object-scale-down"
                 title={name}
                 src={getImageByName(name)}
                 alt={name}

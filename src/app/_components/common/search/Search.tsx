@@ -8,17 +8,17 @@ import Loading from "../Loading";
 interface SearchProps extends ComponentProps<"form"> {
   loading?: boolean;
   className?: string;
-  // onSubmit: (e: FormEvent) => void;
   placeholder: string;
   inputRef: RefObject<HTMLInputElement>;
+  maxLength?: number;
 }
 
 const Search = ({
   loading = false,
-  // onSubmit,
   className = "",
   placeholder = "",
   inputRef,
+  maxLength,
   ...props
 }: SearchProps) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -29,6 +29,7 @@ const Search = ({
     >
       <form id="search" {...props} className="flex h-full w-full pl-2">
         <Input
+          maxLength={maxLength}
           spellCheck="false"
           ref={inputRef}
           onFocus={() => setIsFocused(true)}

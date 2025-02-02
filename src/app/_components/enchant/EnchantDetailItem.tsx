@@ -29,7 +29,7 @@ const EnchantDetailItem = ({
           <EnchantImage
             alt={name}
             src={getEnchantImage(rank, upgreadeType)}
-            size={38}
+            size={35}
           />
         </div>
         <Column className="w-full gap-1">
