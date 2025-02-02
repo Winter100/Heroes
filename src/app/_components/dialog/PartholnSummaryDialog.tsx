@@ -11,7 +11,7 @@ const PartholnSummaryDialog = () => {
       <Button className="rounded-lg p-1" onClick={onOpen}>
         파르홀른
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="550px">
+      <BasicDialog isOpen={isOpen} onClose={onClose} size="600px">
         <PartholnContent />
         <RaidSelectorWithStats />
       </BasicDialog>

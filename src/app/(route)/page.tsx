@@ -17,7 +17,7 @@ const Home = () => {
           <div className="flex items-center justify-center text-xs">
             <p>마비노기 영웅전 캐릭터를 조회하고 장비를 세팅해보세요</p>
           </div>
-          <Row className="flex w-full items-center justify-center">
+          <Row className="flex w-full items-center justify-center px-4">
             <PreviewSearchBar className="w-full" />
           </Row>
         </div>

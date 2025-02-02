@@ -10,7 +10,12 @@ const StatsSummaryDialog = () => {
       <Button className="rounded-lg p-1" onClick={onOpen}>
         스탯
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="400px">
+      <BasicDialog
+        inDiaClassName="!h-auto"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="400px"
+      >
         <StatsContent />
       </BasicDialog>
     </>

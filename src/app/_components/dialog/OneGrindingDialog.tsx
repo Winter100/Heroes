@@ -41,7 +41,7 @@ const OneGrindingDialog = ({ item }: OneGrindingDialogProps) => {
           {isAbility && <Ability item={item} />}
           <GrindingList className="p-3" item={item} />
         </Column>
-        <BasicContainer className="min-h-56 items-center justify-center">
+        <BasicContainer className="!my-6 !h-auto items-center justify-center">
           <IngredientList item={item} />
         </BasicContainer>
         <RaidSelectorWithStats />

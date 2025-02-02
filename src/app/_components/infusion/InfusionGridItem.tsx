@@ -18,7 +18,7 @@ const InfusionGridItem = ({
       key={infusion?.name + infusion.stat_value}
     >
       <Column
-        className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 font-mono text-xs`}
+        className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-2 rounded-lg bg-zinc-800 p-2 text-xs`}
       >
         <InfusionImageAndTitle infusionName={infusion.name} />
         <InfusionValues infusionValue={infusion.stat_value} />

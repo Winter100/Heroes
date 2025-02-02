@@ -1,7 +1,7 @@
 export const partholn = [
   {
     level: 0,
-    stat: [{ stat_name: "설정 X", stat_value: "" }],
+    stat: [{ stat_name: "설정 X", stat_value: "설정 X" }],
   },
   {
     level: 1,

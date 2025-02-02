@@ -10,7 +10,12 @@ const TourSummaryDialog = () => {
       <Button className="rounded-lg p-1" onClick={onOpen}>
         순회
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="800px">
+      <BasicDialog
+        inDiaClassName="!h-[700px]"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="800px"
+      >
         <TourContent />
       </BasicDialog>
     </>

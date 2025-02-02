@@ -9,7 +9,7 @@ const InfusionGroup = ({
 }: InfusionGroupProps) => {
   return (
     <li className="my-4">
-      <h3 className="text-base font-semibold text-white">{title}</h3>
+      <h3 className="text-base text-white">{title}</h3>
       <InfusionGrid
         infusionList={infusionList}
         selectedHandler={selectedHandler}
