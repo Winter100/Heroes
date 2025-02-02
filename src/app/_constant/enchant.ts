@@ -2,11 +2,7 @@ type EnchantOptionsType = {
   rank: string;
   name: string;
   description: string;
-  drop_item_list?: string[];
-  // drop_item_list?: {
-  //   name: string;
-  //   src: string;
-  // }[];
+  drop_item_list: string[];
   stat_value: { stat_name: string; stat_value: string }[];
 };
 
@@ -115,6 +111,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "빛과 같은",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "180" },
       { stat_name: "마법공격력", stat_value: "180" },
@@ -125,6 +122,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "결정적인",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "120" },
       { stat_name: "마법공격력", stat_value: "120" },
@@ -136,6 +134,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "용감한",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "110" },
       { stat_name: "공격속도", stat_value: "1" },
@@ -156,6 +155,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "수호의",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "112" },
       { stat_name: "최대 생명력", stat_value: "50" },
@@ -165,6 +165,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "노력의",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "35" },
       { stat_name: "최대 생명력", stat_value: "50" },
@@ -195,6 +196,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "8",
     name: "꾸준한",
     description: "",
+    drop_item_list: [],
     stat_value: [{ stat_name: "최대 스태미나", stat_value: "15" }],
   },
   {
@@ -377,6 +379,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "강인한",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "35" },
       { stat_name: "최대 스태미나", stat_value: "2" },
@@ -388,6 +391,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "호기심 많은",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "130" },
       { stat_name: "힘", stat_value: "6" },
@@ -726,12 +730,14 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "맷집 좋은",
     description: "방패, 캐스틀릿, 그랜드타지",
+    drop_item_list: [],
     stat_value: [{ stat_name: "방어력", stat_value: "190" }],
   },
   {
     rank: "A",
     name: "현자의",
     description: "수호부",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "민첩", stat_value: "-6" },
       { stat_name: "힘", stat_value: "15" },
@@ -742,6 +748,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "짜릿한",
     description: "방패, 캐스틀릿, 그랜드타지",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "145" },
       { stat_name: "크리티컬", stat_value: "1" },
@@ -776,7 +783,6 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       "왜곡된 진실",
       "스페셜 던전: 인챈트 주머니",
     ],
-    // description: "수호부, 방패, 캐스틀릿, 그랜드타지",
     stat_value: [
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "방어력", stat_value: "500" },
@@ -787,7 +793,6 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     name: "격렬한",
     description: "",
     drop_item_list: ["실낙원의 첨병"],
-    // description: "수호부, 방패, 캐스틀릿, 그랜드타지",
     stat_value: [
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "방어력", stat_value: "800" },
@@ -800,7 +805,6 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     name: "승자의",
     description: "",
     drop_item_list: ["검의 무덤"],
-    // description: "수호부, 방패, 캐스틀릿, 그랜드타지",
     stat_value: [
       { stat_name: "공격속도", stat_value: "1" },
       { stat_name: "방어력", stat_value: "800" },
@@ -897,6 +901,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "약화",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "35" },
       { stat_name: "마법공격력", stat_value: "35" },
@@ -907,6 +912,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "보호막",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "150" },
       { stat_name: "마법공격력", stat_value: "150" },
@@ -916,6 +922,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "야망",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "752" },
       { stat_name: "마법공격력", stat_value: "752" },
@@ -928,6 +935,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "도전",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "180" },
       { stat_name: "마법공격력", stat_value: "180" },
@@ -1068,6 +1076,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "치명",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "크리티컬", stat_value: "3" },
       { stat_name: "밸런스", stat_value: "-1" },
@@ -1077,6 +1086,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "용기",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "70" },
       { stat_name: "마법공격력", stat_value: "70" },
@@ -1088,6 +1098,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "아르마딜로",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "336" },
       { stat_name: "최대 스태미나", stat_value: "5" },
@@ -1102,6 +1113,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "자스민",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "140" },
       { stat_name: "마법공격력", stat_value: "140" },
@@ -1126,6 +1138,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "8",
     name: "대항",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "340" },
       { stat_name: "크리티컬", stat_value: "1" },
@@ -1322,6 +1335,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "고통",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "10" },
       { stat_name: "마법공격력", stat_value: "10" },
@@ -1333,6 +1347,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "활력",
     description: "",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "130" },
       { stat_name: "최대 생명력", stat_value: "12" },
@@ -1483,6 +1498,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "코볼트",
     description: "방패, 캐스틀릿, 그랜드타지",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "공격력", stat_value: "30" },
       { stat_name: "마법공격력", stat_value: "30" },
@@ -1493,6 +1509,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "장대비",
     description: "마법서",
+    drop_item_list: [],
     stat_value: [{ stat_name: "발동 시 마법공격력 증가", stat_value: "" }],
   },
 
@@ -1500,6 +1517,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "금강석",
     description: "방패, 캐스틀릿, 그랜드타지",
+    drop_item_list: [],
     stat_value: [
       { stat_name: "방어력", stat_value: "62" },
       { stat_name: "최대 생명력", stat_value: "-50" },
@@ -1518,7 +1536,6 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
       "왜곡된 진실",
       "스페셜 던전: 인챈트 주머니",
     ],
-    // description: "수호부, 방패, 캐스틀릿, 그랜드타지",
     stat_value: [
       { stat_name: "공격력", stat_value: "230" },
       { stat_name: "마법공격력", stat_value: "230" },
@@ -1531,7 +1548,6 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     name: "광기",
     description: "",
     drop_item_list: ["원한의 암굴"],
-    // description: "수호부, 방패, 캐스틀릿, 그랜드타지",
     stat_value: [
       { stat_name: "공격력", stat_value: "230" },
       { stat_name: "마법공격력", stat_value: "230" },
@@ -1544,7 +1560,6 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     name: "찬미",
     description: "",
     drop_item_list: ["시드 별궁"],
-    // description: "수호부, 방패, 캐스틀릿, 그랜드타지",
     stat_value: [
       { stat_name: "공격력", stat_value: "230" },
       { stat_name: "마법공격력", stat_value: "230" },

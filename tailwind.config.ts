@@ -11,6 +11,10 @@ const config: Config = {
       gridTemplateRows: {
         "17": "repeat(17, minmax(0,1fr))",
       },
+      gridTemplateColumns: {
+        "auto-fill": "repeat(auto-fill, minmax(200px, 1fr))",
+        "auto-150-fill": "repeat(auto-fill, minmax(150px, 1fr))",
+      },
       alignContent: {
         "space-around": "space-around",
       },

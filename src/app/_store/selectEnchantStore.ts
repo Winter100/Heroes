@@ -10,11 +10,13 @@ type State = {
     name: string;
     rank: string;
     upgreadeType: string;
+    drop_item_list: string[];
   } | null;
 };
 
 type Action = {
-  setEnchant: (enchant: EnchantStoreType) => void;
+  setEnchant: (enchant: EnchantStoreType | null) => void;
+  resetSelectEnchant: () => void;
 };
 
 export const useSelectEnchantStore = create<State & Action>((set) => {
@@ -23,6 +25,11 @@ export const useSelectEnchantStore = create<State & Action>((set) => {
     setEnchant: (enchant) => {
       set(() => {
         return { enchant };
+      });
+    },
+    resetSelectEnchant: () => {
+      set(() => {
+        return { enchant: null };
       });
     },
   };

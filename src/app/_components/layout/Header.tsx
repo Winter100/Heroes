@@ -31,11 +31,11 @@ const Header = () => {
             </Link>
           </div>
           <Menu>
-            <MenuButton className="z-50 h-full px-10 text-3xl text-white">
+            <MenuButton className="z-10 h-full px-10 text-3xl text-white">
               <VscMenu />
             </MenuButton>
             <MenuItems
-              className="z-50 mt-1 h-2/4 w-40 rounded-md bg-backgroundOne px-2 text-sm text-white hover:bg-none"
+              className="z-10 mt-1 h-2/4 w-40 rounded-md bg-backgroundOne px-2 text-sm text-white hover:bg-none"
               anchor="bottom"
             >
               {link.map((l) => (
