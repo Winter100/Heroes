@@ -9,7 +9,6 @@ interface BasicDialogProps {
   onClose: () => void;
   size: string;
   className?: string;
-  inDiaClassName?: string;
 }
 
 const BasicDialog = ({
@@ -18,7 +17,6 @@ const BasicDialog = ({
   onClose,
   size = "1000px",
   className,
-  inDiaClassName,
 }: BasicDialogProps) => {
   return (
     <>
@@ -34,16 +32,17 @@ const BasicDialog = ({
               transition
               style={{ maxWidth: size }}
               className={clsx(
-                `relative mx-auto mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:mx-6 sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:max-w-[${size}]`,
+                `relative mx-auto mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne px-4 pb-4 pt-5 text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:mx-6 sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:p-6 md:pb-4 md:max-w-[${size}]`,
                 className,
               )}
             >
-              <div
+              <div>
+                {/* <div
                 className={clsx(
-                  "h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-full md:p-6 md:pb-4",
+                  "h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-[700px] md:p-6 md:pb-4",
                   inDiaClassName,
                 )}
-              >
+              > */}
                 <div className="flex w-full items-center justify-end">
                   <button onClick={onClose}>X</button>
                 </div>

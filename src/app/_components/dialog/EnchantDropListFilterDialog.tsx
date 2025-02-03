@@ -33,12 +33,12 @@ const EnchantDropListFilterDialog = () => {
         )}
       </Button>
       <BasicDialog
-        inDiaClassName="overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 md:h-[700px] xl:h-full md:p-6 md:pb-4"
+        className="h-96 overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[450px] md:h-[650px] md:p-6 md:pb-4 lg:h-[770px]"
         isOpen={isOpen}
         onClose={onClose}
         size="1200px"
       >
-        <h2 className="m-auto my-2 text-center font-sans text-2xl text-white">
+        <h2 className="m-auto my-2 text-center font-sans text-lg text-white sm:text-2xl">
           인챈트 드롭 필터
         </h2>
         <EnchantDropListContent onClose={onClose} />

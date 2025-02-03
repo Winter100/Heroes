@@ -11,7 +11,7 @@ const EnchantContent = ({
   selectedValue,
 }: EnchantContentProps) => {
   return (
-    <ul className="my-2 grid grid-cols-auto-fill gap-2">
+    <ul className="my-2 grid grid-cols-2 gap-2 sm:grid-cols-auto-fill">
       {enchantList?.map((item, i) => (
         <li
           className="flex w-full rounded-lg shadow-md transition-shadow duration-300 hover:cursor-pointer hover:shadow-xl"

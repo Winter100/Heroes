@@ -37,7 +37,7 @@ const EnchantPriceRankingList = () => {
   ];
 
   return (
-    <BasicContainer className="mt-4 md:mt-20">
+    <BasicContainer className="lg:mt-10">
       <div className="mx-auto flex w-full max-w-md flex-col justify-center gap-3 rounded-md border border-borderColor p-2 md:max-w-5xl md:flex-row md:p-6 lg:p-10">
         <Column className="z-10 max-w-md border-borderColor">
           <div className="fixed-scrollbar h-96 overflow-x-hidden overflow-y-scroll md:h-[770px]">
@@ -48,6 +48,9 @@ const EnchantPriceRankingList = () => {
         <Column className="w-full max-w-md gap-2">
           <EnchantDropAndDetail />
         </Column>
+      </div>
+      <div className="my-4 hidden text-center text-xs sm:block">
+        거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
       </div>
     </BasicContainer>
   );

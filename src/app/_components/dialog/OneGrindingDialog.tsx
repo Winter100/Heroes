@@ -3,13 +3,9 @@ import BasicDialog from "../common/BasicDialog";
 import ItemTitle from "../common/ItemTitle";
 import BottomArrow from "../common/BottomArrow";
 import { NewEquipmentType } from "@/app/_type/equipmentType";
-import Ability from "../preview/ability/Ability";
-import Column from "../layout/Column";
-import GrindingList from "../common/GrindingList";
-import BasicContainer from "../layout/BasicContainer";
-import IngredientList from "../common/IngredientList";
 import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
 import Button from "../common/Button";
+import OneGrindingContent from "./content/OneGrindingContent";
 
 interface OneGrindingDialogProps {
   item: NewEquipmentType;
@@ -31,19 +27,13 @@ const OneGrindingDialog = ({ item }: OneGrindingDialogProps) => {
         <ItemTitle level={title.level} name={title.name} />
         <BottomArrow />
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="700px">
-        <Column className="items-center justify-center gap-2 rounded-lg bg-background py-2">
-          <ItemTitle
-            className="text-sm font-medium text-white"
-            level={title.level ?? ""}
-            name={title.name}
-          />
-          {isAbility && <Ability item={item} />}
-          <GrindingList className="p-3" item={item} />
-        </Column>
-        <BasicContainer className="!my-6 !h-auto items-center justify-center">
-          <IngredientList item={item} />
-        </BasicContainer>
+      <BasicDialog
+        className="h-96 overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-[800px] md:p-6 md:pb-4 lg:h-full"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="700px"
+      >
+        <OneGrindingContent isAbility={isAbility} title={title} item={item} />
         <RaidSelectorWithStats />
       </BasicDialog>
     </>

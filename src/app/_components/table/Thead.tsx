@@ -5,10 +5,10 @@ import clsx from "clsx";
 import { memo } from "react";
 
 interface TheadProps {
-  ranking: string;
-  name: string;
-  avgPrice: string;
-  maxminPrice: string;
+  rank: React.ReactNode;
+  name: React.ReactNode;
+  avgPrice: React.ReactNode;
+  maxminPrice: React.ReactNode;
   sortKey: string;
   sortOrder: string;
   handleSort: (
@@ -20,7 +20,7 @@ const Thead = memo(
   ({
     name,
     avgPrice,
-    ranking,
+    rank,
     maxminPrice,
     sortKey,
     sortOrder,
@@ -32,13 +32,13 @@ const Thead = memo(
           <Th
             onClick={() => handleSort("rank")}
             className={clsx(
-              "w-1/4 font-medium hover:animate-boundUpDown sm:w-1/4",
+              "w-1/4 !px-0 font-medium hover:animate-boundUpDown sm:w-1/4 sm:p-2",
               sortKey === "rank" &&
                 (sortOrder === "desc" ? "!text-blue-500" : "!text-red-500"),
             )}
           >
             <span className="flex items-center justify-center">
-              {ranking}
+              {rank}
               {sortKey === "rank" &&
                 (sortOrder === "desc" ? <RxTriangleDown /> : <RxTriangleUp />)}
             </span>
@@ -46,7 +46,7 @@ const Thead = memo(
           <Th
             onClick={() => handleSort("name")}
             className={clsx(
-              "w-3/5 font-medium hover:animate-boundUpDown",
+              "w-[62%] !px-0 font-medium hover:animate-boundUpDown sm:w-3/5 sm:p-2",
               sortKey === "name" &&
                 (sortOrder === "desc" ? "!text-blue-500" : "!text-red-500"),
             )}
@@ -60,7 +60,7 @@ const Thead = memo(
           <Th
             onClick={() => handleSort("average_price")}
             className={clsx(
-              "w-[45%] font-medium hover:animate-boundUpDown",
+              "w-[50%] !px-0 font-medium hover:animate-boundUpDown sm:p-2",
               sortKey === "average_price" &&
                 (sortOrder === "desc" ? "!text-blue-500" : "!text-red-500"),
             )}
@@ -74,7 +74,7 @@ const Thead = memo(
           <Th
             onClick={() => handleSort("max_price")}
             className={clsx(
-              "w-3/5 font-medium hover:animate-boundUpDown",
+              "w-[65%] !px-0 font-medium hover:animate-boundUpDown sm:w-3/5 sm:p-2",
               sortKey === "max_price" &&
                 (sortOrder === "desc" ? "!text-blue-500" : "!text-red-500"),
             )}
