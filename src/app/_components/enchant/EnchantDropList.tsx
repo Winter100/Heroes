@@ -3,12 +3,22 @@ import Column from "../layout/Column";
 import Image from "next/image";
 import { getImageByName } from "@/app/_utils/getImageByName";
 import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
+import clsx from "clsx";
+import EnchantImage from "../common/enchant/EnchantImage";
+import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
 
 interface EnchantDropList {
   enchantData: EnchantStoreType;
 }
 
 const EnchantDropList = ({ enchantData }: EnchantDropList) => {
+  const { dropRaidOrItemName, setDropRaidOrItemName } = useEnchantFilterStore(
+    (state) => ({
+      dropRaidOrItemName: state.dropRaidOrItemName,
+      setDropRaidOrItemName: state.setDropRaidOrItemName,
+    }),
+  );
+
   if (enchantData.drop_item_list?.length === 0 || !enchantData.drop_item_list) {
     return (
       <div className="flex flex-1 items-center justify-center rounded-md border border-borderColor p-2 font-sans text-sm font-light text-white">
@@ -22,17 +32,20 @@ const EnchantDropList = ({ enchantData }: EnchantDropList) => {
       <ul className="grid h-full w-full grid-cols-3 gap-1 text-sm text-white">
         {enchantData.drop_item_list?.sort().map((name) => (
           <li
-            className="flex flex-col items-center justify-center rounded-md border-borderColor"
+            onClick={() => setDropRaidOrItemName(name)}
+            className={clsx(
+              "flex h-28 cursor-pointer flex-col items-center justify-center rounded-md hover:animate-boundUpDown",
+              dropRaidOrItemName === name
+                ? "rounded-md border border-blue-300 text-blue-300"
+                : "hover:outline hover:outline-1 hover:outline-rose-300",
+            )}
             key={name}
           >
             <div className="flex h-20 items-center justify-center">
               <Image
                 width={70}
                 height={70}
-                style={{
-                  objectFit: "scale-down",
-                }}
-                quality={100}
+                className="object-scale-down"
                 title={name}
                 src={getImageByName(name)}
                 alt={name}

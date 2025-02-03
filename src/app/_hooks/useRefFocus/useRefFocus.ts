@@ -4,5 +4,11 @@ export const useRefFocus = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const focus = () => inputRef.current?.focus();
 
-  return { inputRef, focus };
+  const resetRef = () => {
+    if (inputRef.current) {
+      return (inputRef.current.value = "");
+    }
+  };
+
+  return { inputRef, focus, resetRef };
 };

@@ -11,7 +11,7 @@ const InfusionsContent = ({
     (a, b) => a.localeCompare(b),
   );
   return (
-    <ul className="my-2 w-full">
+    <ul className="my-2 w-full font-sans">
       {sortedGroupByStat.map((title) => (
         <InfusionGroup
           key={title}

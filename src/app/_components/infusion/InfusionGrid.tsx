@@ -7,7 +7,7 @@ const InfusionGrid = ({
   selectedHandler,
 }: InfusionGridProps) => {
   return (
-    <ul className="grid w-full grid-cols-3 gap-3 sm:grid-cols-3">
+    <ul className="grid w-full grid-cols-2 gap-3 sm:grid-cols-auto-fill">
       {infusionList.map((infusion) => (
         <InfusionGridItem
           key={infusion.name + infusion.stat_value}
