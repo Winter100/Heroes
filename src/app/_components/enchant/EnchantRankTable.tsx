@@ -136,10 +136,10 @@ const EnchantRankTable = memo(({ enchantData }: EnchantRankTableProps) => {
         sortKey={sortKey}
         sortOrder={sortOrder}
         handleSort={handleSort}
-        ranking="랭크"
-        name="인챈트"
-        avgPrice="평균 거래가"
-        maxminPrice="최대/최소 거래가"
+        rank={<span>랭크</span>}
+        name={<span>인챈트</span>}
+        avgPrice={<span>평균 거래가</span>}
+        maxminPrice={<span>최대/최소 거래가</span>}
       />
       <Tbody className="text-xs sm:text-sm">
         {filteredData.length >= 1 ? (

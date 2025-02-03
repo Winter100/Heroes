@@ -44,27 +44,34 @@ const EnchantItem = ({
   };
   // 더블클릭 기능 추가하기?
   return (
-    <Column
+    <button
+      className="w-full"
       onClick={onClick}
       // onDoubleClick={() => setOpenModal(false)}
-      className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
     >
-      <Row>
-        <EnchantImage src={src} alt={enchantName} />
-        <Column className="w-full">
-          <Row className="flex h-full w-full items-center justify-center gap-2">
-            <EnchantRank enchantRank={rank} />
-            <EnchantTitle enchantName={enchantName} />
-          </Row>
-          <EnchantDescription enchantDescription={enchantDescription} />
-        </Column>
-      </Row>
-      <EnchantEffects className="min-h-24" enchantEffects={enchantEffects} />
-      <EnchantPrice
-        avgPrice={avgPrice}
-        enchantPriceLoading={enchantPriceLoading}
-      />
-    </Column>
+      <Column
+        className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
+      >
+        <Row className="w-full">
+          <EnchantImage src={src} alt={enchantName} />
+          <Column className="w-full">
+            <Row className="flex h-full w-full items-center justify-center gap-2">
+              <EnchantRank enchantRank={rank} />
+              <EnchantTitle enchantName={enchantName} />
+            </Row>
+            <EnchantDescription
+              className="text-xs"
+              enchantDescription={enchantDescription}
+            />
+          </Column>
+        </Row>
+        <EnchantEffects className="min-h-24" enchantEffects={enchantEffects} />
+        <EnchantPrice
+          avgPrice={avgPrice}
+          enchantPriceLoading={enchantPriceLoading}
+        />
+      </Column>
+    </button>
   );
 };
 

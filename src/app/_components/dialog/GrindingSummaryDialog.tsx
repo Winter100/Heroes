@@ -11,7 +11,12 @@ const GrindingSummaryDialog = () => {
       <Button className="rounded-lg p-1" onClick={onOpen}>
         연마
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="1000px">
+      <BasicDialog
+        className="h-96 overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-[750px] md:p-6 md:pb-4 lg:h-[1000px]"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="1000px"
+      >
         <GrindingContent />
         <RaidSelectorWithStats />
       </BasicDialog>

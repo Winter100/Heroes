@@ -1,4 +1,6 @@
 import { PreviewSelectedType, Stat } from "@/app/_type/previewType";
+import clsx from "clsx";
+import { memo } from "react";
 
 interface PartholnListProps {
   partholn: {
@@ -10,54 +12,66 @@ interface PartholnListProps {
   setBeforeStats: (stat: PreviewSelectedType) => void;
 }
 
-const PartholnList = ({
-  partholn,
-  level = 0,
-  setLevel,
-  setBeforeStats,
-}: PartholnListProps) => {
-  const onChage = (level: number, stat: Stat[]) => {
-    const beforeStat = {
-      slot: "partholn",
-      upgreadeType: "partholn",
-      name: "partholn",
-      stat_value: stat,
+const PartholnList = memo(
+  ({ partholn, level = 0, setLevel, setBeforeStats }: PartholnListProps) => {
+    const onSelect = (level: number, stat: Stat[]) => {
+      const beforeStat = {
+        slot: "partholn",
+        upgreadeType: "partholn",
+        name: "partholn",
+        stat_value: stat,
+      };
+      setLevel(level);
+      setBeforeStats(beforeStat);
     };
-    setLevel(level);
-    setBeforeStats(beforeStat);
-  };
-  return (
-    <ul className="flex flex-col items-center justify-center gap-3">
-      {partholn?.map((item) => (
-        <li
-          className={`${level === item?.level ? "text-blue-300" : ""} flex w-full flex-row items-center justify-center gap-2 text-xs sm:gap-2`}
-          key={item.level}
-        >
-          <input
-            type="radio"
-            className="w-4"
-            checked={level === item?.level}
-            onChange={() => onChage(item?.level, item?.stat)}
-          />
+    return (
+      <table className="w-full table-fixed overflow-scroll font-sans">
+        <thead>
+          <tr className="text-white">
+            <th className="w-1/12 py-2 text-center font-normal sm:w-auto">
+              단계
+            </th>
+            <th className="w-[20%] text-center font-normal sm:w-auto">
+              스태미나
+            </th>
+            <th className="text-center font-normal sm:w-auto">공격력</th>
+            <th className="text-center font-normal sm:w-auto">방어력</th>
+            <th className="w-[20%] text-center font-normal sm:w-auto">
+              크리티컬
+            </th>
+            <th className="text-center font-normal sm:w-auto">해제</th>
+            <th className="text-center font-normal sm:w-auto">관통력</th>
+          </tr>
+        </thead>
+        <tbody>
+          {partholn?.map((item) => (
+            <tr
+              onClick={() => onSelect(item?.level, item?.stat)}
+              key={item?.level}
+              className={clsx(
+                "h-10 cursor-pointer border-t border-borderColor text-sm hover:text-red-300",
+                level === item?.level && "text-red-300",
+              )}
+            >
+              <td className="text-center">
+                <span>{item?.level}</span>
+              </td>
+              {item?.stat?.map((stat) => (
+                <td
+                  key={stat?.stat_name}
+                  className="border-borderColor text-center"
+                >
+                  <span>{stat?.stat_value}</span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  },
+);
 
-          <div className="flex w-full max-w-10 flex-row gap-1 text-center">
-            <span>{item?.level} 단계</span>
-          </div>
-          <div className="flex flex-1 flex-row items-center gap-2">
-            {item?.stat.map((stat) => (
-              <div
-                key={stat?.stat_name}
-                className="flex flex-row items-center justify-center gap-1"
-              >
-                <div>{stat?.stat_name}</div>
-                <div>{stat?.stat_value}</div>
-              </div>
-            ))}
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-};
+PartholnList.displayName = "PartholnList";
 
 export default PartholnList;

@@ -145,7 +145,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "A",
     name: "고풍스러운",
     description: "",
-    drop_item_list: [],
+    drop_item_list: [], // 추격
     stat_value: [
       { stat_name: "공격력", stat_value: "320" },
       { stat_name: "마법공격력", stat_value: "320" },

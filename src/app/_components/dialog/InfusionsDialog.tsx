@@ -22,7 +22,12 @@ const InfusionsDialog = ({
         {label}
         <BottomArrow />
       </Button>
-      <BasicDialog isOpen={isOpen} onClose={onClose} size="750px">
+      <BasicDialog
+        className="h-96 overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[450px] md:h-full md:p-6 md:pb-4"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="750px"
+      >
         <ItemTitle
           className="text-sm font-medium text-white"
           level={level}

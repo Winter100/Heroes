@@ -57,7 +57,7 @@ const TrItem = memo(
       >
         <Td className="px-0">{enchant?.rank || ""}</Td>
         <Td className="px-0">
-          <Row className="h-full items-center gap-2 px-2">
+          <Row className="h-full items-center gap-0.5 px-0 sm:gap-2 sm:px-2">
             <EnchantImage
               size={35}
               alt={enchant?.name}
@@ -74,7 +74,12 @@ const TrItem = memo(
             <Loading />
           ) : enchant?.average_price !== 0 ? (
             <Column>
-              <span>{enchant?.average_price?.toLocaleString()}</span>
+              <span
+                title={enchant?.average_price?.toLocaleString()}
+                className="block overflow-hidden truncate whitespace-nowrap"
+              >
+                {enchant?.average_price?.toLocaleString()}
+              </span>
             </Column>
           ) : (
             <span className="text-xs">-</span>

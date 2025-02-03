@@ -23,15 +23,15 @@ const PreviewStats = ({
       <Row className="min-h-6 items-center justify-center text-sm font-semibold">
         {name}
       </Row>
-      <Row className="items-center justify-center gap-2">
+      <Row className="items-center justify-center gap-1 sm:gap-2">
         <Column className="gap-1">
           <p className="text-center">기존</p>
           <PreviewStatsBox
-            className="sm:w-42 h-96 rounded-lg border border-gray-600 bg-zinc-800 p-2 text-white"
+            className="max-w-42 h-96 rounded-lg border border-gray-600 bg-zinc-800 p-2 text-white"
             stats={data ?? []}
           />
         </Column>
-        <div className="flex items-center justify-center text-2xl">
+        <div className="hidden items-center justify-center text-2xl sm:flex">
           <IoMdArrowForward />
         </div>
 
@@ -39,7 +39,7 @@ const PreviewStats = ({
           <p className="text-center">변경</p>
           <PreviewStatsBox
             isTitle={true}
-            className="sm:w-42 h-96 rounded-lg border border-gray-600 bg-zinc-800 p-2 text-white"
+            className="max-w-42 h-96 rounded-lg border border-gray-600 bg-zinc-800 p-2 text-white"
             stats={mergedStats ?? []}
             statDifference={statDifference ?? []}
           />

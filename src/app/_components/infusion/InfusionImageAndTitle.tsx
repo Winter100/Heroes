@@ -16,7 +16,7 @@ const InfusionImageAndTitle = ({ infusionName }: { infusionName: string }) => {
 
       <div className="h-full flex-1">
         <Row className="flex h-full gap-2">
-          <p className="flex items-center justify-center text-[11px]">
+          <p className="flex items-center justify-center text-xs">
             {infusionName.split(" ").slice(0, -1).join(" ")}
           </p>
         </Row>
