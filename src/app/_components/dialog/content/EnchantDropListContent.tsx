@@ -44,7 +44,7 @@ const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
   };
 
   return (
-    <ul className="sm:grid-cols-auto-150-fill grid grid-cols-2 gap-2 p-2">
+    <ul className="grid grid-cols-2 gap-2 p-2 sm:grid-cols-auto-150-fill">
       {dropList?.map((name) => (
         <li
           key={name}
