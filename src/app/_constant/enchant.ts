@@ -111,7 +111,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "빛과 같은",
     description: "",
-    drop_item_list: [],
+    drop_item_list: ["바다의 악마"],
     stat_value: [
       { stat_name: "공격력", stat_value: "180" },
       { stat_name: "마법공격력", stat_value: "180" },
@@ -165,7 +165,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "노력의",
     description: "",
-    drop_item_list: [],
+    drop_item_list: ["바다의 악마"],
     stat_value: [
       { stat_name: "방어력", stat_value: "35" },
       { stat_name: "최대 생명력", stat_value: "50" },
@@ -391,7 +391,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "호기심 많은",
     description: "",
-    drop_item_list: [],
+    drop_item_list: ["바다의 악마"],
     stat_value: [
       { stat_name: "방어력", stat_value: "130" },
       { stat_name: "힘", stat_value: "6" },
@@ -748,7 +748,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "짜릿한",
     description: "방패, 캐스틀릿, 그랜드타지",
-    drop_item_list: [],
+    drop_item_list: ["바다의 악마"],
     stat_value: [
       { stat_name: "방어력", stat_value: "145" },
       { stat_name: "크리티컬", stat_value: "1" },

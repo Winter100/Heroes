@@ -17,6 +17,17 @@ export const keyword = {
     critical_resist: "크리티컬 저항",
     max_stamina: "최대 스태미나",
   },
+  slot: {
+    righthand: "Right Hand",
+    leftthand: "Left Hand",
+    head: "Head",
+    upper: "Upper",
+    lower: "Lower",
+    hand: "Hand",
+    leg: "Leg",
+    materials: "Materials",
+    accessories: "Accessories",
+  },
   itemName: {
     ardri: "아르드리",
     orna: "오르나",
