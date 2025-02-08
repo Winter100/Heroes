@@ -3,7 +3,6 @@ import {
   prefix_enchant_options,
   suffix_enchant_options,
 } from "@/app/_constant/enchant";
-import { keyword } from "@/app/_constant/keyword";
 import EnchantRankTable from "./EnchantRankTable";
 import Column from "../layout/Column";
 
@@ -11,24 +10,7 @@ import BasicContainer from "../layout/BasicContainer";
 import { insertUpgradeType } from "./utils/insertUpgradeType";
 import EnchantTableInputFilter from "./EnchantTableInputFilter";
 import EnchantDropAndDetail from "./EnchantDropAndDetail";
-
-export interface EnchantData {
-  upgreadeType: string;
-  date: string;
-  price: {
-    avgPrice: number;
-    minPrice: number;
-    maxPrice: number;
-  };
-  rank: string;
-  name: string;
-  description: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  drop_item_list?: string[];
-}
+import { keyword } from "@/app/_constant/keyword";
 
 const EnchantPriceRankingList = () => {
   const allEnchantList = [

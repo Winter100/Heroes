@@ -1,3 +1,5 @@
+import { ComponentProps } from "react";
+
 export interface EnchantPriceType {
   next_cursor: string;
   item: [
@@ -185,4 +187,44 @@ export interface getEnchantAvgPricePropsP {
   upgreadeType: string;
   enchantPriceList: EnchantPrice[];
   enchantName: string;
+}
+
+export interface EnchantData {
+  upgreadeType: string;
+  date: string;
+  price: {
+    avgPrice: number;
+    minPrice: number;
+    maxPrice: number;
+  };
+  rank: string;
+  name: string;
+  description: string;
+  stat_value: {
+    stat_name: string;
+    stat_value: string;
+  }[];
+  drop_item_list?: string[];
+}
+
+export type EnchantKeyType = {
+  rank: string;
+  name: string;
+  average_price: number;
+  max_price: number;
+  min_price: number;
+};
+
+export interface EnchantRankTableProps extends ComponentProps<"table"> {
+  enchantData: {
+    upgreadeType: string;
+    rank: string;
+    name: string;
+    drop_item_list: string[];
+    description: string;
+    stat_value: {
+      stat_name: string;
+      stat_value: string;
+    }[];
+  }[];
 }
