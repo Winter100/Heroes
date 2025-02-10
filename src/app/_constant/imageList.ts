@@ -95,4 +95,206 @@ export const imageMap = new Map<string, string>([
     "시공의 상자: 주시자의 신전",
     "/images/items/reward/space-time-box-the-watchers-temple.png",
   ],
+
+  // 재료
+  ["스렝의 정수", "/images/items/materials/s4/essence-of-sreng.png"],
+  ["스피노스의 정수", "/images/items/materials/s4/essence-of-spinos.png"],
+  [
+    "와드네의 파편: 무기",
+    "/images/items/materials/s4/fragment-of-uaithne-weapon.png",
+  ],
+  [
+    "와드네의 파편: 보조 장비",
+    "/images/items/materials/s4/fragment-of-uaithne-weapon-secondary.png",
+  ],
+  [
+    "와드네의 파편: 태양의 비원",
+    "/images/items/materials/s4/fragment-of-uaithne-sun.png",
+  ],
+  [
+    "와드네의 파편: 머리 방어구",
+    "/images/items/materials/s4/fragment-of-uaithne-head.png",
+  ],
+  [
+    "와드네의 파편: 가슴 방어구",
+    "/images/items/materials/s4/fragment-of-uaithne-upper.png",
+  ],
+  [
+    "와드네의 파편: 다리 방어구",
+    "/images/items/materials/s4/fragment-of-uaithne-lower.png",
+  ],
+  [
+    "와드네의 파편: 저주의 허리띠",
+    "/images/items/materials/s4/fragment-of-uaithne-belt.png",
+  ],
+  [
+    "와드네 승급석: 무기",
+    "/images/items/materials/s4/uaithne-promotion-stone-weapon.png",
+  ],
+  [
+    "와드네 승급석: 머리 방어구",
+    "/images/items/materials/s4/uaithne-promotion-stone-head.png",
+  ],
+  [
+    "와드네 승급석: 가슴 방어구",
+    "/images/items/materials/s4/uaithne-promotion-stone-upper.png",
+  ],
+  [
+    "와드네 승급석: 다리 방어구",
+    "/images/items/materials/s4/uaithne-promotion-stone-lower.png",
+  ],
+  [
+    "단단한 와드네의 결정",
+    "/images/items/materials/s4/solid-uaithne-crystal.png",
+  ],
+  [
+    "매끈한 와드네의 결정",
+    "/images/items/materials/s4/smooth-uaithne-crystal.png",
+  ],
+  [
+    "예리한 와드네의 결정",
+    "/images/items/materials/s4/incisive-uaithne-crystal.png",
+  ],
+  [
+    "가벼운 와드네의 결정",
+    "/images/items/materials/s4/light-uaithne-crystal.png",
+  ],
+  [
+    "견고한 와드네의 결정",
+    "/images/items/materials/s4/light-uaithne-crystal.png",
+  ],
+  [
+    "안정된 와드네의 결정",
+    "/images/items/materials/s4/light-uaithne-crystal.png",
+  ],
+  [
+    "견고한 와드네의 결정",
+    "/images/items/materials/s4/noble-uaithne-crystal.png",
+  ],
+  [
+    "견고한 와드네의 결정",
+    "/images/items/materials/s4/noble-uaithne-crystal.png",
+  ],
+  ["미지의 조각 1단계", "/images/items/materials/s4/shard-unknown-1.png"],
+  ["미지의 조각 2단계", "/images/items/materials/s4/shard-unknown-2.png"],
+  ["미지의 조각 3단계", "/images/items/materials/s4/shard-unknown-3.png"],
+  ["투쟁의 조각 1단계", "/images/items/materials/s4/shard-unknown-1.png"],
+  ["투쟁의 조각 2단계", "/images/items/materials/s4/shard-unknown-2.png"],
+  ["투쟁의 조각 3단계", "/images/items/materials/s4/shard-unknown-3.png"],
+  ["미지의 결정", "/images/items/materials/s4/unknown-uaithne-crystal.png"],
+  ["투쟁의 결정", "/images/items/materials/s4/fight-uaithne-crystal.png"],
+  ["추출의 룬", "/images/items/materials/s4/extraction_rune.png"],
+  [
+    "고급 강화의 비약",
+    "/images/items/materials/s4/elixir-of-advanced-strengthening.png",
+  ],
+  ["와드네의 결정", "/images/items/materials/s4/uaithne-crystal.png"],
+  ["고르바스의 정수", "/images/items/materials/s4/essence-of-gorbas.png"],
+  ["강화의 룬", "/images/items/materials/s4/rune-of-strengthening.png"],
+  [
+    "프리미엄 강화의 룬",
+    "/images/items/materials/s4/preminu-rune-of-strengthening.png",
+  ],
+  [
+    "+ 프리미엄 강화의 룬",
+    "/images/items/materials/s4/preminu-rune-of-strengthening-plus.png",
+  ],
+  [
+    "프리미엄 방어구 강화의 룬",
+    "/images/items/materials/s4/preminu-rune-of-strengthening-armor.png",
+  ],
+  ["자르딘 강철", "/images/items/materials/s4/jardin-steel.png"],
+  ["게브네의 강화석", "/images/items/materials/s4/gevne.png"],
+  ["+ 게브네의 강화석", "/images/items/materials/s4/gevne-plus.png"],
+  ["전승의 힘: 파편", "/images/items/materials/s4/j-limit-stone.png"],
+  ["봉인의 힘: 파편", "/images/items/materials/s4/r-limit-stone.png"],
+
+  [
+    "오르나 무기 강화 촉진제",
+    "/images/items/materials/s4/orna-accelerator-weapon.png",
+  ],
+  [
+    "오르나 방어구 강화 촉진제: 가슴, 다리",
+    "/images/items/materials/s4/orna-accelerator-upper-lower.png",
+  ],
+  [
+    "오르나 방어구 강화 촉진제: 머리, 손, 발",
+    "/images/items/materials/s4/orna-accelerator-head-hand-leg.png",
+  ],
+  ["와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
+  ["와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
+  ["와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+  ["신비의 힘: 파편", "/images/items/materials/s4/mystical-power-fragment.png"],
+  ["불안정한 강화의 룬", "/images/items/materials/s4/rune_unstable.png"],
+
+  ["힘이 주입된 뉴에라의 옷감", "/images/items/materials/s4/power-cloth.png"],
+  ["힘이 주입된 뉴에라의 오브", "/images/items/materials/s4/power-orb.png"],
+  ["힘이 주입된 뉴에라의 광석", "/images/items/materials/s4/power-ore.png"],
+  ["힘이 주입된 뉴에라의 가죽", "/images/items/materials/s4/power-leather.png"],
+  ["와드네의 흔적", "/images/items/materials/s4/uaithne-sign.png"],
+  ["다마스쿠스 강철", "/images/items/materials/s4/damascus.png"],
+  ["뉴에라의 오브", "/images/items/materials/s4/n-orb.png"],
+  ["뉴에라의 광석", "/images/items/materials/s4/n-ore.png"],
+  ["뉴에라의 가죽", "/images/items/materials/s4/n-leather.png"],
+  ["뉴에라의 옷감", "/images/items/materials/s4/n-cloth.png"],
+
+  ["오르나의 봉인된 힘", "/images/items/materials/s4/combine-orna.png"],
+  [
+    "오르나의 봉인된 힘: 머리 방어구",
+    "/images/items/materials/s4/combine-orna-head.png",
+  ],
+  [
+    "오르나의 봉인된 힘: 가슴 방어구",
+    "/images/items/materials/s4/combine-orna-upper.png",
+  ],
+  [
+    "오르나의 봉인된 힘: 다리 방어구",
+    "/images/items/materials/s4/combine-orna-lower.png",
+  ],
+  [
+    "오르나의 봉인된 힘: 손 방어구",
+    "/images/items/materials/s4/combine-orna-hand.png",
+  ],
+  [
+    "오르나의 봉인된 힘: 발 방어구",
+    "/images/items/materials/s4/combine-orna-leg.png",
+  ],
+  [
+    "오르나의 봉인된 힘: 무기",
+    "/images/items/materials/s4/combine-orna-weapon.png",
+  ],
+  ["오르나의 봉인된 힘", "/images/items/materials/s4/combine-orna-b.png"],
+  ["골드", "/images/items/materials/basic/gold.png"],
+  ["고급 철광석", "/images/items/materials/basic/high-grade-iron-ore.png"],
+  ["마나 더스트", "/images/items/materials/basic/mana-dust.png"],
+  ["마나 리포머", "/images/items/materials/basic/mana-reformer.png"],
+  ["정령의 흔적", "/images/items/materials/basic/trace-of-the-spirit.png"],
+  ["불의 흔적", "/images/items/materials/basic/fire-of-the-spirit.png"],
+  ["냉기의 흔적", "/images/items/materials/basic/cool-of-the-spirit.png"],
+  ["생명의 흔적", "/images/items/materials/basic/life-of-the-spirit.png"],
+  ["대지의 흔적", "/images/items/materials/basic/st-of-the-spirit.png"],
+  ["마법 가루", "/images/items/materials/basic/magic-powder.png"],
+  ["최고급 강화석", "/images/items/materials/basic/best-k-stone.png"],
+  ["생명의 에르그 결정", "/images/items/materials/basic/life-erg-crystal.png"],
+  ["빈 병", "/images/items/materials/basic/empties.png"],
+  ["오브", "/images/items/materials/basic/orb.png"],
+  ["상급 생명력 포션", "/images/items/materials/basic/life-p-1.png"],
+  ["고급 생명력 포션", "/images/items/materials/basic/life-p-2.png"],
+  ["최고급 생명력 포션", "/images/items/materials/basic/life-p-3.png"],
+
+  ["단단한 계승 원석", "/images/items/materials/s4/solid-115.png"],
+  ["매끈한 계승 원석", "/images/items/materials/s4/smarmy-115.png"],
+  ["예리한 계승 원석", "/images/items/materials/s4/incisive-115.png"],
+  ["안정된 계승 원석", "/images/items/materials/s4/stable-115.png"],
+  ["가벼운 계승 원석", "/images/items/materials/s4/light-115.png"],
+  ["오롯한 계승 원석", "/images/items/materials/s4/all-115.png"],
+  ["낙원의 강화석", "/images/items/materials/s4/nk.png"],
+  ["마법력 엘릭서", "/images/items/materials/s4/ml.png"],
+  ["생명의 마법력 엘릭서", "/images/items/materials/s4/sml.png"],
+  ["축복의 마법력 엘릭서", "/images/items/materials/s4/csml.png"],
+  ["축복받은 마법 가루", "/images/items/materials/s4/cmk.png"],
+  ["뉴에라의 강화석", "/images/items/materials/s4/new-era-stone.png"],
+
+  ["저주의 허리띠", "/images/items/equipment/belt-120.png"],
+  ["태양의 비원", "/images/items/equipment/sun_earring.png"],
 ]);
