@@ -2,6 +2,12 @@ import { BasicItemInfoType } from "@/app/_type/infoInfoType";
 
 export const materials_info: BasicItemInfoType[] = [
   {
+    item_name: "골드",
+    item_rating: "일반",
+    item_crafting: [""],
+    item_description: "물건을 구입할 때 사용된다.",
+  },
+  {
     item_name: "스렝의 정수",
     item_rating: "레어",
     item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공"],

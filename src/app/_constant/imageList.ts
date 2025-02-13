@@ -222,8 +222,26 @@ export const imageMap = new Map<string, string>([
     "/images/items/materials/s4/orna-accelerator-head-hand-leg.png",
   ],
   ["와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
+  ["와드네 초급 헬름", "/images/items/materials/s4/uaithne-head.png"],
+  ["와드네 중급 헬름", "/images/items/materials/s4/uaithne-head.png"],
+  ["와드네 고급 헬름", "/images/items/materials/s4/uaithne-head.png"],
+  ["와드네 레어 헬름", "/images/items/materials/s4/uaithne-head.png"],
+  ["와드네 전설 헬름", "/images/items/materials/s4/uaithne-head.png"],
+
   ["와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
+  ["와드네 초급 메일", "/images/items/materials/s4/uaithne-upper.png"],
+  ["와드네 중급 메일", "/images/items/materials/s4/uaithne-upper.png"],
+  ["와드네 고급 메일", "/images/items/materials/s4/uaithne-upper.png"],
+  ["와드네 레어 메일", "/images/items/materials/s4/uaithne-upper.png"],
+  ["와드네 전설 메일", "/images/items/materials/s4/uaithne-upper.png"],
+
   ["와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+  ["와드네 초급 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+  ["와드네 중급 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+  ["와드네 고급 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+  ["와드네 레어 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+  ["와드네 전설 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
+
   ["신비의 힘: 파편", "/images/items/materials/s4/mystical-power-fragment.png"],
   ["불안정한 강화의 룬", "/images/items/materials/s4/rune_unstable.png"],
 
@@ -297,4 +315,20 @@ export const imageMap = new Map<string, string>([
 
   ["저주의 허리띠", "/images/items/equipment/belt-120.png"],
   ["태양의 비원", "/images/items/equipment/sun_earring.png"],
+
+  ["와드네 스몰실드", "/images/items/equipment/s-shild.png"],
+  ["와드네 라지실드", "/images/items/equipment/r-shild.png"],
+  ["와드네 그랜드타지", "/images/items/equipment/g-shild.png"],
+  ["와드네의 서", "/images/items/equipment/u-book.png"],
+  ["와드네 캐스틀릿", "/images/items/equipment/cas.png"],
+
+  ["와드네 무기", "/images/items/equipment/u-weapon.png"],
+  ["와드네 초급 무기", "/images/items/equipment/u-weapon.png"],
+  ["와드네 중급 무기", "/images/items/equipment/u-weapon.png"],
+  ["와드네 고급 무기", "/images/items/equipment/u-weapon.png"],
+
+  ["+15 오르나 무기", "/images/items/equipment/o-weapon.png"],
+  ["+15 오르나 메일", "/images/items/equipment/o-upper.png"],
+  ["+15 오르나 그리브즈", "/images/items/equipment/o-lower.png"],
+  ["+15 오르나 헬름", "/images/items/equipment/o-head.png"],
 ]);
