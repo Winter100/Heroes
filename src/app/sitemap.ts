@@ -32,6 +32,12 @@ export const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: "daily",
       priority: 0.9,
     },
+    {
+      url: "https://www.heroes-dev.com/iteminfo",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
   ];
 };
 
