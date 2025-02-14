@@ -6,7 +6,8 @@ const BasicContainer = ({ children, className, ...props }: BasicContaienr) => {
   return (
     <div
       className={clsx(
-        "flex h-full w-full flex-col rounded-lg p-2 shadow-sm",
+        "flex flex-col rounded-lg p-2 shadow-sm",
+        // "flex h-full w-full flex-col rounded-lg p-2 shadow-sm",
         className,
       )}
       {...props}

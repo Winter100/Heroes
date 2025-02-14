@@ -65,7 +65,10 @@ const EnchantItem = ({
             />
           </Column>
         </Row>
-        <EnchantEffects className="min-h-24" enchantEffects={enchantEffects} />
+        <EnchantEffects
+          className="min-h-24 bg-black/20"
+          enchantEffects={enchantEffects}
+        />
         <EnchantPrice
           avgPrice={avgPrice}
           enchantPriceLoading={enchantPriceLoading}

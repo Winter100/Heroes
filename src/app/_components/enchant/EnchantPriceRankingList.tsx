@@ -19,15 +19,15 @@ const EnchantPriceRankingList = () => {
   ];
 
   return (
-    <BasicContainer className="lg:mt-10">
-      <div className="mx-auto flex w-full max-w-md flex-col justify-center gap-3 rounded-md border border-borderColor p-2 md:max-w-5xl md:flex-row md:p-6 lg:p-10">
-        <Column className="z-10 max-w-md border-borderColor">
-          <div className="fixed-scrollbar h-96 overflow-x-hidden overflow-y-scroll md:h-[770px]">
+    <BasicContainer className="p-2 lg:mt-10">
+      <div className="mx-auto flex w-full max-w-md flex-col flex-wrap justify-center gap-3 rounded-md border-borderColor/50 p-2 md:max-w-5xl md:flex-row md:p-6 lg:p-10">
+        <Column className="z-10 max-w-md">
+          <div className="fixed-scrollbar h-96 overflow-x-hidden overflow-y-scroll md:h-[730px]">
             <EnchantRankTable enchantData={allEnchantList} />
           </div>
           <EnchantTableInputFilter />
         </Column>
-        <Column className="w-full max-w-md gap-2">
+        <Column className="w-full max-w-[400px] gap-2">
           <EnchantDropAndDetail />
         </Column>
       </div>

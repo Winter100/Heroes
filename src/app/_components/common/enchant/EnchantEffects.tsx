@@ -7,15 +7,17 @@ interface EnchantDescriptionProps extends ComponentProps<"div"> {
     stat_name: string;
     stat_value: string;
   }[];
+  effectColor?: string;
 }
 const EnchantEffects = ({
   enchantEffects,
   className,
+  effectColor,
 }: EnchantDescriptionProps) => {
   return (
     <Column
       className={clsx(
-        "flex-1 rounded-md border border-borderColor p-1 text-xs",
+        "flex-1 rounded-md border border-gray-500/30 px-1 py-2 text-xs",
         className,
       )}
     >
@@ -24,8 +26,9 @@ const EnchantEffects = ({
           className={"flex items-center gap-1 px-1"}
           key={option.stat_name + option.stat_value}
         >
-          <span>• {option.stat_name}</span>
-          <span>{option.stat_value}</span>
+          <span className="text-gray-600/50">•</span>
+          <span className={clsx("", effectColor)}>{option.stat_name}</span>
+          <span className={clsx("", effectColor)}>{option.stat_value}</span>
         </div>
       ))}
     </Column>
