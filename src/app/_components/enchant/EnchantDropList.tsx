@@ -4,7 +4,6 @@ import Image from "next/image";
 import { getImageByName } from "@/app/_utils/getImageByName";
 import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
 import clsx from "clsx";
-import EnchantImage from "../common/enchant/EnchantImage";
 import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
 
 interface EnchantDropList {
@@ -29,7 +28,7 @@ const EnchantDropList = ({ enchantData }: EnchantDropList) => {
 
   return (
     <Column className="flex-1 rounded-md border border-borderColor p-2">
-      <ul className="grid h-full w-full grid-cols-3 gap-1 text-sm text-white">
+      <ul className="grid w-full grid-cols-3 gap-1 text-sm text-white">
         {enchantData.drop_item_list?.sort().map((name) => (
           <li
             onClick={() => setDropRaidOrItemName(name)}
