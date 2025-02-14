@@ -50,7 +50,7 @@ const MaterialsCrafting = () => {
           <Item.Border />
           <div className="text-center text-sm">제작 재료</div>
           <div>
-            <ul className="flex flex-1 flex-col gap-1">
+            <ul className="flex h-96 flex-1 flex-col gap-0.5 overflow-y-auto">
               {craftingList?.map((item) => {
                 const category = itemCraftingMap?.get(
                   item.item_name,

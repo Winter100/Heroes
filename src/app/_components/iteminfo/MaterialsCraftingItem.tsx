@@ -22,7 +22,7 @@ const MaterialsCraftingItem = memo(
     const materialsRating = materialsMap?.get(item_name)?.item_rating;
 
     return (
-      <div className="flex w-full flex-col pl-2">
+      <div className="flex w-full flex-col pl-0 sm:pl-2">
         <div className="flex flex-row items-center gap-1">
           <ItemImage materials={item_name} />
           <div className="flex w-full items-center justify-between text-xs">

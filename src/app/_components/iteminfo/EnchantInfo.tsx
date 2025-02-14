@@ -37,9 +37,19 @@ const EnchantInfo = ({
           size={35}
         />
         <Column className="w-full gap-0.5 pl-2">
-          <Item.Title className="text-sm" type="초급">
-            <Item.Content>{name}</Item.Content>
-            <Item.Content className="pl-1">인챈트 스크롤</Item.Content>
+          <Item.Title
+            className="flex flex-row justify-between text-sm"
+            type="초급"
+          >
+            <div>
+              <Item.Content>{name}</Item.Content>
+              <Item.Content className="pl-1">인챈트 스크롤</Item.Content>
+            </div>
+            <Item.Content>
+              <div className="text-center text-[11px] text-gray-400">
+                {convertToKST(date_update)}
+              </div>
+            </Item.Content>
           </Item.Title>
 
           <Item.SubDescription className="px-1">
@@ -52,6 +62,16 @@ const EnchantInfo = ({
             <Item.Content>물품거래소 매입가</Item.Content>
             <Item.Content>{average_price.toLocaleString()}</Item.Content>
           </Item.SubDescription>
+
+          <Item.SubDescription className="flex items-center justify-between px-1">
+            <Item.Content>부위</Item.Content>
+            <Item.Content className="flex flex-row gap-1">
+              {findEnchantNames(name)
+                .map((name) => slotNames[name])
+                .join(", ")}
+            </Item.Content>
+          </Item.SubDescription>
+
           <Item.SubDescription className="flex items-center justify-between px-1">
             <Item.Title type="초급">
               <Item.Content>초급 아이템</Item.Content>
@@ -59,20 +79,6 @@ const EnchantInfo = ({
           </Item.SubDescription>
         </Column>
       </Row>
-
-      <Item.Border />
-
-      {date_update && (
-        <Item.SubDescription className="flex items-center justify-center">
-          {convertToKST(date_update)}
-        </Item.SubDescription>
-      )}
-
-      <Item.SubDescription className="flex flex-row flex-wrap gap-2 px-2 py-0.5 text-[rgb(87,148,161)]">
-        {findEnchantNames(name).map((name) => (
-          <span key={name}>{slotNames[name] || ""}</span>
-        ))}
-      </Item.SubDescription>
 
       <EnchantIsDestruction rank={rank} />
       <Item.Border />
@@ -89,12 +95,10 @@ const EnchantInfo = ({
       </Row>
 
       <EnchantEffects
-        effectColor="text-yellow-200/70"
+        effectColor="text-yellow-200/90"
         enchantEffects={stat_value}
         className="bg-black/50"
       />
-
-      <Item.Border />
     </Item>
   );
 };

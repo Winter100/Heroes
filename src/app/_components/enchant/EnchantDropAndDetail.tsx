@@ -11,7 +11,7 @@ const EnchantDropAndDetail = () => {
       {enchant && (
         <>
           <EnchantDropList enchantData={enchant as any} />
-          <div className="h-[480px] rounded-md border border-borderColor">
+          <div className="h-[470px] rounded-md border border-borderColor/50">
             <EnchantInfo {...(enchant as any)} />
           </div>
         </>

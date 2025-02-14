@@ -42,6 +42,17 @@ a {
   display: none; /* Safari and Chrome */
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .dark {
   --background: 20, 21, 23;
   --backgroundOne: 30, 32, 34;
