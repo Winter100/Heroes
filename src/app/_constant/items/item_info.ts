@@ -184,7 +184,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 무기",
+    item_name: "초급 와드네 무기",
     item_restrictions: [
       "120 레벨 이상",
       "무기 마스터리 5랭크 이상",
@@ -209,7 +209,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 중급 무기",
+    item_name: "중급 와드네 무기",
     item_restrictions: [
       "120 레벨 이상",
       "무기 마스터리 5랭크 이상",
@@ -235,7 +235,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 고급 무기",
+    item_name: "고급 와드네 무기",
     item_restrictions: [
       "120 레벨 이상",
       "무기 마스터리 5랭크 이상",
@@ -286,7 +286,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 헬름",
+    item_name: "초급 와드네 헬름",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -311,7 +311,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 중급 헬름",
+    item_name: "중급 와드네 헬름",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -336,7 +336,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 고급 헬름",
+    item_name: "고급 와드네 헬름",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -361,7 +361,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 레어 헬름",
+    item_name: "레어 와드네 헬름",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -386,7 +386,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 전설 헬름",
+    item_name: "전설 와드네 헬름",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -437,7 +437,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 메일",
+    item_name: "초급 와드네 메일",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -462,7 +462,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 중급 메일",
+    item_name: "중급 와드네 메일",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -487,7 +487,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 고급 메일",
+    item_name: "고급 와드네 메일",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -512,7 +512,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 레어 메일",
+    item_name: "레어 와드네 메일",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -537,7 +537,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 전설 메일",
+    item_name: "전설 와드네 메일",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -588,7 +588,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 그리브즈",
+    item_name: "초급 와드네 그리브즈",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -613,7 +613,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 중급 그리브즈",
+    item_name: "중급 와드네 그리브즈",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -638,7 +638,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 고급 그리브즈",
+    item_name: "고급 와드네 그리브즈",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -663,7 +663,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 레어 그리브즈",
+    item_name: "레어 와드네 그리브즈",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",
@@ -687,7 +687,7 @@ export const item_info: ItemType[] = [
     ],
   },
   {
-    item_name: "와드네 전설 그리브즈",
+    item_name: "전설 와드네 그리브즈",
     item_restrictions: [
       "120 레벨 이상",
       "방어구 마스터리 5랭크 이상",

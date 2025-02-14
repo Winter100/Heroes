@@ -80,28 +80,28 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "와드네 승급석: 무기",
     item_rating: "중급",
-    item_crafting: [],
+    item_crafting: [""],
     item_description:
       "와드네 무기를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 머리 방어구",
     item_rating: "중급",
-    item_crafting: [],
+    item_crafting: [""],
     item_description:
       "와드네 헬름을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 가슴 방어구",
     item_rating: "중급",
-    item_crafting: [],
+    item_crafting: [""],
     item_description:
       "와드네 메일을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 다리 방어구",
     item_rating: "중급",
-    item_crafting: [],
+    item_crafting: [""],
     item_description:
       "와드네 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
@@ -267,7 +267,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "자르딘 강철",
     item_rating: "고급",
-    item_crafting: [],
+    item_crafting: ["제작의뢰"],
     item_description: `자르딘의 특수 열처리 가공법으로 다마스쿠스 강철을 더욱 강하게 재련한 강철. 복원 재련은 퍼거스에게 할 수 있다. 영혼을 되살린 아이템만 복원 재련 할 수 있으며, 복원 재련 후에는 다시 강화 시도 할 수 있는 상태가 된다고 알려져 있다.
       
       [주의사항]

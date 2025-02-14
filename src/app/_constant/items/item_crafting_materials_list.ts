@@ -115,8 +115,8 @@ export const item_crafting_materials_list: ItemListType[] = [
       },
       { item_name: "스렝의 정수", item_quantity: 4 },
       { item_name: "와드네의 파편: 무기", item_quantity: 2 },
-      { item_name: "고급 강화의 비약", item_quantity: 10 },
       { item_name: "예리한 와드네의 결정", item_quantity: 10 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
       {
         item_name: "추출의 룬",
         item_quantity: 1,
@@ -125,7 +125,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 무기",
+    item_name: "초급 와드네 무기",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
@@ -134,7 +134,6 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_name: "와드네 무기",
         item_quantity: 1,
       },
-      { item_name: "와드네 승급석: 무기", item_quantity: 1 },
       { item_name: "스렝의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 무기", item_quantity: 1 },
       {
@@ -142,26 +141,26 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_quantity: 10,
       },
       {
-        item_name: "프리미엄 강화의 룬",
-        item_quantity: 2,
-      },
-      {
         item_name: "자르딘 강철",
         item_quantity: 15,
+      },
+      { item_name: "와드네 승급석: 무기", item_quantity: 1 },
+      {
+        item_name: "프리미엄 강화의 룬",
+        item_quantity: 2,
       },
     ],
   },
   {
-    item_name: "와드네 중급 무기",
+    item_name: "중급 와드네 무기",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1500000 },
       {
-        item_name: "와드네 초급 무기",
+        item_name: "초급 와드네 무기",
         item_quantity: 1,
       },
-      { item_name: "와드네 승급석: 무기", item_quantity: 2 },
       { item_name: "스피노스의 정수", item_quantity: 2 },
       { item_name: "와드네의 파편: 무기", item_quantity: 2 },
       {
@@ -172,10 +171,7 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_name: "가벼운 와드네의 결정",
         item_quantity: 10,
       },
-      {
-        item_name: "프리미엄 강화의 룬",
-        item_quantity: 2,
-      },
+
       {
         item_name: "고급 강화의 비약",
         item_quantity: 10,
@@ -184,20 +180,24 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_name: "자르딘 강철",
         item_quantity: 33,
       },
+      { item_name: "와드네 승급석: 무기", item_quantity: 2 },
+      {
+        item_name: "프리미엄 강화의 룬",
+        item_quantity: 2,
+      },
     ],
   },
   {
-    item_name: "와드네 고급 무기",
+    item_name: "고급 와드네 무기",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 2250000 },
       {
-        item_name: "와드네 중급 무기",
+        item_name: "중급 와드네 무기",
         item_quantity: 1,
       },
-      { item_name: "와드네 승급석: 무기", item_quantity: 3 },
-      { item_name: "고르바스의 정수", item_quantity: 2 },
+      { item_name: "고르바스의 정수", item_quantity: 3 },
       { item_name: "와드네의 파편: 무기", item_quantity: 3 },
       {
         item_name: "예리한 와드네의 결정",
@@ -211,10 +211,7 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_name: "안정된 와드네의 결정",
         item_quantity: 10,
       },
-      {
-        item_name: "+ 프리미엄 강화의 룬",
-        item_quantity: 1,
-      },
+
       {
         item_name: "고급 강화의 비약",
         item_quantity: 25,
@@ -222,6 +219,11 @@ export const item_crafting_materials_list: ItemListType[] = [
       {
         item_name: "자르딘 강철",
         item_quantity: 72,
+      },
+      { item_name: "와드네 승급석: 무기", item_quantity: 3 },
+      {
+        item_name: "+ 프리미엄 강화의 룬",
+        item_quantity: 1,
       },
     ],
   },
@@ -247,83 +249,88 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 헬름",
+    item_name: "초급 와드네 헬름",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 500000 },
       { item_name: "와드네 헬름", item_quantity: 1 },
-      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 1 },
+
       { item_name: "스렝의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 머리 방어구", item_quantity: 1 },
       { item_name: "단단한 와드네의 결정", item_quantity: 5 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
       { item_name: "자르딘 강철", item_quantity: 5 },
+      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
     ],
   },
   {
-    item_name: "와드네 중급 헬름",
+    item_name: "중급 와드네 헬름",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 750000 },
-      { item_name: "와드네 초급 헬름", item_quantity: 1 },
-      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 1 },
+      { item_name: "초급 와드네 헬름", item_quantity: 1 },
+
       { item_name: "스렝의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 머리 방어구", item_quantity: 1 },
       { item_name: "단단한 와드네의 결정", item_quantity: 5 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
       { item_name: "자르딘 강철", item_quantity: 11 },
       { item_name: "고급 강화의 비약", item_quantity: 5 },
+      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
     ],
   },
   {
-    item_name: "와드네 고급 헬름",
+    item_name: "고급 와드네 헬름",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1150000 },
-      { item_name: "와드네 중급 헬름", item_quantity: 1 },
-      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
+      { item_name: "중급 와드네 헬름", item_quantity: 1 },
+
       { item_name: "스렝의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 머리 방어구", item_quantity: 1 },
       { item_name: "단단한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 24 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
-    item_name: "와드네 레어 헬름",
+    item_name: "레어 와드네 헬름",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1700000 },
-      { item_name: "와드네 고급 헬름", item_quantity: 1 },
-      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
+      { item_name: "고급 와드네 헬름", item_quantity: 1 },
+
       { item_name: "스렝의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 머리 방어구", item_quantity: 1 },
       { item_name: "단단한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 53 },
       { item_name: "고급 강화의 비약", item_quantity: 14 },
+      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
-    item_name: "와드네 전설 헬름",
+    item_name: "전설 와드네 헬름",
     item_crafting: ["승급"],
     item_category: "장비",
 
     item_materials: [
       { item_name: "골드", item_quantity: 2500000 },
-      { item_name: "와드네 레어 헬름", item_quantity: 1 },
-      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
+      { item_name: "레어 와드네 헬름", item_quantity: 1 },
+
       { item_name: "스렝의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 머리 방어구", item_quantity: 1 },
       { item_name: "단단한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 117 },
       { item_name: "고급 강화의 비약", item_quantity: 30 },
+      { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
@@ -338,9 +345,10 @@ export const item_crafting_materials_list: ItemListType[] = [
       },
       { item_name: "고르바스의 정수", item_quantity: 4 },
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 2 },
-      { item_name: "고급 강화의 비약", item_quantity: 10 },
+
       { item_name: "견고한 와드네의 결정", item_quantity: 10 },
       { item_name: "예리한 와드네의 결정", item_quantity: 10 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
       {
         item_name: "추출의 룬",
         item_description: "선택 재료",
@@ -349,82 +357,83 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 메일",
+    item_name: "초급 와드네 메일",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 500000 },
       { item_name: "와드네 메일", item_quantity: 1 },
-      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 1 },
       { item_name: "고르바스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 1 },
       { item_name: "견고한 와드네의 결정", item_quantity: 5 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
       { item_name: "자르딘 강철", item_quantity: 5 },
+      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
     ],
   },
   {
-    item_name: "와드네 중급 메일",
+    item_name: "중급 와드네 메일",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 750000 },
-      { item_name: "와드네 초급 메일", item_quantity: 1 },
-      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 1 },
+      { item_name: "초급 와드네 메일", item_quantity: 1 },
+
       { item_name: "고르바스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 1 },
       { item_name: "견고한 와드네의 결정", item_quantity: 5 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
       { item_name: "자르딘 강철", item_quantity: 11 },
       { item_name: "고급 강화의 비약", item_quantity: 5 },
+      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
     ],
   },
   {
-    item_name: "와드네 고급 메일",
+    item_name: "고급 와드네 메일",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1150000 },
-      { item_name: "와드네 중급 메일", item_quantity: 1 },
-      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
+      { item_name: "중급 와드네 메일", item_quantity: 1 },
       { item_name: "고르바스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 1 },
       { item_name: "견고한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 24 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
-    item_name: "와드네 레어 메일",
+    item_name: "레어 와드네 메일",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1700000 },
-      { item_name: "와드네 고급 메일", item_quantity: 1 },
-      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
+      { item_name: "고급 와드네 메일", item_quantity: 1 },
       { item_name: "고르바스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 1 },
       { item_name: "견고한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 53 },
       { item_name: "고급 강화의 비약", item_quantity: 14 },
+      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
-    item_name: "와드네 전설 메일",
+    item_name: "전설 와드네 메일",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 2500000 },
-      { item_name: "와드네 레어 메일", item_quantity: 1 },
-      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
+      { item_name: "레어 와드네 메일", item_quantity: 1 },
       { item_name: "고르바스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 1 },
       { item_name: "견고한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 117 },
       { item_name: "고급 강화의 비약", item_quantity: 30 },
+      { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
@@ -449,82 +458,82 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
-    item_name: "와드네 초급 그리브즈",
+    item_name: "초급 와드네 그리브즈",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 500000 },
       { item_name: "와드네 그리브즈", item_quantity: 1 },
-      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 1 },
       { item_name: "스피노스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
       { item_name: "매끈한 와드네의 결정", item_quantity: 5 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
       { item_name: "자르딘 강철", item_quantity: 5 },
+      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
     ],
   },
   {
-    item_name: "와드네 중급 그리브즈",
+    item_name: "중급 와드네 그리브즈",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 750000 },
-      { item_name: "와드네 초급 그리브즈", item_quantity: 1 },
-      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 1 },
+      { item_name: "초급 와드네 그리브즈", item_quantity: 1 },
       { item_name: "스피노스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
       { item_name: "매끈한 와드네의 결정", item_quantity: 5 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
       { item_name: "자르딘 강철", item_quantity: 11 },
       { item_name: "고급 강화의 비약", item_quantity: 5 },
+      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
     ],
   },
   {
-    item_name: "와드네 고급 그리브즈",
+    item_name: "고급 와드네 그리브즈",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1150000 },
-      { item_name: "와드네 중급 그리브즈", item_quantity: 1 },
-      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
+      { item_name: "중급 와드네 그리브즈", item_quantity: 1 },
       { item_name: "스피노스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
       { item_name: "매끈한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 24 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
-    item_name: "와드네 레어 그리브즈",
+    item_name: "레어 와드네 그리브즈",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 1700000 },
-      { item_name: "와드네 고급 그리브즈", item_quantity: 1 },
-      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
+      { item_name: "고급 와드네 그리브즈", item_quantity: 1 },
       { item_name: "스피노스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
       { item_name: "매끈한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 53 },
       { item_name: "고급 강화의 비약", item_quantity: 14 },
+      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
-    item_name: "와드네 전설 그리브즈",
+    item_name: "전설 와드네 그리브즈",
     item_crafting: ["승급"],
     item_category: "장비",
     item_materials: [
       { item_name: "골드", item_quantity: 2500000 },
-      { item_name: "와드네 레어 그리브즈", item_quantity: 1 },
-      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
+      { item_name: "레어 와드네 그리브즈", item_quantity: 1 },
       { item_name: "스피노스의 정수", item_quantity: 1 },
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
       { item_name: "매끈한 와드네의 결정", item_quantity: 10 },
-      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
       { item_name: "자르딘 강철", item_quantity: 117 },
       { item_name: "고급 강화의 비약", item_quantity: 30 },
+      { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
     ],
   },
   {
@@ -594,9 +603,9 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_category: "재료",
     item_materials: [
       { item_name: "골드", item_quantity: 800 },
-      { item_name: "고급 철광석", item_quantity: 2 },
       { item_name: "마나 더스트", item_quantity: 7 },
       { item_name: "마나 리포머", item_quantity: 5 },
+      { item_name: "고급 철광석", item_quantity: 2 },
     ],
   },
   {
@@ -667,10 +676,10 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_category: "재료",
     item_materials: [
       { item_name: "와드네의 파편: 무기", item_quantity: 1 },
-      { item_name: "+ 게브네의 강화석", item_quantity: 2 },
       { item_name: "고급 강화의 비약", item_quantity: 20 },
       { item_name: "봉인의 힘: 파편", item_quantity: 100 },
       { item_name: "전승의 힘: 파편", item_quantity: 100 },
+      { item_name: "+ 게브네의 강화석", item_quantity: 2 },
     ],
   },
   {
@@ -679,10 +688,10 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_category: "재료",
     item_materials: [
       { item_name: "와드네의 파편: 머리 방어구", item_quantity: 1 },
-      { item_name: "게브네의 강화석", item_quantity: 3 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
       { item_name: "봉인의 힘: 파편", item_quantity: 100 },
       { item_name: "전승의 힘: 파편", item_quantity: 100 },
+      { item_name: "게브네의 강화석", item_quantity: 3 },
     ],
   },
   {
@@ -691,10 +700,10 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_category: "재료",
     item_materials: [
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 1 },
-      { item_name: "게브네의 강화석", item_quantity: 3 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
       { item_name: "봉인의 힘: 파편", item_quantity: 100 },
       { item_name: "전승의 힘: 파편", item_quantity: 100 },
+      { item_name: "게브네의 강화석", item_quantity: 3 },
     ],
   },
   {
@@ -703,10 +712,10 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_category: "재료",
     item_materials: [
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
-      { item_name: "게브네의 강화석", item_quantity: 3 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
       { item_name: "봉인의 힘: 파편", item_quantity: 100 },
       { item_name: "전승의 힘: 파편", item_quantity: 100 },
+      { item_name: "게브네의 강화석", item_quantity: 3 },
     ],
   },
   {
@@ -955,7 +964,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 초급 무기",
+//         item_name: "초급 와드네 무기",
 //         item_crafting: ["승급"],
 //         item_materials: [
 //           {
@@ -981,11 +990,11 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 중급 무기",
+//         item_name: "중급 와드네 무기",
 //         item_crafting: ["승급"],
 //         item_materials: [
 //           {
-//             item_name: "와드네 초급 무기",
+//             item_name: "초급 와드네 무기",
 //             item_quantity: 1,
 //           },
 //           { item_name: "골드", item_quantity: 1500000 },
@@ -1019,7 +1028,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         item_crafting: ["승급"],
 //         item_materials: [
 //           {
-//             item_name: "와드네 중급 무기",
+//             item_name: "중급 와드네 무기",
 //             item_quantity: 1,
 //           },
 //           { item_name: "골드", item_quantity: 2250000 },
@@ -1074,7 +1083,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 초급 헬름",
+//         item_name: "초급 와드네 헬름",
 //         item_crafting: ["승급"],
 //         item_materials: [
 //           { item_name: "와드네 헬름", item_quantity: 1 },
@@ -1088,10 +1097,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 중급 헬름",
+//         item_name: "중급 와드네 헬름",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 초급 헬름", item_quantity: 1 },
+//           { item_name: "초급 와드네 헬름", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 750000 },
 //           { item_name: "와드네 승급석: 머리 방어구", item_quantity: 1 },
 //           { item_name: "스렝의 정수", item_quantity: 1 },
@@ -1103,10 +1112,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 고급 헬름",
+//         item_name: "고급 와드네 헬름",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 중급 헬름", item_quantity: 1 },
+//           { item_name: "중급 와드네 헬름", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 1150000 },
 //           { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
 //           { item_name: "스렝의 정수", item_quantity: 1 },
@@ -1118,10 +1127,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 레어 헬름",
+//         item_name: "레어 와드네 헬름",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 고급 헬름", item_quantity: 1 },
+//           { item_name: "고급 와드네 헬름", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 1700000 },
 //           { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
 //           { item_name: "스렝의 정수", item_quantity: 1 },
@@ -1137,7 +1146,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         item_crafting: ["승급"],
 
 //         item_materials: [
-//           { item_name: "와드네 레어 헬름", item_quantity: 1 },
+//           { item_name: "레어 와드네 헬름", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 2500000 },
 //           { item_name: "와드네 승급석: 머리 방어구", item_quantity: 2 },
 //           { item_name: "스렝의 정수", item_quantity: 1 },
@@ -1171,7 +1180,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 초급 메일",
+//         item_name: "초급 와드네 메일",
 //         item_crafting: ["승급"],
 //         item_materials: [
 //           { item_name: "와드네 메일", item_quantity: 1 },
@@ -1185,10 +1194,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 중급 메일",
+//         item_name: "중급 와드네 메일",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 초급 메일", item_quantity: 1 },
+//           { item_name: "초급 와드네 메일", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 750000 },
 //           { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 1 },
 //           { item_name: "고르바스의 정수", item_quantity: 1 },
@@ -1200,10 +1209,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 고급 메일",
+//         item_name: "고급 와드네 메일",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 중급 메일", item_quantity: 1 },
+//           { item_name: "중급 와드네 메일", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 1150000 },
 //           { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
 //           { item_name: "고르바스의 정수", item_quantity: 1 },
@@ -1215,10 +1224,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 레어 메일",
+//         item_name: "레어 와드네 메일",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 고급 메일", item_quantity: 1 },
+//           { item_name: "고급 와드네 메일", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 1700000 },
 //           { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
 //           { item_name: "고르바스의 정수", item_quantity: 1 },
@@ -1233,7 +1242,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         item_name: "와드네 전설 메일",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 레어 메일", item_quantity: 1 },
+//           { item_name: "레어 와드네 메일", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 2500000 },
 //           { item_name: "와드네 승급석: 가슴 방어구", item_quantity: 2 },
 //           { item_name: "스피노스의 정수", item_quantity: 1 },
@@ -1266,7 +1275,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 초급 그리브즈",
+//         item_name: "초급 와드네 그리브즈",
 //         item_crafting: ["승급"],
 //         item_materials: [
 //           { item_name: "와드네 그리브즈", item_quantity: 1 },
@@ -1280,10 +1289,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 중급 그리브즈",
+//         item_name: "중급 와드네 그리브즈",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 초급 그리브즈", item_quantity: 1 },
+//           { item_name: "초급 와드네 그리브즈", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 750000 },
 //           { item_name: "와드네 승급석: 다리 방어구", item_quantity: 1 },
 //           { item_name: "스피노스의 정수", item_quantity: 1 },
@@ -1295,10 +1304,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 고급 그리브즈",
+//         item_name: "고급 와드네 그리브즈",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 중급 그리브즈", item_quantity: 1 },
+//           { item_name: "중급 와드네 그리브즈", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 1150000 },
 //           { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
 //           { item_name: "스피노스의 정수", item_quantity: 1 },
@@ -1310,10 +1319,10 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         ],
 //       },
 //       {
-//         item_name: "와드네 레어 그리브즈",
+//         item_name: "레어 와드네 그리브즈",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 고급 그리브즈", item_quantity: 1 },
+//           { item_name: "고급 와드네 그리브즈", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 1700000 },
 //           { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
 //           { item_name: "스피노스의 정수", item_quantity: 1 },
@@ -1328,7 +1337,7 @@ export const item_crafting_materials_list: ItemListType[] = [
 //         item_name: "와드네 전설 그리브즈",
 //         item_crafting: ["승급"],
 //         item_materials: [
-//           { item_name: "와드네 레어 그리브즈", item_quantity: 1 },
+//           { item_name: "레어 와드네 그리브즈", item_quantity: 1 },
 //           { item_name: "골드", item_quantity: 2500000 },
 //           { item_name: "와드네 승급석: 다리 방어구", item_quantity: 2 },
 //           { item_name: "스피노스의 정수", item_quantity: 1 },
