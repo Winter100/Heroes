@@ -3,7 +3,7 @@ import Column from "../layout/Column";
 
 const InfusionValues = ({ infusionValue }: InfusionValuesProps) => {
   return (
-    <Column className="min-h-24 flex-1 rounded-md border border-borderColor p-1 font-sans text-xs">
+    <Column className="min-h-24 flex-1 rounded-md border border-borderColor bg-black/20 p-1 font-sans text-xs">
       {infusionValue.map((infusion) => (
         <div
           className="flex items-center gap-1 px-1"

@@ -1,7 +1,7 @@
 import { useSelectEnchantStore } from "@/app/_store/selectEnchantStore";
 import React from "react";
 import EnchantDropList from "./EnchantDropList";
-import EnchantDetailItem from "./EnchantDetailItem";
+import EnchantInfo from "../iteminfo/EnchantInfo";
 
 const EnchantDropAndDetail = () => {
   const enchant = useSelectEnchantStore((state) => state.enchant);
@@ -11,7 +11,9 @@ const EnchantDropAndDetail = () => {
       {enchant && (
         <>
           <EnchantDropList enchantData={enchant as any} />
-          <EnchantDetailItem {...(enchant as any)} />
+          <div className="h-[470px] rounded-md border border-borderColor/50">
+            <EnchantInfo {...(enchant as any)} />
+          </div>
         </>
       )}
     </>

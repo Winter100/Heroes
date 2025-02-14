@@ -12,6 +12,7 @@ const link = [
   { name: "장비 세팅", href: "/preview" },
   { name: "골드 거래소 순위", href: "/gold" },
   { name: "인챈트 정보", href: "/market/enchant" },
+  { name: "아이템 제작", href: "/iteminfo" },
 ];
 
 const Header = () => {
