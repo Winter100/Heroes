@@ -1,4 +1,32 @@
 export const imageMap = new Map<string, string>([
+  // 캐릭터
+  ["리시타", "/images/characters/lethita.png"],
+  ["피오나", "/images/characters/fiona.png"],
+  ["이비", "/images/characters/evy.png"],
+  ["카록", "/images/characters/kalok.png"],
+  ["카이", "/images/characters/kay.png"],
+  ["벨라", "/images/characters/vella.png"],
+  ["허크", "/images/characters/hurk.png"],
+  ["린", "/images/characters/lynn.png"],
+  ["아리샤", "/images/characters/arisha.png"],
+  ["헤기", "/images/characters/hagie.png"],
+  ["델리아", "/images/characters/delia.png"],
+  ["미리", "/images/characters/miri.png"],
+  ["그림덴", "/images/characters/grimden.png"],
+  ["미울", "/images/characters/miul.png"],
+  ["벨", "/images/characters/bel.png"],
+  ["레서", "/images/characters/lethor.png"],
+  ["카엘", "/images/characters/kael.png"],
+  ["테사", "/images/characters/tessa.png"],
+  ["단아", "/images/characters/danah.png"],
+  ["레티", "/images/characters/letty.png"],
+  ["라티야", "/images/characters/latiya.png"],
+  ["체른", "/images/characters/czern.png"],
+  ["아켈", "/images/characters/achel.png"],
+  ["소우", "/images/characters/sou.png"],
+  ["사냐", "/images/characters/sanyaa.png"],
+  ["네반", "/images/characters/neamhain.png"],
+
   // 시즌 2
   ["마신의 탑", "/images/monster/s2/tower-of-demon-god.png"],
   ["죽음의 그림자", "/images/monster/s2/the-shadow-of-death.png"],
@@ -160,16 +188,8 @@ export const imageMap = new Map<string, string>([
     "/images/items/materials/s4/light-uaithne-crystal.png",
   ],
   [
-    "견고한 와드네의 결정",
-    "/images/items/materials/s4/light-uaithne-crystal.png",
-  ],
-  [
     "안정된 와드네의 결정",
-    "/images/items/materials/s4/light-uaithne-crystal.png",
-  ],
-  [
-    "견고한 와드네의 결정",
-    "/images/items/materials/s4/noble-uaithne-crystal.png",
+    "/images/items/materials/s4/stable-uaithne-crystal.png",
   ],
   [
     "견고한 와드네의 결정",
@@ -221,27 +241,6 @@ export const imageMap = new Map<string, string>([
     "오르나 방어구 강화 촉진제: 머리, 손, 발",
     "/images/items/materials/s4/orna-accelerator-head-hand-leg.png",
   ],
-  ["와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
-  ["초급 와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
-  ["중급 와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
-  ["고급 와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
-  ["레어 와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
-  ["전설 와드네 헬름", "/images/items/materials/s4/uaithne-head.png"],
-
-  ["와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
-  ["초급 와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
-  ["중급 와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
-  ["고급 와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
-  ["레어 와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
-  ["전설 와드네 메일", "/images/items/materials/s4/uaithne-upper.png"],
-
-  ["와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
-  ["초급 와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
-  ["중급 와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
-  ["고급 와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
-  ["레어 와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
-  ["전설 와드네 그리브즈", "/images/items/materials/s4/uaithne-lower.png"],
-
   ["신비의 힘: 파편", "/images/items/materials/s4/mystical-power-fragment.png"],
   ["불안정한 강화의 룬", "/images/items/materials/s4/rune_unstable.png"],
 
@@ -313,9 +312,7 @@ export const imageMap = new Map<string, string>([
   ["축복받은 마법 가루", "/images/items/materials/s4/cmk.png"],
   ["뉴에라의 강화석", "/images/items/materials/s4/new-era-stone.png"],
 
-  ["저주의 허리띠", "/images/items/equipment/belt-120.png"],
-  ["태양의 비원", "/images/items/equipment/sun_earring.png"],
-
+  // 장비
   ["와드네 스몰실드", "/images/items/equipment/s-shild.png"],
   ["와드네 라지실드", "/images/items/equipment/r-shild.png"],
   ["와드네 그랜드타지", "/images/items/equipment/g-shild.png"],
@@ -327,8 +324,144 @@ export const imageMap = new Map<string, string>([
   ["중급 와드네 무기", "/images/items/equipment/u-weapon.png"],
   ["고급 와드네 무기", "/images/items/equipment/u-weapon.png"],
 
+  ["와드네 헬름", "/images/items/equipment/uaithne-head.png"],
+  ["초급 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
+  ["중급 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
+  ["고급 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
+  ["레어 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
+  ["전설 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
+
+  ["와드네 메일", "/images/items/equipment/uaithne-upper.png"],
+  ["초급 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
+  ["중급 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
+  ["고급 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
+  ["레어 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
+  ["전설 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
+
+  ["와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
+  ["초급 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
+  ["중급 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
+  ["고급 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
+  ["레어 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
+  ["전설 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
+
   ["+15 오르나 무기", "/images/items/equipment/o-weapon.png"],
   ["+15 오르나 메일", "/images/items/equipment/o-upper.png"],
   ["+15 오르나 그리브즈", "/images/items/equipment/o-lower.png"],
   ["+15 오르나 헬름", "/images/items/equipment/o-head.png"],
+  ["오르나 건틀릿", "/images/items/equipment/o-hand.png"],
+  ["오르나 부츠", "/images/items/equipment/o-leg.png"],
+
+  ["아르드리 무기", "/images/items/equipment/a-weapon.png"],
+  ["아르드리 메일", "/images/items/equipment/a-upper.png"],
+  ["아르드리 그리브즈", "/images/items/equipment/a-lower.png"],
+  ["아르드리 헬름", "/images/items/equipment/a-head.png"],
+  ["아르드리 건틀릿", "/images/items/equipment/a-hand.png"],
+  ["아르드리 부츠", "/images/items/equipment/a-leg.png"],
+
+  // 로드
+  ["찬탈자의 녹슨 로드", "/images/items/equipment/taros-01.png"],
+  ["찬탈자의 로드", "/images/items/equipment/taros-02.png"],
+  ["찬탈자의 빛나는 로드", "/images/items/equipment/taros-03.png"],
+  ["찬탈자의 완전한 로드", "/images/items/equipment/taros-04.png"],
+
+  ["몰락자의 녹슨 로드", "/images/items/equipment/fallen-01.png"],
+  ["몰락자의 로드", "/images/items/equipment/fallen-02.png"],
+  ["몰락자의 빛나는 로드", "/images/items/equipment/fallen-03.png"],
+  ["몰락자의 완전한 로드", "/images/items/equipment/fallen-04.png"],
+
+  // 팔찌
+  ["미지의 황금 팔찌", "/images/items/equipment/bracelet-gold.png"],
+
+  // 브로치
+  ["고양이 브로치", "/images/items/equipment/charm-01.png"],
+  ["하얀 고양이 브로치", "/images/items/equipment/charm-02.png"],
+  ["파란 고양이 브로치", "/images/items/equipment/charm-03.png"],
+  ["붉은 달 브로치", "/images/items/equipment/charm-04.png"],
+  ["순백 깃털 브로치", "/images/items/equipment/charm-05.png"],
+  ["잿빛 황혼 브로치", "/images/items/equipment/charm-06.png"],
+
+  // 목걸이
+  ["고양이 목걸이", "/images/items/equipment/necklace-01.png"],
+  ["하얀 고양이 목걸이", "/images/items/equipment/necklace-02.png"],
+  ["파란 고양이 목걸이", "/images/items/equipment/necklace-03.png"],
+  ["붉은 고양이 목걸이", "/images/items/equipment/necklace-04.png"],
+  ["빛나는 고양이 목걸이", "/images/items/equipment/necklace-05.png"],
+
+  // 허리띠
+  ["어둠의 허리띠", "/images/items/equipment/belt-110.png"],
+  ["투쟁의 허리띠", "/images/items/equipment/belt-115.png"],
+  ["저주의 허리띠", "/images/items/equipment/belt-120.png"],
+
+  // 귀걸이
+  ["차원의 귀걸이", "/images/items/equipment/earring-110.png"],
+  ["성소의 귀걸이", "/images/items/equipment/earring-115.png"],
+  ["태양의 비원", "/images/items/equipment/sun_earring.png"],
+
+  // 반지
+  ["균열의 분노", "/images/items/equipment/ring-110-01.png"],
+  ["균열의 공포", "/images/items/equipment/ring-110-02.png"],
+  ["어둠 속 그림자", "/images/items/equipment/ring-115-01.png"],
+  ["어둠 속 달빛", "/images/items/equipment/ring-115-02.png"],
+
+  // 아티팩트
+  ["상급 서큐버스의 송곳니", "/images/items/equipment/succubus-01.png"],
+  [
+    "주시자의 녹슨 서큐버스의 송곳니",
+    "/images/items/equipment/succubus-02.png",
+  ],
+  ["주시자의 서큐버스의 송곳니", "/images/items/equipment/succubus-03.png"],
+  [
+    "주시자의 빛나는 서큐버스의 송곳니",
+    "/images/items/equipment/succubus-04.png",
+  ],
+  [
+    "주시자의 완전한 서큐버스의 송곳니",
+    "/images/items/equipment/succubus-05.png",
+  ],
+
+  ["상급 의문의 고양이 조각상", "/images/items/equipment/mysterious-01.png"],
+  [
+    "주시자의 녹슨 의문의 고양이 조각상",
+    "/images/items/equipment/mysterious-02.png",
+  ],
+  [
+    "주시자의 의문의 고양이 조각상",
+    "/images/items/equipment/mysterious-03.png",
+  ],
+  [
+    "주시자의 빛나는 의문의 고양이 조각상",
+    "/images/items/equipment/mysterious-04.png",
+  ],
+  [
+    "주시자의 완전한 의문의 고양이 조각상",
+    "/images/items/equipment/mysterious-05.png",
+  ],
+
+  ["상급 전쟁 여신의 조각상", "/images/items/equipment/goddess-01.png"],
+  [
+    "주시자의 녹슨 전쟁 여신의 조각상",
+    "/images/items/equipment/goddess-02.png",
+  ],
+  ["주시자의 전쟁 여신의 조각상", "/images/items/equipment/goddess-03.png"],
+  [
+    "주시자의 빛나는 전쟁 여신의 조각상",
+    "/images/items/equipment/goddess-04.png",
+  ],
+  [
+    "주시자의 완전한 전쟁 여신의 조각상",
+    "/images/items/equipment/goddess-05.png",
+  ],
+
+  ["상급 웨어울프의 앞발", "/images/items/equipment/werewolf-01.png"],
+  ["주시자의 녹슨 웨어울프의 앞발", "/images/items/equipment/werewolf-02.png"],
+  ["주시자의 웨어울프의 앞발", "/images/items/equipment/werewolf-03.png"],
+  [
+    "주시자의 빛나는 웨어울프의 앞발",
+    "/images/items/equipment/werewolf-04.png",
+  ],
+  [
+    "주시자의 완전한 웨어울프의 앞발",
+    "/images/items/equipment/werewolf-05.png",
+  ],
 ]);
