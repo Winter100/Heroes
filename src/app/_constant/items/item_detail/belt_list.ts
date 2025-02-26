@@ -1,4 +1,57 @@
 import { ItemType } from "@/app/_type/infoInfoType";
+import { createAccessoriesObject } from "@/app/_utils/createAccessoriesObject";
+
+const 어둠의허리띠 = [
+  {
+    name: "어둠의 허리띠",
+    max_stage: 20,
+    base_stat: [
+      { stat_name: "밸런스", stat_value: 6 },
+      { stat_name: "힘", stat_value: 145 },
+      { stat_name: "민첩", stat_value: 95 },
+      { stat_name: "지능", stat_value: 193 },
+      { stat_name: "의지", stat_value: 105 },
+    ],
+    firstAttackIncrease: 12,
+    firstDefenseIncrease: 4,
+    secondAttackIncrease: 13,
+    secondDefenseIncrease: 3,
+  },
+];
+const 투쟁의허리띠 = [
+  {
+    name: "투쟁의허리띠",
+    max_stage: 20,
+    base_stat: [
+      { stat_name: "밸런스", stat_value: 8 },
+      { stat_name: "힘", stat_value: 145 },
+      { stat_name: "민첩", stat_value: 95 },
+      { stat_name: "지능", stat_value: 193 },
+      { stat_name: "의지", stat_value: 105 },
+    ],
+    firstAttackIncrease: 14,
+    firstDefenseIncrease: 4,
+    secondAttackIncrease: 14,
+    secondDefenseIncrease: 5,
+  },
+];
+const 저주의허리띠 = [
+  {
+    name: "저주의허리띠",
+    max_stage: 20,
+    base_stat: [
+      { stat_name: "밸런스", stat_value: 12 },
+      { stat_name: "힘", stat_value: 145 },
+      { stat_name: "민첩", stat_value: 95 },
+      { stat_name: "지능", stat_value: 193 },
+      { stat_name: "의지", stat_value: 105 },
+    ],
+    firstAttackIncrease: 15,
+    firstDefenseIncrease: 6,
+    secondAttackIncrease: 15,
+    secondDefenseIncrease: 5,
+  },
+];
 
 export const belt_list: ItemType[] = [
   {
@@ -8,24 +61,9 @@ export const belt_list: ItemType[] = [
     quality_selection_available: true,
     rating: "고급",
     category: ["액세서리", "벨트"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
     color: true,
-    enhancement_info: {
-      attack: {
-        first_increase: 12,
-        second_increase: 13,
-      },
-      defense: {
-        first_increase: 4,
-        second_increase: 3,
-      },
-    },
-    stats: [
-      { stat_name: "밸런스", stat_value: 6 },
-      { stat_name: "힘", stat_value: 145 },
-      { stat_name: "민첩", stat_value: 95 },
-      { stat_name: "지능", stat_value: 193 },
-      { stat_name: "의지", stat_value: 105 },
-    ],
+    enhancement_options: createAccessoriesObject(어둠의허리띠)[0],
   },
   {
     name: "투쟁의 허리띠",
@@ -34,24 +72,9 @@ export const belt_list: ItemType[] = [
     quality_selection_available: true,
     rating: "고급",
     category: ["액세서리", "벨트"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
     color: true,
-    enhancement_info: {
-      attack: {
-        first_increase: 14,
-        second_increase: 14,
-      },
-      defense: {
-        first_increase: 4,
-        second_increase: 5,
-      },
-    },
-    stats: [
-      { stat_name: "밸런스", stat_value: 8 },
-      { stat_name: "힘", stat_value: 145 },
-      { stat_name: "민첩", stat_value: 95 },
-      { stat_name: "지능", stat_value: 193 },
-      { stat_name: "의지", stat_value: 105 },
-    ],
+    enhancement_options: createAccessoriesObject(투쟁의허리띠)[0],
   },
   {
     name: "저주의 허리띠",
@@ -60,23 +83,8 @@ export const belt_list: ItemType[] = [
     quality_selection_available: true,
     rating: "고급",
     category: ["액세서리", "귀걸이"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
     color: true,
-    enhancement_info: {
-      attack: {
-        first_increase: 15,
-        second_increase: 15,
-      },
-      defense: {
-        first_increase: 6,
-        second_increase: 5,
-      },
-    },
-    stats: [
-      { stat_name: "밸런스", stat_value: 12 },
-      { stat_name: "힘", stat_value: 145 },
-      { stat_name: "민첩", stat_value: 95 },
-      { stat_name: "지능", stat_value: 193 },
-      { stat_name: "의지", stat_value: 105 },
-    ],
+    enhancement_options: createAccessoriesObject(저주의허리띠)[0],
   },
 ];

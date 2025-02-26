@@ -13,12 +13,14 @@ export const rhod_list: ItemType[] = [
     rating: "초급",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 1000 },
-      { stat_name: "마법공격력", stat_value: 1000 },
-      { stat_name: "크리티컬", stat_value: 5 },
-      { stat_name: "공격력 제한 해제", stat_value: 300 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 1000 },
+        { stat_name: "마법공격력", stat_value: 1000 },
+        { stat_name: "크리티컬", stat_value: 5 },
+        { stat_name: "공격력 제한 해제", stat_value: 300 },
+      ],
+    },
   },
   {
     name: "몰락자의 로드",
@@ -32,12 +34,14 @@ export const rhod_list: ItemType[] = [
     rating: "초급",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 1000 },
-      { stat_name: "마법공격력", stat_value: 1000 },
-      { stat_name: "크리티컬", stat_value: 7 },
-      { stat_name: "공격력 제한 해제", stat_value: 300 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 1000 },
+        { stat_name: "마법공격력", stat_value: 1000 },
+        { stat_name: "크리티컬", stat_value: 7 },
+        { stat_name: "공격력 제한 해제", stat_value: 300 },
+      ],
+    },
   },
   {
     name: "몰락자의 빛나는 로드",
@@ -48,12 +52,14 @@ export const rhod_list: ItemType[] = [
     rating: "고급",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 1000 },
-      { stat_name: "마법공격력", stat_value: 1000 },
-      { stat_name: "크리티컬", stat_value: 7 },
-      { stat_name: "공격력 제한 해제", stat_value: 450 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 1000 },
+        { stat_name: "마법공격력", stat_value: 1000 },
+        { stat_name: "크리티컬", stat_value: 7 },
+        { stat_name: "공격력 제한 해제", stat_value: 450 },
+      ],
+    },
   },
   {
     name: "몰락자의 완전한 로드",
@@ -68,12 +74,14 @@ export const rhod_list: ItemType[] = [
     rating: "레어",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 2000 },
-      { stat_name: "마법공격력", stat_value: 2000 },
-      { stat_name: "크리티컬", stat_value: 10 },
-      { stat_name: "공격력 제한 해제", stat_value: 600 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 2000 },
+        { stat_name: "마법공격력", stat_value: 2000 },
+        { stat_name: "크리티컬", stat_value: 10 },
+        { stat_name: "공격력 제한 해제", stat_value: 600 },
+      ],
+    },
   },
   {
     name: "찬탈자의 녹슨 로드",
@@ -87,11 +95,13 @@ export const rhod_list: ItemType[] = [
     rating: "초급",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 500 },
-      { stat_name: "마법공격력", stat_value: 500 },
-      { stat_name: "크리티컬", stat_value: 1 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 500 },
+        { stat_name: "마법공격력", stat_value: 500 },
+        { stat_name: "크리티컬", stat_value: 1 },
+      ],
+    },
   },
   {
     name: "찬탈자의 로드",
@@ -105,11 +115,13 @@ export const rhod_list: ItemType[] = [
     rating: "중급",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 500 },
-      { stat_name: "마법공격력", stat_value: 500 },
-      { stat_name: "크리티컬", stat_value: 3 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 500 },
+        { stat_name: "마법공격력", stat_value: 500 },
+        { stat_name: "크리티컬", stat_value: 3 },
+      ],
+    },
   },
   {
     name: "찬탈자의 빛나는 로드",
@@ -120,12 +132,14 @@ export const rhod_list: ItemType[] = [
     rating: "고급",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 500 },
-      { stat_name: "마법공격력", stat_value: 500 },
-      { stat_name: "크리티컬", stat_value: 3 },
-      { stat_name: "공격력 제한 해제", stat_value: 150 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 500 },
+        { stat_name: "마법공격력", stat_value: 500 },
+        { stat_name: "크리티컬", stat_value: 3 },
+        { stat_name: "공격력 제한 해제", stat_value: 150 },
+      ],
+    },
   },
   {
     name: "찬탈자의 완전한 로드",
@@ -140,11 +154,13 @@ export const rhod_list: ItemType[] = [
     rating: "레어",
     category: ["로드"],
     color: true,
-    stats: [
-      { stat_name: "공격력", stat_value: 1000 },
-      { stat_name: "마법공격력", stat_value: 1000 },
-      { stat_name: "크리티컬", stat_value: 5 },
-      { stat_name: "공격력 제한 해제", stat_value: 300 },
-    ],
+    enhancement_options: {
+      0: [
+        { stat_name: "공격력", stat_value: 1000 },
+        { stat_name: "마법공격력", stat_value: 1000 },
+        { stat_name: "크리티컬", stat_value: 5 },
+        { stat_name: "공격력 제한 해제", stat_value: 300 },
+      ],
+    },
   },
 ];
