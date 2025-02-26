@@ -347,7 +347,6 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: "와드네의 파편: 가슴 방어구", item_quantity: 2 },
 
       { item_name: "견고한 와드네의 결정", item_quantity: 10 },
-      { item_name: "예리한 와드네의 결정", item_quantity: 10 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
       {
         item_name: "추출의 룬",

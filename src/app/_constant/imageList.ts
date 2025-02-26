@@ -160,16 +160,8 @@ export const imageMap = new Map<string, string>([
     "/images/items/materials/s4/light-uaithne-crystal.png",
   ],
   [
-    "견고한 와드네의 결정",
-    "/images/items/materials/s4/light-uaithne-crystal.png",
-  ],
-  [
     "안정된 와드네의 결정",
-    "/images/items/materials/s4/light-uaithne-crystal.png",
-  ],
-  [
-    "견고한 와드네의 결정",
-    "/images/items/materials/s4/noble-uaithne-crystal.png",
+    "/images/items/materials/s4/stable-uaithne-crystal.png",
   ],
   [
     "견고한 와드네의 결정",
