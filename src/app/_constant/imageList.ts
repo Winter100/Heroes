@@ -345,10 +345,10 @@ export const imageMap = new Map<string, string>([
   ["레어 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
   ["전설 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
 
-  ["+15 오르나 무기", "/images/items/equipment/o-weapon.png"],
-  ["+15 오르나 메일", "/images/items/equipment/o-upper.png"],
-  ["+15 오르나 그리브즈", "/images/items/equipment/o-lower.png"],
-  ["+15 오르나 헬름", "/images/items/equipment/o-head.png"],
+  ["오르나 무기", "/images/items/equipment/o-weapon.png"],
+  ["오르나 메일", "/images/items/equipment/o-upper.png"],
+  ["오르나 그리브즈", "/images/items/equipment/o-lower.png"],
+  ["오르나 헬름", "/images/items/equipment/o-head.png"],
   ["오르나 건틀릿", "/images/items/equipment/o-hand.png"],
   ["오르나 부츠", "/images/items/equipment/o-leg.png"],
 

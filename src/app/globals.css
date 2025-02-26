@@ -109,7 +109,7 @@ input[type="number"] {
 }
 
 .shape {
-  width: 70px;
+  width: 80px;
   height: 20px;
   background-color: rgb(49, 51, 54); /* 직사각형 색상 */
   position: relative;
