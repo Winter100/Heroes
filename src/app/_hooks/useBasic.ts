@@ -10,6 +10,7 @@ export const useBasic = (name: string) => {
     enabled: !!ocid,
     queryKey: [ocid, "베이직"],
     queryFn: () => getBasic(ocid ?? ""),
+    refetchOnWindowFocus: false,
   });
 
   const basic = data as Basic;
