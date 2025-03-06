@@ -8,6 +8,4 @@ export const materialsMap = new Map(
 export const itemCraftingMap = new Map(
   item_crafting_materials_list?.map((item) => [item.item_name, item]),
 );
-export const itemInfoMap = new Map(
-  item_info?.map((item) => [item.item_name, item]),
-);
+export const itemInfoMap = new Map(item_info?.map((item) => [item.name, item]));

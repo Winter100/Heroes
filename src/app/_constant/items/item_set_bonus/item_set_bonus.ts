@@ -1,13 +1,14 @@
 export const item_set_bonus = [
   {
     item_name: "아르드리",
+    item_set_slot: ["Right Hand", "Head", "Upper", "Lower", "Hand", "Leg"],
     item_set_list: [
-      "아르드리 무기",
-      "아르드리 머리 방어구",
-      "아르드리 가슴 방어구",
-      "아르드리 다리 방어구",
-      "아르드리 손 방어구",
-      "아르드리 발 방어구",
+      { name: "아르드리 무기", slot: "Right Hand" },
+      { name: "아르드리 머리 방어구", slot: "Head" },
+      { name: "아르드리 가슴 방어구", slot: "Upper" },
+      { name: "아르드리 다리 방어구", slot: "Lower" },
+      { name: "아르드리 손 방어구", slot: "Hand" },
+      { name: "아르드리 발 방어구", slot: "Leg" },
     ],
     item_set_bonus: [
       { level: 1, stat_bonus: [{ stat_name: "밸런스", stat_value: 1 }] },
@@ -60,13 +61,14 @@ export const item_set_bonus = [
   },
   {
     item_name: "오르나",
+    item_set_slot: ["Right Hand", "Head", "Upper", "Lower", "Hand", "Leg"],
     item_set_list: [
-      "오르나 무기",
-      "오르나 머리 방어구",
-      "오르나 가슴 방어구",
-      "오르나 다리 방어구",
-      "오르나 손 방어구",
-      "오르나 발 방어구",
+      { name: "오르나 무기", slot: "Right Hand" },
+      { name: "오르나 머리 방어구", slot: "Head" },
+      { name: "오르나 가슴 방어구", slot: "Upper" },
+      { name: "오르나 다리 방어구", slot: "Lower" },
+      { name: "오르나 손 방어구", slot: "Hand" },
+      { name: "오르나 발 방어구", slot: "Leg" },
     ],
     item_set_bonus: [
       { level: 1, stat_bonus: [{ stat_name: "밸런스", stat_value: 1 }] },
@@ -119,13 +121,14 @@ export const item_set_bonus = [
   },
   {
     item_name: "와드네",
+    item_set_slot: ["Right Hand", "Head", "Upper", "Lower", "Hand", "Leg"],
     item_set_list: [
-      "와드네 무기",
-      "와드네 머리 방어구",
-      "와드네 가슴 방어구",
-      "와드네 다리 방어구",
-      "와드네 손 방어구",
-      "와드네 발 방어구",
+      { name: "와드네 무기", slot: "Right Hand" },
+      { name: "와드네 머리 방어구", slot: "Head" },
+      { name: "와드네 가슴 방어구", slot: "Upper" },
+      { name: "와드네 다리 방어구", slot: "Lower" },
+      { name: "와드네 손 방어구", slot: "Hand" },
+      { name: "와드네 발 방어구", slot: "Leg" },
     ],
     item_set_bonus: [
       { level: 1, stat_bonus: [{ stat_name: "밸런스", stat_value: 2 }] },
@@ -178,14 +181,24 @@ export const item_set_bonus = [
   },
   {
     item_name: "어둠 반지",
-    item_set_list: ["어둠 속 달빛", "어둠 속 그림자"],
+    item_set_slot: ["Left Finger", "Right Finger"],
+    item_set_list: [
+      { name: "어둠 속 달빛", slot: ["Left Finger", "Right Finger"] },
+      { name: "어둠 속 그림자", slot: ["Left Finger", "Right Finger"] },
+    ],
     item_set_bonus: [
       { level: 2, stat_bonus: [{ stat_name: "크리티컬", stat_value: 2 }] },
     ],
   },
   {
     item_name: "균열의 반지",
-    item_set_list: ["균열의 분노", "균열의 공포"],
+    item_set_slot: ["Left Finger", "Right Finger"],
+    item_set_list: [
+      { name: "균열의 분노", slot: ["Left Finger", "Right Finger"] },
+      { name: "균열의 공포", slot: ["Left Finger", "Right Finger"] },
+      ,
+      ,
+    ],
     item_set_bonus: [
       { level: 2, stat_bonus: [{ stat_name: "크리티컬", stat_value: 1 }] },
     ],
