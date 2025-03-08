@@ -64,7 +64,6 @@ export const earring_list: ItemType[] = [
     rating: "고급",
     category: ["액세서리", "귀걸이"],
     quality_stats: ["힘", "민첩", "지능", "의지"],
-    // enhancement_options: earring_level_options["태양의 비원"],
     enhancement_options: createAccessoriesObject(태양의비원)[0],
     color: true,
   },
@@ -77,8 +76,6 @@ export const earring_list: ItemType[] = [
     category: ["액세서리", "귀걸이"],
     quality_stats: ["힘", "민첩", "지능", "의지"],
     enhancement_options: createAccessoriesObject(성소의귀걸이)[0],
-
-    // enhancement_options: earring_level_options["성소의 귀걸이"],
     color: true,
   },
   {
@@ -91,7 +88,15 @@ export const earring_list: ItemType[] = [
     category: ["액세서리", "귀걸이"],
     color: true,
     enhancement_options: createAccessoriesObject(차원의귀걸이)[0],
-
-    // enhancement_options: earring_level_options["차원의 귀걸이"],
+  },
+  {
+    name: "묵언의 결의",
+    restrictions: ["105 레벨 이상"],
+    quality: 2,
+    quality_selection_available: true,
+    quality_stats: ["힘", "민첩", "지능", "의지"],
+    rating: "고급",
+    category: ["액세서리", "귀걸이"],
+    color: true,
   },
 ];

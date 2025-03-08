@@ -3,6 +3,18 @@ import { lower_level_options } from "../item_level_options/lower_level_options";
 
 export const lower_list: ItemType[] = [
   {
+    name: "밀레시안 그리브즈",
+    restrictions: ["105 레벨 이상", "최대 강화 15단계", "최대 품질 5성"],
+    color: false,
+    quality: 2,
+    quality_selection_available: true,
+    rating: "레어",
+    category: ["플레이트", "다리 방어구"],
+    set: "밀레시안",
+    grinding: true,
+    quality_stats: ["방어력", "힘", "민첩", "지능", "의지"],
+  },
+  {
     name: "아르드리 그리브즈",
     restrictions: [
       "110 레벨 이상",
@@ -54,7 +66,7 @@ export const lower_list: ItemType[] = [
     set: "오르나",
     grinding: true,
     slot: "Lower",
-    enhancement_options: lower_level_options.오르나,
+    enhancement_options: lower_level_options["15오르나"],
     quality_stats: ["방어력", "힘", "민첩", "지능", "의지"],
   },
   {

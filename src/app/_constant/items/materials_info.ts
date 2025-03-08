@@ -4,7 +4,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "골드",
     item_rating: "일반",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: "물건을 구입할 때 사용된다.",
   },
   {
@@ -80,28 +80,28 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "와드네 승급석: 무기",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description:
       "와드네 무기를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 머리 방어구",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description:
       "와드네 헬름을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 가슴 방어구",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description:
       "와드네 메일을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 다리 방어구",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description:
       "와드네 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
@@ -162,7 +162,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나의 봉인된 힘: 발 방어구",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -170,7 +170,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나의 봉인된 힘: 손 방어구",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -178,7 +178,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나의 봉인된 힘: 가슴 방어구",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -186,7 +186,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나의 봉인된 힘: 머리 방어구",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -194,7 +194,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나의 봉인된 힘: 다리 방어구",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -202,7 +202,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나의 봉인된 힘: 무기",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -211,7 +211,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "미지의 결정",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `모든 능력이 한계에 도달한 무기에 추가 능력을 부여할 수 있는 재료. 장비 연마를 통해 추가 능력을 부여할 수 있습니다. 아직 모든 능력이 한계에 도달하지 않은 장비에는 추가 능력을 부여할 수 없습니다.
       
       [주의사항]
@@ -221,7 +221,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "투쟁의 결정",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `모든 능력이 한계에 도달한 방어구에 추가 능력을 부여할 수 있는 재료. 장비 연마를 통해 추가 능력을 부여할 수 있습니다. 아직 모든 능력이 한계에 도달하지 않은 장비에는 추가 능력을 부여할 수 없습니다.
       
       [주의사항]
@@ -369,31 +369,31 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오르나 방어구 강화 촉진제: 가슴, 다리",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구 중 가슴과 다리 방어구를 강화할 때 사용하면 강화 성공 확률이 10%만큼 증가합니다. 11강 이상 강화 시도 시에 사용할 수 있습니다. 상급 전문기술을 가진 제작자가 제작할 수 있습니다.`,
   },
   {
     item_name: "오르나 방어구 강화 촉진제: 머리, 손, 발",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구 중 머리, 손, 발 방어구를 강화할 때 사용하면 강화 성공 확률이 10%만큼 증가합니다. 11강 이상 강화 시도 시에 사용할 수 있습니다. 상급 전문기술을 가진 제작자가 제작할 수 있습니다.`,
   },
   {
     item_name: "오르나 무기 강화 촉진제",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 무기를 강화할 때 사용하면 강화 성공 확률이 10%만큼 증가합니다. 11강 이상 강화 시도 시에 사용할 수 있습니다. 상급 전문기술을 가진 제작자가 제작할 수 있습니다.`,
   },
   {
     item_name: "신비의 힘: 파편",
     item_rating: "고급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `110, 115레벨 액세서리의 봉인된 힘을 분해하면 얻을 수 있는 아이템. 게브네의 강화석과 강화의 룬 제작 시 재료로 사용됩니다.`,
   },
   {
     item_name: "불안정한 강화의 룬",
     item_rating: "중급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `아이템 강화시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 단계 하락 이상의 페널티를 무릅쓸 때만 사용할 수 있다. 불안정하여 성공하더라도 룬이 사라진다. 11강 이상 시도시에는 사용할 수 없다.
     아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.`,
   },
@@ -610,7 +610,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "단단한 계승 원석",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -618,7 +618,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "매끈한 계승 원석",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -626,7 +626,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "예리한 계승 원석",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -634,7 +634,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "안정된 계승 원석",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -642,7 +642,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "가벼운 계승 원석",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -650,7 +650,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "오롯한 계승 원석",
     item_rating: "레어",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
@@ -681,7 +681,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "상급 생명력 포션",
     item_rating: "일반",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `1000의 생명력을 즉시 회복시키는 포션.
     선착장의 가판대에서 구입할 수 있다.
     마법 연구실의 브린을 통해 제작할 수도 있다.`,
@@ -689,13 +689,13 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "고급 생명력 포션",
     item_rating: "일반",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `1600의 생명력을 즉시 회복시키는 포션.`,
   },
   {
     item_name: "최고급 생명력 포션",
     item_rating: "일반",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `2200의 생명력을 즉시 회복시키는 포션.`,
   },
   {
@@ -709,7 +709,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "마법력 엘릭서",
     item_rating: "일반",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `마법 가루에서 마법력을 추출해 만든 마법력 엘릭서. 1-10브린(마법력 단위)의 마법력이 담겨 있습니다.
     추출한 마법력은 매우 불안정하여 공기 중에서 금세 날아가기 때문에 주의가 필요합니다.
     브린에게 제작 의뢰하여 만들 수 있습니다.
@@ -720,7 +720,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "생명의 마법력 엘릭서",
     item_rating: "초급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `생명의 에르그 결정에서 마법력을 추출해 만든 마법력 엘릭서. 3-5브린(마법력 단위)의 마법력이 담겨 있습니다.
     추출한 마법력은 매우 불안정하여 공기 중에서 금세 날아가기 때문에 주의가 필요합니다.
     브린에게 제작 의뢰하여 만들 수 있습니다.
@@ -731,7 +731,7 @@ export const materials_info: BasicItemInfoType[] = [
   {
     item_name: "축복의 마법력 엘릭서",
     item_rating: "초급",
-    item_crafting: [""],
+    item_crafting: [],
     item_description: `마법 가루, 축복받은 마법 가루에서 마법력을 추출해 만든 마법력 엘릭서. 10-50브린(마법력 단위)의 마법력이 담겨 있습니다.
     추출한 마법력은 매우 불안정하여 공기 중에서 금세 날아가기 때문에 주의가 필요합니다.
     브린에게 제작 의뢰하여 만들 수 있습니다.

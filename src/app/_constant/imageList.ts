@@ -313,13 +313,74 @@ export const imageMap = new Map<string, string>([
   ["뉴에라의 강화석", "/images/items/materials/s4/new-era-stone.png"],
 
   // 장비
+  // 105 액세서리
+  ["황혼의 수호", "/images/items/equipment/105/finger-105-01.png"],
+  ["황혼의 칼날", "/images/items/equipment/105/finger-105-02.png"],
+  ["묵언의 결의", "/images/items/equipment/105/earring-105.png"],
+  ["정신의 허리띠", "/images/items/equipment/105/belt-105.png"],
 
-  // 105 밀레시안
-  // 110 아르드리
+  // 105 밀레시안 방어구
+  ["밀레시안 메일", "/images/items/equipment/105/m-upper.png"],
+  ["밀레시안 그리브즈", "/images/items/equipment/105/m-lower.png"],
+  ["밀레시안 헬름", "/images/items/equipment/105/m-head.png"],
+  ["밀레시안 건틀릿", "/images/items/equipment/105/m-hand.png"],
+  ["밀레시안 부츠", "/images/items/equipment/105/m-leg.png"],
+
+  ["밀레시안의 서", "/images/items/equipment/105/m-book-105.png"],
+
+  // 105 밀레시안 무기
+  ["밀레시안 듀얼소드", "/images/items/equipment/105/dualsword-105.png"],
+  ["밀레시안 듀얼스피어", "/images/items/equipment/105/dualspear-105.png"],
+  ["밀레시안 바스타드소드", "/images/items/equipment/105/bastardsword-105.png"],
+  ["밀레시안 배틀액스", "/images/items/equipment/105/battleaxe-105.png"],
+  ["밀레시안 블뤼테", "/images/items/equipment/105/blute-105.png"],
+  ["밀레시안 하스타", "/images/items/equipment/105/hasta-105.png"],
+  ["밀레시안 배틀글레이브", "/images/items/equipment/105/battleglaive-105.png"],
+  ["밀레시안 블래스터", "/images/items/equipment/105/blaster-105.png"],
+  ["밀레시안 보우", "/images/items/equipment/105/bow-105.png"],
+  ["밀레시안 드레이커", "/images/items/equipment/105/draker-105.png"],
+  ["밀레시안 크레스트", "/images/items/equipment/105/crest-105.png"],
+  ["밀레시안 크로스건", "/images/items/equipment/105/crossgun-105.png"],
+  ["밀레시안 듀얼블레이드", "/images/items/equipment/105/dualblade-105.png"],
+  ["밀레시안 듀얼나이프", "/images/items/equipment/105/dualknife-105.png"],
+  ["밀레시안 그레이트소드", "/images/items/equipment/105/greatsword-105.png"],
+  ["밀레시안 롱해머", "/images/items/equipment/105/longhammer-105.png"],
+  ["밀레시안 롱소드", "/images/items/equipment/105/longsword-105.png"],
+  ["밀레시안 롱블레이드", "/images/items/equipment/105/longblade-105.png"],
+  ["밀레시안 헤비캐넌", "/images/items/equipment/105/heavycannon-105.png"],
+  ["밀레시안 웝", "/images/items/equipment/105/whip-105.png"],
+  ["밀레시안 랜스", "/images/items/equipment/105/lance-105.png"],
+  ["밀레시안 레이피어", "/images/items/equipment/105/rapier-105.png"],
+  ["밀레시안 소울블레이드", "/images/items/equipment/105/soulblade-105.png"],
+  ["밀레시안 마나리볼버", "/images/items/equipment/105/manarevolver-105.png"],
+  ["밀레시안 스태프", "/images/items/equipment/105/staff-105.png"],
+  ["밀레시안 팬텀대거", "/images/items/equipment/105/phantomdagger-105.png"],
+  ["밀레시안 테이드", "/images/items/equipment/105/teide-105.png"],
+  ["밀레시안 소드스피어", "/images/items/equipment/105/swordspear-105.png"],
+  ["밀레시안 배틀필러", "/images/items/equipment/105/battlepillar-105.png"],
+  ["밀레시안 카타마르", "/images/items/equipment/105/catamadhar-105.png"],
+  ["밀레시안 사이드", "/images/items/equipment/105/scythe-105.png"],
+  ["밀레시안 홀리파이크", "/images/items/equipment/105/pike-105.png"],
+  ["밀레시안 오르비스", "/images/items/equipment/105/orbis-105.png"],
+  [
+    "밀레시안 오리엔탈블레이드",
+    "/images/items/equipment/105/orientalblade-105.png",
+  ],
+
+  // 110 아르드리 방어구
+  ["아르드리 무기", "/images/items/equipment/110/a-weapon.png"],
+  ["아르드리 메일", "/images/items/equipment/110/a-upper.png"],
+  ["아르드리 그리브즈", "/images/items/equipment/110/a-lower.png"],
+  ["아르드리 헬름", "/images/items/equipment/110/a-head.png"],
+  ["아르드리 건틀릿", "/images/items/equipment/110/a-hand.png"],
+  ["아르드리 부츠", "/images/items/equipment/110/a-leg.png"],
+  ["아르드리의 서", "/images/items/equipment/110/ar-book.png"],
+
+  // 110 아르드리 무기
   ["아르드리 듀얼소드", "/images/items/equipment/110/dualsword-110.png"],
   ["아르드리 듀얼스피어", "/images/items/equipment/110/dualspear-110.png"],
   ["아르드리 바스타드소드", "/images/items/equipment/110/bastardsword-110.png"],
-  ["아르드리 배틀엑스", "/images/items/equipment/110/battleaxe-110.png"],
+  ["아르드리 배틀액스", "/images/items/equipment/110/battleaxe-110.png"],
   ["아르드리 블뤼테", "/images/items/equipment/110/blute-110.png"],
   ["아르드리 하스타", "/images/items/equipment/110/hasta-110.png"],
   ["아르드리 배틀글레이브", "/images/items/equipment/110/battleglaive-110.png"],
@@ -354,11 +415,28 @@ export const imageMap = new Map<string, string>([
     "/images/items/equipment/110/orientalblade-110.png",
   ],
 
-  // 115 오르나
+  // 115 오르나 방어구
+  ["오르나 무기", "/images/items/equipment/115/o-weapon.png"],
+  ["오르나 메일", "/images/items/equipment/115/o-upper.png"],
+  ["오르나 그리브즈", "/images/items/equipment/115/o-lower.png"],
+  ["오르나 헬름", "/images/items/equipment/115/o-head.png"],
+  ["오르나 건틀릿", "/images/items/equipment/115/o-hand.png"],
+  ["오르나 부츠", "/images/items/equipment/115/o-leg.png"],
+
+  ["+15 오르나 무기", "/images/items/equipment/115/o-weapon.png"],
+  ["+15 오르나 메일", "/images/items/equipment/115/o-upper.png"],
+  ["+15 오르나 그리브즈", "/images/items/equipment/115/o-lower.png"],
+  ["+15 오르나 헬름", "/images/items/equipment/115/o-head.png"],
+  ["+15 오르나 건틀릿", "/images/items/equipment/115/o-hand.png"],
+  ["+15 오르나 부츠", "/images/items/equipment/115/o-leg.png"],
+
+  ["오르나의 서", "/images/items/equipment/115/o-book-115.png"],
+
+  // 115 오르나 무기
   ["오르나 듀얼소드", "/images/items/equipment/115/dualsword-115.png"],
   ["오르나 듀얼스피어", "/images/items/equipment/115/dualspear-115.png"],
   ["오르나 바스타드소드", "/images/items/equipment/115/bastardsword-115.png"],
-  ["오르나 배틀엑스", "/images/items/equipment/115/battleaxe-115.png"],
+  ["오르나 배틀액스", "/images/items/equipment/115/battleaxe-115.png"],
   ["오르나 블뤼테", "/images/items/equipment/115/blute-115.png"],
   ["오르나 하스타", "/images/items/equipment/115/hasta-115.png"],
   ["오르나 배틀글레이브", "/images/items/equipment/115/battleglaive-115.png"],
@@ -393,11 +471,46 @@ export const imageMap = new Map<string, string>([
     "/images/items/equipment/115/orientalblade-115.png",
   ],
 
-  // 120 와드네
+  //
+  ["전승의 서", "/images/items/equipment/j-book.png"],
+  // 120 와드네 방어구
+  ["와드네 스몰실드", "/images/items/equipment/120/s-shild.png"],
+  ["와드네 라지실드", "/images/items/equipment/120/r-shild.png"],
+  ["와드네 그랜드타지", "/images/items/equipment/120/g-shild.png"],
+  ["와드네의 서", "/images/items/equipment/120/u-book.png"],
+  ["와드네 캐스틀릿", "/images/items/equipment/120/cas.png"],
+
+  ["와드네 무기", "/images/items/equipment/120/u-weapon.png"],
+  ["초급 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
+  ["중급 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
+  ["고급 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
+
+  ["와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
+  ["초급 와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
+  ["중급 와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
+  ["고급 와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
+  ["레어 와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
+  ["전설 와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
+
+  ["와드네 메일", "/images/items/equipment/120/uaithne-upper.png"],
+  ["초급 와드네 메일", "/images/items/equipment/120/uaithne-upper.png"],
+  ["중급 와드네 메일", "/images/items/equipment/120/uaithne-upper.png"],
+  ["고급 와드네 메일", "/images/items/equipment/120/uaithne-upper.png"],
+  ["레어 와드네 메일", "/images/items/equipment/120/uaithne-upper.png"],
+  ["전설 와드네 메일", "/images/items/equipment/120/uaithne-upper.png"],
+
+  ["와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+  ["초급 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+  ["중급 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+  ["고급 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+  ["레어 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+  ["전설 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+
+  // 120 와드네 무기
   ["와드네 듀얼소드", "/images/items/equipment/120/dualsword-120.png"],
   ["와드네 듀얼스피어", "/images/items/equipment/120/dualspear-120.png"],
   ["와드네 바스타드소드", "/images/items/equipment/120/bastardsword-120.png"],
-  ["와드네 배틀엑스", "/images/items/equipment/120/battleaxe-120.png"],
+  ["와드네 배틀액스", "/images/items/equipment/120/battleaxe-120.png"],
   ["와드네 블뤼테", "/images/items/equipment/120/blute-120.png"],
   ["와드네 하스타", "/images/items/equipment/120/hasta-120.png"],
   ["와드네 배틀글레이브", "/images/items/equipment/120/battleglaive-120.png"],
@@ -432,60 +545,6 @@ export const imageMap = new Map<string, string>([
     "/images/items/equipment/120/orientalblade-120.png",
   ],
 
-  //
-  ["와드네 스몰실드", "/images/items/equipment/s-shild.png"],
-  ["와드네 라지실드", "/images/items/equipment/r-shild.png"],
-  ["와드네 그랜드타지", "/images/items/equipment/g-shild.png"],
-  ["와드네의 서", "/images/items/equipment/u-book.png"],
-  ["와드네 캐스틀릿", "/images/items/equipment/cas.png"],
-
-  ["와드네 무기", "/images/items/equipment/u-weapon.png"],
-  ["초급 와드네 무기", "/images/items/equipment/u-weapon.png"],
-  ["중급 와드네 무기", "/images/items/equipment/u-weapon.png"],
-  ["고급 와드네 무기", "/images/items/equipment/u-weapon.png"],
-
-  ["와드네 헬름", "/images/items/equipment/uaithne-head.png"],
-  ["초급 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
-  ["중급 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
-  ["고급 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
-  ["레어 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
-  ["전설 와드네 헬름", "/images/items/equipment/uaithne-head.png"],
-
-  ["와드네 메일", "/images/items/equipment/uaithne-upper.png"],
-  ["초급 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
-  ["중급 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
-  ["고급 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
-  ["레어 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
-  ["전설 와드네 메일", "/images/items/equipment/uaithne-upper.png"],
-
-  ["와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
-  ["초급 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
-  ["중급 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
-  ["고급 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
-  ["레어 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
-  ["전설 와드네 그리브즈", "/images/items/equipment/uaithne-lower.png"],
-
-  ["오르나 무기", "/images/items/equipment/o-weapon.png"],
-  ["오르나 메일", "/images/items/equipment/o-upper.png"],
-  ["오르나 그리브즈", "/images/items/equipment/o-lower.png"],
-  ["오르나 헬름", "/images/items/equipment/o-head.png"],
-  ["오르나 건틀릿", "/images/items/equipment/o-hand.png"],
-  ["오르나 부츠", "/images/items/equipment/o-leg.png"],
-
-  ["+15 오르나 무기", "/images/items/equipment/o-weapon.png"],
-  ["+15 오르나 메일", "/images/items/equipment/o-upper.png"],
-  ["+15 오르나 그리브즈", "/images/items/equipment/o-lower.png"],
-  ["+15 오르나 헬름", "/images/items/equipment/o-head.png"],
-  ["+15 오르나 건틀릿", "/images/items/equipment/o-hand.png"],
-  ["+15 오르나 부츠", "/images/items/equipment/o-leg.png"],
-
-  ["아르드리 무기", "/images/items/equipment/a-weapon.png"],
-  ["아르드리 메일", "/images/items/equipment/a-upper.png"],
-  ["아르드리 그리브즈", "/images/items/equipment/a-lower.png"],
-  ["아르드리 헬름", "/images/items/equipment/a-head.png"],
-  ["아르드리 건틀릿", "/images/items/equipment/a-hand.png"],
-  ["아르드리 부츠", "/images/items/equipment/a-leg.png"],
-
   // 로드
   ["찬탈자의 녹슨 로드", "/images/items/equipment/taros-01.png"],
   ["찬탈자의 로드", "/images/items/equipment/taros-02.png"],
@@ -513,6 +572,7 @@ export const imageMap = new Map<string, string>([
   // 브로치
   ["고양이 브로치", "/images/items/equipment/charm-01.png"],
   ["하얀 고양이 브로치", "/images/items/equipment/charm-02.png"],
+  ["하얀 고양이 브로치 (30일)", "/images/items/equipment/charm-02.png"],
   ["파란 고양이 브로치", "/images/items/equipment/charm-03.png"],
   ["붉은 달 브로치", "/images/items/equipment/charm-04.png"],
   ["순백 깃털 브로치", "/images/items/equipment/charm-05.png"],
@@ -521,6 +581,7 @@ export const imageMap = new Map<string, string>([
   // 목걸이
   ["고양이 목걸이", "/images/items/equipment/necklace-01.png"],
   ["하얀 고양이 목걸이", "/images/items/equipment/necklace-02.png"],
+  ["하얀 고양이 목걸이 (30일)", "/images/items/equipment/necklace-02.png"],
   ["파란 고양이 목걸이", "/images/items/equipment/necklace-03.png"],
   ["붉은 고양이 목걸이", "/images/items/equipment/necklace-04.png"],
   ["빛나는 고양이 목걸이", "/images/items/equipment/necklace-05.png"],
@@ -575,21 +636,23 @@ export const imageMap = new Map<string, string>([
     "/images/items/equipment/mysterious-05.png",
   ],
 
-  ["상급 전쟁 여신의 조각상", "/images/items/equipment/goddess-01.png"],
+  ["상급 전쟁 여신의 조각상", "/images/items/equipment/war-goddess-01.png"],
   [
     "주시자의 녹슨 전쟁 여신의 조각상",
-    "/images/items/equipment/goddess-02.png",
+    "/images/items/equipment/war-goddess-02.png",
   ],
-  ["주시자의 전쟁 여신의 조각상", "/images/items/equipment/goddess-03.png"],
+  ["주시자의 전쟁 여신의 조각상", "/images/items/equipment/war-goddess-03.png"],
   [
     "주시자의 빛나는 전쟁 여신의 조각상",
-    "/images/items/equipment/goddess-04.png",
+    "/images/items/equipment/war-goddess-04.png",
   ],
   [
     "주시자의 완전한 전쟁 여신의 조각상",
-    "/images/items/equipment/goddess-05.png",
+    "/images/items/equipment/war-goddess-05.png",
   ],
 
+  ["웨어울프의 앞발", "/images/items/equipment/werewolf-00.png"],
+  ["웨어울프의 앞발 (30일)", "/images/items/equipment/werewolf-00.png"],
   ["상급 웨어울프의 앞발", "/images/items/equipment/werewolf-01.png"],
   ["주시자의 녹슨 웨어울프의 앞발", "/images/items/equipment/werewolf-02.png"],
   ["주시자의 웨어울프의 앞발", "/images/items/equipment/werewolf-03.png"],

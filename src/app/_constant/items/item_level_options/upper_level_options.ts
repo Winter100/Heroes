@@ -329,6 +329,19 @@ export const upper_level_options = {
       { stat_name: "크리티컬 저항", stat_value: 29 },
     ],
   },
+  ["15오르나"]: {
+    15: [
+      { stat_name: "추가피해", stat_value: 750 },
+      { stat_name: "방어력", stat_value: 4017 },
+      { stat_name: "파괴시 방어력", stat_value: 3711 },
+      { stat_name: "힘", stat_value: 180 },
+      { stat_name: "민첩", stat_value: 90 },
+      { stat_name: "지능", stat_value: 243 },
+      { stat_name: "의지", stat_value: 80 },
+      { stat_name: "최대 생명력", stat_value: 500 },
+      { stat_name: "크리티컬 저항", stat_value: 29 },
+    ],
+  },
   ["와드네"]: {
     0: [
       { stat_name: "추가피해", stat_value: 750 },

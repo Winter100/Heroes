@@ -3,6 +3,18 @@ import { upper_level_options } from "../item_level_options/upper_level_options";
 
 export const upper_list: ItemType[] = [
   {
+    name: "밀레시안 메일",
+    restrictions: ["105 레벨 이상", "최대 강화 15단계", "최대 품질 5성"],
+    color: false,
+    quality: 2,
+    quality_selection_available: true,
+    rating: "레어",
+    category: ["플레이트", "가슴 방어구"],
+    set: "밀레시안",
+    quality_stats: ["방어력", "힘", "민첩", "지능", "의지"],
+    grinding: true,
+  },
+  {
     name: "아르드리 메일",
     restrictions: [
       "110 레벨 이상",
@@ -53,7 +65,7 @@ export const upper_list: ItemType[] = [
     category: ["플레이트", "가슴 방어구"],
     set: "오르나",
     slot: "Upper",
-    enhancement_options: upper_level_options.오르나,
+    enhancement_options: upper_level_options["15오르나"],
     quality_stats: ["방어력", "힘", "민첩", "지능", "의지"],
     grinding: true,
   },

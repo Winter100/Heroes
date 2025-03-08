@@ -1,4 +1,67 @@
+export const itemSetList = ["밀레시안", "아르드리", "오르나", "와드네"];
+export const accessoriesSetList = ["황혼의 반지", "어둠 반지", "균열의 반지"];
+
 export const item_set_bonus = [
+  {
+    item_name: "밀레시안",
+    item_set_slot: ["Right Hand", "Head", "Upper", "Lower", "Hand", "Leg"],
+    item_set_list: [
+      { name: "밀레시안 무기", slot: "Right Hand" },
+      { name: "밀레시안 머리 방어구", slot: "Head" },
+      { name: "밀레시안 가슴 방어구", slot: "Upper" },
+      { name: "밀레시안 다리 방어구", slot: "Lower" },
+      { name: "밀레시안 손 방어구", slot: "Hand" },
+      { name: "밀레시안 발 방어구", slot: "Leg" },
+    ],
+    item_set_bonus: [
+      { level: 1, stat_bonus: [{ stat_name: "밸런스", stat_value: 1 }] },
+      { level: 2, stat_bonus: [{ stat_name: "밸런스", stat_value: 2 }] },
+      {
+        level: 3,
+        stat_bonus: [
+          { stat_name: "밸런스", stat_value: 3 },
+          { stat_name: "방어력", stat_value: 315 },
+          { stat_name: "힘", stat_value: 81 },
+          { stat_name: "지능", stat_value: 111 },
+          { stat_name: "생명력", stat_value: 270 },
+          { stat_name: "스태미나", stat_value: 5 },
+        ],
+      },
+      {
+        level: 4,
+        stat_bonus: [
+          { stat_name: "밸런스", stat_value: 4 },
+          { stat_name: "방어력", stat_value: 370 },
+          { stat_name: "힘", stat_value: 101 },
+          { stat_name: "지능", stat_value: 138 },
+          { stat_name: "생명력", stat_value: 310 },
+          { stat_name: "스태미나", stat_value: 6 },
+        ],
+      },
+      {
+        level: 5,
+        stat_bonus: [
+          { stat_name: "밸런스", stat_value: 5 },
+          { stat_name: "방어력", stat_value: 425 },
+          { stat_name: "힘", stat_value: 121 },
+          { stat_name: "지능", stat_value: 165 },
+          { stat_name: "생명력", stat_value: 350 },
+          { stat_name: "스태미나", stat_value: 7 },
+        ],
+      },
+      {
+        level: 6,
+        stat_bonus: [
+          { stat_name: "밸런스", stat_value: 6 },
+          { stat_name: "방어력", stat_value: 480 },
+          { stat_name: "힘", stat_value: 141 },
+          { stat_name: "지능", stat_value: 192 },
+          { stat_name: "생명력", stat_value: 390 },
+          { stat_name: "스태미나", stat_value: 10 },
+        ],
+      },
+    ],
+  },
   {
     item_name: "아르드리",
     item_set_slot: ["Right Hand", "Head", "Upper", "Lower", "Hand", "Leg"],
@@ -177,6 +240,17 @@ export const item_set_bonus = [
           { stat_name: "스태미나", stat_value: 10 },
         ],
       },
+    ],
+  },
+  {
+    item_name: "황혼의 반지",
+    item_set_slot: ["Left Finger", "Right Finger"],
+    item_set_list: [
+      { name: "황혼의 칼날", slot: ["Left Finger", "Right Finger"] },
+      { name: "황혼의 수호", slot: ["Left Finger", "Right Finger"] },
+    ],
+    item_set_bonus: [
+      { level: 2, stat_bonus: [{ stat_name: "크리티컬", stat_value: 1 }] },
     ],
   },
   {

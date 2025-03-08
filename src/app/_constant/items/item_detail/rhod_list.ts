@@ -31,7 +31,7 @@ export const rhod_list: ItemType[] = [
     restrictions: ["115 레벨 이상"],
     quality: 2,
     quality_selection_available: false,
-    rating: "초급",
+    rating: "중급",
     category: ["로드"],
     color: true,
     enhancement_options: {

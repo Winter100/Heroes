@@ -55,6 +55,16 @@ const 저주의허리띠 = [
 
 export const belt_list: ItemType[] = [
   {
+    name: "정신의 허리띠",
+    restrictions: ["105 레벨 이상"],
+    quality: 2,
+    quality_selection_available: true,
+    rating: "고급",
+    category: ["액세서리", "벨트"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
+    color: true,
+  },
+  {
     name: "어둠의 허리띠",
     restrictions: ["110 레벨 이상"],
     quality: 2,

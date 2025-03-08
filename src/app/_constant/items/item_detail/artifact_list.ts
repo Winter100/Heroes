@@ -98,6 +98,28 @@ export const artifact_list: ItemType[] = [
   },
 
   {
+    name: "웨어울프의 앞발 (30일)",
+    quality_selection_available: false,
+    quality: 2,
+    rating: "중급",
+    category: ["액세서리", "아티팩트"],
+    color: true,
+    description: `사용 시 자신의 이동 속도와 공격 속도가 20% 상승합니다.
+    사용 시간: 20초
+    재사용 대기 시간: 120초`,
+  },
+  {
+    name: "웨어울프의 앞발",
+    quality_selection_available: false,
+    quality: 2,
+    rating: "중급",
+    category: ["액세서리", "아티팩트"],
+    color: true,
+    description: `사용 시 자신의 이동 속도와 공격 속도가 20% 상승합니다.
+    사용 시간: 20초
+    재사용 대기 시간: 120초`,
+  },
+  {
     name: "상급 웨어울프의 앞발",
     quality_selection_available: false,
     quality: 2,

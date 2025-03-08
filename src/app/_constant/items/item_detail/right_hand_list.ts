@@ -3,6 +3,18 @@ import { right_hand_level_options } from "../item_level_options/right_hand_level
 
 export const right_hand_list: ItemType[] = [
   {
+    name: "밀레시안 무기",
+    restrictions: ["105 레벨 이상", "최대 강화 15단계", "최대 품질 5성"],
+    color: false,
+    quality: 2,
+    quality_selection_available: true,
+    quality_stats: ["공격력", "마법공격력", "힘", "민첩", "지능", "의지"],
+    rating: "레어",
+    category: ["무기"],
+    set: "밀레시안",
+    grinding: true,
+  },
+  {
     name: "아르드리 무기",
     restrictions: [
       "110 레벨 이상",
@@ -55,7 +67,7 @@ export const right_hand_list: ItemType[] = [
     set: "오르나",
     grinding: true,
     slot: "Right Hand",
-    enhancement_options: right_hand_level_options["오르나"],
+    enhancement_options: right_hand_level_options["15오르나"],
   },
   {
     name: "와드네 무기",

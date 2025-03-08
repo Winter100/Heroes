@@ -3,6 +3,18 @@ import { hand_level_options } from "../item_level_options/hand_level_options";
 
 export const hand_list: ItemType[] = [
   {
+    name: "밀레시안 건틀릿",
+    restrictions: ["105 레벨 이상", "최대 강화 15단계", "최대 품질 5성"],
+    color: false,
+    quality: 2,
+    quality_selection_available: true,
+    rating: "레어",
+    category: ["플레이트", "손 방어구"],
+    set: "밀레시안",
+    quality_stats: ["공격력", "마법공격력", "힘", "민첩", "지능", "의지"],
+    grinding: true,
+  },
+  {
     name: "아르드리 건틀릿",
     restrictions: [
       "110 레벨 이상",
@@ -52,7 +64,7 @@ export const hand_list: ItemType[] = [
     rating: "레어",
     category: ["플레이트", "손 방어구"],
     set: "오르나",
-    enhancement_options: hand_level_options.오르나,
+    enhancement_options: hand_level_options["15오르나"],
     slot: "Hand",
     quality_stats: ["공격력", "마법공격력", "힘", "민첩", "지능", "의지"],
     grinding: true,

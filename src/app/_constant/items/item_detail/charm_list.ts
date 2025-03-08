@@ -84,6 +84,25 @@ export const charm_list: ItemType[] = [
     },
   },
   {
+    name: "하얀 고양이 브로치 (30일)",
+    restrictions: ["70 레벨 이상"],
+    quality: 2,
+    quality_selection_available: true,
+    rating: "중급",
+    category: ["액세서리", "장신구"],
+    quality_stats: ["방어력", "힘", "민첩", "지능", "의지"],
+    color: true,
+    enhancement_options: {
+      0: [
+        { stat_name: "공격속도", stat_value: 2 },
+        { stat_name: "힘", stat_value: 48 },
+        { stat_name: "민첩", stat_value: 48 },
+        { stat_name: "지능", stat_value: 48 },
+        { stat_name: "의지", stat_value: 48 },
+      ],
+    },
+  },
+  {
     name: "고양이 브로치",
     restrictions: ["40 레벨 이상"],
     quality: 2,

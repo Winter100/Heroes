@@ -2,6 +2,25 @@ import { ItemType } from "@/app/_type/infoInfoType";
 
 export const necklace_list: ItemType[] = [
   {
+    name: "하얀 고양이 목걸이 (30일)",
+    restrictions: ["60 레벨 이상"],
+    quality: 2,
+    quality_selection_available: true,
+    rating: "중급",
+    category: ["액세서리", "목걸이"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
+    color: true,
+    enhancement_options: {
+      0: [
+        { stat_name: "방어력", stat_value: 50 },
+        { stat_name: "힘", stat_value: 10 },
+        { stat_name: "민첩", stat_value: 10 },
+        { stat_name: "지능", stat_value: 10 },
+        { stat_name: "의지", stat_value: 10 },
+      ],
+    },
+  },
+  {
     name: "하얀 고양이 목걸이",
     restrictions: ["60 레벨 이상"],
     quality: 2,
