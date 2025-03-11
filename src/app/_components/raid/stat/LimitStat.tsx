@@ -6,7 +6,7 @@ import { useCharacterStore } from "@/app/_store/characterStore";
 const LimitStat = (props: {
   selectedBoss: MonstersType;
   stat_name: string;
-  stat_value: string;
+  stat_value: string | number;
   characterName: string;
 }) => {
   const selectedBoss = props.selectedBoss;
@@ -32,8 +32,8 @@ const LimitStat = (props: {
     selectedBoss,
     "상한",
     statName,
-    statValue,
-    limitValue,
+    statValue?.toString(),
+    limitValue?.toString(),
   );
 
   return (
