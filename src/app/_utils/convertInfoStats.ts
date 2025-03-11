@@ -37,16 +37,23 @@ export const convertInfoStat = (item: NewEquipmentType) => {
     level,
   } = getItemInfoOptions(item);
 
+  const before = {
+    beforePrefixEnchantName: existingPrefixEnchant.name,
+    beforeSuffixEnchantName: existingSuffixEnchant.name,
+    beforeInfusionName: infusion_name,
+    beforeInfusionValue: infusion_value,
+  };
+
   const { gradeMatch, itemName } = convertItemNameBySlot(
-    item.item_equipment_slot_name,
     item.item_name,
+    item.item_equipment_slot_name,
   );
 
   const item_level = level || gradeMatch;
   const gName = gradeMatch ? `${gradeMatch} ${itemName}` : itemName;
 
   const baseItem = itemInfoMap?.get(gName);
-  const rating = baseItem?.rating || "일반";
+  const rating = baseItem?.rating || null;
 
   const levelNumber = convertLevel(item_level);
 
@@ -54,12 +61,14 @@ export const convertInfoStat = (item: NewEquipmentType) => {
   // 아이템 제작에서는 이 옵션을 보여주면 됨.
   const itemOptions = baseItem?.enhancement_options?.[levelNumber] ?? null;
 
-  const itemQuality = baseItem?.quality || 2;
+  // 퀄리티로인한 스탯
+  const quality = 5;
+  // const quality = baseItem?.quality || 2;
   const qualityStats = baseItem?.quality_stats || [];
 
   // 와드네의 경우 무기의 경우 무기로 이름을 바꿔줘야함
   const calculatedQualityStats =
-    getQualityStats(itemQuality, itemOptions, qualityStats) || [];
+    getQualityStats(quality, itemOptions, qualityStats) || [];
 
   const prefix_enchant_value = existingPrefixEnchant.stat_value || [];
   const suffifix_enchant_value = existingSuffixEnchant.stat_value || [];
@@ -77,7 +86,7 @@ export const convertInfoStat = (item: NewEquipmentType) => {
     }) || [];
 
   // 생명력과 최대 생명력 하나로 합쳐야함
-  const mergedStats = mergeStats([
+  const mergedStatsOne = mergeStats([
     ...calculatedQualityStats,
     ...prefix_enchant_value,
     ...suffifix_enchant_value,
@@ -87,5 +96,16 @@ export const convertInfoStat = (item: NewEquipmentType) => {
     .filter((statName) => filterData.includes(statName.stat_name))
     .filter((stat) => stat.stat_value.toString() !== "0");
 
-  return { mergedStats, rating, quality: itemQuality };
+  const attackPower = mergedStatsOne?.find(
+    (stat) => stat.stat_name === "공격력",
+  )?.stat_value;
+
+  const mergedStats = mergedStatsOne?.map((stat) => {
+    if (stat.stat_name === "마법공격력") {
+      return { ...stat, stat_value: attackPower || stat?.stat_value };
+    }
+    return { ...stat };
+  });
+
+  return { mergedStats, rating, quality, before };
 };

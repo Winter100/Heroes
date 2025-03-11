@@ -17,8 +17,8 @@ export const sortCharacters = (
     const valueA = statA ? statA.stat_value : "0";
     const valueB = statB ? statB.stat_value : "0";
 
-    const numA = parseFloat(valueA);
-    const numB = parseFloat(valueB);
+    const numA = parseFloat(valueA?.toString());
+    const numB = parseFloat(valueB?.toString());
 
     if (Number.isNaN(numA) || Number.isNaN(numB)) {
       const statA = a.name;

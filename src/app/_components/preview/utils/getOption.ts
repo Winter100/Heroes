@@ -11,6 +11,10 @@ export const getOption = <T>(
   preset1Key: keyof ItemOption,
   preset2Key: keyof ItemOption,
 ): T | undefined => {
-  const presetNo = option[presetNoKey];
-  return presetNo === 1 ? option[preset1Key] : option[preset2Key];
+  try {
+    const presetNo = option[presetNoKey];
+    return presetNo === 1 ? option[preset1Key] : option[preset2Key];
+  } catch (e) {
+    console.log("q", e);
+  }
 };
