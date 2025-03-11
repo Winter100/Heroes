@@ -1,12 +1,7 @@
 import { NewTuning_stat } from "@/app/_type/equipmentType";
+import { getImageByName } from "@/app/_utils/getImageByName";
 
 export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
-  // const grindingItems = items.filter((item) => item.item_option.tuning_stat);
-
-  // const ingredientItems = grindingItems.map(
-  //   (item) => item.item_option.tuning_stat,
-  // );
-
   const t = items?.map((stat) => {
     return stat?.map((s) => {
       return {
@@ -41,7 +36,8 @@ export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
     .map((name) => ({
       name,
       value: materialTotals[name],
-      src: `/images/items/ingredient/${name}.png`,
+      src: getImageByName(name),
+      // src: `/images/items/ingredient/${name}.png`,
     }))
     .sort((a, b) => a.name.localeCompare(b.name, "ko"));
 

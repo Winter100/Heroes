@@ -3,15 +3,15 @@ import MaterialTooltip from "./MaterialTooltip";
 import { memo } from "react";
 
 interface ItemTooltipByTypeProps {
-  category: string;
   itemName: string;
+  category: string;
 }
 
 const ItemTooltipByType = memo(
-  ({ itemName, category }: ItemTooltipByTypeProps) => {
+  ({ itemName, category, ...props }: ItemTooltipByTypeProps) => {
     const RenderComponent = category === "장비" ? ItemTooltip : MaterialTooltip;
 
-    return <RenderComponent key={itemName} itemName={itemName} />;
+    return <RenderComponent key={itemName} itemName={itemName} {...props} />;
   },
 );
 

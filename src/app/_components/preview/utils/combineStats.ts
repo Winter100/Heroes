@@ -6,7 +6,7 @@ export const combineStats = (data: Item[]): CombinedStats => {
   data?.forEach((item) => {
     item?.stat_value?.forEach((stat) => {
       const name = stat.stat_name;
-      const value = parseFloat(stat.stat_value);
+      const value = parseFloat(stat?.stat_value?.toString());
 
       if (!combinedStats[name]) {
         combinedStats[name] = 0;

@@ -12,7 +12,7 @@ const GrindingSummaryDialog = () => {
         연마
       </Button>
       <BasicDialog
-        className="h-96 overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-[750px] md:p-6 md:pb-4 lg:h-[1000px]"
+        className="max-h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 md:max-h-[1000px] md:p-6 md:pb-4"
         isOpen={isOpen}
         onClose={onClose}
         size="1000px"

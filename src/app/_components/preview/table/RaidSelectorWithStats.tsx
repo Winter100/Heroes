@@ -73,24 +73,24 @@ const RaidSelectorWithStats = () => {
                       limitCalculator(
                         boss,
                         raidString.entry,
-                        item.stat_name,
-                        item.stat_value,
-                        limitValue,
+                        item?.stat_name,
+                        item?.stat_value.toString(),
+                        limitValue?.toString(),
                       ) !== null
                         ? limitCalculator(
                             boss,
                             raidString.entry,
                             item.stat_name,
-                            item.stat_value,
-                            limitValue,
+                            item.stat_value.toString(),
+                            limitValue?.toString(),
                           )! > 0
                           ? "text-green-300"
                           : limitCalculator(
                                 boss,
                                 raidString.entry,
                                 item.stat_name,
-                                item.stat_value,
-                                limitValue,
+                                item.stat_value.toString(),
+                                limitValue?.toString(),
                               )! < 0
                             ? "text-red-300"
                             : ""
@@ -101,15 +101,15 @@ const RaidSelectorWithStats = () => {
                       boss,
                       raidString.entry,
                       item.stat_name,
-                      item.stat_value,
-                      limitValue,
+                      item.stat_value?.toString(),
+                      limitValue?.toString(),
                     )
                       ? limitCalculator(
                           boss,
                           raidString.entry,
                           item.stat_name,
-                          item.stat_value,
-                          limitValue,
+                          item.stat_value?.toString(),
+                          limitValue?.toString(),
                         )
                       : ""}
                   </p>

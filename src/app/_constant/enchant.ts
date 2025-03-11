@@ -922,7 +922,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "야망",
     description: "",
-    drop_item_list: [],
+    drop_item_list: ["흘러간 기억"],
     stat_value: [
       { stat_name: "공격력", stat_value: "752" },
       { stat_name: "마법공격력", stat_value: "752" },
@@ -1113,7 +1113,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: "9",
     name: "자스민",
     description: "",
-    drop_item_list: [],
+    drop_item_list: ["흘러간 기억"],
     stat_value: [
       { stat_name: "공격력", stat_value: "140" },
       { stat_name: "마법공격력", stat_value: "140" },

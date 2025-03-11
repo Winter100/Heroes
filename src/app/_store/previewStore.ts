@@ -1,20 +1,30 @@
 import { create } from "zustand";
-import { PreviewSelectedType, PriceData } from "../_type/previewType";
-import { Stat } from "../_type/characterType";
-import { NewEquipmentType } from "../_type/equipmentType";
+import { PreviewSelectedType, PriceData, Stat } from "../_type/previewType";
+
+import {
+  ItemInfoQuipmentProps,
+  NewEquipmentType,
+} from "../_type/equipmentType";
+import { convertInfoStat } from "../_utils/convertInfoStats";
+import { splitStringAndNumber } from "../_components/preview/utils/splitStringAndNumber";
+import { getItemInfoOptions } from "../_components/iteminfo/util/getItemInfoOptions";
 
 type State = {
+  info: ItemInfoQuipmentProps[];
+
   characterName: string;
   afterStats: PreviewSelectedType[];
   beforeStats: PreviewSelectedType[];
   totalPriceItem: PriceData[];
   previewAllStats: Stat[];
 
-  items: NewEquipmentType[];
-  beforeItems: NewEquipmentType[];
+  // items: NewEquipmentType[];
+  beforeItems: ItemInfoQuipmentProps[];
 };
 
 type Action = {
+  setInfo: (items: NewEquipmentType[]) => void;
+
   setAfterStats: (value: PreviewSelectedType) => void;
   setBeforeStats: (value: PreviewSelectedType) => void;
   setCharacterName: (name: string) => void;
@@ -22,7 +32,7 @@ type Action = {
   setTotalPrice: (price: PriceData) => void;
   setPreviewAllStats: (value: Stat[]) => void;
 
-  setItems: (value: NewEquipmentType[]) => void;
+  setItems: (value: ItemInfoQuipmentProps[]) => void;
   setIncreaseStat: (slot: string, statName: string) => void;
   setDecreaseStat: (slot: string, statName: string) => void;
   setMin: (slot: string, statName: string) => void;
@@ -30,17 +40,84 @@ type Action = {
   setLimit1Zero: (slot: string) => void;
   setLimit2Zero: (slot: string) => void;
   setProgeress: (slot: string, statName: string, value: number) => void;
+  setChangeEnchant: (
+    slot: string,
+    enchant: string,
+    upgreadeType: string,
+  ) => void;
 };
 
 export const usePreviewStore = create<State & Action>((set) => {
   return {
+    info: [],
     characterName: "",
     afterStats: [],
     beforeStats: [],
     totalPriceItem: [],
     previewAllStats: [],
-    items: [],
+    // items: [],
     beforeItems: [],
+    setChangeEnchant: (slot, enchant, upgreadeType) => {
+      set((state) => {
+        const newItem = state.info.map((item) => {
+          const {
+            used_prefix_enchant_number,
+            used_suffix_enchant_number,
+            used_infusion_number,
+          } = getItemInfoOptions(item);
+          if (item.item_equipment_slot_name === slot) {
+            if (upgreadeType === "prefix") {
+              if (used_prefix_enchant_number === 1) {
+                item.item_option.prefix_enchant_preset_1 = enchant;
+              } else {
+                item.item_option.prefix_enchant_preset_2 = enchant;
+              }
+            } else if (upgreadeType === "suffix") {
+              if (used_suffix_enchant_number === 1) {
+                item.item_option.suffix_enchant_preset_1 = enchant;
+              } else {
+                item.item_option.suffix_enchant_preset_2 = enchant;
+              }
+            } else if (upgreadeType === "infusions") {
+              const { name, level } = splitStringAndNumber(enchant);
+
+              if (used_infusion_number === 1) {
+                item.item_option.power_infusion_preset_1 = {
+                  stat_name: name,
+                  stat_value: level.toString(),
+                };
+              } else {
+                item.item_option.power_infusion_preset_2 = {
+                  stat_name: name,
+                  stat_value: level.toString(),
+                };
+                item.item_option.power_infusion_use_preset_no = 2;
+              }
+            }
+          }
+
+          return { ...item };
+        });
+
+        const newItems = newItem.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return { ...item, mergedStats, rating, quality };
+        });
+
+        return { info: newItems };
+      });
+    },
+    setInfo: (items) => {
+      set(() => {
+        const newItems = items.map((item) => {
+          const { mergedStats, quality, rating, before } =
+            convertInfoStat(item);
+          return { ...item, mergedStats, rating, quality, before };
+        });
+
+        return { info: newItems, beforeItems: newItems };
+      });
+    },
     setCharacterName: (value) => {
       set(() => {
         return { characterName: value };
@@ -71,20 +148,25 @@ export const usePreviewStore = create<State & Action>((set) => {
     setBeforeStats: (value) => {
       set((state) => {
         const beforeStats = [...state.beforeStats];
+
         const existsInBeforeStats = beforeStats.some(
           (stat) =>
             stat.slot === value.slot &&
             stat.upgreadeType === value.upgreadeType,
         );
+
         if (existsInBeforeStats) {
           return {
-            beforeStats: beforeStats.map((stat) =>
-              stat.slot === value.slot &&
-              stat.upgreadeType === value.upgreadeType
-                ? value
-                : stat,
-            ),
+            beforeStats: [...beforeStats],
           };
+          // return {
+          //   beforeStats: beforeStats.map((stat) =>
+          //     stat.slot === value.slot &&
+          //     stat.upgreadeType === value.upgreadeType
+          //       ? stat
+          //       : stat,
+          //   ),
+          // };
         } else {
           return { beforeStats: [...beforeStats, value] };
         }
@@ -99,7 +181,7 @@ export const usePreviewStore = create<State & Action>((set) => {
           totalPriceItem: [],
           previewAllStats: [],
           StatDifference: [],
-          items: [],
+          info: [],
           beforeItems: [],
         };
       });
@@ -135,13 +217,14 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setItems: (value) => {
       set(() => {
+        // return { info: value };
         return { items: value, beforeItems: value };
       });
     },
 
     setIncreaseStat: (slot, statName) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -171,7 +254,12 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return { ...item, mergedStats, rating, quality };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -180,7 +268,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return { stat_name: stat.stat_name, stat_value: stat.stat_value };
@@ -225,7 +313,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -234,7 +322,7 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setDecreaseStat: (slot, statName) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -265,7 +353,12 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return { ...item, mergedStats, rating, quality };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -274,7 +367,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -321,7 +414,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -329,7 +422,7 @@ export const usePreviewStore = create<State & Action>((set) => {
     },
     setMax: (slot, statName) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -357,7 +450,17 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return {
+            ...item,
+            mergedStats,
+            rating,
+            quality,
+          };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -366,7 +469,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -413,7 +516,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -421,7 +524,7 @@ export const usePreviewStore = create<State & Action>((set) => {
     },
     setMin: (slot, statName) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -449,7 +552,17 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return {
+            ...item,
+            mergedStats,
+            rating,
+            quality,
+          };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -458,7 +571,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -505,7 +618,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -514,7 +627,7 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setProgeress: (slot, statName, value) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -542,7 +655,17 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return {
+            ...item,
+            mergedStats,
+            rating,
+            quality,
+          };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -551,7 +674,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -598,7 +721,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -607,7 +730,7 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setLimit1Zero: (slot) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -635,7 +758,17 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return {
+            ...item,
+            mergedStats,
+            rating,
+            quality,
+          };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -644,7 +777,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -691,7 +824,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -700,7 +833,7 @@ export const usePreviewStore = create<State & Action>((set) => {
 
     setLimit2Zero: (slot) => {
       set((state) => {
-        const updatedItems = state.items.map((item) => {
+        const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
@@ -728,7 +861,17 @@ export const usePreviewStore = create<State & Action>((set) => {
           return item;
         });
 
-        const beforeStat = updatedItems
+        const newItems = updatedItems.map((item) => {
+          const { mergedStats, quality, rating } = convertInfoStat(item);
+          return {
+            ...item,
+            mergedStats,
+            rating,
+            quality,
+          };
+        });
+
+        const beforeStat = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -737,7 +880,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             };
           });
 
-        const afterStats = updatedItems
+        const afterStats = newItems
           .find((item) => item.item_equipment_slot_name === slot)
           ?.item_option.tuning_stat?.map((stat) => {
             return {
@@ -784,7 +927,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         }
 
         return {
-          items: updatedItems,
+          info: newItems,
           beforeStats: [...be],
           afterStats: [...af],
         };
@@ -792,784 +935,3 @@ export const usePreviewStore = create<State & Action>((set) => {
     },
   };
 });
-// import { create } from "zustand";
-// import { PreviewSelectedType, PriceData } from "../_type/previewType";
-// import { Stat } from "../_type/characterType";
-// import { NewEquipmentType } from "../_type/equipmentType";
-
-// type State = {
-//   characterName: string;
-//   afterStats: PreviewSelectedType[];
-//   beforeStats: PreviewSelectedType[];
-//   totalPriceItem: PriceData[];
-//   previewAllStats: Stat[];
-
-//   items: NewEquipmentType[];
-//   beforeItems: NewEquipmentType[];
-// };
-
-// type Action = {
-//   setAfterStats: (value: PreviewSelectedType) => void;
-//   setBeforeStats: (value: PreviewSelectedType) => void;
-//   setCharacterName: (name: string) => void;
-//   reset: () => void;
-//   setTotalPrice: (price: PriceData) => void;
-//   setPreviewAllStats: (value: Stat[]) => void;
-
-//   setItems: (value: NewEquipmentType[]) => void;
-//   setIncreaseStat: (slot: string, statName: string) => void;
-//   setDecreaseStat: (slot: string, statName: string) => void;
-//   setMin: (slot: string, statName: string) => void;
-//   setMax: (slot: string, statName: string) => void;
-//   setLimit1Zero: (slot: string) => void;
-//   setLimit2Zero: (slot: string) => void;
-//   setProgeress: (slot: string, statName: string, value: number) => void;
-// };
-
-// export const usePreviewStore = create<State & Action>((set) => {
-//   return {
-//     characterName: "",
-//     afterStats: [],
-//     beforeStats: [],
-//     totalPriceItem: [],
-//     previewAllStats: [],
-//     items: [],
-//     beforeItems: [],
-//     setCharacterName: (value) => {
-//       set(() => {
-//         return { characterName: value };
-//       });
-//     },
-//     setAfterStats: (value) => {
-//       set((state) => {
-//         const afterStats = [...state.afterStats];
-//         const existsInafterStats = afterStats.some(
-//           (stat) =>
-//             stat.slot === value.slot && stat.previewName === value.previewName,
-//         );
-//         if (existsInafterStats) {
-//           return {
-//             afterStats: afterStats.map((stat) =>
-//               stat.slot === value.slot && stat.previewName === value.previewName
-//                 ? value
-//                 : stat,
-//             ),
-//           };
-//         } else {
-//           return { afterStats: [...afterStats, value] };
-//         }
-//       });
-//     },
-//     setBeforeStats: (value) => {
-//       set((state) => {
-//         const beforeStats = [...state.beforeStats];
-//         const existsInBeforeStats = beforeStats.some(
-//           (stat) =>
-//             stat.slot === value.slot && stat.previewName === value.previewName,
-//         );
-//         if (existsInBeforeStats) {
-//           return {
-//             beforeStats: beforeStats.map((stat) =>
-//               stat.slot === value.slot && stat.previewName === value.previewName
-//                 ? value
-//                 : stat,
-//             ),
-//           };
-//         } else {
-//           return { beforeStats: [...beforeStats, value] };
-//         }
-//       });
-//     },
-//     reset: () => {
-//       set(() => {
-//         return {
-//           characterName: "",
-//           afterStats: [],
-//           beforeStats: [],
-//           totalPriceItem: [],
-//           previewAllStats: [],
-//           StatDifference: [],
-//           items: [],
-//           beforeItems: [],
-//         };
-//       });
-//     },
-//     setTotalPrice: (value) => {
-//       set((state) => {
-//         const total = [...state.totalPriceItem];
-//         const existsInTotal = total.some(
-//           (item) =>
-//             item.slot === value.slot && item.previewName === value.previewName,
-//         );
-
-//         if (existsInTotal) {
-//           return {
-//             totalPriceItem: total.map((item) =>
-//               item.slot === value.slot && item.previewName === value.previewName
-//                 ? value
-//                 : item,
-//             ),
-//           };
-//         } else {
-//           return { totalPriceItem: [...total, value] };
-//         }
-//       });
-//     },
-//     setPreviewAllStats: (value) => {
-//       set(() => {
-//         return { previewAllStats: value };
-//       });
-//     },
-
-//     setItems: (value) => {
-//       set(() => {
-//         return { items: value, beforeItems: value };
-//       });
-//     },
-
-//     setIncreaseStat: (slot, statName) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === statName) {
-//                     const newStatValue = Math.min(
-//                       Number(stat.stat_value) + Number(stat.stat_one_value),
-//                       Number(stat.stat_max_value),
-//                     ).toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return { stat_name: stat.stat_name, stat_value: stat.stat_value };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-
-//     setDecreaseStat: (slot, statName) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === statName) {
-//                     const newStatValue = Math.max(
-//                       Number(stat.stat_min_value),
-//                       Number(stat.stat_value) - Number(stat.stat_one_value),
-//                     ).toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_value,
-//             };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-//     setMax: (slot, statName) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === statName) {
-//                     const newStatValue = stat.stat_max_value.toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_value,
-//             };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-//     setMin: (slot, statName) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === statName) {
-//                     const newStatValue = stat.stat_min_value.toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_value,
-//             };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-
-//     setProgeress: (slot, statName, value) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === statName) {
-//                     const newStatValue = value.toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_value,
-//             };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-
-//     setLimit1Zero: (slot) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === "해제") {
-//                     const newStatValue = stat.stat_min_value.toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_value,
-//             };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-
-//     setLimit2Zero: (slot) => {
-//       set((state) => {
-//         const updatedItems = state.items.map((item) => {
-//           if (item.item_equipment_slot_name === slot) {
-//             if (item.item_option?.tuning_stat) {
-//               const updatedTuningStat = item.item_option.tuning_stat.map(
-//                 (stat) => {
-//                   if (stat.stat_name === "해제 2") {
-//                     const newStatValue = stat.stat_min_value.toString();
-//                     return {
-//                       ...stat,
-//                       stat_value: newStatValue,
-//                     };
-//                   }
-//                   return stat;
-//                 },
-//               );
-
-//               return {
-//                 ...item,
-//                 item_option: {
-//                   ...item.item_option,
-//                   tuning_stat: updatedTuningStat,
-//                 },
-//               };
-//             }
-//           }
-//           return item;
-//         });
-
-//         const beforeStat = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_min_value,
-//             };
-//           });
-
-//         const afterStats = updatedItems
-//           .find((item) => item.item_equipment_slot_name === slot)
-//           ?.item_option.tuning_stat?.map((stat) => {
-//             return {
-//               stat_name: stat.stat_name,
-//               stat_value: stat.stat_value,
-//             };
-//           });
-
-//         const before = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: beforeStat ?? [],
-//         };
-//         const after = {
-//           previewName: "grinding",
-//           slot: slot,
-//           stat_name: slot,
-//           stat_value: afterStats ?? [],
-//         };
-
-//         const be = [...state.beforeStats];
-//         const beIndex = be.findIndex(
-//           (item) =>
-//             item.previewName === before.previewName &&
-//             item.slot === before.slot,
-//         );
-//         if (beIndex !== -1) {
-//           be[beIndex] = before;
-//         } else {
-//           be.push(before);
-//         }
-//         const af = [...state.afterStats];
-//         const afIndex = af.findIndex(
-//           (item) =>
-//             item.previewName === after.previewName && item.slot === after.slot,
-//         );
-
-//         if (afIndex !== -1) {
-//           af[afIndex] = after;
-//         } else {
-//           af.push(after);
-//         }
-
-//         return {
-//           items: updatedItems,
-//           beforeStats: [...be],
-//           afterStats: [...af],
-//         };
-//       });
-//     },
-//   };
-// });

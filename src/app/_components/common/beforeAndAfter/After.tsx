@@ -1,16 +1,18 @@
-import { ComponentProps } from "react";
+import { ComponentProps, memo } from "react";
 
 interface AfterProps extends ComponentProps<"div"> {}
 
-const After = ({ children, className, ...props }: AfterProps) => {
+const After = memo(({ children, className, ...props }: AfterProps) => {
   return (
     <div
-      className={`flex w-full items-center justify-center ${className} `}
+      className={`flex w-full items-center justify-center text-[11px] sm:text-xs ${className} `}
       {...props}
     >
       {children}
     </div>
   );
-};
+});
 
 export default After;
+
+After.displayName = "After";

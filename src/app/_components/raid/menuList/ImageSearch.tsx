@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
-import Modal from "react-modal";
 import { CiImageOn } from "react-icons/ci";
 
-import Button from "@/app/_components/common/Button";
 import { imageToName } from "@/app/_utils/imageToName";
 import { useCharacter } from "@/app/_hooks/useCharacter/useCharacter";
 import { useCharacterStore } from "@/app/_store/characterStore";
@@ -14,6 +12,7 @@ import { GoSearch } from "react-icons/go";
 import Loading from "@/app/_components/common/Loading";
 import { toast } from "react-toastify";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import Button from "../../common/Button";
 
 function ImageSearch() {
   const characters = useCharacterStore((state) => state.characters);
@@ -184,8 +183,6 @@ function ImageSearch() {
                       </>
                     )}
                   </div>
-
-                  <hr />
 
                   <>
                     <div className="flex flex-col items-center justify-center gap-1">

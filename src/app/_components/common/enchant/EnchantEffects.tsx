@@ -8,10 +8,12 @@ interface EnchantDescriptionProps extends ComponentProps<"div"> {
     stat_value: string;
   }[];
   effectColor?: string;
+  isItem?: string[];
 }
 const EnchantEffects = ({
   enchantEffects,
   className,
+  isItem = [],
   effectColor,
 }: EnchantDescriptionProps) => {
   return (
@@ -23,7 +25,10 @@ const EnchantEffects = ({
     >
       {enchantEffects?.map((option) => (
         <div
-          className={"flex items-center gap-1 px-1"}
+          className={clsx(
+            "flex items-center gap-1 px-1",
+            isItem.includes(option.stat_name) && "text-[rgb(145,175,212)]",
+          )}
           key={option.stat_name + option.stat_value}
         >
           <span className="text-gray-600/50">•</span>

@@ -14,6 +14,7 @@ import DetailHeader from "../detail/DetailHeader";
 import DetailItem from "../detail/DetailItem";
 import DetailCashHeader from "../detail/DetailCashHeader";
 import DetailCashItem from "../detail/DetailCashItem";
+import ErrorDisplay from "../../common/error/ErrorDisplay";
 
 const CharacterSkillAndEquipment = () => {
   const stats = useDetailStore((state) => state.stats);
@@ -22,11 +23,18 @@ const CharacterSkillAndEquipment = () => {
   const name =
     useCharacterStore((state) => state.selectedCharacter?.name) ?? "";
 
-  const { data: ocid, isLoading: ocidLoading } = useOcid(name);
-  const { bag, cash, isLoading } = useEquipment(ocid ?? "");
+  const { data: ocid, isLoading: ocidLoading, error } = useOcid(name);
+  const {
+    bag,
+    cash,
+    isLoading,
+    error: equipmentError,
+  } = useEquipment(ocid ?? "");
   const skill = useCharacterStore((state) => state.selectedCharacter?.skill);
 
   if (ocidLoading || isLoading) return <Loading size="10" />;
+  if (error || equipmentError)
+    return <ErrorDisplay content={`${name || ""} 조회에 실패했습니다.`} />;
 
   return (
     <>

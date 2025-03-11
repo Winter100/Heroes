@@ -1,5 +1,5 @@
+import { Stat } from "@/app/_type/previewType";
 import { ComponentProps } from "react";
-import { Stat } from "@/app/_type/characterType";
 
 interface StatsProps extends ComponentProps<"div"> {
   stats: Stat[];

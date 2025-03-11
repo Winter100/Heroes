@@ -1,11 +1,10 @@
 "use client";
+import { Stat } from "@/app/_type/previewType";
 import Column from "../layout/Column";
 import Row from "../layout/Row";
 
 import PreviewStatsBox from "./components/PreviewStatsBox";
 import { IoMdArrowForward } from "react-icons/io";
-
-import { Stat } from "@/app/_type/previewType";
 
 const PreviewStats = ({
   name,

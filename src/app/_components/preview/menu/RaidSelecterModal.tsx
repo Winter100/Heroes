@@ -19,9 +19,9 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
 
   return (
     <Modal open={open} setOpen={setOpen}>
-      <Modal.Open className="h-full w-full">
+      <Modal.Open className="flex w-full flex-row items-center">
         <Button
-          className="flex h-full w-full items-center justify-center text-xs hover:text-white"
+          className="mx-auto flex h-full items-center justify-center text-xs hover:text-white"
           onClick={() => setOpen((pre) => !pre)}
         >
           <div className="flex w-full flex-col items-center justify-center">
