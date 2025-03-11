@@ -1,5 +1,5 @@
 import { statsKeyWord } from "@/app/_constant/stats";
-import { Stat } from "@/app/_type/characterType";
+import { Stat } from "@/app/_type/previewType";
 
 export const translateAndUnifyStats = (stats: Stat[]) =>
   statsKeyWord.map((keyword) => {

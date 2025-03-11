@@ -1,4 +1,3 @@
-"use client";
 import {
   prefix_enchant_options,
   suffix_enchant_options,

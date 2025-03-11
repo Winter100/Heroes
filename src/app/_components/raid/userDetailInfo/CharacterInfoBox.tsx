@@ -1,6 +1,6 @@
 "use client";
 
-import { Stat } from "@/app/_type/characterType";
+import { Stat } from "@/app/_type/previewType";
 import { ComponentProps } from "react";
 
 interface CharacterInfoBoxProps extends ComponentProps<"div"> {

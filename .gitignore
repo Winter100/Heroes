@@ -43,5 +43,5 @@ dummyEnchantList.ts
 
 src/app/_components/testComponents/*
 src/app/(route)/(main)/testpage/*
+src/app/_components/character/*
 delete/*
-/src/app/_components/character/*

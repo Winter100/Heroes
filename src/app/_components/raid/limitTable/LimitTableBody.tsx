@@ -66,7 +66,7 @@ const LimitTableBody = () => {
             const name = c?.info?.find(
               (s) => s?.stat_name === "이름",
             )?.stat_value;
-            selectedHandler(name ?? "");
+            selectedHandler(name?.toString() ?? "");
           }}
           draggable
           onDragStart={(e) => dragStart(e, i)}
@@ -77,8 +77,10 @@ const LimitTableBody = () => {
         >
           {/* 체크박스 */}
           <td className="flex h-full w-12 items-center justify-center">
-            <div onClick={(e) => onCheck(e, c?.name ?? "")}>
-              <CheckBox checked={checkedList.includes(c?.name ?? "")} />
+            <div onClick={(e) => onCheck(e, c?.name?.toString() ?? "")}>
+              <CheckBox
+                checked={checkedList.includes(c?.name?.toString() ?? "")}
+              />
             </div>
           </td>
           {c?.info?.map((i) => (
@@ -90,7 +92,7 @@ const LimitTableBody = () => {
                 <span>{i?.stat_value}</span>
                 {selectedBoss && (
                   <LimitStat
-                    characterName={c?.name ?? ""}
+                    characterName={c?.name?.toString() ?? ""}
                     selectedBoss={selectedBoss}
                     {...i}
                   />

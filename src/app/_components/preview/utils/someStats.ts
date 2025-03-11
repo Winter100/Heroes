@@ -1,18 +1,18 @@
 import { Stat } from "@/app/_type/previewType";
 
-const mergeStats = (stats: Stat[]): Stat[] => {
-  const mergedStats: { [key: string]: number } = {};
+export const mergeStats = (stats: Stat[]): Stat[] => {
+  const mergedStats: Record<string, number> = {};
 
   for (const stat of stats) {
     const statName = stat.stat_name === "해제 2" ? "해제" : stat.stat_name;
-    const statValue = parseInt(stat.stat_value || "0");
+    const statValue = Number(stat.stat_value) || 0;
 
     mergedStats[statName] = (mergedStats[statName] || 0) + statValue;
   }
 
-  return Object.entries(mergedStats).map(([name, value]) => ({
-    stat_name: name,
-    stat_value: value.toString(),
+  return Object.entries(mergedStats).map(([stat_name, stat_value]) => ({
+    stat_name,
+    stat_value: stat_value.toString(),
   }));
 };
 
@@ -32,10 +32,10 @@ export const someStats = (
       (item) => item.stat_name === dataItem.stat_name,
     );
 
-    let statValue = parseInt(dataItem.stat_value || "0");
+    let statValue = parseInt(String(dataItem.stat_value) || "0");
 
     if (beforeItem) {
-      statValue -= parseInt(beforeItem.stat_value || "0");
+      statValue -= parseInt(String(beforeItem.stat_value) || "0");
     }
 
     combinedStats.push({
@@ -51,8 +51,8 @@ export const someStats = (
 
     if (afterItem) {
       dataItem.stat_value = (
-        parseInt(dataItem?.stat_value ?? "") +
-        parseInt(afterItem.stat_value || "0")
+        parseInt(String(dataItem?.stat_value) ?? "") +
+        parseInt(String(afterItem.stat_value) || "0")
       ).toString();
     }
   }

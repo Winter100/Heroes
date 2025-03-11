@@ -1,3 +1,4 @@
+"use client";
 import Row from "../layout/Row";
 import Button from "../common/Button";
 import EnchantDropListFilterDialog from "../dialog/EnchantDropListFilterDialog";

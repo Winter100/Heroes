@@ -1,4 +1,5 @@
-import { Basic, Guild, MergedCharacter, Stat } from "@/app/_type/characterType";
+import { Basic, Guild, MergedCharacter } from "@/app/_type/characterType";
+import { Stat } from "@/app/_type/previewType";
 
 export const mergeCharacterData = (
   basic: Basic,

@@ -10,7 +10,7 @@ const InfoTooltip = memo(
           padding: "8px",
           borderRadius: "8px",
           backgroundColor: "rgb(20, 21, 23)",
-          zIndex: 20,
+          zIndex: 50,
         }}
         opacity={1}
         noArrow={true}

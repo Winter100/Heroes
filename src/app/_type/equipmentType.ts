@@ -1,3 +1,6 @@
+import { Item_Rating } from "./infoInfoType";
+import { Stat } from "./previewType";
+
 export interface Item_equipment {
   item_equipment: EquipmentType[];
 }
@@ -185,5 +188,17 @@ export interface EquipmentType {
       color_3: null;
       default_color_flag: null;
     };
+  };
+}
+
+export interface ItemInfoQuipmentProps extends NewEquipmentType {
+  mergedStats: Stat[];
+  rating: Item_Rating;
+  quality: number;
+  before: {
+    beforeInfusionName: string;
+    beforeInfusionValue: string;
+    beforePrefixEnchantName: string;
+    beforeSuffixEnchantName: string;
   };
 }

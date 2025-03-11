@@ -11,10 +11,10 @@ export const calculateStatsDifference = (
       (item) => item.stat_name === dataItem.stat_name,
     );
 
-    let statValue = parseInt(dataItem.stat_value);
+    let statValue = parseInt(dataItem.stat_value.toString());
 
     if (combinedItem) {
-      statValue -= parseInt(combinedItem.stat_value);
+      statValue -= parseInt(combinedItem.stat_value.toString());
     }
 
     resultStats.push({

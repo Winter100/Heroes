@@ -12,9 +12,6 @@ export const useEquipment = (ocid: string) => {
     enabled: !!ocid,
     queryKey: [ocid, "장비"],
     queryFn: () => getEquipment(ocid ?? ""),
-    gcTime: 1000 * 5,
-    staleTime: 1000 * 5,
-    refetchOnWindowFocus: false,
   });
 
   const items = data?.item_equipment;
@@ -30,13 +27,13 @@ export const useEquipment = (ocid: string) => {
     };
   });
 
-  const setItems = usePreviewStore((state) => state.setItems);
+  const setInfo = usePreviewStore((state) => state.setInfo);
 
   useEffect(() => {
     if (bag) {
-      setItems(bag ?? []);
+      setInfo(bag ?? []);
     }
-  }, [bag, setItems]);
+  }, [bag, setInfo]);
 
   return { bag, cash, isLoading, data, error };
 };

@@ -11,9 +11,7 @@ export const useEnchantPriceList = () => {
   const { data, isLoading, isError } = useQuery<EnchantPriceType[]>({
     queryKey: ["enchantPriceList"],
     queryFn: () => getEnchantPrice(),
-    gcTime: 10 * 60 * 1000,
-    staleTime: 5 * 60 * 1000,
-    refetchOnWindowFocus: false,
+    staleTime: Infinity,
   });
 
   useEffect(() => {

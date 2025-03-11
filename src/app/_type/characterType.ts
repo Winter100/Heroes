@@ -1,3 +1,5 @@
+import { Stat } from "./previewType";
+
 export interface Basic {
   character_name: string;
   character_date_create: number | null;
@@ -20,11 +22,6 @@ export interface Basic {
     tail_point: number;
     object_point: number;
   };
-}
-
-export interface Stat {
-  stat_name: string;
-  stat_value: string;
 }
 
 export interface Guild {

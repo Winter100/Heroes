@@ -10,24 +10,24 @@ import { mergeStats } from "@/app/_utils/mergeStats";
 import { usePreviewStore } from "@/app/_store/previewStore";
 import { combineStats } from "@/app/_components/preview/utils/combineStats";
 import { someStats } from "@/app/_components/preview/utils/someStats";
-import { Stat } from "@/app/_type/previewType";
 import { calculateStatsDifference } from "@/app/_components/preview/utils/calculateStatsDifference";
+import { Stat } from "@/app/_type/previewType";
 
 export const useStats = () => {
   const searchParams = useSearchParams();
   const name = searchParams.get("name") ?? "";
-  const { data: ocid } = useOcid(name);
+  const { data: ocid } = useOcid();
 
   const { mergeAtkAndMatk, translatedStats } = mergeStats();
   const { data, isLoading, error } = useQuery({
     enabled: !!ocid,
     queryKey: [ocid, name, "스텟"],
     queryFn: () => getStats(ocid ?? ""),
-    refetchOnWindowFocus: false,
     select: (data) => {
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);
     },
+    staleTime: Infinity,
   });
 
   const afterStats = usePreviewStore((state) => state.afterStats);

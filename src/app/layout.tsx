@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     "마영전 세팅",
     "마영전 상한",
     "마영전 캐릭터",
+    "마영전 인챈트",
   ],
   description:
     "마비노기 영웅전(마영전) 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.",
@@ -70,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="kr" className="dark">
+    <html lang="ko" className="dark">
       <GoogleAnalytics />
 
       <body

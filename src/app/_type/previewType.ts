@@ -1,20 +1,15 @@
 import { EnchantPrice } from "./enchantType";
-import { NewEquipmentType } from "./equipmentType";
-
-export interface PreviewStatsType {
-  stat_name: string;
-  stat_value: string;
-}
+import { ItemInfoQuipmentProps, NewEquipmentType } from "./equipmentType";
 
 export interface PreviewSelectedType {
   slot: string;
   upgreadeType: string;
   name: string;
-  stat_value: PreviewStatsType[];
+  stat_value: Stat[];
 }
 
 export interface PrviewItemProps {
-  item: NewEquipmentType;
+  item: ItemInfoQuipmentProps;
   slot: string;
 }
 
@@ -71,6 +66,7 @@ export interface PreviewModalProps {
     name: string;
     level: string;
   };
+  preName?: string;
   slot: string;
   upgreadeType: string;
   usableItemList: {
@@ -93,7 +89,7 @@ export interface PriceData {
 
 export type Stat = {
   stat_name: string;
-  stat_value: string;
+  stat_value: string | number;
 };
 
 export type Item = {

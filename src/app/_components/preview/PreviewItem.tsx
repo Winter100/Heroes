@@ -1,112 +1,68 @@
 "use client";
 
 import BeforeAndAfter from "../common/beforeAndAfter/BeforeAndAfter";
-
 import Row from "../layout/Row";
-import {
-  prefix_enchant_name_list,
-  prefix_enchant_options,
-  suffix_enchant_name_list,
-  suffix_enchant_options,
-} from "@/app/_constant/enchant";
-
-import { getUsableItemEnchantList } from "./utils/getUsableItemEnchantList";
-import { preview_infusion } from "@/app/_constant/infusions";
-import {
-  beforeAndAfterStatsType,
-  PrviewItemProps,
-} from "@/app/_type/previewType";
-import PreviewModal from "./menu/PreviewModal";
-import { getUsableItemInfusionList } from "./utils/getUsableItemInfusionList";
-import { getOption } from "./utils/getOption";
-import { findMatchingItem } from "./utils/findMatchingItem";
-import ItemTitle from "../common/ItemTitle";
+import { PrviewItemProps } from "@/app/_type/previewType";
+import ItemTooltip from "../tooltip/ItemTooltip";
+import PreviewModal from "../preview/menu/PreviewModal";
+import { getItemInfoOptions } from "../iteminfo/util/getItemInfoOptions";
+import TooltipImage from "../common/tooltip/TooltipImage";
+import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
 import OneGrindingDialog from "../dialog/OneGrindingDialog";
+import { memo } from "react";
 
-const PreviewItem = ({ item, slot }: PrviewItemProps) => {
+const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
   const itemName = {
     name: item.item_name ?? "",
     level: item?.item_option?.enhancement_level ?? "",
   };
 
-  const usableInfusionList = getUsableItemInfusionList(preview_infusion, slot);
+  const {
+    usableInfusionList,
+    usablePrefixEnchantList,
+    usableSuffixEnchantList,
+    existingPrefixEnchant,
+    existingSuffixEnchant,
+    existingInfuion,
+  } = getItemInfoOptions(item);
 
-  const usablePrefixEnchantList = getUsableItemEnchantList({
-    enchantList: prefix_enchant_name_list,
-    optionsList: prefix_enchant_options,
-    slot: slot,
-  });
+  const {
+    beforeInfusionName,
+    beforeInfusionValue,
+    beforePrefixEnchantName,
+    beforeSuffixEnchantName,
+  } = item?.before;
 
-  const usableSuffixEnchantList = getUsableItemEnchantList({
-    enchantList: suffix_enchant_name_list,
-    optionsList: suffix_enchant_options,
-    slot: slot,
-  });
-
-  const existing_infusion_name = getOption<{ stat_name: string }>(
-    item.item_option,
-    "power_infusion_use_preset_no",
-    "power_infusion_preset_1",
-    "power_infusion_preset_2",
-  )?.stat_name;
-
-  const existing_infusion_value = getOption<{ stat_value: string }>(
-    item.item_option,
-    "power_infusion_use_preset_no",
-    "power_infusion_preset_1",
-    "power_infusion_preset_2",
-  )?.stat_value;
-
-  const existing_prefix_enchant_name = getOption<string>(
-    item.item_option,
-    "prefix_enchant_use_preset_no",
-    "prefix_enchant_preset_1",
-    "prefix_enchant_preset_2",
-  );
-
-  const existing_suffix_enchant_name = getOption<string>(
-    item.item_option,
-    "suffix_enchant_use_preset_no",
-    "suffix_enchant_preset_1",
-    "suffix_enchant_preset_2",
-  );
-
-  const existing_infusion = `${existing_infusion_name ?? ""} ${existing_infusion_value ?? ""}`;
-  const existingInfuion = {
-    upgreadeType: "infusions",
-    ...findMatchingItem(usableInfusionList, existing_infusion),
-  } as beforeAndAfterStatsType;
-
-  const existingPrefixEnchant = {
-    upgreadeType: "prefix",
-    ...findMatchingItem(
-      usablePrefixEnchantList,
-      existing_prefix_enchant_name ?? "",
-    ),
-  } as beforeAndAfterStatsType;
-
-  const existingSuffixEnchant = {
-    upgreadeType: "suffix",
-    ...findMatchingItem(
-      usableSuffixEnchantList,
-      existing_suffix_enchant_name ?? "",
-    ),
-  } as beforeAndAfterStatsType;
+  const src = getTooltipImageSrc(item.item_name, slot);
 
   return (
     <Row className="flex h-full w-full items-center gap-2 text-sm">
-      <BeforeAndAfter className="w-10 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
+      <BeforeAndAfter className="w-8 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
         {/* <BeforeAndAfter.Title>아이템 이름</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap text-xs sm:flex sm:w-28 sm:justify-center md:w-36 lg:w-40">
+          <BeforeAndAfter.Before className="flex items-center justify-center">
+            <TooltipImage
+              src={src}
+              itemName={item.item_name}
+              isRatingBorder={true}
+            />
+            <ItemTooltip
+              isItemInfo={true}
+              itemName={item.item_name}
+              {...item}
+            />
+          </BeforeAndAfter.Before>
+        </BeforeAndAfter.Content>
+      </BeforeAndAfter>
+      <BeforeAndAfter className="w-6">
+        {/* <BeforeAndAfter.Title>연마</BeforeAndAfter.Title> */}
+        <BeforeAndAfter.Content>
+          <BeforeAndAfter.Before className="flex items-center justify-center">
             {item.item_option.tuning_stat !== null ? (
-              <OneGrindingDialog item={item} />
-            ) : (
-              <ItemTitle
-                name={item.item_name}
-                level={item?.item_option?.enhancement_level ?? ""}
-              />
-            )}
+              <div className="flex items-center justify-center">
+                <OneGrindingDialog item={item} />
+              </div>
+            ) : null}
           </BeforeAndAfter.Before>
         </BeforeAndAfter.Content>
       </BeforeAndAfter>
@@ -115,12 +71,10 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>정령</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
-            {existingInfuion.name}
+            {beforeInfusionName + beforeInfusionValue}
           </BeforeAndAfter.Before>
 
-          <BeforeAndAfter.After
-          // className={`${usableInfusionList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
-          >
+          <BeforeAndAfter.After>
             {usableInfusionList?.length >= 1 && (
               <PreviewModal
                 itemName={itemName}
@@ -137,12 +91,10 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
       <BeforeAndAfter className="flex-1">
         {/* <BeforeAndAfter.Title>접두</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
-            {existingPrefixEnchant.name}
+          <BeforeAndAfter.Before className="flex items-center justify-center">
+            {beforePrefixEnchantName || ""}
           </BeforeAndAfter.Before>
-          <BeforeAndAfter.After
-          // className={`${usablePrefixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
-          >
+          <BeforeAndAfter.After>
             {usablePrefixEnchantList?.length >= 1 && (
               <PreviewModal
                 itemName={itemName}
@@ -159,12 +111,10 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
       <BeforeAndAfter className="flex-1">
         {/* <BeforeAndAfter.Title>접미</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
-            {existingSuffixEnchant.name}
+          <BeforeAndAfter.Before className="flex items-center justify-center">
+            {beforeSuffixEnchantName || ""}
           </BeforeAndAfter.Before>
-          <BeforeAndAfter.After
-          // className={`${usableSuffixEnchantList?.length >= 1 ? "border border-zinc-600" : ""} text-[9px] text-white sm:text-xs`}
-          >
+          <BeforeAndAfter.After>
             {usableSuffixEnchantList?.length >= 1 && (
               <PreviewModal
                 itemName={itemName}
@@ -179,6 +129,8 @@ const PreviewItem = ({ item, slot }: PrviewItemProps) => {
       </BeforeAndAfter>
     </Row>
   );
-};
+});
 
 export default PreviewItem;
+
+PreviewItem.displayName = "PreviewItem";

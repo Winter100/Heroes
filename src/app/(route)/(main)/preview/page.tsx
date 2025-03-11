@@ -1,7 +1,6 @@
 "use client";
 import { Suspense } from "react";
 import Loading from "@/app/_components/common/Loading";
-
 import BasicContainer from "@/app/_components/layout/BasicContainer";
 import PreviewLayout from "@/app/_components/preview/layout/PreviewLayout";
 import PreviewBody from "@/app/_components/preview/content/PreviewBody";

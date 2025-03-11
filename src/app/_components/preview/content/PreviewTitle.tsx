@@ -3,11 +3,15 @@ import BeforeAndAfter from "../../common/beforeAndAfter/BeforeAndAfter";
 
 const PreviewTitle = () => {
   return (
-    <Row className="mt-1 h-12 gap-2 border-b border-borderColor p-2">
+    <Row className="mt-1 h-12 gap-1 border-b border-borderColor sm:gap-2">
       <BeforeAndAfter className="w-10 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
         <BeforeAndAfter.Title className="overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
           아이템
         </BeforeAndAfter.Title>
+      </BeforeAndAfter>
+
+      <BeforeAndAfter className="w-5 sm:w-7">
+        <BeforeAndAfter.Title className=""></BeforeAndAfter.Title>
       </BeforeAndAfter>
 
       <BeforeAndAfter className="flex-1">
