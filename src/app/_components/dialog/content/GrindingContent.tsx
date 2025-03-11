@@ -3,14 +3,16 @@ import { usePreviewStore } from "@/app/_store/previewStore";
 import { useAbilityStore } from "@/app/_store/abilityStore";
 import { getMaterials } from "@/app/_components/preview/utils/getMaterials";
 import GrindingResult from "@/app/_components/preview/menu/GrindingResult";
+import ErrorDisplay from "../../common/error/ErrorDisplay";
 
 const GrindingContent = () => {
-  const items = usePreviewStore((state) => state.items);
+  const items = usePreviewStore((state) => state.info);
   const grindingItems = items.filter((item) => item.item_option.tuning_stat);
 
   const ingredientItems = grindingItems.map(
     (item) => item.item_option.tuning_stat,
   );
+  const ingredientItemsCount = ingredientItems.length;
 
   const ability = useAbilityStore((state) => state.ability);
 
@@ -28,6 +30,9 @@ const GrindingContent = () => {
   const mergedItems = ingredientItems?.concat([ab]) || [ab];
 
   const materialsArray = getMaterials(mergedItems);
+
+  if (ingredientItemsCount === 0)
+    return <ErrorDisplay content="연마 가능한 장비가 없습니다." />;
 
   return (
     <GrindingResult

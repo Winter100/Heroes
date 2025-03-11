@@ -10,8 +10,8 @@ const StatsContent = () => {
     <PreviewStats
       name={name}
       data={data ?? []}
-      mergedStats={mergedStats ?? []}
-      statDifference={statDifference ?? []}
+      mergedStats={mergedStats || []}
+      statDifference={statDifference || []}
     />
   );
 };
