@@ -57,23 +57,23 @@ const Table = ({ boss, bossEntry, previewAllStats }: TableProps) => {
                       boss,
                       bossEntry,
                       item.stat_name,
-                      item.stat_value,
-                      limitValue,
+                      item.stat_value?.toString(),
+                      limitValue?.toString(),
                     ) !== null
                       ? limitCalculator(
                           boss,
                           bossEntry,
                           item.stat_name,
-                          item.stat_value,
-                          limitValue,
+                          item.stat_value?.toString(),
+                          limitValue?.toString(),
                         )! > 0
                         ? "text-green-300"
                         : limitCalculator(
                               boss,
                               bossEntry,
                               item.stat_name,
-                              item.stat_value,
-                              limitValue,
+                              item.stat_value?.toString(),
+                              limitValue?.toString(),
                             )! < 0
                           ? "text-red-300"
                           : ""
@@ -84,15 +84,15 @@ const Table = ({ boss, bossEntry, previewAllStats }: TableProps) => {
                     boss,
                     bossEntry,
                     item.stat_name,
-                    item.stat_value,
-                    limitValue,
+                    item.stat_value?.toString(),
+                    limitValue?.toString(),
                   )
                     ? limitCalculator(
                         boss,
                         bossEntry,
                         item.stat_name,
-                        item.stat_value,
-                        limitValue,
+                        item.stat_value?.toString(),
+                        limitValue?.toString(),
                       )
                     : ""}
                 </p>
