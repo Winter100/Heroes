@@ -2,6 +2,7 @@ import { NewEquipmentType } from "@/app/_type/equipmentType";
 import IngredientItem from "./IngredientItem";
 import { useAbilityStore } from "@/app/_store/abilityStore";
 import clsx from "clsx";
+import { getImageByName } from "@/app/_utils/getImageByName";
 
 interface IngredientListProps {
   item: NewEquipmentType;
@@ -56,7 +57,8 @@ const IngredientList = ({ item, className }: IngredientListProps) => {
     .map((name) => ({
       name,
       value: materialTotals[name],
-      src: `/images/items/ingredient/${name}.png`,
+      src: getImageByName(name),
+      // src: `/images/items/ingredient/${name}.png`,
     }))
     .sort((a, b) => a.name.localeCompare(b.name, "ko"));
 

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Item from "./item/Item";
 
 interface IngredientItemProps {
   name: string;
@@ -16,15 +16,14 @@ const IngredientItem = ({
       className={`${isZeroValue ? "opacity-40" : "text-white"} flex w-full flex-col items-center justify-center gap-2 text-sm hover:cursor-default`}
     >
       <div className="flex items-center justify-center text-xs">{name}</div>
-      <div className="flex w-full flex-row gap-2 rounded-lg bg-background p-1">
-        <div className="flex h-5 w-5 items-center justify-center">
-          <Image
-            className="h-auto w-auto rounded-sm object-cover"
-            width={20}
-            height={0}
+      <div className="flex w-full flex-row items-center gap-2 rounded-lg bg-background p-0.5">
+        <div className="flex items-center justify-center">
+          <Item.Image
+            className="rounded-sm object-cover"
             src={src}
             alt={name}
-            title={name}
+            size={20}
+            {...{ title: name }}
           />
         </div>
 

@@ -16,20 +16,19 @@ const ItemTitle = memo(
     type = "일반",
     ...props
   }: ItemTitleProps) => {
-    // const itemRating = itemInfoMap?.get(item_name || "")?.item_rating;
     const materialsRating = materialsMap?.get(item_name || "")?.item_rating;
 
     const finalType = (materialsRating || type) as ItemTitleProps["type"];
 
     const colorClass = {
-      [""]: "text-white",
+      [""]: "text-gray-400",
       일반: "text-white",
       초급: "text-green-400",
       중급: "text-blue-300",
       고급: "text-purple-500",
       레어: "text-orange-300",
       전설: "text-pink-400",
-    }[finalType];
+    }[finalType || ""];
 
     return (
       <div className={clsx(colorClass, className)} {...props}>
