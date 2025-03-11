@@ -1,4 +1,4 @@
-import { Stat } from "@/app/_type/characterType";
+import { Stat } from "@/app/_type/previewType";
 
 /**
  *
@@ -16,8 +16,8 @@ export const mergeAtk = (stats: { stat: Stat[] }) => {
   )?.stat_value;
 
   const maxAtk = Math.max(
-    parseInt(atkValue || "0"),
-    parseInt(matkValue || "0"),
+    parseInt(atkValue?.toString() || "0"),
+    parseInt(matkValue?.toString() || "0"),
   );
 
   const mergedAtkStats = copyStats
