@@ -2,7 +2,6 @@ import { getImageByName } from "@/app/_utils/getImageByName";
 import clsx from "clsx";
 import Image from "next/image";
 import { memo } from "react";
-import { convertItemNameBySlot } from "../util/convertItemNameBySlot";
 
 interface ItemImageProps {
   materials: string;
@@ -11,8 +10,15 @@ interface ItemImageProps {
 }
 
 const ItemImage = memo(({ slot, size = 35, materials }: ItemImageProps) => {
-  const { itemName } = convertItemNameBySlot(slot || "", materials);
-  const src = getImageByName(itemName);
+  // const { itemName } = convertItemNameBySlot(slot || "", materials);
+  // const src = getImageByName(itemName, slot);
+  // console.log(materials);
+
+  const removePrefixName = materials.replace(
+    /^(초급|중급|고급|레어|전설)\s*/,
+    "",
+  );
+  const src = getImageByName(removePrefixName, slot);
   return (
     <a data-tooltip-id={materials}>
       <Image

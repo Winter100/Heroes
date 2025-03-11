@@ -27,7 +27,7 @@ const ItemEnchantBox = ({
       <Item.Selector
         useText1={useText1}
         useText2={useText2}
-        usedNumber={useNumber}
+        usedNumber={useNumber === 0 ? 2 : useNumber}
       >
         <span className="text-[11px] text-gray-400">{title}</span>
       </Item.Selector>

@@ -35,7 +35,7 @@ const ItemInfusion = ({
       <Item.Selector
         useText1={`${formatValue(name1, parseInt(value1.toString()))}`}
         useText2={`${formatValue(name2, parseInt(value2.toString()))}`}
-        usedNumber={usedNumber}
+        usedNumber={usedNumber === 0 ? 2 : usedNumber}
       >
         <span className="text-[11px] text-gray-400">정령</span>
       </Item.Selector>

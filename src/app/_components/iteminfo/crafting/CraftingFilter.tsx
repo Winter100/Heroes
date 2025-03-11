@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useMaterialsStore } from "@/app/_store/materialsStore";
 import clsx from "clsx";

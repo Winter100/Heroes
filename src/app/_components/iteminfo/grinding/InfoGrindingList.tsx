@@ -20,6 +20,7 @@ const InfoGrindingList = ({
 }) => {
   const tuningView = tuning_stat.map((stat) => {
     return {
+      ...stat,
       stat_name: stat.stat_name,
       stat_max_value: stat.stat_max_value,
       stat_value: stat.stat_value,
@@ -30,7 +31,7 @@ const InfoGrindingList = ({
   });
 
   return (
-    <ul className="flex flex-col gap-1">
+    <ul className="flex flex-col gap-1 px-1">
       {tuningView?.map((stat) => (
         <li key={stat.stat_name}>
           <InfoGrindingItem {...stat} />
