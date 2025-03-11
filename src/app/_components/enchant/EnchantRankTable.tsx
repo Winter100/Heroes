@@ -1,3 +1,4 @@
+"use client";
 import { memo } from "react";
 import Tbody from "../table/Tbody";
 import Thead from "../table/Thead";
