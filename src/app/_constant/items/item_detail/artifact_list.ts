@@ -2,6 +2,17 @@ import { ItemType } from "@/app/_type/infoInfoType";
 
 export const artifact_list: ItemType[] = [
   {
+    name: "의문의 고양이 조각상",
+    quality_selection_available: false,
+    quality: 2,
+    rating: "중급",
+    category: ["액세서리", "아티팩트"],
+    color: true,
+    description: `사용 시 SP게이지를 한칸 회복합니다.
+
+    재사용 대기 시간: 90초`,
+  },
+  {
     name: "상급 의문의 고양이 조각상",
     quality_selection_available: false,
     quality: 2,
@@ -9,6 +20,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 SP게이지를 한칸 회복합니다.
+
     재사용 대기 시간: 70초`,
   },
   {
@@ -20,7 +32,9 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 280 SP를 회복합니다.
+
     재사용 대기 시간: 70초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 중급, 고급 등급으로는 변환할 수 없습니다.
@@ -42,7 +56,9 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 280 SP를 회복합니다.
+
     재사용 대기 시간: 70초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 중급, 고급 등급으로는 변환할 수 없습니다.
@@ -64,7 +80,9 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 280 SP를 회복합니다.
+
     재사용 대기 시간: 70초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     `,
     enhancement_options: {
@@ -85,6 +103,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 280 SP를 회복합니다.
+
     재사용 대기 시간: 70초
     `,
     enhancement_options: {
@@ -105,6 +124,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격 속도가 20% 상승합니다.
+
     사용 시간: 20초
     재사용 대기 시간: 120초`,
   },
@@ -116,6 +136,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격 속도가 20% 상승합니다.
+
     사용 시간: 20초
     재사용 대기 시간: 120초`,
   },
@@ -127,6 +148,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격 속도가 20% 상승합니다.
+
     사용 시간: 30초
     재사용 대기 시간: 120초`,
   },
@@ -139,8 +161,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격속도가 22% 상승합니다.
+
     사용 시간: 30초
     재사용 대기 시간: 120초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 중급, 고급 등급으로는 변환할 수 없습니다.`,
@@ -161,8 +185,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격속도가 22% 상승합니다.
+
     사용 시간: 30초
     재사용 대기 시간: 120초
+    
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 고급 등급으로는 변환할 수 없습니다.`,
@@ -184,6 +210,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격속도가 22% 상승합니다.
+
     사용 시간: 30초
     재사용 대기 시간: 120초`,
     enhancement_options: {
@@ -205,6 +232,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 자신의 이동 속도와 공격속도가 22% 상승합니다.
+
     사용 시간: 30초
     재사용 대기 시간: 120초`,
     enhancement_options: {
@@ -225,6 +253,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 일시적으로 5000의 생명력이 증가합니다.
+
     사용 시간: 10초
     재사용 대기 시간: 150초`,
   },
@@ -238,8 +267,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 일시적으로 추가 피해가 1000만큼 증가합니다.
+
     사용 시간: 20초
     재사용 대기 시간: 70초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 중급, 고급 등급으로는 변환할 수 없습니다.`,
@@ -260,8 +291,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 일시적으로 추가 피해가 1000만큼 증가합니다.
+
     사용 시간: 20초
     재사용 대기 시간: 70초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 고급 등급으로는 변환할 수 없습니다.`,
@@ -282,6 +315,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 일시적으로 추가 피해가 1000만큼 증가합니다.
+
     사용 시간: 20초
     재사용 대기 시간: 70초`,
     enhancement_options: {
@@ -302,6 +336,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 시 일시적으로 추가 피해가 1000만큼 증가합니다.
+
     사용 시간: 20초
     재사용 대기 시간: 70초`,
     enhancement_options: {
@@ -315,6 +350,18 @@ export const artifact_list: ItemType[] = [
   },
 
   {
+    name: "서큐버스의 송곳니",
+    quality_selection_available: false,
+    quality: 2,
+    rating: "중급",
+    category: ["액세서리", "아티팩트"],
+    color: true,
+    description: `사용 후 공격 시 입힌 대미지의 10% 만큼 생명력을 회복합니다.
+
+    사용 시간: 20초
+    재사용 대기 시간: 180초`,
+  },
+  {
     name: "상급 서큐버스의 송곳니",
     quality_selection_available: false,
     quality: 2,
@@ -322,7 +369,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 후 공격 시 입힌 대미지의 13% 만큼 생명력을 회복합니다.
-    최대 회복량: 7000
+
     사용 시간: 20초
     재사용 대기 시간: 180초`,
   },
@@ -335,9 +382,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 후 공격 시 입힌 대미지의 15% 만큼 생명력을 회복합니다.
-    최대 회복량: 8000
+
     사용 시간: 20초
     재사용 대기 시간: 180초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 중급, 고급 등급으로는 변환할 수 없습니다.
@@ -359,9 +407,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 후 공격 시 입힌 대미지의 15% 만큼 생명력을 회복합니다.
-    최대 회복량: 8000
+
     사용 시간: 20초
     재사용 대기 시간: 180초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     
     ※ 주의사항: 고급 등급으로는 변환할 수 없습니다.
@@ -383,9 +432,10 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 후 공격 시 입힌 대미지의 15% 만큼 생명력을 회복합니다.
-    최대 회복량: 8000
+
     사용 시간: 20초
     재사용 대기 시간: 180초
+
     이 아이템은 마력 주입을 통해 레어 등급으로 변환할 수 있습니다.
     `,
     enhancement_options: {
@@ -406,7 +456,7 @@ export const artifact_list: ItemType[] = [
     category: ["액세서리", "아티팩트"],
     color: true,
     description: `사용 후 공격 시 입힌 대미지의 15% 만큼 생명력을 회복합니다.
-    최대 회복량: 8000
+
     사용 시간: 20초
     재사용 대기 시간: 180초
     `,

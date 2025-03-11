@@ -8,6 +8,8 @@ export const revalidate = 0;
 export async function GET(request: Request) {
   let allData: EnchantPriceType[] = [];
   let nextCursor: string | null = null;
+  const delay = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
 
   try {
     do {
@@ -20,6 +22,10 @@ export async function GET(request: Request) {
 
       allData.push(data);
       nextCursor = data.next_cursor;
+
+      if (nextCursor) {
+        await delay(500); // 500ms 대기 후 다음 요청 실행
+      }
     } while (nextCursor);
 
     return NextResponse.json(allData, {

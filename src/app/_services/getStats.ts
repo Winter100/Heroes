@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Stat } from "../_type/characterType";
+import { Stat } from "../_type/previewType";
 
 export const getStats = async (ocid: string) => {
   try {
