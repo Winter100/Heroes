@@ -14,3 +14,15 @@ export const nexonInstance = axios.create({
     "x-nxopen-api-key": process.env.NEXT_PUBLIC_API_KEY as string,
   },
 });
+
+const versionV1 = "v1";
+const baseUrlV1 = `${base}/${game}/${versionV1}`;
+
+export const nexonInstanceV1 = axios.create({
+  baseURL: baseUrlV1,
+  method: "GET",
+  headers: {
+    "Cache-Control": "no-cache",
+    "x-nxopen-api-key": process.env.NEXT_PUBLIC_API_KEY as string,
+  },
+});
