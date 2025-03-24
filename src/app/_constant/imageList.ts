@@ -299,6 +299,13 @@ export const imageMap = new Map<string, string>([
   ["고급 생명력 포션", "/images/items/materials/basic/life-p-2.png"],
   ["최고급 생명력 포션", "/images/items/materials/basic/life-p-3.png"],
 
+  // 스킬 각성의 돌
+  ["각성의 돌: 대미지 증가", "/images/items/skill/damage-stone.png"],
+  ["각성의 돌: SP소모 감소", "/images/items/skill/sp-stone.png"],
+  ["각성의 돌: 재사용시간 감소", "/images/items/skill/cooltime-stone.png"],
+  ["각성의 돌: 스태미나 소모 감소", "/images/items/skill/stamina-stone.png"],
+  ["각성의 돌: 부분 파괴 대미지", "/images/items/skill/downdamage-stone.png"],
+
   ["단단한 계승 원석", "/images/items/materials/s4/solid-115.png"],
   ["매끈한 계승 원석", "/images/items/materials/s4/smarmy-115.png"],
   ["예리한 계승 원석", "/images/items/materials/s4/incisive-115.png"],
@@ -666,4 +673,228 @@ export const imageMap = new Map<string, string>([
     "주시자의 완전한 웨어울프의 앞발",
     "/images/items/equipment/werewolf-05.png",
   ],
+
+  // 스킬
+
+  // 리시타
+  // 공통
+  [
+    "액티브: 스피릿 오브 버서커",
+    "/images/characters/skill/double-crescent.png",
+  ],
+  ["글라이딩 퓨리", "/images/characters/skill/g-f.png"],
+  ["윈드밀", "/images/characters/skill/w-m.png"],
+  ["라이트닝 퓨리", "/images/characters/skill/l-f.png"],
+  ["액티브: 코멧 대시", "/images/characters/skill/k-dash.png"],
+  ["액티브: 퓨리 No.7", "/images/characters/skill/no7.png"],
+
+  // 듀얼소드
+  ["거트 스팅어", "/images/characters/skill/rose-thorns.png"],
+  ["베어 블로어", "/images/characters/skill/pummelstorm.png"],
+  ["슬립대시", "/images/characters/skill/slip-dash.png"],
+  ["슬립스루", "/images/characters/skill/nimble-dash.png"],
+  ["액티브: 래디컬 피버", "/images/characters/skill/a-r-p.png"],
+  ["크레센트 라이징", "/images/characters/skill/rising-crescent.png"],
+  ["트윈엣지 450", "/images/characters/skill/blade-tornado.png"],
+  ["패닝 슬래시", "/images/characters/skill/fanning-slash.png"],
+  ["사우전드 니들", "/images/characters/skill/thousand-needles.png"],
+  ["더블 크레센트", "/images/characters/skill/double-crescent.png"],
+
+  // 슈얼스피어
+  ["3960 허리케인", "/images/characters/skill/3960.png"],
+  ["문 스플리터", "/images/characters/skill/m-sf.png"],
+  ["사일런트 호크", "/images/characters/skill/s-hf.png"],
+  ["서든 블래스트", "/images/characters/skill/s-bl.png"],
+  ["퀵 리버레이트", "/images/characters/skill/q-re.png"],
+
+  // 피오나
+  // 공통
+  ["액티브: 방패 질주", "/images/characters/skill/shield-dash.png"],
+  ["헤비스탠더 카운터", "/images/characters/skill/heavy-stander-counter.png"],
+  ["카운터 어택", "/images/characters/skill/counterattack.png"],
+  ["액티브: 타운트", "/images/characters/skill/active-taunt.png"],
+  ["액티브: 피해 감쇄", "/images/characters/skill/iron-defense.png"],
+  ["다운 카운터", "/images/characters/skill/alchemy-mercury.png"],
+  ["액티브: 슬래싱 하이", "/images/characters/skill/slashing-high.png"],
+  ["액티브: 방패 돌진", "/images/characters/skill/shield-charge.png"],
+  ["액티브: 스프링클 카멜리아", "/images/characters/skill/camellia.png"],
+  ["방패 흘리기", "/images/characters/skill/shield-deflection.png"],
+  ["액티브: 방패 강타", "/images/characters/skill/heavy-stander.png"],
+
+  // 피오나 롱소드
+  ["스파이크 로즈", "/images/characters/skill/rose-thorns.png"],
+  ["아마란스 킥", "/images/characters/skill/amaranth-kick.png"],
+  ["아이비 스위퍼", "/images/characters/skill/ivys-weep.png"],
+  ["페탈 블로우", "/images/characters/skill/p-blow.png"],
+  ["해피 블로섬", "/images/characters/skill/alchemy-mercury.png"],
+  ["액티브: 방패 강화", "/images/characters/skill/active-shield.png"],
+  ["액티브: 어썰트 크로톤", "/images/characters/skill/assault.png"],
+
+  // 피오나 롱해머
+  ["그랜드 슬램 칼라", "/images/characters/skill/hammer-crushing.png"],
+  ["버터플라이 스윙", "/images/characters/skill/alchemy-mercury.png"],
+  ["비틀 크러쉬", "/images/characters/skill/beetle-crusher.png"],
+  ["스티그마 해머", "/images/characters/skill/long-hammer.png"],
+  ["하니 비 스팅", "/images/characters/skill/long-hammer-honeybee.png"],
+  ["액티브: 블루밍 바이올렛", "/images/characters/skill/violet.png"],
+  ["액티브: 짓누르기", "/images/characters/skill/a-crush.png"],
+
+  // 이비
+  // 공통
+  ["이글 탈론", "/images/characters/skill/eagle.png"],
+  ["액티브: 미티어 스웜", "/images/characters/skill/meteor-swarm.png"],
+  ["액티브: 중력 역전", "/images/characters/skill/gra.png"],
+
+  // 스태프
+  ["매직 애로우", "/images/characters/skill/magic.png"],
+  ["액티브: 라이트닝 볼트", "/images/characters/skill/lightning-bolt.png"],
+  ["액티브: 마나 마인", "/images/characters/skill/mana-mine.png"],
+  ["액티브: 아이스 스피어", "/images/characters/skill/ice-spear.png"],
+  ["액티브: 파이어볼트", "/images/characters/skill/firebolt.png"],
+  ["액티브: 아이스 블래스트", "/images/characters/skill/ice-bl.png"],
+  ["액티브: 힐링 펄", "/images/characters/skill/healring.png"],
+  ["액티브: 파이어 스톰", "/images/characters/skill/firestorm.png"],
+  ["액티브: 재생", "/images/characters/skill/rec.png"],
+  ["액티브: 라이트닝 웨이브", "/images/characters/skill/lightning-wave.png"],
+  ["액티브: 라이트닝 가이드", "/images/characters/skill/guided-lightning.png"],
+  ["액티브: 아이스 블로우", "/images/characters/skill/ice-blow.png"],
+  ["액티브: 파이어 쇼크", "/images/characters/skill/fire-shock.png"],
+  ["액티브: 레이즈", "/images/characters/skill/rage.png"],
+  ["액티브: 연속 집중", "/images/characters/skill/a-m.png"],
+
+  // 배틀사이드
+  ["라이프 스틸", "/images/characters/skill/life-still.png"],
+  ["새크리파이스", "/images/characters/skill/secp.png"],
+  ["스피릿 바인드", "/images/characters/skill/spirit-bind.png"],
+  ["액티브: 컨퓨전 홀", "/images/characters/skill/void-star.png"],
+  ["데몬 스플리터", "/images/characters/skill/demon-sp.png"],
+  ["블링크 문라이트", "/images/characters/skill/blank-m.png"],
+  ["헬 퀘이크", "/images/characters/skill/hell-quake.png"],
+  ["데스 레이블", "/images/characters/skill/mark-of-death.png"],
+  ["소울 스큐어", "/images/characters/skill/soul-skewer.png"],
+  ["피어 스크림", "/images/characters/skill/scream.png"],
+  ["액티브: 인세인 리퍼", "/images/characters/skill/insane-r.png"],
+  ["블러디 스레드", "/images/characters/skill/bloody-thread.png"],
+  ["액티브: 아케인 게이트", "/images/characters/skill/a-ks.png"],
+  ["인비지블 룸", "/images/characters/skill/loom.png"],
+
+  // 카록
+  // 카록 공통
+  ["액티브: 하울링", "/images/characters/skill/k-h.png"],
+  ["액티브: 샤우트", "/images/characters/skill/k-s.png"],
+
+  // 카록 배틀필러
+  ["매머드 스윕", "/images/characters/skill/k-m-sw.png"],
+  ["워 스톰프", "/images/characters/skill/k-1-warstomp.png"],
+  ["바이슨 차지", "/images/characters/skill/k-b-cge.png"],
+  ["액티브: 데들리 컴퍼스", "/images/characters/skill/k-d-p.png"],
+  ["웨일 밤", "/images/characters/skill/k-w-b.png"],
+  ["점보 스턱", "/images/characters/skill/j-stk.png"],
+  ["드롭킥", "/images/characters/skill/k-kick.png"],
+  ["매머드 크래쉬", "/images/characters/skill/k-m-crush.png"],
+  ["액티브: 돌개바람", "/images/characters/skill/k-d-wind.png"],
+  ["라이노 고어", "/images/characters/skill/k-r-go.png"],
+  ["웨일 뱅", "/images/characters/skill/k-bang.png"],
+  ["액티브: 멸절", "/images/characters/skill/k-a-mul.png"],
+  ["액티브: 어스퀘이크", "/images/characters/skill/k-a-ask.png"],
+  ["볼버라이즈", "/images/characters/skill/k-b-rise.png"],
+  ["매머드 프래셔", "/images/characters/skill/k-m-pre.png"],
+  ["그리즐리 범프", "/images/characters/skill/k-g-bum.png"],
+  ["롤링 어택", "/images/characters/skill/k-1-ratk.png"],
+  ["라이노 헤드벗", "/images/characters/skill/k-1-r-head.png"],
+  ["전투 돌진", "/images/characters/skill/k-1-dash.png"],
+
+  // 카록 블래스터
+  ["빅뱅", "/images/characters/skill/k-bigbang.png"],
+  ["차징 버스트", "/images/characters/skill/k-2-c-bust.png"],
+  ["볼로 펀치", "/images/characters/skill/k-2-bolo.png"],
+  ["스트레이트 펀치", "/images/characters/skill/k-2-s-punch.png"],
+  ["선데이 펀치", "/images/characters/skill/k-2-sun-punch.png"],
+  ["웨이스트 피벗", "/images/characters/skill/k-2-pe.png"],
+  ["액티브: 폭풍", "/images/characters/skill/k-2-stom.png"],
+  ["액티브: 화산 폭발", "/images/characters/skill/k-2-hk.png"],
+  ["액티브: 힘의 해방", "/images/characters/skill/k-2-unlimit.png"],
+  ["액티브: 격노", "/images/characters/skill/k-2-kn.png"],
+  ["액티브: 인파이팅", "/images/characters/skill/k-2-infight.png"],
+  ["J.F 버스트", "/images/characters/skill/k-2-jf.png"],
+  ["뎀프시롤", "/images/characters/skill/k-2-ds.png"],
+
+  // 카이
+  // 공통 X
+
+  // 카이 활
+  ["속사", "/images/characters/skill/ka-1-ss.png"],
+  ["쓰러스트킥", "/images/characters/skill/ka-1-skick.png"],
+  ["액티브: 밴딩샷", "/images/characters/skill/ka-1-banding.png"],
+  ["차징샷", "/images/characters/skill/ka-1-charging-shot.png"],
+  ["스핀킥", "/images/characters/skill/ka-1-spin-kick.png"],
+  ["매그넘샷", "/images/characters/skill/ka-1-m-shot.png"],
+  ["마운팅", "/images/characters/skill/ka-1-m-ting.png"],
+  ["액티브: 애로우 스톰", "/images/characters/skill/ka-1-ar-st.png"],
+  ["액티브: 듀얼링크", "/images/characters/skill/ka-1-d-link.png"],
+  ["액티브: 멀티 스나이핑", "/images/characters/skill/ka-1-mul-s.png"],
+  ["액티브: 페이탈 애로우", "/images/characters/skill/ka-1-pay.png"],
+
+  // 카이 총
+  ["스핀 스매시", "/images/characters/skill/ka-2-spin-smash.png"],
+  ["액티브: 할로우샷", "/images/characters/skill/ka-2-halow.png"],
+  ["액티브: 피어싱", "/images/characters/skill/ka-2-pi.png"],
+  ["액티브: 블렛6", "/images/characters/skill/ka-2-b6.png"],
+  ["액티브: 핸드밤", "/images/characters/skill/ka-2-handb.png"],
+  ["액티브: 밴드 서포트", "/images/characters/skill/ka-2-bands.png"],
+  ["액티브: 인핸스 볼트", "/images/characters/skill/ka-2-i-bolt.png"],
+  ["액티브: 거스팅 볼트", "/images/characters/skill/ka-2-g-bolt.png"],
+  ["액티브: 벙커 버스터", "/images/characters/skill/ka-2-b-bust.png"],
+  ["액티브: 아토믹", "/images/characters/skill/ka-2-atomic.png"],
+
+  // 벨라
+  // 벨라 공통 X
+
+  // 벨라 듀얼소드
+  ["데들리 게일", "/images/characters/skill/bel-1-d-g.png"],
+  ["디바이딩 에디", "/images/characters/skill/bel-1-d-ady.png"],
+  ["메나싱 게일", "/images/characters/skill/bel-1-ma-g.png"],
+  ["스핀 러시", "/images/characters/skill/bel-1-spin-r.png"],
+  ["액티브: 타이푼 슬래쉬", "/images/characters/skill/bel-1-ty-sh.png"],
+  ["크로스 스트라이크", "/images/characters/skill/bel-1-cross-st.png"],
+  ["백래쉬", "/images/characters/skill/bel-1-back.png"],
+  ["거스티 블레이드", "/images/characters/skill/bel-1-g-blade.png"],
+  ["액티브: 검의 의지", "/images/characters/skill/bel-1-s-soul.png"],
+  ["액티브: 템페스트", "/images/characters/skill/bel-1-tps.png"],
+  ["액티브: 게일 스플리터", "/images/characters/skill/bel-1-a-split.png"],
+
+  // 벨라 듀얼블레이드
+  ["루미너스 러시", "/images/characters/skill/bel-2-lu-rush.png"],
+  ["미스트 슬래쉬", "/images/characters/skill/bel-2-m-shl.png"],
+  ["스파이럴 스핀", "/images/characters/skill/bel-2-s-spin.png"],
+  ["액티브: 뱀파이어의 키스", "/images/characters/skill/bel-2-b-kiss.png"],
+  ["액티브: 도미네이트", "/images/characters/skill/bel-2-dom.png"],
+  ["모먼트 블로우", "/images/characters/skill/bel-2-moblow.png"],
+  ["소노러스 필", "/images/characters/skill/bel-2-sono.png"],
+  ["액티브: 레드 아이즈", "/images/characters/skill/bel-2-red-e.png"],
+  ["액티브: 냉각", "/images/characters/skill/bel-2-cold.png"],
+  ["액티브: 글라시얼 브레이커", "/images/characters/skill/bel-2-g-break.png"],
+  ["액티브: 폴라리스 소나타", "/images/characters/skill/bel-2-f-so.png"],
+  ["액티브: 블레이드 댄스", "/images/characters/skill/bel-2-blade-d.png"],
+
+  //허크
+  //린
+  //아리샤
+  //헤기
+  //델리아
+  //미리
+  //그림덴
+  //미울
+  //벨
+  //레서
+  //카엘
+  //테사
+  //단아
+  //레티
+  //라티야
+  //체른
+  //아켈
+  //소우
+  //사냐
+  //네반
 ]);
