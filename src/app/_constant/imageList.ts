@@ -877,24 +877,348 @@ export const imageMap = new Map<string, string>([
   ["액티브: 폴라리스 소나타", "/images/characters/skill/bel-2-f-so.png"],
   ["액티브: 블레이드 댄스", "/images/characters/skill/bel-2-blade-d.png"],
 
-  //허크
-  //린
-  //아리샤
-  //헤기
-  //델리아
-  //미리
-  //그림덴
-  //미울
-  //벨
-  //레서
-  //카엘
-  //테사
-  //단아
-  //레티
-  //라티야
-  //체른
-  //아켈
-  //소우
-  //사냐
-  //네반
+  // 허크
+  // 허크 공통 X
+
+  // 허크 그레이트 소드
+  ["만월", "/images/characters/skill/huk-1-ma.png"],
+  ["붕괴", "/images/characters/skill/huk-1-b.png"],
+  ["신월", "/images/characters/skill/huk-1-sin.png"],
+  ["액티브: 심판", "/images/characters/skill/huk-1-a-simp.png"],
+  ["처형", "/images/characters/skill/huk-1-kill.png"],
+  ["학살", "/images/characters/skill/huk-1-h-kill.png"],
+  ["액티브: 기합 베기", "/images/characters/skill/huk-1-g-bi.png"],
+  ["소용돌이", "/images/characters/skill/huk-1-wind.png"],
+  ["액티브: 필살의 일격", "/images/characters/skill/huk-1-fil.png"],
+  ["액티브: 광폭화", "/images/characters/skill/huk-1-gp.png"],
+  ["액티브: 절명", "/images/characters/skill/huk-1-jm.png"],
+
+  // 허크 테이드
+  ["액티브: 스플릿 슬래쉬", "/images/characters/skill/huk-2-split-s.png"],
+  ["액티브: 퍼펙트 리로드", "/images/characters/skill/huk-2-perfect.png"],
+  ["액티브: 임펙트 슈어 샷", "/images/characters/skill/huk-2-imfact.png"],
+  ["액티브: 스피닝 슬래쉬", "/images/characters/skill/huk-2-s-sha.png"],
+  ["액티브: 페이탈 슬래쉬", "/images/characters/skill/huk-2-p-s.png"],
+  ["액티브: 슬랩 더 킬러", "/images/characters/skill/huk-2-s-t-k.png"],
+  ["액티브: 데스페라도", "/images/characters/skill/huk-2-des.png"],
+
+  // 린
+  // 린 공통 X
+  // 린 배틀 글레이브
+  ["뇌전", "/images/characters/skill/ry-1-n.png"],
+  ["비류", "/images/characters/skill/ry-1-b.png"],
+  ["섬격창", "/images/characters/skill/ry-1-s-3.png"],
+  ["액티브: 일섬", "/images/characters/skill/ry-1-ils.png"],
+  ["천격", "/images/characters/skill/ry-1-cun.png"],
+  ["파진", "/images/characters/skill/ry-1-p-jin.png"],
+  ["환류창", "/images/characters/skill/ry-1-hwan.png"],
+  ["낙화", "/images/characters/skill/ry-1-n-hwa.png"],
+  ["액티브: 삼연섬", "/images/characters/skill/ry-1-3-sum.png"],
+  ["액티브: 화접무", "/images/characters/skill/ry-1-hwa-j.png"],
+  ["연풍참", "/images/characters/skill/ry-1-y-p.png"],
+  ["비상천", "/images/characters/skill/ty-1-b-sang.png"],
+  ["천뢰창", "/images/characters/skill/ry-1-c-l.png"],
+  ["액티브: 비연격", "/images/characters/skill/ry-1-by.png"],
+  ["액티브: 유연단화", "/images/characters/skill/ry-1-uyd.png"],
+  ["액티브: 멸화참", "/images/characters/skill/ry-1-mhwac.png"],
+
+  // 린 블뤼테
+  ["비화격", "/images/characters/skill/ry-2-behwa.png"],
+  ["비화풍", "/images/characters/skill/ry-2-behwa-p.png"],
+  ["액티브: 비풍일격", "/images/characters/skill/ry-2-be-i.png"],
+  ["월연격", "/images/characters/skill/ry-2-buk.png"],
+  ["월연풍", "/images/characters/skill/ry-2-byp.png"],
+  ["진풍격", "/images/characters/skill/ry-2-j-p.png"],
+  ["화진격", "/images/characters/skill/ry-2-hwa-j.png"],
+  ["화진각", "/images/characters/skill/ry-2-hwa-k.png"],
+  ["액티브: 화신풍", "/images/characters/skill/ry-2-a-hwasin.png"],
+  ["액티브: 투산철격", "/images/characters/skill/ry-2-tosan.png"],
+  ["액티브: 반화격", "/images/characters/skill/ry-2-ban-hwa.png"],
+  ["액티브: 기천비무", "/images/characters/skill/ry-2-ri-j.png"],
+  ["액티브: 유화강기", "/images/characters/skill/ry-2-u-hwa.png"],
+  ["액티브: 유원백화", "/images/characters/skill/ry-2-u-won.png"],
+  ["액티브: 운심월성", "/images/characters/skill/ry-2-u-w-s.png"],
+
+  // 아리샤
+  // 아리샤 공통 X
+
+  // 아리샤 롱블레이드
+  ["마나 스톤", "/images/characters/skill/ar-1-mana-stone.png"],
+  ["샤픈 마나", "/images/characters/skill/ar-1-shwa-mana.png"],
+  ["액티브: 디멘션 홀", "/images/characters/skill/ar-1-d-h.png"],
+  ["액티브: 마나 리전", "/images/characters/skill/ar-1-mana-re.png"],
+  ["액티브: 캐스트 마나", "/images/characters/skill/ar-1-cast-mana.png"],
+  ["액티브: 루인 블레이드", "/images/characters/skill/ar-1-ru-b.png"],
+  ["피스트 오브 블레이드", "/images/characters/skill/ar-1-f-b.png"],
+  ["액티브: 둠세이어", "/images/characters/skill/ar-1-d-sa.png"],
+  ["액티브: 레저넌스", "/images/characters/skill/ar-1-rjn.png"],
+  ["워프 홀", "/images/characters/skill/ar-1-warp-h.png"],
+  ["액티브: 로드 오브 마나", "/images/characters/skill/ar-1-rhod-of.png"],
+  ["스위치 마나", "/images/characters/skill/ar-1-switch.png"],
+
+  // 아리샤 윕
+  ["린포르찬도 피네", "/images/characters/skill/ar-2-r-p.png"],
+  ["마르카토 러시", "/images/characters/skill/ar-2-m-rush.png"],
+  ["액티브: 배턴 포 왈츠", "/images/characters/skill/ar-2-b-w.png"],
+  ["마나 디소넌스", "/images/characters/skill/ar-2-mana-d.png"],
+  ["마나 아그레망", "/images/characters/skill/ar-2-m-ar.png"],
+  ["스크리밍 콰이어", "/images/characters/skill/ar-2-s-c.png"],
+  ["스트린젠도 슬랩", "/images/characters/skill/ar-2-sc-j.png"],
+  ["액티브: 모티베이션", "/images/characters/skill/ar-2-mot.png"],
+  ["액티브: 인스피레이션", "/images/characters/skill/ar-2-ins.png"],
+  ["리시딩 인터류드", "/images/characters/skill/ar-2-inr.png"],
+  ["액티브: 마나 카프리치오", "/images/characters/skill/ar-2-mana-c.png"],
+  ["액티브: 액시덴탈 악센트", "/images/characters/skill/ar-2-a-ac.png"],
+  ["액티브: 크레셴도 심포니", "/images/characters/skill/ar-2-c-sim.png"],
+
+  // 델리아
+  // ["퀸즈 그레이스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["와일드 스타", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["썬 플레어", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["주피터스 벨트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["이니셜 슈팅스타", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스타 스크래퍼", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["제미니 스타라이트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라스트 슈팅스타", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스타 디바이더", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 위스퍼링 로즈", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 와일드 스타", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 로즈 크러시", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스타 스트라이크", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 헤기
+  // ["액티브: 인피니티 레퀴엠", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스피릿 커터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 스팩트럴 스팅", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라이징 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라이징 샷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["팬텀 슈터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["사이클론 엣지", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["사이클론 크래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["얼티밋 블레이드", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["얼티밋 차지", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 익스팅션 로어", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 판타즈마 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 미리
+  // ["안세스터스 윌: 리벤저", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["안세스터스 윌: 스트라이커", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["러싱 스파인", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["피니싱 테일", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["레비징 투스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["크러싱 네일", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["데스 토네일", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 레클리스 차지", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 플레임 브레스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 라스트 디센던트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 라스트 드레이커", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["피어싱 암", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 그림덴
+  // ["에이질 스트라이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["섬멸", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["모털 아츠", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["일리걸 스턱커도", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["일리걸 워크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["크사나", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 스파인 브레이커", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 스트라이더", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 디컬레이션", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 밀리언 데거", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 리썰 크로스", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 미울
+  // ["디바인 백플립 샷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["중력탄", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["약화탄", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["데들리 스핀", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["데들리 트위스트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["데들리 트위스터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["어썰트 샷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["어썰트 블래스트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["브레이킹 샷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["브레이킹 블래스트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 립 밴 윙클", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 루인 스피어", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 더블 패닝 샷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 패닝 샷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 퀸텀 스페이스", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 벨
+  // ["산림욕", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["잡초 뽑기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["솎아주기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["가지 치기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["뿌리 뽑기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["밑동 자르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["장작 쪼개기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 솔 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 흑단 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 참 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 물푸레 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["가문비 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 레서
+  // ["호격", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["용격", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["초월연무", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["반월연무", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["망월연무", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 호조", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 용아", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 멸령폭진", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 뇌락", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 무아연격", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["회륜격", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 카엘
+  // ["가디언즈 블레이드: 카운터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["가디언즈 블레이드: 스트라이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["레드호크 크러쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 레이지 레지스탕스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 로우 플라이트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 디모스 업라이징", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 서클 오브 라이트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["썬더버드 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["이글 플라이트", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 테사
+  // ["에메랄드 이베이전", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스피넬 플레쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스핀 스피어", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["발레스트라: 토파즈", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["발레스트라: 사파이어", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["발레스트라: 루비", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 셸 디펜시브", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 엔스터타이트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 다이아몬드 더블릿", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 인컴패러블", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["베릴 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 단아
+  // ["명도: 칼집 치기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["명도: 돌려 베기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["명도: 찌르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["명도: 회전 베기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["명도: 올려 베기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["명도: 모아 베기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["명도: 하단베기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 기복참", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 사령곡", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 치병무", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 무신극", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 천도", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["흉살 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["영혼 추적", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액운 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 레티
+  // ["스위프트 리코일", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["트루퍼: 스파이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["트루퍼: 크러쉬 블로우", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["트루퍼: 트위스트 블로우", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["트루퍼: 피어스 스트라이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["트루퍼: 스톰 스마이트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 뷰티풀 블레이즈", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 파이어 크래커", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 레티 봄바", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 디 데이", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스탠딩 플립", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["크라디 버스트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["크라디 블래스트", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 라티야
+  // ["치타 스트라이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["울프 블로우", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라이노 피어스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 라이온 레이지", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 스네이크 스핀", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 쿠자의 빛", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 엘리펀트 스매시", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라이노 러쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 레오파드 온폴", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["와일드 피어스", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 체른
+  // ["프로히비션: 루치아", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["칼레이도 폴", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["룬 스펙트럼", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["오르비스: 케나즈", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["오르비스: 티르", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["오르비스: 라이도", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 쿼터 에비던스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 크레센트 노바", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 문 오버섀도우", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 익시드 페이스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 아포칼립스", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 아켈
+  // ["프랜틱 대시", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["파이트백", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["퓨리어스 스플리터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["타지 어썰트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["그랜드 스트라이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["디바이딩 컷", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스플릿 앵클", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스파이럴 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["크루얼 엑스큐션", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["브루탈 트러스트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 스트라이크 다운", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 피어싱 크러쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 다운폴", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 토탈 티스트럭션", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["체이싱 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 소우
+  // ["칼날 폭풍", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["단천", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["단천: 쾌", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["단천: 난무", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["단천: 강", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["단천: 섬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 운무", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 양단", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 흑현", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 비천락", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 귀천", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["급소 찌르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["가르기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["일문자 베기", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["회전 가르기", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 사냐
+  // ["블랩핑 카운터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스탭 스틸레토", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["피어싱 스틸레토", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["체인 스플리터", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스파이럴 아크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["페이탈 스팅어", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["아크로바틱 스파이럴", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["리플렉션 스파이럴", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 템페스트 킥", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 미드나이츠 터치", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 베니싱 댄스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 트위스트 슬래시", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 댄싱 실루엣", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스위프트 러쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["스위프트 나이프", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["트리플 스팅어", "/images/characters/skill/bel-2-blade-d.png"],
+
+  // 네반
+  // ["디바인 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["헤븐즈 임팩트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["카운터 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["블링크 파이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라피드 파이크", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["게일 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라피트 피어스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["어센셜 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["라이트닝 피어스", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 제미니 스파이럴", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 헤븐즈 테일", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 어센던트 임팩트", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["액티브: 게이트 오브 아르세널", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["시프팅 슬래쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["피어싱 러쉬", "/images/characters/skill/bel-2-blade-d.png"],
+  // ["코멧 임팩트", "/images/characters/skill/bel-2-blade-d.png"],
 ]);
