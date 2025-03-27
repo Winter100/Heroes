@@ -5,7 +5,7 @@ import BasicContainer from "@/app/_components/layout/BasicContainer";
 
 const Page = () => {
   return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center justify-center gap-1 px-4 sm:mt-20 sm:px-0">
+    <div className="mx-auto flex w-full max-w-screen-md flex-col items-center justify-center gap-1 px-4 sm:mt-20 sm:p-2">
       <h1 className="text-sm">아이템 제작 정보</h1>
       <CraftingFilter />
       <div className="flex w-full flex-col gap-2 sm:flex-row">
@@ -14,8 +14,8 @@ const Page = () => {
             <CraftingList />
           </BasicContainer>
         </div>
-        <div className="flex h-96 flex-1 flex-row gap-1 sm:h-[600px]">
-          <BasicContainer className="flex w-full justify-center border border-borderColor/50">
+        <div className="flex h-96 w-full flex-1 flex-row gap-1 sm:h-[600px]">
+          <BasicContainer className="flex w-full flex-1 justify-center border border-borderColor/50">
             <MaterialsCrafting />
           </BasicContainer>
         </div>
