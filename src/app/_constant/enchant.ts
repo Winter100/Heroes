@@ -1173,7 +1173,6 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     name: "보호",
     description: "",
     drop_item_list: ["저승을 지키는 문지기", "불타는 신전"],
-
     stat_value: [
       { stat_name: "크리티컬", stat_value: "5" },
       { stat_name: "크리티컬 저항", stat_value: "5" },
@@ -1648,6 +1647,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
       "꾸준한",
       "노력의",
       "수호의",
+      "보호",
     ],
   },
   {

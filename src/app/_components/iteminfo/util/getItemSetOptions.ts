@@ -1,3 +1,4 @@
+import { EquipmentType } from "./../../../_type/equipmentType";
 import {
   accessoriesSetList,
   itemSetList,
@@ -6,7 +7,7 @@ import { item_set_bonus } from "@/app/_constant/items/item_set_bonus/item_set_bo
 import { ItemInfoQuipmentProps } from "@/app/_type/equipmentType";
 
 export const getItemSetOptions = (
-  info: ItemInfoQuipmentProps[],
+  info: EquipmentType[] | ItemInfoQuipmentProps[],
   set: string,
 ) => {
   const setName = item_set_bonus.find(

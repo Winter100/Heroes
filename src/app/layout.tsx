@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import GoogleAnalytics from "./_lib/GoogleAnalytics";
 import { keyword } from "./_constant/keyword";
+import Footer from "./_components/layout/Footer";
+import ScreenContainer from "./_components/layout/ScreenContainer";
+import { AppSidebar } from "@/components/app-sidebar";
 
-const inter = Inter({ subsets: ["latin"] });
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import HomeBreadcrumb from "./_components/home/HomeBreadcrumb";
 
 export const metadata: Metadata = {
   applicationName: keyword.project.name,
@@ -71,13 +74,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="dark">
+    <html lang="ko" className="dark-1">
       <GoogleAnalytics />
-
-      <body
-        className={`${inter.className} h-full bg-background text-fontColor`}
-      >
-        {children}
+      <body className="flex min-h-dvh flex-col">
+        <div className="relative flex flex-1 flex-col font-sans text-fontColor">
+          <ScreenContainer className="dark flex h-full flex-1 flex-col">
+            <SidebarProvider>
+              <AppSidebar className="sticky" />
+              <SidebarInset>
+                <HomeBreadcrumb />
+                <main className="flex flex-1 flex-col bg-black">
+                  {children}
+                </main>
+                <Footer />
+              </SidebarInset>
+            </SidebarProvider>
+          </ScreenContainer>
+        </div>
       </body>
     </html>
   );

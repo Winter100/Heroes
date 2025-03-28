@@ -4,9 +4,15 @@ import Search from "@/app/_components/common/search/Search";
 import { useRefFocus } from "@/app/_hooks/useRefFocus/useRefFocus";
 import { useSearchHandler } from "@/app/_hooks/useSearchHandler/useSearchHandler";
 
-const PreviewSearchBar = ({ className = "" }: { className?: string }) => {
+const PreviewSearchBar = ({
+  className = "",
+  routeName,
+}: {
+  className?: string;
+  routeName?: string;
+}) => {
   const { focus, inputRef } = useRefFocus();
-  const { handleSearchSubmit } = useSearchHandler(inputRef, focus);
+  const { handleSearchSubmit } = useSearchHandler(inputRef, focus, routeName);
   return (
     <Search
       className={className}

@@ -88,7 +88,7 @@ const ItemCreaftingInfo = memo(
     ).filter((stat) => stat.stat_value);
 
     return (
-      <Item className="flex w-full flex-col gap-1 rounded-md border border-borderColor/30">
+      <Item className="flex w-full flex-col gap-1">
         <Row className="text-xs">
           <Item.Image
             className={clsx(

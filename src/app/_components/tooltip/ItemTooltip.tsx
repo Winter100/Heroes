@@ -1,6 +1,5 @@
 "use client";
 import { itemInfoMap } from "@/app/_constant/items/item_map";
-import InfoTooltip from "../common/tooltip/InfoTooltip";
 import { ItemType } from "@/app/_type/infoInfoType";
 import { ItemInfoQuipmentProps } from "@/app/_type/equipmentType";
 import { convertItemNameBySlot } from "../iteminfo/util/convertItemNameBySlot";
@@ -32,13 +31,13 @@ const ItemTooltip = memo(
     } as ItemInfoQuipmentProps;
 
     return (
-      <InfoTooltip itemName={itemName}>
+      <div className="select-none">
         {isItemInfo ? (
           <ItemInfo {...(itemInfo as ItemType)} {...equipment} />
         ) : (
           <ItemCreaftingInfo {...(itemInfo as ItemType)} {...equipment} />
         )}
-      </InfoTooltip>
+      </div>
     );
   },
 );

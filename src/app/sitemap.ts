@@ -21,6 +21,12 @@ export const sitemap = (): MetadataRoute.Sitemap => {
       priority: 1,
     },
     {
+      url: "https://www.heroes-dev.com/character",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 1,
+    },
+    {
       url: "https://www.heroes-dev.com/gold",
       lastModified: new Date(),
       changeFrequency: "daily",

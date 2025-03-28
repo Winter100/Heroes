@@ -5,8 +5,8 @@ const getBasicSlotImage = (slot: string): string => {
 };
 
 export const getImageByName = (name: string, slot?: string) => {
-  if (imageMap.has(name)) {
-    return imageMap.get(name) || "/images/hereta.png";
+  if (imageMap.has(name.trim())) {
+    return imageMap.get(name.trim()) || "/images/hereta.png";
   } else if (slot) {
     return getBasicSlotImage(slot);
   }
@@ -33,4 +33,28 @@ const basicSlotImages: Record<string, string> = {
   ["Artifact"]: "/images/items/basic/basic-artifact.png",
   ["Left Wrist"]: "/images/items/basic/basic-bracelet.png",
   ["Right Wrist"]: "/images/items/basic/basic-bracelet.png",
+
+  // 아바타 기본 슬롯
+  ["Avatar_Helm"]: "/images/cach/helm.png",
+  ["Avatar_Rear"]: "/images/cach/rear.png",
+  ["Avatar_Weapon"]: "/images/cach/weapon.png",
+  ["Avatar_Tunic"]: "/images/cach/tunic.png",
+  // ["(Unknown)"]: "/images/cach/tunic.png",
+  ["Avatar_Pants"]: "/images/cach/pants.png",
+  ["Avatar_Gloves"]: "/images/cach/gloves.png",
+  ["Avatar_Tail"]: "/images/cach/tail.png",
+  ["Avatar_Boots"]: "/images/cach/boots.png",
+
+  // 캐시 기본 슬롯
+  ["Right Epaulet"]: "/images/cach/right-epaulet.png",
+  ["Hair"]: "/images/cach/hair.png",
+  ["Left Epaulet"]: "/images/cach/left-epaulet.png",
+  ["FacePainting"]: "/images/cach/facepainting.png",
+  ["Lens"]: "/images/cach/lens.png",
+  ["Scar"]: "/images/cach/scar.png",
+  ["Inner Armor"]: "/images/cach/innerarmor.png",
+  ["MakeUp"]: "/images/cach/makeup.png",
+  ["Body Shape"]: "/images/cach/bodyshape.png",
+  ["BodyPainting"]: "/images/cach/bodypainting.png",
+  ["Badge"]: "/images/cach/badge.png",
 };

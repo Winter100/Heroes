@@ -29,7 +29,7 @@ const RaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   const boss = filterRaidList(entry);
 
   return (
-    <Column className="h-full w-full gap-4">
+    <Column className="h-full w-full gap-4 text-white">
       <>
         <div className="flex h-8 items-center justify-center gap-4 text-xs">
           <div

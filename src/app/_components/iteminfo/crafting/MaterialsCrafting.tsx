@@ -10,6 +10,11 @@ import {
   itemInfoMap,
   materialsMap,
 } from "@/app/_constant/items/item_map";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
 import Row from "../../layout/Row";
@@ -41,15 +46,23 @@ const MaterialsCrafting = () => {
       {materials && (
         <>
           <Row className="tems-center items-center justify-center gap-1 text-xs">
-            <TooltipImage
-              src={src}
-              itemName={materials}
-              isRatingBorder={true}
-            />
-            <ItemTooltipByType itemName={materials} category={category} />
-            <Item.Title type={itemRating || materialsRating || "일반"}>
-              {materials}
-            </Item.Title>
+            <Popover>
+              <PopoverTrigger className="h-full">
+                <div className="flex h-full items-center justify-center gap-2">
+                  <TooltipImage
+                    src={src}
+                    itemName={materials}
+                    isRatingBorder={true}
+                  />
+                  <Item.Title type={itemRating || materialsRating || "일반"}>
+                    {materials}
+                  </Item.Title>
+                </div>
+              </PopoverTrigger>
+              <PopoverContent className="dark w-[350px] p-1">
+                <ItemTooltipByType itemName={materials} category={category} />
+              </PopoverContent>
+            </Popover>
           </Row>
           <Item.Border />
 
