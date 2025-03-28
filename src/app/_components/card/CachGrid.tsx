@@ -53,7 +53,7 @@ const CachGrid = ({
                 <div className="flex h-full w-full items-center justify-center">
                   <div className="flex h-full w-full flex-col justify-center gap-1 px-1 hover:bg-muted/70">
                     <div className="flex w-full items-center gap-1">
-                      <div className="hidden md:block">
+                      <div className="hidden lg:block">
                         <ItemImage
                           materials={item.item_name}
                           slot={item.item_equipment_slot_name}
