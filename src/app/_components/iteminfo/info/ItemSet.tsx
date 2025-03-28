@@ -3,16 +3,34 @@ import { usePreviewStore } from "@/app/_store/previewStore";
 import { getItemSetOptions } from "../util/getItemSetOptions";
 import EnchantEffects from "../../common/enchant/EnchantEffects";
 import Item from "../../common/item/Item";
+import { useQuery } from "@tanstack/react-query";
+import { getEquipment } from "@/app/_services/getEquipment";
+import { useOcid } from "@/app/_hooks/useOcid/useOcid";
+import { Item_equipment } from "@/app/_type/equipmentType";
+import Loading from "../../common/Loading";
 
 interface ItemSetProps {
   set: string;
 }
 
 const ItemSet = ({ set }: ItemSetProps) => {
+  const { data: ocid } = useOcid();
+  const { data, isLoading, error } = useQuery<Item_equipment>({
+    enabled: !!ocid,
+    queryKey: [ocid, "장비"],
+    queryFn: () => getEquipment(ocid ?? ""),
+  });
+
   const info = usePreviewStore((state) => state?.info);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  const items = info.length >= 1 ? info : data?.item_equipment;
+
   const { bonus, haveSetList, setName, usedSetLength, totalSetLength, list } =
-    getItemSetOptions(info, set);
+    getItemSetOptions(items || [], set);
 
   return (
     <div className="text-inherit text-zinc-400">
