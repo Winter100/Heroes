@@ -15,7 +15,7 @@ const ChracterItemFilter = () => {
 
   return (
     <div>
-      <ul className="flex justify-end gap-2 pr-2">
+      <ul className="flex gap-2 pr-2">
         {filters.map((f) => (
           <li key={f}>
             <Button
