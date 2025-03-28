@@ -20,6 +20,30 @@ const slot_name = [
   { item_slot: "Necklace", item_name: "목걸이 (미착용)" },
 ];
 
+const cach_slot_name = [
+  { item_slot: "Avatar_Helm", item_name: "머리 (미착용)" },
+  { item_slot: "Avatar_Rear", item_name: "날개 (미착용)" },
+  { item_slot: "Avatar_Weapon", item_name: "무기 (미착용)" },
+  { item_slot: "Avatar_Tunic", item_name: "상의 (미착용)" },
+  { item_slot: "(Unknown)", item_name: "보조" },
+  { item_slot: "Avatar_Pants", item_name: "하의 (미착용)" },
+  { item_slot: "Avatar_Gloves", item_name: "손 (미착용)" },
+  { item_slot: "Avatar_Tail", item_name: "꼬리 (미착용)" },
+  { item_slot: "Avatar_Boots", item_name: "신발 (미착용)" },
+
+  { item_slot: "Right Epaulet", item_name: "견장 (미착용)" },
+  { item_slot: "Hair", item_name: "헤어 (미착용)" },
+  { item_slot: "Left Epaulet", item_name: "견장 (미착용)" },
+  { item_slot: "FacePainting", item_name: "페이스페인팅 (미착용)" },
+  { item_slot: "Lens", item_name: "렌즈 (미착용)" },
+  { item_slot: "Scar", item_name: "흉터 (미착용)" },
+  { item_slot: "Inner Armor", item_name: "이너아머 (미착용)" },
+  { item_slot: "MakeUp", item_name: "메이크업 (미착용)" },
+  { item_slot: "Body Shape", item_name: "체형 (미착용)" },
+  { item_slot: "BodyPainting", item_name: "바디페인팅 (미착용)" },
+  { item_slot: "Badge", item_name: "뱃지 (미착용)" },
+];
+
 export const bagList = (bag: EquipmentType[]) => {
   return slot_name.map((slot) => {
     const foundItem = bag.find(
@@ -50,6 +74,109 @@ export const bagList = (bag: EquipmentType[]) => {
                 stat_value: "",
               },
             ],
+            ability_name: "",
+            prefix_enchant_use_preset_no: 0,
+            suffix_enchant_use_preset_no: 0,
+            prefix_enchant_preset_1: "",
+            suffix_enchant_preset_1: "",
+            prefix_enchant_preset_2: "",
+            suffix_enchant_preset_2: "",
+            power_infusion_use_preset_no: 0,
+            power_infusion_preset_1: {
+              stat_name: "",
+              stat_value: "",
+            },
+            power_infusion_preset_2: {
+              stat_name: "",
+              stat_value: "",
+            },
+            cash_item_color: {
+              color_1: "",
+              color_2: "",
+              color_3: "",
+            },
+            avatar_color_use_preset_no: null,
+            avatar_color_preset_1: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+            },
+            avatar_color_preset_2: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+            },
+            avatar_color_preset_3: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+            },
+            avatar_color_preset_4: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+            },
+            avatar_color_preset_5: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+            },
+            avatar_inner_armor_color_preset_1: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+              default_color_flag: null,
+            },
+            avatar_inner_armor_color_preset_2: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+              default_color_flag: null,
+            },
+            avatar_inner_armor_color_preset_3: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+              default_color_flag: null,
+            },
+            avatar_inner_armor_color_preset_4: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+              default_color_flag: null,
+            },
+            avatar_inner_armor_color_preset_5: {
+              color_1: null,
+              color_2: null,
+              color_3: null,
+              default_color_flag: null,
+            },
+          },
+        };
+  });
+};
+export const cachList = (cach: EquipmentType[]) => {
+  return cach_slot_name.map((slot) => {
+    const foundItem = cach.find(
+      (items) => items.item_equipment_slot_name === slot.item_slot,
+    );
+
+    return foundItem
+      ? {
+          ...foundItem,
+        }
+      : {
+          item_equipment_page: "Cach",
+          item_equipment_slot_name: slot.item_slot,
+          item_name: slot.item_name,
+          item_option: {
+            enhancement_level: null,
+            // tuning_stat: [
+            //   {
+            //     stat_name: "",
+            //     stat_value: "",
+            //   },
+            // ],
             ability_name: "",
             prefix_enchant_use_preset_no: 0,
             suffix_enchant_use_preset_no: 0,

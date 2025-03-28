@@ -16,19 +16,28 @@ const ChracterData = () => {
   const { data: ocid, isLoading, error } = useOcid(name);
 
   if (!name) {
-    return <ErrorDisplay content="캐릭터를 조회해주세요" />;
+    return <ErrorDisplay content="캐릭터 이름을 입력해주세요." />;
   }
   if (isLoading) {
     return <Loading />;
   }
 
   if (error) {
-    return <ErrorDisplay content="캐릭터 조회에 실패했습니다" />;
+    return (
+      <ErrorDisplay
+        content={
+          <div className="text-center text-red-100">
+            캐릭터 조회에 실패했습니다.
+          </div>
+        }
+      />
+    );
   }
+
   return (
     <>
-      <div className="flex flex-1 flex-col gap-2 md:flex-row">
-        <div className="flex w-full max-w-[350px] flex-col gap-2">
+      <div className="flex flex-1 flex-col gap-2 px-3 md:flex-row md:px-0">
+        <div className="flex w-full flex-col gap-2 md:max-w-[350px]">
           <RoundedContainer className="flex max-h-52 flex-1 flex-col gap-2 bg-muted/50">
             <CharacterBasicInfo ocid={ocid || ""} />
           </RoundedContainer>
@@ -40,9 +49,11 @@ const ChracterData = () => {
           <CharacterEquipment ocid={ocid || ""} />
         </RoundedContainer>
       </div>
-      <RoundedContainer className="flex flex-1 bg-muted/50">
-        <CharacterSkillAwakeningTable ocid={ocid || ""} />
-      </RoundedContainer>
+      <div className="px-3 md:px-0">
+        <RoundedContainer className="flex flex-1 justify-center bg-muted/50 sm:justify-start">
+          <CharacterSkillAwakeningTable ocid={ocid || ""} />
+        </RoundedContainer>
+      </div>
     </>
   );
 };

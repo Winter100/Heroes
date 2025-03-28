@@ -14,11 +14,11 @@ const SkilDetailCardItem = ({
 }: SkilDetailCardItemProps) => {
   const src = getImageByName(skillName);
   const skills = skillDescription[jobName] || [];
-  const effect = skills?.find((s) => s.name === skillName)?.effect;
+  const effect = skills?.find((s) => s.name === skillName.trim())?.effect;
   // const skills = Object.values(skillDescription).flat();
   // const effect = skills.find((s) => s.name === skillName)?.effect;
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex select-none flex-col gap-2">
       <div className="flex items-center gap-2">
         <div className="relative flex h-8 w-8 items-center rounded-md">
           <Image

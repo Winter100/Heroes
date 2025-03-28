@@ -9,7 +9,7 @@ import { getEquipment } from "@/app/_services/getEquipment";
 import Loading from "../common/Loading";
 import CachGrid from "../card/CachGrid";
 import { useEquipmentFilterStore } from "@/app/_store/equipmentFilterStore";
-import ErrorDisplay from "../common/error/ErrorDisplay";
+import ErrorApi from "../common/error/ErrorApi";
 
 const CharacterEquipment = ({ ocid }: { ocid: string }) => {
   const { data, isLoading, error } = useQuery<Item_equipment>({
@@ -40,7 +40,7 @@ const CharacterEquipment = ({ ocid }: { ocid: string }) => {
   }
 
   if (error) {
-    return <ErrorDisplay content="잠시 후 다시 시도해주세요" />;
+    return <ErrorApi />;
   }
 
   if (filterValue === "장비") {

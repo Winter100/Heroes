@@ -6,13 +6,18 @@ import Loading from "../common/Loading";
 import { useBasic } from "@/app/_hooks/useBasic";
 import { useGuild } from "@/app/_hooks/useGuild";
 import ChracterItemFilter from "./ChracterItemFilter";
+import ErrorApi from "../common/error/ErrorApi";
 
 const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
-  const { basic, isLoading } = useBasic(ocid || "");
+  const { basic, isLoading, error } = useBasic(ocid || "");
   const { guild, isLoading: guildLoading } = useGuild(ocid);
 
   if (isLoading || guildLoading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <ErrorApi />;
   }
 
   const profileData = [
