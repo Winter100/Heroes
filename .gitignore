@@ -42,5 +42,6 @@ delete/*
 dummyEnchantList.ts
 
 src/app/_components/testComponents/*
+src/app/_constant/jsonData/*
 src/app/(route)/(main)/testpage/*
 delete/*
