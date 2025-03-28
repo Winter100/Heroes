@@ -35,8 +35,8 @@ const ChracterData = () => {
   }
 
   return (
-    <>
-      <div className="flex flex-1 flex-col gap-2 px-3 md:flex-row md:px-0">
+    <div className="flex flex-1 flex-col gap-2">
+      <div className="flex flex-1 flex-col gap-2 px-3 sm:flex-row sm:px-0">
         <div className="flex w-full flex-col gap-2 md:max-w-[350px]">
           <RoundedContainer className="flex max-h-52 flex-1 flex-col gap-2 bg-muted/50">
             <CharacterBasicInfo ocid={ocid || ""} />
@@ -49,12 +49,12 @@ const ChracterData = () => {
           <CharacterEquipment ocid={ocid || ""} />
         </RoundedContainer>
       </div>
-      <div className="px-3 md:px-0">
-        <RoundedContainer className="flex flex-1 justify-center bg-muted/50 sm:justify-start">
+      <div className="flex w-full flex-1 flex-col px-3 md:px-0">
+        <RoundedContainer className="flex w-full flex-1 justify-center bg-muted/50 sm:justify-start">
           <CharacterSkillAwakeningTable ocid={ocid || ""} />
         </RoundedContainer>
       </div>
-    </>
+    </div>
   );
 };
 

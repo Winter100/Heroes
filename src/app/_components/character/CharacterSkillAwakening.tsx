@@ -36,7 +36,7 @@ const CharacterSkillAwakening = ({
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-1/5">
+          <TableHead className="w-full md:w-1/5">
             <div className="flex h-full w-full cursor-default items-center justify-center gap-2">
               <Image
                 className="rounded-full"

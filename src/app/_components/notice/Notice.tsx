@@ -91,7 +91,7 @@ const Notice = ({
                           )}
                           <div className="flex gap-2">
                             <span>{item.title}</span>
-                            <span className="flex items-center text-[11px] text-red-600">
+                            <span className="flex items-center text-xs text-red-600">
                               {getTimeDifference(
                                 convertToKST(item?.date || ""),
                               )}

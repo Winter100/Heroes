@@ -36,8 +36,8 @@ const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
   }
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="grid h-full w-full grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
+    <div className="flex flex-1 flex-col gap-2">
+      <div className="flex h-full w-auto flex-col sm:grid sm:grid-cols-3 lg:grid-cols-5">
         {/* <div className="grid h-full w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"> */}
         <div>
           <CharacterSkillAwakening

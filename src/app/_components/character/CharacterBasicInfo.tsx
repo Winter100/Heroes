@@ -29,7 +29,7 @@ const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
   ];
 
   return (
-    <div className="flex flex-1 flex-col gap-1">
+    <div className="flex h-full flex-col gap-1">
       <ChracterItemFilter />
       <div className="flex h-full gap-2">
         <RoundedContainer className="h-full w-full max-w-36 border border-border">
@@ -38,7 +38,7 @@ const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
             name={basic?.character_name}
           />
         </RoundedContainer>
-        <RoundedContainer className="flex max-w-60 flex-1 border border-border">
+        <RoundedContainer className="flex flex-1 border border-border">
           <CharacterProfile profileData={profileData || []} />
         </RoundedContainer>
       </div>
