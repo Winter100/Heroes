@@ -19,9 +19,19 @@ import Column from "../../layout/Column";
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
   useEnchantPriceList();
-  if (isLoading) return <Loading size="10" />;
+
+  if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요" />;
+  if (isLoading) return <Loading />;
   if (error)
-    return <ErrorDisplay content={`${name || ""} 조회에 실패했습니다`} />;
+    return (
+      <ErrorDisplay
+        content={
+          <div className="text-center text-red-100">
+            캐릭터 조회에 실패했습니다.
+          </div>
+        }
+      />
+    );
 
   return (
     <>

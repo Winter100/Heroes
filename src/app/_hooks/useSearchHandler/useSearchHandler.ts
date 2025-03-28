@@ -5,6 +5,7 @@ import { FormEvent, RefObject } from "react";
 export const useSearchHandler = (
   inputRef: RefObject<HTMLInputElement>,
   focus: () => void,
+  routeName?: string,
 ) => {
   const router = useRouter();
   const previewReset = usePreviewStore((state) => state.reset);
@@ -21,6 +22,11 @@ export const useSearchHandler = (
     const resultArray = value.trim().split(" ")[0];
     if (resultArray.length >= 1) {
       inputRef.current.value = resultArray;
+
+      if (routeName) {
+        return router.push(`/${routeName}?name=${resultArray}`);
+      }
+
       router.push(`/preview?name=${resultArray}`);
     }
   };

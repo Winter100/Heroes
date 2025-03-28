@@ -38,10 +38,10 @@ const RaidSelectorWithStats = () => {
     ) as MonstersType;
 
   return (
-    <div className="relative mt-2 w-full border-t border-borderColor pt-2 text-white">
+    <div className="mt-2 w-full border-t border-borderColor pt-2 text-white">
       <RaidSelecterModal isAllBtn={true} />
 
-      <table className="flex h-full w-full table-fixed flex-col gap-1 py-2 text-[9px] md:text-xs">
+      <table className="flex h-full w-full table-fixed flex-col gap-1 text-[9px] md:text-xs">
         <caption className="hidden">미리보기</caption>
         <thead>
           <tr className="flex w-full items-center justify-center">
@@ -57,7 +57,7 @@ const RaidSelectorWithStats = () => {
             ))}
           </tr>
         </thead>
-        <tbody className="flex h-full items-center justify-center text-xs font-normal">
+        <tbody className="flex items-center justify-center pt-1 text-xs font-normal">
           <tr className="flex h-full w-full items-center justify-center">
             {filteredStats.map((item) => (
               <td

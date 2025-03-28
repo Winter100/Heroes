@@ -6,6 +6,11 @@ import TooltipImage from "../../common/tooltip/TooltipImage";
 import Item from "../../common/item/Item";
 import CraftingQuantity from "../crafting/CraftingQuantity";
 import ItemTooltipByType from "../../tooltip/ItemTooltipByType";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface MaterialsCraftingItemProps extends MaterialsType {
   depth?: number;
@@ -14,7 +19,6 @@ interface MaterialsCraftingItemProps extends MaterialsType {
 const MaterialsCraftingItem = memo(
   ({
     item_name,
-    item_description,
     item_quantity,
     category,
     // depth,
@@ -25,27 +29,34 @@ const MaterialsCraftingItem = memo(
     const src = getTooltipImageSrc(item_name);
 
     return (
-      <div className="flex w-full flex-col pl-0 sm:pl-2">
-        <div className="flex flex-row items-center gap-1">
-          <TooltipImage itemName={item_name} src={src} isRatingBorder={true} />
-          <div className="flex w-full items-center justify-between text-xs">
-            <span className="flex-1">
-              <div className="flex flex-col">
-                <Item.Title type={itemRating || materialsRating || "일반"}>
-                  {item_name}
-                </Item.Title>
-                <span className="text-[10px]">{item_description}</span>
+      <div className="flex w-full flex-col">
+        <div className="flex flex-row items-center">
+          <Popover>
+            <PopoverTrigger className="h-full w-full text-xs hover:bg-muted/50">
+              <div className="flex h-full flex-1 items-center">
+                <div className="flex flex-1 items-center gap-2">
+                  <TooltipImage
+                    src={src}
+                    itemName={item_name}
+                    isRatingBorder={true}
+                  />
+                  <Item.Title type={itemRating || materialsRating || "일반"}>
+                    {item_name}
+                  </Item.Title>
+                </div>
+                <div className="flex items-center md:w-40">
+                  <div className="w-4">x</div>
+                  <div className="flex w-full items-center">
+                    <CraftingQuantity item_quantity={item_quantity} />
+                  </div>
+                </div>
               </div>
-            </span>
-            <span className="w-3">x</span>
-            <CraftingQuantity item_quantity={item_quantity} />
-          </div>
+            </PopoverTrigger>
+            <PopoverContent className="dark w-[350px] p-1">
+              <ItemTooltipByType itemName={item_name} category={category} />
+            </PopoverContent>
+          </Popover>
         </div>
-        <ItemTooltipByType
-          key={item_name}
-          itemName={item_name}
-          category={category || ""}
-        />
       </div>
     );
   },

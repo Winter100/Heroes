@@ -4,6 +4,7 @@ import { usePreviewStore } from "@/app/_store/previewStore";
 import { useRaidStore } from "@/app/_store/raidStore";
 import Column from "../../layout/Column";
 import { useStats } from "@/app/_hooks/useStats/useStats";
+import ErrorDisplay from "../../common/error/ErrorDisplay";
 
 const PreviewLayout = ({ children }: { children: React.ReactNode }) => {
   const { name } = useStats();
@@ -25,11 +26,10 @@ const PreviewLayout = ({ children }: { children: React.ReactNode }) => {
     };
   }, [reset]);
 
-  return (
-    <Column className="relative h-full w-full gap-1 rounded-lg text-fontColor">
-      {name && children}
-    </Column>
-  );
+  if (!name) {
+    return <ErrorDisplay content="캐릭터 이름을 입력해주세요." />;
+  }
+  return <Column className="relative flex flex-1">{name && children}</Column>;
 };
 
 export default PreviewLayout;

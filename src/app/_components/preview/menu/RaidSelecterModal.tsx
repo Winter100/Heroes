@@ -51,7 +51,7 @@ const RaidSelecterModal = ({ isAllBtn = true }: { isAllBtn: boolean }) => {
       </Modal.Open>
       <Modal.Body>
         <>
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end text-white">
             <button onClick={() => setOpen(false)}>X</button>
           </div>
           {isAllBtn ? (

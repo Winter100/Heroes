@@ -57,7 +57,7 @@ const ItemInfo = memo(
 
     const itemRating = rating || gradeMatch;
     return (
-      <Item className="flex w-full flex-col gap-1 rounded-md border border-borderColor/30">
+      <Item className="flex w-full flex-col gap-1">
         <ItemTop
           slot={slot}
           category={category}

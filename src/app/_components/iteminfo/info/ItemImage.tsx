@@ -10,10 +10,6 @@ interface ItemImageProps {
 }
 
 const ItemImage = memo(({ slot, size = 35, materials }: ItemImageProps) => {
-  // const { itemName } = convertItemNameBySlot(slot || "", materials);
-  // const src = getImageByName(itemName, slot);
-  // console.log(materials);
-
   const removePrefixName = materials.replace(
     /^(초급|중급|고급|레어|전설)\s*/,
     "",
@@ -24,7 +20,6 @@ const ItemImage = memo(({ slot, size = 35, materials }: ItemImageProps) => {
       <Image
         className={clsx(
           "rounded-md object-scale-down",
-          // "rounded-sm border border-gray-400/50 object-scale-down",
           materials.includes("레어") && "rounded-sm border border-orange-300",
           materials.includes("전설") && "rounded-sm border border-pink-400",
         )}

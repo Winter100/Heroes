@@ -6,10 +6,14 @@ import { PrviewItemProps } from "@/app/_type/previewType";
 import ItemTooltip from "../tooltip/ItemTooltip";
 import PreviewModal from "../preview/menu/PreviewModal";
 import { getItemInfoOptions } from "../iteminfo/util/getItemInfoOptions";
-import TooltipImage from "../common/tooltip/TooltipImage";
-import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
 import OneGrindingDialog from "../dialog/OneGrindingDialog";
 import { memo } from "react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import ItemImage from "../iteminfo/info/ItemImage";
 
 const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
   const itemName = {
@@ -33,24 +37,29 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
     beforeSuffixEnchantName,
   } = item?.before;
 
-  const src = getTooltipImageSrc(item.item_name, slot);
-
   return (
     <Row className="flex h-full w-full items-center gap-2 text-sm">
-      <BeforeAndAfter className="w-8 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
+      <BeforeAndAfter className="w-20 justify-start sm:justify-center">
         {/* <BeforeAndAfter.Title>아이템 이름</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
-            <TooltipImage
-              src={src}
-              itemName={item.item_name}
-              isRatingBorder={true}
-            />
-            <ItemTooltip
-              isItemInfo={true}
-              itemName={item.item_name}
-              {...item}
-            />
+            <Popover>
+              <PopoverTrigger className="h-full w-full">
+                <div className="flex h-full flex-col items-center justify-center">
+                  <ItemImage
+                    materials={item.item_name}
+                    slot={item.item_equipment_slot_name}
+                  />
+                </div>
+              </PopoverTrigger>
+              <PopoverContent className="dark w-[350px] p-1">
+                <ItemTooltip
+                  isItemInfo={true}
+                  itemName={item.item_name}
+                  {...item}
+                />
+              </PopoverContent>
+            </Popover>
           </BeforeAndAfter.Before>
         </BeforeAndAfter.Content>
       </BeforeAndAfter>

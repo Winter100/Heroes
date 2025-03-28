@@ -11,7 +11,7 @@ const MaterialsInfo = ({
   item_rating,
 }: BasicItemInfoType) => {
   return (
-    <Item className="flex w-full flex-col gap-1 rounded-md border border-borderColor/30">
+    <Item className="flex w-full flex-col gap-1">
       <Row>
         <Item.Image src={getImageByName(item_name)} alt={item_name} />
         <Column className="w-full gap-0.5 text-gray-400">
