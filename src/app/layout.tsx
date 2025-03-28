@@ -76,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="dark-1">
       <GoogleAnalytics />
-      <body className="flex min-h-svh flex-col">
+      <body className="flex min-h-dvh flex-col">
         <div className="relative flex flex-1 flex-col font-sans text-fontColor">
           <ScreenContainer className="dark flex h-full flex-1 flex-col">
             <SidebarProvider>

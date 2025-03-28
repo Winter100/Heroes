@@ -9,7 +9,13 @@ const Home = () => {
   return (
     <Suspense fallback={<Loading />}>
       <div className="dark flex flex-1 flex-col gap-2 p-2">
-        <RoundedContainer className="flex h-60 w-full items-center justify-center bg-muted/50"></RoundedContainer>
+        <div
+          className="relative h-60 w-full rounded-md bg-cover"
+          style={{
+            backgroundImage: "url(/art.jpg)",
+            backgroundPosition: "center 12%",
+          }}
+        ></div>
         <HomeNotice />
         <div className="flex flex-1 gap-2">
           <RoundedContainer className="flex flex-1 flex-col bg-muted/50">

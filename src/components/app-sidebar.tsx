@@ -2,23 +2,16 @@
 
 import * as React from "react";
 import {
-  AudioWaveform,
+  BadgeCent,
   Book,
-  CalendarSearch,
-  Command,
-  GalleryVerticalEnd,
   House,
-  ListOrdered,
   Pickaxe,
-  PiggyBank,
   Search,
   Table,
   UserRoundPen,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
@@ -27,32 +20,8 @@ import {
   SidebarRail,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { NavEvent } from "./nav-event";
 
-// This is sample data.
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navHome: [
     {
       title: "홈",
@@ -77,9 +46,9 @@ const data = {
       icon: Table,
     },
     {
-      title: "랭킹 조회",
-      url: "/rank",
-      icon: ListOrdered,
+      title: "골드 거래소 조회",
+      url: "/gold",
+      icon: BadgeCent,
     },
   ],
   navInfo: [
@@ -93,18 +62,11 @@ const data = {
       url: "/iteminfo",
       icon: Pickaxe,
     },
-    {
-      title: "아이템 드랍",
-      url: "/raid/drop",
-      icon: PiggyBank,
-    },
-  ],
-  navNotice: [
-    {
-      title: "이벤트",
-      url: "/market/enchant",
-      icon: CalendarSearch,
-    },
+    // {
+    //   title: "아이템 드랍",
+    //   url: "/raid/drop",
+    //   icon: PiggyBank,
+    // },
   ],
 };
 
@@ -112,18 +74,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <div className="block cursor-default text-center text-xl text-gray-400 sm:hidden">
+          망스비
+        </div>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navHome} label="" />
         <NavMain items={data.navMain} label="검색" />
         <NavMain items={data.navInfo} label="정보" />
         <SidebarSeparator className="mx-0" />
-        <NavEvent items={data.navNotice} label="" />
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={data.user} />
-      </SidebarFooter>
+      <SidebarFooter></SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );

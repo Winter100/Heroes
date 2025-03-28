@@ -8,11 +8,17 @@ import { IoIosArrowForward } from "react-icons/io";
 import Loading from "../common/Loading";
 import { isWithinHours } from "@/app/_utils/isWithin24Hours";
 import { convertToKST } from "@/app/_utils/convertToKST";
-import { getTimeDifference } from "../preview/utils/dateEvent";
+import { getRemainingTime, getYearMonthDay } from "../preview/utils/dateEvent";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { EventDate } from "@/app/_store/noticeEventStore";
+import { SquareArrowOutUpRight } from "lucide-react";
 import ErrorDisplay from "../common/error/ErrorDisplay";
 
 interface NoteListProps extends ComponentProps<"div"> {
   mainTitle: string;
+  eventDate: EventDate | null;
+  setEventDate: (date: EventDate | null) => void;
   items: {
     title: string;
     url: string;
@@ -26,12 +32,14 @@ interface NoteListProps extends ComponentProps<"div"> {
   isError: Error | null;
 }
 
-const Notice = ({
+const EventNotice = ({
   items,
   mainTitle,
   className,
   itemsPerPage = 5,
   isLoading,
+  eventDate,
+  setEventDate,
   isError,
 }: NoteListProps) => {
   const [page, setPage] = useState(1);
@@ -40,8 +48,6 @@ const Notice = ({
     const startIndex = (page - 1) * itemsPerPage;
     return items?.slice(startIndex, startIndex + itemsPerPage);
   }, [page, items, itemsPerPage]);
-
-  const totalPages = Math.ceil(items.length / itemsPerPage);
 
   if (isError) {
     return (
@@ -59,6 +65,8 @@ const Notice = ({
     );
   }
 
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+
   return (
     <div className={clsx("flex flex-col", className)}>
       <p className="text-sm">{mainTitle}</p>
@@ -69,37 +77,75 @@ const Notice = ({
           </div>
         ) : (
           <>
-            <ul className="flex h-full flex-col gap-2 p-2 text-sm">
+            <ul className="grid h-full gap-2 p-2 text-sm lg:grid-rows-6">
               {currentItems?.map((item) => {
                 const date = item?.date ? item?.date : item?.date_event_start;
                 const is24InHours = isWithinHours(date || "", 24);
                 return (
-                  <li key={item.notice_id} className="flex w-full">
-                    <Link
-                      className="block w-full"
-                      target="_blank"
+                  <li key={item.notice_id} className="flex flex-1 gap-2">
+                    <button
+                      onClick={() => {
+                        const newEvent = {
+                          notice_id: item.notice_id,
+                          start: item.date_event_start || "",
+                          end: item.date_event_end || "",
+                        };
+                        setEventDate(newEvent);
+                      }}
+                      className="h-full w-full"
                       rel="noopener noreferrer"
-                      href={item.url}
                     >
                       <div
                         title={item.title}
-                        className="flex gap-1 rounded-md bg-backgroundOne p-2 outline-1 outline-borderColor/50 hover:outline"
+                        className={cn(
+                          "flex h-full gap-1 rounded-md border border-transparent bg-backgroundOne p-2 hover:text-white",
+                          eventDate?.notice_id === item.notice_id &&
+                            "border-blue-300 text-white",
+                        )}
                       >
-                        <div className="flex items-center gap-2 truncate">
-                          {is24InHours && (
-                            <span className="text-xs text-red-600">N</span>
-                          )}
-                          <div className="flex gap-2">
-                            <span>{item.title}</span>
-                            <span className="flex items-center text-[11px] text-red-600">
-                              {getTimeDifference(
-                                convertToKST(item?.date || ""),
+                        <div className="relative flex w-full flex-wrap items-center justify-center gap-2">
+                          <div>
+                            <span>
+                              {is24InHours && (
+                                <span className="pr-1 text-xs text-red-600">
+                                  N
+                                </span>
                               )}
+                              {item.title}
                             </span>
+                            {item?.date_event_start && (
+                              <div className="text-center text-xs">
+                                {`${getYearMonthDay(
+                                  convertToKST(item?.date_event_start || ""),
+                                )} ~ ${getYearMonthDay(
+                                  convertToKST(item?.date_event_end || ""),
+                                )}`}
+                              </div>
+                            )}
+
+                            <Badge
+                              variant="destructive"
+                              className={cn(
+                                "right-0 top-0 mx-auto block w-24 lg:absolute",
+                              )}
+                            >
+                              {item?.date_event_end
+                                ? getRemainingTime(item?.date_event_end || "")
+                                : "상시"}
+                            </Badge>
                           </div>
                         </div>
                       </div>
-                    </Link>
+                    </button>
+                    <div className="flex items-end justify-start">
+                      <Link
+                        href={item?.url}
+                        target="_blank"
+                        className="hover:text-white"
+                      >
+                        <SquareArrowOutUpRight size={15} />
+                      </Link>
+                    </div>
                   </li>
                 );
               })}
@@ -134,4 +180,4 @@ const Notice = ({
   );
 };
 
-export default Notice;
+export default EventNotice;
