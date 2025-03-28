@@ -5,7 +5,6 @@ import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
 import OneGrindingContent from "./content/OneGrindingContent";
 import { Button } from "@headlessui/react";
 import Item from "../common/item/Item";
-import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
 
 interface OneGrindingDialogProps {
   item: NewEquipmentType;
@@ -28,7 +27,7 @@ const OneGrindingDialog = ({ item }: OneGrindingDialogProps) => {
         <Item.Image src={src} alt={"연마"} />
       </Button>
       <BasicDialog
-        className="max-h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 md:max-h-[1000px] md:p-6 md:pb-4"
+        className="max-h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 text-white md:max-h-[1000px] md:p-6 md:pb-4"
         // className="max-h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-[800px] md:p-6 md:pb-4 lg:h-full"
         isOpen={isOpen}
         onClose={onClose}

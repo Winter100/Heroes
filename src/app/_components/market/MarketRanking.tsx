@@ -3,8 +3,8 @@ import MarketPlaceList from "./marketplace/MarketPlaceList";
 
 const MarketRanking = () => {
   return (
-    <Column className="h-full w-full gap-3">
-      <Column className="flex h-full w-full flex-row gap-10 lg:flex-row">
+    <Column className="h-full w-full gap-2">
+      <Column className="flex h-full w-full flex-row gap-5 px-2 md:px-0 lg:flex-row">
         <Column className="h-full w-full flex-1">
           <p className="my-4 text-center text-sm">골드 구매</p>
           <MarketPlaceList type="buy" />

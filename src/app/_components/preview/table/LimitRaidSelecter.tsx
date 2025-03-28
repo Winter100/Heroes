@@ -46,13 +46,13 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
         </div>
       </>
 
-      <div className="flex w-full flex-col gap-2 sm:grid sm:grid-cols-4">
+      <div className="flex w-full flex-col gap-2 text-white sm:grid sm:grid-cols-4">
         {boss.map((item) => (
           <div
             className="flex flex-col gap-2 rounded-lg bg-background p-2"
             key={item?.raid_name}
           >
-            <div className="flex w-full items-center justify-center text-white">
+            <div className="flex w-full items-center justify-center">
               <h2>{item?.raid_name}</h2>
             </div>
             <div className="flex flex-col gap-4">

@@ -29,7 +29,6 @@ const CachGrid = ({
   const slot = filterValue === "아바타" ? avatarSlot : cachSlot;
   return (
     <ul className="grid h-full min-h-[480px] w-full grid-cols-3 grid-rows-4 items-center justify-items-center gap-2">
-      {/* <ul className="grid h-full w-full grid-cols-3 grid-rows-4 items-center justify-items-center gap-2"> */}
       {slot.flat().map((slot, index) => {
         if (!slot)
           return (
@@ -54,10 +53,12 @@ const CachGrid = ({
                 <div className="flex h-full w-full items-center justify-center">
                   <div className="flex h-full w-full flex-col justify-center gap-1 px-1 hover:bg-muted/70">
                     <div className="flex w-full items-center gap-1">
-                      <ItemImage
-                        materials={item.item_name}
-                        slot={item.item_equipment_slot_name}
-                      />
+                      <div className="hidden md:block">
+                        <ItemImage
+                          materials={item.item_name}
+                          slot={item.item_equipment_slot_name}
+                        />
+                      </div>
                       <div
                         className="truncate text-center text-xs"
                         title={item.item_name}

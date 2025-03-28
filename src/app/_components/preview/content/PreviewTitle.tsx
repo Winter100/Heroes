@@ -4,7 +4,7 @@ import BeforeAndAfter from "../../common/beforeAndAfter/BeforeAndAfter";
 const PreviewTitle = () => {
   return (
     <Row className="mt-1 h-12 gap-1 border-b border-borderColor sm:gap-2">
-      <BeforeAndAfter className="w-10 justify-start sm:w-28 sm:justify-center md:w-36 lg:w-40">
+      <BeforeAndAfter className="w-20 justify-start sm:justify-center">
         <BeforeAndAfter.Title className="overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
           아이템
         </BeforeAndAfter.Title>

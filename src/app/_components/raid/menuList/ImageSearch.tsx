@@ -114,7 +114,7 @@ function ImageSearch() {
               transition
               className="relative w-11/12 transform overflow-hidden rounded-lg border bg-backgroundOne text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-[500px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
             >
-              <div className="bg-backgroundOne px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div className="bg-backgroundOne px-4 pb-4 pt-5 text-white sm:p-6 sm:pb-4">
                 <div className="flex h-full cursor-default flex-col gap-1 p-2">
                   <div className="flex items-center justify-center gap-1">
                     <h2 className="text-3xl">이미지 검색</h2>
