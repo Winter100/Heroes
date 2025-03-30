@@ -216,13 +216,14 @@ const Sidebar = React.forwardRef<
             style={
               {
                 "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
+                background: "var(--side-bar)",
               } as React.CSSProperties
             }
             side={side}
           >
             <SheetHeader className="sr-only">
-              <SheetTitle>Sidebar</SheetTitle>
-              <SheetDescription>mobile sidebar</SheetDescription>
+              <SheetTitle></SheetTitle>
+              <SheetDescription></SheetDescription>
             </SheetHeader>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>

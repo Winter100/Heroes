@@ -9,6 +9,8 @@ import { AppSidebar } from "@/components/app-sidebar";
 
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import HomeBreadcrumb from "./_components/home/HomeBreadcrumb";
+import GoogleAdsense from "./_components/adsense/GoogleAdsense";
+import GoogleAdSenseComponent from "./_components/adsense/GoogleAdSenseComponent";
 
 export const metadata: Metadata = {
   applicationName: keyword.project.name,
@@ -76,20 +78,31 @@ export default function RootLayout({
   return (
     <html lang="ko" className="dark-1">
       <GoogleAnalytics />
+      <GoogleAdsense pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ""} />
       <body className="flex min-h-dvh flex-col">
         <div className="relative flex flex-1 flex-col font-sans text-fontColor">
+          <div className="left-ad side-ad absolute left-0 top-0 h-full w-[calc((100vw-1280px)/2)]">
+            <GoogleAdSenseComponent
+              dataSlot={"2056348937"}
+              pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ""}
+            />
+          </div>
           <ScreenContainer className="dark flex h-full flex-1 flex-col">
             <SidebarProvider>
               <AppSidebar className="sticky" />
               <SidebarInset>
                 <HomeBreadcrumb />
-                <main className="flex flex-1 flex-col bg-black">
-                  {children}
-                </main>
+                <main className="flex flex-1 flex-col">{children}</main>
                 <Footer />
               </SidebarInset>
             </SidebarProvider>
           </ScreenContainer>
+          <div className="right-ad side-ad absolute right-0 top-0 h-full w-[calc((100vw-1280px)/2)]">
+            <GoogleAdSenseComponent
+              dataSlot={"1601053361"}
+              pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ""}
+            />
+          </div>
         </div>
       </body>
     </html>

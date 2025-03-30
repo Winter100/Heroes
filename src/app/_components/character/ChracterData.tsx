@@ -36,23 +36,21 @@ const ChracterData = () => {
 
   return (
     <div className="flex flex-1 flex-col gap-2">
-      <div className="flex flex-1 flex-col gap-2 px-3 sm:flex-row sm:px-0">
-        <div className="flex w-full flex-col gap-2 md:max-w-[350px]">
-          <RoundedContainer className="flex max-h-52 flex-1 flex-col gap-2 bg-muted/50">
+      <div className="flex flex-1 flex-col gap-2 px-6 sm:flex-row md:px-0">
+        <div className="flex flex-1 flex-col gap-2 md:max-w-[380px]">
+          <RoundedContainer className="flex flex-col gap-2 bg-muted/50">
             <CharacterBasicInfo ocid={ocid || ""} />
           </RoundedContainer>
-          <RoundedContainer className="flex flex-1 flex-col gap-2 bg-muted/50">
+          <RoundedContainer className="flex h-full flex-col gap-2 bg-muted/50">
             <CharacterStats ocid={ocid || ""} />
           </RoundedContainer>
         </div>
-        <RoundedContainer className="flex w-full bg-muted/50">
+        <RoundedContainer className="flex flex-1 bg-muted/50">
           <CharacterEquipment ocid={ocid || ""} />
         </RoundedContainer>
       </div>
-      <div className="flex w-full flex-1 flex-col px-3 md:px-0">
-        <RoundedContainer className="flex w-full flex-1 justify-center bg-muted/50 sm:justify-start">
-          <CharacterSkillAwakeningTable ocid={ocid || ""} />
-        </RoundedContainer>
+      <div className="flex w-full flex-1 flex-col px-6 md:px-0">
+        <CharacterSkillAwakeningTable ocid={ocid || ""} />
       </div>
     </div>
   );
