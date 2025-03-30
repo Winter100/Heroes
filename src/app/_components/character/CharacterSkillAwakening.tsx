@@ -33,7 +33,7 @@ const CharacterSkillAwakening = ({
   skillData = [],
 }: CharacterSkillAwakeningProps) => {
   return (
-    <Table>
+    <Table className="rounded-md bg-muted/50">
       <TableHeader>
         <TableRow>
           <TableHead className="w-full md:w-1/5">
@@ -55,23 +55,19 @@ const CharacterSkillAwakening = ({
           <TableRow key={s.skill_name}>
             <TableCell className="p-0.5 text-xs">
               <Popover>
-                <PopoverTrigger className="h-full w-full p-2">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      className="rounded-sm"
-                      src={getImageByName(s.skill_name)}
-                      width={20}
-                      height={20}
-                      alt="s"
-                    />
-                    <div className="flex w-full">
-                      <div className="flex flex-1 text-start">
-                        {s.skill_name}
-                      </div>
-                      <div className="w-10 text-xs">
-                        {extractValue(s.item_name)}
-                      </div>
+                <PopoverTrigger className="h-full w-full">
+                  <div className="flex items-center gap-2 p-2">
+                    <div className="flex flex-col items-center justify-center">
+                      <Image
+                        className="rounded-sm"
+                        src={getImageByName(s.skill_name)}
+                        width={25}
+                        height={25}
+                        alt="skill"
+                      />
                     </div>
+                    <div className="w-full text-start">{s.skill_name}</div>
+                    <div className="w-12">{extractValue(s.item_name)}</div>
                   </div>
                 </PopoverTrigger>
                 <PopoverContent className="dark w-full max-w-[350px]">
