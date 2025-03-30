@@ -26,8 +26,8 @@ const CachColors = ({
                   backgroundColor: `rgb(${col?.toString()})`,
                 }}
               />
-              <div className="flex flex-col items-center gap-2 lg:flex-row">
-                <span className="hidden lg:block">{`색상파트 ${i + 1}:`}</span>
+              <div className="flex flex-col items-center gap-2 truncate lg:flex-row">
+                <span className="hidden xl:block">{`색상파트 ${i + 1}:`}</span>
                 <span>{col?.toString()}</span>
               </div>
             </>
