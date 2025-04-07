@@ -105,10 +105,10 @@ export const getRemainingTime = (targetDateString: string): string => {
     // 24시간 이내인 경우 시간과 분으로 표시
     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-    return `${hours}시간 ${minutes}분 남음`;
+    return `${hours}시간 ${minutes}분`;
   } else {
     // 24시간 초과인 경우 일수로 표시
     const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-    return `${daysDiff}일 남음`;
+    return `${daysDiff}일`;
   }
 };

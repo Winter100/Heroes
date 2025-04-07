@@ -20,7 +20,7 @@ const HomeNotice = () => {
 
   return (
     <div className="flex flex-col gap-2 md:flex-row">
-      <RoundedContainer className="flex w-full flex-1 bg-muted/50">
+      <RoundedContainer className="flex flex-1 truncate bg-muted/50">
         <Notice
           className="h-full w-full items-center justify-center gap-1"
           mainTitle="공지사항"
@@ -30,7 +30,7 @@ const HomeNotice = () => {
           itemsPerPage={5}
         />
       </RoundedContainer>
-      <RoundedContainer className="flex w-full flex-1 bg-muted/50">
+      <RoundedContainer className="flex flex-1 truncate bg-muted/50">
         <Notice
           className="h-full w-full items-center justify-center gap-1"
           mainTitle="패치노트"
