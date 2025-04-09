@@ -1,8 +1,3 @@
-// export interface CraftingType {
-//   item_category: string;
-//   item_list: ItemListType[];
-// }
-
 export interface ItemListType {
   item_name: string;
   item_crafting: string[];
@@ -221,6 +216,89 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_quantity: 72,
       },
       { item_name: "와드네 승급석: 무기", item_quantity: 3 },
+      {
+        item_name: "+ 프리미엄 강화의 룬",
+        item_quantity: 1,
+      },
+    ],
+  },
+  {
+    item_name: "레어 와드네 무기",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 3400000 },
+      {
+        item_name: "고급 와드네 무기",
+        item_quantity: 1,
+      },
+      { item_name: "모르간트의 정수", item_quantity: 3 },
+      { item_name: "와드네의 파편: 무기", item_quantity: 3 },
+      {
+        item_name: "오롯한 와드네의 결정",
+        item_quantity: 10,
+      },
+      {
+        item_name: "가벼운 와드네의 결정",
+        item_quantity: 10,
+      },
+      {
+        item_name: "안정된 와드네의 결정",
+        item_quantity: 10,
+      },
+
+      {
+        item_name: "고급 강화의 비약",
+        item_quantity: 40,
+      },
+      {
+        item_name: "자르딘 강철",
+        item_quantity: 159,
+      },
+      { item_name: "와드네 승급석: 무기", item_quantity: 3 },
+      {
+        item_name: "+ 프리미엄 강화의 룬",
+        item_quantity: 1,
+      },
+    ],
+  },
+  {
+    item_name: "전설 와드네 무기",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 5000000 },
+      {
+        item_name: "레어 와드네 무기",
+        item_quantity: 1,
+      },
+      { item_name: "모르간트의 정수", item_quantity: 3 },
+      { item_name: "와드네의 파편: 무기", item_quantity: 4 },
+      {
+        item_name: "오롯한 와드네의 결정",
+        item_quantity: 10,
+      },
+      {
+        item_name: "가벼운 와드네의 결정",
+        item_quantity: 10,
+      },
+      {
+        item_name: "안정된 와드네의 결정",
+        item_quantity: 10,
+      },
+      {
+        item_name: "예리한 와드네의 결정",
+        item_quantity: 10,
+      },
+      {
+        item_name: "고급 강화의 비약",
+        item_quantity: 60,
+      },
+      {
+        item_name: "자르딘 강철",
+        item_quantity: 351,
+      },
+      { item_name: "와드네 승급석: 무기", item_quantity: 4 },
       {
         item_name: "+ 프리미엄 강화의 룬",
         item_quantity: 1,
@@ -536,6 +614,207 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
+    item_name: "와드네 건틀릿",
+    item_crafting: ["전문기술"],
+    item_category: "장비",
+    item_materials: [
+      {
+        item_name: "+15 오르나 건틀릿",
+        item_quantity: 1,
+        item_description: "해제를 제외한 모든 능력치를 최대한 연마",
+      },
+      { item_name: "모르간트의 정수", item_quantity: 4 },
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 2 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
+      {
+        item_name: "추출의 룬",
+        item_quantity: 1,
+        item_description: "선택 재료",
+      },
+    ],
+  },
+  {
+    item_name: "초급 와드네 건틀릿",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 500000 },
+      { item_name: "와드네 건틀릿", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 5 },
+      { item_name: "자르딘 강철", item_quantity: 5 },
+      { item_name: "와드네 승급석: 손 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
+    ],
+  },
+  {
+    item_name: "중급 와드네 건틀릿",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 750000 },
+      { item_name: "초급 와드네 건틀릿", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 5 },
+      { item_name: "자르딘 강철", item_quantity: 11 },
+      { item_name: "고급 강화의 비약", item_quantity: 5 },
+      { item_name: "와드네 승급석: 손 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
+    ],
+  },
+  {
+    item_name: "고급 와드네 건틀릿",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 1150000 },
+      { item_name: "중급 와드네 건틀릿", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "자르딘 강철", item_quantity: 24 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "와드네 승급석: 손 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
+    ],
+  },
+
+  {
+    item_name: "레어 와드네 건틀릿",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 1700000 },
+      { item_name: "고급 와드네 건틀릿", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "자르딘 강철", item_quantity: 53 },
+      { item_name: "고급 강화의 비약", item_quantity: 14 },
+      { item_name: "와드네 승급석: 손 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: "전설 와드네 건틀릿",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 2500000 },
+      { item_name: "레어 와드네 건틀릿", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "자르딘 강철", item_quantity: 117 },
+      { item_name: "고급 강화의 비약", item_quantity: 30 },
+      { item_name: "와드네 승급석: 손 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: "와드네 부츠",
+    item_crafting: ["전문기술"],
+    item_category: "장비",
+    item_materials: [
+      {
+        item_name: "+15 오르나 부츠",
+        item_quantity: 1,
+        item_description: "해제를 제외한 모든 능력치를 최대한 연마",
+      },
+      { item_name: "모르간트의 정수", item_quantity: 4 },
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 2 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
+      {
+        item_name: "추출의 룬",
+        item_quantity: 1,
+        item_description: "선택 재료",
+      },
+    ],
+  },
+  {
+    item_name: "초급 와드네 부츠",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 500000 },
+      { item_name: "와드네 부츠", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 5 },
+      { item_name: "자르딘 강철", item_quantity: 5 },
+      { item_name: "와드네 승급석: 발 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
+    ],
+  },
+  {
+    item_name: "중급 와드네 부츠",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 750000 },
+      { item_name: "초급 와드네 부츠", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 5 },
+      { item_name: "자르딘 강철", item_quantity: 11 },
+      { item_name: "고급 강화의 비약", item_quantity: 5 },
+      { item_name: "와드네 승급석: 발 방어구", item_quantity: 1 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 1 },
+    ],
+  },
+  {
+    item_name: "고급 와드네 부츠",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 1150000 },
+      { item_name: "중급 와드네 부츠", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "자르딘 강철", item_quantity: 24 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "와드네 승급석: 발 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: "레어 와드네 부츠",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 1700000 },
+      { item_name: "고급 와드네 부츠", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "자르딘 강철", item_quantity: 53 },
+      { item_name: "고급 강화의 비약", item_quantity: 14 },
+      { item_name: "와드네 승급석: 발 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: "전설 와드네 부츠",
+    item_crafting: ["승급"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "골드", item_quantity: 2500000 },
+      { item_name: "레어 와드네 부츠", item_quantity: 1 },
+      { item_name: "모르간트의 정수", item_quantity: 1 },
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 1 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "자르딘 강철", item_quantity: 117 },
+      { item_name: "고급 강화의 비약", item_quantity: 30 },
+      { item_name: "와드네 승급석: 발 방어구", item_quantity: 2 },
+      { item_name: "프리미엄 방어구 강화의 룬", item_quantity: 2 },
+    ],
+  },
+  {
     item_name: "태양의 비원",
     item_crafting: ["전문기술"],
     item_category: "장비",
@@ -561,6 +840,34 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: "힘이 주입된 뉴에라의 오브", item_quantity: 35 },
       { item_name: "힘이 주입된 뉴에라의 가죽", item_quantity: 25 },
       { item_name: "힘이 주입된 뉴에라의 광석", item_quantity: 60 },
+    ],
+  },
+  {
+    item_name: "침묵의 증표",
+    item_crafting: ["전문기술"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "모르간트의 정수", item_quantity: 2 },
+      { item_name: "와드네의 파편: 침묵의 증표", item_quantity: 2 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "견고한 와드네의 결정", item_quantity: 10 },
+      { item_name: "힘이 주입된 뉴에라의 오브", item_quantity: 35 },
+      { item_name: "힘이 주입된 뉴에라의 옷감", item_quantity: 50 },
+      { item_name: "힘이 주입된 뉴에라의 광석", item_quantity: 50 },
+    ],
+  },
+  {
+    item_name: "고요의 증표",
+    item_crafting: ["전문기술"],
+    item_category: "장비",
+    item_materials: [
+      { item_name: "모르간트의 정수", item_quantity: 2 },
+      { item_name: "와드네의 파편: 고요의 증표", item_quantity: 2 },
+      { item_name: "굳건한 와드네의 결정", item_quantity: 10 },
+      { item_name: "견고한 와드네의 결정", item_quantity: 10 },
+      { item_name: "힘이 주입된 뉴에라의 오브", item_quantity: 35 },
+      { item_name: "힘이 주입된 뉴에라의 옷감", item_quantity: 50 },
+      { item_name: "힘이 주입된 뉴에라의 광석", item_quantity: 50 },
     ],
   },
 
@@ -711,6 +1018,30 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_category: "재료",
     item_materials: [
       { item_name: "와드네의 파편: 다리 방어구", item_quantity: 1 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "봉인의 힘: 파편", item_quantity: 100 },
+      { item_name: "전승의 힘: 파편", item_quantity: 100 },
+      { item_name: "게브네의 강화석", item_quantity: 3 },
+    ],
+  },
+  {
+    item_name: "와드네 승급석: 손 방어구",
+    item_crafting: ["전문기술"],
+    item_category: "재료",
+    item_materials: [
+      { item_name: "와드네의 파편: 손 방어구", item_quantity: 1 },
+      { item_name: "고급 강화의 비약", item_quantity: 10 },
+      { item_name: "봉인의 힘: 파편", item_quantity: 100 },
+      { item_name: "전승의 힘: 파편", item_quantity: 100 },
+      { item_name: "게브네의 강화석", item_quantity: 3 },
+    ],
+  },
+  {
+    item_name: "와드네 승급석: 발 방어구",
+    item_crafting: ["전문기술"],
+    item_category: "재료",
+    item_materials: [
+      { item_name: "와드네의 파편: 발 방어구", item_quantity: 1 },
       { item_name: "고급 강화의 비약", item_quantity: 10 },
       { item_name: "봉인의 힘: 파편", item_quantity: 100 },
       { item_name: "전승의 힘: 파편", item_quantity: 100 },

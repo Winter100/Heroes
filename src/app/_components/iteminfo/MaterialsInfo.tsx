@@ -26,13 +26,13 @@ const MaterialsInfo = ({
         </Column>
       </Row>
 
-      {item_crafting.length >= 1 && (
+      {item_crafting?.length >= 1 && (
         <>
           <Item.Description className="flex flex-wrap text-[11px]">
             {item_crafting?.map((c, index) => (
               <Item.Content key={c} className="pl-1 text-xs text-gray-400">
                 {c}
-                {index < item_crafting.length - 1 && ", "}
+                {index < item_crafting?.length - 1 && ", "}
               </Item.Content>
             ))}
           </Item.Description>

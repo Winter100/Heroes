@@ -5,8 +5,8 @@ const getBasicSlotImage = (slot: string): string => {
 };
 
 export const getImageByName = (name: string, slot?: string) => {
-  if (imageMap.has(name.trim())) {
-    return imageMap.get(name.trim()) || "/images/hereta.png";
+  if (imageMap.has(name?.trim())) {
+    return imageMap.get(name?.trim()) || "/images/hereta.png";
   } else if (slot) {
     return getBasicSlotImage(slot);
   }
