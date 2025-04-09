@@ -1,5 +1,10 @@
 export const itemSetList = ["밀레시안", "아르드리", "오르나", "와드네"];
-export const accessoriesSetList = ["황혼의 반지", "어둠 반지", "균열의 반지"];
+export const accessoriesSetList = [
+  "황혼의 반지",
+  "어둠 반지",
+  "균열의 반지",
+  "침묵 반지",
+];
 
 export const item_set_bonus = [
   {
@@ -275,6 +280,19 @@ export const item_set_bonus = [
     ],
     item_set_bonus: [
       { level: 2, stat_bonus: [{ stat_name: "크리티컬", stat_value: 1 }] },
+    ],
+  },
+  {
+    item_name: "침묵 반지",
+    item_set_slot: ["Left Finger", "Right Finger"],
+    item_set_list: [
+      { name: "침묵의 증표", slot: ["Left Finger", "Right Finger"] },
+      { name: "고요의 증표", slot: ["Left Finger", "Right Finger"] },
+      ,
+      ,
+    ],
+    item_set_bonus: [
+      { level: 2, stat_bonus: [{ stat_name: "크리티컬", stat_value: 3 }] },
     ],
   },
 ];

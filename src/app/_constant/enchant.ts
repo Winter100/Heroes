@@ -1591,6 +1591,33 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
       { stat_name: "크리티컬 저항", stat_value: "5" },
     ],
   },
+  {
+    rank: "4",
+    name: "고독",
+    description: "",
+    drop_item_list: ["따를 수 없는 예언"],
+    stat_value: [
+      { stat_name: "공격력", stat_value: "465" },
+      { stat_name: "마법공격력", stat_value: "465" },
+      { stat_name: "방어력", stat_value: "-300" },
+      { stat_name: "공격속도", stat_value: "1" },
+      { stat_name: "크리티컬 저항", stat_value: "8" },
+      { stat_name: "밸런스", stat_value: "10" },
+    ],
+  },
+  {
+    rank: "4",
+    name: "시련",
+    description: "",
+    drop_item_list: ["탐욕의 연회장"],
+    stat_value: [
+      { stat_name: "방어력", stat_value: "120" },
+      { stat_name: "스태미나", stat_value: "5" },
+      { stat_name: "크리티컬", stat_value: "12" },
+      { stat_name: "크리티컬 저항", stat_value: "13" },
+      { stat_name: "밸런스", stat_value: "-1" },
+    ],
+  },
 ];
 
 export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
@@ -1783,6 +1810,7 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ["Upper"],
     list: [
+      "시련",
       "한탄",
       "결계",
       "질주",
@@ -1800,6 +1828,7 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ["Hand", "Leg"],
     list: [
+      "고독",
       "광분",
       "질주",
       "영혼",

@@ -39,8 +39,72 @@ const 어둠속달빛 = [
     secondDefenseIncrease: 5,
   },
 ];
+const 침묵의증표 = [
+  {
+    name: "침묵의증표",
+    max_stage: 20,
+    base_stat: [
+      { stat_name: "밸런스", stat_value: 6 },
+      { stat_name: "크리티컬", stat_value: 8 },
+      { stat_name: "힘", stat_value: 140 },
+      { stat_name: "민첩", stat_value: 70 },
+      { stat_name: "지능", stat_value: 180 },
+      { stat_name: "의지", stat_value: 80 },
+      { stat_name: "최대 생명력", stat_value: 125 },
+    ],
+    firstAttackIncrease: 15,
+    firstDefenseIncrease: 6,
+    secondAttackIncrease: 15,
+    secondDefenseIncrease: 5,
+  },
+];
+const 고요의증표 = [
+  {
+    name: "고요의증표",
+    max_stage: 20,
+    base_stat: [
+      { stat_name: "밸런스", stat_value: 8 },
+      { stat_name: "크리티컬", stat_value: 6 },
+      { stat_name: "힘", stat_value: 140 },
+      { stat_name: "민첩", stat_value: 70 },
+      { stat_name: "지능", stat_value: 180 },
+      { stat_name: "의지", stat_value: 80 },
+      { stat_name: "최대 생명력", stat_value: 125 },
+    ],
+    firstAttackIncrease: 15,
+    firstDefenseIncrease: 6,
+    secondAttackIncrease: 15,
+    secondDefenseIncrease: 5,
+  },
+];
 
 export const finger_list: ItemType[] = [
+  {
+    name: "침묵의 증표",
+    restrictions: ["120 레벨 이상"],
+    quality: 2,
+    quality_selection_available: true,
+    rating: "고급",
+    category: ["액세서리", "반지"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
+    slot: "Left Finger",
+    color: true,
+    set: "침묵 반지",
+    enhancement_options: createAccessoriesObject(침묵의증표)[0],
+  },
+  {
+    name: "고요의 증표",
+    restrictions: ["120 레벨 이상"],
+    quality: 2,
+    quality_selection_available: true,
+    rating: "고급",
+    category: ["액세서리", "반지"],
+    quality_stats: ["힘", "민첩", "지능", "의지"],
+    slot: "Right Finger",
+    color: true,
+    set: "침묵 반지",
+    enhancement_options: createAccessoriesObject(고요의증표)[0],
+  },
   {
     name: "어둠 속 달빛",
     restrictions: ["115 레벨 이상"],

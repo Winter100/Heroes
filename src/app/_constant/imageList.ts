@@ -81,6 +81,7 @@ export const imageMap = new Map<string, string>([
   ["제단을 지키는 자", "/images/monster/s4/the-guardian-of-the-altar.png"],
   ["그릇된 고해", "/images/monster/s4/false-confession.png"],
   ["탐욕의 연회장", "/images/monster/s4/banquet-hall-of-greed.png"],
+  ["따를 수 없는 예언", "/images/monster/s4/go.png"],
 
   // 스페셜
   ["스페셜 전투", "/images/monster/special/garden-of-tears.png"],
@@ -127,6 +128,7 @@ export const imageMap = new Map<string, string>([
   // 재료
   ["스렝의 정수", "/images/items/materials/s4/essence-of-sreng.png"],
   ["스피노스의 정수", "/images/items/materials/s4/essence-of-spinos.png"],
+  ["모르간트의 정수", "/images/items/materials/s4/essence-of-morgant.png"],
   [
     "와드네의 파편: 무기",
     "/images/items/materials/s4/fragment-of-uaithne-weapon.png",
@@ -152,8 +154,24 @@ export const imageMap = new Map<string, string>([
     "/images/items/materials/s4/fragment-of-uaithne-lower.png",
   ],
   [
+    "와드네의 파편: 손 방어구",
+    "/images/items/materials/s4/fragment-of-uaithne-hand.png",
+  ],
+  [
+    "와드네의 파편: 발 방어구",
+    "/images/items/materials/s4/fragment-of-uaithne-leg.png",
+  ],
+  [
     "와드네의 파편: 저주의 허리띠",
     "/images/items/materials/s4/fragment-of-uaithne-belt.png",
+  ],
+  [
+    "와드네의 파편: 침묵의 증표",
+    "/images/items/materials/s4/fragment-of-uaithne-finger-01.png",
+  ],
+  [
+    "와드네의 파편: 고요의 증표",
+    "/images/items/materials/s4/fragment-of-uaithne-finger-02.png",
   ],
   [
     "와드네 승급석: 무기",
@@ -170,6 +188,14 @@ export const imageMap = new Map<string, string>([
   [
     "와드네 승급석: 다리 방어구",
     "/images/items/materials/s4/uaithne-promotion-stone-lower.png",
+  ],
+  [
+    "와드네 승급석: 손 방어구",
+    "/images/items/materials/s4/uaithne-promotion-stone-hand.png",
+  ],
+  [
+    "와드네 승급석: 발 방어구",
+    "/images/items/materials/s4/uaithne-promotion-stone-leg.png",
   ],
   [
     "단단한 와드네의 결정",
@@ -195,6 +221,11 @@ export const imageMap = new Map<string, string>([
     "견고한 와드네의 결정",
     "/images/items/materials/s4/noble-uaithne-crystal.png",
   ],
+  [
+    "굳건한 와드네의 결정",
+    "/images/items/materials/s4/firm-uaithne-crystal.png",
+  ],
+  ["오롯한 와드네의 결정", "/images/items/materials/s4/a-uaithne-crystal.png"],
   ["미지의 조각 1단계", "/images/items/materials/s4/shard-unknown-1.png"],
   ["미지의 조각 2단계", "/images/items/materials/s4/shard-unknown-2.png"],
   ["미지의 조각 3단계", "/images/items/materials/s4/shard-unknown-3.png"],
@@ -491,6 +522,8 @@ export const imageMap = new Map<string, string>([
   ["초급 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
   ["중급 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
   ["고급 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
+  ["레어 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
+  ["전설 와드네 무기", "/images/items/equipment/120/u-weapon.png"],
 
   ["와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
   ["초급 와드네 헬름", "/images/items/equipment/120/uaithne-head.png"],
@@ -512,6 +545,20 @@ export const imageMap = new Map<string, string>([
   ["고급 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
   ["레어 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
   ["전설 와드네 그리브즈", "/images/items/equipment/120/uaithne-lower.png"],
+
+  ["와드네 건틀릿", "/images/items/equipment/120/uaithne-hand.png"],
+  ["초급 와드네 건틀릿", "/images/items/equipment/120/uaithne-hand.png"],
+  ["중급 와드네 건틀릿", "/images/items/equipment/120/uaithne-hand.png"],
+  ["고급 와드네 건틀릿", "/images/items/equipment/120/uaithne-hand.png"],
+  ["레어 와드네 건틀릿", "/images/items/equipment/120/uaithne-hand.png"],
+  ["전설 와드네 건틀릿", "/images/items/equipment/120/uaithne-hand.png"],
+
+  ["와드네 부츠", "/images/items/equipment/120/uaithne-leg.png"],
+  ["초급 와드네 부츠", "/images/items/equipment/120/uaithne-leg.png"],
+  ["중급 와드네 부츠", "/images/items/equipment/120/uaithne-leg.png"],
+  ["고급 와드네 부츠", "/images/items/equipment/120/uaithne-leg.png"],
+  ["레어 와드네 부츠", "/images/items/equipment/120/uaithne-leg.png"],
+  ["전설 와드네 부츠", "/images/items/equipment/120/uaithne-leg.png"],
 
   // 120 와드네 무기
   ["와드네 듀얼소드", "/images/items/equipment/120/dualsword-120.png"],
@@ -608,6 +655,8 @@ export const imageMap = new Map<string, string>([
   ["균열의 공포", "/images/items/equipment/ring-110-02.png"],
   ["어둠 속 그림자", "/images/items/equipment/ring-115-01.png"],
   ["어둠 속 달빛", "/images/items/equipment/ring-115-02.png"],
+  ["침묵의 증표", "/images/items/equipment/ring-120-01.png"],
+  ["고요의 증표", "/images/items/equipment/ring-120-02.png"],
 
   // 아티팩트
   ["서큐버스의 송곳니", "/images/items/equipment/succubus-00.png"],

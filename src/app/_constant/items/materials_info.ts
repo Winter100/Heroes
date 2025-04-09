@@ -29,6 +29,13 @@ export const materials_info: BasicItemInfoType[] = [
       "고르바스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 고르바스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.",
   },
   {
+    item_name: "모르간트의 정수",
+    item_rating: "레어",
+    item_crafting: ["금속 갑옷", "재봉", "세공"],
+    item_description:
+      "모르간트의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 모르간트를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.",
+  },
+  {
     item_name: "와드네의 파편: 무기",
     item_rating: "레어",
     item_crafting: ["금속 무기", "세공"],
@@ -55,6 +62,20 @@ export const materials_info: BasicItemInfoType[] = [
     item_description:
       "세공 전문기술을 통해 태양의 비원 귀걸이를 제작할 때 주재료로 사용됩니다.",
   },
+  {
+    item_name: "와드네의 파편: 침묵의 증표",
+    item_rating: "레어",
+    item_crafting: ["세공"],
+    item_description:
+      "세공 전문기술을 통해 침묵의 증표 반지를 제작할 때 주재료로 사용됩니다.",
+  },
+  {
+    item_name: "와드네의 파편: 고요의 증표",
+    item_rating: "레어",
+    item_crafting: ["세공"],
+    item_description:
+      "세공 전문기술을 통해 고요의 증표 반지를 제작할 때 주재료로 사용됩니다.",
+  },
 
   {
     item_name: "와드네의 파편: 머리 방어구",
@@ -76,6 +97,20 @@ export const materials_info: BasicItemInfoType[] = [
     item_crafting: ["금속 갑옷", "재봉"],
     item_description:
       "와드네 그리브즈를 제작하거나 와드네 승급석: 다리 방어구를 제작할 때 주재료로 사용됩니다.",
+  },
+  {
+    item_name: "와드네의 파편: 손 방어구",
+    item_rating: "레어",
+    item_crafting: [],
+    item_description:
+      "와드네 건틀릿를 제작하거나 와드네 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.",
+  },
+  {
+    item_name: "와드네의 파편: 발 방어구",
+    item_rating: "레어",
+    item_crafting: [],
+    item_description:
+      "와드네 부츠를 제작하거나 와드네 승급석: 발 방어구를 제작할 때 주재료로 사용됩니다.",
   },
   {
     item_name: "와드네 승급석: 무기",
@@ -106,6 +141,20 @@ export const materials_info: BasicItemInfoType[] = [
       "와드네 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
   },
   {
+    item_name: "와드네 승급석: 손 방어구",
+    item_rating: "중급",
+    item_crafting: [],
+    item_description:
+      "와드네 건틀릿을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+  },
+  {
+    item_name: "와드네 승급석: 발 방어구",
+    item_rating: "중급",
+    item_crafting: [],
+    item_description:
+      "와드네 부츠를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+  },
+  {
     item_name: "단단한 와드네의 결정",
     item_rating: "레어",
     item_crafting: ["금속 갑옷", "재봉", "세공"],
@@ -127,11 +176,24 @@ export const materials_info: BasicItemInfoType[] = [
       "와드네 가슴, 저주의 허리띠를 제작하거나 와드네 가슴 방어구를 승급할 때 보조 재료로 사용됩니다.",
   },
   {
+    item_name: "오롯한 와드네의 결정",
+    item_rating: "레어",
+    item_crafting: ["금속 갑옷", "금속무기", "세공"],
+    item_description: "와드네 무기를 승급할 때 보조 재료로 사용됩니다.",
+  },
+  {
     item_name: "예리한 와드네의 결정",
     item_rating: "레어",
     item_crafting: ["금속 무기", "세공"],
     item_description:
       "와드네 무기를 제작하거나 와드네 무기를 승급할 때 보조 재료로 사용됩니다.",
+  },
+  {
+    item_name: "굳건한 와드네의 결정",
+    item_rating: "레어",
+    item_crafting: ["금속 무기", "세공"],
+    item_description:
+      "와드네 건틀릿, 와드네 부츠, 침묵의 증표, 고요의 증표를 제작하거나 와드네 건틀릿, 와드네 부츠를 승급할 때 보조 재료로 사용됩니다.",
   },
   {
     item_name: "가벼운 와드네의 결정",
