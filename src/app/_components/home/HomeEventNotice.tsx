@@ -16,10 +16,10 @@ const HomeEventNotice = () => {
   const setEventDate = useEventNoticeDateStore((state) => state.setEventDate);
 
   return (
-    <div className="flex h-full w-full flex-1 items-center justify-center">
+    <div className="flex w-full flex-1 items-center justify-center">
       <EventNotice
         className="h-full w-full"
-        mainTitle=""
+        mainTitle="이벤트"
         isLoading={noticeEventLoading}
         isError={noticeEventError}
         items={noticeEventData?.event_notice || []}

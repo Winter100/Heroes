@@ -69,12 +69,12 @@ const Notice = ({
           </div>
         ) : (
           <>
-            <ul className="flex h-full flex-col gap-2 p-2 text-sm">
+            <ul className="flex flex-col gap-2 p-2 text-sm">
               {currentItems?.map((item) => {
                 const date = item?.date ? item?.date : item?.date_event_start;
                 const is24InHours = isWithinHours(date || "", 24);
                 return (
-                  <li key={item.notice_id} className="flex w-full">
+                  <li key={item.notice_id}>
                     <Link
                       className="block w-full"
                       target="_blank"
@@ -83,19 +83,17 @@ const Notice = ({
                     >
                       <div
                         title={item.title}
-                        className="flex gap-1 rounded-md bg-backgroundOne p-2 outline-1 outline-borderColor/50 hover:outline"
+                        className="rounded-md bg-backgroundOne p-2 outline-1 outline-borderColor/50 hover:outline"
                       >
-                        <div className="flex items-center gap-2 truncate">
+                        <div className="flex flex-1 items-center gap-2">
                           {is24InHours && (
-                            <span className="text-xs text-red-600">N</span>
+                            <div className="text-center text-xs text-red-600">
+                              N
+                            </div>
                           )}
-                          <div className="flex gap-2">
-                            <span>{item.title}</span>
-                            <span className="flex items-center text-xs text-red-600">
-                              {getTimeDifference(
-                                convertToKST(item?.date || ""),
-                              )}
-                            </span>
+                          <div className="truncate">{item.title}</div>
+                          <div className="text-xs text-red-600">
+                            {getTimeDifference(convertToKST(item?.date || ""))}
                           </div>
                         </div>
                       </div>

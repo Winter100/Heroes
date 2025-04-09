@@ -17,14 +17,15 @@ const Home = () => {
           }}
         ></div>
         <HomeNotice />
-        <div className="flex flex-1 gap-2">
-          <RoundedContainer className="flex flex-1 flex-col bg-muted/50">
-            <div className="w-full text-center text-sm">이벤트</div>
-            <div className="flex h-full flex-col md:flex-row">
-              <EventCalendar />
+        <div className="flex flex-1 flex-col gap-2">
+          <div className="flex h-full w-full flex-col gap-2 lg:flex-row">
+            <RoundedContainer className="flex flex-1 flex-col bg-muted/50">
               <HomeEventNotice />
-            </div>
-          </RoundedContainer>
+            </RoundedContainer>
+            <RoundedContainer className="flex flex-1 flex-col bg-muted/50">
+              <EventCalendar />
+            </RoundedContainer>
+          </div>
         </div>
       </div>
     </Suspense>
