@@ -4,10 +4,8 @@ import { useEventNoticeDateStore } from "@/app/_store/noticeEventStore";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import { ko } from "date-fns/locale";
-import { useMemo } from "react";
 
 const EventCalendar = () => {
-  const today = useMemo(() => new Date(), []);
   const eventDate = useEventNoticeDateStore((state) => state.eventDate);
   return (
     <div className="flex w-full flex-1 items-center justify-center">
@@ -24,7 +22,6 @@ const EventCalendar = () => {
         formatters={{
           formatCaption: (date) => format(date, "yyyy년 M월", { locale: ko }),
         }}
-        modifiers={{ today }}
         modifiersStyles={{
           range_start: {
             backgroundColor: "inherit",
