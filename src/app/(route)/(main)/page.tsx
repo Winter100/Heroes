@@ -15,16 +15,19 @@ const Home = () => {
             backgroundImage: "url(/art.jpg)",
             backgroundPosition: "center 12%",
           }}
-        ></div>
+        />
         <HomeNotice />
-        <div className="flex flex-1 flex-col gap-2">
+        <div className="flex flex-1">
           <div className="flex h-full w-full flex-col gap-2 lg:flex-row">
-            <RoundedContainer className="flex flex-1 flex-col bg-muted/50">
+            <div className="flex flex-1 flex-col bg-muted/50">
               <HomeEventNotice />
-            </RoundedContainer>
-            <RoundedContainer className="flex flex-1 flex-col bg-muted/50">
-              <EventCalendar />
-            </RoundedContainer>
+            </div>
+            <div className="flex flex-1 flex-col gap-2">
+              <RoundedContainer className="flex flex-1 bg-muted/50">
+                <EventCalendar />
+              </RoundedContainer>
+              {/* <div className="flex flex-1"></div> */}
+            </div>
           </div>
         </div>
       </div>
