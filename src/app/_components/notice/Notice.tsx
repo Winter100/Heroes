@@ -69,7 +69,7 @@ const Notice = ({
           </div>
         ) : (
           <>
-            <ul className="flex flex-col gap-2 p-2 text-sm">
+            <ul className="flex flex-col gap-2 text-sm">
               {currentItems?.map((item) => {
                 const date = item?.date ? item?.date : item?.date_event_start;
                 const is24InHours = isWithinHours(date || "", 24);
@@ -102,7 +102,7 @@ const Notice = ({
                 );
               })}
             </ul>
-            <div className="flex h-10 w-full items-center justify-between gap-2 p-2 text-xs">
+            <div className="flex h-10 w-full items-center justify-between gap-2 text-xs">
               <Button
                 variant="ghost"
                 onClick={() => setPage((prev) => Math.max(prev - 1, 1))}

@@ -32,11 +32,6 @@ const EventCalendar = () => {
             backgroundColor: "inherit",
             color: "white",
           },
-          today: {
-            border: "1px solid #9fcffc",
-            borderRadius: "10px",
-            fontWeight: "bold",
-          },
         }}
       />
     </div>

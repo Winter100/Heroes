@@ -15,10 +15,16 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  const [today, setToday] = React.useState<Date | undefined>(undefined);
+
+  React.useEffect(() => {
+    setToday(new Date());
+  }, []);
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn("p-1", className)}
+      today={today}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
@@ -50,7 +56,8 @@ function Calendar({
         day_range_end: "day-range-end",
         day_selected:
           "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
+        day_today:
+          "bg-accent text-accent-foreground border border-blue-300 font-bold",
         day_outside:
           "day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
         day_disabled: "text-muted-foreground opacity-50",
