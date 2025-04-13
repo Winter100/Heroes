@@ -1,5 +1,5 @@
-import { EnchantPrice } from "./enchantType";
-import { ItemInfoQuipmentProps, NewEquipmentType } from "./equipmentType";
+import { EnchantPrice } from './enchantType';
+import { ItemInfoQuipmentProps } from './equipmentType';
 
 export interface PreviewSelectedType {
   slot: string;
@@ -32,34 +32,6 @@ export type OptionsType = {
     stat_value: string;
   }[];
 }[];
-
-export interface ModalProps {
-  beforeName?: string;
-  overlay: any;
-  content: any;
-  slot?: string;
-  options: {
-    rank: string;
-    description: string;
-    stat_name: string;
-    stat_value: {
-      stat_name: string;
-      stat_value: string;
-    }[];
-  }[];
-  selectedHandler: (
-    title: string,
-    value: { stat_name: string; stat_value: string }[],
-  ) => void;
-  itemName: {
-    name: string;
-    level: string;
-  };
-  enchantList?: EnchantPrice[];
-  upgreadeType?: string;
-  selectedValue?: string;
-  enchantLoading?: boolean;
-}
 
 export interface PreviewModalProps {
   itemName: {
@@ -102,14 +74,3 @@ export type Item = {
 export type CombinedStats = {
   [key: string]: number; // stat_name에 해당하는 값들을 합칠 객체의 타입
 };
-
-export interface InfusionsItemProps {
-  selectedValue: string;
-  stat_name: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  upgreadeType?: string;
-  setOpenModal: (isOpenModal: boolean) => void;
-}

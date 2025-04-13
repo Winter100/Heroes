@@ -1,14 +1,14 @@
-import { useEnchantTable } from "@/app/_hooks/useEnchantTable/useEnchantTable";
-import { useEffect, useMemo, useRef } from "react";
-import { mergeEnchantData } from "../utils/mergeEnchantData";
-import { sortedEnchantData } from "../utils/sortedEnchantData";
+import { useEnchantTable } from '@/app/_hooks/useEnchantTable/useEnchantTable';
+import { useEffect, useMemo, useRef } from 'react';
+import { mergeEnchantData } from '../utils/mergeEnchantData';
+import { sortedEnchantData } from '../utils/sortedEnchantData';
 import {
   EnchantStoreType,
   useSelectEnchantStore,
-} from "@/app/_store/selectEnchantStore";
-import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
-import { EnchantKeyType, EnchantRankTableProps } from "@/app/_type/enchantType";
-import { useSortKey } from "@/app/_hooks/useSortKey/useSortKey";
+} from '@/app/_store/selectEnchantStore';
+import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
+import { EnchantKeyType, EnchantRankTableProps } from '@/app/_type/enchantType';
+import { useSortKey } from '@/app/_hooks/useSortKey/useSortKey';
 
 export const useEnchantRankTable = ({ enchantData }: EnchantRankTableProps) => {
   const { mergedEnchantPriceList, isLoading } = useEnchantTable();
@@ -16,9 +16,9 @@ export const useEnchantRankTable = ({ enchantData }: EnchantRankTableProps) => {
     (state) => ({
       dropRaidOrItemName: state.dropRaidOrItemName,
       enchantFilterName: state.enchantFilterName,
-    }),
+    })
   );
-  const { sortKey, sortOrder, handleSort } = useSortKey<EnchantKeyType>("rank");
+  const { sortKey, sortOrder, handleSort } = useSortKey<EnchantKeyType>('rank');
 
   const { selecteEnchant, setEnchant, resetSelectEnchant } =
     useSelectEnchantStore((state) => ({
@@ -30,13 +30,13 @@ export const useEnchantRankTable = ({ enchantData }: EnchantRankTableProps) => {
   const prevSelectedNameRef = useRef(selecteEnchant?.name);
   const enchantDataWithPrice = useMemo(
     () => mergeEnchantData(enchantData, mergedEnchantPriceList),
-    [enchantData, mergedEnchantPriceList],
+    [enchantData, mergedEnchantPriceList]
   );
 
   const sortedData = sortedEnchantData(
-    enchantDataWithPrice as any,
+    enchantDataWithPrice as EnchantStoreType[],
     sortKey,
-    sortOrder,
+    sortOrder
   );
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const useEnchantRankTable = ({ enchantData }: EnchantRankTableProps) => {
 
       if (!hasDataChanged) {
         const updatedEnchant = sortedData.find(
-          (e) => e?.name === selecteEnchant.name,
+          (e) => e?.name === selecteEnchant.name
         );
 
         if (
@@ -64,24 +64,24 @@ export const useEnchantRankTable = ({ enchantData }: EnchantRankTableProps) => {
     if (enchantFilterName) {
       const searchChars = Array.from(enchantFilterName);
       const nameMatches = searchChars.every((char) =>
-        enchant.name.includes(char),
+        enchant.name.includes(char)
       );
       if (!nameMatches) return false;
     }
 
-    if (dropRaidOrItemName === "all") {
+    if (dropRaidOrItemName === 'all') {
       return true;
     }
 
     const hasMatchingItems = sortedData.some((enchant) =>
-      enchant.drop_item_list.includes(dropRaidOrItemName || ""),
+      enchant.drop_item_list.includes(dropRaidOrItemName || '')
     );
 
     if (!hasMatchingItems) {
       return true;
     }
 
-    return enchant.drop_item_list.includes(dropRaidOrItemName || "");
+    return enchant.drop_item_list.includes(dropRaidOrItemName || '');
   });
 
   return {

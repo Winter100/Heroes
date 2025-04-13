@@ -1,12 +1,12 @@
-import Tesseract from "tesseract.js";
+import Tesseract from 'tesseract.js';
 
 export const imageToName = async (img: string | File) => {
   if (!img) return;
 
   try {
-    const result = await Tesseract.recognize(img, "kor+eng", {
+    const result = await Tesseract.recognize(img, 'kor+eng', {
       logger: (m) => {
-        if (m.status === "recognizing text") {
+        if (m.status === 'recognizing text') {
           // 로딩 현황
           // console.log(Math.round(m.progress * 100));
         }
@@ -14,6 +14,8 @@ export const imageToName = async (img: string | File) => {
     });
 
     const text = result.data.text;
-    return text.split("\n").filter(Boolean) ?? [];
-  } catch (e) {}
+    return text.split('\n').filter(Boolean) ?? [];
+  } catch (e) {
+    console.error(e);
+  }
 };

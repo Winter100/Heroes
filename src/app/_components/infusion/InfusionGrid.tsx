@@ -1,11 +1,11 @@
-import { InfusionGridProps } from "@/app/_type/infusionType";
-import InfusionGridItem from "./InfusionGridItem";
+import { InfusionsDialogProps } from '@/app/_type/infusionType';
+import InfusionGridItem from './InfusionGridItem';
 
 const InfusionGrid = ({
   infusionList,
   selectedValue,
   selectedHandler,
-}: InfusionGridProps) => {
+}: Omit<InfusionsDialogProps, 'label' | 'items'>) => {
   return (
     <ul className="grid w-full grid-cols-2 gap-3 sm:grid-cols-auto-fill">
       {infusionList.map((infusion) => (

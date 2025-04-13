@@ -1,11 +1,10 @@
-import clsx from "clsx";
-import { ComponentProps } from "react";
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 
-interface ItemContentProps extends ComponentProps<"span"> {}
-const ItemContent = ({ className, ...props }: ItemContentProps) => {
+const ItemContent = ({ className, ...props }: ComponentProps<'span'>) => {
   return (
     <span
-      className={clsx("flex-wrap whitespace-pre-line", className)}
+      className={clsx('flex-wrap whitespace-pre-line', className)}
       {...props}
     ></span>
   );

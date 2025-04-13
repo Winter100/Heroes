@@ -1,18 +1,16 @@
-import clsx from "clsx";
-import { ComponentProps, forwardRef } from "react";
+import clsx from 'clsx';
+import { ComponentProps, forwardRef } from 'react';
 
-interface TrProps extends ComponentProps<"tr"> {}
-
-const Tr = forwardRef<HTMLTableRowElement, TrProps>(
+const Tr = forwardRef<HTMLTableRowElement, ComponentProps<'tr'>>(
   ({ children, className, ...props }, ref) => {
     return (
-      <tr ref={ref} className={clsx("", className)} {...props}>
+      <tr ref={ref} className={clsx('', className)} {...props}>
         {children}
       </tr>
     );
-  },
+  }
 );
 
-Tr.displayName = "Tr";
+Tr.displayName = 'Tr';
 
 export default Tr;

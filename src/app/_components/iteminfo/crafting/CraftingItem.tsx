@@ -1,16 +1,16 @@
-import React, { memo, useMemo } from "react";
-import { MaterialsType } from "@/app/_constant/items/item_crafting_materials_list";
-import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
-import CraftingSelectBtn from "./CraftingSelectBtn";
-import CratingSelectImage from "./CratingSelectImage";
-import Row from "../../layout/Row";
-import { itemInfoMap, materialsMap } from "@/app/_constant/items/item_map";
+import React, { memo, useMemo } from 'react';
+import { MaterialsType } from '@/app/_constant/items/item_crafting_materials_list';
+import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
+import CraftingSelectBtn from './CraftingSelectBtn';
+import CratingSelectImage from './CratingSelectImage';
+import Row from '../../layout/Row';
+import { itemInfoMap, materialsMap } from '@/app/_constant/items/item_map';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import ItemTooltipByType from "../../tooltip/ItemTooltipByType";
+} from '@/components/ui/popover';
+import ItemTooltipByType from '../../tooltip/ItemTooltipByType';
 
 interface ItemCraftingItemProps {
   item_name: string;
@@ -27,13 +27,13 @@ const CraftingItem = memo(
     isSelect,
     setMaterials,
     category,
-    materials,
+    // materials,
     filter,
   }: ItemCraftingItemProps) => {
     const src = useMemo(() => getTooltipImageSrc(item_name), [item_name]);
 
     const itemRating =
-      filter === "장비"
+      filter === '장비'
         ? itemInfoMap?.get(item_name)?.rating
         : materialsMap?.get(item_name)?.item_rating;
     const handleClick = () => {
@@ -57,23 +57,23 @@ const CraftingItem = memo(
               category={category}
               isSelect={isSelect}
               itemName={item_name}
-              itemRating={itemRating || "일반"}
+              itemRating={itemRating || '일반'}
               onClick={handleClick}
             />
             <PopoverContent className="dark w-[350px] p-1">
               <ItemTooltipByType
                 itemName={item_name}
                 category={category}
-                {...materials}
+                // {...materials}
               />
             </PopoverContent>
           </Popover>
         </Row>
       </div>
     );
-  },
+  }
 );
 
 export default CraftingItem;
 
-CraftingItem.displayName = "CraftingItem";
+CraftingItem.displayName = 'CraftingItem';

@@ -1,13 +1,14 @@
-import { raidList } from "../_constant/raidList";
+import { raidList } from '../_constant/raidList';
 
 export const filterRaidList = (entry: string) => {
   const result =
-    entry === "빠른전투"
+    entry === '빠른전투'
       ? raidList
           ?.map((item) => {
             const filteredMonsters = item.monsters
               .filter((monster) => monster.entry?.length > 1)
               .map((monster) => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const { limit, entry, ...rest } = monster;
                 return { ...rest, entry };
               });
@@ -24,6 +25,7 @@ export const filterRaidList = (entry: string) => {
           return {
             raid_name: item.raid_name,
             monsters: item.monsters.map((monster) => {
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               const { limit, entry, ...rest } = monster;
               return { ...rest, limit };
             }),

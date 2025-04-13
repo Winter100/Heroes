@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-import { getSearchParamsValue } from "@/app/_utils/getSearchParamsValue";
-import { SEARCH_PARAMS_KEY } from "@/app/_constant/searchParamsKey";
-import { nexonInstanceV1 } from "@/app/_services/nexonInstance";
+import { getSearchParamsValue } from '@/app/_utils/getSearchParamsValue';
+import { SEARCH_PARAMS_KEY } from '@/app/_constant/searchParamsKey';
+import { nexonInstanceV1 } from '@/app/_services/nexonInstance';
 
-export async function GET(request: Request) {
+export const GET = async (request: Request) => {
   const type = getSearchParamsValue(request, SEARCH_PARAMS_KEY.type);
 
   try {
@@ -13,5 +13,9 @@ export async function GET(request: Request) {
     const data = await response.data;
 
     return NextResponse.json(data);
-  } catch (e) {}
-}
+  } catch (e) {
+    console.error(e);
+
+    return NextResponse.json({ error: 'Error Notice' }, { status: 500 });
+  }
+};

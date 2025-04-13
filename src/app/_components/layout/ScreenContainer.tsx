@@ -1,12 +1,10 @@
-import clsx from "clsx";
-import { ComponentProps } from "react";
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 
-interface ScreenContainer extends ComponentProps<"div"> {}
-
-const ScreenContainer = ({ className, ...props }: ScreenContainer) => {
+const ScreenContainer = ({ className, ...props }: ComponentProps<'div'>) => {
   return (
     <div
-      className={clsx("mx-auto w-full max-w-screen-xl", className)}
+      className={clsx('mx-auto w-full max-w-screen-xl', className)}
       {...props}
     ></div>
   );
