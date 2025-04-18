@@ -1,15 +1,13 @@
-import { cn } from "@/lib/utils";
-import { ComponentProps } from "react";
-
-interface ContainerProps extends ComponentProps<"div"> {}
+import { cn } from '@/lib/utils';
+import { ComponentProps } from 'react';
 
 const RoundedContainer = ({
   children,
   className,
   ...props
-}: ContainerProps) => {
+}: ComponentProps<'div'>) => {
   return (
-    <div className={cn("rounded-md p-2", className)} {...props}>
+    <div className={cn('rounded-md p-2', className)} {...props}>
       {children}
     </div>
   );

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 interface InfoGrindingItemProps {
   stat_name: string;
@@ -8,7 +8,6 @@ interface InfoGrindingItemProps {
   stat_min_value: string;
 }
 const InfoGrindingItem = ({
-  percentage,
   stat_max_value,
   stat_value,
   stat_name,
@@ -16,13 +15,11 @@ const InfoGrindingItem = ({
 }: InfoGrindingItemProps) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
-  const increaseValue = Math.ceil(Number(stat_value) - Number(stat_min_value));
-
   const minPercentage = Math.ceil(
-    (Number(stat_min_value) / Number(stat_max_value)) * 100,
+    (Number(stat_min_value) / Number(stat_max_value)) * 100
   );
   const reMainPercentage = Math.ceil(
-    (Number(stat_value) / Number(stat_max_value)) * 100,
+    (Number(stat_value) / Number(stat_max_value)) * 100
   );
 
   return (
@@ -39,7 +36,7 @@ const InfoGrindingItem = ({
             ref={progressBarRef}
             className="h-1.5 cursor-pointer"
             style={{
-              width: "100%",
+              width: '100%',
               background: `linear-gradient(to right, 
             #047857 0%, 
             #047857 ${minPercentage}%, 
@@ -63,36 +60,3 @@ const InfoGrindingItem = ({
 };
 
 export default InfoGrindingItem;
-// import clsx from "clsx";
-
-// interface InfoGrindingItemProps {
-//   stat_name: string;
-//   stat_max_value: number;
-// }
-// const InfoGrindingItem = ({
-//   stat_max_value,
-//   stat_name,
-// }: InfoGrindingItemProps) => {
-//   return (
-//     <div className="flex w-full flex-col gap-0.5 px-2">
-//       <div className="flex flex-row text-[11px] text-zinc-400">
-//         <span className="">{stat_name}</span>
-//         <div className="flex items-center pl-1">
-//           <span>
-//             ( {stat_name === "해제" ? 0 : stat_max_value} / {stat_max_value} )
-//           </span>
-//         </div>
-//       </div>
-//       <div className="h-2 pr-4">
-//         <div
-//           className={clsx(
-//             "h-full w-full",
-//             stat_name === "해제" ? "bg-gray-600" : "bg-green-600",
-//           )}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default InfoGrindingItem;

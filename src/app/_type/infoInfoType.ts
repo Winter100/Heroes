@@ -5,17 +5,13 @@ export type BasicItemInfoType = {
   item_rating: Item_Rating;
 };
 
-export interface ItemRatingType {
-  item_rating: Item_Rating;
-}
-
 export type Item_Rating =
-  | "일반"
-  | "초급"
-  | "중급"
-  | "고급"
-  | "레어"
-  | "전설"
+  | '일반'
+  | '초급'
+  | '중급'
+  | '고급'
+  | '레어'
+  | '전설'
   | null;
 
 type Stat = {
@@ -39,22 +35,5 @@ export interface ItemType {
   description?: string;
   tuning_stat?: { stat_name: string; stat_value: number }[];
   slot?: string;
-  // stats?: {
-  //   stat_name: string;
-  //   stat_value: number;
-  // }[];
   enhancement_options?: ItemStats;
-}
-export interface ItemInfoType {
-  name: string;
-  rating: Item_Rating;
-  max_stage?: number;
-  base_quality: number;
-  quality_selection_available: boolean;
-  base_is_color: boolean;
-  category: string[];
-  set_name?: string;
-  restrictions?: string[];
-  base_stat?: Stat[];
-  description?: string;
 }

@@ -7,16 +7,14 @@ interface SkillType {
   }[];
 }
 
-const awakeningEffect = {};
-
 export const skillDescription: SkillType = {
-  ["리시타"]: [
+  ['리시타']: [
     {
-      name: "거트 스팅어",
+      name: '거트 스팅어',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 거트 스팅어는 근방에 있는 캐릭터를 공격하는 공격입니다.
@@ -33,11 +31,11 @@ export const skillDescription: SkillType = {
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "베어 블로어",
+      name: '베어 블로어',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 베어 블로어는 빠른 스피드로 적에게 접근해 상대방을 가격하는 공격입니다.
@@ -52,7 +50,7 @@ export const skillDescription: SkillType = {
 키보드: [S] X 2회 - [D] - [S]`,
     },
     {
-      name: "슬립대시",
+      name: '슬립대시',
       weaponeNumber: 1,
       effect: `- 바닥을 미끄러지듯 상대의 공격을 회피합니다.
 
@@ -61,7 +59,7 @@ export const skillDescription: SkillType = {
 키보드: 이동하면서 회피[A]`,
     },
     {
-      name: "슬립스루",
+      name: '슬립스루',
       weaponeNumber: 1,
       effect: `- 슬립대시 이후 추가 회피의 기회가 생깁니다.
 - 방향키를 함께 입력하여 이동 방향을 결정할 수 있습니다.
@@ -71,9 +69,9 @@ export const skillDescription: SkillType = {
 키보드: 슬립대시가 끝나기 직전 회피[A]`,
     },
     {
-      name: "액티브: 래디컬 피버",
+      name: '액티브: 래디컬 피버',
       weaponeNumber: 1,
-      useAwakeningEffect: ["SP소모량 감소", "대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['SP소모량 감소', '대미지 증가', '부분 파괴 대미지'],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 듀얼소드에 힘을 비축해 전방의 적들에게 크리티컬 공격을 가합니다.
 - A랭크 이상일 경우, 스매시 버튼을 통해 추가 공격을 할 수 있습니다.
@@ -92,9 +90,9 @@ export const skillDescription: SkillType = {
 키보드: [D]`,
     },
     {
-      name: "액티브: 스피릿 오브 버서커",
+      name: '액티브: 스피릿 오브 버서커',
       weaponeNumber: 1,
-      useAwakeningEffect: ["SP소모량 감소", "재사용시간 대 감소"],
+      useAwakeningEffect: ['SP소모량 감소', '재사용시간 대 감소'],
       effect: `- 버서커의 힘을 빌어 일시적으로 파티 멤버들의 공격력을 증가시킵니다.
 
 <조작법>
@@ -102,12 +100,12 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "크레센트 라이징",
+      name: '크레센트 라이징',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 크레센트 라이징은 근방에 있는 캐릭터를 올려 베는 공격 입니다.
@@ -118,12 +116,12 @@ export const skillDescription: SkillType = {
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "트윈엣지 450",
+      name: '트윈엣지 450',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 트윈엣지 450은 전방으로 회전하면서 경로의 적을 베는 공격입니다.
@@ -134,12 +132,12 @@ export const skillDescription: SkillType = {
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "패닝 슬래시",
+      name: '패닝 슬래시',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 패닝 슬래시는 듀얼소드를 부채 모양으로 넓게 휘둘러 베는 공격 입니다.
@@ -154,9 +152,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] - (방향키를 뗀 상태에서)[S]`,
     },
     {
-      name: "사우전드 니들",
+      name: '사우전드 니들',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 사우전드 니들은 슬립 대시나 슬립 스루 이후에 사용할 수 있는 빠른 속도의 찌르기 공격 입니다. 찌르기 후에는 더욱 강력한 찌르기로 마무리 할 수 있습니다.
 - 찌르기를 성공 할 때마다 리시타에게 '날카로움' 상태 효과가 누적 됩니다.
@@ -170,18 +168,18 @@ export const skillDescription: SkillType = {
 키보드: 슬립 대시, 슬립 스루 후 [S] 반복 - [D] X 1회`,
     },
     {
-      name: "크리티컬 대미지",
+      name: '크리티컬 대미지',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 크리티컬 피해량이 증가합니다.`,
     },
     {
-      name: "더블 크레센트",
+      name: '더블 크레센트',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 슬립대시를 사용한 후 바로 추가 공격을 할 수 있습니다.
@@ -196,13 +194,13 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] X 2회 - 스매시[D]`,
     },
     {
-      name: "라이트닝 퓨리: 듀얼소드",
+      name: '라이트닝 퓨리: 듀얼소드',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 라이트닝 퓨리의 공격이 더욱 강해집니다.`,
     },
     {
-      name: "리스키 윈드",
+      name: '리스키 윈드',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 슬립대시나 슬립스루, 퓨리 NO.7 으로 적의 직접적인 공격을 피하게 되면 '바람같은' 상태효과를 얻게 됩니다.
@@ -212,7 +210,7 @@ export const skillDescription: SkillType = {
     },
 
     {
-      name: "스피어대시",
+      name: '스피어대시',
       weaponeNumber: 2,
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 빠르게 굴러 적의 공격을 회피합니다.
@@ -222,7 +220,7 @@ export const skillDescription: SkillType = {
 키보드: 회피[A]`,
     },
     {
-      name: "리버레이트",
+      name: '리버레이트',
       weaponeNumber: 2,
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 듀얼스피어에 생명력을 주입해 일시적으로 공격력 강화 효과를 얻습니다.
@@ -235,9 +233,9 @@ export const skillDescription: SkillType = {
 키보드: [D] 누르고 있기`,
     },
     {
-      name: "3960 허리케인",
+      name: '3960 허리케인',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 3960 허리케인은 두 자루의 창을 엄청난 속도로 회전하며 주변의 모든 것을 베어버리는 공격 입니다.
 - 스매시 키를 누르고 있는 중에는 스태미나가 허용하는 한도에서 계속해서 회전하며 공격할 수 있습니다.
@@ -249,9 +247,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] 누르고 있기`,
     },
     {
-      name: "문 스플리터",
+      name: '문 스플리터',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 가까운 적을 빠르면서도 강력하게 연속해서 공격합니다.
 - 스킬을 사용하는 중에 피격되면 리시타의 방어력이 일시적으로 감소하는 '취약함' 상태 효과를 얻게 됩니다.
@@ -261,12 +259,12 @@ export const skillDescription: SkillType = {
 키보드: [S] X 3회 - [D] 입력 후 [D] 누르고 있기`,
     },
     {
-      name: "사일런트 호크",
+      name: '사일런트 호크',
       weaponeNumber: 2,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 사일런트 호크는 전방의 좁은 범위를 빠르게 3번 올려 베는 공격 입니다.
@@ -277,12 +275,12 @@ export const skillDescription: SkillType = {
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "서든 블래스트",
+      name: '서든 블래스트',
       weaponeNumber: 2,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 서든 블래스트는 전방의 넓은 범위를 빠르게 베는 공격 입니다.
@@ -292,7 +290,7 @@ export const skillDescription: SkillType = {
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "윈드밀 부스트",
+      name: '윈드밀 부스트',
       weaponeNumber: 2,
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 윈드밀 부스트는 윈드밀에서 곧바로 2타 일반공격 또는 서든 블래스트를 사용할 수 있게 해주는 스킬입니다.
@@ -309,7 +307,7 @@ export const skillDescription: SkillType = {
 `,
     },
     {
-      name: "액셀러레이트",
+      name: '액셀러레이트',
       weaponeNumber: 2,
       effect: `- 액셀러레이트는 듀얼스피어로 공격을 성공시킬 때 마다 공격속도를 더욱 가속시키는 스킬입니다.
 - 공격에 성공할 때 마다 공격속도가 1씩 상승하며, 최대 10까지 상승할 수 있습니다.
@@ -317,14 +315,14 @@ export const skillDescription: SkillType = {
 - 반드시 듀얼스피어로 공격을 가했을 때만 효과가 적용됩니다.`,
     },
     {
-      name: "라이트닝 퓨리: 듀얼스피어",
+      name: '라이트닝 퓨리: 듀얼스피어',
       weaponeNumber: 2,
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 라이트닝 퓨리 사용 도중에는 적의 공격을 회피할 수 있습니다.
 - 라이트닝 퓨리의 스태미나 소모 값이 줄어듭니다.`,
     },
     {
-      name: "블클레어",
+      name: '블클레어',
       weaponeNumber: 2,
       effect: `- 듀얼스피어 계열 무기 장착시에만 사용 가능합니다.
 - 블클레어로 공격받은 적에게 '피의 선언'을 새깁니다.
@@ -336,9 +334,9 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] - [S]`,
     },
     {
-      name: "퀵 리버레이트",
+      name: '퀵 리버레이트',
       weaponeNumber: 2,
-      useAwakeningEffect: ["SP소모량 감소"],
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 퀵 리버레이트는 문 스플리터와 3960 허리케인 사용 중에 리버레이트 스킬을 발동시킬 수 있는 스킬입니다.
 - 리버레이트 스킬이 발동되는 동안 리시타의 공격력이 강화되며, 크리티컬 히트 발동 확률이 증가합니다.
 - 리버레이트 효과가 적용되는 순간 일부 생명력을 잃습니다.
@@ -353,9 +351,9 @@ export const skillDescription: SkillType = {
 키보드: [S] + [D] 동시 입력`,
     },
     {
-      name: "윈드밀",
+      name: '윈드밀',
       weaponeNumber: 0,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 다운된 상태에서 일어날 때 전방위 회전 공격을 합니다.
 - 대미지는 높지 않지만, 높은 부분 파괴 대미지를 줄 수 있습니다.
 - 쓰러진 순간, 혹은 일어서는 순간에 맞추어 입력해야만 발동시킬 수 있습니다.
@@ -365,9 +363,9 @@ export const skillDescription: SkillType = {
 키보드: 다운되자마자 [S]`,
     },
     {
-      name: "글라이딩 퓨리",
+      name: '글라이딩 퓨리',
       weaponeNumber: 0,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스매시가 크리티컬로 적중 했을 때, 곧바로 스매시 버튼을 누르면 바닥을 미끄러지듯 전진하며 강력하게 공격합니다.
 - 글라이딩 퓨리 사용 도중에는 적의 공격을 회피할 수 있습니다.
 ※ 스매시 공격이 적중했으나 크리티컬이 발생하지 않았을 경우, [TAB] 버튼을 통해 긴급하게 글라이딩 퓨리 발동이 가능합니다. 다만 이 경우는 SP를 70 소비합니다. 또한 재사용시간이 부여되어 일정시간 동안 강제로 퓨리를 발동시킬 수 없습니다.
@@ -392,9 +390,9 @@ export const skillDescription: SkillType = {
 `,
     },
     {
-      name: "액티브: 스프릿 오브 버서커",
+      name: '액티브: 스프릿 오브 버서커',
       weaponeNumber: 0,
-      useAwakeningEffect: ["SP소모량 감소", "재사용시간 대 감소"],
+      useAwakeningEffect: ['SP소모량 감소', '재사용시간 대 감소'],
       effect: `- 버서커의 힘을 빌어 일시적으로 파티 멤버들의 공격력을 증가시킵니다.
 
 <조작법>
@@ -402,8 +400,8 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 슬래싱 하이",
-      useAwakeningEffect: ["SP소모량 감소"],
+      name: '액티브: 슬래싱 하이',
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 일정 시간동안 적의 공격에 방해받지 않고 공격을 할 수 있는 상태가 됩니다.
 - 단 적의 공격에 대한 피해는 입으며, 이 경우 지속시간이 조금씩 감소합니다.
 - 슬래싱 하이 상태가 유지되는 동안에는 스태미나를 소모하지 않습니다.
@@ -413,9 +411,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "라이트닝 퓨리",
+      name: '라이트닝 퓨리',
       weaponeNumber: 0,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 글라이딩 퓨리에 이은 추가 공격으로, 주변의 적을 일순간 섬멸합니다.
 - 글라이딩 퓨리가 크리티컬로 적중 했을 때 사용할 수 있습니다.
 ※ 글라이딩 퓨리가 적중했으나 크리티컬이 발생하지 않았을 경우, [TAB] 버튼을 통해 긴급하게 라이트닝 퓨리 발동이 가능합니다만 이 경우 SP를 50 소비합니다. 또한 재사용시간이 부여되어 일정시간 동안 강제로 퓨리를 발동시킬 수 없습니다.
@@ -431,9 +429,9 @@ export const skillDescription: SkillType = {
 키보드: 글라이딩 퓨리가 적중했을 때 긴급 퓨리[TAB]`,
     },
     {
-      name: "액티브: 코멧 대시",
+      name: '액티브: 코멧 대시',
       weaponeNumber: 0,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 혜성과 같은 속도로 여러 번의 강한 대시 공격을 합니다.
 - 최초의 일격이 성공할 경우 순간적으로 적을 제압 할 수 있습니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 적을 다운시킬 확률이 높아집니다.
@@ -443,13 +441,13 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 퓨리 No.7",
+      name: '액티브: 퓨리 No.7',
       weaponeNumber: 0,
       useAwakeningEffect: [
-        "SP소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
-        "재사용시간 대 감소",
+        'SP소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
+        '재사용시간 대 감소',
       ],
       effect: `- 한층 강력해지고 빨라진 글라이딩 퓨리를 연속해서 7번 사용합니다.
 - 각각의 글라이딩 퓨리를 사용할 때 자신이 원하는 공격 방향을 지정할 수 있습니다.
@@ -461,16 +459,16 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "크리티컬 리미트 업",
+      name: '크리티컬 리미트 업',
       weaponeNumber: 0,
       effect: `- 적용 가능한 최대 크리티컬 수치가 증가합니다.
 - 실제 크리티컬 수치는 증가하지 않습니다.`,
     },
   ],
-  ["피오나"]: [
+  ['피오나']: [
     {
-      name: "액티브: 스프링클 카멜리아",
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      name: '액티브: 스프링클 카멜리아',
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 무기에 강력한 기운을 불어넣어서 전방의 적들을 공격합니다.
 - 기운을 불어넣을 때에도 근처 적들에게 피해를 입힙니다.
 - [액티브: 방패 질주] 사용 중 연계하여 사용이 가능하며, 이를 [빠른 카멜리아]라고 합니다.
@@ -497,7 +495,7 @@ export const skillDescription: SkillType = {
 키보드: 달리면서 [D] X 2회`,
     },
     {
-      name: "방패 흘리기",
+      name: '방패 흘리기',
       effect: `- 방패로 적의 공격을 흘려내고 공격을 이어가는 스킬입니다.
 - 다음 행동 중에만 사용할 수 있습니다.
 : 가만히 있거나, 이동 중일 때
@@ -514,7 +512,7 @@ export const skillDescription: SkillType = {
 공격 도중에 [TAB]`,
     },
     {
-      name: "액티브: 방패 질주",
+      name: '액티브: 방패 질주',
       effect: `- 방패 질주는 방패를 앞세워 순간적으로 질주하는 스킬입니다.
 - 발동 시 짧게 두 번 연속으로 방향을 선택하여 질주할 수 있습니다.
 - 스킬 랭크가 올라 갈수록 재사용 가능시간이 감소합니다.
@@ -530,11 +528,11 @@ export const skillDescription: SkillType = {
 [발차기] 누르고 있기`,
     },
     {
-      name: "해피 블로섬",
+      name: '해피 블로섬',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱소드 계열 무기 장착시에만 사용 가능합니다.
 - 해피 블로섬은 방패로 상대를 가격하는 2연타 공격이며, 강력하지만 공격 거리가 짧습니다.
@@ -556,11 +554,11 @@ export const skillDescription: SkillType = {
 키보드: 첫 타 또는 추가 스매시 후 [S]`,
     },
     {
-      name: "아이비 스위퍼",
+      name: '아이비 스위퍼',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱소드 계열 무기 장착시에만 사용 가능합니다.
 - 아이비 스위퍼는 방패와 롱소드를 이용한 빠른 연타 공격입니다.
@@ -578,11 +576,11 @@ export const skillDescription: SkillType = {
 키보드: [아마란스 킥] - [S]`,
     },
     {
-      name: "아마란스 킥",
+      name: '아마란스 킥',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱소드 계열 무기 장착시에만 사용 가능합니다.
 - 아마란스 킥은 일반 공격에서 이어지는 매우 강력한 발차기 공격입니다.
@@ -596,8 +594,8 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] X 2회`,
     },
     {
-      name: "액티브: 타운트",
-      useAwakeningEffect: ["SP소모량 감소", "재사용시간 대 감소"],
+      name: '액티브: 타운트',
+      useAwakeningEffect: ['SP소모량 감소', '재사용시간 대 감소'],
       effect: `- 타운트는 방패를 사용하여 몬스터들의 시선을 끄는 스킬입니다.
 - 타운트 사용 시 주변에 있는 적들에게 타겟이 될 확률이 상승합니다.
 - 스킬 랭크가 올라 갈수록 쿨타임이 줄어들고 효과 유지시간이 증가합니다. 또 효과 적용범위가 넓어지며 영향을 받는 몬스터의 숫자도 늘어납니다.
@@ -608,12 +606,12 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 방패 돌진",
+      name: '액티브: 방패 돌진',
       useAwakeningEffect: [
-        "SP소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
-        "재사용시간 대 감소",
+        'SP소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
+        '재사용시간 대 감소',
       ],
       effect: `- 적을 향해 강력한 돌진 공격을 합니다.
 - 돌진 중에는 적의 공격을 회피할 수 있습니다.
@@ -624,11 +622,11 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "다운 카운터",
+      name: '다운 카운터',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 스몰실드 계열 방패 장착시에만 사용 가능합니다.
 - 서서 버티기나 행동불능 버티기가 발동되어 뒤로 밀리는 도중에 적에게 반격을 하는 공격을 사용할 수 있습니다.
@@ -638,8 +636,8 @@ export const skillDescription: SkillType = {
 키보드: 서서 버티기나 행동불능 버티기 바동 도중 [D]`,
     },
     {
-      name: "액티브: 슬래싱 하이",
-      useAwakeningEffect: ["SP소모량 감소"],
+      name: '액티브: 슬래싱 하이',
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 일정 시간동안 적의 공격에 방해받지 않고 공격을 할 수 있는 상태가 됩니다.
 - 단 적의 공격에 대한 피해는 입으며, 이 경우 지속시간이 조금씩 감소합니다.
 - 슬래싱 하이 상태가 유지되는 동안에는 스태미나를 소모하지 않습니다.
@@ -649,8 +647,8 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 방패 강화",
-      useAwakeningEffect: ["SP소모량 감소"],
+      name: '액티브: 방패 강화',
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 롱소드 계열 무기 및 스몰실드 장착시에만 사용 가능합니다.
 - 방패 강화는 카운터 어택을 더욱 강력하게 사용할 수 있게 해주는 스킬입니다.
 - 스킬 랭크에 따라 기본적으로 모든 카운터 계열 공격의 대미지가 증가합니다.
@@ -663,8 +661,8 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 방패 강타",
-      useAwakeningEffect: ["SP소모량 감소", "부분 파괴 대미지"],
+      name: '액티브: 방패 강타',
+      useAwakeningEffect: ['SP소모량 감소', '부분 파괴 대미지'],
       effect: `- 방패로 상대를 강하게 때려서 공격하고, 높은 부분 파괴 대미지를 줍니다.
 - 공격 중에는 짧은 시간동안 적의 공격을 회피할 수 있습니다.
 - 무기의 계열에 따라 성능이 변화합니다.
@@ -685,8 +683,8 @@ export const skillDescription: SkillType = {
 롱해머의 경우, 스매시 키를 눌러 버터플라이 스윙 강화 공격으로 이어갈 수 있습니다.`,
     },
     {
-      name: "카운터 어택",
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      name: '카운터 어택',
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 방어 후 방패로 반격을 시도 합니다.
 - 상대의 공격을 가드로 차단한 후, 상대의 자세가 무너진 틈을 타 강력한 스매시로 반격합니다.
 - 최대 2번까지 연속해서 사용할 수 있습니다.
@@ -697,8 +695,8 @@ export const skillDescription: SkillType = {
 키보드: 가드 성공 후에 스매시[D] - 스매시[D]`,
     },
     {
-      name: "액티브: 어썰트 크로톤",
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      name: '액티브: 어썰트 크로톤',
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 롱소드 계열 무기 장착 시에만 사용할 수 있습니다.
 - 전방의 적에게 빠르게 돌진하여 강력한 공격을 가하고, 최초의 일격이 성공하면 순간적으로 적을 제압할 수 있습니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 적을 다운시킬 확률이 높아집니다.
@@ -708,11 +706,11 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "스파이크 로즈",
+      name: '스파이크 로즈',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱소드 계열 무기 장착 시에만 사용할 수 있습니다.
 - 스파이크 로즈는 근방에 있는 대상을 베는 공격입니다.
@@ -723,8 +721,8 @@ export const skillDescription: SkillType = {
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "액티브: 피해 감쇄",
-      useAwakeningEffect: ["재사용시간 감소", "SP소모량 감소"],
+      name: '액티브: 피해 감쇄',
+      useAwakeningEffect: ['재사용시간 감소', 'SP소모량 감소'],
       effect: `- 라지실드 계열 무기 장착 시에만 사용 가능합니다.
 - 일정 시간동안 받는 피해가 크게 감소합니다.
 - 피해 감쇄 효과가 지속되는 동안에는 공격을 당해도 넘어지지 않습니다.
@@ -735,11 +733,11 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "페탈 블로우",
+      name: '페탈 블로우',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱소드 계열 무기 장착 시에만 사용할 수 있습니다.
 - 페탈 블로우는 상대를 올려베는 공격입니다.
@@ -761,11 +759,11 @@ export const skillDescription: SkillType = {
 `,
     },
     {
-      name: "헤비스탠더 카운터",
+      name: '헤비스탠더 카운터',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 스몰실드 계열 방패 장착시에만 사용 가능합니다.
 - 헤비스탠더 성공한 후 뒤로 밀리는 도중에 추가 공격을 할 수 있습니다.
@@ -781,11 +779,11 @@ export const skillDescription: SkillType = {
 키보드: 가드 성공 후 [S] + [D]`,
     },
     {
-      name: "그랜드 슬램 칼라",
+      name: '그랜드 슬램 칼라',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 그랜드 슬램 칼라는 적을 강력하게 올려치는 공격입니다.
@@ -804,8 +802,8 @@ export const skillDescription: SkillType = {
 키보드: 달리면서 [D] X 2회`,
     },
     {
-      name: "버터플라이 스윙",
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      name: '버터플라이 스윙',
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 롱해머를 휘두르는 추가 공격을 스태미나가 허용하는 한 계속할 수 있습니다.
 - 공격 도중에 다른 조작을 통해 [스티그마 해머]로 이어갈 수 있으며, 이 경우 강화된 버터플라이 스윙 추가 공격을 2번 사용한 후 [스티그마 해머]로 이어지게 됩니다.
@@ -819,11 +817,11 @@ export const skillDescription: SkillType = {
 키보드: 버터플라이 스윙 도중 [S] X 1회 - [D] X 2회`,
     },
     {
-      name: "비틀 크러쉬",
+      name: '비틀 크러쉬',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 롱해머를 힘껏 휘둘러 전방의 적을 강하게 공격합니다.
@@ -833,11 +831,11 @@ export const skillDescription: SkillType = {
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "스티그마 해머",
+      name: '스티그마 해머',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 롱해머에 힘을 축적했다가 모아서 힘껏 공격을 합니다.
@@ -852,11 +850,11 @@ export const skillDescription: SkillType = {
 키보드: 버터플라이 스윙 도중 [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "하니 비 스팅",
+      name: '하니 비 스팅',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 힘을 모을수록 강해지는 근거리 공격입니다.
@@ -866,8 +864,8 @@ export const skillDescription: SkillType = {
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "액티브: 블루밍 바이올렛",
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      name: '액티브: 블루밍 바이올렛',
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 최초의 일격이 성공할 경우 순간적으로 적을 제압할 수 있습니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 적을 다운시킬 확률이 높아집니다.
@@ -877,8 +875,8 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 짓누르기",
-      useAwakeningEffect: ["SP소모량 감소"],
+      name: '액티브: 짓누르기',
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 롱해머 계열 무기 장착 시에만 사용 가능합니다.
 - 효과가 발동하면 공격이 적에게 닿을 때 롱해머에 힘을 더욱 집중합니다.
 - 집중된 힘을 통해 모든 공격에 역경직이 감소합니다.
@@ -895,11 +893,11 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["이비"]: [
+  ['이비']: [
     {
-      name: "이글 탈론",
+      name: '이글 탈론',
       weaponeNumber: 0,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 일정 시간 달린 후 공격을 할 수 있는 상태로 전환합니다.
 
 <조작법>
@@ -912,9 +910,9 @@ export const skillDescription: SkillType = {
 키보드: 마법 모으는 상태일 때 스매시[D] 길게 누르기`,
     },
     {
-      name: "액티브: 미티어 스웜",
+      name: '액티브: 미티어 스웜',
       weaponeNumber: 0,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 지정한 장소에 다수의 강한 운석들을 소환합니다.
 - 마지막에 떨어지는 가장 큰 운석이 몬스터에게 적중했을 경우 몬스터를 다운 시킬 수 있으며, 가장 큰 대미지를 줄 수 있습니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 적을 다운시킬 확률이 높아집니다.
@@ -926,9 +924,9 @@ export const skillDescription: SkillType = {
 위치를 지정한 후 [우클릭] or [D]키를 이용하여 공격할 수 있습니다.`,
     },
     {
-      name: "액티브: 중력 역전",
+      name: '액티브: 중력 역전',
       weaponeNumber: 0,
-      useAwakeningEffect: ["SP소모량 감소"],
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 이비 근처의 중력을 역전시킴으로써 물체와 적들을 공중으로 띄우고, 순간 재역전시켜 낙하 충격을 가합니다.
 - 마법 공격력이 높을수록 더 큰 충격 대미지를 줍니다.
 
@@ -937,7 +935,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "마나 앰버",
+      name: '마나 앰버',
       weaponeNumber: 1,
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 스태프에 깃든 마나가 이비의 몸을 감싸 보호하고, 외부의 피해를 견딥니다. 마나 앰버 발동과 함께 기존의 행동을 잠시 멈추게 됩니다.
@@ -948,9 +946,9 @@ export const skillDescription: SkillType = {
 이동 키를 누르지 않은 상태에서 [회피] 누르고 있기`,
     },
     {
-      name: "매직 애로우",
+      name: '매직 애로우',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 스태프에 마나를 주입하여 마법 화살을 발사합니다. 매직 애로우가 주는 피해는 약한 편이지만, 비교적 먼 거리의 적을 공격할 수 있습니다.
 - 매직 애로우의 위력은 스킬 랭크와 마법 공격력의 영향을 받습니다.
@@ -960,9 +958,9 @@ export const skillDescription: SkillType = {
 키보드: [S]`,
     },
     {
-      name: "액티브: 라이트닝 볼트",
+      name: '액티브: 라이트닝 볼트',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 라이트닝 볼트는 전방의 적에게 강한 전기 공격을 가하는 스킬입니다.
 - 마나마인을 생성 후 라이트닝 볼트를 발사하여 연계공격을 할 경우 주변 다수의 적을 공격할 수 있습니다.
@@ -977,9 +975,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 마나 마인",
+      name: '액티브: 마나 마인',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 스태프의 마나를 결집시켜 마법 지뢰를 생성합니다. 생성된 지뢰는 한동안 바닥에 남아있으며, 적을 유인하여 피해를 입히는 전략에 적합합니다.
 - 스킬 랭크에 따라 지뢰의 공격력과 유지 시간이 늘어납니다. 마나 마인의 위력은 스킬 랭크와 마법공격력의 영향을 받습니다.
@@ -990,9 +988,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 아이스 스피어",
+      name: '액티브: 아이스 스피어',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 스태프의 냉기를 한 정점에 모아 강력한 얼음 결정들을 발사하여 적에게 큰 피해를 입힙니다.
 - 아이스 스피어의 위력은 스킬 랭크와 마법공격력의 영향을 받습니다. 또 다른 아이스 계열의 마법과 함께 사용하면 아이스 계열의 보너스를 받을 수 있습니다.
@@ -1006,9 +1004,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 파이어볼트",
+      name: '액티브: 파이어볼트',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 스태프의 화기를 모아 파이어볼트를 발사합니다. 파이어볼트는 폭발한 지점을 중심으로 넓게 광역 피해를 입히지만, 어딘가에 부딪히지 않으면 폭발하지 않습니다.
 - 파이어볼트의 위력은 스킬 랭크와 마법공격력의 영향을 받습니다.
@@ -1023,9 +1021,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 아이스 블래스트",
+      name: '액티브: 아이스 블래스트',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 스태프의 냉기를 모아 바닥으로 강하게 내리쳐, 주변의 공기를 극도로 차갑게 얼립니다.
 - 아이스 블래스트의 위력은 스킬 랭크와 마법공격력의 영향을 받습니다. 또 다른 아이스 계열의 마법과 함께 사용하면 아이스 계열의 보너스를 받을 수 있습니다.
@@ -1039,9 +1037,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 힐링 펄",
+      name: '액티브: 힐링 펄',
       weaponeNumber: 1,
-      useAwakeningEffect: ["재사용시간 대 감소"],
+      useAwakeningEffect: ['재사용시간 대 감소'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 바닥에 빛 구슬을 생성합니다. 빛 구슬 근처에 가면 빛 구슬을 흡수하여 생명력을 회복할 수 있습니다.
 - 한번 생성한 후 3분 간은 다시 생성할 수 없으며, 빛 구슬로 회복을 하면 2분 동안 추가로 구슬을 흡수할 수 없습니다. 힐링 펄은 생성 후 1분이 지나면 사라집니다.
@@ -1052,9 +1050,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 파이어 스톰",
+      name: '액티브: 파이어 스톰',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 파이어 스톰은 스태프의 화기를 끌어내어 거대한 폭풍을 소환하는 스킬입니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 부분 파괴 대미지가 증가합니다.
@@ -1069,9 +1067,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 재생",
+      name: '액티브: 재생',
       weaponeNumber: 1,
-      useAwakeningEffect: ["재사용시간 감소", "SP소모량 감소"],
+      useAwakeningEffect: ['재사용시간 감소', 'SP소모량 감소'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 파티 멤버들의 생명력을 일정 시간 동안 조금씩 회복시킵니다.
 
@@ -1080,9 +1078,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 라이트닝 웨이브",
+      name: '액티브: 라이트닝 웨이브',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 라이트닝 웨이브는 전방에 다수의 적들에게 여러 줄기의 강력한 전기 공격을 가하는 스킬입니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 부분 파괴 대미지가 증가합니다.
@@ -1097,12 +1095,12 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 라이트닝 가이드",
+      name: '액티브: 라이트닝 가이드',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 전방의 적 움직임을 쫓아 공격하는 전기 공격을 여러 발 발사합니다.
@@ -1118,12 +1116,12 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 아이스 블로우",
+      name: '액티브: 아이스 블로우',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 아이스 블로우는 스태프의 냉기를 모아 생성한 얼음 기둥을 파괴하여 여러 조각의 파편으로 적을 공격하는 스킬입니다.
@@ -1139,12 +1137,12 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 파이어 쇼크",
+      name: '액티브: 파이어 쇼크',
       weaponeNumber: 1,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 파이어 쇼크는 스태프의 화기를 모아 전방의 적들을 불 태워 버리는 강력한 공격 입니다.
@@ -1161,9 +1159,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 레이즈",
+      name: '액티브: 레이즈',
       weaponeNumber: 1,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 레이즈는 스태프로 모아진 마나의 힘을 정면으로 방출하는 스킬입니다. 마법 시전 준비 중에는 일반적인 공격을 회피할 수 있습니다.
 - 방출된 마나의 힘은 약 7초간 이어지며, 마법 시전 중에 방향을 전환하여 공격 대상을 추격할 수 있습니다.
@@ -1176,9 +1174,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 연속 집중",
+      name: '액티브: 연속 집중',
       weaponeNumber: 1,
-      useAwakeningEffect: ["재사용시간 감소", "SP소모량 감소"],
+      useAwakeningEffect: ['재사용시간 감소', 'SP소모량 감소'],
       effect: `- 스태프 장착 시에만 사용 가능합니다.
 - 연속 집중은 집중 마법 사용 후 곧바로 같은 단계의 집중으로 이어갈 수 있게 해주는 스킬입니다.
 - 사용 시 일정 시간동안 1회에 한해, 마법 사용 후 동일한 집중 단계로 곧바로 이어갈 수 있습니다.
@@ -1193,12 +1191,12 @@ export const skillDescription: SkillType = {
 키보드: 집중 단계에 따른 마법 사용 - [D]로 연속 집중`,
     },
     {
-      name: "라이프 스틸",
+      name: '라이프 스틸',
       weaponeNumber: 2,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 라이프 스틸은 상대의 생명력을 흡수하는 스킬입니다. 데몬 스플리터 사용 시 발동하며, 발동 후 잡기 버튼으로 드레인하여 효과를 강화할 수 있습니다.
@@ -1214,9 +1212,9 @@ export const skillDescription: SkillType = {
 키보드: [S] - [D] - 잡기[W] 연속 입력 후 [D]`,
     },
     {
-      name: "새크리파이스",
+      name: '새크리파이스',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 스프릿 바인드를 사용해 생성한 영혼을 희생시켜 근처 적에게 큰 피해를 줍니다.
 - 드레인 효과의 릴리즈 시 발동됩니다.
@@ -1226,12 +1224,12 @@ export const skillDescription: SkillType = {
 키보드: 드레인 후 릴리즈[D]`,
     },
     {
-      name: "스프릿 바인드",
+      name: '스프릿 바인드',
       weaponeNumber: 2,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 스프릿 바인드는 상대의 영혼을 강탈하는 스킬입니다. 헬 퀘이크 사용 시 발동하며, 발동 후 잡기 버튼으로 드레인하여 효과를 강화할 수 있습니다.
@@ -1248,9 +1246,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 2회 - [D] - 잡기[W] 연속 입력 후 [D]`,
     },
     {
-      name: "액티브: 컨퓨전 홀",
+      name: '액티브: 컨퓨전 홀',
       weaponeNumber: 2,
-      useAwakeningEffect: ["SP소모량 감소", "대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['SP소모량 감소', '대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 캐릭터 전방에 혼돈의 구멍을 생성해 일정 범위 내 보스를 제외한 적들을 끌어모읍니다.
 - 혼돈의 구멍은 생성된 이후 일정 시간이 지나면 소멸되면서 근처 적들에게 피해를 입힙니다.
@@ -1265,9 +1263,9 @@ export const skillDescription: SkillType = {
 키보드: 이글 탈론 도중에 잡기[W] 누르고 있기`,
     },
     {
-      name: "데몬 스플리터",
+      name: '데몬 스플리터',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 사이드로 전방의 적을 내리찍는 근거리 공격입니다.
 - 9랭크 이상일 때 추가 공격을 할 수 있습니다.
@@ -1282,9 +1280,9 @@ export const skillDescription: SkillType = {
 키보드: [S] - [D] - [D]`,
     },
     {
-      name: "블링크 문라이트",
+      name: '블링크 문라이트',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 블링크를 사용한 이후에 근처의 적을 날려버리는 공격입니다.
 - 공격 후 라이프 스틸 효과가 발동합니다. 라이프 스틸을 수련하지 않았다면 효과가 발동하지 않습니다.
@@ -1300,9 +1298,9 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] - [D] - [D]`,
     },
     {
-      name: "헬 퀘이크",
+      name: '헬 퀘이크',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 헬 퀘이크는 스프릿 바인드를 새기는 공격입니다.
 - 공격 후 스프릿 바인드 효과가 발동합니다. 스프릿 바인드를 수련하지 않았다면 효과가 발동하지 않습니다.
@@ -1312,12 +1310,12 @@ export const skillDescription: SkillType = {
 키보드: [S] X 2회 - [D]`,
     },
     {
-      name: "데스 레이블",
+      name: '데스 레이블',
       weaponeNumber: 2,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 데스 레이블은 상대에게 죽음의 낙인을 새기는 스킬입니다. 소울 스큐어 사용 시 발동하며, 발동 후 잡기 버튼으로 드레인하여 효과를 강화할 수 있습니다.
@@ -1334,9 +1332,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 3회 - [D] - 잡기[W] 연속 입력 후 [D]`,
     },
     {
-      name: "소울 스큐어",
+      name: '소울 스큐어',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 소울 스큐어는 데스 레이블을 새기는 공격입니다.
 - 공격 후 데스 레이블 효과가 발동합니다. 데스 레이블을 수련하지 않았다면 효과가 발동하지 않습니다.
@@ -1351,9 +1349,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 3회 - [D] X 2회`,
     },
     {
-      name: "피어 스크림",
+      name: '피어 스크림',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 피어 스크림은 데몬 스플리터를 잇는 연계 공격입니다.
 - 공격 후 스피릿 바인드 효과가 발동하며, 스태미나가 회복됩니다. 스프릿 바인드를 수련하지 않았다면 효과가 발동하지 않습니다.
@@ -1364,9 +1362,9 @@ export const skillDescription: SkillType = {
 키보드: [S] - [D] X 3회 연속 입력 후 [D]`,
     },
     {
-      name: "액티브: 인세인 리퍼",
+      name: '액티브: 인세인 리퍼',
       weaponeNumber: 2,
-      useAwakeningEffect: ["SP소모량 감소", "재사용시간 대 감소"],
+      useAwakeningEffect: ['SP소모량 감소', '재사용시간 대 감소'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 파티 멤버의 스태미나를 회복시킵니다.
 - 자신의 공격 속도가 향상됩니다.
@@ -1377,12 +1375,12 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "블러디 스레드",
+      name: '블러디 스레드',
       weaponeNumber: 2,
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 블러디 스레드는 여러 상대를 실로 묶는 스킬입니다. 인비지블 룸 사용 시 발동하며, 발동 후 잡기 버튼으로 드레인하여 효과를 강화할 수 있습니다.
@@ -1398,9 +1396,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] - 잡기[W] 연속 입력 후 [D]`,
     },
     {
-      name: "액티브: 아케인 게이트",
+      name: '액티브: 아케인 게이트',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 스킬 사용 시 SP를 크게 소모하여 아케인 게이트를 열고 어둠의 차원으로 이동합니다.
 - 아케인 게이트에 들어간 동안에는 대부분의 공격을 회피할 수 있으며, 일정 시간내에 공격을 시도할 수 있습니다.
@@ -1420,9 +1418,9 @@ export const skillDescription: SkillType = {
 키보드: [D]`,
     },
     {
-      name: "인비지블 룸",
+      name: '인비지블 룸',
       weaponeNumber: 2,
-      useAwakeningEffect: ["대미지 증가", "부분 파괴 대미지"],
+      useAwakeningEffect: ['대미지 증가', '부분 파괴 대미지'],
       effect: `- 배틀사이드 계열 무기 장착시에만 사용이 가능합니다.
 - 인비지블 룸은 블러디 스레드를 새기는 공격입니다.
 - 공격 후 블러디 스레드 효과가 발동합니다. 블러디 스레드를 수련하지 않았다면 효과가 발동하지 않습니다.
@@ -1437,9 +1435,9 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] X 2회`,
     },
   ],
-  ["카록"]: [
+  ['카록']: [
     {
-      name: "액티브: 하울링",
+      name: '액티브: 하울링',
       weaponeNumber: 0,
       effect: `- 우렁찬 함성을 외쳐 기운을 북돋습니다.
 - 해로운 효과를 제거하고 생명력을 회복합니다.
@@ -1451,7 +1449,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "액티브: 샤우트",
+      name: '액티브: 샤우트',
       weaponeNumber: 0,
       effect: `- 벼락처럼 고함을 질러 몬스터의 시선을 끕니다.
 - 스킬 랭크가 오를수록 적용범위가 넓어집니다.
@@ -1462,7 +1460,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "매머드 스윕",
+      name: '매머드 스윕',
       weaponeNumber: 1,
       effect: `- 배틀필러를 횡으로 휘둘러 주변에 피해를 줍니다.
 
@@ -1470,7 +1468,7 @@ export const skillDescription: SkillType = {
 [일반 공격] X 3회 - [스매시]`,
     },
     {
-      name: "전투 돌진",
+      name: '전투 돌진',
       weaponeNumber: 1,
       effect: `- 전투 상태로 돌입합니다!
 - 달리면서 기둥을 휘둘러 주변 대상에게 피해를 줍니다.
@@ -1480,7 +1478,7 @@ export const skillDescription: SkillType = {
 돌진 해제: [전투 돌진] 중 [TAB]`,
     },
     {
-      name: "롤링 어택",
+      name: '롤링 어택',
       weaponeNumber: 1,
       effect: `- 온몸을 내던져 크게 구릅니다.
 - '골절' 피해를 줄 수 있습니다.
@@ -1490,7 +1488,7 @@ export const skillDescription: SkillType = {
 키보드: [A]`,
     },
     {
-      name: "라이노 헤드벗",
+      name: '라이노 헤드벗',
       weaponeNumber: 1,
       effect: `- 오른쪽에서 왼쪽으로 대상을 올려칩니다.
 - [롤링 어택]에서 연계해 사용할 수 있습니다.
@@ -1502,7 +1500,7 @@ export const skillDescription: SkillType = {
 [롤링 어택] - [스매시]`,
     },
     {
-      name: "바이슨 차지",
+      name: '바이슨 차지',
       weaponeNumber: 1,
       effect: `- 전방의 대상에게 돌진해 여러 번 피해를 줍니다.
 
@@ -1516,7 +1514,7 @@ export const skillDescription: SkillType = {
 또는 [웨일 뱅] - [TAB]`,
     },
     {
-      name: "액티브: 데들리 컴퍼스",
+      name: '액티브: 데들리 컴퍼스',
       weaponeNumber: 1,
       effect: `- 배틀필러를 지면에 찍어내린 후 둥글게 휘둘러 공격합니다.
 - [워 스톰프]와 연계해 사용할 수 있습니다.
@@ -1531,7 +1529,7 @@ export const skillDescription: SkillType = {
 [연속 워 스톰프] - [일반 공격]`,
     },
     {
-      name: "웨일 밤",
+      name: '웨일 밤',
       weaponeNumber: 1,
       effect: `- 머리를 사용해 위에서 아래로 강하게 내려찍습니다.
 - [비스트 폼]이 없다면, [라이노 폼]을 취합니다.
@@ -1540,7 +1538,7 @@ export const skillDescription: SkillType = {
 방향키를 떼고 [스매시]`,
     },
     {
-      name: "점보 스턱",
+      name: '점보 스턱',
       weaponeNumber: 1,
       effect: `- 배틀필러를 들고 뛰어올라 강하게 내려찍습니다.
 - [데들리 스톰프] 상태라면 공격력이 증가합니다.
@@ -1554,7 +1552,7 @@ export const skillDescription: SkillType = {
 [연속 워 스톰프] - [잡기]`,
     },
     {
-      name: "드롭킥",
+      name: '드롭킥',
       weaponeNumber: 1,
       effect: `- 배틀필러를 지지대 삼아 온몸을 실어 발차기합니다.
 - [점보 스턱]으로 연계할 수 있습니다.
@@ -1569,7 +1567,7 @@ export const skillDescription: SkillType = {
 [연속 워 스톰프] - [발차기]`,
     },
     {
-      name: "워 스톰프",
+      name: '워 스톰프',
       weaponeNumber: 1,
       effect: `- 배틀필러를 지면에 내려찍씁니다.
 
@@ -1588,7 +1586,7 @@ export const skillDescription: SkillType = {
 [워 스톰프] - [스매시] X 반복`,
     },
     {
-      name: "매머드 크래쉬",
+      name: '매머드 크래쉬',
       weaponeNumber: 1,
       effect: `- 온 힘을 다해 배틀필러를 내려칩니다.
 
@@ -1596,7 +1594,7 @@ export const skillDescription: SkillType = {
 [매머드 스웝] - [스매시]`,
     },
     {
-      name: "액티브: 돌개바람",
+      name: '액티브: 돌개바람',
       weaponeNumber: 1,
       effect: `- 배틀필러에 몸을 맡기고 회전합니다. 공격 성공시 스태미나를 회복합니다.
 
@@ -1609,7 +1607,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "라이노 고어",
+      name: '라이노 고어',
       weaponeNumber: 1,
       effect: `- 왼쪽에서 오른쪽으로 크게 올려칩니다.
 
@@ -1617,7 +1615,7 @@ export const skillDescription: SkillType = {
 [라이노 헤드벗] - [스매시]`,
     },
     {
-      name: "웨일 뱅",
+      name: '웨일 뱅',
       weaponeNumber: 1,
       effect: `- 전방으로 배틀필러를 크게 휘두르며 전진합니다
 - 공격을 받아도 쉽게 쓰러지지 않고 버텨냅니다.
@@ -1627,7 +1625,7 @@ export const skillDescription: SkillType = {
 또는 [웨일 밤] - 방향키를 누르고 [스매시] X 반복`,
     },
     {
-      name: "액티브: 멸절",
+      name: '액티브: 멸절',
       weaponeNumber: 1,
       effect: `- 타격 가능한 모든 부위를 휘갈겨 대상을 가루로 만듭니다.
 - 대상을 제압합니다.
@@ -1637,7 +1635,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "액티브: 어스퀘이크",
+      name: '액티브: 어스퀘이크',
       weaponeNumber: 1,
       effect: `- 지면을 강하게 내리쳐 충격파를 발생시켜 큰 피해를 주고 뼈를 부러뜨립니다.
 - 주변 대상에게 큰 피해를 줘 경직시키고 무조건 '골절' 피해를 줍니다.
@@ -1648,7 +1646,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "볼버라이즈",
+      name: '볼버라이즈',
       weaponeNumber: 1,
       effect: `- 배틀필러를 강하게 찔러 넣어 큰 피해를 줍니다.
 
@@ -1673,7 +1671,7 @@ export const skillDescription: SkillType = {
 [볼버라이즈] - [스매시]`,
     },
     {
-      name: "매머드 프래셔",
+      name: '매머드 프래셔',
       weaponeNumber: 1,
       effect: `- 내려친 대상을 한번 더 내려쳐 뭉개버립니다.
 
@@ -1681,7 +1679,7 @@ export const skillDescription: SkillType = {
 [매머드 크래쉬] - [스매시]`,
     },
     {
-      name: "그리즐리 범프",
+      name: '그리즐리 범프',
       weaponeNumber: 1,
       effect: `- 곰처럼 돌진해 대상을 날려버리고 배틀필러를 잡습니다.
 
@@ -1696,7 +1694,7 @@ export const skillDescription: SkillType = {
 기둥을 잡은 직후 [스매시]`,
     },
     {
-      name: "빅뱅",
+      name: '빅뱅',
       weaponeNumber: 2,
       effect: `- 버스트 게이지를 응집하여 포탄 형태로 발사합니다.
 - 멀리 떨어져 있는 대상을 맞출 수 있습니다.
@@ -1712,7 +1710,7 @@ export const skillDescription: SkillType = {
 키보드: [Q], [E]로 좌, 우 조준`,
     },
     {
-      name: "웨이스트 피벗",
+      name: '웨이스트 피벗',
       weaponeNumber: 2,
       effect: `- 허리의 힘을 이용해 강하게 돌려칩니다.
 - [버스트]로 연계할 수 있습니다.
@@ -1721,7 +1719,7 @@ export const skillDescription: SkillType = {
 [일반 공격] X 4회 - [스매시]`,
     },
     {
-      name: "액티브: 폭풍",
+      name: '액티브: 폭풍',
       weaponeNumber: 2,
       effect: `- 양팔을 휘둘러 여러 번에 걸쳐 타격합니다.
 - 첫 폭풍보다 SP를 적게 소모하여 '연속 폭풍'을 사용할 수 있습니다.
@@ -1736,7 +1734,7 @@ export const skillDescription: SkillType = {
 [액티브: 폭풍] - [스매시] X 반복`,
     },
     {
-      name: "액티브: 화산 폭발",
+      name: '액티브: 화산 폭발',
       weaponeNumber: 2,
       effect: `- 블래스터를 바닥에 내려친 후, 그대로 폭발시켜 다수의 대상에게 피해를 줍니다.
 - 대상의 수가 많으면 피해는 분산됩니다.
@@ -1748,7 +1746,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "액티브: 힘의 해방",
+      name: '액티브: 힘의 해방',
       weaponeNumber: 2,
       effect: `- 잠재된 힘을 폭발시킵니다.
 - 버스트 게이지 3단계와 '돌격, 강타, 파괴' 효과를 즉시 얻습니다.
@@ -1765,7 +1763,7 @@ export const skillDescription: SkillType = {
 뎀프시롤 [전초] - 최고조 상태에서 [스매시]`,
     },
     {
-      name: "액티브: 격노",
+      name: '액티브: 격노',
       weaponeNumber: 2,
       effect: `- 전방으로 강력한 일격을 가한 후, 적의 공격을 회피하며 연속해서 공격을 퍼붓습니다.
 - 스매시 입력을 통해 첫 격노 이후 계속해서 공격을 이어갈 수 있으며, 공격 도중 언제든 일반 공격 입력을 통해 격노 상태를 종료할 수 있습니다.
@@ -1784,7 +1782,7 @@ export const skillDescription: SkillType = {
 키보드: [액티브: 격노] 도중 [S]`,
     },
     {
-      name: "액티브: 인파이팅",
+      name: '액티브: 인파이팅',
       weaponeNumber: 2,
       effect: `- 보이지 않는 속도로 연타 공격을 퍼붓습니다.
 - 대상을 제압합니다.
@@ -1794,7 +1792,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록후 [숫자키], 또는 [X]로 선택 후 [Z]`,
     },
     {
-      name: "J.F 버스트",
+      name: 'J.F 버스트',
       weaponeNumber: 2,
       effect: `- 버스트를 약하게 발포해 대상을 견제합니다.
 - 공격이 성공하면 일정량의 스태미나를 회복합니다.
@@ -1810,7 +1808,7 @@ export const skillDescription: SkillType = {
 [J.F 버스트] - [버스트]`,
     },
     {
-      name: "뎀프시롤",
+      name: '뎀프시롤',
       weaponeNumber: 2,
       effect: `- 상대의 공격을 회피함과 동시에 빈틈을 노려 공격을 퍼붓습니다.
 
@@ -1834,7 +1832,7 @@ export const skillDescription: SkillType = {
 [뎀프시롤] 중 - [스매시]`,
     },
     {
-      name: "차징 버스트",
+      name: '차징 버스트',
       weaponeNumber: 2,
       effect: `- 블래스터에 힘을 불어넣어 버스트 게이지를 충전합니다.
 - [일반 공격] 혹은 [스매시] 공격 중에도 발동시킬 수 있습니다.
@@ -1854,7 +1852,7 @@ export const skillDescription: SkillType = {
 [차징 버스트] - [스매시]`,
     },
     {
-      name: "볼로 펀치",
+      name: '볼로 펀치',
       weaponeNumber: 2,
       effect: `- 아래에서 위로 강력하게 올려칩니다.
 - '버스트'로 연계할 수 있습니다.
@@ -1863,7 +1861,7 @@ export const skillDescription: SkillType = {
 - [일반 공격] - [스매시]`,
     },
     {
-      name: "스트레이트 펀치",
+      name: '스트레이트 펀치',
       weaponeNumber: 2,
       effect: `- 전방으로 강력한 일격을 가합니다.
 - '버스트'로 연계할 수 있습니다.
@@ -1872,7 +1870,7 @@ export const skillDescription: SkillType = {
 - [일반 공격] X 2회 - [스매시]`,
     },
     {
-      name: "선데이 펀치",
+      name: '선데이 펀치',
       weaponeNumber: 2,
       effect: `- 위에서 아래로 내려찍습니다.
 - '버스트'로 연계할 수 있습니다.
@@ -1881,9 +1879,9 @@ export const skillDescription: SkillType = {
 - [일반 공격] X 3회 - [스매시]`,
     },
   ],
-  ["카이"]: [
+  ['카이']: [
     {
-      name: "속사",
+      name: '속사',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - [속사]는 전방의 적에게 최대 3발의 화살을 빠르게 발사 합니다.
@@ -1896,7 +1894,7 @@ export const skillDescription: SkillType = {
 키보드: 공격[S] 키를 모았다가 뗍니다.`,
     },
     {
-      name: "쓰러스트킥",
+      name: '쓰러스트킥',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 전방으로 강력한 일격을 가합니다.
@@ -1908,7 +1906,7 @@ export const skillDescription: SkillType = {
 키보드: 스매시[D]`,
     },
     {
-      name: "액티브: 밴딩샷",
+      name: '액티브: 밴딩샷',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 숏보우 상태에서 발사하면 절묘한 각도로 화살이 휘어지면서 여러 대상을 공격합니다.
@@ -1932,7 +1930,7 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] 후 [W]로 애로우 스톰 발동 후 [S]`,
     },
     {
-      name: "차징샷",
+      name: '차징샷',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 차징샷은 롱보우 상태에서 힘을 모을 경우, 관통 화살과 일반 화살 2발을 함께 쏠 수 있는 스킬입니다.
@@ -1949,7 +1947,7 @@ export const skillDescription: SkillType = {
 키보드: 공격[S] 키를 모았다가 뗍니다.`,
     },
     {
-      name: "스핀킥",
+      name: '스핀킥',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 달리는 중 근처의 적을 발차기로 제압합니다.
@@ -1961,7 +1959,7 @@ export const skillDescription: SkillType = {
 키보드: 달리는 중에 스매시[D] or 숏보우는 쓰러스트킥 이후 스매시 or 회피 이후 스매시`,
     },
     {
-      name: "매그넘샷",
+      name: '매그넘샷',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 활 시위를 있는 힘껏 당겨 날아가는 화살이 적의 몸을 관통하는 강력한 공격입니다.
@@ -1976,7 +1974,7 @@ export const skillDescription: SkillType = {
 - [위 이동]키를 누른 상태로 사용하면 뒤로 밀려나는 거리가 줄어듭니다.`,
     },
     {
-      name: "마운팅",
+      name: '마운팅',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 보스 몬스터의 몸 위로 재빠르게 올라간 후 급소를 공격합니다.
@@ -1987,7 +1985,7 @@ export const skillDescription: SkillType = {
 키보드: 보스 몬스터가 다운 상태이고, 화면에 액션 버튼이 보일때 [W]`,
     },
     {
-      name: "액티브: 애로우 스톰",
+      name: '액티브: 애로우 스톰',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 애로우 스톰은 일정 범위에 다량의 화살을 일시에 발사하여 큰 피해를 입히는 스킬입니다.
@@ -2005,7 +2003,7 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] 후 [W]`,
     },
     {
-      name: "액티브: 듀얼링크",
+      name: '액티브: 듀얼링크',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 듀얼링크는 특수 화살을 이용해서 적의 이동을 제한하고, 지속적인 대미지를 줍니다.
@@ -2018,7 +2016,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 멀티 스나이핑",
+      name: '액티브: 멀티 스나이핑',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 멀티 스나이핑은 여러 대상을 우선 타겟팅한 후에 동시에 여러 발의 화살을 발사해서 피해를 입히는 공격입니다.
@@ -2030,7 +2028,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 페이탈 애로우",
+      name: '액티브: 페이탈 애로우',
       weaponeNumber: 1,
       effect: `- 보우 계열 무기 장착 시에만 사용 가능합니다.
 - 화려하고 강력한 공격으로 적에게 일순간 큰 대미지를 줍니다.
@@ -2041,7 +2039,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "스핀 스매시",
+      name: '스핀 스매시',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 회피 후 크로스건을 휘둘러 적을 공격 합니다.
@@ -2052,7 +2050,7 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] 중 발차기`,
     },
     {
-      name: "액티브: 할로우샷",
+      name: '액티브: 할로우샷',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 할로우샷은 강력한 폭탄형 볼트를 근거리에 발사하여 다수의 적들에게 피해를 줄 수 있는 공격입니다.
@@ -2064,7 +2062,7 @@ export const skillDescription: SkillType = {
 키보드: [D]으로 볼트 리볼버 1단계 - [숫자키 1번]`,
     },
     {
-      name: "액티브: 피어싱",
+      name: '액티브: 피어싱',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 일직선 상의 다수의 적들에게 강력한 볼트를 발사합니다.
@@ -2081,7 +2079,7 @@ export const skillDescription: SkillType = {
 키보드: [D]으로 볼트 리볼버 1단계 - [숫자키 3번]`,
     },
     {
-      name: "액티브: 블렛6",
+      name: '액티브: 블렛6',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 블렛6은 총 6발의 폭발형 볼트를 적에게 발사하여 연쇄 폭발을 일으킬 수 있는 스킬입니다.
@@ -2096,7 +2094,7 @@ export const skillDescription: SkillType = {
 키보드: [D]으로 볼트 리볼버 1단계 - [숫자키 2번]`,
     },
     {
-      name: "액티브: 핸드밤",
+      name: '액티브: 핸드밤',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 핸드밤은 투척 후 충격을 받거나, 6초 후 자동으로 폭발하게 됩니다.
@@ -2115,7 +2113,7 @@ export const skillDescription: SkillType = {
 키보드: 회피[A] 후 [W]`,
     },
     {
-      name: "액티브: 밴드 서포트",
+      name: '액티브: 밴드 서포트',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 밴드 서포터는 시전자와 파티 멤버 전원에게 공격을 통해 얻는 SP 게이지를 증가 시켜줍니다. 자신에게는 파티 멤버보다 더 많은 SP 게이지 증가 효과와 함께, 이동 속도 증가 효과를 부여합니다.
@@ -2128,7 +2126,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 인핸스 볼트",
+      name: '액티브: 인핸스 볼트',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 크로스건 착용 시 사용하는 모든 폭발류의 공격을 강화시켜 줍니다.
@@ -2138,7 +2136,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 거스팅 볼트",
+      name: '액티브: 거스팅 볼트',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 거스팅 볼트는 재장전을 하지 않고 다량의 볼트를 연사할 수 있는 스킬입니다.
@@ -2153,7 +2151,7 @@ export const skillDescription: SkillType = {
 키보드: [D]으로 볼트 리볼버 2단계 - [숫자키 1번]`,
     },
     {
-      name: "액티브: 벙커 버스터",
+      name: '액티브: 벙커 버스터',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 다량의 핸드밤 공격이 성공 할 경우 적을 제압할 수 있으며, 관통 후 폭발하는 공격으로 큰 대미지를 줄 수 있습니다.
@@ -2165,7 +2163,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 아토믹",
+      name: '액티브: 아토믹',
       weaponeNumber: 2,
       effect: `- 크로스건 계열 무기 장착 시에만 사용 가능합니다.
 - 아토믹은 매우 강력한 폭탄형 볼트를 발사하는 스킬이며, 목표 지점 근처의 적들까지 모두 공격이 가능한 스킬입니다.
@@ -2183,13 +2181,13 @@ export const skillDescription: SkillType = {
 [D]키를 이용하여 스킬 취소 가능.`,
     },
   ],
-  ["벨라"]: [
+  ['벨라']: [
     {
-      name: "거트 스팅어",
+      name: '거트 스팅어',
       useAwakeningEffect: [
-        "스태미나 소모량 감소",
-        "대미지 증가",
-        "부분 파괴 대미지",
+        '스태미나 소모량 감소',
+        '대미지 증가',
+        '부분 파괴 대미지',
       ],
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
@@ -2207,8 +2205,8 @@ export const skillDescription: SkillType = {
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "액티브: 슬래싱 하이",
-      useAwakeningEffect: ["SP소모량 감소"],
+      name: '액티브: 슬래싱 하이',
+      useAwakeningEffect: ['SP소모량 감소'],
       effect: `- 일정 시간동안 적의 공격에 방해받지 않고 공격을 할 수 있는 상태가 됩니다.
 - 단 적의 공격에 대한 피해는 입으며, 이 경우 지속시간이 조금씩 감소합니다.
 - 슬래싱 하이 상태가 유지되는 동안에는 스태미나를 소모하지 않습니다.
@@ -2218,9 +2216,9 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 스피릿 오브 버서커",
+      name: '액티브: 스피릿 오브 버서커',
       weaponeNumber: 1,
-      useAwakeningEffect: ["SP소모량 감소", "재사용시간 대 감소"],
+      useAwakeningEffect: ['SP소모량 감소', '재사용시간 대 감소'],
       effect: `- 버서커의 힘을 빌어 일시적으로 파티 멤버들의 공격력을 증가시킵니다.
 
 <조작법>
@@ -2228,7 +2226,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "데들리 게일",
+      name: '데들리 게일',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 데들리 게일은 메나싱 게일에 이어 추가로 공격이 가능한 스킬입니다.
@@ -2240,7 +2238,7 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] X 3회`,
     },
     {
-      name: "디바이딩 에디",
+      name: '디바이딩 에디',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 전진하며 빠른 회전 공격을 가합니다.
@@ -2255,7 +2253,7 @@ export const skillDescription: SkillType = {
 키보드:[D]`,
     },
     {
-      name: "메나싱 게일",
+      name: '메나싱 게일',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 메나싱 게일은 4타 스매시 공격 후 추가 공격이 가능한 스킬입니다.
@@ -2266,7 +2264,7 @@ export const skillDescription: SkillType = {
 키보드: [S] X 4회 - [D] X 2회`,
     },
     {
-      name: "스핀 러시",
+      name: '스핀 러시',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 빠르게 회전하며 듀얼소드로 비스듬히 올려칩니다.
@@ -2277,7 +2275,7 @@ export const skillDescription: SkillType = {
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 타이푼 슬래쉬",
+      name: '액티브: 타이푼 슬래쉬',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 타이푼 슬래쉬는 일정 범위내에 있는 일반 몬스터들을 가까이 끌어 당긴 후 공격합니다.
@@ -2292,7 +2290,7 @@ export const skillDescription: SkillType = {
 스핀 러시, 3타 스매시, 거스티 블레이드, 데들리 게일 이후 스매시 누르고 있기`,
     },
     {
-      name: "크로스 스트라이크",
+      name: '크로스 스트라이크',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 크로스 스트라이크는 적이 공격해 올 때 빈틈을 찾아 반격하는 스킬 입니다.
@@ -2305,7 +2303,7 @@ export const skillDescription: SkillType = {
 키보드: 이동 버튼을 누르지 않은 상태에서 회피[A] - 이 후 적의 공격 타이밍에 맞춰 [D] 혹은 [S]`,
     },
     {
-      name: "백래쉬",
+      name: '백래쉬',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 적의 원거리 투사체 공격을 반사시켜 피해를 되돌려 주는 스킬입니다.
@@ -2316,7 +2314,7 @@ export const skillDescription: SkillType = {
 키보드: 크로스 스탠스 혹은 윈드 스탭 중 회피[A] 버튼`,
     },
     {
-      name: "거스티 블레이드",
+      name: '거스티 블레이드',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 거스티 블레이드는 일정 범위에 대한 피해를 줄 수 있는 스킬입니다.
@@ -2331,7 +2329,7 @@ export const skillDescription: SkillType = {
 또는 윈드 스탭(회피) 후에 [D] X 2회`,
     },
     {
-      name: "액티브: 검의 의지",
+      name: '액티브: 검의 의지',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 검의 의지는 검의 긍지 3단계를 지속 시간 동안 단계 하락 없이 유지할 수 있는 스킬입니다.
@@ -2343,7 +2341,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 템페스트",
+      name: '액티브: 템페스트',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 템페스트는 보스 몬스터를 상대로 사용하기에 적합한 스킬로 일정 시간 동안 제압한 후 난무 공격을 펼칩니다.
@@ -2354,7 +2352,7 @@ export const skillDescription: SkillType = {
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 게일 스플리터",
+      name: '액티브: 게일 스플리터',
       weaponeNumber: 1,
       effect: `- 듀얼소드 계열 무기 장착시에만 사용 가능합니다.
 - 바람보다도 빨리 달려 적의 공격을 회피하며 속공을 날립니다.
@@ -2371,7 +2369,7 @@ export const skillDescription: SkillType = {
 키보드: [S] + [D]`,
     },
     {
-      name: "루미너스 러시",
+      name: '루미너스 러시',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 루미너르 러시는 세 번째 일반 공격에서 이어지는 공격입니다.
@@ -2393,7 +2391,7 @@ export const skillDescription: SkillType = {
 키보드: [루미너스 러시]가 끝날 때 [D]`,
     },
     {
-      name: "미스트 슬래쉬",
+      name: '미스트 슬래쉬',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 미스트 슬래쉬는 두 번째 일반 공격에서 이어지는 공격입니다.
@@ -2415,7 +2413,7 @@ export const skillDescription: SkillType = {
 키보드: [미스트 슬래쉬]가 끝날 때 [S] - [D]`,
     },
     {
-      name: "스파이럴 스핀",
+      name: '스파이럴 스핀',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 스파이럴 스핀은 1타 스매시인 루나 플래시 공격 이후 추가 공격이 가능한 스킬입니다.
@@ -2425,7 +2423,7 @@ export const skillDescription: SkillType = {
 키보드: [S] X 1회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 뱀파이어의 키스",
+      name: '액티브: 뱀파이어의 키스',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 뱀파이어의 키스는 점프해서 3번 회전하여 다수의 적을 공격하는 스킬입니다.
@@ -2443,7 +2441,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 완전히 일어서기 전에 [D]`,
     },
     {
-      name: "액티브: 도미네이트",
+      name: '액티브: 도미네이트',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 갈고리 사슬처럼, 제압이 가능한 적을 제압하는 스킬입니다.
@@ -2455,7 +2453,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "모먼트 블로우",
+      name: '모먼트 블로우',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 듀얼블레이드에 연결된 적을 끌어당기거나 다가갔을 때, 곧바로 강한 일격을 날릴 수 있습니다.
@@ -2468,7 +2466,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 듀얼블레이드에 연결된 대상에게 다가가거나 당긴 후 모먼트 블로우[S]`,
     },
     {
-      name: "소노러스 필",
+      name: '소노러스 필',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 소노러스 필은 다른 스매시 공격에서 추가로 이어지는 공격입니다.
@@ -2484,7 +2482,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 블레이드 댄스 도중 [S] 혹은 블레이드 댄스 종료 시 [D]`,
     },
     {
-      name: "액티브: 레드 아이즈",
+      name: '액티브: 레드 아이즈',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 레드 아이즈는 보스 몬스터에게만 사용할 수 있는 스킬로 적에게 양 손의 듀얼블레이드를 꽂아 강력한 힘을 가하는 스킬입니다.
@@ -2502,7 +2500,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 냉각",
+      name: '액티브: 냉각',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - [차가운 심장] 상태에서만 사용할 수 있으며, [차가운 심장] 상태의 지속시간을 늘려줍니다.
@@ -2515,7 +2513,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 글라시얼 브레이커",
+      name: '액티브: 글라시얼 브레이커',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - [차가운 심장] 상태에서만 쓸 수 있으며 [차가운 심장] 상태를 소진하며 나가는 강력한 공격입니다.
@@ -2532,7 +2530,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 잡기[D]`,
     },
     {
-      name: "액티브: 폴라리스 소나타",
+      name: '액티브: 폴라리스 소나타',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 폴라리스 소나타는 보스 몬스터에게만 사용할 수 있는 스킬로 듀얼블레이드로 적을 관통하고 사슬로 제압하는 공격입니다.
@@ -2545,7 +2543,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 블레이드 댄스",
+      name: '액티브: 블레이드 댄스',
       weaponeNumber: 2,
       effect: `- 듀얼블레이드 계열 무기 장착 시에만 사용 가능합니다.
 - 근거리 혹은 중거리의 적에게 듀얼블레이드로 연속 공격을 가합니다.
@@ -2565,9 +2563,9 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [D] 연타`,
     },
   ],
-  ["허크"]: [
+  ['허크']: [
     {
-      name: "만월",
+      name: '만월',
       weaponeNumber: 1,
       effect: `- 만월은 신월에서 연결되는 스킬로 적을 한 번 더 올려 베는 스킬입니다.
 - 스킬 랭크가 올라갈수록 더 강력한 공격이 가능하며, 부분 파괴 대미지가 증가합니다.
@@ -2577,7 +2575,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 4회 - [D] X 2회`,
     },
     {
-      name: "붕괴",
+      name: '붕괴',
       weaponeNumber: 1,
       effect: `- 붕괴는 적을 멀리 날려 버리는 스킬입니다.
 - 날아가는 적은 추가 대미지를 받고, 다른 적에게 충돌할 경우 충돌한 적은 연쇄적으로 날아가게 됩니다.
@@ -2588,7 +2586,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "신월",
+      name: '신월',
       weaponeNumber: 1,
       effect: `- 신월은 강력한 올려베기를 하는 스킬입니다.
 - 스킬 랭크가 올라갈수록 더 강력한 공격이 가능하며, 부분 파괴 대미지가 증가합니다.
@@ -2598,7 +2596,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 4회 - [D] X 1회`,
     },
     {
-      name: "액티브: 심판",
+      name: '액티브: 심판',
       weaponeNumber: 1,
       effect: `- 심판은 적에게 빠르게 돌진하면서 공격하는 스킬로, 돌진 중에는 적의 공격을 회피할 수 있습니다.
 - 한 번 발동하면 최대 2번까지 연속해서 사용할 수 있습니다.
@@ -2610,7 +2608,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "처형",
+      name: '처형',
       weaponeNumber: 1,
       effect: `- 처형은 적을 그레이트소드로 찌른 다음에 내려치는 기술입니다.
 - 적을 내려치는 방향을 지정할 수 있습니다.
@@ -2624,7 +2622,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 또는 빠르게 달리면서 [D] - [D] 반복`,
     },
     {
-      name: "학살",
+      name: '학살',
       weaponeNumber: 1,
       effect: `- 학살은 넓은 범위의 적을 회전하면서 공격하는 스킬입니다.
 - 액티브: 광폭화 효과가 있을 경우 SP획득량이 증가합니다.
@@ -2635,7 +2633,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "액티브: 기합 베기",
+      name: '액티브: 기합 베기',
       weaponeNumber: 1,
       effect: `- 기합 베기는 힘을 모은 다음에 적을 강하게 공격하는 스킬입니다.
 - 기술을 사용하면 힘을 모으고, 공격 버튼을 누르면 베기가 발동됩니다. 힘을 모으는 시간이 길어질수록 공격이 강해지며, 다운된 적에게는 추가 피해를 입힙니다.
@@ -2650,7 +2648,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드 기술 사용 후 [S] X 1회 또는 [D] X 1회`,
     },
     {
-      name: "소용돌이",
+      name: '소용돌이',
       weaponeNumber: 1,
       effect: `- 소용돌이는 그레이트소드를 회전시켜서 주위에 있는 적들을 공격하는 스킬입니다. 최고 랭크
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능하며, 최대 회전 횟수가 증가합니다.
@@ -2661,7 +2659,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 빨리 달리다가 힘을 모으는 상태일 때 스매시[D] - [D] 반복`,
     },
     {
-      name: "액티브: 필살의 일격",
+      name: '액티브: 필살의 일격',
       weaponeNumber: 1,
       effect: `- 필살의 일격은 뛰어올라 적에게 강력한 내려치기 공격을 하는 스킬입니다.
 - 각성 상태효과가 최대 레벨일때 사용하면 적을 다운 시킬 수 있습니다.
@@ -2674,7 +2672,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 광폭화",
+      name: '액티브: 광폭화',
       weaponeNumber: 1,
       effect: `- 일정 시간 동안 적의 공격에 방해를 받지 않고 공격할 수 있고, 해당 시간 동안 최종 대미지가 증가합니다.
 - 사용 중에 철벽 효과로 적의 공격을 버티거나 학살을 사용하면 지속 시간이 증가합니다.
@@ -2687,7 +2685,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 절명",
+      name: '액티브: 절명',
       weaponeNumber: 1,
       effect: `- 절명은 근처의 적을 강하게 밀쳐낸 뒤, 강력한 찌르기 공격을 하는 스킬입니다.
 - 스킬 랭크가 올라 갈수록 더 강력한 공격이 가능합니다.
@@ -2698,7 +2696,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 스플릿 슬래쉬",
+      name: '액티브: 스플릿 슬래쉬',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 검을 양손에 쥐고 힘을 실어 강력하게 베는 기술입니다. 크게 베는 동작 전에 이동키를 이용하여 방향 조절이 가능합니다. [예리한 칼날]의 랭크에 따라 자신이 입힐 수 있는 최고 단계의 상처를 적에게 입힐 수 있습니다.
@@ -2711,7 +2709,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 퍼펙트 리로드",
+      name: '액티브: 퍼펙트 리로드',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 퍼펙트 리로드는 스태미나 회복과 함께 모든 탄환을 강화탄으로 한 번에 장전하는 기술입니다.
@@ -2723,7 +2721,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 임펙트 슈어 샷",
+      name: '액티브: 임펙트 슈어 샷',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 임펙트 슈어 샷은 제자리에서 정조준을 통해 더 멀리, 그리고 정확한 사격을 하는 기술입니다.
@@ -2736,7 +2734,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 스피닝 슬래쉬",
+      name: '액티브: 스피닝 슬래쉬',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 스피닝 슬래쉬는 빠르게 몸을 회전하며 돌려 베는 기술입니다. 적이 상처를 입은 상태일 경우 해당 상처의 지속 시간을 증가시킵니다.
@@ -2752,7 +2750,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] + [D]`,
     },
     {
-      name: "액티브: 페이탈 슬래쉬",
+      name: '액티브: 페이탈 슬래쉬',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 전방으로 미끄러지듯 빠르게 회전하여 검으로 연속 베기 공격을 합니다.
@@ -2766,7 +2764,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 슬랩 더 킬러",
+      name: '액티브: 슬랩 더 킬러',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 슬랩 더 킬러는 강력한 특수 탄환을 이용하여 엄청난 파괴력을 적에게 선사하는 사격 기술입니다.
@@ -2779,7 +2777,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 데스페라도",
+      name: '액티브: 데스페라도',
       weaponeNumber: 2,
       effect: `- 테이드 계열 무기 장착 시에만 사용 가능합니다.
 - 데스페라도는 검과 총을 이용하여 강력한 연속 공격을 적에게 선사하는 기술입니다. 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -2791,9 +2789,9 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["린"]: [
+  ['린']: [
     {
-      name: "뇌전",
+      name: '뇌전',
       weaponeNumber: 1,
       effect: `- 뇌전은 뛰어오른 후 내려치면서 정면의 대상을 공격하는 기술입니다.
 - 천뢰창을 익히면 추가 공격을 할 수 있습니다.
@@ -2803,7 +2801,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 4회 - [D] X 1회`,
     },
     {
-      name: "비류",
+      name: '비류',
       weaponeNumber: 1,
       effect: `- 비류는 연속 회전하면서 주변의 대상을 공격하는 기술입니다.
 - 환류창을 익히면 추가 공격을 할 수 있습니다.
@@ -2813,7 +2811,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "천격",
+      name: '천격',
       weaponeNumber: 1,
       effect: `- 천격은 근방에 있는 대상을 올려 베는 기술입니다.
 - 공격에 성공하면 가벼운 몬스터들은 공중에 뜨게 되며 추가로 공격이 가능한 상태가 됩니다.
@@ -2823,7 +2821,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "파진",
+      name: '파진',
       weaponeNumber: 1,
       effect: `- 파진은 전진하면서 정면의 대상을 공격하는 기술입니다.
 - 섬격창을 익히면 추가로 공격을 할 수 있습니다.
@@ -2833,7 +2831,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "섬격창",
+      name: '섬격창',
       weaponeNumber: 1,
       effect: `- 섬격창은 파진에서 연결되는 공격으로 대상을 강하게 찌르는 기술입니다.
 - 공격에 성공하면 강한 몬스터에게 [낙화]를 입힐 수 있습니다. 스매시 키를 누르다가 정확한 타이밍에 떼면 강화 공격 가능합니다.
@@ -2849,7 +2847,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 2회 - [D] X 1회 눌렸다 떼기`,
     },
     {
-      name: "액티브: 일섬",
+      name: '액티브: 일섬',
       weaponeNumber: 1,
       effect: `- 일섬은 뛰어오른 뒤 내려치면서 정면에 강력한 파동을 발생시킵니다.
 - [백화난무] 발동 시 SP 소모량이 줄고 공격력이 하향됩니다.
@@ -2866,7 +2864,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 A 랭크 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "환류창",
+      name: '환류창',
       weaponeNumber: 1,
       effect: `- 환류창은 비류에서 연결되는 공격으로 회전하면 일정 범위를 베는 기술입니다.
 - 공격에 성공하면 강한 몬스터에게 [낙화]를 입힐 수 있습니다. 
@@ -2883,7 +2881,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 3회 - [D] X 1회 눌렸다 떼기`,
     },
     {
-      name: "낙화",
+      name: '낙화',
       weaponeNumber: 1,
       effect: `- 강한 몬스터에게 [낙화]를 입힐 수 있습니다.
 - 낙화는 대상에게 최대 10개까지 입힐 수 있습니다.
@@ -2893,7 +2891,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 - [진 낙화]는 스매시 추가타에서 강화 공격 성공 시 발동합니다. 낙화보다 증가된 대미지를 줄 수 있습니다.`,
     },
     {
-      name: "액티브: 삼연섬",
+      name: '액티브: 삼연섬',
       weaponeNumber: 1,
       effect: `- 삼연섬은 정면을 3연속으로 찌르는 공격입니다.
 - 스매시 키를 눌러 추가로 관통 공격을 할 수 있으며 공격에 성공하면 대상의 [낙화]가 [진 낙화]로 변화합니다.
@@ -2911,7 +2909,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 3회 연속공격 성공 후 스매시키를 눌러 관동 공격을 할 수 있습니다. 백화난무 발동 시 최대 2회 관통 공격이 가능합니다.`,
     },
     {
-      name: "액티브: 화접무",
+      name: '액티브: 화접무',
       weaponeNumber: 1,
       effect: `- 화접무는 정면의 근접한 대상을 공격합니다.
 - 공격에 성공하면 대상의 [낙화]가 [진 낙화]로 변화합니다.
@@ -2927,7 +2925,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "연풍참",
+      name: '연풍참',
       weaponeNumber: 1,
       effect: `- 연풍참은 주변의 대상을 강하게 베는 기술입니다.
 - 비상천을 익히게 되면 추가 공격을 할 수 있습니다.
@@ -2937,7 +2935,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [D] X 1회`,
     },
     {
-      name: "비상천",
+      name: '비상천',
       weaponeNumber: 1,
       effect: `- 비상천은 연풍참에서 연결되는 스킬로 올려 베는 기술입니다.
 - 공격에 성공하면 [연계 베기] 효과를 얻을 수 있습니다.
@@ -2951,7 +2949,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [D] X 2회`,
     },
     {
-      name: "천뢰창",
+      name: '천뢰창',
       weaponeNumber: 1,
       effect: `- 천뢰창은 뇌전에서 연결되는 공격으로 뛰어오른 후 내려치는 기술입니다.
 - 공격에 성공하면 강한 몬스터에게 [낙화]를 입힐 수 있습니다.
@@ -2968,7 +2966,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 4회 - [D] X 1회 눌렸다 떼기`,
     },
     {
-      name: "액티브: 비연격",
+      name: '액티브: 비연격',
       weaponeNumber: 1,
       effect: `- 비연격은 주변 대상을 최대 3회까지 연속해서 공격할 수 있습니다.
 - 발동 후 스매시 키를 눌러 최대 2회까지 추가 공격이 가능하며, 모두 적중하면 최대 4개까지 [진 낙화]를 입힐 수 있습니다.
@@ -2988,7 +2986,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 액티브 투산철 공격 성공 후 스매시키를 눌러 최대 2번까지 추가 공격을 할 수 있습니다. 연속해서 사용할 때에는 SP가 필요합니다.`,
     },
     {
-      name: "액티브: 유연단화",
+      name: '액티브: 유연단화',
       weaponeNumber: 1,
       effect: `- 유연단화는 대상에게 강력한 연속 공격을 하는 기술입니다.
 - 최초의 일격이 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -2998,7 +2996,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 멸화참",
+      name: '액티브: 멸화참',
       weaponeNumber: 1,
       effect: `- 멸화참은 정면 넓은 범위를 강력하게 공격합니다.
 - 대상이 [낙화]를 입고 있으면 [낙화]를 터트릴 수 있습니다. 멸화참으로 10개의 [낙화]를 터트리면 경직을 유발할 수 있습니다.
@@ -3016,7 +3014,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "비화격",
+      name: '비화격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3028,7 +3026,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 1회 - [D] X 1회 - [S] X 1회`,
     },
     {
-      name: "비화풍",
+      name: '비화풍',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3040,7 +3038,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 1회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 비풍일격",
+      name: '액티브: 비풍일격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3053,7 +3051,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "월연격",
+      name: '월연격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3065,7 +3063,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 2회 - [D] X 1회 - [S] X 1회`,
     },
     {
-      name: "월연풍",
+      name: '월연풍',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3079,7 +3077,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 2회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "진풍격",
+      name: '진풍격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3091,7 +3089,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 이동 키를 누르지 않은 상태에서 [D] X 1회`,
     },
     {
-      name: "화진격",
+      name: '화진격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3104,7 +3102,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 3회 - [D] X 1회 - [S] X 1-2회`,
     },
     {
-      name: "화진각",
+      name: '화진각',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3116,7 +3114,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [S] X 3회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 화신풍",
+      name: '액티브: 화신풍',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3133,7 +3131,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 블뤼테를 전방으로 날린 후 [S] X 1회`,
     },
     {
-      name: "액티브: 투산철격",
+      name: '액티브: 투산철격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3152,7 +3150,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 화신풍 중 [S] X 1회`,
     },
     {
-      name: "액티브: 반화격",
+      name: '액티브: 반화격',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]를 적용할 수 있습니다.
@@ -3174,7 +3172,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 기 폭발이 끝난 후 [S] X 1회`,
     },
     {
-      name: "액티브: 기천비무",
+      name: '액티브: 기천비무',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]의 효과가 적용되지는 않지만 특정 시점부터 [외화], [내화]를 시전할 수 있습니다.
@@ -3191,7 +3189,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: [TAB]`,
     },
     {
-      name: "액티브: 유화강기",
+      name: '액티브: 유화강기',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]가 적용되지 않습니다.
@@ -3203,7 +3201,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 유원백화",
+      name: '액티브: 유원백화',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]가 적용되지 않습니다.
@@ -3216,7 +3214,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 운심월성",
+      name: '액티브: 운심월성',
       weaponeNumber: 2,
       effect: `- 블뤼테 계열 무기 장착 시에만 사용 가능합니다.
 - [외화], [내화]가 적용되지 않습니다.
@@ -3229,9 +3227,9 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["아리샤"]: [
+  ['아리샤']: [
     {
-      name: "마나 스톤",
+      name: '마나 스톤',
       weaponeNumber: 1,
       effect: `- 캐스틀릿 장착 시에만 사용 가능합니다.
 - 캐스틀릿에 마나를 모아 형상화한 마나 스톤을 던집니다. 마나스톤에 닿은 대상은 대미지를 입고 공중으로 띄워집니다. 
@@ -3250,7 +3248,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 - 회수할 때도 조작키는 동일합니다.`,
     },
     {
-      name: "샤픈 마나",
+      name: '샤픈 마나',
       weaponeNumber: 1,
       effect: `- 마나 블레이드를 활성화하지 않은 기본 롱블레이드 공격입니다.
 - 공격에 성공할 때마다 대상에게서 마나를 흡수합니다.
@@ -3266,7 +3264,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 키보드: 샤픈 마나 공격 도중 [S] 누르고 있기`,
     },
     {
-      name: "액티브: 디멘션 홀",
+      name: '액티브: 디멘션 홀',
       weaponeNumber: 1,
       effect: `- 캐스플릿 장착 시에만 사용 가능합니다.
 - 디멘션 홀은 마나 스톤을 던진 후 사용할 수 있는 스킬입니다.
@@ -3283,7 +3281,7 @@ SP 게이지를 소모하지 않고 발동시킬 수 있습니다. 또 입힌 �
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 마나 리전",
+      name: '액티브: 마나 리전',
       weaponeNumber: 1,
       effect: `- 캐스틀릿 장착 시에만 사용 가능합니다.
 - 마나 리전은 마나 스톤을 던진 후 사용할 수 있는 스킬입니다. 
@@ -3302,7 +3300,7 @@ MP로 변환되지 않습니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 캐스트 마나",
+      name: '액티브: 캐스트 마나',
       weaponeNumber: 1,
       effect: `- 마나 파동을 쏘아내 적중한 적에게 마나의 흔적을 남깁니다. 
 - 마나의 흔적을 남겼다면 대상의 앞으로 워프할 수 있으며 워프 중 적의 공격을 회피할 수 있습니다.
@@ -3328,7 +3326,7 @@ SP는 적중 후 워프를 시도할 때 소모됩니다.
 키보드: 샤픈 마나 추가 공격 후 잡기[W]`,
     },
     {
-      name: "액티브: 루인 블레이드",
+      name: '액티브: 루인 블레이드',
       weaponeNumber: 1,
       effect: `- SP를 소모하여 강력한 공격을 가합니다.
 SP 250 이상이면 발동이 가능하나, 여유 SP가 있을 경우 최대 750까지 소비할 수 있습니다. 추가로 소비한 SP에 비례하여 대미지가 더욱 강해집니다.
@@ -3358,7 +3356,7 @@ SP 250 이상이면 발동이 가능하나, 여유 SP가 있을 경우 최대 75
 캐스트 마나를 맞춰둔 대상이 있다면 퀵슬롯에 등록한 [숫자키] 또는 [X]키로 전환 후 [Z]`,
     },
     {
-      name: "피스트 오브 블레이드",
+      name: '피스트 오브 블레이드',
       weaponeNumber: 1,
       effect: `- 마나 블레이드를 활성화했을 때만 사용할 수 있는 롱블레이드 공격입니다.
 - 롱블레이드 공격이 6단계로 변화하며 끊이지 않고 연속적으로 공격할 수 있습니다.
@@ -3371,7 +3369,7 @@ SP 250 이상이면 발동이 가능하나, 여유 SP가 있을 경우 최대 75
 최대 6회 공격 이후 반복 입력 시 다시 1회 단계로 이어집니다.`,
     },
     {
-      name: "액티브: 둠세이어",
+      name: '액티브: 둠세이어',
       weaponeNumber: 1,
       effect: `- 공격과 동시에 마나 블레이드를 활성화 또는 비활성화 합니다.
 - 공격에 성공하면 대상에게서 마나를 흡수합니다. 흡수한 마나 중 일부는 MP50으로 즉시 변환되며 나머지는 마나로만 흡수됩니다.
@@ -3395,7 +3393,7 @@ SP 250 이상이면 발동이 가능하나, 여유 SP가 있을 경우 최대 75
 키보드: 공격이 휘둘러진 후 [←] - [→]`,
     },
     {
-      name: "액티브: 레저넌스",
+      name: '액티브: 레저넌스',
       weaponeNumber: 1,
       effect: `- 캐스틀릿 장착 시에만 사용 가능합니다.
 - 레저넌스는 거대한 마나의 소용돌이를 일으켜 그 중점에 마나 폭발을 일으키는 스킬입니다.
@@ -3410,7 +3408,7 @@ SP 250 이상이면 발동이 가능하나, 여유 SP가 있을 경우 최대 75
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "워프홀",
+      name: '워프홀',
       weaponeNumber: 1,
       effect: `- 캐스틀릿 장착 시에만 사용 가능합니다.
 - 마나 블레이드 활성화 중에만 사용 가능합니다.
@@ -3428,7 +3426,7 @@ MP를 소모합니다.
 키보드: 마나 스톤이 멈춰 있는 상태에서 [D]`,
     },
     {
-      name: "액티브: 로드 오브 마나",
+      name: '액티브: 로드 오브 마나',
       weaponeNumber: 1,
       effect: `- 마나의 힘으로 일정 범위 내 적의 움직임을 멈추게 합니다.
 - 적의 움직임이 회복될 때 추가로 큰 대미지를 입힙니다.
@@ -3440,7 +3438,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "스위치 마나",
+      name: '스위치 마나',
       weaponeNumber: 1,
       effect: `- 보유한 SP 250을 마나로 흡수하여 MP로 즉시 변환합니다. 이렇게 흡수한 마나는 안정적이지 않아, 일부 손실된 100의 MP로 변환됩니다.
 - 퍼펙트 드레인을 성공시켜 스위치 마나를 사용하게 되면 마나를 안정화시켜 소모되는 SP 수치만큼 MP를 흡수할 수 있습니다.
@@ -3455,7 +3453,7 @@ MP를 소모합니다.
 키보드: [드레인 마나] 사용 중 이동 키를 누르지 않은 상태에서 회피 [A] 누르고 있기`,
     },
     {
-      name: "린포르찬도 피네",
+      name: '린포르찬도 피네',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 공격 도중 날린 채찍을 거둬들이며 적을 공격합니다.
@@ -3470,7 +3468,7 @@ MP를 소모합니다.
 키보드: 마르카토 러시, 스트린젠도 슬랩, 리시딩 인터류드 중 [D] 혹은 [W](잡기)`,
     },
     {
-      name: "마르카토 러시",
+      name: '마르카토 러시',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 윕을 펼쳐 적을 공격합니다.
@@ -3483,7 +3481,7 @@ MP를 소모합니다.
 키보드: [S] X 반복`,
     },
     {
-      name: "액티브: 배턴 포 왈츠",
+      name: '액티브: 배턴 포 왈츠',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 배턴 포 왈츠는 주변의 적들을 윕으로 휩쓸어버리는 공격입니다.
@@ -3505,7 +3503,7 @@ MP를 소모합니다.
 키보드: [↓] - [↑]`,
     },
     {
-      name: "마나 디소넌스",
+      name: '마나 디소넌스',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 캐스틀릿의 마나를 폭발시켜 주변 적을 공격합니다.
@@ -3517,7 +3515,7 @@ MP를 소모합니다.
 키보드: [D]`,
     },
     {
-      name: "마나 아그레망",
+      name: '마나 아그레망',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 마나 아그레망은 근거리의 상대에게 캐스틀릿의 마법력을 폭파시키는 공격입니다.
@@ -3537,7 +3535,7 @@ MP를 소모합니다.
 *강화 공격의 경우 SP를 50 소비합니다.`,
     },
     {
-      name: "스크리밍 콰이어",
+      name: '스크리밍 콰이어',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 다운된 적을 발로 찍어 누릅니다.
@@ -3551,7 +3549,7 @@ MP를 소모합니다.
 키보드: [발차기]`,
     },
     {
-      name: "스트린젠도 슬랩",
+      name: '스트린젠도 슬랩',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 스트린젠도 슬랩은 제자리에서 윕으로 적을 빠르게 연타하는 공격입니다.
@@ -3570,7 +3568,7 @@ MP를 소모합니다.
 키보드: 이동 키를 누르지 않고 [A]`,
     },
     {
-      name: "액티브: 모티베이션",
+      name: '액티브: 모티베이션',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 액티브: 모티베이션은 전투의 영감을 자신의 생명력으로 전환하고, 추가로 축적된 피로감을 제거합니다.(린포르찬도 피네, 마나 불안정)
@@ -3590,7 +3588,7 @@ MP를 소모합니다.
 키보드: 아바투타 자세가 풀리기 전 [↓] - [↑]`,
     },
     {
-      name: "액티브: 인스피레이션",
+      name: '액티브: 인스피레이션',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 액티브: 인스피레이션은 전투의 영감을 자신의 스태미나로 전환하는 스킬입니다. 발동 즉시 스태미나를 크게 회복하고 지속 시간 도중에도 스태미나가 꾸준히 회복됩니다.
@@ -3610,7 +3608,7 @@ MP를 소모합니다.
 키보드: 아바투타 자세가 풀리기 전 [→] - [↓] - [←]`,
     },
     {
-      name: "리시딩 인터류드",
+      name: '리시딩 인터류드',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 마르카토 러시 및 스트린젠도 슬랩 중 뒤로 물러나며 공격합니다.
@@ -3624,7 +3622,7 @@ MP를 소모합니다.
 키보드: 마르카토 러시 혹은 스트린젠도 슬랩 중 [TAB]`,
     },
     {
-      name: "액티브: 마나 카프리치오",
+      name: '액티브: 마나 카프리치오',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 캐스틀릿의 마나를 공진시켜 주변을 공격하고 공간의 MP를 흡수합니다.
@@ -3636,7 +3634,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 액시덴탈 악센트",
+      name: '액티브: 액시덴탈 악센트',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 윕을 날려 적을 공격합니다.
@@ -3652,7 +3650,7 @@ MP를 소모합니다.
 방향키로 공격 방향 선택 가능`,
     },
     {
-      name: "액티브: 크레셴도 심포니",
+      name: '액티브: 크레셴도 심포니',
       weaponeNumber: 2,
       effect: `- 윕 계열 무기 장착 시에만 사용 가능합니다.
 - 아리샤가 마나 스톤을 날려 타겟이 된 적을 다운시킵니다.
@@ -3663,9 +3661,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z] 키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["델리아"]: [
+  ['델리아']: [
     {
-      name: "라스트 슈팅스타",
+      name: '라스트 슈팅스타',
       weaponeNumber: 1,
       effect: `- 라스트 슈팅스타는 제미니 스타라이트에서 연결되는 공격으로 적을 강하게 내려치는 기술입니다.
 - 제미니 스타라이트 공격 후 일정 시간이 지나 검 끝이 반짝일 때 사용 가능하며, 잠시 적의 공격을 회피할 수 있습니다. 
@@ -3678,7 +3676,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] - 특정 타이밍 이후 [D]`,
     },
     {
-      name: "스타 디바이더",
+      name: '스타 디바이더',
       weaponeNumber: 1,
       effect: `- 스타 디바이더는 제미니 스타라이트에서 연결되는 공격으로 적을 빠르게 올려 베는 기술입니다.
 - 제미니 스타라이트 공격 후 빠르게 사용 가능합니다.
@@ -3689,7 +3687,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] - 특정 타이밍 이전 [D]`,
     },
     {
-      name: "스타 스크래퍼",
+      name: '스타 스크래퍼',
       weaponeNumber: 1,
       effect: `- 스타 스크래퍼는 주피터스 벨트에서 연결되는 공격으로 적을 빠르게 올려 베는 기술입니다.
 - 주피터스 벨트 공격 후 빠르게 사용 가능합니다.
@@ -3700,7 +3698,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] - 특정 타이밍 이전 [D]`,
     },
     {
-      name: "스타 스트라이크",
+      name: '스타 스트라이크',
       weaponeNumber: 1,
       effect: `- 스타 스트라이크는 프린세스 스텝에서 연결되는 공격으로 회피 후 적을 베는 기술입니다.
 
@@ -3709,7 +3707,7 @@ MP를 소모합니다.
 키보드: 이동하면서 회피[A] - [D] X 1회`,
     },
     {
-      name: "썬 플레어",
+      name: '썬 플레어',
       weaponeNumber: 1,
       effect: `- 썬 플레어는 땅을 긁으면서 검을 사선으로 올려 베는 기술입니다.
 - 공격에 성공하면 가벼운 몬스터들은 공중에 뜨게 되며 추가로 공격이 가능한 상태가 됩니다.
@@ -3720,7 +3718,7 @@ MP를 소모합니다.
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "이니셜 슈팅스타",
+      name: '이니셜 슈팅스타',
       weaponeNumber: 1,
       effect: `- 이니셜 슈팅스타는 주피터스 벨트에서 연결되는 공격으로 크게 회전하여 적을 강하게 베는 기술입니다.
 - 주피터스 벨트 공격 후 일정 시간이 지나 검 끝이 반짝일 때 사용 가능하며, 이 때 잠시 적의 공격을 회피할 수 있습니다. 
@@ -3732,7 +3730,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] - 특정 타이밍 이후 [D]`,
     },
     {
-      name: "제미니 스트라이트",
+      name: '제미니 스트라이트',
       weaponeNumber: 1,
       effect: `- 제미니 스트라이트는 2회전하여 적을 빠르게 베는 기술입니다.
 - 스타 디바이더와 라스트 슈팅스타를 익히면 추가 공격을 할 수 있습니다.
@@ -3742,7 +3740,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "주피터스 벨트",
+      name: '주피터스 벨트',
       weaponeNumber: 1,
       effect: `- 주피터스 벨트는 회전하면서 주변 대상을 공격하는 기술입니다.
 - 스타 스크래퍼와 이니셜 슈팅스타를 익히면 추가 공격을 할 수 있습니다.
@@ -3752,7 +3750,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "액티브 : 위스퍼링 로즈",
+      name: '액티브 : 위스퍼링 로즈',
       weaponeNumber: 1,
       effect: `- 위스퍼링 로즈는 빠르게 적을 찌르는 기술입니다.
 - 썬플레어, 스타 스크래퍼, 스타 디바이더, 이니셜 슈팅스타, 라스트 슈팅스타, 엘레강트 피겨 및 화이트 로즈 마무리 공격에서 연결할 수 있습니다.
@@ -3767,7 +3765,7 @@ MP를 소모합니다.
 키보드: [D]`,
     },
     {
-      name: "와일드 스타",
+      name: '와일드 스타',
       weaponeNumber: 1,
       effect: `- 와일드스타는 힘을 모으는 정도에 따라 공격 양상이 바뀌는 스킬입니다.
 - 1단계: 공격에 성공하면 가벼운 몬스터들은 공중에 뜨게 되며 추가로 공격이 가능한 상태가 됩니다.
@@ -3781,13 +3779,13 @@ MP를 소모합니다.
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "퀸즈 그레이스",
+      name: '퀸즈 그레이스',
       weaponeNumber: 1,
       effect: `- 퀸즈 그레이스는 와일드 스타에서 연결되는 공격으로 전의를 상실한 적에게 강력한 마무리 공격을 가하는 기술입니다.
 - 사용 후 심폐부담 상태효과를 받게 됩니다.`,
     },
     {
-      name: "액티브 : 와일드 스타",
+      name: '액티브 : 와일드 스타',
       weaponeNumber: 1,
       effect: `- 와일드스타에서 힘을 모으는 시간을 생략하고 힘을 모두 모은 상태의 돌진 공격을 시도하는 기술입니다.
 - 돌진 시 기백 상태 1단계 효과를 받게되며 공격 성공 시 기백 상태효과 2단계를 추가할 수 있습니다.
@@ -3799,7 +3797,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브 : 로즈 크러시",
+      name: '액티브 : 로즈 크러시',
       weaponeNumber: 1,
       effect: `- 로즈 크러시는 델리아의 투혼으로 힘을 이끌어내는 기술입니다.
 - 발동 중 적의 공격을 회피할 수 있습니다.
@@ -3815,9 +3813,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["헤기"]: [
+  ['헤기']: [
     {
-      name: "라이징 샷",
+      name: '라이징 샷',
       weaponeNumber: 1,
       effect: `- 환영으로 만들어낸 3개의 팬텀대거를 정면으로 발사합니다.
 - 라이징 슬래쉬 공격 후 회피를 하면, 일정 거리 떨어진 곳에서 라이징 샷 공격을 할 수 있습니다.
@@ -3832,7 +3830,7 @@ MP를 소모합니다.
 키보드: [S] X 1회 - [D] X 1회 - 회피 후 [D] X 1회`,
     },
     {
-      name: "라이징 슬래쉬",
+      name: '라이징 슬래쉬',
       weaponeNumber: 1,
       effect: `- 근방에 있는 대상을 올려 베는 기술입니다.
 - 공격에 성공하면 가벼운 몬스터들은 공중에 뜨게 되며 추가로 공격이 가능한 상태가 됩니다.
@@ -3843,7 +3841,7 @@ MP를 소모합니다.
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "사이클론 엣지",
+      name: '사이클론 엣지',
       weaponeNumber: 1,
       effect: `- 환영으로 만들어낸 팬텀대거를 여러 개 생성해 주변 적들을 공격합니다.
 - 일반 공격으로 습득한 환영의 조각을 환영 마법탄으로 변환시켜 발사할 수 있습니다.
@@ -3853,7 +3851,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "사이클론 크래쉬",
+      name: '사이클론 크래쉬',
       weaponeNumber: 1,
       effect: `- 마법의 힘을 이용해 주변 적들에게 큰 대미지를 줍니다.
 - 마법의 힘을 모아 공격을 할 수 있으며, 적 타격 시 환영의 조각을 4개 얻을 수 있습니다.
@@ -3875,7 +3873,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회 - [D] X 1회 눌렀다 떼기`,
     },
     {
-      name: "얼티밋 블레이드",
+      name: '얼티밋 블레이드',
       weaponeNumber: 1,
       effect: `- 환영으로 만들어낸 거대한 팬텀대거를 정면으로 던져 공격합니다.
 - 적들은 최대 4회 연속해서 대미지를 받게 됩니다.
@@ -3887,7 +3885,7 @@ MP를 소모합니다.
 키보드: [S] X 4회 - [D] X 1회`,
     },
     {
-      name: "팬텀 슈터",
+      name: '팬텀 슈터',
       weaponeNumber: 1,
       effect: `- 환영으로 만들어낸 팬텀대거를 던져 공격합니다.
 - 전후좌우로 이동해 공격하거나, 멈춰 서서 공격할 수 있습니다.
@@ -3898,7 +3896,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - 이동 또는 멈춰서 [D] X 1회`,
     },
     {
-      name: "액티브: 스팩트럴 스팅",
+      name: '액티브: 스팩트럴 스팅',
       weaponeNumber: 1,
       effect: `- 환영으로 만들어낸 팬텀대거를 여러 개 생성해 정면의 적에게 발사합니다.
 - 원거리에서 환영으로 만들어진 팬덤대거 6개를 연속 발사해 공격합니다.
@@ -3911,7 +3909,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 판타즈마 슬래쉬",
+      name: '액티브: 판타즈마 슬래쉬',
       weaponeNumber: 1,
       effect: `- 일정 범위의 적들에게 대미지를 주는 환영의 소용돌이를 발생시킵니다.
 - 소용돌이 안에선 적들의 이동 속도가 감소하며, 일정 시간마다 대미지가 증가됩니다.
@@ -3927,7 +3925,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "스피릿 커터",
+      name: '스피릿 커터',
       weaponeNumber: 1,
       effect: `- 정확한 타이밍에 3타 또는 4타 일반 공격 시 환영의 조각을 더 얻을 수 있습니다.
 - 팬텀대거가 자신의 손에 돌아오는 타이밍에 맞춰 3타 또는 4타 일반 공격에 성공해야 합니다.
@@ -3941,7 +3939,7 @@ MP를 소모합니다.
 [S] X 3회 - 팬텀대거 회수 타이밍 [S] X 1회`,
     },
     {
-      name: "얼티밋 차지",
+      name: '얼티밋 차지',
       weaponeNumber: 1,
       effect: `- 마법의 힘으로 정면에 강력한 일격을 날립니다.
 - 마법의 힘을 모아 공격을 할 수 있으며, 적 타격 시 환영의 조각을 4개 얻을 수 있습니다.
@@ -3965,7 +3963,7 @@ MP를 소모합니다.
 키보드: [S] X 4회 - [D] X 1회 - [D] X 1회 눌렀다 떼기`,
     },
     {
-      name: "액티브: 익스팅션 로어",
+      name: '액티브: 익스팅션 로어',
       weaponeNumber: 1,
       effect: `- 환영을 발사해 적중한 적을 타겟합니다.
 - 스킬 발동 시 환영을 부르는 자 상태가 되며, 유지 시간 안에 스킬 재발동해야 적을 공격할 수 있습니다.
@@ -3982,7 +3980,7 @@ MP를 소모합니다.
 동일한 숫자키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 인피니티 레퀴엠",
+      name: '액티브: 인피니티 레퀴엠',
       weaponeNumber: 1,
       effect: `- 정면의 적에게 환영으로 만들어진 수십 개의 단검을 소환해 공격합니다.
 - 환영으로 만든 팬텀대거 던져 공격하며, 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -3992,9 +3990,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["미리"]: [
+  ['미리']: [
     {
-      name: "데스 토네일",
+      name: '데스 토네일',
       weaponeNumber: 1,
       effect: `- 데스 토네일은 드레이커의 기운을 잠시 발에 집중시켜 강력한 발차기를 시전하는 기술입니다.
 - 드레이커스 오러를 소모하여 안세스터스 윌: 스트라이커 로 연계될 수 있습니다.
@@ -4004,7 +4002,7 @@ MP를 소모합니다.
 키보드: [S] X 4회 - [D] X 1회`,
     },
     {
-      name: "러싱 스파인",
+      name: '러싱 스파인',
       weaponeNumber: 1,
       effect: `- 러싱 스파인은 날을 앞세워 전진하는 기술입니다.
 - 추가 조작을 통해서 연속으로 공격을 이어나갈 수 있습니다.
@@ -4015,7 +4013,7 @@ MP를 소모합니다.
 키보드: [D] X 1회`,
     },
     {
-      name: "레비징 투스",
+      name: '레비징 투스',
       weaponeNumber: 1,
       effect: `- 레비징 투스는 몸을 회전하며 크게 횡으로 베는 기술입니다.
 - 드레이커스 오러를 소모하여 안세스터스 윌: 스트라이커 로 연계될 수 있습니다.
@@ -4025,7 +4023,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "크러싱 네일",
+      name: '크러싱 네일',
       weaponeNumber: 1,
       effect: `- 크러싱 네일은 드레이커를 들어 올려 강하게 내려찍는 기술입니다.
 - 드레이커스 오러를 소모하여 안세스터스 윌: 스트라이커 로 연계될 수 있습니다.
@@ -4035,7 +4033,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "액티브: 플레임 브레스",
+      name: '액티브: 플레임 브레스',
       weaponeNumber: 1,
       effect: `- 플레임 브레스는 화염으로 공격하는 미리의 원거리 기술입니다.
 - 최대 2회의 타격까지 대미지를 줄 수 있습니다.
@@ -4049,7 +4047,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "피니싱 테일",
+      name: '피니싱 테일',
       weaponeNumber: 1,
       effect: `- 피니싱 테일은 드레이커 후방의 날을 앞세워 빠르게 찌르는 기술입니다.
 - 드레이커스 오러를 소모하여 안세스터스 윌: 스트라이커 로 연계될 수 있습니다.
@@ -4059,7 +4057,7 @@ MP를 소모합니다.
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "피니싱 암",
+      name: '피니싱 암',
       weaponeNumber: 1,
       effect: `- 피어싱 암은 발차기로 드레이커를 날려 공격하는 기술입니다.
 - 추가 조작을 통해서 빠르게 전방으로 보낸 드레이커를 추적하여 이동할 수 있습니다.
@@ -4070,7 +4068,7 @@ MP를 소모합니다.
 키보드: 이동하면서 회피 [A] - [D] X 1회`,
     },
     {
-      name: "안세스터스 윌: 스트라이커",
+      name: '안세스터스 윌: 스트라이커',
       weaponeNumber: 1,
       effect: `- 안세스터스 월: 스트라이커는 드레이커에 담긴 용의 힘을 이용한 미리의 핵심 기술입니다.
 - 드레이커스 오러를 소모하여 사용 가능합니다.
@@ -4081,7 +4079,7 @@ MP를 소모합니다.
 키보드: 스매시 공격 혹은 액티브 스킬 사용 후 [D] 반복`,
     },
     {
-      name: "액티브: 레클리스 차지",
+      name: '액티브: 레클리스 차지',
       weaponeNumber: 1,
       effect: `- 레클리스 차지는 순간적으로 응축한 힘을 이용해 돌진하는 기술입니다.
 - 적에게 짧은 경직 효과를 줄 수 있습니다.
@@ -4093,7 +4091,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "안세스터스 윌: 리벤저",
+      name: '안세스터스 윌: 리벤저',
       weaponeNumber: 1,
       effect: `- 안세스터스 윌: 리벤저 는 드레이커에 담긴 용의 힘을 이용한 미리의 반격 기술입니다.
 - 안세스터스 월: 프로텍터를 사용하기 이전의 위치로 복귀하며 공격합니다.
@@ -4105,7 +4103,7 @@ MP를 소모합니다.
 키보드: [TAB] - [D] X 1회`,
     },
     {
-      name: "액티브: 라스트 디센던트",
+      name: '액티브: 라스트 디센던트',
       weaponeNumber: 1,
       effect: `- 봉인되어 있던 미리의 능력을 해방시켜 용기사로 변신할 수 있습니다.
 - 용기사 변신 상태효과를 받게 됩니다. 용기사 변신 시에는 드레이커스 오러를 무제한으로 사용가능합니다.
@@ -4120,7 +4118,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 라스트 드레이커",
+      name: '액티브: 라스트 드레이커',
       weaponeNumber: 1,
       effect: `- 드레이커에 봉인되어 있던 용을 소환하여 적을 공격하는 강력한 기술입니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -4130,9 +4128,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["그림덴"]: [
+  ['그림덴']: [
     {
-      name: "모털 아츠",
+      name: '모털 아츠',
       weaponeNumber: 1,
       effect: `- 모털 아츠는 그림덴의 가장 기본적인 스매시입니다.
 - 일반 공격인 에이질 스트라이크와 비교했을 때 느리고 전진폭이 짧습니다.
@@ -4145,7 +4143,7 @@ MP를 소모합니다.
 키보드: [D] X 5회`,
     },
     {
-      name: "섬멸",
+      name: '섬멸',
       weaponeNumber: 1,
       effect: `- 힘을 모아 적에게 돌격하는 스매시입니다.
 - 힘을 모으는 시간에 따라 3단계로 나뉘게 됩니다.
@@ -4161,7 +4159,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수도 있습니다.`,
     },
     {
-      name: "액티브: 디컬레이션",
+      name: '액티브: 디컬레이션',
       weaponeNumber: 1,
       effect: `- 공중에서 하강하며 2단 공격을 감행합니다.
 - 기본적인 대미지는 그리 강하지 않지만, 암습 성공 시 대미지 증폭량이 높습니다.
@@ -4181,7 +4179,7 @@ MP를 소모합니다.
 키보드: [A]`,
     },
     {
-      name: "액티브: 스파인 브레이커",
+      name: '액티브: 스파인 브레이커',
       weaponeNumber: 1,
       effect: `- 카타마르로 힘을 모아 강하게 적을 찌릅니다.
 - 기본적인 대미지는 그리 강하지 않지만, 암습 성공 시 대미지 증폭량이 높습니다.
@@ -4191,7 +4189,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "에이질 스트라이크",
+      name: '에이질 스트라이크',
       weaponeNumber: 1,
       effect: `- 에이질 스트라이크는 그림덴의 일반 공격입니다.
 - 그림덴의 일반 공격은 스태미나를 소비하지만 크리티컬이 발동하며, 빠른 연계가 가능합니다.
@@ -4208,7 +4206,7 @@ MP를 소모합니다.
 키보드: [S] 길게 누르고 있기`,
     },
     {
-      name: "일리걸 스턱커도",
+      name: '일리걸 스턱커도',
       weaponeNumber: 1,
       effect: `- 일리걸 스틱커도는 달리기 혹은 사일런트 스탭 중 이어지는 스매시 공격입니다.
 
@@ -4217,7 +4215,7 @@ MP를 소모합니다.
 키보드: 사일런트 스탭 혹은 달리기 중 [D]`,
     },
     {
-      name: "일리걸 워크",
+      name: '일리걸 워크',
       weaponeNumber: 1,
       effect: `- 일리걸 워크는 써머솔트 랜딩과 사일런트 립에서 연결되는 스매시입니다.
 - 공중에서 강하하며 적을 공격합니다.
@@ -4233,7 +4231,7 @@ MP를 소모합니다.
 키보드: 공격 중 [D 누르고 있기]`,
     },
     {
-      name: "액티브: 스트라이더",
+      name: '액티브: 스트라이더',
       weaponeNumber: 1,
       effect: `- 체내의 힘을 끌어올려 몸을 가볍게 만듭니다.
 - 발동 즉시 스태미나를 크게 회복하고 지속시간동안 스태미나가 꾸준히 회복됩니다.
@@ -4244,7 +4242,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "크사나",
+      name: '크사나',
       weaponeNumber: 1,
       effect: `- 크사나는 액티브: 스트라이더 상태에서만 사용 가능한 특수한 스킬입니다.
 - 액티브: 스트라이더 상태에서 사일런트 스탭을 사용할 시 적의 직접적인 공격을 회피함과 동시에 적을 통과하면 발동이 가능합니다.
@@ -4260,7 +4258,7 @@ MP를 소모합니다.
 사일런트 스탭으로 적의 직접적인 공격 회피 & 적을 스쳐지나가며 [TAB] 혹은 [D]`,
     },
     {
-      name: "액티브: 밀리언 데거",
+      name: '액티브: 밀리언 데거',
       weaponeNumber: 1,
       effect: `- 분신을 펼쳐 사방으로 암기를 흩뿌립니다.
 - 발동 중 적의 공격을 회피할 수 있으며, 적의 위치에 따라 타격 수가 달라집니다.
@@ -4270,7 +4268,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 리썰 크로스",
+      name: '액티브: 리썰 크로스',
       weaponeNumber: 1,
       effect: `- 적에게 돌진하여 제압한 후 강력한 공격을 시전합니다.
 - 암습이 적용되며, 암습으로 적을 제압했을 경우 추가 공격이 붙습니다.
@@ -4280,9 +4278,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["네반"]: [
+  ['네반']: [
     {
-      name: "게일 슬래쉬",
+      name: '게일 슬래쉬',
       weaponeNumber: 1,
       effect: `- [라피드 파이크]에서 연계되는 베어 올리는 기술입니다.
 - 공격 성공 시 신성을 2획득합니다.
@@ -4294,7 +4292,7 @@ MP를 소모합니다.
 키보드: [S] X 3회`,
     },
     {
-      name: "디바인 슬래쉬",
+      name: '디바인 슬래쉬',
       weaponeNumber: 1,
       effect: `- [디바인 포커스]에서 연계되는 강하게 베어 내리는 기술입니다.
 - 일정시간 가드효과가 적용됩니다.
@@ -4307,7 +4305,7 @@ MP를 소모합니다.
     },
 
     {
-      name: "라이트닝 피어스",
+      name: '라이트닝 피어스',
       weaponeNumber: 1,
       effect: `- [어센션 슬래쉬]에서 연계되는 공격으로 전방을 강하게 가르는 공격입니다.
 - 공격 성공 시 신성을 획득합니다.
@@ -4318,7 +4316,7 @@ MP를 소모합니다.
 키보드: [D] X 3회`,
     },
     {
-      name: "라피드 파이크",
+      name: '라피드 파이크',
       weaponeNumber: 1,
       effect: `- [블링크 파이크]에서 연계되는 찌르는 기술입니다.
 - 공격 성공 시 신성을 1획득합니다.
@@ -4329,7 +4327,7 @@ MP를 소모합니다.
 키보드: [S] X 2회`,
     },
     {
-      name: "라피드 피어스",
+      name: '라피드 피어스',
       weaponeNumber: 1,
       effect: `- 전방을 강하게 찌르는 기술입니다.
 
@@ -4338,7 +4336,7 @@ MP를 소모합니다.
 키보드: [D] X 1회`,
     },
     {
-      name: "블링크 파이크",
+      name: '블링크 파이크',
       weaponeNumber: 1,
       effect: `- 빠르게 찌르는 기술입니다.
 - 공격 성공 시 신성을 1획득합니다.
@@ -4349,7 +4347,7 @@ MP를 소모합니다.
 키보드: [S] X 1회`,
     },
     {
-      name: "시프팅 슬래쉬",
+      name: '시프팅 슬래쉬',
       weaponeNumber: 1,
       effect: `- [시프트]에서 연계되는 공격으로, 빠르게 회전하며 주변의 적을 공격하는 기술입니다.
 - [어센션 슬래쉬]로 연계가 가능합니다.
@@ -4360,7 +4358,7 @@ MP를 소모합니다.
 키보드: 이동하면서 회피 [A] - [D] X 1회`,
     },
     {
-      name: "어센션 슬래쉬",
+      name: '어센션 슬래쉬',
       weaponeNumber: 1,
       effect: `- [라피드 피어스]에서 연계되는 공격으로 전방의 적을 강하게 베는 기술입니다.
 
@@ -4369,7 +4367,7 @@ MP를 소모합니다.
 키보드: [D] X 2회`,
     },
     {
-      name: "카운터 슬래쉬",
+      name: '카운터 슬래쉬',
       weaponeNumber: 1,
       effect: `- [아케인 실드]로 적의 공격을 방어한 후, 빠르게 반격하는 기술입니다.
 - [어센션 슬래쉬]로 연계가 가능합니다.
@@ -4379,7 +4377,7 @@ MP를 소모합니다.
 키보드: 가드 성공 후 스매시[D] X 1회`,
     },
     {
-      name: "액티브: 제미니 스파이럴",
+      name: '액티브: 제미니 스파이럴',
       weaponeNumber: 1,
       effect: `- 공중으로 점프하여 전방으로 빠르게 회전하며 여러 번 공격하는 기술입니다.
 - 회전 공격 중에는 적의 공격을 방어합니다.
@@ -4390,7 +4388,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 헤븐즈 테일",
+      name: '액티브: 헤븐즈 테일',
       weaponeNumber: 1,
       effect: `- 쉬지않고 적을 연타하여 최대 4회 공격하는 기술입니다.
 - 공격 성공 시마다 신성을 1획득합니다.
@@ -4400,7 +4398,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후[Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "피어싱 러쉬",
+      name: '피어싱 러쉬',
       weaponeNumber: 1,
       effect: `- 전방으로 빠르게 이동하는 기술로 적을 관통합니다.
 - 돌진 중에는 적의 공격을 회피할 수 있습니다.
@@ -4410,7 +4408,7 @@ MP를 소모합니다.
 마우스: [TAB]키`,
     },
     {
-      name: "코멧 임팩트",
+      name: '코멧 임팩트',
       weaponeNumber: 1,
       effect: `- [피어싱 러쉬]에서 연계되는 점프 공격입니다.
 
@@ -4419,7 +4417,7 @@ MP를 소모합니다.
 마우스: [TAB]키 X 2회`,
     },
     {
-      name: "헤븐즈 임팩트",
+      name: '헤븐즈 임팩트',
       weaponeNumber: 1,
       effect: `- [디바인 슬래쉬]에서 연계되는 기술로 순간적으로 사라진 후 나타나 공격하는 기술입니다.
 - 방향키와 함께 사용하면 중거리 공격이 가능합니다.
@@ -4435,7 +4433,7 @@ MP를 소모합니다.
 키보드: [디바인 포커스]상태에서 [D] X 떼기 - [D] X 1회`,
     },
     {
-      name: "액티브: 게이트 오브 아르세널",
+      name: '액티브: 게이트 오브 아르세널',
       weaponeNumber: 1,
       effect: `- 적을 제압한 뒤, 신의 무기고를 엽니다.
 
@@ -4444,7 +4442,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 어센던트 임팩트",
+      name: '액티브: 어센던트 임팩트',
       weaponeNumber: 1,
       effect: `- 전방을 강하게 베고 점프하여 내려찍는 기술입니다.
 - 적에게 짧은 경직 효과를 줄 수 있습니다.
@@ -4454,9 +4452,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["사냐"]: [
+  ['사냐']: [
     {
-      name: "리플렉션 스파이럴",
+      name: '리플렉션 스파이럴',
       weaponeNumber: 1,
       effect: `- 리플렉션 스파이럴은 [아크로바틱 스파이럴]에서 연계되는 공격으로, 한번 더 회전하며 더욱 강하게 휘둘러 차는 기술입니다. 
 - 방향키와 함께 사용하면 이동 거리가 증가합니다.
@@ -4467,7 +4465,7 @@ MP를 소모합니다.
 `,
     },
     {
-      name: "스탭 스틸레토",
+      name: '스탭 스틸레토',
       weaponeNumber: 1,
       effect: `- 몸을 옆으로 돌리며 발로 전방을 강하게 걷어찹니다.
 
@@ -4477,7 +4475,7 @@ MP를 소모합니다.
 `,
     },
     {
-      name: "스파이럴 아크",
+      name: '스파이럴 아크',
       weaponeNumber: 1,
       effect: `- 스파이럴 아크는 빠르게 회전하며 주변의 적들을 강하게 베는 기술입니다.
 
@@ -4487,7 +4485,7 @@ MP를 소모합니다.
 `,
     },
     {
-      name: "아크로바틱 스파이럴",
+      name: '아크로바틱 스파이럴',
       weaponeNumber: 1,
       effect: `- 아크로바틱 스파이럴은 몸을 옆으로 회전하며 전방의 적을 강하게 내려차는 기술입니다.
 - 방향키와 함께 사용하면 이동 거리가 증가합니다.
@@ -4497,7 +4495,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "액티브: 템페스트 킥",
+      name: '액티브: 템페스트 킥',
       weaponeNumber: 1,
       effect: `- 전방의 적을 향해 크게 반원을 그리며 공격하는 기술입니다.
 
@@ -4506,7 +4504,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "피어싱 스틸레토",
+      name: '피어싱 스틸레토',
       weaponeNumber: 1,
       effect: `- 힘을 모은 뒤 강하게 걷어찹니다.
 - 힘을 끝가지 모으면 [아크로바틱 스파이럴]로 연계가 가능합니다.
@@ -4516,7 +4514,7 @@ MP를 소모합니다.
 키보드: [D] X 1회 길게 누르기`,
     },
     {
-      name: "페이탈 스팅어",
+      name: '페이탈 스팅어',
       weaponeNumber: 1,
       effect: `- 페이탈 스팅어는 [스파이럴 아크]에서 연계되는 공격으로, 전방의 적을 향해 돌진하며 찌르는 기술입니다.
 - [발차기]조작 시 관통이 가능합니다.
@@ -4531,7 +4529,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회 - [발차기] X 1회`,
     },
     {
-      name: "스위프트 나이프",
+      name: '스위프트 나이프',
       weaponeNumber: 1,
       effect: `- [스위프트 이베이전]에서 연계되는 공격으로, 빠르게 회전하며 주변의 적들을 베는 기술입니다.
 
@@ -4540,7 +4538,7 @@ MP를 소모합니다.
 키보드: 회피[A] X 1회 - [D] X 1회`,
     },
     {
-      name: "체인 스플리터",
+      name: '체인 스플리터',
       weaponeNumber: 1,
       effect: `- 체인 스플리터는 전방의 적을 향해 올려차는 기술입니다.
 
@@ -4549,7 +4547,7 @@ MP를 소모합니다.
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "플랩핑 카운터",
+      name: '플랩핑 카운터',
       weaponeNumber: 1,
       effect: `- 기교 효과 발동 중 사용 시, 효과를 소모하고 적의 뒤로 넘어가면서 여러 번 피해를 입힙니다. 공격 성공 시 일정 시간동안 '유희'상태 효과가 발동됩니다.
 
@@ -4558,7 +4556,7 @@ MP를 소모합니다.
 키보드: '기교' 효과가 있을 때 [TAB]키`,
     },
     {
-      name: "스위프트 러쉬",
+      name: '스위프트 러쉬',
       weaponeNumber: 1,
       effect: `- [스위프트 슬립]에서 연계되는 공격으로, 빠르게 돌진하며 전방을 타격합니다.
 
@@ -4567,7 +4565,7 @@ MP를 소모합니다.
 키보드: 회피[A] X 2회 - [D] X 1회`,
     },
     {
-      name: "액티브: 이그리트 스텝",
+      name: '액티브: 이그리트 스텝',
       weaponeNumber: 1,
       effect: `- 후방으로 빠르게 이동하여 적의 공격을 회피하는 기술입니다.
 - 추가조작으로 한번 더 회피 할 수 있습니다.
@@ -4585,7 +4583,7 @@ MP를 소모합니다.
 키보드: [D] X 1회`,
     },
     {
-      name: "액티브: 미드나이츠 터치",
+      name: '액티브: 미드나이츠 터치',
       weaponeNumber: 1,
       effect: `- 공격에 성공하면 적의 몸에 표식을 입힐 수 있습니다.
 - 스킬을 한번 더 시전하면 표식이 붙은 대상에게 빠르게 날아가서 강하게 타격합니다.
@@ -4599,7 +4597,7 @@ MP를 소모합니다.
 퀵슬롯에 등록된 동일 키 X 1회`,
     },
     {
-      name: "액티브: 베니싱 댄스",
+      name: '액티브: 베니싱 댄스',
       weaponeNumber: 1,
       effect: `- 적에게 순간이동을 한 뒤 적을 공격합니다.
 - 추가 조작으로 3회 더 공격 할 수 있습니다.
@@ -4613,7 +4611,7 @@ MP를 소모합니다.
 키보드: [D] X 3회`,
     },
     {
-      name: "트리플 스팅어",
+      name: '트리플 스팅어',
       weaponeNumber: 1,
       effect: `- 섀도우 슬레이트 도중 사용 가능한 기술로 최대 3회까지 이어서 사용 할 수 있습니다.
 - [발차기]조작 시 관동이 가능합니다.
@@ -4637,7 +4635,7 @@ MP를 소모합니다.
 키보드: [발차기] X 2회`,
     },
     {
-      name: "액티브: 트위스트 슬래시",
+      name: '액티브: 트위스트 슬래시',
       weaponeNumber: 1,
       effect: `- 전방의 적을 향해 빠르게 회전하며 여러 번 공격하는 기술입니다.
 
@@ -4646,7 +4644,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 댄싱 실루엣",
+      name: '액티브: 댄싱 실루엣',
       weaponeNumber: 1,
       effect: `- 적을 제압한 뒤, 공간을 휘저으며 적을 난도질하는 기술입니다.
 
@@ -4655,9 +4653,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["레서"]: [
+  ['레서']: [
     {
-      name: "망월연무",
+      name: '망월연무',
       weaponeNumber: 1,
       effect: `- [권무]의 세 번째 공격에서 이어지는 세 번째 [연무]입니다.
 - 연속 발차기 공격 후 온 몸을 회전시켜 공격합니다.
@@ -4667,7 +4665,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "반월연무",
+      name: '반월연무',
       weaponeNumber: 1,
       effect: `- [권무]의 두 번째 공격에서 이어지는 두 번째 [연무]입니다.
 - 연속 발차기 공격 후 전방에 일격을 가합니다.
@@ -4678,7 +4676,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 호조",
+      name: '액티브: 호조',
       weaponeNumber: 1,
       effect: `- 전방으로 도약하며 영기의 힘을 손날에 집중 시켜 주변을 공격합니다.
 - 공격 이후 [망월연무]로 연결할 수 있습니다.
@@ -4688,7 +4686,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "초월연무",
+      name: '초월연무',
       weaponeNumber: 1,
       effect: `- [권무]의 첫 번째 공격에서 이어지는 첫 번째 [연무]입니다.
 - 연속 발차기 공격 후 도약하며 발로 올려칩니다.
@@ -4698,7 +4696,7 @@ MP를 소모합니다.
 키보드: [S] X 1회 - [D] X 1회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "호격",
+      name: '호격',
       weaponeNumber: 1,
       effect: `- 적의 공격을 방어한 후, 영기의 힘으로 빠르고 강력하게 반격합니다.
 - 스태미나를 소비하지 않고, 반격 중엔 잠시 동안 적의 공격을 회피할 수 있습니다.
@@ -4711,7 +4709,7 @@ MP를 소모합니다.
 키보드: 금강 성공 후에 스매시[D] 혹은 일반 공격[S]`,
     },
     {
-      name: "회륜격",
+      name: '회륜격',
       weaponeNumber: 1,
       effect: `- 회륜에서 연결되는 공격으로 회피 후 몸의 반동을 이용하여 적을 공격합니다.
 - 공격 이후 일반 공격 2타로 연결할 수 있습니다.
@@ -4721,7 +4719,7 @@ MP를 소모합니다.
 키보드 이동하면서 회피 [A] - [D] X 1회`,
     },
     {
-      name: "액티브: 용아",
+      name: '액티브: 용아',
       weaponeNumber: 1,
       effect: `- 발로 지면을 강하게 내리쳐 충격파를 발생시켜 적에게 피해를 줍니다.
 - 적에게 짧은 경직 효과를 줄 수 있습니다.
@@ -4736,7 +4734,7 @@ MP를 소모합니다.
 키보드: [D]`,
     },
     {
-      name: "액티브: 멸령폭진",
+      name: '액티브: 멸령폭진',
       weaponeNumber: 1,
       effect: `- 순간적으로 영기를 폭발시켜 준비 자세를 취한 후, 사납게 공격을 퍼붓습니다.
 - 준비 자세 이후 스매시 입력을 통해 공격을 이어갈 수 있으며, 공격 도중 언제든 일반 공격 입력을 통해 마지막 공격으로 넘어갈 수 있습니다.
@@ -4755,7 +4753,7 @@ MP를 소모합니다.
 키보드: [액티브: 명령폭진] 도중 [S]`,
     },
     {
-      name: "용격",
+      name: '용격',
       weaponeNumber: 1,
       effect: `- 영기의 힘을 모아 적을 공격하는 기술입니다.
 - 힘을 모으는 시간에 따라 3단계로 나뉘게 됩니다.
@@ -4772,7 +4770,7 @@ MP를 소모합니다.
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "액티브: 뇌락",
+      name: '액티브: 뇌락',
       weaponeNumber: 1,
       effect: `- 전방으로 뛰어오르며 영기의 힘을 손에 집중시켜 지면을 강하게 내리칩니다.
 - 주변 대상에게 큰 피해를 주며, 발동 중에는 적의 공격을 회피할 수 있습니다.
@@ -4782,7 +4780,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 무아연격",
+      name: '액티브: 무아연격',
       weaponeNumber: 1,
       effect: `- 영기의 힘으로 적을 제압한 후, 빠른 공격을 쏟아붓습니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -4792,9 +4790,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["단아"]: [
+  ['단아']: [
     {
-      name: "명도: 돌려 베기",
+      name: '명도: 돌려 베기',
       weaponeNumber: 1,
       effect: `- 무기를 잡고 빠르게 회전하며 공격합니다.
 - 명중 시 가벼운 몬스터들은 공중에 뜨게 되며 추가로 공격이 가능한 상태가 됩니다.
@@ -4805,7 +4803,7 @@ MP를 소모합니다.
 `,
     },
     {
-      name: "명도: 모아 베기",
+      name: '명도: 모아 베기',
       weaponeNumber: 1,
       effect: `- 몸을 회전 후 무기를 두 손으로 잡고 강력하게 내려치며 공격합니다.
 
@@ -4814,7 +4812,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 2회`,
     },
     {
-      name: "명도: 올려 베기",
+      name: '명도: 올려 베기',
       weaponeNumber: 1,
       effect: `- 무기를 아래에서 위로 빠르게 올려 베며 공격합니다.
 - [명도: 모아베기]로 연계할 수 있으며, 납도 후에는 연계가 불가능합니다.
@@ -4824,7 +4822,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "명도: 회전 베기",
+      name: '명도: 회전 베기',
       weaponeNumber: 1,
       effect: `- 몸을 크게 회전하며 반동을 이용하여 강하게 공격합니다.
 
@@ -4833,7 +4831,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 2회`,
     },
     {
-      name: "명도: 찌르기",
+      name: '명도: 찌르기',
       weaponeNumber: 1,
       effect: `- 무기 날을 앞으로 향하게 한 후 전방을 찔러 공격합니다
 - [명도: 회전 베기]로 연계할 수 있으며, 납도 후에는 연계가 불가능합니다.
@@ -4843,7 +4841,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "명도: 칼집 치기",
+      name: '명도: 칼집 치기',
       weaponeNumber: 1,
       effect: `- 무기를 뽑지 않은 상태에서 칼집을 휘둘러 공격합니다.
 
@@ -4852,7 +4850,7 @@ MP를 소모합니다.
 키보드: [D] X 1회`,
     },
     {
-      name: "명도: 하단 베기",
+      name: '명도: 하단 베기',
       weaponeNumber: 1,
       effect: `- [순간 질주]에서 연계되는 공격으로 회피 후 빠르게 하단을 베며 적을 공격합니다.
 - 공격이 성공하는 경우 일정량의 스태미나를 회복합니다.
@@ -4863,7 +4861,7 @@ MP를 소모합니다.
 키보드: 이동하면서 회피 [A] - [D] X 1회`,
     },
     {
-      name: "액티브: 기복참",
+      name: '액티브: 기복참',
       weaponeNumber: 1,
       effect: `- 짧게 도약 후 힘을 모아 전방을 강하게 베어 공격합니다.
 - 공격 이후 첫 번째 일반 공격으로 빠르게 연계할 수 있습니다.
@@ -4873,7 +4871,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "영혼 추적",
+      name: '영혼 추적',
       weaponeNumber: 1,
       effect: `- 소울블레이드에 영혼을 링크한 후 칼집에서 무기를 뽑아 앞으로 던집니다.
 - 무기를 던진 후 무기 회수 전까진 영혼화하여 무기의 위치로 이동할 수 있으며, 이를 [영혼 이동]라고 합니다.
@@ -4901,7 +4899,7 @@ MP를 소모합니다.
 키보드: 던져진 무기에 적이 맞았을 때 [D] X 1회`,
     },
     {
-      name: "액운 가르기",
+      name: '액운 가르기',
       weaponeNumber: 1,
       effect: `- [영혼 베기]에서 연계되는 공격으로 적에게 강력한 공격을 가합니다.
 - 적의 공격 타이밍에 맞춰서 사용 시 적의 공격을 상쇄할 수 전체 있습니다.
@@ -4913,7 +4911,7 @@ MP를 소모합니다.
 키보드: [영혼 베기] 이후 [D] X 1회`,
     },
     {
-      name: "액티브: 사령곡",
+      name: '액티브: 사령곡',
       weaponeNumber: 1,
       effect: `- 소울블레이드에 영혼의 힘을 모아 돌개바람 형태로 한 번에 발산시켜 공격합니다.
 - 힘을 모으는 동안은 일정 범위 내에 있는 일반 몬스터들을 가까이 끌어당길 수 있습니다.
@@ -4929,7 +4927,7 @@ MP를 소모합니다.
 키보드: [D] 누르고 있기`,
     },
     {
-      name: "액티브: 치병무",
+      name: '액티브: 치병무',
       weaponeNumber: 1,
       effect: `- 몸을 빠르게 회전하여 주변을 공격합니다.
 - 스매시 버튼을 입력하여 추가 공격을 이어나갈 수 있습니다.
@@ -4946,7 +4944,7 @@ MP를 소모합니다.
 키보드: [D] X 2회`,
     },
     {
-      name: "흉살 가르기",
+      name: '흉살 가르기',
       weaponeNumber: 1,
       effect: `- 무기를 던져 짧은 거리를 영혼화하여 이동 후 강력한 공격을 가합니다.
 - 공격 중에는 잠시 동안 적의 공격을 회피할 수 있으며, MP를 소모합니다.
@@ -4962,7 +4960,7 @@ MP를 소모합니다.
 키보드: 연계 가능한 공격 중 [TAB]키`,
     },
     {
-      name: "액티브: 무신극",
+      name: '액티브: 무신극',
       weaponeNumber: 1,
       effect: `- 무기를 위로 던져 영혼화하여 이동 후 공중에서 힘을 모아 강하게 내려치며 공격합니다.
 - 공격 중에는 적의 공격을 회피할 수 있습니다.
@@ -4974,7 +4972,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 천도",
+      name: '액티브: 천도',
       weaponeNumber: 1,
       effect: `- 무기와 영혼의 힘을 조화롭게 사용하여 적에게 공격을 쏟아붓습니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -4984,9 +4982,9 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["미울"]: [
+  ['미울']: [
     {
-      name: "데들리 스핀",
+      name: '데들리 스핀',
       weaponeNumber: 1,
       effect: `- 빠르게 회전하며 마나 리볼버를 난사합니다.
 - 다수의 적을 상대할 때 유용합니다.
@@ -5007,7 +5005,7 @@ MP를 소모합니다.
 키보드: 액티브: 립 밴 윙클 이동 중 - [D] X 1회`,
     },
     {
-      name: "데들리 트위스터",
+      name: '데들리 트위스터',
       weaponeNumber: 1,
       effect: `- 데들리 트위스터는 데들리 트위스트 공격 후 추가 공격이 가능한 스킬입니다.
 - 데들리 트위스트 이 후에 점프하여 회전하며 마나 리볼버를 난사합니다.
@@ -5019,7 +5017,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "데들리 트위스트",
+      name: '데들리 트위스트',
       weaponeNumber: 1,
       effect: `- 데들리 트위스트는 데들리 스핀 공격 후 추가 공격이 가능한 스킬입니다.
 - 데들리 스핀 이후 반대 방향으로 회전하며 마나 리볼버를 난사합니다.
@@ -5031,7 +5029,7 @@ MP를 소모합니다.
 키보드: [S] X 2회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "브레이킹 블래스트",
+      name: '브레이킹 블래스트',
       weaponeNumber: 1,
       effect: `- 브레이킹 블래스트는 브레이킹 샷 공격 후 추가 공격이 가능한 스킬입니다.
 - 몸을 뒤로 날리며 적을 공격합니다.
@@ -5042,7 +5040,7 @@ MP를 소모합니다.
 키보드: [S] X 4회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "브레이킹 샷",
+      name: '브레이킹 샷',
       weaponeNumber: 1,
       effect: `- 강한 화력으로 적을 공격합니다.
 - 마나 홀 혹은 액티브: 립 밴 윙클 이후에도 연계가 가능합니다.
@@ -5061,7 +5059,7 @@ MP를 소모합니다.
 키보드: 액티브: 립 밴 윙클 포탈에서 빠져 나온 후 - [D] X1회`,
     },
     {
-      name: "어썰트 블래스트",
+      name: '어썰트 블래스트',
       weaponeNumber: 1,
       effect: `- 어썰트 블래스트는 어썰트 샷 공격 후 추가 공격이 가능한 스킬입니다.
 - 한 번 더 거리를 좁히며 사격합니다.
@@ -5073,7 +5071,7 @@ MP를 소모합니다.
 키보드: [S] X 3회 - [D] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 패닝 샷",
+      name: '액티브: 패닝 샷',
       weaponeNumber: 1,
       effect: `- 전방에 몇 개의 포탈을 열어 스피어를 소환하여 발사합니다.
 - 전부 명중시키기는 어렵지만 강력한 피해를 입힐 수 있습니다.
@@ -5083,7 +5081,7 @@ MP를 소모합니다.
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "어썰트 샷",
+      name: '어썰트 샷',
       weaponeNumber: 1,
       effect: `- 적과의 거리를 빠르게 좁히며 사격합니다.
 - 적과의 거리를 좁히고 싶을 때 유용합니다.
@@ -5104,7 +5102,7 @@ MP를 소모합니다.
 키보드: 립 밴 윙클 포탈에서 빠져 나올 때 - [S] X 1회`,
     },
     {
-      name: "액티브: 립 밴 윙클",
+      name: '액티브: 립 밴 윙클',
       weaponeNumber: 1,
       effect: `- 포탈을 열어 빠르게 이동합니다.
 - 포탈을 통해 이동하는 중에는 공격을 회피할 수 있으며, 적을 통과할 수도 있습니다.
@@ -5125,7 +5123,7 @@ MP를 소모합니다.
 - 브레이킹 샷: 포탈에서 빠져나온 후 [우클릭] 또는 [D] X 1회`,
     },
     {
-      name: "디바인 백플립 샷",
+      name: '디바인 백플립 샷',
       weaponeNumber: 1,
       effect: `- 마나 중력장을 박차고 후방으로 점프하며 마나 리볼버를 쏩니다.
 - 스매시 및 액티브 공격 도중에만 사용가능하며, 적과 거리를 벌릴 때 유용합니다.
@@ -5141,7 +5139,7 @@ MP를 소모합니다.
 C랭크: 착지 후 [좌클릭] 또는 [S]`,
     },
     {
-      name: "중력탄",
+      name: '중력탄',
       weaponeNumber: 1,
       effect: `- 전방의 지면에 탄환을 쏘아 반중력장을 형성합니다.
 - 반중력장 안의 약한 적은 떠오르게 되어 무력화되며, 강한 적일 경우는 시간마다 대미지를 입게 됩니다.
@@ -5153,7 +5151,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 마우스: 마나 트랜스퍼 도중 [A] 키보드: 마나 트랜스퍼 도중 [←]`,
     },
     {
-      name: "액티브: 더블 패닝 샷",
+      name: '액티브: 더블 패닝 샷',
       weaponeNumber: 1,
       effect: `- 두 손의 마나 리볼버를 동시에 연사하며, 포탈에서 더욱 많은 탄환을 쏘아냅니다.
 - 랭크가 오르면 더 큰 대미지를 입힙니다.
@@ -5163,7 +5161,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "약화탄",
+      name: '약화탄',
       weaponeNumber: 1,
       effect: `- 전방을 향해 적을 약화시키는 약화탄을 발사합니다.
 - 약화탄에 명중한 적은 일정시간동안 더 큰 대미지를 받습니다.
@@ -5175,7 +5173,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 마나 트랜스퍼 도중 [→]`,
     },
     {
-      name: "액티브: 루인 스피어",
+      name: '액티브: 루인 스피어',
       weaponeNumber: 1,
       effect: `- 공중으로 뛰어올라 지면의 포탈로 뛰어든 후, 적의 위에서 나타나며 중력 가속도를 이용한 스피어로 적을 찍어버립니다. 
 - 포탈에 뛰어든 이후에는 방향키로 이동 방향을 결정할 수 있습니다.
@@ -5192,7 +5190,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 루인 스피어 도중 [D]`,
     },
     {
-      name: "액티브: 퀀텀 스페이스",
+      name: '액티브: 퀀텀 스페이스',
       weaponeNumber: 1,
       effect: `- 적을 구속한 후 신출귀몰하게 이동하며 집중포화를 쏟아붓습니다.
 - 랭크가 오르면 더 큰 대미지를 입힙니다.
@@ -5202,9 +5200,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["벨"]: [
+  ['벨']: [
     {
-      name: "가지 치기",
+      name: '가지 치기',
       weaponeNumber: 1,
       effect: `- 도끼의 끝을 잡고 회전하며 넓게 베는 기술입니다.
 - 뿌리 뽑기 스킬로 이어질 수 있습니다.
@@ -5216,7 +5214,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "밑동 자르기",
+      name: '밑동 자르기',
       weaponeNumber: 1,
       effect: `- 도끼의 무게를 이용하여 사선으로 강하게 내리꽂는 기술입니다.
 - 장작 쪼개기 스킬로 이어질 수 있습니다.
@@ -5228,7 +5226,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "뿌리 뽑기",
+      name: '뿌리 뽑기',
       weaponeNumber: 1,
       effect: `- 폴짝 뛰어오르며 전방에 풍압과 함께 참격을 날립니다.
 - 가지치기 스킬에서 이어집니다.
@@ -5245,7 +5243,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 수풀 뚫기 후 [D]`,
     },
     {
-      name: "솎아주기",
+      name: '솎아주기',
       weaponeNumber: 1,
       effect: `- 도끼를 잡고 휘둘러 전방위를 공격합니다.
 - 명중 시 가벼운 몬스터들은 공중에 뜨게 되며 추가로 공격이 가능한 상태가 됩니다.
@@ -5257,7 +5255,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "액티브: 참 가르기",
+      name: '액티브: 참 가르기',
       weaponeNumber: 1,
       effect: `- 풍압을 동반한 참격을 전방으로 날립니다.
 - 공격에 성공하면 스태미나를 회복합니다.
@@ -5268,7 +5266,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "장작 쪼개기",
+      name: '장작 쪼개기',
       weaponeNumber: 1,
       effect: `- 밑동 자르기에서 연결되는 공격으로 도끼를 수직으로 강하게 내려치는 기술입니다.
 - 밑동 자르기 스킬에서 이어집니다.
@@ -5280,7 +5278,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 2회`,
     },
     {
-      name: "잡초 뽑기",
+      name: '잡초 뽑기',
       weaponeNumber: 1,
       effect: `- 몸을 빠르게 한 바퀴 회전하며 공격합니다.
 - 빨리 달리기 중 사용하면 보다 신속하게 공격을 구사합니다.
@@ -5291,7 +5289,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "가문비 가르기",
+      name: '가문비 가르기',
       weaponeNumber: 1,
       effect: `- 나무꾼의 근력을 통해 획득한 힘을 방출하는 기술입니다.
 - 나무꾼의 근력 5단계 상태에서 사용할 수 있으며 공격 시 나무꾼의 근력 상태효과가 사라집니다.
@@ -5303,7 +5301,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [TAB]키`,
     },
     {
-      name: "산림욕",
+      name: '산림욕',
       weaponeNumber: 1,
       effect: `- 달리는 도중 힘을 모아 강한 타격을 날리는 스킬입니다.
 - 힘을 모은 시간에 따라 공격 양상이 바뀌며 힘을 모으는 도중 스태미나를 소모합니다.
@@ -5321,7 +5319,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 빨리 달리기 중 [D] 눌렀다가 떼기`,
     },
     {
-      name: "액티브: 솔 가르기",
+      name: '액티브: 솔 가르기',
       weaponeNumber: 1,
       effect: `- 가문비 가르기의 반동을 이용하여 높이 뛰어올라 강하게 내려칩니다.
 - 가문비 가르기 두 번째 공격 후 연결할 수 있습니다.
@@ -5340,7 +5338,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 `,
     },
     {
-      name: "액티브: 흑단 가르기",
+      name: '액티브: 흑단 가르기',
       weaponeNumber: 1,
       effect: `- 도끼를 지지대로 삼아 공격하여 적의 자세를 무너뜨립니다.
 - 적에게 짧은 경직 효과를 줄 수 있습니다.
@@ -5356,7 +5354,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D]`,
     },
     {
-      name: "액티브: 물푸레 가르기",
+      name: '액티브: 물푸레 가르기',
       weaponeNumber: 1,
       effect: `- 대상을 무력화시키고 적에게 벌목의 의미를 상기시킵니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -5366,9 +5364,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["카엘"]: [
+  ['카엘']: [
     {
-      name: "가디언즈 블레이드: 스트라이크",
+      name: '가디언즈 블레이드: 스트라이크',
       weaponeNumber: 1,
       effect: `- 베기와 찌르기로 이루어진 기본에 충실한 왕국 기사의 공격 기술입니다.
 - 일반 공격 및 스매시 공격으로 이루어져 있습니다.
@@ -5380,7 +5378,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 `,
     },
     {
-      name: "썬더버드 슬래쉬",
+      name: '썬더버드 슬래쉬',
       weaponeNumber: 1,
       effect: `- 썬더버드 슬래쉬는 나이트 스텝에서 연결되는 공격으로 회피 후 적을 베는 기술입니다.
 - 파이널 플래시 스킬을 배운 상태에서 공격 성공 시 다단히트 공격이 추가됩니다.
@@ -5393,7 +5391,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 이동하면서 회피 [A] - [S] X 1회`,
     },
     {
-      name: "액티브: 레이지 레지스탕스",
+      name: '액티브: 레이지 레지스탕스',
       weaponeNumber: 1,
       effect: `- 소드스피어를 회전 시켜 적에게 큰 타격을 주는 기술입니다.
 - 사용 후 빠르게 가디언즈 블레이드: 스트라이크 공격을 이어나갈 수 있습니다.
@@ -5403,7 +5401,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "가디언즈 블레이드: 카운터",
+      name: '가디언즈 블레이드: 카운터',
       weaponeNumber: 1,
       effect: `- 적의 공격을 방어한 후, 소드스피어를 빠르게 찔러 반격합니다.
 - 공격 성공 시 스태미나를 회복할 수 있습니다.
@@ -5419,7 +5417,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 [TAB]키`,
     },
     {
-      name: "레드호크 크러쉬",
+      name: '레드호크 크러쉬',
       weaponeNumber: 1,
       effect: `- 브레이브 마치의 전진 속도를 이용하여 힘을 실어 공격하는 저돌적인 기술입니다.
 - 추가 조작을 통해 한 번 더 공격을 이어나갈 수 있습니다.
@@ -5433,7 +5431,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 브레이브 마치 이후 [S] X 2회`,
     },
     {
-      name: "이글 플라이트",
+      name: '이글 플라이트',
       weaponeNumber: 1,
       effect: `- 이글 플라이트는 썬더버드 슬래쉬에서 연결되는 공격으로 연속으로 회전하여 다수의 적을 효과적으로 상대하는 기술입니다. 
 - 추가 조작을 통해 연속해서 공격을 이어나갈 수 있습니다. 
@@ -5444,7 +5442,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 썬더버드 슬래쉬 이후 [TAB] X 반복`,
     },
     {
-      name: "액티브: 로우 플라이트",
+      name: '액티브: 로우 플라이트',
       weaponeNumber: 1,
       effect: `- 로우 플라이트는 몸을 최대한 낮춘 상태에서 소드스피어로 몸을 방어하며 적을 공격하는 기술입니다.
 - 공격중에도 발동 가능하여 순간적인 방어를 통해 적의 공격을 상쇄할 수 있습니다.
@@ -5463,7 +5461,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 2회`,
     },
     {
-      name: "액티브: 디모스 업라이징",
+      name: '액티브: 디모스 업라이징',
       weaponeNumber: 1,
       effect: `- 높게 점프하여 강하게 내려찍어 굉음과 함께 적의 자세를 무너뜨립니다.
 - 적에게 짧은 경직 효과를 줄 수 있습니다.
@@ -5475,7 +5473,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 서클 오브 라이트",
+      name: '액티브: 서클 오브 라이트',
       weaponeNumber: 1,
       effect: `- 소드스피어의 화려한 움직임을 통해 적의 전의를 상실하게 만드는 강력한 기술입니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -5486,9 +5484,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["테사"]: [
+  ['테사']: [
     {
-      name: "발레스트라: 루비",
+      name: '발레스트라: 루비',
       weaponeNumber: 1,
       effect: `- 전방으로 거리를 좁히며 접근하여 몸의 반동을 이용하여 강하게 찌르는 공격 기술입니다.
 - 적에게 표식이 새겨져 있다면 표식을 강화할 수 있습니다. 
@@ -5501,7 +5499,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1-4회 - [D] X 4회`,
     },
     {
-      name: "발레스트라: 사파이어",
+      name: '발레스트라: 사파이어',
       weaponeNumber: 1,
       effect: `- 상체를 뒤로 젖혔다 펴면서 회전력을 이용하여 강하게 찌르는 공격 기술입니다.
 - 적에게 표식이 새겨져 있다면 표식을 강화할 수 있습니다.
@@ -5519,7 +5517,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1-4회 - [D] X 3회`,
     },
     {
-      name: "발레스트라: 토파즈",
+      name: '발레스트라: 토파즈',
       weaponeNumber: 1,
       effect: `- 빠르게 자세를 낮추어 적의 하단을 찌르는 공격 기술입니다.
 - 적에게 표식이 새겨져 있다면 표식을 강화할 수 있습니다.
@@ -5530,7 +5528,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1-4회 - [D] X 2회`,
     },
     {
-      name: "스피넬 플레쉬",
+      name: '스피넬 플레쉬',
       weaponeNumber: 1,
       effect: `- 보석 마법의 힘을 사용하여 매우 빠르게 적의 공격을 회피하며 찌르는 기술로 공격과 회피를 동시에 할 수 있습니다.
 - 적에게 표식이 새겨져 있는 상태일 경우 공격 성공과 동시에 <표식이 발동>되어 추가적인 대미지를 줄 수 있습니다.
@@ -5546,7 +5544,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [TAB]키`,
     },
     {
-      name: "액티브: 다이아몬드 더블릿",
+      name: '액티브: 다이아몬드 더블릿',
       weaponeNumber: 1,
       effect: `- 다이아몬드 더블릿은 공중으로 높게 뛰어올라 전방의 적을 두 번에 걸쳐 연속으로 베는 강력한 공격 기술입니다.
 - 적을 베며 추가적인 대미지를 줄 수 있는 표식을 새길 수 있습니다.
@@ -5560,7 +5558,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "에메랄드 이베이전",
+      name: '에메랄드 이베이전',
       weaponeNumber: 1,
       effect: `- 몸을 세워 전방으로 빠르게 찌르는 공격 기술입니다.
 - 모든 일반 공격에서 이어지는 공격 기술로 적에게 표식이 새겨져 있다면 표식을 강화할 수 있습니다.
@@ -5571,7 +5569,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1-4회 - [D] X 1회`,
     },
     {
-      name: "베릴 슬래쉬",
+      name: '베릴 슬래쉬',
       weaponeNumber: 1,
       effect: `- 베릴 슬래쉬는 [선스톤 스텝], [문스톤 슬립], [스피넬 플레쉬] [가닛 대시]에서 이어지는 회전 베기 기술입니다.
 - C랭크 이상일 경우 발레스트라 및 에메랄드 이베이전 공격 이후에 추가적으로 한 번 더 공격할 수 있습니다. 추가 공격은 표식을 2획 새길 수 있으며 조금 더 강한 대미지를 줄 수 있습니다.
@@ -5591,7 +5589,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [발레스트라 공격] - [S] X 1회`,
     },
     {
-      name: "스핀 스피어",
+      name: '스핀 스피어',
       weaponeNumber: 1,
       effect: `- 레이피어에 마력을 집중시켜 응축된 힘을 검으로 형상화하여 전방으로 날려 공격하는 기술입니다.
 - 마력을 모으는 시간에 따라 3단계로 나뉘게 됩니다.
@@ -5610,7 +5608,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] 눌렀다가 떼기`,
     },
     {
-      name: "액티브: 아메지스트 플로우",
+      name: '액티브: 아메지스트 플로우',
       weaponeNumber: 1,
       effect: `- 제자리에서 전방을 향해 레이피어를 휘두르며 몸을 감싸는 마력의 기운을 발동시키는 기술입니다.
 - 마력의 기운으로 모든 보석을 회복합니다.
@@ -5624,7 +5622,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 셸 디펜시브",
+      name: '액티브: 셸 디펜시브',
       weaponeNumber: 1,
       effect: `- 셀 디펜시브는 전방으로 점프하며 올려베는 공격 기술입니다.
 - 적의 공격 타이밍에 맞춰서 사용 시 적의 공격을 상쇄할 수 있습니다.
@@ -5645,7 +5643,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "액티브: 엔스터타이트",
+      name: '액티브: 엔스터타이트',
       weaponeNumber: 1,
       effect: `- 엔스터타이트는 자신이 들고 있는 레이피어를 보석 마법의 힘으로 다수 소환하여 전방으로 날려서 공격하는 매우 강력한 기술입니다. 
 - 소환된 레이피어를 전방으로 날리기 전까지는 시점 조작을 이용하여 공격 방향을 변경할 수 있습니다.
@@ -5656,7 +5654,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 인컴패러블",
+      name: '액티브: 인컴패러블',
       weaponeNumber: 1,
       effect: `- 베기 공격을 시작으로 보석 마법의 힘으로 화려한 레이피어 공격으로 적을 제압하는 기술입니다.
 - 랭크가 오르면 더 큰 대미지를 입힙니다.
@@ -5666,9 +5664,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["라티야"]: [
+  ['라티야']: [
     {
-      name: "라이노 피어스",
+      name: '라이노 피어스',
       weaponeNumber: 1,
       effect: `- 랜스에 힘을 실어 전진하며 강하게 찌르기 공격을 합니다.
 - 찌르기 명중 시 순간적으로 힘을 주어 빠르게 두 번의 피해를 줍니다.
@@ -5684,7 +5682,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1회 - [D] X 2회`,
     },
     {
-      name: "베어 슬래쉬",
+      name: '베어 슬래쉬',
       weaponeNumber: 1,
       effect: `- 랜스를 오른손에서 왼손으로 바꿔가며 회전력을 이용하여 강하게 휘두르는 공격입니다.
 - [베어 슬래쉬] 공격으로 적 타격에 성공하면 [전사의 발톱] 1개 회복할 수 있습니다.
@@ -5699,7 +5697,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 2회 - [D] X 3회`,
     },
     {
-      name: "액티브: 라이온 레이지",
+      name: '액티브: 라이온 레이지',
       weaponeNumber: 1,
       effect: `- 랜스에 마력을 집중하여 강력한 휘두르기, 올려베기, 찌르기 공격을 차례대로 선사하는 공격입니다.
 - 첫 번째 공격인 휘두르기 공격 후에 빠르게 조작을 이어나갈 때에는 [올려베기] 공격으로 이어지고, 천천히 조작을 이어나갈 때에는 추가적인 SP를 소모하여 [휘두르기] 공격을 지속적으로 이어가다가 올려베기와 찌르기 공격으로 이어갈 수 있습니다. 
@@ -5715,7 +5713,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 2회`,
     },
     {
-      name: "와일드 피어스",
+      name: '와일드 피어스',
       weaponeNumber: 1,
       effect: `- [와일드 스텝]에서 연계되는 공격으로 회피 후 반동을 이용하여 적에게 찌르기 공격을 합니다.
 - 공격 이후 두 번째 일반 공격 또는 [라이노 피어스]로 빠르게 연계할 수 있습니다.
@@ -5725,7 +5723,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 이동하면서 회피 [A] - [D] X 1회`,
     },
     {
-      name: "울프 블로우",
+      name: '울프 블로우',
       weaponeNumber: 1,
       effect: `- 몸을 회전하며 전방을 향해 휘둘러 공격합니다.
 - 공격 이후 [와일드 피어스]로 연계할 수 있습니다.
@@ -5735,7 +5733,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "이글 피어스",
+      name: '이글 피어스',
       weaponeNumber: 1,
       effect: `- 몸을 회전시켜 전방을 매우 강하게 찌르는 공격입니다.
 - 찌른 후 빠르게 회전하며 휘두르는 공격을 이어나갈 수 있습니다.
@@ -5748,7 +5746,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 3회`,
     },
     {
-      name: "치타 스트라이크",
+      name: '치타 스트라이크',
       weaponeNumber: 1,
       effect: `- [쿠자]를 적이나 지면에 걸어 이동할 때 연계되는 공격으로 빠르게 회전하며 랜스를 휘둘러 공격합니다.
 - 공격 이후 [이글 피어스]로 연계할 수 있습니다.
@@ -5758,7 +5756,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [쿠자]를 이용한 이동 상태에서 [D] X 1회`,
     },
     {
-      name: "액티브: 스네이크 스핀",
+      name: '액티브: 스네이크 스핀',
       weaponeNumber: 1,
       effect: `- [쿠자]를 소환하여 몸을 크게 회전하여 돌리며 넓은 범위를 공격합니다.
 - 공격 중에 이동 버튼을 입력하여 공격 방향 전환이 가능합니다.
@@ -5770,7 +5768,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "라이노 러쉬",
+      name: '라이노 러쉬',
       weaponeNumber: 1,
       effect: `- [라이노 러쉬]는 [크로커다일 디펜스], [쿠자의 빛] 이후 특정 조건 만족시 연계할 수 있는 강력한 공격입니다.
 - 전방으로 돌진하며 온 힘을 모아 강력한 찌르기 공격을 선사합니다.
@@ -5789,7 +5787,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 적 공격을 피하며 타격 성공 시 스매시 [D] X 1회`,
     },
     {
-      name: "액티브: 쿠자의 빛",
+      name: '액티브: 쿠자의 빛',
       weaponeNumber: 1,
       effect: `- 전방으로 재빠르게 [쿠자]를 던져 공중 회전하며, 적의 공격을 피함과 동시에 다단히트 공격을 하는 기술입니다.
 - [쿠자의 빛]으로도 [쿠자의 흔적]을 남길 수 있습니다. 
@@ -5804,7 +5802,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 적 공격을 피하며 타격 성공 시 스매시 [D] X1회`,
     },
     {
-      name: "액티브: 엘리펀트 스매시",
+      name: '액티브: 엘리펀트 스매시',
       weaponeNumber: 1,
       effect: `- 전신에 마력을 활성화한 후 랜스에 집중하여 높이 뛰어 올라 강력하게 내려찍는 공격입니다.
 - 공격 후 [슈자의 힘]을 얻을 수 있습니다.
@@ -5817,7 +5815,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 레오파드 온폴",
+      name: '액티브: 레오파드 온폴',
       weaponeNumber: 1,
       effect: `- 랜스와 쿠자의 화려한 조화를 바탕으로 매섭게 공격을 선사합니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -5827,9 +5825,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["레티"]: [
+  ['레티']: [
     {
-      name: "스위프트 리코일",
+      name: '스위프트 리코일',
       weaponeNumber: 1,
       effect: `- 짧게 도약 후 헤비캐넌으로 전방에 포격하여 적의 공격을 방어하고 반동으로 물러납니다.
 - 방어에 성공했을 경우, 대미지를 입지 않고 일정량의 스태미나를 회복하며 재사용 시간이 3초 감소합니다. 또한 세 번째 일반 공격으로 빠르게 연계할 수 있습니다.
@@ -5844,7 +5842,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [TAB]`,
     },
     {
-      name: "액티브: 뷰티풀 블레이즈",
+      name: '액티브: 뷰티풀 블레이즈',
       weaponeNumber: 1,
       effect: `- 뷰티풀 블레이즈는 특수한 화약을 활용하여 헤비캐넌에 응축된 화염을 장전한 뒤 전방을 강타합니다.
 - 포격을 준비하는 도중 방향을 변경할 수 있습니다. 
@@ -5860,7 +5858,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "트루퍼: 스톰 스마이트",
+      name: '트루퍼: 스톰 스마이트',
       weaponeNumber: 1,
       effect: `- 한쪽 무릎을 꿇어앉은 후 전방을 향해 강력한 포격을 가합니다.
 - 적과의 거리가 일정 범위 이내면, 대미지가 증가합니다.
@@ -5871,7 +5869,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 2회`,
     },
     {
-      name: "트루퍼: 스파이크",
+      name: '트루퍼: 스파이크',
       weaponeNumber: 1,
       effect: `- 지면을 향해 포격하여 적을 공격합니다.
 
@@ -5880,7 +5878,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "트루퍼: 크러쉬 블로우",
+      name: '트루퍼: 크러쉬 블로우',
       weaponeNumber: 1,
       effect: `- 헤비캐넌으로 전방을 향해 휘두르듯 포격합니다.
 - 적과의 거리가 일정 범위 이내면, 대미지가 증가합니다.
@@ -5891,7 +5889,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "트루퍼: 트위스트 블로우",
+      name: '트루퍼: 트위스트 블로우',
       weaponeNumber: 1,
       effect: `- 자세를 고쳐잡은 후 몸이 휘청거릴 정도로 전방을 향해 휘두르듯 포격합니다.
 - 적과의 거리가 일정 범위 이내면, 대미지가 증가합니다.
@@ -5902,7 +5900,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 2회 - [D] X 2회`,
     },
     {
-      name: "트루퍼: 피어스 스트라이크",
+      name: '트루퍼: 피어스 스트라이크',
       weaponeNumber: 1,
       effect: `- 반동을 줄이기 위해 헤비캐넌을 최대한 몸에 밀착시킨 뒤 전방을 향해 포격합니다.
 - 적과의 거리가 일정 범위 이내면, 대미지가 증가합니다. 
@@ -5913,7 +5911,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "스탠딩 플립",
+      name: '스탠딩 플립',
       weaponeNumber: 1,
       effect: `- [슬립 슬라이딩]에서 연계되는 공격으로 슬라이딩 중에 전방을 포격합니다.
 - 공격이 성공하는 경우, 일정량의 스태미나를 회복합니다.
@@ -5923,7 +5921,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 이동하면서 회피 [A] X 2회 - [D] X 1회`,
     },
     {
-      name: "크라디 블래스트",
+      name: '크라디 블래스트',
       weaponeNumber: 1,
       effect: `- 희열 효과를 소모하는 집중 포격을 준비합니다.
 - 헤비캐넌을 고쳐잡은 뒤 집중 포격을 준비를 합니다. 또는 [스위프트 리코일]로 착지 후 빠르게 포격 자세로 연계할 수 있습니다.
@@ -5941,7 +5939,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 스위프트 리코일 착지 후 [D] X 1-4회`,
     },
     {
-      name: "액티브: 파이어 크래커",
+      name: '액티브: 파이어 크래커',
       weaponeNumber: 1,
       effect: `- 파이어 크래커는 특수한 폭탄을 헤비캐넌에 장전한 뒤 전방을 향해 포격합니다.
 - 포격을 준비하는 도중 방향을 변경할 수 있습니다.
@@ -5970,7 +5968,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "크라디 버스트",
+      name: '크라디 버스트',
       weaponeNumber: 1,
       effect: `- [크라디 블래스트]에서 연계할 수 있는 포격입니다.
 - 집중 포격의 마지막 포격에서 정조준 후 포격을 가합니다. 
@@ -5984,7 +5982,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [크라디 블래스트]로 3회 포격 후 [D] 눌렀다 떼기`,
     },
     {
-      name: "액티브: 레티 봄바",
+      name: '액티브: 레티 봄바',
       weaponeNumber: 1,
       effect: `- 폭발의 집결체인 강력한 거대 포탄을 하늘을 향해 발포합니다.
 - 거대 포탄이 적에게 적중하거나, 지면에 떨어지는 경우 강력한 폭발이 일어납니다.
@@ -5997,7 +5995,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 디 데이",
+      name: '액티브: 디 데이',
       weaponeNumber: 1,
       effect: `- 묵직한 헤비캐넌의 연속 포격과 화려한 폭발로 희열을 선사합니다.
 - 최초 포격을 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -6007,9 +6005,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["체른"]: [
+  ['체른']: [
     {
-      name: "프로히비션: 루치아",
+      name: '프로히비션: 루치아',
       weaponeNumber: 1,
       effect: `- 효율과 안정성 문제로 사용하지 못하게 하였던 마법을 사용합니다.
 - 오르비스에 마나를 과도하게 주입하여 과부하 상태로 만든 후 전방에 강력한 공격을 가합니다.
@@ -6024,7 +6022,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 - B랭크: [룬스펙트럼]에서 스매시 키를 꾸욱 눌러서 마지막 공격으로 바로 연계할 수 있습니다.`,
     },
     {
-      name: "룬 스펙트럼",
+      name: '룬 스펙트럼',
       weaponeNumber: 1,
       effect: `- 오르비스를 활용한 룬 마법을 적중시킬 때마다 적의 마나 기류를 순간적으로 머금고 있습니다.
 - 마나 기류가 충만한 상태인 순간 전방으로 방출할 수 있습니다. 일정 시간이 지나 마나 기류가 사라지기 전에 사용해야 합니다.
@@ -6038,7 +6036,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 마우스/키보드 조작키 설정에서 변경 가능합니다.`,
     },
     {
-      name: "액티브: 쿼터 에비던스",
+      name: '액티브: 쿼터 에비던스',
       weaponeNumber: 1,
       effect: `- 오르비스의 룬 문자를 조합하여 지면에 마력을 흘려보냅니다.
 - 마력은 부채꼴 형태로 변형되어 전방으로 퍼져나면서 적을 공격합니다.
@@ -6055,7 +6053,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 마법 준비중에 키보드: [D] X 1회`,
     },
     {
-      name: "오르비스: 라이도",
+      name: '오르비스: 라이도',
       weaponeNumber: 1,
       effect: `- 모든 룬 문자를 활성화 시켜 전방 넓은 범위에 연속적인 공격을 가합니다.
 - 공격을 적중 시 마나기류를 획득할 수 있습니다.
@@ -6065,7 +6063,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 3회`,
     },
     {
-      name: "오르비스: 케나즈",
+      name: '오르비스: 케나즈',
       weaponeNumber: 1,
       effect: `- 오르비스에 새겨진 룬 문자를 활성화시켜 전방 일직선 상에 공격을 가합니다.
 - 공격을 적중 시 마나기류를 획득할 수 있습니다.
@@ -6075,7 +6073,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "오르비스: 티르",
+      name: '오르비스: 티르',
       weaponeNumber: 1,
       effect: `- 두번째 룬 문자를 활성화 시켜 전방에 연속적인 공격을 가합니다.
 - 공격을 적중 시 마나기류를 획득할 수 있습니다.
@@ -6084,7 +6082,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 2회`,
     },
     {
-      name: "액티브: 크레센트 노바",
+      name: '액티브: 크레센트 노바',
       weaponeNumber: 1,
       effect: `- 오르비스를 활 모양으로 펼쳐서 강력한 공격을 준비합니다.
 - 쏘아진 마력은 적을 관통하며 연속적인 피해를 줍니다.
@@ -6101,7 +6099,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 조준 중에 키보드: [D] X 1회`,
     },
     {
-      name: "액티브: 문 오버섀도우",
+      name: '액티브: 문 오버섀도우',
       weaponeNumber: 1,
       effect: `- 일정 영역에 지속적인 피해를 주는 마법을 준비합니다.
 - 준비 완료 후 범위를 지정할 수 있는 상태로 변경됩니다.
@@ -6121,7 +6119,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 공격위치 선택 중에 키보드: [D] X 1회`,
     },
     {
-      name: "액티브: 익시드 페이스",
+      name: '액티브: 익시드 페이스',
       weaponeNumber: 1,
       effect: `- 스태미나를 소모하여 순간적으로 오르비스 안으로 이동 후 적의 공격을 피하면서 빠르게 이동합니다.
 - 오르비스에서 착지하기 전에 [액티브: 쿼터 에비던스]로 연계할 수 있으며, 연계 시 모든 방향으로 방출합니다.
@@ -6137,7 +6135,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "칼레이도 폴",
+      name: '칼레이도 폴',
       weaponeNumber: 1,
       effect: `- 오르비스에 마나를 공명시켜 적의 무력화 상태를 지연시킬 수 있습니다.
 - 무력화 상태의 적에게만 사용할 수 있습니다.
@@ -6149,7 +6147,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 보스 몬스터가 다운 상태이고, 화면에 액션 버튼이 보일 때 [W]`,
     },
     {
-      name: "액티브: 셀레스티얼",
+      name: '액티브: 셀레스티얼',
       weaponeNumber: 1,
       effect: `- 적을 끌어당기며 지속적인 피해를 주는 차원 영역을 생성합니다.
 - 이질적인 기운에 피격된 적은 받는 피해가 증가합니다.
@@ -6166,7 +6164,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 생성된 차원 영역이 사라지기 전에 퀵슬롯 등록한 숫자키 재사용`,
     },
     {
-      name: "액티브: 아포칼립스",
+      name: '액티브: 아포칼립스',
       weaponeNumber: 1,
       effect: `- 체른이 오르비스를 전개하여 적의 시공간을 비틀어서 치명적인 피해를 줍니다.
 
@@ -6175,9 +6173,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["아켈"]: [
+  ['아켈']: [
     {
-      name: "디바이딩 컷",
+      name: '디바이딩 컷',
       weaponeNumber: 1,
       effect: `- 몸을 한 바퀴 회전하며 창으로 바닥을 긁은 뒤, 올려베는 공격입니다.
 - 공격이 성공하면 일정량의 스태미나를 회복합니다.
@@ -6188,7 +6186,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1회 - [D] X 1회`,
     },
     {
-      name: "브루탈 트러스트",
+      name: '브루탈 트러스트',
       weaponeNumber: 1,
       effect: `- [크루얼 엑스큐션]에서 연계되는 공격으로, 두 손으로 하스타를 쥐어잡고 전방을 강하게 찔러 공격합니다.
 - 공격이 성공하면 [타지 어썰트]의 재사용시간이 일부 감소합니다.
@@ -6198,7 +6196,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 2회`,
     },
     {
-      name: "스파이럴 슬래쉬",
+      name: '스파이럴 슬래쉬',
       weaponeNumber: 1,
       effect: `- [스플릿 앵클]에서 연계되는 공격으로, 몸을 회전하면서 하스타를 크게 휘두르며 주변을 공격합니다.
 - 버튼 입력 시간에 따라 조금 더 먼 거리를 이동하며 공격할 수 있습니다.
@@ -6209,7 +6207,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 2회 - [D] X 2회`,
     },
     {
-      name: "스플릿 앵클",
+      name: '스플릿 앵클',
       weaponeNumber: 1,
       effect: `- 하스타로 하단을 베며 적을 공격하는 기술입니다.
 
@@ -6218,7 +6216,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 2회 - [D] X 1회`,
     },
     {
-      name: "액티브: 스트라이크 다운",
+      name: '액티브: 스트라이크 다운',
       weaponeNumber: 1,
       effect: `- 짧게 도약하면서 하스타로 전방을 강하게 찌르며 공격합니다.
 - 창을 완전히 뻗어 찌르기 전까지는 이동키를 이용하여 방향 조절이 가능합니다.
@@ -6234,7 +6232,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "체이싱 슬래쉬",
+      name: '체이싱 슬래쉬',
       weaponeNumber: 1,
       effect: `- [체이싱 스텝]에서 연계되는 공격으로, 창을 빠르게 휘둘러 적을 공격합니다.
 - 공격이 성공하면 일정량의 스태미나를 회복합니다.
@@ -6245,7 +6243,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 이동하면서 회피 [A] - [D] X 1회`,
     },
     {
-      name: "크루얼 엑스큐션",
+      name: '크루얼 엑스큐션',
       weaponeNumber: 1,
       effect: `- 오른발로 적을 강하게 걷어차며 공격합니다.
 
@@ -6254,7 +6252,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회 - [D] X 1회`,
     },
     {
-      name: "타지 어썰트",
+      name: '타지 어썰트',
       weaponeNumber: 1,
       effect: `- 그랜드타지 장착 시에만 사용 가능합니다.
 - [타지 어썰트]는 신체의 근육을 순간적으로 강화하면서, 현재 진행 중인 움직임을 즉시 중단하고 그랜드타지를 휘둘러 공격하는 특수한 방패술입니다.
@@ -6275,7 +6273,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [TAB]키`,
     },
     {
-      name: "액티브: 피어싱 크러쉬",
+      name: '액티브: 피어싱 크러쉬',
       weaponeNumber: 1,
       effect: `- 피어싱 크러쉬는 하스타를 사용해 빠르게 찌르거나 휘둘러 베는 연속 공격 스킬입니다.
 - 추가 조작을 통해 3회까지 공격을 더 이어나갈 수 있습니다.
@@ -6297,7 +6295,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [액티브: 피어싱 크러쉬] 도중 [S]`,
     },
     {
-      name: "파이트백",
+      name: '파이트백',
       weaponeNumber: 1,
       effect: `- [퀵 가드]로 적의 공격을 방어한 후, 그랜드타지를 빠르게 휘둘러 반격하는 스킬입니다.
 - 최대 2번까지 연속하여 사용할 수 있습니다.
@@ -6309,7 +6307,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 가드 성공 후 스매시 [D] X 2회`,
     },
     {
-      name: "프랜틱 대시",
+      name: '프랜틱 대시',
       weaponeNumber: 1,
       effect: `- 그랜드타지 장착 시에만 사용 가능합니다.
 - [프랜틱 대시]는 달리는 도중 힘을 모으며 전투 태세를 갖추는 스킬입니다.
@@ -6332,7 +6330,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: 프랜틱 대시/러시 도중 [D] 떼기`,
     },
     {
-      name: "그랜드 스트라이크",
+      name: '그랜드 스트라이크',
       weaponeNumber: 1,
       effect: `- [타지 어썰트]에서 연계되는 기술로, 그랜드타지로 적을 공격합니다.
 - 공격 중에는 잠시 동안 적의 공격을 흡수할 수 있습니다. 
@@ -6347,7 +6345,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [타지 어썰트] 사용 후 [D] X 3회`,
     },
     {
-      name: "퓨리어스 스플리터",
+      name: '퓨리어스 스플리터',
       weaponeNumber: 1,
       effect: `- [액티브: 아이언 월]을 사용하여 투지가 끓어오르는 동안 빠르게 하스타를 휘두르며 연속하여 공격하는 스킬입니다. 
 - 공격을 하는 중에 방향키를 이용하여 공격 방향을 조절할 수 있습니다.
@@ -6364,7 +6362,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [퓨리어스 스플리터] 공격 중 [D] 누르고 있는 상태에서 [S] 누르고 있기`,
     },
     {
-      name: "액티브: 다운폴",
+      name: '액티브: 다운폴',
       weaponeNumber: 1,
       effect: `- 빠르게 돌진 후, 하스타로 적을 올려베며 높이 도약한 뒤, 내려베면서 추가로 공격하는 스킬입니다.
 - 내려베기 공격 전까지는 방향키를 이용하여 공격 방향을 조절할 수 있습니다.
@@ -6378,7 +6376,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 토탈 디스트럭션",
+      name: '액티브: 토탈 디스트럭션',
       weaponeNumber: 1,
       effect: `- 묵직한 방패와 날카로운 창을 사용하여 적을 사정없이 공격합니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.
@@ -6388,9 +6386,9 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
   ],
-  ["소우"]: [
+  ['소우']: [
     {
-      name: "가르기",
+      name: '가르기',
       weaponeNumber: 1,
       effect: `- 소태도로 빠르고 강하게 적을 베는 공격입니다.
 - [고양]을 습득하면 적을 공격을 [튕겨내기]로 방어 후 [일문자 베기]로 연계할 수 있습니다.
@@ -6401,7 +6399,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 3회`,
     },
     {
-      name: "급소 찌르기",
+      name: '급소 찌르기',
       weaponeNumber: 1,
       effect: `- 소태도로 적을 빠르게 찌르는 공격입니다.
 - 적을 찌르면 일정량의 스태미나를 회복합니다.
@@ -6411,7 +6409,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] 길게 누르기`,
     },
     {
-      name: "단천",
+      name: '단천',
       weaponeNumber: 1,
       effect: `- 소태도를 검집에 넣으며, 적의 공격을 간파하는 [단천] 자세를 취합니다.
 - [단천:쾌], [단천: 강], [단천: 섬] 으로 연계할 수 있습니다.
@@ -6425,7 +6423,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [TAB]키`,
     },
     {
-      name: "단천: 난무",
+      name: '단천: 난무',
       weaponeNumber: 1,
       effect: `- [단천] 자세에서 적의 공격을 간파 성공하면 연계할 수 있는 공격입니다.
 - 성공한 찰나의 순간에만 사용할 수 있습니다.
@@ -6446,7 +6444,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 2회`,
     },
     {
-      name: "액티브: 운무",
+      name: '액티브: 운무',
       weaponeNumber: 1,
       effect: `- [소태도]
 - 소태도로 빠르게 3연속 베는 공격입니다.
@@ -6469,7 +6467,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 마우스: [좌클릭] X 1회`,
     },
     {
-      name: "일문자 베기",
+      name: '일문자 베기',
       weaponeNumber: 1,
       effect: `- 소태도를 들어올린 후 적을 강하게 베는 공격입니다.
 - [고양]을 습득하면 적의 공격을 [튕겨내기]로 방어 후 [회전 가르기]로 연계할 수 있습니다.
@@ -6480,7 +6478,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 4회`,
     },
     {
-      name: "회전 가르기",
+      name: '회전 가르기',
       weaponeNumber: 1,
       effect: `- 빠르게 회전하며 소태도로 적을 베는 공격입니다.
 - 공격 중 왼쪽, 오른쪽 이동 키 입력으로 방향을 변경할 수 있습니다.
@@ -6491,7 +6489,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 5회`,
     },
     {
-      name: "단천: 쾌",
+      name: '단천: 쾌',
       weaponeNumber: 1,
       effect: `- [단천] 자세에서 소태도로 전방을 빠르게 베는 발도술 입니다.
 - 빠르게 베어냄으로 추가 피해를 입힙니다.
@@ -6503,7 +6501,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [단천] 자세에서 [S] X 1회`,
     },
     {
-      name: "단천: 강",
+      name: '단천: 강',
       weaponeNumber: 1,
       effect: `- [단천] 자세에서 대태도로 전방을 강력하게 베는 공격입니다.
 - 힘을 모아 공격하면 추가 피해를 입힙니다.
@@ -6515,7 +6513,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [단천] 자세에서 [D] 눌렀다 떼기`,
     },
     {
-      name: "액티브: 양단",
+      name: '액티브: 양단',
       weaponeNumber: 1,
       effect: `- [소태도]
 - 소태도를 납도 후 자세를 취한 뒤 순식간에 전방을 베어버리는 공격입니다.
@@ -6535,7 +6533,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] 눌렀다 떼기`,
     },
     {
-      name: "칼날 폭풍",
+      name: '칼날 폭풍',
       weaponeNumber: 1,
       effect: `- [단천: 강] 사용 시 힘을 더 오래 모을 수 있습니다.
 - 일정 시간 힘을 모으면 대태도를 휘두를 때 바람을 일으킵니다.
@@ -6546,7 +6544,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [단천] 자세에서 [D] 길게 눌렀다 떼기`,
     },
     {
-      name: "액티브: 흑현",
+      name: '액티브: 흑현',
       weaponeNumber: 1,
       effect: `- [소태도]
 - 빠르게 돌진하면서 적을 베는 스킬입니다.
@@ -6574,7 +6572,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [D] X 1회`,
     },
     {
-      name: "단천: 섬",
+      name: '단천: 섬',
       weaponeNumber: 1,
       effect: `- 단천 자세에서 TAB을 길게 눌러 가장 가까운 보스 몬스터에게 돌진하며 스태미나를 소모합니다.
 - 보스 몬스터의 자세가 무너지거나 무력화되었을 때 [E]키로 사용하면 스태미나 소모 없이 돌진합니다.
@@ -6591,7 +6589,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 키보드: [S] X 1회`,
     },
     {
-      name: "액티브: 비천락",
+      name: '액티브: 비천락',
       weaponeNumber: 1,
       effect: `- [소태도]
 - 소태도를 검집에 넣고 대태도로 전방을 2회 베면서 날아 오릅니다.
@@ -6610,7 +6608,7 @@ C랭크: 착지 후 [좌클릭] 또는 [S]`,
 퀵슬롯에 등록해 숫자키를 눌러 사용하거나 [X]키로 전환 후 [Z]키를 눌러 사용할 수 있습니다.`,
     },
     {
-      name: "액티브: 귀천",
+      name: '액티브: 귀천',
       weaponeNumber: 1,
       effect: `- 연속적인 검술과 마무리 일성으로 적에게 치명적인 피해를 주는 스킬입니다.
 - 최초 일격에 성공할 경우 순간적으로 적을 제압할 수 있습니다.

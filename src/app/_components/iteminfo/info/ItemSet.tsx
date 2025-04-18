@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { getItemSetOptions } from "../util/getItemSetOptions";
-import EnchantEffects from "../../common/enchant/EnchantEffects";
-import Item from "../../common/item/Item";
-import { useQuery } from "@tanstack/react-query";
-import { getEquipment } from "@/app/_services/getEquipment";
-import { useOcid } from "@/app/_hooks/useOcid/useOcid";
-import { Item_equipment } from "@/app/_type/equipmentType";
-import Loading from "../../common/Loading";
+import clsx from 'clsx';
+import { usePreviewStore } from '@/app/_store/previewStore';
+import { getItemSetOptions } from '../util/getItemSetOptions';
+import EnchantEffects from '../../common/enchant/EnchantEffects';
+import Item from '../../common/item/Item';
+import { useQuery } from '@tanstack/react-query';
+import { getEquipment } from '@/app/_services/getEquipment';
+import { useOcid } from '@/app/_hooks/useOcid/useOcid';
+import { Item_equipment } from '@/app/_type/equipmentType';
+import Loading from '../../common/Loading';
 
 interface ItemSetProps {
   set: string;
@@ -15,10 +15,10 @@ interface ItemSetProps {
 
 const ItemSet = ({ set }: ItemSetProps) => {
   const { data: ocid } = useOcid();
-  const { data, isLoading, error } = useQuery<Item_equipment>({
+  const { data, isLoading } = useQuery<Item_equipment>({
     enabled: !!ocid,
-    queryKey: [ocid, "장비"],
-    queryFn: () => getEquipment(ocid ?? ""),
+    queryKey: [ocid, '장비'],
+    queryFn: () => getEquipment(ocid ?? ''),
   });
 
   const info = usePreviewStore((state) => state?.info);
@@ -43,7 +43,7 @@ const ItemSet = ({ set }: ItemSetProps) => {
           isItem={haveSetList || []}
           enchantEffects={
             list?.map((title) => {
-              return { stat_name: title?.name || "", stat_value: "" };
+              return { stat_name: title?.name || '', stat_value: '' };
             }) || []
           }
         />
@@ -55,8 +55,8 @@ const ItemSet = ({ set }: ItemSetProps) => {
           <div
             key={stat.level}
             className={clsx(
-              "flex pl-2 text-[11px]",
-              stat.level === usedSetLength && "text-[rgb(145,175,212)]",
+              'flex pl-2 text-[11px]',
+              stat.level === usedSetLength && 'text-[rgb(145,175,212)]'
             )}
           >
             <div className="flex w-6">

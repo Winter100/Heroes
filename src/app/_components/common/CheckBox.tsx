@@ -1,9 +1,7 @@
-"use client";
-import { ComponentProps } from "react";
+'use client';
+import { ComponentProps } from 'react';
 
-interface CheckBoxProps extends ComponentProps<"input"> {}
-
-const CheckBox = ({ checked = false }: CheckBoxProps) => {
+const CheckBox = ({ checked = false }: ComponentProps<'input'>) => {
   return (
     <div className="inline-flex items-center">
       <label className="relative flex cursor-pointer items-center">

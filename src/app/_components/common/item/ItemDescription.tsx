@@ -1,15 +1,13 @@
-import clsx from "clsx";
-import { ComponentProps } from "react";
-
-interface ItemDescriptionProps extends ComponentProps<"div"> {}
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 
 const ItemDescription = ({
   children,
   className,
   ...props
-}: ItemDescriptionProps) => {
+}: ComponentProps<'div'>) => {
   return (
-    <span className={clsx("p-1 text-xs text-inherit", className)} {...props}>
+    <span className={clsx('p-1 text-xs text-inherit', className)} {...props}>
       {children}
     </span>
   );

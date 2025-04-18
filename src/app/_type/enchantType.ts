@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react';
 
 export interface EnchantPriceType {
   next_cursor: string;
@@ -103,7 +103,7 @@ export interface EnchantPrice {
   };
 }
 
-export interface EnchantDialogProps {
+interface EnchantDialogProps {
   label: string;
   slot: string;
   upgreadeType: string;
@@ -116,7 +116,7 @@ export interface EnchantDialogProps {
     enchantEffects: {
       stat_name: string;
       stat_value: string;
-    }[],
+    }[]
   ) => void;
   enchantList: {
     rank: string;
@@ -131,7 +131,7 @@ export interface EnchantDialogProps {
 }
 
 export interface EnchantContentProps
-  extends Omit<EnchantDialogProps, "label" | "items"> {
+  extends Omit<EnchantDialogProps, 'label' | 'items'> {
   enchantPriceList: EnchantPrice[];
   enchantPriceLoading: boolean;
 }
@@ -151,7 +151,7 @@ export interface EnchantItemProps {
   isSelected: boolean;
   selectedHandler: (
     enchantName: string,
-    enchantValue: { stat_name: string; stat_value: string }[],
+    enchantValue: { stat_name: string; stat_value: string }[]
   ) => void;
 }
 
@@ -189,24 +189,6 @@ export interface getEnchantAvgPricePropsP {
   enchantName: string;
 }
 
-export interface EnchantData {
-  upgreadeType: string;
-  date: string;
-  price: {
-    avgPrice: number;
-    minPrice: number;
-    maxPrice: number;
-  };
-  rank: string;
-  name: string;
-  description: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  drop_item_list?: string[];
-}
-
 export type EnchantKeyType = {
   rank: string;
   name: string;
@@ -215,7 +197,7 @@ export type EnchantKeyType = {
   min_price: number;
 };
 
-export interface EnchantRankTableProps extends ComponentProps<"table"> {
+export interface EnchantRankTableProps extends ComponentProps<'table'> {
   enchantData: {
     upgreadeType: string;
     rank: string;

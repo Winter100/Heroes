@@ -1,6 +1,6 @@
-import { MergedCharacter } from "../_type/characterType";
-import { TitleType } from "../_type/RankTitleListType";
-import { LOCALSTORAGE_KEY } from "./../_constant/localstorage";
+import { MergedCharacter } from '../_type/characterType';
+import { TitleType } from '../_type/RankTitleListType';
+import { LOCALSTORAGE_KEY } from './../_constant/localstorage';
 
 interface OcidData {
   name: string;
@@ -8,14 +8,14 @@ interface OcidData {
 }
 
 export const getLocalStorageItems = <T>(key: string): T | null => {
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     const storageItem = localStorage.getItem(key);
 
     if (!storageItem) return null;
 
     try {
       return JSON.parse(storageItem) as T;
-    } catch (e) {
+    } catch {
       return null;
     }
   }
@@ -23,18 +23,14 @@ export const getLocalStorageItems = <T>(key: string): T | null => {
   return null;
 };
 
-export const getWaitingRoomToLocalStorage = (): MergedCharacter[] => {
-  return getLocalStorageItems(LOCALSTORAGE_KEY.waiting) ?? [];
-};
-
-export const setLocalStorageItems = <T extends { name: string }>(
+const setLocalStorageItems = <T extends { name: string }>(
   key: string,
-  data: T,
+  data: T
 ) => {
   const existingItems = getLocalStorageItems<T[]>(key) ?? [];
 
   const updatedItems = existingItems.map((item) =>
-    item.name === data.name ? data : item,
+    item.name === data.name ? data : item
   );
 
   if (!updatedItems.some((item) => item.name === data.name)) {
@@ -46,7 +42,7 @@ export const setLocalStorageItems = <T extends { name: string }>(
 
 export const setLocalStoreageRankTitle = (
   key: string,
-  item: { stat_name: string; isView: boolean }[],
+  item: { stat_name: string; isView: boolean }[]
 ) => {
   const updatedItems = [...item];
 
@@ -54,7 +50,7 @@ export const setLocalStoreageRankTitle = (
 };
 
 export const getLocalStorageRankTitle = () => {
-  return getLocalStorageItems<TitleType[]>("RankTitleList");
+  return getLocalStorageItems<TitleType[]>('RankTitleList');
 };
 
 /**
@@ -67,7 +63,7 @@ export const getLocalStorageRankTitle = () => {
 export const findOcidByName = (name: string) => {
   return (
     getLocalStorageItems<OcidData[]>(LOCALSTORAGE_KEY.ocidList)?.find(
-      (item) => item.name === name,
+      (item) => item.name === name
     )?.ocid || null
   );
 };
@@ -81,7 +77,7 @@ export const findOcidByName = (name: string) => {
  */
 export const setOcidListToLocalStorage = (
   name: string,
-  ocidObj: { ocid: string },
+  ocidObj: { ocid: string }
 ) => {
   const ocid = ocidObj.ocid;
 
@@ -91,17 +87,11 @@ export const setOcidListToLocalStorage = (
 };
 
 export const setWaitingRoomCharactersInfo = (
-  userData: MergedCharacter | MergedCharacter[],
+  userData: MergedCharacter | MergedCharacter[]
 ) => {
   localStorage.setItem(LOCALSTORAGE_KEY.waiting, JSON.stringify(userData));
 };
 
 export const addWaitingRoomCharacterInfo = (userData: MergedCharacter) => {
   setLocalStorageItems(LOCALSTORAGE_KEY.waiting, userData);
-};
-
-export const removeWatingRoomCharactersInfo = () => {
-  if (typeof window !== "undefined") {
-    localStorage.removeItem(LOCALSTORAGE_KEY.waiting);
-  }
 };

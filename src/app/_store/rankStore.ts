@@ -1,9 +1,9 @@
-import { create } from "zustand";
-import { toast } from "react-toastify";
+import { create } from 'zustand';
+import { toast } from 'react-toastify';
 
-import { setLocalStoreageRankTitle } from "../_utils/localStorage";
-import { TitleType } from "../_type/RankTitleListType";
-import { initialTitleList } from "../_constant/rankTitleList";
+import { setLocalStoreageRankTitle } from '../_utils/localStorage';
+import { TitleType } from '../_type/RankTitleListType';
+import { initialTitleList } from '../_constant/rankTitleList';
 
 type State = {
   rankTitleList: { stat_name: string; isView: boolean }[];
@@ -23,16 +23,16 @@ export const useRankStore = create<State & Action>((set) => {
     selectedRankTitle: null,
     toggleView: (title: string) =>
       set((state) => {
-        if (title === "이름") {
-          toast.error("이름은 필수값 입니다.");
+        if (title === '이름') {
+          toast.error('이름은 필수값 입니다.');
           return { rankTitleList: state.rankTitleList };
         }
         const updatedRankTitleList = state.rankTitleList
           .map((item) =>
-            item.stat_name === title ? { ...item, isView: !item.isView } : item,
+            item.stat_name === title ? { ...item, isView: !item.isView } : item
           )
           .sort((a, b) => (a.isView === b.isView ? 0 : a.isView ? -1 : 1));
-        setLocalStoreageRankTitle("RankTitleList", updatedRankTitleList);
+        setLocalStoreageRankTitle('RankTitleList', updatedRankTitleList);
 
         return { rankTitleList: updatedRankTitleList };
       }),
@@ -47,13 +47,14 @@ export const useRankStore = create<State & Action>((set) => {
             !initialNames.every((name) => titleListNames.includes(name));
 
           if (isMismatch) {
-            setLocalStoreageRankTitle("RankTitleList", initialTitleList);
+            setLocalStoreageRankTitle('RankTitleList', initialTitleList);
             return { rankTitleList: initialTitleList };
           } else {
-            setLocalStoreageRankTitle("RankTitleList", titleList);
+            setLocalStoreageRankTitle('RankTitleList', titleList);
             return { rankTitleList: titleList };
           }
         } catch (e) {
+          console.error(e);
           return { rankTitleList: initialTitleList };
         }
       });
@@ -63,7 +64,7 @@ export const useRankStore = create<State & Action>((set) => {
         const updatedRankTitleList = [...state.rankTitleList];
         const [movedItem] = updatedRankTitleList.splice(start, 1);
         updatedRankTitleList.splice(end, 0, movedItem);
-        setLocalStoreageRankTitle("RankTitleList", updatedRankTitleList);
+        setLocalStoreageRankTitle('RankTitleList', updatedRankTitleList);
 
         return { rankTitleList: updatedRankTitleList };
       }),
