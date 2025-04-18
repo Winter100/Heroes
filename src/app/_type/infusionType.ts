@@ -1,6 +1,6 @@
-import { ItemTitleType } from "./itemTitleType";
+import { ItemTitleType } from './itemTitleType';
 
-export interface InfusionType {
+interface InfusionType {
   rank: string;
   name: string;
   description: string;
@@ -10,12 +10,12 @@ export interface InfusionType {
   }[];
 }
 
-export interface InfusionEffectsType {
+interface InfusionEffectsType {
   stat_name: string;
   stat_value: string;
 }
 
-export interface SelectedHandlerType {
+interface SelectedHandlerType {
   (infusionName: string, infusionEffects: InfusionEffectsType[]): void;
 }
 
@@ -27,14 +27,10 @@ export interface InfusionsDialogProps {
   infusionList: InfusionType[];
 }
 
-export interface InfusionsContentProps
-  extends Omit<InfusionsDialogProps, "label" | "items"> {}
-
-export interface InfusionGroupProps extends InfusionsContentProps {
+export interface InfusionGroupProps
+  extends Omit<InfusionsDialogProps, 'label' | 'items'> {
   title: string;
 }
-
-export interface InfusionGridProps extends InfusionsContentProps {}
 
 export interface InfusionGridItemProps {
   infusion: InfusionType;

@@ -1,11 +1,9 @@
-import clsx from "clsx";
-import { ComponentProps } from "react";
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 
-interface ThProps extends ComponentProps<"th"> {}
-
-const Th = ({ children, className, ...props }: ThProps) => {
+const Th = ({ children, className, ...props }: ComponentProps<'th'>) => {
   return (
-    <th className={clsx("p-2 align-middle", className)} {...props}>
+    <th className={clsx('p-2 align-middle', className)} {...props}>
       {children}
     </th>
   );

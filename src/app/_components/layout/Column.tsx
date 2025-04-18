@@ -1,10 +1,9 @@
-import clsx from "clsx";
-import { ComponentProps } from "react";
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 
-interface ColumnProps extends ComponentProps<"div"> {}
-const Column = ({ children, className, ...props }: ColumnProps) => {
+const Column = ({ children, className, ...props }: ComponentProps<'div'>) => {
   return (
-    <div className={clsx("flex flex-col", className)} {...props}>
+    <div className={clsx('flex flex-col', className)} {...props}>
       {children}
     </div>
   );

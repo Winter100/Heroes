@@ -1,5 +1,5 @@
-import axios from "axios";
-import { NoticeType } from "../_hooks/useNotice/useNotice";
+import axios from 'axios';
+import { NoticeType } from '../_hooks/useNotice/useNotice';
 
 export const getNotice = async <T>(type: NoticeType): Promise<T | null> => {
   try {
@@ -9,7 +9,7 @@ export const getNotice = async <T>(type: NoticeType): Promise<T | null> => {
 
     return data;
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return null;
   }
 };

@@ -8,7 +8,6 @@ interface TermsGuideProsp {
     }[];
   }[];
 }
-[];
 
 const TermsGuide = ({ title, data }: TermsGuideProsp) => {
   return (

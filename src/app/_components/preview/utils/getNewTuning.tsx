@@ -1,6 +1,6 @@
-import { EquipmentType } from "@/app/_type/equipmentType";
-import { getSpecificTitle } from "./getSpecificTitle";
-import { oneGrinding } from "@/app/_constant/grinding";
+import { EquipmentType } from '@/app/_type/equipmentType';
+import { getSpecificTitle } from './getSpecificTitle';
+import { oneGrinding } from '@/app/_constant/grinding';
 
 interface UpdateStats {
   stat_min_value: string;
@@ -13,7 +13,6 @@ interface UpdateStats {
     quantity: string;
   }[];
 }
-[];
 export const getNewTuning = (item: EquipmentType) => {
   const item_title = getSpecificTitle(item?.item_name);
   const item_slot = item?.item_equipment_slot_name;
@@ -30,13 +29,13 @@ export const getNewTuning = (item: EquipmentType) => {
       return {
         ...stat,
         ...findStat,
-        stat_min_value: findStat.stat_value ?? "0",
+        stat_min_value: findStat.stat_value ?? '0',
       };
     } else {
       return {
         ...stat,
-        stat_value: "0",
-        stat_min_value: "0",
+        stat_value: '0',
+        stat_min_value: '0',
       };
     }
   });
@@ -47,8 +46,8 @@ export const getNewTuning = (item: EquipmentType) => {
 };
 
 const updateStats = (tuningStats: UpdateStats[]) => {
-  const limit1 = tuningStats?.find((stat) => stat.stat_name === "해제");
-  const limit2 = tuningStats?.find((stat) => stat.stat_name === "해제 2");
+  const limit1 = tuningStats?.find((stat) => stat.stat_name === '해제');
+  const limit2 = tuningStats?.find((stat) => stat.stat_name === '해제 2');
 
   if (
     limit1 &&

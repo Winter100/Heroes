@@ -1,11 +1,9 @@
-import clsx from "clsx";
-import { ComponentProps } from "react";
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 
-interface TdProps extends ComponentProps<"td"> {}
-
-const Td = ({ children, className, ...props }: TdProps) => {
+const Td = ({ children, className, ...props }: ComponentProps<'td'>) => {
   return (
-    <td className={clsx("p-2 align-middle", className)} {...props}>
+    <td className={clsx('p-2 align-middle', className)} {...props}>
       {children}
     </td>
   );

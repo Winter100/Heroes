@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { useSearchParams } from "next/navigation";
+import { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { useSearchParams } from 'next/navigation';
 
-import { useOcid } from "../useOcid/useOcid";
-import { getStats } from "@/app/_services/getStats";
-import { mergeStats } from "@/app/_utils/mergeStats";
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { combineStats } from "@/app/_components/preview/utils/combineStats";
-import { someStats } from "@/app/_components/preview/utils/someStats";
-import { calculateStatsDifference } from "@/app/_components/preview/utils/calculateStatsDifference";
-import { Stat } from "@/app/_type/previewType";
+import { useOcid } from '../useOcid/useOcid';
+import { getStats } from '@/app/_services/getStats';
+import { mergeStats } from '@/app/_utils/mergeStats';
+import { usePreviewStore } from '@/app/_store/previewStore';
+import { combineStats } from '@/app/_components/preview/utils/combineStats';
+import { someStats } from '@/app/_components/preview/utils/someStats';
+import { calculateStatsDifference } from '@/app/_components/preview/utils/calculateStatsDifference';
+import { Stat } from '@/app/_type/previewType';
 
 export const useStats = () => {
   const searchParams = useSearchParams();
-  const name = searchParams.get("name") ?? "";
+  const name = searchParams.get('name') ?? '';
   const { data: ocid } = useOcid();
 
   const { mergeAtkAndMatk, translatedStats } = mergeStats();
   const { data, isLoading, error } = useQuery({
     enabled: !!ocid,
-    queryKey: [ocid, name, "스텟"],
-    queryFn: () => getStats(ocid ?? ""),
+    queryKey: [ocid, name, '스텟'],
+    queryFn: () => getStats(ocid ?? ''),
     select: (data) => {
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);
@@ -34,7 +34,7 @@ export const useStats = () => {
   const beforeStats = usePreviewStore((state) => state.beforeStats);
 
   const setPreviewAllStats = usePreviewStore(
-    (state) => state.setPreviewAllStats,
+    (state) => state.setPreviewAllStats
   );
 
   const combineAfterStat = combineStats(afterStats);
@@ -62,7 +62,9 @@ export const useStats = () => {
 
   useEffect(() => {
     if (!isLoading) {
-      mergedStats && setPreviewAllStats((mergedStats as Stat[]) ?? []);
+      if (mergedStats) {
+        setPreviewAllStats((mergedStats as Stat[]) ?? []);
+      }
     }
   }, [mergedStats, setPreviewAllStats, isLoading]);
 

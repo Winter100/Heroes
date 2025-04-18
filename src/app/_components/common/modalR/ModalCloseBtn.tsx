@@ -1,8 +1,6 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react';
 
-interface ModalCloseBtnProps extends ComponentProps<"div"> {}
-
-const ModalCloseBtn = ({ children, ...props }: ModalCloseBtnProps) => {
+const ModalCloseBtn = ({ children, ...props }: ComponentProps<'div'>) => {
   return (
     <div className="flex items-center justify-center" {...props}>
       {children}

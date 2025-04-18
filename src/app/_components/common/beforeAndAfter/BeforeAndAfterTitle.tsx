@@ -1,12 +1,10 @@
-import { ComponentProps } from "react";
-
-interface BeforeAndAfterTitle extends ComponentProps<"p"> {}
+import { ComponentProps } from 'react';
 
 const BeforeAndAfterTitle = ({
   children,
   className,
   ...props
-}: BeforeAndAfterTitle) => {
+}: ComponentProps<'p'>) => {
   return (
     <div className={`flex items-center justify-center ${className}`} {...props}>
       {children}

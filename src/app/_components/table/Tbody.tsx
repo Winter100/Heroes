@@ -1,10 +1,9 @@
-import clsx from "clsx";
-import React, { ComponentProps } from "react";
+import clsx from 'clsx';
+import React, { ComponentProps } from 'react';
 
-interface TbodyProps extends ComponentProps<"tbody"> {}
-const Tbody = ({ children, className, ...props }: TbodyProps) => {
+const Tbody = ({ children, className, ...props }: ComponentProps<'tbody'>) => {
   return (
-    <tbody className={clsx("", className)} {...props}>
+    <tbody className={clsx('', className)} {...props}>
       {children}
     </tbody>
   );

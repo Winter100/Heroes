@@ -1,4 +1,4 @@
-import { Stat } from "./previewType";
+import { Stat } from './previewType';
 
 export interface Basic {
   character_name: string;
@@ -28,7 +28,7 @@ export interface Guild {
   guild_name: string;
 }
 
-export interface Skill {
+interface Skill {
   skill_name: string;
   item_name: string;
 }
