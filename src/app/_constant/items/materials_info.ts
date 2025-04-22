@@ -1,269 +1,269 @@
-import { BasicItemInfoType } from "@/app/_type/infoInfoType";
+import { BasicItemInfoType } from '@/app/_type/infoInfoType';
 
 export const materials_info: BasicItemInfoType[] = [
   {
-    item_name: "골드",
-    item_rating: "일반",
+    item_name: '골드',
+    item_rating: '일반',
     item_crafting: [],
-    item_description: "물건을 구입할 때 사용된다.",
+    item_description: '물건을 구입할 때 사용된다.',
   },
   {
-    item_name: "스렝의 정수",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공"],
+    item_name: '스렝의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공'],
     item_description:
-      "스렝의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 스렝을 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다. 단, 주간 레이드 보상을 통해 획득한 아이템은 캐릭터에 귀속됩니다.",
+      '스렝의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 스렝을 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다. 단, 주간 레이드 보상을 통해 획득한 아이템은 캐릭터에 귀속됩니다.',
   },
   {
-    item_name: "스피노스의 정수",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉", "세공"],
+    item_name: '스피노스의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
-      "스피노스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 스피노스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.",
+      '스피노스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 스피노스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
   },
   {
-    item_name: "고르바스의 정수",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉", "세공"],
+    item_name: '고르바스의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
-      "고르바스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 고르바스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.",
+      '고르바스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 고르바스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
   },
   {
-    item_name: "모르간트의 정수",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉", "세공"],
+    item_name: '모르간트의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
-      "모르간트의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 모르간트를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.",
+      '모르간트의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 모르간트를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
   },
   {
-    item_name: "와드네의 파편: 무기",
-    item_rating: "레어",
-    item_crafting: ["금속 무기", "세공"],
+    item_name: '와드네의 파편: 무기',
+    item_rating: '레어',
+    item_crafting: ['금속 무기', '세공'],
     item_description:
-      "와드네 무기를 제작하거나 와드네 승급석: 무기를 제작할 때 주재료로 사용됩니다.",
+      '와드네 무기를 제작하거나 와드네 승급석: 무기를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 보조 장비",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "세공"],
-    item_description: "와드네 보조 장비를 제작할 때 주재료로 사용됩니다.",
+    item_name: '와드네의 파편: 보조 장비',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '세공'],
+    item_description: '와드네 보조 장비를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 저주의 허리띠",
-    item_rating: "레어",
-    item_crafting: ["세공"],
+    item_name: '와드네의 파편: 저주의 허리띠',
+    item_rating: '레어',
+    item_crafting: ['세공'],
     item_description:
-      "세공 전문기술을 통해 저주의 허리띠를 제작할 때 주재료로 사용됩니다.",
+      '세공 전문기술을 통해 저주의 허리띠를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 태양의 비원",
-    item_rating: "레어",
-    item_crafting: ["세공"],
+    item_name: '와드네의 파편: 태양의 비원',
+    item_rating: '레어',
+    item_crafting: ['세공'],
     item_description:
-      "세공 전문기술을 통해 태양의 비원 귀걸이를 제작할 때 주재료로 사용됩니다.",
+      '세공 전문기술을 통해 태양의 비원 귀걸이를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 침묵의 증표",
-    item_rating: "레어",
-    item_crafting: ["세공"],
+    item_name: '와드네의 파편: 침묵의 증표',
+    item_rating: '레어',
+    item_crafting: ['세공'],
     item_description:
-      "세공 전문기술을 통해 침묵의 증표 반지를 제작할 때 주재료로 사용됩니다.",
+      '세공 전문기술을 통해 침묵의 증표 반지를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 고요의 증표",
-    item_rating: "레어",
-    item_crafting: ["세공"],
+    item_name: '와드네의 파편: 고요의 증표',
+    item_rating: '레어',
+    item_crafting: ['세공'],
     item_description:
-      "세공 전문기술을 통해 고요의 증표 반지를 제작할 때 주재료로 사용됩니다.",
+      '세공 전문기술을 통해 고요의 증표 반지를 제작할 때 주재료로 사용됩니다.',
   },
 
   {
-    item_name: "와드네의 파편: 머리 방어구",
-    item_rating: "레어",
+    item_name: '와드네의 파편: 머리 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description:
-      "와드네 헬름을 제작하거나 와드네 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.",
+      '와드네 헬름을 제작하거나 와드네 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 가슴 방어구",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉"],
+    item_name: '와드네의 파편: 가슴 방어구',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉'],
     item_description:
-      "와드네 메일을 제작하거나 와드네 승급석: 가슴 방어구를 제작할 때 주재료로 사용됩니다.",
+      '와드네 메일을 제작하거나 와드네 승급석: 가슴 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 다리 방어구",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉"],
+    item_name: '와드네의 파편: 다리 방어구',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉'],
     item_description:
-      "와드네 그리브즈를 제작하거나 와드네 승급석: 다리 방어구를 제작할 때 주재료로 사용됩니다.",
+      '와드네 그리브즈를 제작하거나 와드네 승급석: 다리 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 손 방어구",
-    item_rating: "레어",
+    item_name: '와드네의 파편: 손 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description:
-      "와드네 건틀릿를 제작하거나 와드네 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.",
+      '와드네 건틀릿를 제작하거나 와드네 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 파편: 발 방어구",
-    item_rating: "레어",
+    item_name: '와드네의 파편: 발 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description:
-      "와드네 부츠를 제작하거나 와드네 승급석: 발 방어구를 제작할 때 주재료로 사용됩니다.",
+      '와드네 부츠를 제작하거나 와드네 승급석: 발 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: "와드네 승급석: 무기",
-    item_rating: "중급",
+    item_name: '와드네 승급석: 무기',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "와드네 무기를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+      '와드네 무기를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
-    item_name: "와드네 승급석: 머리 방어구",
-    item_rating: "중급",
+    item_name: '와드네 승급석: 머리 방어구',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "와드네 헬름을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+      '와드네 헬름을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
-    item_name: "와드네 승급석: 가슴 방어구",
-    item_rating: "중급",
+    item_name: '와드네 승급석: 가슴 방어구',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "와드네 메일을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+      '와드네 메일을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
-    item_name: "와드네 승급석: 다리 방어구",
-    item_rating: "중급",
+    item_name: '와드네 승급석: 다리 방어구',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "와드네 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+      '와드네 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
-    item_name: "와드네 승급석: 손 방어구",
-    item_rating: "중급",
+    item_name: '와드네 승급석: 손 방어구',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "와드네 건틀릿을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+      '와드네 건틀릿을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
-    item_name: "와드네 승급석: 발 방어구",
-    item_rating: "중급",
+    item_name: '와드네 승급석: 발 방어구',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "와드네 부츠를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.",
+      '와드네 부츠를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
-    item_name: "단단한 와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉", "세공"],
+    item_name: '단단한 와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
-      "와드네 헬름, 와드네 보조 무기를 제작하거나 와드네 머리 방어구를 승급할 때 보조 재료로 사용됩니다.",
+      '와드네 헬름, 와드네 보조 무기를 제작하거나 와드네 머리 방어구를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "매끈한 와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재공", "세공"],
+    item_name: '매끈한 와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재공', '세공'],
     item_description:
-      "와드네 다리 방어구, 태양의 비원 귀걸이, 저주의 허리띠를 제작하거나 와드네 다리 방어구를 승급할 때 보조 재료로 사용됩니다.",
+      '와드네 다리 방어구, 태양의 비원 귀걸이, 저주의 허리띠를 제작하거나 와드네 다리 방어구를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "견고한 와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "재봉", "세공"],
+    item_name: '견고한 와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
-      "와드네 가슴, 저주의 허리띠를 제작하거나 와드네 가슴 방어구를 승급할 때 보조 재료로 사용됩니다.",
+      '와드네 가슴, 저주의 허리띠를 제작하거나 와드네 가슴 방어구를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "오롯한 와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "금속무기", "세공"],
-    item_description: "와드네 무기를 승급할 때 보조 재료로 사용됩니다.",
+    item_name: '오롯한 와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '금속무기', '세공'],
+    item_description: '와드네 무기를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "예리한 와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["금속 무기", "세공"],
+    item_name: '예리한 와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 무기', '세공'],
     item_description:
-      "와드네 무기를 제작하거나 와드네 무기를 승급할 때 보조 재료로 사용됩니다.",
+      '와드네 무기를 제작하거나 와드네 무기를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "굳건한 와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["금속 무기", "세공"],
+    item_name: '굳건한 와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 무기', '세공'],
     item_description:
-      "와드네 건틀릿, 와드네 부츠, 침묵의 증표, 고요의 증표를 제작하거나 와드네 건틀릿, 와드네 부츠를 승급할 때 보조 재료로 사용됩니다.",
+      '와드네 건틀릿, 와드네 부츠, 침묵의 증표, 고요의 증표를 제작하거나 와드네 건틀릿, 와드네 부츠를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "가벼운 와드네의 결정",
-    item_rating: "레어",
+    item_name: '가벼운 와드네의 결정',
+    item_rating: '레어',
     item_crafting: [],
-    item_description: "와드네 무기를 승급할 때 보조 재료로 사용됩니다.",
+    item_description: '와드네 무기를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "안정된 와드네의 결정",
-    item_rating: "레어",
+    item_name: '안정된 와드네의 결정',
+    item_rating: '레어',
     item_crafting: [],
-    item_description: "와드네 무기를 승급할 때 보조 재료로 사용됩니다.",
+    item_description: '와드네 무기를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
-    item_name: "와드네의 결정",
-    item_rating: "레어",
-    item_crafting: ["제작의뢰"],
+    item_name: '와드네의 결정',
+    item_rating: '레어',
+    item_crafting: ['제작의뢰'],
     item_description:
-      "와드네의 힘이 응집되어 있는 결정. 미지의 조각 또는 투쟁의 조각 3단계와 결합하여 사용할 수 있는 귀중한 재료.",
+      '와드네의 힘이 응집되어 있는 결정. 미지의 조각 또는 투쟁의 조각 3단계와 결합하여 사용할 수 있는 귀중한 재료.',
   },
   {
-    item_name: "오르나의 봉인된 힘",
-    item_rating: "레어",
-    item_crafting: ["금속 갑옷", "세공", "제작의뢰"],
+    item_name: '오르나의 봉인된 힘',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '세공', '제작의뢰'],
     item_description: `오르나의 힘이 담겨 있다.
     퍼거스와 브린을 통해 다른 아이템으로 제작할 수 있다.`,
   },
   {
-    item_name: "오르나의 봉인된 힘: 발 방어구",
-    item_rating: "레어",
+    item_name: '오르나의 봉인된 힘: 발 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "오르나의 봉인된 힘: 손 방어구",
-    item_rating: "레어",
+    item_name: '오르나의 봉인된 힘: 손 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "오르나의 봉인된 힘: 가슴 방어구",
-    item_rating: "레어",
+    item_name: '오르나의 봉인된 힘: 가슴 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "오르나의 봉인된 힘: 머리 방어구",
-    item_rating: "레어",
+    item_name: '오르나의 봉인된 힘: 머리 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "오르나의 봉인된 힘: 다리 방어구",
-    item_rating: "레어",
+    item_name: '오르나의 봉인된 힘: 다리 방어구',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "오르나의 봉인된 힘: 무기",
-    item_rating: "레어",
+    item_name: '오르나의 봉인된 힘: 무기',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
@@ -271,8 +271,8 @@ export const materials_info: BasicItemInfoType[] = [
   },
 
   {
-    item_name: "미지의 결정",
-    item_rating: "레어",
+    item_name: '미지의 결정',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `모든 능력이 한계에 도달한 무기에 추가 능력을 부여할 수 있는 재료. 장비 연마를 통해 추가 능력을 부여할 수 있습니다. 아직 모든 능력이 한계에 도달하지 않은 장비에는 추가 능력을 부여할 수 없습니다.
       
@@ -281,8 +281,8 @@ export const materials_info: BasicItemInfoType[] = [
       `,
   },
   {
-    item_name: "투쟁의 결정",
-    item_rating: "레어",
+    item_name: '투쟁의 결정',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `모든 능력이 한계에 도달한 방어구에 추가 능력을 부여할 수 있는 재료. 장비 연마를 통해 추가 능력을 부여할 수 있습니다. 아직 모든 능력이 한계에 도달하지 않은 장비에는 추가 능력을 부여할 수 없습니다.
       
@@ -291,54 +291,54 @@ export const materials_info: BasicItemInfoType[] = [
       `,
   },
   {
-    item_name: "강화의 룬",
-    item_rating: "중급",
-    item_crafting: ["제작의뢰"],
+    item_name: '강화의 룬',
+    item_rating: '중급',
+    item_crafting: ['제작의뢰'],
     item_description:
-      "아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 단계 하락 이상의 페널티를 무릅쓸 때만 사용할 수 있다. 11강 이상 시도에는 사용할 수 없다. 성공시에는 강화의 룬이 소모되지 않는다. 실패시 조각난 강화의 룬이 획득된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.",
+      '아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 단계 하락 이상의 페널티를 무릅쓸 때만 사용할 수 있다. 11강 이상 시도에는 사용할 수 없다. 성공시에는 강화의 룬이 소모되지 않는다. 실패시 조각난 강화의 룬이 획득된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.',
   },
   {
-    item_name: "프리미엄 강화의 룬",
-    item_rating: "중급",
-    item_crafting: ["제작의뢰"],
+    item_name: '프리미엄 강화의 룬',
+    item_rating: '중급',
+    item_crafting: ['제작의뢰'],
     item_description:
-      "아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 11단계 시도 시에만 사용할 수 있고, 사용시 성공 여부와 관계없이 무조건 소모된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.",
+      '아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 11단계 시도 시에만 사용할 수 있고, 사용시 성공 여부와 관계없이 무조건 소모된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.',
   },
   {
-    item_name: "+ 프리미엄 강화의 룬",
-    item_rating: "중급",
+    item_name: '+ 프리미엄 강화의 룬',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "프리미엄 강화의 룬 보다 한 단계 높은 플러스 프리미엄 강화의 룬이다. 아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 12단계 시도 시에만 사용할 수 있고, 사용시 성공 여부와 관계없이 무조건 소모된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.",
+      '프리미엄 강화의 룬 보다 한 단계 높은 플러스 프리미엄 강화의 룬이다. 아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 12단계 시도 시에만 사용할 수 있고, 사용시 성공 여부와 관계없이 무조건 소모된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.',
   },
   {
-    item_name: "프리미엄 방어구 강화의 룬",
-    item_rating: "중급",
+    item_name: '프리미엄 방어구 강화의 룬',
+    item_rating: '중급',
     item_crafting: [],
     item_description:
-      "방어구 아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 11~12단계 시도 시에만 사용할 수 있고, 성공시에는 소모되지 않는다. 방패에는 사용할 수 없다. 실패시 조각난 프리미엄 방어구 강화의 룬이 획득된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.",
+      '방어구 아이템 강화 시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 11~12단계 시도 시에만 사용할 수 있고, 성공시에는 소모되지 않는다. 방패에는 사용할 수 없다. 실패시 조각난 프리미엄 방어구 강화의 룬이 획득된다. 아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.',
   },
 
   {
-    item_name: "고급 강화의 비약",
-    item_rating: "고급",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공"],
+    item_name: '고급 강화의 비약',
+    item_rating: '고급',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공'],
     item_description:
-      "115레벨 이상 무기 및 장비를 강화 시도할 때 필요한 비약. 숨겨진 힘을 이끌어내지만, 장비품에 해를 입히기 때문에 큰 페널티를 입힐 수도 있다. 아이템 강화 시도 시 단계 별로 성곡 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.",
+      '115레벨 이상 무기 및 장비를 강화 시도할 때 필요한 비약. 숨겨진 힘을 이끌어내지만, 장비품에 해를 입히기 때문에 큰 페널티를 입힐 수도 있다. 아이템 강화 시도 시 단계 별로 성곡 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.',
   },
   {
-    item_name: "자르딘 강철",
-    item_rating: "고급",
-    item_crafting: ["제작의뢰"],
+    item_name: '자르딘 강철',
+    item_rating: '고급',
+    item_crafting: ['제작의뢰'],
     item_description: `자르딘의 특수 열처리 가공법으로 다마스쿠스 강철을 더욱 강하게 재련한 강철. 복원 재련은 퍼거스에게 할 수 있다. 영혼을 되살린 아이템만 복원 재련 할 수 있으며, 복원 재련 후에는 다시 강화 시도 할 수 있는 상태가 된다고 알려져 있다.
       
       [주의사항]
       ※ 110~115레벨의 장비에만 사용 가능 합니다.`,
   },
   {
-    item_name: "다마스쿠스 강철",
-    item_rating: "고급",
-    item_crafting: ["제작 의뢰"],
+    item_name: '다마스쿠스 강철',
+    item_rating: '고급',
+    item_crafting: ['제작 의뢰'],
     item_description: `영혼을 되살린 무기를 복원 재련하는데 필요한 신비로운 강철.
     강한 공격성을 보이는 자들을 처치했을 때 얻을 수 있다.
     단단하지만 탄성이 있는 신비로운 강철로 알려져 있다.
@@ -352,8 +352,8 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 105레벨 이하의 장비에만 사용 가능합니다.`,
   },
   {
-    item_name: "추출의 룬",
-    item_rating: "중급",
+    item_name: '추출의 룬',
+    item_rating: '중급',
     item_crafting: [],
     item_description: `인챈트 또는 아이템 연마로 추가 능력치를 개방한 아이템에서 관련된 소재를 추출할 수 있는 룬입니다.
       ■ 와드네 장비 제작 시 사용
@@ -383,23 +383,23 @@ export const materials_info: BasicItemInfoType[] = [
       `,
   },
   {
-    item_name: "봉인의 힘: 파편",
-    item_rating: "고급",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공"],
+    item_name: '봉인의 힘: 파편',
+    item_rating: '고급',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공'],
     item_description:
-      "레어 아이템 등급의 봉인된 힘을 분해하면 얻을 수 있는 아이템. 장비 연마의 재료로 사용할 수 있다.",
+      '레어 아이템 등급의 봉인된 힘을 분해하면 얻을 수 있는 아이템. 장비 연마의 재료로 사용할 수 있다.',
   },
   {
-    item_name: "전승의 힘: 파편",
-    item_rating: "고급",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공"],
+    item_name: '전승의 힘: 파편',
+    item_rating: '고급',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공'],
     item_description:
-      "레어 아이템 등급의 전승석이나 계승석을 분해하면 얻을 수 있는 아이템. 장비 연마의 재료로 사용할 수 있다.",
+      '레어 아이템 등급의 전승석이나 계승석을 분해하면 얻을 수 있는 아이템. 장비 연마의 재료로 사용할 수 있다.',
   },
   {
-    item_name: "뉴에라의 강화석",
-    item_rating: "중급",
-    item_crafting: ["제작의뢰"],
+    item_name: '뉴에라의 강화석',
+    item_rating: '중급',
+    item_crafting: ['제작의뢰'],
     item_description: `뉴에라의 강화석. 낙원의 강화석보다 더욱 높은 밀도를 가졌다.
     착용 레벨 115이하의 무기 및 장비를 강화할 때 사용되는 강화석.
     ※ 전투 중에 구하거나 브린 또는 자레스에게서 제작할 수 있다.
@@ -407,9 +407,9 @@ export const materials_info: BasicItemInfoType[] = [
     아이템 강화 시도 시 단계별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.`,
   },
   {
-    item_name: "게브네의 강화석",
-    item_rating: "중급",
-    item_crafting: ["금속 갑옷", "재봉", "제작의뢰"],
+    item_name: '게브네의 강화석',
+    item_rating: '중급',
+    item_crafting: ['금속 갑옷', '재봉', '제작의뢰'],
     item_description: `무기 및 장비를 강화할 때 사용되는 강화석. 
     전설의 대장장이 게브네의 이름을 따라 만들어진 강화석으로 그의 몸에서 발견된 강화의 원천이라는 소문도 있다. 강화석 자체가 대장장이의 의지를 담은 듯 하나의 강화석으로도 모든 장비를 강화할 수 있다고 한다. 
     
@@ -418,9 +418,9 @@ export const materials_info: BasicItemInfoType[] = [
     아이템 강화는 퍼거스에게 할 수 있다. 15강 이상의 장비에는 사용할 수 없습니다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.`,
   },
   {
-    item_name: "+ 게브네의 강화석",
-    item_rating: "중급",
-    item_crafting: ["금속 무기", "세공"],
+    item_name: '+ 게브네의 강화석',
+    item_rating: '중급',
+    item_crafting: ['금속 무기', '세공'],
     item_description: `무기 및 장비를 강화할 때 사용되는 강화석. 
     전설의 대장장이 게브네의 이름을 따라 만들어진 강화석으로 그의 몸에서 발견된 강화의 원천이라는 소문도 있다. 강화석 자체가 대장장이의 의지를 담은 듯 하나의 강화석으로도 모든 장비를 강화할 수 있다고 한다. 
     
@@ -429,76 +429,76 @@ export const materials_info: BasicItemInfoType[] = [
     아이템 강화는 퍼거스에게 할 수 있다. 15강 이상의 장비에는 사용할 수 없습니다. 아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.`,
   },
   {
-    item_name: "오르나 방어구 강화 촉진제: 가슴, 다리",
-    item_rating: "중급",
+    item_name: '오르나 방어구 강화 촉진제: 가슴, 다리',
+    item_rating: '중급',
     item_crafting: [],
     item_description: `오르나 방어구 중 가슴과 다리 방어구를 강화할 때 사용하면 강화 성공 확률이 10%만큼 증가합니다. 11강 이상 강화 시도 시에 사용할 수 있습니다. 상급 전문기술을 가진 제작자가 제작할 수 있습니다.`,
   },
   {
-    item_name: "오르나 방어구 강화 촉진제: 머리, 손, 발",
-    item_rating: "중급",
+    item_name: '오르나 방어구 강화 촉진제: 머리, 손, 발',
+    item_rating: '중급',
     item_crafting: [],
     item_description: `오르나 방어구 중 머리, 손, 발 방어구를 강화할 때 사용하면 강화 성공 확률이 10%만큼 증가합니다. 11강 이상 강화 시도 시에 사용할 수 있습니다. 상급 전문기술을 가진 제작자가 제작할 수 있습니다.`,
   },
   {
-    item_name: "오르나 무기 강화 촉진제",
-    item_rating: "중급",
+    item_name: '오르나 무기 강화 촉진제',
+    item_rating: '중급',
     item_crafting: [],
     item_description: `오르나 무기를 강화할 때 사용하면 강화 성공 확률이 10%만큼 증가합니다. 11강 이상 강화 시도 시에 사용할 수 있습니다. 상급 전문기술을 가진 제작자가 제작할 수 있습니다.`,
   },
   {
-    item_name: "신비의 힘: 파편",
-    item_rating: "고급",
+    item_name: '신비의 힘: 파편',
+    item_rating: '고급',
     item_crafting: [],
     item_description: `110, 115레벨 액세서리의 봉인된 힘을 분해하면 얻을 수 있는 아이템. 게브네의 강화석과 강화의 룬 제작 시 재료로 사용됩니다.`,
   },
   {
-    item_name: "불안정한 강화의 룬",
-    item_rating: "중급",
+    item_name: '불안정한 강화의 룬',
+    item_rating: '중급',
     item_crafting: [],
     item_description: `아이템 강화시 재료로 사용하면 실패로 인한 페널티를 막을 수 있다. 강화 단계 하락 이상의 페널티를 무릅쓸 때만 사용할 수 있다. 불안정하여 성공하더라도 룬이 사라진다. 11강 이상 시도시에는 사용할 수 없다.
     아이템 강화는 퍼거스에게 할 수 있다. 아이템 강화 시도 시 단계별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.`,
   },
   {
-    item_name: "힘이 주입된 뉴에라의 광석",
-    item_rating: "고급",
-    item_crafting: ["세공"],
+    item_name: '힘이 주입된 뉴에라의 광석',
+    item_rating: '고급',
+    item_crafting: ['세공'],
     item_description: `뉴에라의 광석에 와드네의 흔적을 주입해서 만들어낸, 힘이 깃도는 광석.
     ※ 브린에게서 제작할 수 있습니다.`,
   },
   {
-    item_name: "힘이 주입된 뉴에라의 옷감",
-    item_rating: "고급",
-    item_crafting: ["세공"],
+    item_name: '힘이 주입된 뉴에라의 옷감',
+    item_rating: '고급',
+    item_crafting: ['세공'],
     item_description: `뉴에라의 옷감에 와드네의 흔적을 주입해서 만들어낸, 힘이 깃도는 옷감.
     ※ 브린에게서 제작할 수 있습니다.`,
   },
   {
-    item_name: "힘이 주입된 뉴에라의 가죽",
-    item_rating: "고급",
-    item_crafting: ["세공"],
+    item_name: '힘이 주입된 뉴에라의 가죽',
+    item_rating: '고급',
+    item_crafting: ['세공'],
     item_description: `뉴에라의 가죽에 와드네의 흔적을 주입해서 만들어낸, 힘이 깃도는 가죽.
     ※ 브린에게서 제작할 수 있습니다.`,
   },
   {
-    item_name: "힘이 주입된 뉴에라의 오브",
-    item_rating: "고급",
-    item_crafting: ["세공"],
+    item_name: '힘이 주입된 뉴에라의 오브',
+    item_rating: '고급',
+    item_crafting: ['세공'],
     item_description: `뉴에라의 오브에 와드네의 흔적을 주입해서 만들어낸, 힘이 깃도는 오브.
     ※ 브린에게서 제작할 수 있습니다.`,
   },
   {
-    item_name: "와드네의 흔적",
-    item_rating: "고급",
-    item_crafting: ["제작 의뢰"],
+    item_name: '와드네의 흔적',
+    item_rating: '고급',
+    item_crafting: ['제작 의뢰'],
     item_description: `와드네의 기운이 강력히 깃들어 있는 흔적.
     ※ 붉은 달의 기운 지역과 기간 미션의 보상으로 획득할 수 있습니다.
     ※ 브린에게 힘이 깃든 뉴에라의 재료 제작을 의뢰할 때 사용됩니다.`,
   },
   {
-    item_name: "미지의 조각 1단계",
-    item_rating: "레어",
-    item_crafting: ["제작 의뢰"],
+    item_name: '미지의 조각 1단계',
+    item_rating: '레어',
+    item_crafting: ['제작 의뢰'],
     item_description: `모든 능력이 한계에 도달한 무기에 추가 능력을 부여할 수 있는 재료. 무기의 공격력 제한 해제할 때 재료로 사용됩니다. 아직 모든 능력이 한계에 도달하지 않은 무기의 경우 추가 능력을 부여할 수 없습니다.
     
     [주의사항]
@@ -507,9 +507,9 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 13단계 이상 강화된 장비에만 공격력 제한 해제를 진행할 수 있습니다.`,
   },
   {
-    item_name: "투쟁의 조각 1단계",
-    item_rating: "레어",
-    item_crafting: ["제작 의뢰"],
+    item_name: '투쟁의 조각 1단계',
+    item_rating: '레어',
+    item_crafting: ['제작 의뢰'],
     item_description: `모든 능력이 한계에 도달한 방어구에 추가 능력을 부여할 수 있는 재료. 방어구의 공격력 제한 해제할 때 재료로 사용됩니다. 아직 모든 능력이 한계에 도달하지 않은 방어구의 경우 추가 능력을 부여할 수 없습니다.
     
     [주의사항]
@@ -518,9 +518,9 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 13단계 이상 강화된 장비에만 공격력 제한 해제를 진행할 수 있습니다.`,
   },
   {
-    item_name: "미지의 조각 2단계",
-    item_rating: "레어",
-    item_crafting: ["제작 의뢰"],
+    item_name: '미지의 조각 2단계',
+    item_rating: '레어',
+    item_crafting: ['제작 의뢰'],
     item_description: `모든 능력이 한계에 도달한 무기에 추가 능력을 부여할 수 있는 재료. 무기의 공격력 제한 해제할 때 재료로 사용됩니다. 아직 모든 능력이 한계에 도달하지 않은 무기의 경우 추가 능력을 부여할 수 없습니다.
     
     [주의사항]
@@ -529,9 +529,9 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 13단계 이상 강화된 장비에만 공격력 제한 해제를 진행할 수 있습니다.`,
   },
   {
-    item_name: "투쟁의 조각 2단계",
-    item_rating: "레어",
-    item_crafting: ["제작 의뢰"],
+    item_name: '투쟁의 조각 2단계',
+    item_rating: '레어',
+    item_crafting: ['제작 의뢰'],
     item_description: `모든 능력이 한계에 도달한 방어구에 추가 능력을 부여할 수 있는 재료. 방어구의 공격력 제한 해제할 때 재료로 사용됩니다. 아직 모든 능력이 한계에 도달하지 않은 방어구의 경우 추가 능력을 부여할 수 없습니다.
     
     [주의사항]
@@ -540,9 +540,9 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 13단계 이상 강화된 장비에만 공격력 제한 해제를 진행할 수 있습니다.`,
   },
   {
-    item_name: "미지의 조각 3단계",
-    item_rating: "레어",
-    item_crafting: ["제작 의뢰"],
+    item_name: '미지의 조각 3단계',
+    item_rating: '레어',
+    item_crafting: ['제작 의뢰'],
     item_description: `모든 능력이 한계에 도달한 무기에 추가 능력을 부여할 수 있는 재료. 무기의 공격력 제한 해제할 때 재료로 사용됩니다. 아직 모든 능력이 한계에 도달하지 않은 무기의 경우 추가 능력을 부여할 수 없습니다.
     
     [주의사항]
@@ -550,9 +550,9 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 13단계 이상 강화된 장비에만 공격력 제한 해제를 진행할 수 있습니다.`,
   },
   {
-    item_name: "투쟁의 조각 3단계",
-    item_rating: "레어",
-    item_crafting: ["제작 의뢰"],
+    item_name: '투쟁의 조각 3단계',
+    item_rating: '레어',
+    item_crafting: ['제작 의뢰'],
     item_description: `모든 능력이 한계에 도달한 방어구에 추가 능력을 부여할 수 있는 재료. 방어구의 공격력 제한 해제할 때 재료로 사용됩니다. 아직 모든 능력이 한계에 도달하지 않은 방어구의 경우 추가 능력을 부여할 수 없습니다.
     
     [주의사항]
@@ -560,108 +560,108 @@ export const materials_info: BasicItemInfoType[] = [
     ※ 13단계 이상 강화된 장비에만 공격력 제한 해제를 진행할 수 있습니다.`,
   },
   {
-    item_name: "뉴에라의 옷감",
-    item_rating: "일반",
-    item_crafting: ["세공", "제작 의뢰"],
+    item_name: '뉴에라의 옷감',
+    item_rating: '일반',
+    item_crafting: ['세공', '제작 의뢰'],
     item_description: `뉴에라의 옷감. 낙원의 옷감보다 좋은 재질이다.
     ※ 전투 중에 구하거나 클로다 또는 니아브에게서 제작할 수 있다.`,
   },
   {
-    item_name: "뉴에라의 광석",
-    item_rating: "일반",
-    item_crafting: ["세공", "제작 의뢰"],
+    item_name: '뉴에라의 광석',
+    item_rating: '일반',
+    item_crafting: ['세공', '제작 의뢰'],
     item_description: `뉴에라의 광석. 낙원석보다 좋은 재질이다.
     ※ 채광 또는 전투 중에 구하거나 퍼거스 또는 바락스에게서 제작할 수 있다.`,
   },
   {
-    item_name: "뉴에라의 오브",
-    item_rating: "일반",
-    item_crafting: ["세공", "제작 의뢰"],
+    item_name: '뉴에라의 오브',
+    item_rating: '일반',
+    item_crafting: ['세공', '제작 의뢰'],
     item_description: `뉴에라의 오브. 낙원의 오브보다 더욱 빛나는 영롱한 구체.
     ※ 루미나리 채집으로 구하거나 브린에게서 제작할 수 있다.`,
   },
   {
-    item_name: "뉴에라의 가죽",
-    item_rating: "일반",
-    item_crafting: ["세공", "제작 의뢰"],
+    item_name: '뉴에라의 가죽',
+    item_rating: '일반',
+    item_crafting: ['세공', '제작 의뢰'],
     item_description: `뉴에라의 가죽. 낙원의 가죽보다 좋은 재질이다.
     ※ 전투 중에 구하거나 커스티에게서 제작할 수 있다.`,
   },
   {
-    item_name: "마법 가루",
-    item_rating: "일반",
-    item_crafting: ["제작 의뢰"],
+    item_name: '마법 가루',
+    item_rating: '일반',
+    item_crafting: ['제작 의뢰'],
     item_description: `신비롭게 빛나고 있는 가루. 마법의 힘이 담겨 있다. 인챈트의 재료로 쓰인다.`,
   },
   {
-    item_name: "축복받은 마법 가루",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "제작 의뢰"],
+    item_name: '축복받은 마법 가루',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '제작 의뢰'],
     item_description: `찬란하게 빛나고 있는 가루. 강한 마법의 힘이 담겨 있다. 인챈트의 재료로 쓰인다.`,
   },
   {
-    item_name: "정령의 흔적",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '정령의 흔적',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `정령의 힘이 미약하게 느껴진다.`,
   },
   {
-    item_name: "불의 흔적",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '불의 흔적',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `불의 기운이 미약하게 느껴진다.`,
   },
   {
-    item_name: "대지의 흔적",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '대지의 흔적',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `대지의 기운이 미약하게 느껴진다.`,
   },
   {
-    item_name: "냉기의 흔적",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '냉기의 흔적',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `냉기의 기운이 미약하게 느껴진다.`,
   },
   {
-    item_name: "생명의 흔적",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '생명의 흔적',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `생명의 기운이 미약하게 느껴진다.`,
   },
   {
-    item_name: "고급 철광석",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '고급 철광석',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `고급 철광석. 상당한 양의 철을 얻을 수 있다.
     전투 중에 구할 수 있다.`,
   },
   {
-    item_name: "최고급 철광석",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "금속 무기", "재봉", "세공", "제작 의뢰"],
+    item_name: '최고급 철광석',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '금속 무기', '재봉', '세공', '제작 의뢰'],
     item_description: `최고급 철광석. 순도가 높은 철을 얻을 수 있다.
     전투 중에 구할 수 있다.`,
   },
   {
-    item_name: "마나 더스트",
-    item_rating: "초급",
-    item_crafting: ["제작 의뢰"],
+    item_name: '마나 더스트',
+    item_rating: '초급',
+    item_crafting: ['제작 의뢰'],
     item_description: `황금 가루처럼 빛나는 가루 덩어리. 마나 폭발에 영향을 받아 생겨난 위습들에게서만 발견된다.
     위습과의 전투 중에 구할 수 있다.
     상위 강화석으로 업그레이드할 때에 사용하려면 브린을 찾아가 보자`,
   },
   {
-    item_name: "마나 리포머",
-    item_rating: "초급",
-    item_crafting: ["제작 의뢰"],
+    item_name: '마나 리포머',
+    item_rating: '초급',
+    item_crafting: ['제작 의뢰'],
     item_description: `찬란하게 빛나는 가루. 마나의 기운을 듬뿍 담고 있어, 여러 용도로 활용될 수 있을 것 같다.
     고급 강화석을 최고급 강화석으로 업그레이드할 때에도 사용된다고 한다.`,
   },
   {
-    item_name: "최고급 강화석",
-    item_rating: "중급",
-    item_crafting: ["제작 의뢰"],
+    item_name: '최고급 강화석',
+    item_rating: '중급',
+    item_crafting: ['제작 의뢰'],
     item_description: `착용 레벨 80이하의 무기 및 장비를 강화할 때 사용되는 강화석.
     강한 공격성을 보이는 자들을 처치했을 때 얻을 수 있다. 그들의 몸에서 이런 것들이 발견되는 이유는 밝혀지지 않았으나, 광석을 이루는 성분의 밀도가 높을 수록 공격성이 더 강해진다고 알려져있다.
     
@@ -670,57 +670,57 @@ export const materials_info: BasicItemInfoType[] = [
   },
 
   {
-    item_name: "단단한 계승 원석",
-    item_rating: "레어",
+    item_name: '단단한 계승 원석',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "매끈한 계승 원석",
-    item_rating: "레어",
+    item_name: '매끈한 계승 원석',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 방어구를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "예리한 계승 원석",
-    item_rating: "레어",
+    item_name: '예리한 계승 원석',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "안정된 계승 원석",
-    item_rating: "레어",
+    item_name: '안정된 계승 원석',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "가벼운 계승 원석",
-    item_rating: "레어",
+    item_name: '가벼운 계승 원석',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "오롯한 계승 원석",
-    item_rating: "레어",
+    item_name: '오롯한 계승 원석',
+    item_rating: '레어',
     item_crafting: [],
     item_description: `오르나 무기를 제작하거나 복원 재련을 할 때 필요한 재료.
     제작은 전문기술 혹은 콜헨 마을 퍼거스를 통하여 제작할 수 있습니다.
     해당 아이템은 전문기술로 분해가 가능합니다.`,
   },
   {
-    item_name: "낙원의 강화석",
-    item_rating: "중급",
-    item_crafting: ["제작의뢰"],
+    item_name: '낙원의 강화석',
+    item_rating: '중급',
+    item_crafting: ['제작의뢰'],
     item_description: `착용 레벨 100이하의 무기 및 장비를 강화할 때 사용되는 강화석.
     강한 공격성을 보이는 자들을 처치했을 때 얻을 수 있다. 그들의 몸에서 이런 것들이 발견되는 이유는 밝혀지지 않았으나, 광석을 이루는 성분의 밀도가 높을 수록 공격성이 더 강해진다고 알려져있다.
     
@@ -728,49 +728,49 @@ export const materials_info: BasicItemInfoType[] = [
     아이템 강화 시도 시 단계 별로 성공 확률이 각각 다르며, 시도 단계가 높아질수록 성공 확률은 낮아진다.`,
   },
   {
-    item_name: "생명의 에르그 결정",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "재봉", "세공", "제작의뢰"],
+    item_name: '생명의 에르그 결정',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '재봉', '세공', '제작의뢰'],
     item_description: `생명의 정수가 담긴 에르그 결정. 생명력 포션의 재료로 쓰인다. 브린이라면 이 에르그 결정으로 포션을 제작할 수 있을 것 같다.`,
   },
   {
-    item_name: "빈 병",
-    item_rating: "일반",
-    item_crafting: ["제작의뢰"],
+    item_name: '빈 병',
+    item_rating: '일반',
+    item_crafting: ['제작의뢰'],
     item_description: `각종 포션을 담을 수 있도록 만들어진 병. 액체는 무엇이든 담을 수 있다.
     콜헨의 브린과 아일리에, 로체스트의 자레스, 모르반의 엠마와 엘라한에게 구입할 수 있다.`,
   },
   {
-    item_name: "상급 생명력 포션",
-    item_rating: "일반",
+    item_name: '상급 생명력 포션',
+    item_rating: '일반',
     item_crafting: [],
     item_description: `1000의 생명력을 즉시 회복시키는 포션.
     선착장의 가판대에서 구입할 수 있다.
     마법 연구실의 브린을 통해 제작할 수도 있다.`,
   },
   {
-    item_name: "고급 생명력 포션",
-    item_rating: "일반",
+    item_name: '고급 생명력 포션',
+    item_rating: '일반',
     item_crafting: [],
     item_description: `1600의 생명력을 즉시 회복시키는 포션.`,
   },
   {
-    item_name: "최고급 생명력 포션",
-    item_rating: "일반",
+    item_name: '최고급 생명력 포션',
+    item_rating: '일반',
     item_crafting: [],
     item_description: `2200의 생명력을 즉시 회복시키는 포션.`,
   },
   {
-    item_name: "오브",
-    item_rating: "초급",
-    item_crafting: ["금속 갑옷", "세공", "제작의뢰"],
+    item_name: '오브',
+    item_rating: '초급',
+    item_crafting: ['금속 갑옷', '세공', '제작의뢰'],
     item_description: `약하게 빛을 내고 있는 영롱한 구체. 두 개의 달빛을 받아 자란다고 알려져있다.
     하얗게 빛나고 있는 루미나리에서 채취할 수 있다.
     신비한 기운이 장비나 무기 제작에 도움을 줄 수 있을 것 같다.`,
   },
   {
-    item_name: "마법력 엘릭서",
-    item_rating: "일반",
+    item_name: '마법력 엘릭서',
+    item_rating: '일반',
     item_crafting: [],
     item_description: `마법 가루에서 마법력을 추출해 만든 마법력 엘릭서. 1-10브린(마법력 단위)의 마법력이 담겨 있습니다.
     추출한 마법력은 매우 불안정하여 공기 중에서 금세 날아가기 때문에 주의가 필요합니다.
@@ -780,8 +780,8 @@ export const materials_info: BasicItemInfoType[] = [
     확률 정보는 [홈페이지 > 게임 가이드 > 확률 안내]에서 확인할 수 있습니다.`,
   },
   {
-    item_name: "생명의 마법력 엘릭서",
-    item_rating: "초급",
+    item_name: '생명의 마법력 엘릭서',
+    item_rating: '초급',
     item_crafting: [],
     item_description: `생명의 에르그 결정에서 마법력을 추출해 만든 마법력 엘릭서. 3-5브린(마법력 단위)의 마법력이 담겨 있습니다.
     추출한 마법력은 매우 불안정하여 공기 중에서 금세 날아가기 때문에 주의가 필요합니다.
@@ -791,8 +791,8 @@ export const materials_info: BasicItemInfoType[] = [
     확률 정보는 [홈페이지 > 게임 가이드 > 확률 안내]에서 확인할 수 있습니다.`,
   },
   {
-    item_name: "축복의 마법력 엘릭서",
-    item_rating: "초급",
+    item_name: '축복의 마법력 엘릭서',
+    item_rating: '초급',
     item_crafting: [],
     item_description: `마법 가루, 축복받은 마법 가루에서 마법력을 추출해 만든 마법력 엘릭서. 10-50브린(마법력 단위)의 마법력이 담겨 있습니다.
     추출한 마법력은 매우 불안정하여 공기 중에서 금세 날아가기 때문에 주의가 필요합니다.
@@ -802,9 +802,9 @@ export const materials_info: BasicItemInfoType[] = [
     확률 정보는 [홈페이지 > 게임 가이드 > 확률 안내]에서 확인할 수 있습니다.`,
   },
   {
-    item_name: "축복받은 마법 가루",
-    item_rating: "일반",
-    item_crafting: ["금속 갑옷", "세공", "제작의뢰"],
+    item_name: '축복받은 마법 가루',
+    item_rating: '일반',
+    item_crafting: ['금속 갑옷', '세공', '제작의뢰'],
     item_description: `찬란하게 빛나고 있는 가루. 강한 마법의 힘이 담겨 있다. 인챈트의 재료로 쓰인다.`,
   },
 ];

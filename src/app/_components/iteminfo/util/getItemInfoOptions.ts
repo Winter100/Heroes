@@ -1,16 +1,16 @@
-import { NewEquipmentType } from "@/app/_type/equipmentType";
-import { getOption } from "../../preview/utils/getOption";
-import { getUsableItemEnchantList } from "../../preview/utils/getUsableItemEnchantList";
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import { getOption } from '../../preview/utils/getOption';
+import { getUsableItemEnchantList } from '../../preview/utils/getUsableItemEnchantList';
 import {
   prefix_enchant_name_list,
   prefix_enchant_options,
   suffix_enchant_name_list,
   suffix_enchant_options,
-} from "@/app/_constant/enchant";
-import { findMatchingItem } from "../../preview/utils/findMatchingItem";
-import { beforeAndAfterStatsType } from "@/app/_type/previewType";
-import { getUsableItemInfusionList } from "../../preview/utils/getUsableItemInfusionList";
-import { preview_infusion } from "@/app/_constant/infusions";
+} from '@/app/_constant/enchant';
+import { findMatchingItem } from '../../preview/utils/findMatchingItem';
+import { beforeAndAfterStatsType } from '@/app/_type/previewType';
+import { getUsableItemInfusionList } from '../../preview/utils/getUsableItemInfusionList';
+import { preview_infusion } from '@/app/_constant/infusions';
 
 export const getItemInfoOptions = ({
   item_option,
@@ -23,34 +23,34 @@ export const getItemInfoOptions = ({
   const infusion_name =
     getOption<{ stat_name: string }>(
       item_option,
-      "power_infusion_use_preset_no",
-      "power_infusion_preset_1",
-      "power_infusion_preset_2",
-    )?.stat_name || "";
+      'power_infusion_use_preset_no',
+      'power_infusion_preset_1',
+      'power_infusion_preset_2'
+    )?.stat_name || '';
 
   const infusion_value =
     getOption<{ stat_value: string }>(
       item_option,
-      "power_infusion_use_preset_no",
-      "power_infusion_preset_1",
-      "power_infusion_preset_2",
-    )?.stat_value || "";
+      'power_infusion_use_preset_no',
+      'power_infusion_preset_1',
+      'power_infusion_preset_2'
+    )?.stat_value || '';
 
   const used_prefix_enchant_name =
     getOption<string>(
       item_option,
-      "prefix_enchant_use_preset_no",
-      "prefix_enchant_preset_1",
-      "prefix_enchant_preset_2",
-    ) || "";
+      'prefix_enchant_use_preset_no',
+      'prefix_enchant_preset_1',
+      'prefix_enchant_preset_2'
+    ) || '';
 
   const used_suffix_enchant_name =
     getOption<string>(
       item_option,
-      "suffix_enchant_use_preset_no",
-      "suffix_enchant_preset_1",
-      "suffix_enchant_preset_2",
-    ) || "";
+      'suffix_enchant_use_preset_no',
+      'suffix_enchant_preset_1',
+      'suffix_enchant_preset_2'
+    ) || '';
 
   const level = item_option?.enhancement_level;
   const prefix_enchant_name_1 = item_option?.prefix_enchant_preset_1;
@@ -79,28 +79,28 @@ export const getItemInfoOptions = ({
 
   const usableInfusionList = getUsableItemInfusionList(
     preview_infusion,
-    item_equipment_slot_name,
+    item_equipment_slot_name
   );
 
-  const existing_infusion = `${infusion_name ?? ""} ${infusion_value ?? ""}`;
+  const existing_infusion = `${infusion_name ?? ''} ${infusion_value ?? ''}`;
   const existingInfuion = {
-    upgreadeType: "infusions",
+    upgreadeType: 'infusions',
     ...findMatchingItem(usableInfusionList, existing_infusion),
   } as beforeAndAfterStatsType;
 
   const existingPrefixEnchant = {
-    upgreadeType: "prefix",
+    upgreadeType: 'prefix',
     ...findMatchingItem(
       usablePrefixEnchantList,
-      used_prefix_enchant_name ?? "",
+      used_prefix_enchant_name ?? ''
     ),
   } as beforeAndAfterStatsType;
 
   const existingSuffixEnchant = {
-    upgreadeType: "suffix",
+    upgreadeType: 'suffix',
     ...findMatchingItem(
       usableSuffixEnchantList,
-      used_suffix_enchant_name ?? "",
+      used_suffix_enchant_name ?? ''
     ),
   } as beforeAndAfterStatsType;
 

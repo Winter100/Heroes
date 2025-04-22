@@ -1,5 +1,5 @@
-import React from "react";
-import ErrorDisplay from "./ErrorDisplay";
+import React from 'react';
+import ErrorDisplay from './ErrorDisplay';
 
 const ErrorApi = () => {
   return (

@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import Image from "next/image";
+import clsx from 'clsx';
+import Image from 'next/image';
 
 interface ItemImage {
   src: string;
@@ -11,7 +11,7 @@ const ItemImage = ({ alt, className, size = 50, ...props }: ItemImage) => {
   return (
     <div className="p-1">
       <Image
-        className={clsx("object-scale-down", className)}
+        className={clsx('object-scale-down', className)}
         width={size}
         height={size}
         alt={alt}

@@ -1,4 +1,4 @@
-const Loading = ({ size = "5" }: { size?: string }) => {
+const Loading = ({ size = '5' }: { size?: string }) => {
   return (
     <div
       className="flex h-full w-full items-center justify-center"

@@ -1,7 +1,7 @@
-import { skillDescription } from "@/app/_constant/character/skill/skill";
-import { getImageByName } from "@/app/_utils/getImageByName";
-import Image from "next/image";
-import Item from "../common/item/Item";
+import { skillDescription } from '@/app/_constant/character/skill/skill';
+import { getImageByName } from '@/app/_utils/getImageByName';
+import Image from 'next/image';
+import Item from '../common/item/Item';
 
 interface SkilDetailCardItemProps {
   skillName: string;

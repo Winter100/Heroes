@@ -1,7 +1,7 @@
-import { create } from "zustand";
-import { MergedCharacter } from "../_type/characterType";
-import { setWaitingRoomCharactersInfo } from "../_utils/localStorage";
-import { sortCharacters } from "../_utils/sortCharacters";
+import { create } from 'zustand';
+import { MergedCharacter } from '../_type/characterType';
+import { setWaitingRoomCharactersInfo } from '../_utils/localStorage';
+import { sortCharacters } from '../_utils/sortCharacters';
 
 type State = {
   characters: MergedCharacter[];
@@ -14,7 +14,7 @@ type Action = {
     selectedRankTitle?: {
       titleName: string;
       ascending: boolean;
-    } | null,
+    } | null
   ) => void;
   setDropCharacterList: (start: number, end: number) => void;
   setSortCharacterList: (title: string, ascending: boolean) => void;
@@ -33,7 +33,7 @@ export const useCharacterStore = create<State & Action>((set) => {
           const newCharacters = [...state.characters];
 
           const existingCharacterIndex = newCharacters.findIndex(
-            (character) => character.name === characterData.name,
+            (character) => character.name === characterData.name
           );
 
           if (existingCharacterIndex > -1) {
@@ -45,16 +45,16 @@ export const useCharacterStore = create<State & Action>((set) => {
           const updatedCharacterList = sortCharacters(
             selectedRankTitle?.titleName,
             selectedRankTitle?.ascending,
-            newCharacters,
+            newCharacters
           );
 
           return { characters: updatedCharacterList.slice(0, 8) };
         } else {
           const updatedCharacterList = state?.characters?.some(
-            (c) => c.name === characterData.name,
+            (c) => c.name === characterData.name
           )
             ? state.characters.map((c) =>
-                c.name === characterData.name ? characterData : c,
+                c.name === characterData.name ? characterData : c
               )
             : [...state.characters, characterData];
           return { characters: updatedCharacterList.slice(0, 8) };
@@ -91,7 +91,7 @@ export const useCharacterStore = create<State & Action>((set) => {
         const updatedCharacterList = sortCharacters(
           title,
           ascending,
-          characterList,
+          characterList
         );
         setWaitingRoomCharactersInfo(updatedCharacterList);
         return { characters: updatedCharacterList };
@@ -102,7 +102,7 @@ export const useCharacterStore = create<State & Action>((set) => {
       set((state) => {
         const characters = [...state.characters];
         const newCharacters = characters.filter(
-          (c) => !nameList?.includes(c.name),
+          (c) => !nameList?.includes(c.name)
         );
         setWaitingRoomCharactersInfo(newCharacters);
         cllaback();

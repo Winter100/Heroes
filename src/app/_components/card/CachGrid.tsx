@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { CachItemsType } from "@/app/_type/equipmentType";
-import ItemImage from "../iteminfo/info/ItemImage";
-import CachColors from "./CachColors";
+import { CachItemsType } from '@/app/_type/equipmentType';
+import ItemImage from '../iteminfo/info/ItemImage';
+import CachColors from './CachColors';
 
 const avatarSlot = [
-  [null, "Avatar_Helm", "Avatar_Rear"],
-  ["Avatar_Weapon", "Avatar_Tunic", null],
+  [null, 'Avatar_Helm', 'Avatar_Rear'],
+  ['Avatar_Weapon', 'Avatar_Tunic', null],
   // ["Avatar_Weapon", "Avatar_Tunic", "(Unknown)"],
-  [null, "Avatar_Pants", "Avatar_Gloves"],
-  ["Avatar_Tail", "Avatar_Boots", null],
+  [null, 'Avatar_Pants', 'Avatar_Gloves'],
+  ['Avatar_Tail', 'Avatar_Boots', null],
 ];
 
 const cachSlot = [
-  ["Right Epaulet", "Hair", "Left Epaulet"],
-  ["FacePainting", "Lens", "Scar"],
-  ["Inner Armor", "MakeUp", null],
-  ["Body Shape", "BodyPainting", "Badge"],
+  ['Right Epaulet', 'Hair', 'Left Epaulet'],
+  ['FacePainting', 'Lens', 'Scar'],
+  ['Inner Armor', 'MakeUp', null],
+  ['Body Shape', 'BodyPainting', 'Badge'],
 ];
 
 const CachGrid = ({
@@ -24,9 +24,9 @@ const CachGrid = ({
   filterValue,
 }: {
   items: CachItemsType[];
-  filterValue: "아바타" | "캐쉬";
+  filterValue: '아바타' | '캐쉬';
 }) => {
-  const slot = filterValue === "아바타" ? avatarSlot : cachSlot;
+  const slot = filterValue === '아바타' ? avatarSlot : cachSlot;
   return (
     <ul className="grid h-full w-full grid-cols-3 grid-rows-4 items-center justify-items-center gap-2">
       {slot.flat().map((slot, index) => {
@@ -41,7 +41,7 @@ const CachGrid = ({
           );
 
         const item = items.find(
-          (item) => item.item_equipment_slot_name === slot,
+          (item) => item.item_equipment_slot_name === slot
         );
         return (
           <li
@@ -67,7 +67,7 @@ const CachGrid = ({
                       </div>
                     </div>
                     <CachColors
-                      isWearing={!item.item_name.includes("미착용")}
+                      isWearing={!item.item_name.includes('미착용')}
                       colors={item.item_option.cash_item_color}
                     />
                   </div>

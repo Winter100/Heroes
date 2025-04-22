@@ -1,10 +1,10 @@
-import axios from "axios";
-import { Basic } from "../_type/characterType";
+import axios from 'axios';
+import { Basic } from '../_type/characterType';
 
 export const getBasic = async (ocid: string) => {
   try {
     const response = await axios.get(
-      `api/getCharacterBasic?ocid=${encodeURIComponent(ocid)}`,
+      `api/getCharacterBasic?ocid=${encodeURIComponent(ocid)}`
     );
 
     const data: Basic = await response.data;

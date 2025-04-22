@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import BeforeAndAfter from "../common/beforeAndAfter/BeforeAndAfter";
-import Row from "../layout/Row";
-import { PrviewItemProps } from "@/app/_type/previewType";
-import ItemTooltip from "../tooltip/ItemTooltip";
-import PreviewModal from "../preview/menu/PreviewModal";
-import { getItemInfoOptions } from "../iteminfo/util/getItemInfoOptions";
-import OneGrindingDialog from "../dialog/OneGrindingDialog";
-import { memo } from "react";
+import BeforeAndAfter from '../common/beforeAndAfter/BeforeAndAfter';
+import Row from '../layout/Row';
+import { PrviewItemProps } from '@/app/_type/previewType';
+import ItemTooltip from '../tooltip/ItemTooltip';
+import PreviewModal from '../preview/menu/PreviewModal';
+import { getItemInfoOptions } from '../iteminfo/util/getItemInfoOptions';
+import OneGrindingDialog from '../dialog/OneGrindingDialog';
+import { memo } from 'react';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import ItemImage from "../iteminfo/info/ItemImage";
+} from '@/components/ui/popover';
+import ItemImage from '../iteminfo/info/ItemImage';
 
 const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
   const itemName = {
-    name: item.item_name ?? "",
-    level: item?.item_option?.enhancement_level ?? "",
+    name: item.item_name ?? '',
+    level: item?.item_option?.enhancement_level ?? '',
   };
 
   const {
@@ -101,7 +101,7 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>접두</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
-            {beforePrefixEnchantName || ""}
+            {beforePrefixEnchantName || ''}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After>
             {usablePrefixEnchantList?.length >= 1 && (
@@ -121,7 +121,7 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
         {/* <BeforeAndAfter.Title>접미</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
-            {beforeSuffixEnchantName || ""}
+            {beforeSuffixEnchantName || ''}
           </BeforeAndAfter.Before>
           <BeforeAndAfter.After>
             {usableSuffixEnchantList?.length >= 1 && (
@@ -142,4 +142,4 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
 
 export default PreviewItem;
 
-PreviewItem.displayName = "PreviewItem";
+PreviewItem.displayName = 'PreviewItem';

@@ -18,7 +18,7 @@ const MarketPlaceItem = (props: MarKetPlaceItemData) => {
       <th className="font-normal">{props?.rank}</th>
       <th className="font-normal">{props?.cairde_name}</th>
       <th className="font-normal">
-        {"buy_gold" in props
+        {'buy_gold' in props
           ? `${props?.buy_gold.toLocaleString()}`
           : `${props?.sell_gold.toLocaleString()}`}
       </th>

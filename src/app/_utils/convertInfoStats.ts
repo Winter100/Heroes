@@ -1,31 +1,31 @@
-import { convertItemNameBySlot } from "../_components/iteminfo/util/convertItemNameBySlot";
-import { getItemInfoOptions } from "../_components/iteminfo/util/getItemInfoOptions";
-import { mergeStats } from "../_components/preview/utils/someStats";
-import { itemInfoMap } from "../_constant/items/item_map";
-import { NewEquipmentType } from "../_type/equipmentType";
-import { getQualityStats } from "./getQualityStat";
-import { convertLevel } from "./getStatsByLevel";
+import { convertItemNameBySlot } from '../_components/iteminfo/util/convertItemNameBySlot';
+import { getItemInfoOptions } from '../_components/iteminfo/util/getItemInfoOptions';
+import { mergeStats } from '../_components/preview/utils/someStats';
+import { itemInfoMap } from '../_constant/items/item_map';
+import { NewEquipmentType } from '../_type/equipmentType';
+import { getQualityStats } from './getQualityStat';
+import { convertLevel } from './getStatsByLevel';
 
 const filterData = [
-  "공격력",
-  "마법공격력",
-  "밸런스",
-  "크리티컬",
-  "크리티컬 피해량",
-  "공격속도",
-  "힘",
-  "민첩",
-  "의지",
-  "지능",
-  "생명력",
-  "최대 생명력",
-  "방어력",
-  "파괴시 방어력",
-  "최대 스태미나",
-  "크리티컬 저항",
-  "대항력",
-  "추가피해",
-  "해제",
+  '공격력',
+  '마법공격력',
+  '밸런스',
+  '크리티컬',
+  '크리티컬 피해량',
+  '공격속도',
+  '힘',
+  '민첩',
+  '의지',
+  '지능',
+  '생명력',
+  '최대 생명력',
+  '방어력',
+  '파괴시 방어력',
+  '최대 스태미나',
+  '크리티컬 저항',
+  '대항력',
+  '추가피해',
+  '해제',
 ];
 
 export const convertInfoStat = (item: NewEquipmentType) => {
@@ -46,7 +46,7 @@ export const convertInfoStat = (item: NewEquipmentType) => {
 
   const { gradeMatch, itemName } = convertItemNameBySlot(
     item.item_name,
-    item.item_equipment_slot_name,
+    item.item_equipment_slot_name
   );
 
   const item_level = level || gradeMatch;
@@ -94,14 +94,14 @@ export const convertInfoStat = (item: NewEquipmentType) => {
     ...tuningStat,
   ])
     .filter((statName) => filterData.includes(statName.stat_name))
-    .filter((stat) => stat.stat_value.toString() !== "0");
+    .filter((stat) => stat.stat_value.toString() !== '0');
 
   const attackPower = mergedStatsOne?.find(
-    (stat) => stat.stat_name === "공격력",
+    (stat) => stat.stat_name === '공격력'
   )?.stat_value;
 
   const mergedStats = mergedStatsOne?.map((stat) => {
-    if (stat.stat_name === "마법공격력") {
+    if (stat.stat_name === '마법공격력') {
       return { ...stat, stat_value: attackPower || stat?.stat_value };
     }
     return { ...stat };

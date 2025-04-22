@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 import {
   BadgeCent,
   Book,
@@ -9,9 +9,9 @@ import {
   Search,
   Table,
   UserRoundPen,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { NavMain } from "@/components/nav-main";
+import { NavMain } from '@/components/nav-main';
 import {
   Sidebar,
   SidebarContent,
@@ -19,47 +19,47 @@ import {
   SidebarHeader,
   SidebarRail,
   SidebarSeparator,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar';
 
 const data = {
   navHome: [
     {
-      title: "홈",
-      url: "/",
+      title: '홈',
+      url: '/',
       icon: House,
     },
   ],
   navMain: [
     {
-      title: "캐릭터 조회",
-      url: "/character",
+      title: '캐릭터 조회',
+      url: '/character',
       icon: Search,
     },
     {
-      title: "캐릭터 세팅",
-      url: "/preview",
+      title: '캐릭터 세팅',
+      url: '/preview',
       icon: UserRoundPen,
     },
     {
-      title: "상한 조회",
-      url: "/raid",
+      title: '상한 조회',
+      url: '/raid',
       icon: Table,
     },
     {
-      title: "골드 거래소 조회",
-      url: "/gold",
+      title: '골드 거래소 조회',
+      url: '/gold',
       icon: BadgeCent,
     },
   ],
   navInfo: [
     {
-      title: "인챈트",
-      url: "/market/enchant",
+      title: '인챈트',
+      url: '/market/enchant',
       icon: Book,
     },
     {
-      title: "아이템 제작",
-      url: "/iteminfo",
+      title: '아이템 제작',
+      url: '/iteminfo',
       icon: Pickaxe,
     },
     // {

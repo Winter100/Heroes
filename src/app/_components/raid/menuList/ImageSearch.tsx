@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { FormEvent, useEffect, useState } from "react";
-import { CiImageOn } from "react-icons/ci";
+import Image from 'next/image';
+import { FormEvent, useEffect, useState } from 'react';
+import { CiImageOn } from 'react-icons/ci';
 
-import { imageToName } from "@/app/_utils/imageToName";
-import { useCharacter } from "@/app/_hooks/useCharacter/useCharacter";
-import { useCharacterStore } from "@/app/_store/characterStore";
-import Input from "@/app/_components/common/Input";
-import { GoSearch } from "react-icons/go";
-import Loading from "@/app/_components/common/Loading";
-import { toast } from "react-toastify";
-import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import Button from "../../common/Button";
+import { imageToName } from '@/app/_utils/imageToName';
+import { useCharacter } from '@/app/_hooks/useCharacter/useCharacter';
+import { useCharacterStore } from '@/app/_store/characterStore';
+import Input from '@/app/_components/common/Input';
+import { GoSearch } from 'react-icons/go';
+import Loading from '@/app/_components/common/Loading';
+import { toast } from 'react-toastify';
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
+import Button from '../../common/Button';
 
 function ImageSearch() {
   const characters = useCharacterStore((state) => state.characters);
@@ -20,7 +20,7 @@ function ImageSearch() {
   const clear = useCharacterStore((state) => state.clear);
   const [pastedImage, setPastedImage] = useState<string | null>(null);
   const { handleCharacterInfo, loading } = useCharacter();
-  const [searchValue, setSearchValue] = useState<string>("");
+  const [searchValue, setSearchValue] = useState<string>('');
   const [manual, setManual] = useState(true);
   const [preview, setPreview] = useState(true);
   const [open, setOpen] = useState(false);
@@ -29,35 +29,35 @@ function ImageSearch() {
     if (pastedImage) {
       URL.revokeObjectURL(pastedImage);
     }
-    setPastedImage("");
+    setPastedImage('');
     try {
       const clipboardItems = await navigator.clipboard.read();
       for (const clipboardItem of clipboardItems) {
         for (const type of clipboardItem.types) {
-          if (type.startsWith("image/")) {
+          if (type.startsWith('image/')) {
             const blob = await clipboardItem.getType(type);
-            const imagefile = new File([blob], "clipboard-image.png", {
-              type: "image/png",
+            const imagefile = new File([blob], 'clipboard-image.png', {
+              type: 'image/png',
             });
 
             if (imagefile.size >= 51200) {
-              alert("50MB가 넘는 이미지는 사용할 수 없습니다.");
+              alert('50MB가 넘는 이미지는 사용할 수 없습니다.');
               return;
             }
             const imageUrl = URL.createObjectURL(imagefile);
             setPastedImage(imageUrl);
             const resultArray = await imageToName(imagefile); // 이름변환
             const newArr = resultArray?.slice(0, 8 - characterLength);
-            const joinString = newArr?.join(" ") ?? "";
+            const joinString = newArr?.join(' ') ?? '';
             setSearchValue(joinString);
             return;
           }
         }
       }
-      alert("이미지가 없거나 이미지 형식이 아닙니다.");
+      alert('이미지가 없거나 이미지 형식이 아닙니다.');
     } catch (err) {
-      console.error("이미지를 가져오는 데 실패했습니다:", err);
-      alert("이미지를 가져오는 데 실패했습니다.");
+      console.error('이미지를 가져오는 데 실패했습니다:', err);
+      alert('이미지를 가져오는 데 실패했습니다.');
     }
   };
 
@@ -65,7 +65,7 @@ function ImageSearch() {
     return () => {
       if (pastedImage) {
         URL.revokeObjectURL(pastedImage);
-        setPastedImage("");
+        setPastedImage('');
       }
     };
   }, [pastedImage]);
@@ -76,14 +76,14 @@ function ImageSearch() {
     clear();
 
     if (!characters || characterLength >= 8) {
-      toast.error("캐릭터는 최대 8명까지 등록 가능합니다.");
+      toast.error('캐릭터는 최대 8명까지 등록 가능합니다.');
       return;
     }
 
     const strArr = searchValue
       .trim()
-      .replace(/\s+/g, " ")
-      .split(" ")
+      .replace(/\s+/g, ' ')
+      .split(' ')
       .filter(Boolean)
       .slice(0, 8 - characterLength);
 
@@ -123,13 +123,13 @@ function ImageSearch() {
 
                   <div className="flex items-center justify-center gap-1">
                     <Button
-                      className={`h-6 w-20 text-xs ${manual ? "" : ""}`}
+                      className={`h-6 w-20 text-xs ${manual ? '' : ''}`}
                       onClick={() => setManual((pre) => !pre)}
                     >
                       설명보기
                     </Button>
                     <Button
-                      className={`h-6 w-20 text-xs ${preview ? "" : ""}`}
+                      className={`h-6 w-20 text-xs ${preview ? '' : ''}`}
                       onClick={() => setPreview((pre) => !pre)}
                     >
                       이미지보기
@@ -167,13 +167,13 @@ function ImageSearch() {
                           <p>이미지 예시</p>
                           <div className="flex flex-row gap-2">
                             <Image
-                              src={"/images/ex1.png"}
+                              src={'/images/ex1.png'}
                               width={180}
                               height={100}
                               alt="범위 예제1"
                             />
                             <Image
-                              src={"/images/ex2.png"}
+                              src={'/images/ex2.png'}
                               width={180}
                               height={100}
                               alt="범위 예제2"

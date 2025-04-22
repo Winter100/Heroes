@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { MonstersType, raidList, RaidListType } from "../_constant/raidList";
+import { create } from 'zustand';
+import { MonstersType, raidList, RaidListType } from '../_constant/raidList';
 
 type State = {
   raidList: RaidListType[];
@@ -8,7 +8,7 @@ type State = {
   raidString: {
     raidName: string;
     monsterName: string;
-    entry: "상한" | "빠른전투";
+    entry: '상한' | '빠른전투';
     image: string;
   };
 };
@@ -18,7 +18,7 @@ type Action = {
   setSelectBoss: (
     raidName: string,
     monsterName: string,
-    entry: "상한" | "빠른전투",
+    entry: '상한' | '빠른전투'
   ) => void;
   resetRaid: () => void;
 };
@@ -29,18 +29,18 @@ export const useRaidStore = create<State & Action>((set) => {
     selectedBoss: null,
     raidName: null,
     raidString: {
-      raidName: "",
-      monsterName: "",
-      entry: "빠른전투",
-      image: "/images/hereta.png",
+      raidName: '',
+      monsterName: '',
+      entry: '빠른전투',
+      image: '/images/hereta.png',
     },
     setSelectBoss: (raidName, monsterName, entry) => {
       set((state) => {
         const selectedRaid = state.raidList.find(
-          (r) => r.raid_name === raidName,
+          (r) => r.raid_name === raidName
         );
         const selectedBoss = selectedRaid?.monsters.find(
-          (m) => m.name === monsterName,
+          (m) => m.name === monsterName
         );
 
         return {
@@ -48,7 +48,7 @@ export const useRaidStore = create<State & Action>((set) => {
             raidName,
             monsterName,
             entry,
-            image: "/images/hereta.png",
+            image: '/images/hereta.png',
             // image: selectedBoss?.image ?? "/images/hereta.png",
           },
           selectedBoss,
@@ -60,10 +60,10 @@ export const useRaidStore = create<State & Action>((set) => {
         selectedBoss: null,
         raidName: null,
         raidString: {
-          raidName: "",
-          monsterName: "",
-          entry: "빠른전투",
-          image: "/images/hereta.png",
+          raidName: '',
+          monsterName: '',
+          entry: '빠른전투',
+          image: '/images/hereta.png',
         },
       });
     },

@@ -1,7 +1,7 @@
-import EnchantEffects from "../common/enchant/EnchantEffects";
-import EnchantRank from "../common/enchant/EnchantRank";
-import Item from "../common/item/Item";
-import Row from "../layout/Row";
+import EnchantEffects from '../common/enchant/EnchantEffects';
+import EnchantRank from '../common/enchant/EnchantRank';
+import Item from '../common/item/Item';
+import Row from '../layout/Row';
 
 interface ItemEnchantBoxProps {
   title: string;

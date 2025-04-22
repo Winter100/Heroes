@@ -1,5 +1,5 @@
-import Row from "../../layout/Row";
-import BeforeAndAfter from "../../common/beforeAndAfter/BeforeAndAfter";
+import Row from '../../layout/Row';
+import BeforeAndAfter from '../../common/beforeAndAfter/BeforeAndAfter';
 
 const PreviewTitle = () => {
   return (

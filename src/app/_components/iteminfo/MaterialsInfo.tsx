@@ -1,8 +1,8 @@
-import { BasicItemInfoType } from "@/app/_type/infoInfoType";
-import Item from "../common/item/Item";
-import Column from "../layout/Column";
-import Row from "../layout/Row";
-import { getImageByName } from "@/app/_utils/getImageByName";
+import { BasicItemInfoType } from '@/app/_type/infoInfoType';
+import Item from '../common/item/Item';
+import Column from '../layout/Column';
+import Row from '../layout/Row';
+import { getImageByName } from '@/app/_utils/getImageByName';
 
 const MaterialsInfo = ({
   item_crafting,
@@ -32,7 +32,7 @@ const MaterialsInfo = ({
             {item_crafting?.map((c, index) => (
               <Item.Content key={c} className="pl-1 text-xs text-gray-400">
                 {c}
-                {index < item_crafting?.length - 1 && ", "}
+                {index < item_crafting?.length - 1 && ', '}
               </Item.Content>
             ))}
           </Item.Description>

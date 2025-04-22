@@ -1,7 +1,7 @@
 import {
   prefix_enchant_name_list,
   suffix_enchant_name_list,
-} from "@/app/_constant/enchant";
+} from '@/app/_constant/enchant';
 
 const mergedEnchantSlotList = [
   ...prefix_enchant_name_list,

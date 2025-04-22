@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import TanstackProvider from "@/app/_provider/TanstackProvider";
-import ToastProvider from "@/app/_provider/ToastProvider";
+import TanstackProvider from '@/app/_provider/TanstackProvider';
+import ToastProvider from '@/app/_provider/ToastProvider';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

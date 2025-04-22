@@ -1,5 +1,5 @@
-import { InfusionGroupProps } from "@/app/_type/infusionType";
-import InfusionGrid from "./InfusionGrid";
+import { InfusionGroupProps } from '@/app/_type/infusionType';
+import InfusionGrid from './InfusionGrid';
 
 const InfusionGroup = ({
   title,

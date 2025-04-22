@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Item from "../../common/item/Item";
-import Star from "../../common/Star";
+import Image from 'next/image';
+import Item from '../../common/item/Item';
+import Star from '../../common/Star';
 
 const ItemQuality = ({ quality }: { quality: number }) => {
   return (

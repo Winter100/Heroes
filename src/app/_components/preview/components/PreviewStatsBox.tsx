@@ -1,7 +1,7 @@
-import { Stat } from "@/app/_type/previewType";
-import { ComponentProps } from "react";
+import { Stat } from '@/app/_type/previewType';
+import { ComponentProps } from 'react';
 
-interface StatsProps extends ComponentProps<"div"> {
+interface StatsProps extends ComponentProps<'div'> {
   stats: Stat[];
   statDifference?: Stat[];
   isTitle?: boolean;
@@ -33,16 +33,16 @@ const PreviewStatsBox = ({
                   (() => {
                     const statValue = Number(
                       statDifference.find((i) => i.stat_name === stat.stat_name)
-                        ?.stat_value,
+                        ?.stat_value
                     );
 
                     if (statValue > 0) {
-                      return "text-green-300";
+                      return 'text-green-300';
                     } else if (statValue < 0) {
-                      return "text-red-300";
+                      return 'text-red-300';
                     }
 
-                    return "";
+                    return '';
                   })()
                 }`}
               >
@@ -57,13 +57,13 @@ const PreviewStatsBox = ({
                   (() => {
                     const statValue = Number(
                       statDifference.find((i) => i.stat_name === stat.stat_name)
-                        ?.stat_value,
+                        ?.stat_value
                     );
 
                     if (statValue !== 0) {
                       return (
                         <p
-                          className={`${statValue >= 1 ? "text-green-300" : "text-red-300"}`}
+                          className={`${statValue >= 1 ? 'text-green-300' : 'text-red-300'}`}
                         >
                           {statValue !== null && statValue >= 0
                             ? `+${statValue}`

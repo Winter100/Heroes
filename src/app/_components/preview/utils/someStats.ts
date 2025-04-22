@@ -1,10 +1,10 @@
-import { Stat } from "@/app/_type/previewType";
+import { Stat } from '@/app/_type/previewType';
 
 export const mergeStats = (stats: Stat[]): Stat[] => {
   const mergedStats: Record<string, number> = {};
 
   for (const stat of stats) {
-    const statName = stat.stat_name === "해제 2" ? "해제" : stat.stat_name;
+    const statName = stat.stat_name === '해제 2' ? '해제' : stat.stat_name;
     const statValue = Number(stat.stat_value) || 0;
 
     mergedStats[statName] = (mergedStats[statName] || 0) + statValue;
@@ -19,7 +19,7 @@ export const mergeStats = (stats: Stat[]): Stat[] => {
 export const someStats = (
   data: Stat[],
   before: Stat[],
-  after: Stat[],
+  after: Stat[]
 ): Stat[] => {
   const mergedData = mergeStats(data);
   const mergedBefore = mergeStats(before);
@@ -29,13 +29,13 @@ export const someStats = (
 
   for (const dataItem of mergedData) {
     const beforeItem = mergedBefore.find(
-      (item) => item.stat_name === dataItem.stat_name,
+      (item) => item.stat_name === dataItem.stat_name
     );
 
-    let statValue = parseInt(String(dataItem.stat_value) || "0");
+    let statValue = parseInt(String(dataItem.stat_value) || '0');
 
     if (beforeItem) {
-      statValue -= parseInt(String(beforeItem.stat_value) || "0");
+      statValue -= parseInt(String(beforeItem.stat_value) || '0');
     }
 
     combinedStats.push({
@@ -46,13 +46,13 @@ export const someStats = (
 
   for (const dataItem of combinedStats) {
     const afterItem = mergedAfter.find(
-      (item) => item.stat_name === dataItem.stat_name,
+      (item) => item.stat_name === dataItem.stat_name
     );
 
     if (afterItem) {
       dataItem.stat_value = (
-        parseInt(String(dataItem?.stat_value) ?? "") +
-        parseInt(String(afterItem.stat_value) || "0")
+        parseInt(String(dataItem?.stat_value) ?? '') +
+        parseInt(String(afterItem.stat_value) || '0')
       ).toString();
     }
   }

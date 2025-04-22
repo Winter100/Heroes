@@ -1,5 +1,5 @@
-import { Stat } from "@/app/_type/previewType";
-import Item from "../../common/item/Item";
+import { Stat } from '@/app/_type/previewType';
+import Item from '../../common/item/Item';
 
 interface ItemInfusionProps {
   infusion1: Stat;
@@ -8,10 +8,10 @@ interface ItemInfusionProps {
 }
 
 const formatValue = (name: string, value: number | string) => {
-  if (value === undefined || value === null) return "";
+  if (value === undefined || value === null) return '';
 
   const numValue = parseInt(value.toString(), 10);
-  if (isNaN(numValue)) return "";
+  if (isNaN(numValue)) return '';
 
   return numValue > 0 ? `${name}+${numValue}` : `${name}${numValue}`;
 };
@@ -22,12 +22,12 @@ const ItemInfusion = ({
   usedNumber,
 }: ItemInfusionProps) => {
   const { stat_name: name1, stat_value: value1 } = infusion1 ?? {
-    stat_name: "",
-    stat_value: "",
+    stat_name: '',
+    stat_value: '',
   };
   const { stat_name: name2, stat_value: value2 } = infusion2 ?? {
-    stat_name: "",
-    stat_value: "",
+    stat_name: '',
+    stat_value: '',
   };
 
   return (

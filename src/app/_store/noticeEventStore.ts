@@ -1,6 +1,6 @@
-import { create } from "zustand";
-import { convertToKST } from "../_utils/convertToKST";
-import { parseKoreanDate } from "../_components/preview/utils/dateEvent";
+import { create } from 'zustand';
+import { convertToKST } from '../_utils/convertToKST';
+import { parseKoreanDate } from '../_components/preview/utils/dateEvent';
 
 export interface EventDate {
   notice_id: number;
@@ -33,10 +33,10 @@ export const useEventNoticeDateStore = create<State & Action>((set) => {
           return { eventDate: newEventDate };
         }
         const startDate = parseKoreanDate(
-          convertToKST(eventDate?.start || ""),
+          convertToKST(eventDate?.start || '')
         ).toString();
         const endDate = parseKoreanDate(
-          convertToKST(eventDate?.end || ""),
+          convertToKST(eventDate?.end || '')
         ).toString();
 
         const newEventDate = {

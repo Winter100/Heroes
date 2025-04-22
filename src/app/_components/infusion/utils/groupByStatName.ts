@@ -1,7 +1,7 @@
-import { OptionsType } from "@/app/_type/previewType";
+import { OptionsType } from '@/app/_type/previewType';
 
 export const groupByStatName = (
-  data: OptionsType,
+  data: OptionsType
 ): Record<string, OptionsType> => {
   return data.reduce((acc: Record<string, OptionsType>, curr) => {
     const baseName = curr.stat_value[0].stat_name;

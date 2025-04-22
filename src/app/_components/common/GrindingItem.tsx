@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { NewTuning_stat } from "@/app/_type/equipmentType";
-import { MouseEvent, useRef } from "react";
-import { calculateNearestProgress } from "../preview/utils/calculateNearestProgress";
+import { usePreviewStore } from '@/app/_store/previewStore';
+import { NewTuning_stat } from '@/app/_type/equipmentType';
+import { MouseEvent, useRef } from 'react';
+import { calculateNearestProgress } from '../preview/utils/calculateNearestProgress';
 
 interface GrindingItemProps extends NewTuning_stat {
   onIncrease: () => void;
@@ -31,17 +31,17 @@ const GrindingItem = ({
 
   const isMin = stat_min_value === stat_value || !isView;
   const isMax =
-    stat_name === "해제 2" || stat_name === "해제"
+    stat_name === '해제 2' || stat_name === '해제'
       ? (stat_max_value === stat_value) === isView
       : stat_max_value === stat_value;
 
   const increaseValue = Math.ceil(Number(stat_value) - Number(stat_min_value));
 
   const minPercentage = Math.ceil(
-    (Number(stat_min_value) / Number(stat_max_value)) * 100,
+    (Number(stat_min_value) / Number(stat_max_value)) * 100
   );
   const reMainPercentage = Math.ceil(
-    (Number(stat_value) / Number(stat_max_value)) * 100,
+    (Number(stat_value) / Number(stat_max_value)) * 100
   );
 
   const progressBarRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ const GrindingItem = ({
     const clickPosition = e.nativeEvent.offsetX;
 
     const newProgress = Math.ceil(
-      (Number(clickPosition) / Number(barWidth)) * 100,
+      (Number(clickPosition) / Number(barWidth)) * 100
     );
 
     if (newProgress <= minPercentage) return;
@@ -64,7 +64,7 @@ const GrindingItem = ({
     const newProgeress = calculateNearestProgress(
       percentage,
       stat_max_value,
-      stat_one_value,
+      stat_one_value
     );
 
     setProgeress(slot, stat_name, newProgeress);
@@ -72,7 +72,7 @@ const GrindingItem = ({
 
   return (
     <div
-      className={`${isView ? "text-white" : "opacity-40"} flex w-full flex-col text-sm`}
+      className={`${isView ? 'text-white' : 'opacity-40'} flex w-full flex-col text-sm`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex flex-row gap-2">
@@ -94,9 +94,9 @@ const GrindingItem = ({
             <div
               ref={progressBarRef}
               onClick={handleClick}
-              className={`${isView ? "cursor-pointer" : ""} h-2`}
+              className={`${isView ? 'cursor-pointer' : ''} h-2`}
               style={{
-                width: "100%",
+                width: '100%',
                 background: `linear-gradient(to right, 
           #047857 0%, 
           #047857 ${minPercentage}%, 
@@ -121,28 +121,28 @@ const GrindingItem = ({
             <button
               disabled={isMin}
               onClick={onMin}
-              className={`${isMin ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
+              className={`${isMin ? 'opacity-40' : 'hover:text-white'} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               Min
             </button>
             <button
               disabled={isMin}
               onClick={onDecrease}
-              className={`${isMin ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
+              className={`${isMin ? 'opacity-40' : 'hover:text-white'} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               -
             </button>
             <button
               disabled={isMax}
               onClick={onIncrease}
-              className={`${isMax ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
+              className={`${isMax ? 'opacity-40' : 'hover:text-white'} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               +
             </button>
             <button
               disabled={isMax}
               onClick={onMax}
-              className={`${isMax ? "opacity-40" : "hover:text-white"} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
+              className={`${isMax ? 'opacity-40' : 'hover:text-white'} flex h-full flex-1 items-center justify-center rounded-md border md:w-12`}
             >
               Max
             </button>

@@ -1,4 +1,4 @@
-import { calculateAccessoriesStats } from "../_components/iteminfo/util/calculateAccessoriesStats";
+import { calculateAccessoriesStats } from '../_components/iteminfo/util/calculateAccessoriesStats';
 
 type StatItem = {
   stat_name: string;
@@ -41,7 +41,7 @@ export const createAccessoriesObject = (items: Item[]) => {
         firstAttackIncrease,
         firstDefenseIncrease,
         secondAttackIncrease,
-        secondDefenseIncrease,
+        secondDefenseIncrease
       );
 
       result[name][stage] = [...base_stat, ...additionalStats];

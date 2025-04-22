@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { PreviewModalProps } from "@/app/_type/previewType";
-import EnchantDialog from "../../dialog/EnchantDialog";
-import InfusionsDialog from "../../dialog/InfusionsDialog";
-import { splitStringAndNumber } from "../utils/splitStringAndNumber";
-import { memo } from "react";
+import { usePreviewStore } from '@/app/_store/previewStore';
+import { PreviewModalProps } from '@/app/_type/previewType';
+import EnchantDialog from '../../dialog/EnchantDialog';
+import InfusionsDialog from '../../dialog/InfusionsDialog';
+import { splitStringAndNumber } from '../utils/splitStringAndNumber';
+import { memo } from 'react';
 
 const PreviewModal = memo(
   ({
@@ -14,7 +14,7 @@ const PreviewModal = memo(
     upgreadeType,
     usableItemList = [],
     existing,
-    preName = "",
+    preName = '',
   }: PreviewModalProps) => {
     const setAfterStats = usePreviewStore((state) => state.setAfterStats);
     const setBeforeStats = usePreviewStore((state) => state.setBeforeStats);
@@ -25,12 +25,12 @@ const PreviewModal = memo(
     const { name, level } = splitStringAndNumber(existing.name);
 
     const selectedName = afterStats.find(
-      (item) => item.slot === slot && item.upgreadeType === upgreadeType,
+      (item) => item.slot === slot && item.upgreadeType === upgreadeType
     )?.name;
 
     const selectedHandler = (
       title: string,
-      value: { stat_name: string; stat_value: string }[],
+      value: { stat_name: string; stat_value: string }[]
     ) => {
       const beforeValue = {
         slot,
@@ -38,7 +38,7 @@ const PreviewModal = memo(
         name: name,
         stat_value: isExistingStats
           ? [...existing.stat_value].flat()
-          : [{ stat_name: name ?? "", stat_value: level.toString() }],
+          : [{ stat_name: name ?? '', stat_value: level.toString() }],
       };
 
       const afterValue = {
@@ -55,13 +55,13 @@ const PreviewModal = memo(
 
     return (
       <div className="w-full">
-        {upgreadeType === "infusions" ? (
+        {upgreadeType === 'infusions' ? (
           <InfusionsDialog
             infusionList={usableItemList}
             items={itemName}
             label={selectedName ?? preName}
             selectedValue={
-              selectedName !== undefined ? selectedName : (existing.name ?? "")
+              selectedName !== undefined ? selectedName : (existing.name ?? '')
             }
             selectedHandler={selectedHandler}
           />
@@ -70,7 +70,7 @@ const PreviewModal = memo(
             items={itemName}
             label={selectedName ?? preName}
             selectedValue={
-              selectedName !== undefined ? selectedName : (existing.name ?? "")
+              selectedName !== undefined ? selectedName : (existing.name ?? '')
             }
             slot={slot}
             upgreadeType={upgreadeType}
@@ -80,9 +80,9 @@ const PreviewModal = memo(
         )}
       </div>
     );
-  },
+  }
 );
 
 export default PreviewModal;
 
-PreviewModal.displayName = "PreviewModal";
+PreviewModal.displayName = 'PreviewModal';

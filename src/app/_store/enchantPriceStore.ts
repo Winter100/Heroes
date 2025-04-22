@@ -1,7 +1,7 @@
-import { create } from "zustand";
-import { splitEnchantByType } from "../_components/enchant/utils/splitEnchantByType";
-import { EnchantPrice, EnchantPriceType } from "../_type/enchantType";
-import { getEnchantDate } from "../_components/enchant/utils/getEnchantDate";
+import { create } from 'zustand';
+import { splitEnchantByType } from '../_components/enchant/utils/splitEnchantByType';
+import { EnchantPrice, EnchantPriceType } from '../_type/enchantType';
+import { getEnchantDate } from '../_components/enchant/utils/getEnchantDate';
 
 type State = {
   prefix: EnchantPrice[];
@@ -22,7 +22,7 @@ export const useEnchantPriceStore = create<State & Action>((set) => {
   return {
     prefix: [],
     suffix: [],
-    date: { first: "", last: "" },
+    date: { first: '', last: '' },
     enchantPriceLoading: true,
     setEnchantPriceList: (enchantPriceList) => {
       set((state) => {
@@ -32,7 +32,7 @@ export const useEnchantPriceStore = create<State & Action>((set) => {
           ...state,
           prefix,
           suffix,
-          date: { first: firstDate || "", last: lastDate || "" },
+          date: { first: firstDate || '', last: lastDate || '' },
         };
       });
     },

@@ -1,10 +1,10 @@
-import { isWithinHours } from "@/app/_utils/isWithin24Hours";
-import { getRemainingTime, getYearMonthDay } from "../preview/utils/dateEvent";
-import { convertToKST } from "@/app/_utils/convertToKST";
-import { cn } from "@/lib/utils";
-import { EventDate } from "@/app/_store/noticeEventStore";
-import { Calendar, Clock, SquareArrowOutUpRight } from "lucide-react";
-import Link from "next/link";
+import { isWithinHours } from '@/app/_utils/isWithin24Hours';
+import { getRemainingTime, getYearMonthDay } from '../preview/utils/dateEvent';
+import { convertToKST } from '@/app/_utils/convertToKST';
+import { cn } from '@/lib/utils';
+import { EventDate } from '@/app/_store/noticeEventStore';
+import { Calendar, Clock, SquareArrowOutUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface EventNoticeItemProps {
   title: string;
@@ -28,7 +28,7 @@ const EventNoticeItem = ({
   setEventDate,
 }: EventNoticeItemProps) => {
   const itemDate = date ? date : date_event_start;
-  const is24InHours = isWithinHours(itemDate || "", 24);
+  const is24InHours = isWithinHours(itemDate || '', 24);
 
   const isSelected = selectDate?.notice_id === notice_id;
 
@@ -39,8 +39,8 @@ const EventNoticeItem = ({
       onClick={() => {
         const newEvent = {
           notice_id: notice_id,
-          start: date_event_start || "",
-          end: date_event_end || "",
+          start: date_event_start || '',
+          end: date_event_end || '',
         };
         setEventDate(newEvent);
       }}
@@ -51,7 +51,7 @@ const EventNoticeItem = ({
             <div className="pb-1">
               <div className="flex items-center">
                 <div className="pr-1 text-xs text-red-600">
-                  {is24InHours && "N"}
+                  {is24InHours && 'N'}
                 </div>
 
                 <div className="truncate text-base font-semibold text-white">
@@ -67,22 +67,22 @@ const EventNoticeItem = ({
                 </div>
                 <div
                   className={cn(
-                    "flex flex-wrap items-center gap-1",
-                    isSelected && "text-red-600",
+                    'flex flex-wrap items-center gap-1',
+                    isSelected && 'text-red-600'
                   )}
                 >
                   {date_event_end ? (
                     <div className="flex flex-wrap items-center gap-1">
                       <div>
-                        {getYearMonthDay(convertToKST(date_event_start || ""))}
+                        {getYearMonthDay(convertToKST(date_event_start || ''))}
                       </div>
                       <div>~</div>
                       <div>
-                        {`${getYearMonthDay(convertToKST(date_event_end || ""))}`}
+                        {`${getYearMonthDay(convertToKST(date_event_end || ''))}`}
                       </div>
                     </div>
                   ) : (
-                    <div className={cn("", isSelected && "text-red-600")}>
+                    <div className={cn('', isSelected && 'text-red-600')}>
                       상시 이벤트
                     </div>
                   )}
@@ -97,9 +97,9 @@ const EventNoticeItem = ({
                   <div className="flex flex-wrap items-center gap-1">
                     <div className="hidden sm:block">종료까지</div>
                     <div
-                      className={cn("text-wrap", isSelected && "text-red-600")}
+                      className={cn('text-wrap', isSelected && 'text-red-600')}
                     >
-                      {`${getRemainingTime(date_event_end || "")}`}
+                      {`${getRemainingTime(date_event_end || '')}`}
                     </div>
                     <div>남음</div>
                   </div>

@@ -1,18 +1,18 @@
-import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
-import { convertToKST } from "@/app/_utils/convertToKST";
+import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
+import { convertToKST } from '@/app/_utils/convertToKST';
 
-import clsx from "clsx";
-import Item from "../../common/item/Item";
-import Row from "../../layout/Row";
-import EnchantImage from "../../common/enchant/EnchantImage";
-import { getEnchantImage } from "../../enchant/utils/getEnchantImage";
-import Column from "../../layout/Column";
-import { findEnchantNames } from "../../enchant/utils/findEnchantNames";
-import { slotNames } from "../../enchant/utils/getSlotName";
-import EnchantIsDestruction from "../../common/enchant/EnchantIsDestruction";
-import EnchantBrin from "../../common/enchant/EnchantBrin";
-import EnchantRank from "../../common/enchant/EnchantRank";
-import EnchantEffects from "../../common/enchant/EnchantEffects";
+import clsx from 'clsx';
+import Item from '../../common/item/Item';
+import Row from '../../layout/Row';
+import EnchantImage from '../../common/enchant/EnchantImage';
+import { getEnchantImage } from '../../enchant/utils/getEnchantImage';
+import Column from '../../layout/Column';
+import { findEnchantNames } from '../../enchant/utils/findEnchantNames';
+import { slotNames } from '../../enchant/utils/getSlotName';
+import EnchantIsDestruction from '../../common/enchant/EnchantIsDestruction';
+import EnchantBrin from '../../common/enchant/EnchantBrin';
+import EnchantRank from '../../common/enchant/EnchantRank';
+import EnchantEffects from '../../common/enchant/EnchantEffects';
 
 interface EnchantInfoType extends EnchantStoreType {
   className?: string;
@@ -27,10 +27,10 @@ const EnchantInfo = ({
   date_update,
   className,
 }: EnchantInfoType) => {
-  const type = upgreadeType === "prefix" ? "접두" : "접미";
+  const type = upgreadeType === 'prefix' ? '접두' : '접미';
 
   return (
-    <Item className={clsx("flex flex-col gap-1", className)}>
+    <Item className={clsx('flex flex-col gap-1', className)}>
       <Row>
         <EnchantImage
           alt={name}
@@ -69,7 +69,7 @@ const EnchantInfo = ({
             <Item.Content className="flex flex-row gap-1">
               {findEnchantNames(name)
                 .map((name) => slotNames[name])
-                .join(", ")}
+                .join(', ')}
             </Item.Content>
           </Item.SubDescription>
 

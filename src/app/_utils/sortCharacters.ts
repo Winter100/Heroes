@@ -1,21 +1,21 @@
-import { MergedCharacter } from "../_type/characterType";
+import { MergedCharacter } from '../_type/characterType';
 
 export const sortCharacters = (
   title: string,
   ascending: boolean,
-  characterInfo: MergedCharacter[],
+  characterInfo: MergedCharacter[]
 ) => {
   const characters = [...characterInfo];
 
   const sortedData = characters.sort((a, b) => {
     const statA = a.info.find((stat) =>
-      stat.stat_name.replace(/\s/g, "").includes(title),
+      stat.stat_name.replace(/\s/g, '').includes(title)
     );
     const statB = b.info.find((stat) =>
-      stat.stat_name.replace(/\s/g, "").includes(title),
+      stat.stat_name.replace(/\s/g, '').includes(title)
     );
-    const valueA = statA ? statA.stat_value : "0";
-    const valueB = statB ? statB.stat_value : "0";
+    const valueA = statA ? statA.stat_value : '0';
+    const valueB = statB ? statB.stat_value : '0';
 
     const numA = parseFloat(valueA?.toString());
     const numB = parseFloat(valueB?.toString());

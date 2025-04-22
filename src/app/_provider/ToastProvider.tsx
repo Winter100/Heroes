@@ -1,5 +1,4 @@
-import { ToastContainer, Flip } from "react-toastify";
-
+import { ToastContainer, Flip } from 'react-toastify';
 
 const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   return (

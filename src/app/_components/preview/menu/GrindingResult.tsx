@@ -1,8 +1,8 @@
-import { NewEquipmentType } from "@/app/_type/equipmentType";
-import GrindingList from "../../common/GrindingList";
-import IngredientItem from "../../common/IngredientItem";
-import Ability from "../ability/Ability";
-import ItemTitle from "../../common/ItemTitle";
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import GrindingList from '../../common/GrindingList';
+import IngredientItem from '../../common/IngredientItem';
+import Ability from '../ability/Ability';
+import ItemTitle from '../../common/ItemTitle';
 
 interface GrindingProps {
   grindingItems: NewEquipmentType[];
@@ -23,7 +23,7 @@ const GrindingResult = ({ grindingItems, materialsArray }: GrindingProps) => {
               <div className="flex flex-col gap-1">
                 <ItemTitle
                   className="text-sm font-medium text-white"
-                  level={item?.item_option?.enhancement_level ?? ""}
+                  level={item?.item_option?.enhancement_level ?? ''}
                   name={item?.item_name}
                 />
                 <div className="flex h-8 items-center justify-center">

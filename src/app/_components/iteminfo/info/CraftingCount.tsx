@@ -1,6 +1,6 @@
-import React from "react";
-import { Button, Field, Input, Label } from "@headlessui/react";
-import { useMaterialsStore } from "@/app/_store/materialsStore";
+import React from 'react';
+import { Button, Field, Input, Label } from '@headlessui/react';
+import { useMaterialsStore } from '@/app/_store/materialsStore';
 
 const CraftingCount = () => {
   const count = useMaterialsStore((state) => state.count);

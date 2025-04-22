@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Section from "@/app/_components/layout/Section";
-import Column from "@/app/_components/layout/Column";
+import Image from 'next/image';
+import Section from '@/app/_components/layout/Section';
+import Column from '@/app/_components/layout/Column';
 
 const NoutFound = () => {
   return (
@@ -21,7 +21,7 @@ const NoutFound = () => {
 
         <div className="flex items-center justify-center">
           <Image
-            src={"/images/npc/ray.png"}
+            src={'/images/npc/ray.png'}
             width={400}
             height={400}
             alt="NotFound"

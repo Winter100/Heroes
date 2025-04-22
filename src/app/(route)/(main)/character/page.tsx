@@ -1,8 +1,8 @@
-import ChracterData from "@/app/_components/character/ChracterData";
-import Loading from "@/app/_components/common/Loading";
-import RoundedContainer from "@/app/_components/layout/RoundedContainer";
-import PreviewSearchBar from "@/app/_components/preview/previewSearchMenuBar/previewSearchBar/PreviewSearchBar";
-import { Suspense } from "react";
+import ChracterData from '@/app/_components/character/ChracterData';
+import Loading from '@/app/_components/common/Loading';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import PreviewSearchBar from '@/app/_components/preview/previewSearchMenuBar/previewSearchBar/PreviewSearchBar';
+import { Suspense } from 'react';
 
 const Page = () => {
   return (

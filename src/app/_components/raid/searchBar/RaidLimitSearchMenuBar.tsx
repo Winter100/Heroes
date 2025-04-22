@@ -1,11 +1,11 @@
-"use client";
-import Row from "@/app/_components/layout/Row";
-import RaidSelecterModal from "@/app/_components/preview/menu/RaidSelecterModal";
-import { useRaidLimitNameSearch } from "@/app/_hooks/useRaidLimitNameSearch/useRaidLimitNameSearch";
-import StatFilterDropDown from "../menuList/StatFilterDropDown";
-import ImageSearch from "../menuList/ImageSearch";
-import Search from "@/app/_components/common/search/Search";
-import ResetBtn from "../menuList/ResetBtn";
+'use client';
+import Row from '@/app/_components/layout/Row';
+import RaidSelecterModal from '@/app/_components/preview/menu/RaidSelecterModal';
+import { useRaidLimitNameSearch } from '@/app/_hooks/useRaidLimitNameSearch/useRaidLimitNameSearch';
+import StatFilterDropDown from '../menuList/StatFilterDropDown';
+import ImageSearch from '../menuList/ImageSearch';
+import Search from '@/app/_components/common/search/Search';
+import ResetBtn from '../menuList/ResetBtn';
 
 const RaidLimitSearchMenuBar = () => {
   const { inputRef, loading, onSubmitHandler } = useRaidLimitNameSearch();

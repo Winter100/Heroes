@@ -1,10 +1,10 @@
-"use client";
-import { useEffect } from "react";
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { useRaidStore } from "@/app/_store/raidStore";
-import Column from "../../layout/Column";
-import { useStats } from "@/app/_hooks/useStats/useStats";
-import ErrorDisplay from "../../common/error/ErrorDisplay";
+'use client';
+import { useEffect } from 'react';
+import { usePreviewStore } from '@/app/_store/previewStore';
+import { useRaidStore } from '@/app/_store/raidStore';
+import Column from '../../layout/Column';
+import { useStats } from '@/app/_hooks/useStats/useStats';
+import ErrorDisplay from '../../common/error/ErrorDisplay';
 
 const PreviewLayout = ({ children }: { children: React.ReactNode }) => {
   const { name } = useStats();

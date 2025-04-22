@@ -1,11 +1,11 @@
-import React from "react";
-import Column from "../../layout/Column";
-import ItemTitle from "../../common/ItemTitle";
-import GrindingChangeList from "../../common/GrindingChangeList";
-import BasicContainer from "../../layout/BasicContainer";
-import IngredientList from "../../common/IngredientList";
-import Ability from "../../preview/ability/Ability";
-import { NewEquipmentType } from "@/app/_type/equipmentType";
+import React from 'react';
+import Column from '../../layout/Column';
+import ItemTitle from '../../common/ItemTitle';
+import GrindingChangeList from '../../common/GrindingChangeList';
+import BasicContainer from '../../layout/BasicContainer';
+import IngredientList from '../../common/IngredientList';
+import Ability from '../../preview/ability/Ability';
+import { NewEquipmentType } from '@/app/_type/equipmentType';
 
 interface OneGrindingContentProps {
   title: { level: string; name: string };
@@ -22,7 +22,7 @@ const OneGrindingContent = ({
       <Column className="items-center justify-center gap-2 rounded-lg bg-background py-2">
         <ItemTitle
           className="text-sm font-medium text-white"
-          level={title.level ?? ""}
+          level={title.level ?? ''}
           name={title.name}
         />
         {isAbility && <Ability item={item} />}

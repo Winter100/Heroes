@@ -1,5 +1,5 @@
-import { memo } from "react";
-import TooltipImage from "../../common/tooltip/TooltipImage";
+import { memo } from 'react';
+import TooltipImage from '../../common/tooltip/TooltipImage';
 
 interface CratingSelectImageProps {
   isSelect: boolean;
@@ -27,9 +27,9 @@ const CratingSelectImage = memo(
         )}
       </>
     );
-  },
+  }
 );
 
 export default CratingSelectImage;
 
-CratingSelectImage.displayName = "CratingSelectImage";
+CratingSelectImage.displayName = 'CratingSelectImage';

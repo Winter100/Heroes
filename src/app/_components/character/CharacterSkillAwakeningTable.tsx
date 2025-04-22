@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Loading from "../common/Loading";
-import { useBasic } from "@/app/_hooks/useBasic";
-import CharacterSkillAwakening from "./CharacterSkillAwakening";
-import ErrorApi from "../common/error/ErrorApi";
+import Loading from '../common/Loading';
+import { useBasic } from '@/app/_hooks/useBasic';
+import CharacterSkillAwakening from './CharacterSkillAwakening';
+import ErrorApi from '../common/error/ErrorApi';
 // import { skillDescription } from "@/app/_constant/character/skill/skill";
 
 export const extractValue = (itemName: string): string | null => {
@@ -19,7 +19,7 @@ const extractNumber = (itemName: string): number | null => {
   return null;
 };
 const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
-  const { basic, isLoading, error } = useBasic(ocid || "");
+  const { basic, isLoading, error } = useBasic(ocid || '');
 
   if (isLoading) {
     return <Loading />;
@@ -46,8 +46,8 @@ const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
             skillData={awakening
               .filter(
                 (s) =>
-                  s.item_name.includes("대미지 증가") &&
-                  !s.item_name.includes("부분 파괴 대미지 증가"),
+                  s.item_name.includes('대미지 증가') &&
+                  !s.item_name.includes('부분 파괴 대미지 증가')
               )
               .sort((a, b) => {
                 const numA = extractNumber(a.item_name);
@@ -63,7 +63,7 @@ const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
             title="SP소모 감소"
             jobName={jobName}
             skillData={awakening
-              .filter((s) => s.item_name.includes("SP소모 감소"))
+              .filter((s) => s.item_name.includes('SP소모 감소'))
               .sort((a, b) => {
                 const numA = extractNumber(a.item_name);
                 const numB = extractNumber(b.item_name);
@@ -78,7 +78,7 @@ const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
             title="재사용시간(대) 감소"
             jobName={jobName}
             skillData={awakening
-              .filter((s) => s.item_name.includes("재사용시간"))
+              .filter((s) => s.item_name.includes('재사용시간'))
               .sort((a, b) => {
                 const numA = extractNumber(a.item_name);
                 const numB = extractNumber(b.item_name);
@@ -93,7 +93,7 @@ const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
             title="스태미나 소모 감소"
             jobName={jobName}
             skillData={awakening
-              .filter((s) => s.item_name.includes("스태미나 소모"))
+              .filter((s) => s.item_name.includes('스태미나 소모'))
               .sort((a, b) => {
                 const numA = extractNumber(a.item_name);
                 const numB = extractNumber(b.item_name);
@@ -108,7 +108,7 @@ const CharacterSkillAwakeningTable = ({ ocid }: { ocid: string }) => {
             title="부분 파괴 대미지"
             jobName={jobName}
             skillData={awakening
-              .filter((s) => s.item_name.includes("부분 파괴 대미지"))
+              .filter((s) => s.item_name.includes('부분 파괴 대미지'))
               .sort((a, b) => {
                 const numA = extractNumber(a.item_name);
                 const numB = extractNumber(b.item_name);

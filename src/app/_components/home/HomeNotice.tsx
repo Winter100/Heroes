@@ -1,22 +1,22 @@
-"use client";
-import React from "react";
-import Notice from "../notice/Notice";
-import { useNotice } from "@/app/_hooks/useNotice/useNotice";
-import { NoticeDataType, NoticePatchDataType } from "@/app/_type/noticeType";
-import RoundedContainer from "../layout/RoundedContainer";
+'use client';
+import React from 'react';
+import Notice from '../notice/Notice';
+import { useNotice } from '@/app/_hooks/useNotice/useNotice';
+import { NoticeDataType, NoticePatchDataType } from '@/app/_type/noticeType';
+import RoundedContainer from '../layout/RoundedContainer';
 
 const HomeNotice = () => {
   const {
     data: noticeData,
     isLoading: noticeLoading,
     error: noticeError,
-  } = useNotice<NoticeDataType>("notice");
+  } = useNotice<NoticeDataType>('notice');
 
   const {
     data: noticePatchData,
     isLoading: noticePatchLoading,
     error: noticePatchError,
-  } = useNotice<NoticePatchDataType>("notice-patch");
+  } = useNotice<NoticePatchDataType>('notice-patch');
 
   return (
     <div className="flex flex-col gap-2 md:flex-row">

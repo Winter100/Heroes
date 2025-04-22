@@ -1,19 +1,19 @@
-import { useRefFocus } from "@/app/_hooks/useRefFocus/useRefFocus";
-import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
-import { useSelectEnchantStore } from "@/app/_store/selectEnchantStore";
-import { FormEvent } from "react";
+import { useRefFocus } from '@/app/_hooks/useRefFocus/useRefFocus';
+import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
+import { useSelectEnchantStore } from '@/app/_store/selectEnchantStore';
+import { FormEvent } from 'react';
 
 export const useEnchantTableInputFilter = () => {
   const { inputRef, resetRef } = useRefFocus();
   const resetSelectEnchant = useSelectEnchantStore(
-    (state) => state.resetSelectEnchant,
+    (state) => state.resetSelectEnchant
   );
 
   const { setEnchantFilterName, resetEnchantFilter } = useEnchantFilterStore(
     (state) => ({
       setEnchantFilterName: state.setEnchantFilterName,
       resetEnchantFilter: state.resetEnchantFilter,
-    }),
+    })
   );
 
   const onSearch = (e: FormEvent) => {

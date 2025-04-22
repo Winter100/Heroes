@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 type State = {
   dropRaidOrItemName: string;
@@ -13,26 +13,26 @@ type Action = {
 
 export const useEnchantFilterStore = create<State & Action>((set) => {
   return {
-    dropRaidOrItemName: "all",
-    enchantFilterName: "",
+    dropRaidOrItemName: 'all',
+    enchantFilterName: '',
     setDropRaidOrItemName: (raidOrItemName) => {
       set((state) => {
         const selectFilterValue =
-          raidOrItemName === state.dropRaidOrItemName ? "all" : raidOrItemName;
-        return { enchantFilterName: "", dropRaidOrItemName: selectFilterValue };
+          raidOrItemName === state.dropRaidOrItemName ? 'all' : raidOrItemName;
+        return { enchantFilterName: '', dropRaidOrItemName: selectFilterValue };
       });
     },
     setEnchantFilterName: (enchatName) => {
       set(() => {
         return {
-          enchantFilterName: enchatName.replace(/\s/g, ""),
-          dropRaidOrItemName: "all",
+          enchantFilterName: enchatName.replace(/\s/g, ''),
+          dropRaidOrItemName: 'all',
         };
       });
     },
     resetEnchantFilter: () => {
       set(() => {
-        return { enchantFilterName: "", dropRaidOrItemName: "all" };
+        return { enchantFilterName: '', dropRaidOrItemName: 'all' };
       });
     },
   };

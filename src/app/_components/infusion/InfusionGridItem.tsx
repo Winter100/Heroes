@@ -1,7 +1,7 @@
-import { InfusionGridItemProps } from "@/app/_type/infusionType";
-import Column from "../layout/Column";
-import InfusionImageAndTitle from "./InfusionImageAndTitle";
-import InfusionValues from "./InfusionValues";
+import { InfusionGridItemProps } from '@/app/_type/infusionType';
+import Column from '../layout/Column';
+import InfusionImageAndTitle from './InfusionImageAndTitle';
+import InfusionValues from './InfusionValues';
 
 const InfusionGridItem = ({
   infusion,
@@ -21,7 +21,7 @@ const InfusionGridItem = ({
         }}
       >
         <Column
-          className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-1 rounded-lg bg-zinc-800 p-2 text-xs`}
+          className={`${isSelected ? 'text-blue-300' : 'text-zinc-400 hover:text-gray-200'} h-full w-full gap-1 rounded-lg bg-zinc-800 p-2 text-xs`}
         >
           <InfusionImageAndTitle infusionName={infusion.name} />
           <InfusionValues infusionValue={infusion.stat_value} />

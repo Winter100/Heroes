@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import Image from "next/image";
-import { memo } from "react";
+import clsx from 'clsx';
+import Image from 'next/image';
+import { memo } from 'react';
 
 interface TooltipImageProps {
   itemName: string;
@@ -18,25 +18,25 @@ const TooltipImage = memo(
       >
         <Image
           className={clsx(
-            "rounded-md object-scale-down",
+            'rounded-md object-scale-down',
             isRatingBorder &&
-              itemName.includes("레어") &&
-              "rounded-sm border border-orange-300",
+              itemName.includes('레어') &&
+              'rounded-sm border border-orange-300',
             isRatingBorder &&
-              itemName.includes("전설") &&
-              "rounded-sm border border-pink-400",
+              itemName.includes('전설') &&
+              'rounded-sm border border-pink-400'
           )}
           width={size}
           height={size}
           src={src}
-          alt={itemName || ""}
+          alt={itemName || ''}
           priority={true}
         />
       </a>
     );
-  },
+  }
 );
 
 export default TooltipImage;
 
-TooltipImage.displayName = "TooltipImage";
+TooltipImage.displayName = 'TooltipImage';
