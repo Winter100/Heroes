@@ -1,8 +1,23 @@
+const item_filter = {
+  equipment: '장비',
+  materials: '재료',
+  consumables: '소모품',
+  enchant: '인챈트',
+} as const;
+
 export interface MonstersType {
   name: string;
   entry: { stat_name: string; stat_value: string }[];
   limit: { stat_name: string; stat_value: string }[];
-  drop_items: { item_name: string; item_src: string }[];
+  drop_items: {
+    item_name: string;
+    item_description?: string[];
+    item_filter: (typeof item_filter)[keyof typeof item_filter];
+    core_boost_apply: boolean;
+    core_boost_drop: boolean;
+  }[];
+  raid_description?: string;
+  bonus: { bonus_description: string; bonus_value: string }[];
 }
 
 export interface RaidListType {
@@ -16,6 +31,17 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '왕성 토파즈 홀',
+        raid_description: `더 이상의 대화는 불필요하다. 결국, 살아남는 쪽만이 자신의 정의를 관철하는 법이다.`,
+        bonus: [
+          {
+            bonus_description: '로메르에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '마나 출혈 효과에 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '로메르' },
           { stat_name: '레벨', stat_value: '110' },
@@ -36,18 +62,68 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '7' },
         ],
         drop_items: [
-          { item_name: '아르드리의 봉인된 힘', item_src: '' },
-          { item_name: '아르드리의 봉인된 힘: 무기', item_src: '' },
-          { item_name: '아르드리의 봉인된 힘: 머리 방어구', item_src: '' },
-          { item_name: '예리한 계승석 조각', item_src: '' },
-          { item_name: '진격 인챈트 스크롤', item_src: '' },
-          { item_name: '상급 청동 사자 조각상', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '아르드리의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '아르드리의 봉인된 힘: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '아르드리의 봉인된 힘: 머리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '예리한 계승석 조각',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '진격 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '상급 청동 사자 조각상',
+            item_filter: item_filter.equipment,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
       {
         name: '잊혀진 제단',
+        bonus: [
+          {
+            bonus_description: '나베리우스에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '1회 행동 불능 되지 않고 보스 처치',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '나베리우스' },
           { stat_name: '레벨', stat_value: '110' },
@@ -68,18 +144,68 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '9' },
         ],
         drop_items: [
-          { item_name: '나베리우스의 봉인된 힘', item_src: '' },
-          { item_name: '아르드리의 봉인된 힘: 가슴 방어구', item_src: '' },
-          { item_name: '오롯한 계승석 조각', item_src: '' },
-          { item_name: '추적자의 인챈트 스크롤', item_src: '' },
-          { item_name: '원한 인챈트 스크롤', item_src: '' },
-          { item_name: '상급 전쟁 여신의 조각상', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '나베리우스의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '아르드리의 봉인된 힘: 가슴 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오롯한 계승석 조각',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '추적자의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '원한 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '상급 전쟁 여신의 조각상',
+            item_filter: item_filter.equipment,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
       {
         name: '죽음의 변증법',
+        bonus: [
+          {
+            bonus_description: '밀레드에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '염화 상태효과 50% 이상 되지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '밀레드' },
           { stat_name: '레벨', stat_value: '110' },
@@ -100,18 +226,69 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '12' },
         ],
         drop_items: [
-          { item_name: '밀레드의 봉인된 힘', item_src: '' },
-          { item_name: '아르드리의 봉인된 힘: 다리 방어구', item_src: '' },
-          { item_name: '안정된 계승석 조각', item_src: '' },
-          { item_name: '격노 인챈트 스크롤', item_src: '' },
-          { item_name: '한탄 인챈트 스크롤', item_src: '' },
-          { item_name: '상급 서큐버스의 송곳니', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '밀레드의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '아르드리의 봉인된 힘: 다리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '안정된 계승석 조각',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '격노 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '한탄 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '상급 서큐버스의 송곳니',
+            item_filter: item_filter.equipment,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
       {
         name: '원한의 암굴',
+        bonus: [
+          {
+            bonus_description: '카사르에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description:
+              '화염, 석화, 기력 감소 상태효과에 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '카사르' },
           { stat_name: '레벨', stat_value: '110' },
@@ -132,18 +309,68 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '14' },
         ],
         drop_items: [
-          { item_name: '카사르의 봉인된 힘', item_src: '' },
-          { item_name: '아르드리의 봉인된 힘: 손 방어구', item_src: '' },
-          { item_name: '가벼운 계승석 조각', item_src: '' },
-          { item_name: '광기 인챈트 스크롤', item_src: '' },
-          { item_name: '광분 인챈트 스크롤', item_src: '' },
-          { item_name: '상급 의문의 고양이 조각상', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '카사르의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '아르드리의 봉인된 힘: 손 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '가벼운 계승석 조각',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '광기 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '광분 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '상급 의문의 고양이 조각상',
+            item_filter: item_filter.equipment,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
       {
         name: '위대한 사역',
+        bonus: [
+          {
+            bonus_description: '에녹에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '에녹의 맹독 2단계 이상에 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '에녹' },
           { stat_name: '레벨', stat_value: '110' },
@@ -164,14 +391,54 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '16' },
         ],
         drop_items: [
-          { item_name: '에녹의 봉인된 힘', item_src: '' },
-          { item_name: '아르드리의 봉인된 힘: 발 방어구', item_src: '' },
-          { item_name: '단단한 계승석 조각', item_src: '' },
-          { item_name: '매끈한 계승석 조각', item_src: '' },
-          { item_name: '뒤틀린 인챈트 스크롤', item_src: '' },
-          { item_name: '상급 웨어울프의 앞발', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '에녹의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '아르드리의 봉인된 힘: 발 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '단단한 계승석 조각',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '매끈한 계승석 조각',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '뒤틀린 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '상급 웨어울프의 앞발',
+            item_filter: item_filter.equipment,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
     ],
@@ -182,6 +449,17 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '로흘란의 바람',
+        bonus: [
+          {
+            bonus_description: '이루산에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description:
+              '이루산의 낙인의 불길 2단계 이상에 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '이루산' },
           { stat_name: '레벨', stat_value: '115' },
@@ -202,19 +480,74 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '20' },
         ],
         drop_items: [
-          { item_name: '오르나의 봉인된 힘', item_src: '' },
-          { item_name: '오르나의 봉인된 힘: 무기', item_src: '' },
-          { item_name: '오르나의 봉인된 힘: 머리 방어구', item_src: '' },
-          { item_name: '예리한 계승 원석', item_src: '' },
-          { item_name: '안정된 계승 원석', item_src: '' },
-          { item_name: '복수의 인챈트 스크롤', item_src: '' },
-          { item_name: '예언의 인챈트 스크롤', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '오르나의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오르나의 봉인된 힘: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오르나의 봉인된 힘: 머리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '예리한 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '안정된 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '복수의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '예언의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
       {
         name: '창조와 파괴의 성소',
+        bonus: [
+          {
+            bonus_description: '에메트에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '에메트의 마나 뇌격 2단계 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '에메트' },
           { stat_name: '레벨', stat_value: '115' },
@@ -235,19 +568,70 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '28' },
         ],
         drop_items: [
-          { item_name: '에메트의 봉인된 힘', item_src: '' },
-          { item_name: '오르나의 봉인된 힘: 가슴 방어구', item_src: '' },
-          { item_name: '가벼운 계승 원석', item_src: '' },
-          { item_name: '오롯한 계승 원석', item_src: '' },
-          { item_name: '잊혀진 인챈트 스크롤', item_src: '' },
-          { item_name: '고대의 인챈트 스크롤', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '에메트의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오르나의 봉인된 힘: 가슴 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '가벼운 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오롯한 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '잊혀진 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고대의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
 
       {
         name: '검의 무덤',
+        bonus: [
+          {
+            bonus_description: '야르니르에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description:
+              '야르니르의 검의 불길 2단계 이상에 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '야르니르' },
           { stat_name: '레벨', stat_value: '115' },
@@ -268,19 +652,75 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '37' },
         ],
         drop_items: [
-          { item_name: '아르니르의 봉인된 힘', item_src: '' },
-          { item_name: '오르나의 봉인된 힘: 다리 방어구', item_src: '' },
-          { item_name: '단단한 계승 원석', item_src: '' },
-          { item_name: '매끈한 계승 원석', item_src: '' },
-          { item_name: '승자의 인챈트 스크롤', item_src: '' },
-          { item_name: '대적자의 인챈트 스크롤', item_src: '' },
-          { item_name: '일격 인챈트 스크롤', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '아르니르의 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오르나의 봉인된 힘: 다리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '단단한 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '매끈한 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '승자의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '대적자의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '일격 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
       {
         name: '시드 별궁',
+        bonus: [
+          {
+            bonus_description: '브레스에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description:
+              '브레스의 과다 출혈 2단계 이상에 걸리지 않고 전투 승리',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '브레스' },
           { stat_name: '레벨', stat_value: '115' },
@@ -301,14 +741,60 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '44' },
         ],
         drop_items: [
-          { item_name: '브레스의 달빛 봉인된 힘', item_src: '' },
-          { item_name: '브레스의 그림자 봉인된 힘', item_src: '' },
-          { item_name: '오르나의 봉인된 힘: 손 방어구', item_src: '' },
-          { item_name: '오르나의 봉인된 힘: 발 방어구', item_src: '' },
-          { item_name: '단단한 계승 원석', item_src: '' },
-          { item_name: '우아한 인챈트 스크롤', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
+          {
+            item_name: '브레스의 달빛 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '브레스의 그림자 봉인된 힘',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오르나의 봉인된 힘: 손 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오르나의 봉인된 힘: 발 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '단단한 계승 원석',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '우아한 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '찬미 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
         ],
       },
     ],
@@ -319,6 +805,16 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '제단을 지키는 자',
+        bonus: [
+          {
+            bonus_description: '스렝에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '1회 행동 불능 되지 않고 보스 처치',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '스렝' },
           { stat_name: '레벨', stat_value: '120' },
@@ -339,47 +835,116 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '53' },
         ],
         drop_items: [
-          { item_name: '(부스트 한정) 와드네의 결정', item_src: '' },
-          { item_name: '(부스트 한정) 스렝의 정수', item_src: '' },
-          { item_name: '와드네의 파편: 보조 장비', item_src: '' },
-          { item_name: '와드네의 파편: 무기', item_src: '' },
-          { item_name: '와드네의 파편: 머리 방어구', item_src: '' },
-          { item_name: '예리한 와드네의 결정', item_src: '' },
-          { item_name: '단단한 와드네의 결정', item_src: '' },
-          { item_name: '투혼 인챈트 스크롤', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
           {
-            item_name: '(부스트 한정) 금속무기 레시피 스크롤: 와드네 무기',
-            item_src: '',
+            item_name: '와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name:
-              '(부스트 한정) 금속갑옷 레시피 스크롤: 와드네 머리 방어구',
-            item_src: '',
+            item_name: '스렝의 정수',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name:
-              '(부스트 한정) 금속갑옷 레시피 스크롤: 와드네 방패, 그랜드타지',
-            item_src: '',
+            item_name: '와드네의 파편: 보조 장비',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
           },
           {
-            item_name: '(부스트 한정) 세공 레시피 스크롤: 와드네 무기',
-            item_src: '',
+            item_name: '와드네의 파편: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
           },
           {
-            item_name:
-              '(부스트 한정) 세공 레시피 스크롤: 와드네 수호부, 캐스틀릿',
-            item_src: '',
+            item_name: '와드네의 파편: 머리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
           },
           {
-            item_name: '(부스트 한정) 재봉 레시피 스크롤: 와드네 머리 방어구',
-            item_src: '',
+            item_name: '예리한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '단단한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '투혼 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '금속무기 레시피 스크롤: 와드네 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '금속갑옷 레시피 스크롤: 와드네 머리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '금속갑옷 레시피 스크롤: 와드네 방패, 그랜드타지',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '세공 레시피 스크롤: 와드네 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '세공 레시피 스크롤: 와드네 수호부, 캐스틀릿',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '재봉 레시피 스크롤: 와드네 머리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
         ],
       },
       {
         name: '그릇된 고해',
+        bonus: [
+          {
+            bonus_description: '스피노스에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '1회 행동 불능 되지 않고 보스 처치',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '스피노스' },
           { stat_name: '레벨', stat_value: '120' },
@@ -400,33 +965,104 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '56' },
         ],
         drop_items: [
-          { item_name: '(부스트 한정) 와드네의 결정', item_src: '' },
-          { item_name: '(부스트 한정) 스피노스의 정수', item_src: '' },
-          { item_name: '와드네의 파편: 태양의 비원', item_src: '' },
-          { item_name: '와드네의 파편: 무기', item_src: '' },
-          { item_name: '와드네의 파편: 다리 방어구', item_src: '' },
-          { item_name: '예리한 와드네의 결정', item_src: '' },
-          { item_name: '가벼운 와드네의 결정', item_src: '' },
-          { item_name: '매끈한 와드네의 결정', item_src: '' },
-          { item_name: '고급 강화의 비약', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
           {
-            item_name:
-              '(부스트 한정) 금속갑옷 레시피 스크롤: 와드네 다리 방어구',
-            item_src: '',
+            item_name: '와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name: '(부스트 한정) 세공 레시피 스크롤: 태양의 비원',
-            item_src: '',
+            item_name: '스피노스의 정수',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name: '(부스트 한정) 재봉 레시피 스크롤: 와드네 다리 방어구',
-            item_src: '',
+            item_name: '와드네의 파편: 태양의 비원',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 다리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '예리한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '가벼운 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '매끈한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '사념 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '금속갑옷 레시피 스크롤: 와드네 다리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '세공 레시피 스크롤: 태양의 비원',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '재봉 레시피 스크롤: 와드네 다리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
         ],
       },
       {
         name: '탐욕의 연회장',
+        bonus: [
+          {
+            bonus_description: '고르바스에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '1회 행동 불능 되지 않고 보스 처치',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '고르바스' },
           { stat_name: '레벨', stat_value: '120' },
@@ -446,10 +1082,105 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '216' },
           { stat_name: '밸런스 저항', stat_value: '64' },
         ],
-        drop_items: [],
+        drop_items: [
+          {
+            item_name: '와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '고르바스의 정수',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '와드네의 파편: 저주의 허리띠',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 가슴 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '가벼운 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '안정된 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '견고한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '시련 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '금속갑옷 레시피 스크롤: 와드네 가슴 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '세공 레시피 스크롤: 저주의 허리띠',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '재봉 레시피 스크롤: 와드네 가슴 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+        ],
       },
       {
         name: '따를 수 없는 예언',
+        bonus: [
+          {
+            bonus_description: '모르간트에게 피격횟수 8회 미만으로 전투 승리',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '1회 행동 불능 되지 않고 보스 처치',
+            bonus_value: '11,100',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '모르간트' },
           { stat_name: '레벨', stat_value: '120' },
@@ -469,7 +1200,122 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '236' },
           { stat_name: '밸런스 저항', stat_value: '72' },
         ],
-        drop_items: [],
+        drop_items: [
+          {
+            item_name: '와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '모르간트의 정수',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '와드네의 파편: 침묵의 증표',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 고요의 증표',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 손 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '와드네의 파편: 발 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '안정된 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '오롯한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '굳건한 와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고독 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '고급 강화의 비약',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '금속갑옷 레시피 스크롤: 와드네 손 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '금속갑옷 레시피 스크롤: 와드네 발 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '세공 레시피 스크롤: 침묵의 증표',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '세공 레시피 스크롤: 고요의 증표',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '재봉 레시피 스크롤: 와드네 손 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '재봉 레시피 스크롤: 와드네 발 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+        ],
       },
     ],
   },
@@ -479,6 +1325,12 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '스페셜 전투',
+        bonus: [
+          {
+            bonus_description: '',
+            bonus_value: '',
+          },
+        ],
         entry: [
           { stat_name: '이름', stat_value: '스페셜 전투' },
           { stat_name: '레벨', stat_value: '120' },
@@ -499,74 +1351,66 @@ export const raidList: RaidListType[] = [
           { stat_name: '밸런스 저항', stat_value: '53' },
         ],
         drop_items: [
-          { item_name: '스페셜 던전: 인챈트 주머니', item_src: '' },
-          { item_name: '고급 미지의 팔찌 장식함', item_src: '' },
-          { item_name: '자르딘 강철', item_src: '' },
-          { item_name: '(부스트 한정) 장인의 단단한 플라스크', item_src: '' },
-          { item_name: '(부스트 한정) 장인의 섬세한 플라스트', item_src: '' },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 오르나 방어구 아바타 세트 (남성)',
-            item_src: '',
+            item_name: '스페셜 던전: 인챈트 주머니',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
           },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 오르나 방어구 아바타 세트 (여성)',
-            item_src: '',
+            item_name: '고급 미지의 팔찌 장식함',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
           },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 브라하 방어구 아바타 세트 (남성)',
-            item_src: '',
+            item_name: '자르딘 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
           },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 브라하 방어구 아바타 세트 (여성)',
-            item_src: '',
+            item_name: '장인의 단단한 플라스크',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 헤레몬 방어구 아바타 세트 (남성)',
-            item_src: '',
+            item_name: '장인의 섬세한 플라스트',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 헤레몬 방어구 아바타 세트 (여성)',
-            item_src: '',
+            item_name: '불안정한 강화의 룬',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+
+          {
+            item_name: '[금속갑옷] 아바타 레시피 스크롤',
+            item_filter: item_filter.materials,
+            item_description: [
+              '오르나 방어구(남성/여성)',
+              '브라하 방어구(남성/여성)',
+              '헤레몬 방어구(남성/여성)',
+              '잉켈스 방어구(남성/여성)',
+            ],
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
           {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 잉켈스 방어구 아바타 세트 (남성)',
-            item_src: '',
-          },
-          {
-            item_name:
-              '(부스트 한정) [금속갑옷] 아바타 레시피 스크롤: 잉켈스 방어구 아바타 세트 (여성)',
-            item_src: '',
-          },
-          {
-            item_name:
-              '(부스트 한정) [재봉] 아바타 레시피 스크롤: 로얄가드 방어구 아바타 세트 (남성)',
-            item_src: '',
-          },
-          {
-            item_name:
-              '(부스트 한정) [재봉] 아바타 레시피 스크롤: 로얄가드 방어구 아바타 세트 (여성)',
-            item_src: '',
-          },
-          {
-            item_name:
-              '(부스트 한정) [재봉] 아바타 레시피 스크롤: 스위프트 방어구 아바타 세트 (남성)',
-            item_src: '',
-          },
-          {
-            item_name:
-              '(부스트 한정) [재봉] 아바타 레시피 스크롤: 스위프트 방어구 아바타 세트 (여성)',
-            item_src: '',
-          },
-          {
-            item_name: '(부스트 한정) 불안정한 강화의 룬',
-            item_src: '',
+            item_name: '[재봉] 아바타 레시피 스크롤',
+            item_filter: item_filter.materials,
+            item_description: [
+              '오르나 방어구(남성/여성)',
+              '브라하 방어구(남성/여성)',
+              '로얄가드 방어구(남성/여성)',
+              '스위프트 레이더스 방어구',
+            ],
+            core_boost_apply: false,
+            core_boost_drop: true,
           },
         ],
       },
@@ -578,6 +1422,7 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '찬탈자의 성채',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [
           { stat_name: '이름', stat_value: '혼의 찬탈자 타로스' },
           { stat_name: '레벨', stat_value: '110' },
@@ -598,10 +1443,19 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '180' },
           { stat_name: '밸런스 저항', stat_value: '34' },
         ],
-        drop_items: [],
+        drop_items: [
+          {
+            item_name: '시공의 상자: 찬탈자의 성채',
+            item_filter: item_filter.materials,
+            item_description: ['부스트 사용 시 코어 부스트 상자가 드롭됩니다.'],
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '몰락한 기사의 전당',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [
           { stat_name: '이름', stat_value: '몰락자 아이젠리터' },
           { stat_name: '레벨', stat_value: '115' },
@@ -622,10 +1476,19 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '220' },
           { stat_name: '밸런스 저항', stat_value: '59' },
         ],
-        drop_items: [],
+        drop_items: [
+          {
+            item_name: '시공의 상자: 몰락한 기사의 전당',
+            item_filter: item_filter.materials,
+            item_description: ['부스트 사용 시 코어 부스트 상자가 드롭됩니다.'],
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '주시자의 신전',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [
           { stat_name: '이름', stat_value: '주시자 요르드라' },
           { stat_name: '레벨', stat_value: '120' },
@@ -646,7 +1509,15 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '300' },
           { stat_name: '밸런스 저항', stat_value: '100' },
         ],
-        drop_items: [],
+        drop_items: [
+          {
+            item_name: '시공의 상자: 주시자의 신전',
+            item_filter: item_filter.materials,
+            item_description: ['부스트 사용 시 코어 부스트 상자가 드롭됩니다.'],
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+        ],
       },
     ],
   },
@@ -656,6 +1527,7 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '사념의 바다',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '네반' },
@@ -666,10 +1538,18 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '0' },
         ],
-        drop_items: [{ item_name: '신념의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '신념의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '달의 이면',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '발로르' },
@@ -680,10 +1560,18 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '0' },
         ],
-        drop_items: [{ item_name: '결의의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '결의의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '모루 위의 검',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '브리지트' },
@@ -694,10 +1582,18 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '0' },
         ],
-        drop_items: [{ item_name: '용맹의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '용맹의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '생명의 나무',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '라우라' },
@@ -708,7 +1604,14 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '4' },
         ],
-        drop_items: [{ item_name: '강림의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '강림의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
     ],
   },
@@ -718,6 +1621,7 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '사념의 바다 [헬]',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '네반' },
@@ -728,10 +1632,18 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '0' },
         ],
-        drop_items: [{ item_name: '신념의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '신념의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '달의 이면 [헬]',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '발로르' },
@@ -742,10 +1654,18 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '0' },
         ],
-        drop_items: [{ item_name: '결의의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '결의의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '모루 위의 검 [헬]',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '브리지트' },
@@ -756,10 +1676,18 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '0' },
         ],
-        drop_items: [{ item_name: '용맹의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '용맹의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
       {
         name: '생명의 나무 [헬]',
+        bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
           { stat_name: '이름', stat_value: '라우라' },
@@ -770,7 +1698,14 @@ export const raidList: RaidListType[] = [
           { stat_name: '대항력 저항', stat_value: '0' },
           { stat_name: '밸런스 저항', stat_value: '17' },
         ],
-        drop_items: [{ item_name: '강림의 상자: 결사대', item_src: '' }],
+        drop_items: [
+          {
+            item_name: '강림의 상자: 결사대',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: false,
+          },
+        ],
       },
     ],
   },

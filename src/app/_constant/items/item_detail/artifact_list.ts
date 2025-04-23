@@ -269,6 +269,16 @@ export const artifact_list: ItemType[] = [
   },
 
   {
+    name: '상급 전쟁 여신의 조각상',
+    quality_selection_available: false,
+    quality: 2,
+    rating: '중급',
+    category: ['액세서리', '아티팩트'],
+    color: true,
+    description: `????`,
+  },
+
+  {
     name: '주시자의 녹슨 전쟁 여신의 조각상',
     quality_selection_available: false,
     quality: 2,
