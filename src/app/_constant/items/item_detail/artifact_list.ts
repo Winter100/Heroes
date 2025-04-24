@@ -275,7 +275,10 @@ export const artifact_list: ItemType[] = [
     rating: '중급',
     category: ['액세서리', '아티팩트'],
     color: true,
-    description: `????`,
+    description: `사용 시 일시적으로 공격력과 마법 공격력이 1200만큼 증가합니다.
+    
+    사용 시간: 30초
+    재사용 대기 시간: 300초`,
   },
 
   {

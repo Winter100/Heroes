@@ -7,6 +7,7 @@ const item_filter = {
 
 export interface MonstersType {
   name: string;
+  basic_reward?: { name: string; value: string }[];
   entry: { stat_name: string; stat_value: string }[];
   limit: { stat_name: string; stat_value: string }[];
   drop_items: {
@@ -32,6 +33,11 @@ export const raidList: RaidListType[] = [
       {
         name: '왕성 토파즈 홀',
         raid_description: `더 이상의 대화는 불필요하다. 결국, 살아남는 쪽만이 자신의 정의를 관철하는 법이다.`,
+        basic_reward: [
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '6000000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '로메르에게 피격횟수 8회 미만으로 전투 승리',
@@ -114,6 +120,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '잊혀진 제단',
+        basic_reward: [
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '6000000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '나베리우스에게 피격횟수 8회 미만으로 전투 승리',
@@ -196,6 +207,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '죽음의 변증법',
+        basic_reward: [
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '6000000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '밀레드에게 피격횟수 8회 미만으로 전투 승리',
@@ -278,6 +294,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '원한의 암굴',
+        basic_reward: [
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '6000000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '카사르에게 피격횟수 8회 미만으로 전투 승리',
@@ -361,6 +382,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '위대한 사역',
+        basic_reward: [
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '6000000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '에녹에게 피격횟수 8회 미만으로 전투 승리',
@@ -449,6 +475,11 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '로흘란의 바람',
+        basic_reward: [
+          { name: '골드', value: '97000' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '이루산에게 피격횟수 8회 미만으로 전투 승리',
@@ -538,6 +569,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '창조와 파괴의 성소',
+        basic_reward: [
+          { name: '골드', value: '97000' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '에메트에게 피격횟수 8회 미만으로 전투 승리',
@@ -621,6 +657,11 @@ export const raidList: RaidListType[] = [
 
       {
         name: '검의 무덤',
+        basic_reward: [
+          { name: '골드', value: '97000' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '야르니르에게 피격횟수 8회 미만으로 전투 승리',
@@ -653,7 +694,7 @@ export const raidList: RaidListType[] = [
         ],
         drop_items: [
           {
-            item_name: '아르니르의 봉인된 힘',
+            item_name: '야르니르의 봉인된 힘',
             item_filter: item_filter.materials,
             core_boost_apply: true,
             core_boost_drop: false,
@@ -710,6 +751,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '시드 별궁',
+        basic_reward: [
+          { name: '골드', value: '97000' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '브레스에게 피격횟수 8회 미만으로 전투 승리',
@@ -805,6 +851,11 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '제단을 지키는 자',
+        basic_reward: [
+          { name: '골드', value: '129400' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '스렝에게 피격횟수 8회 미만으로 전투 승리',
@@ -896,37 +947,33 @@ export const raidList: RaidListType[] = [
             core_boost_drop: false,
           },
           {
-            item_name: '금속무기 레시피 스크롤: 와드네 무기',
+            item_name: '[금속무기] 레시피 스크롤',
+            item_description: ['와드네 무기'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '금속갑옷 레시피 스크롤: 와드네 머리 방어구',
+            item_name: '[금속갑옷] 레시피 스크롤',
+            item_description: [
+              '와드네 머리 방어구',
+              '와드네 방패',
+              '그랜드타지',
+            ],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '금속갑옷 레시피 스크롤: 와드네 방패, 그랜드타지',
+            item_name: '[세공] 레시피 스크롤',
+            item_description: ['와드네 무기', '와드네 수호부', '캐스틀릿'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '세공 레시피 스크롤: 와드네 무기',
-            item_filter: item_filter.materials,
-            core_boost_apply: false,
-            core_boost_drop: true,
-          },
-          {
-            item_name: '세공 레시피 스크롤: 와드네 수호부, 캐스틀릿',
-            item_filter: item_filter.materials,
-            core_boost_apply: false,
-            core_boost_drop: true,
-          },
-          {
-            item_name: '재봉 레시피 스크롤: 와드네 머리 방어구',
+            item_name: '[재봉] 레시피 스크롤',
+            item_description: ['와드네 머리 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
@@ -935,6 +982,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '그릇된 고해',
+        basic_reward: [
+          { name: '골드', value: '129400' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '스피노스에게 피격횟수 8회 미만으로 전투 승리',
@@ -1032,19 +1084,22 @@ export const raidList: RaidListType[] = [
             core_boost_drop: false,
           },
           {
-            item_name: '금속갑옷 레시피 스크롤: 와드네 다리 방어구',
+            item_name: '[금속갑옷] 레시피 스크롤',
+            item_description: ['와드네 다리 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '세공 레시피 스크롤: 태양의 비원',
+            item_name: '[세공] 레시피 스크롤',
+            item_description: ['태양의 비원'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '재봉 레시피 스크롤: 와드네 다리 방어구',
+            item_name: '[재봉] 레시피 스크롤',
+            item_description: ['와드네 다리 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
@@ -1053,6 +1108,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '탐욕의 연회장',
+        basic_reward: [
+          { name: '골드', value: '129400' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '고르바스에게 피격횟수 8회 미만으로 전투 승리',
@@ -1150,19 +1210,22 @@ export const raidList: RaidListType[] = [
             core_boost_drop: false,
           },
           {
-            item_name: '금속갑옷 레시피 스크롤: 와드네 가슴 방어구',
+            item_name: '[금속갑옷] 레시피 스크롤',
+            item_description: ['와드네 가슴 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '세공 레시피 스크롤: 저주의 허리띠',
+            item_name: '[세공] 레시피 스크롤',
+            item_description: ['저주의 허리띠'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '재봉 레시피 스크롤: 와드네 가슴 방어구',
+            item_name: '[재봉] 레시피 스크롤',
+            item_description: ['와드네 가슴 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
@@ -1171,6 +1234,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '따를 수 없는 예언',
+        basic_reward: [
+          { name: '골드', value: '129400' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
         bonus: [
           {
             bonus_description: '모르간트에게 피격횟수 8회 미만으로 전투 승리',
@@ -1280,37 +1348,22 @@ export const raidList: RaidListType[] = [
             core_boost_drop: false,
           },
           {
-            item_name: '금속갑옷 레시피 스크롤: 와드네 손 방어구',
+            item_name: '[금속갑옷] 레시피 스크롤',
+            item_description: ['와드네 손 방어구', '와드네 발 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '금속갑옷 레시피 스크롤: 와드네 발 방어구',
+            item_name: '[세공] 레시피 스크롤',
+            item_description: ['침묵의 증표', '고요의 증표'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
           },
           {
-            item_name: '세공 레시피 스크롤: 침묵의 증표',
-            item_filter: item_filter.materials,
-            core_boost_apply: false,
-            core_boost_drop: true,
-          },
-          {
-            item_name: '세공 레시피 스크롤: 고요의 증표',
-            item_filter: item_filter.materials,
-            core_boost_apply: false,
-            core_boost_drop: true,
-          },
-          {
-            item_name: '재봉 레시피 스크롤: 와드네 손 방어구',
-            item_filter: item_filter.materials,
-            core_boost_apply: false,
-            core_boost_drop: true,
-          },
-          {
-            item_name: '재봉 레시피 스크롤: 와드네 발 방어구',
+            item_name: '[재봉] 레시피 스크롤',
+            item_description: ['와드네 손 방어구', '와드네 발 방어구'],
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
@@ -1325,6 +1378,11 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '스페셜 전투',
+        basic_reward: [
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '3000000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [
           {
             bonus_description: '',
@@ -1376,7 +1434,7 @@ export const raidList: RaidListType[] = [
             core_boost_drop: true,
           },
           {
-            item_name: '장인의 섬세한 플라스트',
+            item_name: '장인의 섬세한 플라스크',
             item_filter: item_filter.materials,
             core_boost_apply: false,
             core_boost_drop: true,
@@ -1422,6 +1480,11 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '찬탈자의 성채',
+        basic_reward: [
+          { name: '골드', value: '300000' },
+          { name: '경험치', value: '2054000' },
+          { name: 'AP', value: '200' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [
           { stat_name: '이름', stat_value: '혼의 찬탈자 타로스' },
@@ -1455,6 +1518,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '몰락한 기사의 전당',
+        basic_reward: [
+          { name: '골드', value: '400000' },
+          { name: '경험치', value: '2054000' },
+          { name: 'AP', value: '200' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [
           { stat_name: '이름', stat_value: '몰락자 아이젠리터' },
@@ -1488,6 +1556,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '주시자의 신전',
+        basic_reward: [
+          { name: '골드', value: '800000' },
+          { name: '경험치', value: '2054000' },
+          { name: 'AP', value: '200' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [
           { stat_name: '이름', stat_value: '주시자 요르드라' },
@@ -1527,6 +1600,11 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '사념의 바다',
+        basic_reward: [
+          { name: '골드', value: '200000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1549,6 +1627,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '달의 이면',
+        basic_reward: [
+          { name: '골드', value: '200000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1571,6 +1654,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '모루 위의 검',
+        basic_reward: [
+          { name: '골드', value: '200000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1593,6 +1681,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '생명의 나무',
+        basic_reward: [
+          { name: '골드', value: '200000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1621,6 +1714,11 @@ export const raidList: RaidListType[] = [
     monsters: [
       {
         name: '사념의 바다 [헬]',
+        basic_reward: [
+          { name: '골드', value: '1000000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1643,6 +1741,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '달의 이면 [헬]',
+        basic_reward: [
+          { name: '골드', value: '1000000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1665,6 +1768,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '모루 위의 검 [헬]',
+        basic_reward: [
+          { name: '골드', value: '1000000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [
@@ -1687,6 +1795,11 @@ export const raidList: RaidListType[] = [
       },
       {
         name: '생명의 나무 [헬]',
+        basic_reward: [
+          { name: '골드', value: '1000000' },
+          { name: '경험치', value: '21400000' },
+          { name: 'AP', value: '100' },
+        ],
         bonus: [{ bonus_description: '', bonus_value: '' }],
         entry: [],
         limit: [

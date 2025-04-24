@@ -83,6 +83,11 @@ export const imageMap = new Map<string, string>([
   ['탐욕의 연회장', '/images/monster/s4/banquet-hall-of-greed.png'],
   ['따를 수 없는 예언', '/images/monster/s4/go.png'],
 
+  ['신념의 상자: 결사대', '/images/items/reward/belief-box.png'],
+  ['결의의 상자: 결사대', '/images/items/reward/resolution-box.png'],
+  ['용맹의 상자: 결사대', '/images/items/reward/valor-box.png'],
+  ['강림의 상자: 결사대', '/images/items/reward/advent-box.png'],
+
   // 스페셜
   ['스페셜 전투', '/images/monster/special/garden-of-tears.png'],
   [
@@ -126,6 +131,19 @@ export const imageMap = new Map<string, string>([
   ],
 
   // 재료
+  [
+    '[금속갑옷] 아바타 레시피 스크롤',
+    '/images/items/materials/s4/recipe-metal.png',
+  ],
+  [
+    '[재봉] 아바타 레시피 스크롤',
+    '/images/items/materials/s4/recipe-sewing.png',
+  ],
+
+  ['장인의 섬세한 플라스크', '/images/items/materials/s4/flask_s.png'],
+  ['장인의 단단한 플라스크', '/images/items/materials/s4/flask_h.png'],
+  ['니플헤임 플라스크', '/images/items/materials/s4/flask_hardcore.png'],
+  ['고급 미지의 팔찌 장식함', '/images/items/materials/s4/randomitem.png'],
   ['스렝의 정수', '/images/items/materials/s4/essence-of-sreng.png'],
   ['스피노스의 정수', '/images/items/materials/s4/essence-of-spinos.png'],
   ['모르간트의 정수', '/images/items/materials/s4/essence-of-morgant.png'],
@@ -225,6 +243,33 @@ export const imageMap = new Map<string, string>([
     '굳건한 와드네의 결정',
     '/images/items/materials/s4/firm-uaithne-crystal.png',
   ],
+
+  ['아르드리의 봉인된 힘', '/images/items/materials/s4/combine_ardri.png'],
+  [
+    '아르드리의 봉인된 힘: 발 방어구',
+    '/images/items/materials/s4/combine_ardri_leg.png',
+  ],
+  [
+    '아르드리의 봉인된 힘: 가슴 방어구',
+    '/images/items/materials/s4/combine_ardri_upper.png',
+  ],
+  [
+    '아르드리의 봉인된 힘: 손 방어구',
+    '/images/items/materials/s4/combine_ardri_hand.png',
+  ],
+  [
+    '아르드리의 봉인된 힘: 다리 방어구',
+    '/images/items/materials/s4/combine_ardri_lower.png',
+  ],
+  [
+    '아르드리의 봉인된 힘: 머리 방어구',
+    '/images/items/materials/s4/combine_ardri_head.png',
+  ],
+  [
+    '아르드리의 봉인된 힘: 무기',
+    '/images/items/materials/s4/combine_ardri_weapon.png',
+  ],
+
   ['오롯한 와드네의 결정', '/images/items/materials/s4/a-uaithne-crystal.png'],
   ['미지의 조각 1단계', '/images/items/materials/s4/shard-unknown-1.png'],
   ['미지의 조각 2단계', '/images/items/materials/s4/shard-unknown-2.png'],
@@ -311,7 +356,7 @@ export const imageMap = new Map<string, string>([
     '오르나의 봉인된 힘: 무기',
     '/images/items/materials/s4/combine-orna-weapon.png',
   ],
-  ['오르나의 봉인된 힘', '/images/items/materials/s4/combine-orna-b.png'],
+  // ['오르나의 봉인된 힘', '/images/items/materials/s4/combine-orna-b.png'],
   ['골드', '/images/items/materials/basic/gold.png'],
   ['고급 철광석', '/images/items/materials/basic/high-grade-iron-ore.png'],
   ['마나 더스트', '/images/items/materials/basic/mana-dust.png'],
@@ -337,6 +382,13 @@ export const imageMap = new Map<string, string>([
   ['각성의 돌: 스태미나 소모 감소', '/images/items/skill/stamina-stone.png'],
   ['각성의 돌: 부분 파괴 대미지', '/images/items/skill/downdamage-stone.png'],
 
+  ['단단한 계승석 조각', '/images/items/materials/s4/solid-110.png'],
+  ['매끈한 계승석 조각', '/images/items/materials/s4/smarmy-110.png'],
+  ['예리한 계승석 조각', '/images/items/materials/s4/incisive-110.png'],
+  ['안정된 계승석 조각', '/images/items/materials/s4/stable-110.png'],
+  ['가벼운 계승석 조각', '/images/items/materials/s4/light-110.png'],
+  ['오롯한 계승석 조각', '/images/items/materials/s4/all-110.png'],
+
   ['단단한 계승 원석', '/images/items/materials/s4/solid-115.png'],
   ['매끈한 계승 원석', '/images/items/materials/s4/smarmy-115.png'],
   ['예리한 계승 원석', '/images/items/materials/s4/incisive-115.png'],
@@ -349,6 +401,35 @@ export const imageMap = new Map<string, string>([
   ['축복의 마법력 엘릭서', '/images/items/materials/s4/csml.png'],
   ['축복받은 마법 가루', '/images/items/materials/s4/cmk.png'],
   ['뉴에라의 강화석', '/images/items/materials/s4/new-era-stone.png'],
+
+  ['밀레드의 봉인된 힘', '/images/items/materials/s4/sealed_power_milled.png'],
+  [
+    '나베리우스의 봉인된 힘',
+    '/images/items/materials/s4/sealed_power_naberius.png',
+  ],
+  ['카사르의 봉인된 힘', '/images/items/materials/s4/sealed_power_ceasair.png'],
+  ['에녹의 봉인된 힘', '/images/items/materials/s4/sealed_power_en.png'],
+  [
+    '에메트의 봉인된 힘',
+    '/images/items/materials/s4/sealed_power_managolem.png',
+  ],
+  [
+    '야르니르의 봉인된 힘',
+    '/images/items/materials/s4/sealed_power_barbarian.png',
+  ],
+  [
+    '브레스의 달빛 봉인된 힘',
+    '/images/items/materials/s4/sealed_power_bres_1.png',
+  ],
+  [
+    '브레스의 그림자 봉인된 힘',
+    '/images/items/materials/s4/sealed_power_bres_2.png',
+  ],
+
+  ['[금속무기] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
+  ['[금속갑옷] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
+  ['[세공] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
+  ['[재봉] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
 
   // 장비
   // 105 액세서리
@@ -659,6 +740,7 @@ export const imageMap = new Map<string, string>([
   ['고요의 증표', '/images/items/equipment/ring-120-02.png'],
 
   // 아티팩트
+  ['상급 청동 사자 조각상', '/images/items/equipment/abs.png'],
   ['서큐버스의 송곳니', '/images/items/equipment/succubus-00.png'],
   ['상급 서큐버스의 송곳니', '/images/items/equipment/succubus-01.png'],
   [
