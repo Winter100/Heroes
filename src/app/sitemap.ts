@@ -44,6 +44,12 @@ export const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: 'daily',
       priority: 0.8,
     },
+    {
+      url: 'https://www.heroes-dev.com/raidinfo',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
   ];
 };
 

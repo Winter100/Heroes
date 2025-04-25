@@ -18,6 +18,7 @@ const activePathName = (pathName: string) => {
   if (pathName === '/gold') return '골드 거래소 조회';
   if (pathName === '/market/enchant') return '인챈트 정보';
   if (pathName === '/iteminfo') return '아이템 제작 정보';
+  if (pathName === '/raidinfo') return '레이드 정보';
 };
 
 const HomeBreadcrumb = () => {

@@ -11,7 +11,6 @@ import { findEnchantNames } from '../../enchant/utils/findEnchantNames';
 import { slotNames } from '../../enchant/utils/getSlotName';
 import EnchantIsDestruction from '../../common/enchant/EnchantIsDestruction';
 import EnchantBrin from '../../common/enchant/EnchantBrin';
-import EnchantRank from '../../common/enchant/EnchantRank';
 import EnchantEffects from '../../common/enchant/EnchantEffects';
 
 interface EnchantInfoType extends EnchantStoreType {
@@ -65,7 +64,7 @@ const EnchantInfo = ({
           </Item.SubDescription>
 
           <Item.SubDescription className="flex items-center justify-between px-1">
-            <Item.Content>부위</Item.Content>
+            <Item.Content className="min-w-7">부위</Item.Content>
             <Item.Content className="flex flex-row gap-1">
               {findEnchantNames(name)
                 .map((name) => slotNames[name])
@@ -90,7 +89,7 @@ const EnchantInfo = ({
         <Item.Content>{name}</Item.Content>
         <Item.Content className="flex">
           <span className="pr-1">{type}</span>
-          <EnchantRank className="text-orange-300" enchantRank={rank} />
+          <div className="text-orange-300">{rank}</div>
           <span>랭크</span>
         </Item.Content>
       </Row>

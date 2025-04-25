@@ -6,6 +6,7 @@ import {
   Book,
   House,
   Pickaxe,
+  PiggyBank,
   Search,
   Table,
   UserRoundPen,
@@ -62,11 +63,11 @@ const data = {
       url: '/iteminfo',
       icon: Pickaxe,
     },
-    // {
-    //   title: "아이템 드랍",
-    //   url: "/raid/drop",
-    //   icon: PiggyBank,
-    // },
+    {
+      title: '레이드',
+      url: '/raidinfo',
+      icon: PiggyBank,
+    },
   ],
 };
 
