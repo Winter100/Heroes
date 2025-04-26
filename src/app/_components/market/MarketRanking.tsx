@@ -1,5 +1,5 @@
-import Column from "../layout/Column";
-import MarketPlaceList from "./marketplace/MarketPlaceList";
+import Column from '../layout/Column';
+import MarketPlaceList from './marketplace/MarketPlaceList';
 
 const MarketRanking = () => {
   return (

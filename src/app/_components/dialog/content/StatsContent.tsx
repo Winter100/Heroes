@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import PreviewStats from "@/app/_components/preview/PreviewStats";
-import { useStats } from "@/app/_hooks/useStats/useStats";
+import PreviewStats from '@/app/_components/preview/PreviewStats';
+import { useStats } from '@/app/_hooks/useStats/useStats';
 
 const StatsContent = () => {
   const { data, mergedStats, statDifference, name } = useStats();

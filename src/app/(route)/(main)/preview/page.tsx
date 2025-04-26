@@ -1,10 +1,10 @@
-"use client";
-import { Suspense } from "react";
-import Loading from "@/app/_components/common/Loading";
-import PreviewLayout from "@/app/_components/preview/layout/PreviewLayout";
-import PreviewBody from "@/app/_components/preview/content/PreviewBody";
-import PreviewSearchBar from "@/app/_components/preview/previewSearchMenuBar/previewSearchBar/PreviewSearchBar";
-import RoundedContainer from "@/app/_components/layout/RoundedContainer";
+'use client';
+import { Suspense } from 'react';
+import Loading from '@/app/_components/common/Loading';
+import PreviewLayout from '@/app/_components/preview/layout/PreviewLayout';
+import PreviewBody from '@/app/_components/preview/content/PreviewBody';
+import PreviewSearchBar from '@/app/_components/preview/previewSearchMenuBar/previewSearchBar/PreviewSearchBar';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 
 const Page = () => {
   return (

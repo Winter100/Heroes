@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { previewInitialTitleList } from "@/app/_constant/rankTitleList";
-import { MonstersType } from "@/app/_constant/raidList";
-import { Stat } from "@/app/_type/previewType";
-import { limitCalculator } from "../../raid/utils/limitCalculator";
+import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
+import { MonstersType } from '@/app/_constant/raidList';
+import { Stat } from '@/app/_type/previewType';
+import { limitCalculator } from '../../raid/utils/limitCalculator';
 
 interface TableProps {
   boss: MonstersType;
-  bossEntry: "상한" | "빠른전투";
+  bossEntry: '상한' | '빠른전투';
   previewAllStats: Stat[];
 }
 const Table = ({ boss, bossEntry, previewAllStats }: TableProps) => {
   const filteredStats = previewAllStats
     .filter((stat) =>
-      previewInitialTitleList.some((c) => c.stat_name === stat.stat_name),
+      previewInitialTitleList.some((c) => c.stat_name === stat.stat_name)
     )
     .sort(
       (a, b) =>
         previewInitialTitleList.findIndex((c) => c.stat_name === a.stat_name) -
-        previewInitialTitleList.findIndex((c) => c.stat_name === b.stat_name),
+        previewInitialTitleList.findIndex((c) => c.stat_name === b.stat_name)
     );
 
   const limitValue = filteredStats.find(
-    (i) => i.stat_name === "해제",
+    (i) => i.stat_name === '해제'
   )?.stat_value;
 
   return (
@@ -58,26 +58,26 @@ const Table = ({ boss, bossEntry, previewAllStats }: TableProps) => {
                       bossEntry,
                       item.stat_name,
                       item.stat_value?.toString(),
-                      limitValue?.toString(),
+                      limitValue?.toString()
                     ) !== null
                       ? limitCalculator(
                           boss,
                           bossEntry,
                           item.stat_name,
                           item.stat_value?.toString(),
-                          limitValue?.toString(),
+                          limitValue?.toString()
                         )! > 0
-                        ? "text-green-300"
+                        ? 'text-green-300'
                         : limitCalculator(
                               boss,
                               bossEntry,
                               item.stat_name,
                               item.stat_value?.toString(),
-                              limitValue?.toString(),
+                              limitValue?.toString()
                             )! < 0
-                          ? "text-red-300"
-                          : ""
-                      : ""
+                          ? 'text-red-300'
+                          : ''
+                      : ''
                   }`}
                 >
                   {limitCalculator(
@@ -85,16 +85,16 @@ const Table = ({ boss, bossEntry, previewAllStats }: TableProps) => {
                     bossEntry,
                     item.stat_name,
                     item.stat_value?.toString(),
-                    limitValue?.toString(),
+                    limitValue?.toString()
                   )
                     ? limitCalculator(
                         boss,
                         bossEntry,
                         item.stat_name,
                         item.stat_value?.toString(),
-                        limitValue?.toString(),
+                        limitValue?.toString()
                       )
-                    : ""}
+                    : ''}
                 </p>
               )}
             </td>

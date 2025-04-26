@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import Item from "../../common/item/Item";
-import { Item_Rating } from "@/app/_type/infoInfoType";
-import { memo } from "react";
+import clsx from 'clsx';
+import Item from '../../common/item/Item';
+import { Item_Rating } from '@/app/_type/infoInfoType';
+import { memo } from 'react';
 
 interface CraftingSelectBtnProps {
   isSelect: boolean;
@@ -16,11 +16,11 @@ const CraftingSelectBtn = memo(
     return (
       <div
         className={clsx(
-          "h-full w-full flex-col items-start justify-center hover:bg-zinc-800",
+          'h-full w-full flex-col items-start justify-center hover:bg-zinc-800'
         )}
       >
         <button
-          className={clsx("h-full w-full text-start", isSelect && "text-white")}
+          className={clsx('h-full w-full text-start', isSelect && 'text-white')}
           onClick={onClick}
         >
           {isSelect ? (
@@ -31,9 +31,9 @@ const CraftingSelectBtn = memo(
         </button>
       </div>
     );
-  },
+  }
 );
 
 export default CraftingSelectBtn;
 
-CraftingSelectBtn.displayName = "CraftingSelectBtn";
+CraftingSelectBtn.displayName = 'CraftingSelectBtn';

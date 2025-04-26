@@ -1,15 +1,15 @@
 import {
   prefix_enchant_options,
   suffix_enchant_options,
-} from "@/app/_constant/enchant";
-import EnchantRankTable from "./EnchantRankTable";
-import Column from "../layout/Column";
+} from '@/app/_constant/enchant';
+import EnchantRankTable from './EnchantRankTable';
+import Column from '../layout/Column';
 
-import BasicContainer from "../layout/BasicContainer";
-import { insertUpgradeType } from "./utils/insertUpgradeType";
-import EnchantTableInputFilter from "./EnchantTableInputFilter";
-import EnchantDropAndDetail from "./EnchantDropAndDetail";
-import { keyword } from "@/app/_constant/keyword";
+import BasicContainer from '../layout/BasicContainer';
+import { insertUpgradeType } from './utils/insertUpgradeType';
+import EnchantTableInputFilter from './EnchantTableInputFilter';
+import EnchantDropAndDetail from './EnchantDropAndDetail';
+import { keyword } from '@/app/_constant/keyword';
 
 const EnchantPriceRankingList = () => {
   const allEnchantList = [

@@ -1,5 +1,5 @@
-import { useMaterialsStore } from "@/app/_store/materialsStore";
-import { memo } from "react";
+import { useMaterialsStore } from '@/app/_store/materialsStore';
+import { memo } from 'react';
 
 const CraftingQuantity = memo(
   ({ item_quantity }: { item_quantity: number }) => {
@@ -7,9 +7,9 @@ const CraftingQuantity = memo(
     const value = item_quantity * count;
 
     return <span className="w-24">{value.toLocaleString()}</span>;
-  },
+  }
 );
 
 export default CraftingQuantity;
 
-CraftingQuantity.displayName = "CraftingQuantity";
+CraftingQuantity.displayName = 'CraftingQuantity';

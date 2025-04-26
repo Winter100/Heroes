@@ -1,5 +1,5 @@
-import PreviewItem from "./PreviewItem";
-import { usePreviewStore } from "@/app/_store/previewStore";
+import PreviewItem from './PreviewItem';
+import { usePreviewStore } from '@/app/_store/previewStore';
 
 const PreivewList = () => {
   const items = usePreviewStore((state) => state.info);

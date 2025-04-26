@@ -1,10 +1,10 @@
-import { EnchantPriceProps } from "@/app/_type/enchantType";
-import Loading from "../Loading";
-import Row from "../../layout/Row";
+import { EnchantPriceProps } from '@/app/_type/enchantType';
+import Loading from '../Loading';
+import Row from '../../layout/Row';
 
 const EnchantPrice = ({
-  label = "평균 거래가 :",
-  falseLabel = "최근 거래가 없습니다",
+  label = '평균 거래가 :',
+  falseLabel = '최근 거래가 없습니다',
   avgPrice,
   enchantPriceLoading,
 }: EnchantPriceProps) => {

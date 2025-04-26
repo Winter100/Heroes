@@ -1,8 +1,8 @@
-import BasicDialog from "@/app/_components/common/BasicDialog";
-import PartholnContent from "./content/PartholnContent";
-import { useDialog } from "@/app/_hooks/useDialog/useDialog";
-import Button from "../common/Button";
-import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
+import BasicDialog from '@/app/_components/common/BasicDialog';
+import PartholnContent from './content/PartholnContent';
+import { useDialog } from '@/app/_hooks/useDialog/useDialog';
+import Button from '../common/Button';
+import RaidSelectorWithStats from '../preview/table/RaidSelectorWithStats';
 
 const PartholnSummaryDialog = () => {
   const { isOpen, onClose, onOpen } = useDialog();

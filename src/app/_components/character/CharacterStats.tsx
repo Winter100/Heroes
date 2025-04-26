@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { getStats } from "@/app/_services/getStats";
-import { mergeStats } from "@/app/_utils/mergeStats";
-import { useQuery } from "@tanstack/react-query";
-import Loading from "../common/Loading";
-import ErrorApi from "../common/error/ErrorApi";
+import { getStats } from '@/app/_services/getStats';
+import { mergeStats } from '@/app/_utils/mergeStats';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../common/Loading';
+import ErrorApi from '../common/error/ErrorApi';
 
 const CharacterStats = ({ ocid }: { ocid: string }) => {
   const { mergeAtkAndMatk, translatedStats } = mergeStats();
 
   const { data, isLoading, error } = useQuery({
     enabled: !!ocid,
-    queryKey: [ocid, "stats"],
-    queryFn: () => getStats(ocid ?? ""),
+    queryKey: [ocid, 'stats'],
+    queryFn: () => getStats(ocid ?? ''),
     select: (data) => {
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);

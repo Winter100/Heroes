@@ -1,11 +1,11 @@
-import { InfusionsDialogProps } from "@/app/_type/infusionType";
-import BasicDialog from "../common/BasicDialog";
-import BottomArrow from "../common/BottomArrow";
-import ItemTitle from "../common/ItemTitle";
-import InfusionsContent from "./content/InfusionsContent";
-import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
-import { useDialog } from "@/app/_hooks/useDialog/useDialog";
-import { Button } from "@headlessui/react";
+import { InfusionsDialogProps } from '@/app/_type/infusionType';
+import BasicDialog from '../common/BasicDialog';
+import BottomArrow from '../common/BottomArrow';
+import ItemTitle from '../common/ItemTitle';
+import InfusionsContent from './content/InfusionsContent';
+import RaidSelectorWithStats from '../preview/table/RaidSelectorWithStats';
+import { useDialog } from '@/app/_hooks/useDialog/useDialog';
+import { Button } from '@headlessui/react';
 
 const InfusionsDialog = ({
   selectedValue,

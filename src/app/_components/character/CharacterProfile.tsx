@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface CharacterProfileProps {
   profileData: { title: string; value: string | number }[];

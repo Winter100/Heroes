@@ -1,4 +1,4 @@
-import TableList from "@/app/_components/preview/table/TableList";
+import TableList from '@/app/_components/preview/table/TableList';
 
 const TourContent = () => {
   return <TableList />;

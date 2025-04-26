@@ -1,16 +1,16 @@
-import { usePreviewStore } from "@/app/_store/previewStore";
-import { getEnchantImage } from "./utils/getEnchantImage";
-import { getEnchantAvgPrice } from "./utils/getEnchantAvgPrice";
+import { usePreviewStore } from '@/app/_store/previewStore';
+import { getEnchantImage } from './utils/getEnchantImage';
+import { getEnchantAvgPrice } from './utils/getEnchantAvgPrice';
 
-import Column from "../layout/Column";
-import { EnchantItemProps } from "@/app/_type/enchantType";
-import EnchantEffects from "../common/enchant/EnchantEffects";
-import EnchantPrice from "../common/enchant/EnchantPrice";
-import EnchantRank from "../common/enchant/EnchantRank";
-import EnchantTitle from "../common/enchant/EnchantTitle";
-import EnchantImage from "../common/enchant/EnchantImage";
-import EnchantDescription from "../common/enchant/EnchantDescription";
-import Row from "../layout/Row";
+import Column from '../layout/Column';
+import { EnchantItemProps } from '@/app/_type/enchantType';
+import EnchantEffects from '../common/enchant/EnchantEffects';
+import EnchantPrice from '../common/enchant/EnchantPrice';
+import EnchantRank from '../common/enchant/EnchantRank';
+import EnchantTitle from '../common/enchant/EnchantTitle';
+import EnchantImage from '../common/enchant/EnchantImage';
+import EnchantDescription from '../common/enchant/EnchantDescription';
+import Row from '../layout/Row';
 
 const EnchantItem = ({
   slot,
@@ -50,7 +50,7 @@ const EnchantItem = ({
       // onDoubleClick={() => setOpenModal(false)}
     >
       <Column
-        className={`${isSelected ? "text-blue-300" : "text-zinc-400 hover:text-gray-200"} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
+        className={`${isSelected ? 'text-blue-300' : 'text-zinc-400 hover:text-gray-200'} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
       >
         <Row className="w-full">
           <EnchantImage src={src} alt={enchantName} />

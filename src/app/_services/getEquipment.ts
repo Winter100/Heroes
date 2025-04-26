@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const getEquipment = async (ocid: string) => {
   try {
     const response = await axios.get(
-      `api/getCharacterEquipment?ocid=${encodeURIComponent(ocid)}`,
+      `api/getCharacterEquipment?ocid=${encodeURIComponent(ocid)}`
     );
 
     const data = await response.data;

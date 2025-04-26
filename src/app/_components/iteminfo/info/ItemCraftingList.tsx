@@ -1,5 +1,5 @@
-import { ItemListType } from "@/app/_constant/items/item_crafting_materials_list";
-import React, { memo } from "react";
+import { ItemListType } from '@/app/_constant/items/item_crafting_materials_list';
+import React, { memo } from 'react';
 
 const ItemCraftingList = memo(
   ({ itemCrafting }: { itemCrafting: ItemListType }) => {
@@ -13,9 +13,9 @@ const ItemCraftingList = memo(
         </div>
       </div>
     );
-  },
+  }
 );
 
 export default ItemCraftingList;
 
-ItemCraftingList.displayName = "ItemCraftingList";
+ItemCraftingList.displayName = 'ItemCraftingList';

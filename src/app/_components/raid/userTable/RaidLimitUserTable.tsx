@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic";
-import LimitTableHead from "../limitTable/LimitTableHead";
+import dynamic from 'next/dynamic';
+import LimitTableHead from '../limitTable/LimitTableHead';
 
-const LimitTableBody = dynamic(() => import("../limitTable/LimitTableBody"), {
+const LimitTableBody = dynamic(() => import('../limitTable/LimitTableBody'), {
   ssr: false,
 });
 

@@ -1,5 +1,5 @@
-import { EnchantPriceType } from "@/app/_type/enchantType";
-import { convertToKST } from "@/app/_utils/convertToKST";
+import { EnchantPriceType } from '@/app/_type/enchantType';
+import { convertToKST } from '@/app/_utils/convertToKST';
 
 export const getEnchantDate = (enchantList: EnchantPriceType[]) => {
   if (enchantList.length === 0) return { firstDate: null, lastDate: null };
@@ -13,8 +13,8 @@ export const getEnchantDate = (enchantList: EnchantPriceType[]) => {
       ? lastItem.item[lastItem.item.length - 1].date_update
       : null;
 
-  const firstDate = convertToKST(first || "");
-  const lastDate = convertToKST(last || "");
+  const firstDate = convertToKST(first || '');
+  const lastDate = convertToKST(last || '');
 
   return { firstDate, lastDate };
 };

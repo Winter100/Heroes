@@ -1,17 +1,17 @@
-"use client";
-import clsx from "clsx";
-import Link from "next/link";
-import { ComponentProps, useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
-import Loading from "../common/Loading";
-import { isWithinHours } from "@/app/_utils/isWithin24Hours";
-import { convertToKST } from "@/app/_utils/convertToKST";
-import { getTimeDifference } from "../preview/utils/dateEvent";
-import ErrorDisplay from "../common/error/ErrorDisplay";
+'use client';
+import clsx from 'clsx';
+import Link from 'next/link';
+import { ComponentProps, useMemo, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
+import Loading from '../common/Loading';
+import { isWithinHours } from '@/app/_utils/isWithin24Hours';
+import { convertToKST } from '@/app/_utils/convertToKST';
+import { getTimeDifference } from '../preview/utils/dateEvent';
+import ErrorDisplay from '../common/error/ErrorDisplay';
 
-interface NoteListProps extends ComponentProps<"div"> {
+interface NoteListProps extends ComponentProps<'div'> {
   mainTitle: string;
   items: {
     title: string;
@@ -60,7 +60,7 @@ const Notice = ({
   }
 
   return (
-    <div className={clsx("flex flex-col", className)}>
+    <div className={clsx('flex flex-col', className)}>
       <p className="text-sm">{mainTitle}</p>
       <div className="flex h-full w-full flex-col rounded-md">
         {isLoading ? (
@@ -72,7 +72,7 @@ const Notice = ({
             <ul className="flex flex-col gap-2 text-sm">
               {currentItems?.map((item) => {
                 const date = item?.date ? item?.date : item?.date_event_start;
-                const is24InHours = isWithinHours(date || "", 24);
+                const is24InHours = isWithinHours(date || '', 24);
                 return (
                   <li key={item.notice_id}>
                     <Link
@@ -93,7 +93,7 @@ const Notice = ({
                           )}
                           <div className="truncate">{item.title}</div>
                           <div className="text-xs text-red-600">
-                            {getTimeDifference(convertToKST(item?.date || ""))}
+                            {getTimeDifference(convertToKST(item?.date || ''))}
                           </div>
                         </div>
                       </div>

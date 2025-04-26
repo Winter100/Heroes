@@ -1,16 +1,16 @@
-import clsx from "clsx";
-import { memo, useRef, useEffect } from "react";
-import { RxTriangleUp, RxTriangleDown } from "react-icons/rx";
+import clsx from 'clsx';
+import { memo, useRef, useEffect } from 'react';
+import { RxTriangleUp, RxTriangleDown } from 'react-icons/rx';
 
-import { getEnchantImage } from "./utils/getEnchantImage";
-import Tr from "../table/Tr";
-import Td from "../table/Td";
-import Row from "../layout/Row";
-import EnchantImage from "../common/enchant/EnchantImage";
-import EnchantTitle from "../common/enchant/EnchantTitle";
-import Loading from "../common/Loading";
-import Column from "../layout/Column";
-import { EnchantStoreType } from "@/app/_store/selectEnchantStore";
+import { getEnchantImage } from './utils/getEnchantImage';
+import Tr from '../table/Tr';
+import Td from '../table/Td';
+import Row from '../layout/Row';
+import EnchantImage from '../common/enchant/EnchantImage';
+import EnchantTitle from '../common/enchant/EnchantTitle';
+import Loading from '../common/Loading';
+import Column from '../layout/Column';
+import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
 
 interface TrItemProps {
   enchant: EnchantStoreType;
@@ -40,8 +40,8 @@ const TrItem = memo(
     useEffect(() => {
       if (selectedRef.current) {
         selectedRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
+          behavior: 'smooth',
+          block: 'center',
         });
       }
     }, [length]);
@@ -51,11 +51,11 @@ const TrItem = memo(
         ref={isSelected ? selectedRef : null}
         onClick={() => onClick(enchant)}
         className={clsx(
-          "transform cursor-pointer border-t border-borderColor text-center transition-all duration-300 ease-in-out hover:bg-backgroundOne",
-          isSelected ? "animate-boundUpDown text-blue-300" : "",
+          'transform cursor-pointer border-t border-borderColor text-center transition-all duration-300 ease-in-out hover:bg-backgroundOne',
+          isSelected ? 'animate-boundUpDown text-blue-300' : ''
         )}
       >
-        <Td className="px-0">{enchant?.rank || ""}</Td>
+        <Td className="px-0">{enchant?.rank || ''}</Td>
         <Td className="px-0">
           <Row className="h-full items-center gap-0.5 px-0 sm:gap-2 sm:px-2">
             <EnchantImage
@@ -105,8 +105,8 @@ const TrItem = memo(
         </Td>
       </Tr>
     );
-  },
+  }
 );
-TrItem.displayName = "TrItem";
+TrItem.displayName = 'TrItem';
 
 export default TrItem;

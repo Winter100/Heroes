@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Script from 'next/script';
 
 const GoogleAnalytics = () => {
   const Id = process.env.NEXT_PUBLIC_GA_ID;

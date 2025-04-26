@@ -1,7 +1,7 @@
-import { createContext, Dispatch, SetStateAction } from "react";
-import ModalOpenBtn from "./ModalOpenBtn";
-import ModalBody from "./ModalBody";
-import ModalCloseBtn from "./ModalCloseBtn";
+import { createContext, Dispatch, SetStateAction } from 'react';
+import ModalOpenBtn from './ModalOpenBtn';
+import ModalBody from './ModalBody';
+import ModalCloseBtn from './ModalCloseBtn';
 
 interface ModalProps {
   open: boolean;

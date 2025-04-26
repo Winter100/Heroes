@@ -1,24 +1,24 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 type State = {
-  stats: "능력치" | null;
-  item: "item" | "skill" | "cash" | null;
+  stats: '능력치' | null;
+  item: 'item' | 'skill' | 'cash' | null;
 };
 
 type Action = {
-  setStats: (name: "능력치") => void;
-  setItem: (name: "item" | "skill" | "cash") => void;
+  setStats: (name: '능력치') => void;
+  setItem: (name: 'item' | 'skill' | 'cash') => void;
   reset: () => void;
 };
 
 export const useDetailStore = create<State & Action>((set) => {
   return {
-    stats: "능력치",
+    stats: '능력치',
     item: null,
 
     setStats: (name) => {
       set((state) => {
-        if (state.stats === "능력치") {
+        if (state.stats === '능력치') {
           return { stats: null };
         }
         return { stats: name };

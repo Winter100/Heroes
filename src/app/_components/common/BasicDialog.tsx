@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import clsx from "clsx";
+'use client';
+import React from 'react';
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
+import clsx from 'clsx';
 
 interface BasicDialogProps {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ const BasicDialog = ({
   children,
   isOpen,
   onClose,
-  size = "1000px",
+  size = '1000px',
   className,
 }: BasicDialogProps) => {
   return (
@@ -33,7 +33,7 @@ const BasicDialog = ({
               style={{ maxWidth: size }}
               className={clsx(
                 `relative mx-auto mb-6 w-full transform overflow-hidden rounded-lg bg-backgroundOne px-4 pb-4 pt-5 text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:mx-6 sm:my-8 sm:max-w-[1000px] data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 md:p-6 md:pb-4 md:max-w-[${size}]`,
-                className,
+                className
               )}
             >
               <div>

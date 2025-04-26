@@ -1,5 +1,5 @@
-import React from "react";
-import Item from "../../common/item/Item";
+import React from 'react';
+import Item from '../../common/item/Item';
 
 const ItemColorPart = ({
   color_1,
@@ -10,14 +10,14 @@ const ItemColorPart = ({
   color_2: string;
   color_3: string;
 }) => {
-  const colors = ["R", "G", "B"];
+  const colors = ['R', 'G', 'B'];
   const colorParts = [color_1, color_2, color_3].map((color, index) => {
-    const parsedColors = color?.split(",").map((value, i) => ({
+    const parsedColors = color?.split(',').map((value, i) => ({
       color: colors[i % colors.length],
       value: Number(value),
     }));
 
-    const bgColor = `rgb(${parsedColors.map((c) => c.value).join(",")})`;
+    const bgColor = `rgb(${parsedColors.map((c) => c.value).join(',')})`;
 
     return { id: index + 1, parsedColors, bgColor };
   });
@@ -38,7 +38,7 @@ const ItemColorPart = ({
             [
             {parsedColors
               .map(({ color, value }) => `${color}:${value}`)
-              .join(" ")}
+              .join(' ')}
             ]
           </span>
         </Item.Content>

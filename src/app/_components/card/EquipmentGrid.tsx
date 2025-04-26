@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { NewEquipmentType } from "@/app/_type/equipmentType";
-import ItemImage from "../iteminfo/info/ItemImage";
-import ItemTooltip from "../tooltip/ItemTooltip";
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import ItemImage from '../iteminfo/info/ItemImage';
+import ItemTooltip from '../tooltip/ItemTooltip';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from '@/components/ui/popover';
 
 const itemSlot = [
-  ["Earring", "Head", "Necklace"],
-  ["Right Hand", "Upper", "Left Hand"],
-  [null, "Lower", "Hand"],
-  ["Belt", "Leg", "Charm"],
-  ["Right Finger", "Artifact", "Left Finger"],
-  ["Right Wrist", "Rhod", "Left Wrist"],
+  ['Earring', 'Head', 'Necklace'],
+  ['Right Hand', 'Upper', 'Left Hand'],
+  [null, 'Lower', 'Hand'],
+  ['Belt', 'Leg', 'Charm'],
+  ['Right Finger', 'Artifact', 'Left Finger'],
+  ['Right Wrist', 'Rhod', 'Left Wrist'],
 ];
 const EquipmentGrid = ({ items }: { items: NewEquipmentType[] }) => {
   return (
@@ -33,7 +33,7 @@ const EquipmentGrid = ({ items }: { items: NewEquipmentType[] }) => {
           );
 
         const item = items.find(
-          (item) => item.item_equipment_slot_name === slot,
+          (item) => item.item_equipment_slot_name === slot
         );
         return (
           <li

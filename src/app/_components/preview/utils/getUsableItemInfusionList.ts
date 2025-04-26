@@ -11,7 +11,7 @@ export const getUsableItemInfusionList = (
       description: string;
     }[];
   }[],
-  slot: string,
+  slot: string
 ) => {
   return (
     infusionList.find((item) => item.equipment.includes(slot))?.value ?? []

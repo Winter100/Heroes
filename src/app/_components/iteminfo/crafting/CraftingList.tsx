@@ -1,7 +1,7 @@
-"use client";
-import { useMaterialsStore } from "@/app/_store/materialsStore";
-import { item_crafting_materials_list } from "@/app/_constant/items/item_crafting_materials_list";
-import CraftingItem from "./CraftingItem";
+'use client';
+import { useMaterialsStore } from '@/app/_store/materialsStore';
+import { item_crafting_materials_list } from '@/app/_constant/items/item_crafting_materials_list';
+import CraftingItem from './CraftingItem';
 
 const CraftingList = () => {
   const setMaterials = useMaterialsStore((state) => state.setMaterials);
@@ -12,7 +12,7 @@ const CraftingList = () => {
     <ul className="flex flex-col gap-1">
       {item_crafting_materials_list
         .filter((crafting) => crafting.item_category === filter)
-        .filter((item) => !item.item_name.includes("+15 오르나"))
+        .filter((item) => !item.item_name.includes('+15 오르나'))
         .map((mat) => (
           <li key={mat?.item_name}>
             <CraftingItem

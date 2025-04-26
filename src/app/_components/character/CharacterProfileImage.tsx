@@ -1,7 +1,7 @@
-import React from "react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import Image from "next/image";
-import { getImageByName } from "@/app/_utils/getImageByName";
+import React from 'react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import Image from 'next/image';
+import { getImageByName } from '@/app/_utils/getImageByName';
 
 interface CharacterProfileImageProps {
   job: string;

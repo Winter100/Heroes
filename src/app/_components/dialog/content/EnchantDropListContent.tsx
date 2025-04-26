@@ -1,14 +1,14 @@
-import Image from "next/image";
-import clsx from "clsx";
+import Image from 'next/image';
+import clsx from 'clsx';
 import {
   prefix_enchant_options,
   suffix_enchant_options,
-} from "@/app/_constant/enchant";
-import { insertUpgradeType } from "../../enchant/utils/insertUpgradeType";
-import { keyword } from "@/app/_constant/keyword";
-import { getImageByName } from "@/app/_utils/getImageByName";
-import { useSelectEnchantStore } from "@/app/_store/selectEnchantStore";
-import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
+} from '@/app/_constant/enchant';
+import { insertUpgradeType } from '../../enchant/utils/insertUpgradeType';
+import { keyword } from '@/app/_constant/keyword';
+import { getImageByName } from '@/app/_utils/getImageByName';
+import { useSelectEnchantStore } from '@/app/_store/selectEnchantStore';
+import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
 
 interface EnchantDropListContentProps {
   onClose: () => void;
@@ -19,7 +19,7 @@ const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
     (state) => ({
       dropRaidOrItemName: state.dropRaidOrItemName,
       setDropRaidOrItemName: state.setDropRaidOrItemName,
-    }),
+    })
   );
   const { resetSelectEnchant } = useSelectEnchantStore((state) => ({
     resetSelectEnchant: state.resetSelectEnchant,
@@ -49,10 +49,10 @@ const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
         <li
           key={name}
           className={clsx(
-            "rounded-md bg-background opacity-70 hover:animate-boundUpDown hover:text-white hover:opacity-100",
+            'rounded-md bg-background opacity-70 hover:animate-boundUpDown hover:text-white hover:opacity-100',
             dropRaidOrItemName === name
-              ? "border border-blue-300 text-blue-300 !opacity-100"
-              : "hover:outline hover:outline-1 hover:outline-rose-300",
+              ? 'border border-blue-300 text-blue-300 !opacity-100'
+              : 'hover:outline hover:outline-1 hover:outline-rose-300'
           )}
         >
           <button

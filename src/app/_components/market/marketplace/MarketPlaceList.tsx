@@ -1,20 +1,20 @@
-"use client";
-import { useMarketRankList } from "@/app/_hooks/useMarketRankList/useMarketRankList";
-import Column from "../../layout/Column";
-import MarketPlaceItem from "./MarketPlaceItem";
-import Loading from "../../common/Loading";
+'use client';
+import { useMarketRankList } from '@/app/_hooks/useMarketRankList/useMarketRankList';
+import Column from '../../layout/Column';
+import MarketPlaceItem from './MarketPlaceItem';
+import Loading from '../../common/Loading';
 
 interface MarketPlaceListProps {
-  type: "buy" | "sell";
+  type: 'buy' | 'sell';
 }
-const MarketPlaceList = ({ type = "buy" }: MarketPlaceListProps) => {
+const MarketPlaceList = ({ type = 'buy' }: MarketPlaceListProps) => {
   const { data, isLoading } = useMarketRankList(type);
 
   if (isLoading) return <Loading />;
 
   if (!data) return null;
 
-  const goldRankListData = "buy_gold" in data ? data.buy_gold : data.sell_gold;
+  const goldRankListData = 'buy_gold' in data ? data.buy_gold : data.sell_gold;
 
   return (
     <Column className="flex flex-1 items-center rounded-md border border-zinc-500">

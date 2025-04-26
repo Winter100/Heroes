@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Search from "@/app/_components/common/search/Search";
-import { useRefFocus } from "@/app/_hooks/useRefFocus/useRefFocus";
-import { useSearchHandler } from "@/app/_hooks/useSearchHandler/useSearchHandler";
+import Search from '@/app/_components/common/search/Search';
+import { useRefFocus } from '@/app/_hooks/useRefFocus/useRefFocus';
+import { useSearchHandler } from '@/app/_hooks/useSearchHandler/useSearchHandler';
 
 const PreviewSearchBar = ({
-  className = "",
+  className = '',
   routeName,
 }: {
   className?: string;

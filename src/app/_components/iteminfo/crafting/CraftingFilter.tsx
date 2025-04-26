@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useMaterialsStore } from "@/app/_store/materialsStore";
-import clsx from "clsx";
+import React from 'react';
+import { useMaterialsStore } from '@/app/_store/materialsStore';
+import clsx from 'clsx';
 
-const filterArray = [{ value: "장비" }, { value: "소모품" }, { value: "재료" }];
+const filterArray = [{ value: '장비' }, { value: '소모품' }, { value: '재료' }];
 
 const CraftingFilter = () => {
   const filterValue = useMaterialsStore((state) => state.filter);
@@ -16,8 +16,8 @@ const CraftingFilter = () => {
           <button
             onClick={() => setFilter(filter.value)}
             className={clsx(
-              "rounded-sm border border-borderColor/50 p-1",
-              filterValue === filter.value && "text-blue-300",
+              'rounded-sm border border-borderColor/50 p-1',
+              filterValue === filter.value && 'text-blue-300'
             )}
           >
             {filter.value}

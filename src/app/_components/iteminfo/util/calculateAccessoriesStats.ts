@@ -3,7 +3,7 @@ export const calculateAccessoriesStats = (
   firstAttackIncrease: number,
   firstDefenseIncrease: number,
   secondAttackIncrease: number,
-  secondDefenseIncrease: number,
+  secondDefenseIncrease: number
 ) => {
   let totalAttack = 0;
   let totalDefense = 0;
@@ -19,8 +19,8 @@ export const calculateAccessoriesStats = (
   }
 
   return [
-    { stat_name: "공격력", stat_value: totalAttack },
-    { stat_name: "마법공격력", stat_value: totalAttack },
-    { stat_name: "대항력", stat_value: totalDefense },
+    { stat_name: '공격력', stat_value: totalAttack },
+    { stat_name: '마법공격력', stat_value: totalAttack },
+    { stat_name: '대항력', stat_value: totalDefense },
   ];
 };

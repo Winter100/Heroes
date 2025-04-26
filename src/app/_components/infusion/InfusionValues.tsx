@@ -1,5 +1,5 @@
-import { InfusionValuesProps } from "@/app/_type/infusionType";
-import Column from "../layout/Column";
+import { InfusionValuesProps } from '@/app/_type/infusionType';
+import Column from '../layout/Column';
 
 const InfusionValues = ({ infusionValue }: InfusionValuesProps) => {
   return (

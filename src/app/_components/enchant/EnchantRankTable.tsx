@@ -1,11 +1,11 @@
-"use client";
-import { memo } from "react";
-import Tbody from "../table/Tbody";
-import Thead from "../table/Thead";
-import TrItem from "./TrItem";
-import DontSearch from "./DontSearch";
-import { EnchantRankTableProps } from "@/app/_type/enchantType";
-import { useEnchantRankTable } from "./hooks/useEnchantRankTable";
+'use client';
+import { memo } from 'react';
+import Tbody from '../table/Tbody';
+import Thead from '../table/Thead';
+import TrItem from './TrItem';
+import DontSearch from './DontSearch';
+import { EnchantRankTableProps } from '@/app/_type/enchantType';
+import { useEnchantRankTable } from './hooks/useEnchantRankTable';
 
 const EnchantRankTable = memo(({ enchantData }: EnchantRankTableProps) => {
   const {
@@ -53,4 +53,4 @@ const EnchantRankTable = memo(({ enchantData }: EnchantRankTableProps) => {
 
 export default EnchantRankTable;
 
-EnchantRankTable.displayName = "EnchantRankTable";
+EnchantRankTable.displayName = 'EnchantRankTable';

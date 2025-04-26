@@ -1,4 +1,4 @@
-import Item from "./item/Item";
+import Item from './item/Item';
 
 interface IngredientItemProps {
   name: string;
@@ -6,14 +6,14 @@ interface IngredientItemProps {
   value: number;
 }
 const IngredientItem = ({
-  name = "",
+  name = '',
   value = 0,
-  src = "",
+  src = '',
 }: IngredientItemProps) => {
   const isZeroValue = value === 0;
   return (
     <div
-      className={`${isZeroValue ? "opacity-40" : "text-white"} flex w-full flex-col items-center justify-center gap-2 text-sm hover:cursor-default`}
+      className={`${isZeroValue ? 'opacity-40' : 'text-white'} flex w-full flex-col items-center justify-center gap-2 text-sm hover:cursor-default`}
     >
       <div className="flex items-center justify-center text-xs">{name}</div>
       <div className="flex w-full flex-row items-center gap-2 rounded-lg bg-background p-0.5">

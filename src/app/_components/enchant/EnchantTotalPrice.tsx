@@ -1,5 +1,5 @@
-import { usePreviewStore } from "@/app/_store/previewStore";
-import EnchantPrice from "../common/enchant/EnchantPrice";
+import { usePreviewStore } from '@/app/_store/previewStore';
+import EnchantPrice from '../common/enchant/EnchantPrice';
 
 const EnchantTotalPrice = () => {
   const totalPriceItem = usePreviewStore((state) => state.totalPriceItem);

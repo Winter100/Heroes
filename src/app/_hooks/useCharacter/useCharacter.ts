@@ -1,16 +1,16 @@
-import { useCallback, useState } from "react";
-import { toast } from "react-toastify";
+import { useCallback, useState } from 'react';
+import { toast } from 'react-toastify';
 
-import { mergeAtk } from "./utils/mergeAtk";
-import { translateAndUnifyStats } from "./utils/translateAndUnifyStats";
-import { mergeCharacterData } from "./utils/mergeCharacterData";
-import { useCharacterStore } from "@/app/_store/characterStore";
-import { getOcid } from "@/app/_services/getOcid";
-import { getBasic } from "@/app/_services/getBasic";
-import { getStats } from "@/app/_services/getStats";
-import { getGuild } from "@/app/_services/getGuild";
-import { addWaitingRoomCharacterInfo } from "@/app/_utils/localStorage";
-import { useRankStore } from "@/app/_store/rankStore";
+import { mergeAtk } from './utils/mergeAtk';
+import { translateAndUnifyStats } from './utils/translateAndUnifyStats';
+import { mergeCharacterData } from './utils/mergeCharacterData';
+import { useCharacterStore } from '@/app/_store/characterStore';
+import { getOcid } from '@/app/_services/getOcid';
+import { getBasic } from '@/app/_services/getBasic';
+import { getStats } from '@/app/_services/getStats';
+import { getGuild } from '@/app/_services/getGuild';
+import { addWaitingRoomCharacterInfo } from '@/app/_utils/localStorage';
+import { useRankStore } from '@/app/_store/rankStore';
 
 export const useCharacter = () => {
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ export const useCharacter = () => {
         const mergedChrarcterData = mergeCharacterData(
           basic,
           translatedStats,
-          guild,
+          guild
         );
 
         addWaitingRoomCharacterInfo(mergedChrarcterData);
@@ -44,17 +44,17 @@ export const useCharacter = () => {
 
         selectedHandler(characterName);
       } catch (e) {
-        toast.error("생성된 캐릭터가 없습니다.");
+        toast.error('생성된 캐릭터가 없습니다.');
         if (e instanceof Error) {
-          console.error("e", e);
+          console.error('e', e);
         } else {
-          console.error("e", e);
+          console.error('e', e);
         }
       } finally {
         setLoading(false);
       }
     },
-    [addCharacter, selectedHandler, selectedRankTitle],
+    [addCharacter, selectedHandler, selectedRankTitle]
   );
 
   return { loading, handleCharacterInfo };

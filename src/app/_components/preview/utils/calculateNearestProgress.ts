@@ -1,7 +1,7 @@
 export const calculateNearestProgress = (
   percentage: number,
   maxValue: string,
-  oneValue: string,
+  oneValue: string
 ) => {
   const max = Number(maxValue);
   const step = Number(oneValue);

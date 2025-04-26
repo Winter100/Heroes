@@ -1,5 +1,5 @@
-import { NewTuning_stat } from "@/app/_type/equipmentType";
-import { getImageByName } from "@/app/_utils/getImageByName";
+import { NewTuning_stat } from '@/app/_type/equipmentType';
+import { getImageByName } from '@/app/_utils/getImageByName';
 
 export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
   const t = items?.map((stat) => {
@@ -9,7 +9,7 @@ export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
         one_ingredient: s.one_ingredient,
         grindingNumber: Math.ceil(
           (Number(s.stat_value) - Number(s.stat_min_value)) /
-            Number(s.stat_one_value),
+            Number(s.stat_one_value)
         ),
       };
     });
@@ -29,7 +29,7 @@ export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
         }
         materialTotals[name] += value;
       });
-    }),
+    })
   );
 
   const materialsArray = Object.keys(materialTotals)
@@ -39,7 +39,7 @@ export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
       src: getImageByName(name),
       // src: `/images/items/ingredient/${name}.png`,
     }))
-    .sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    .sort((a, b) => a.name.localeCompare(b.name, 'ko'));
 
   return materialsArray;
 };

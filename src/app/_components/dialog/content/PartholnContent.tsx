@@ -1,8 +1,8 @@
-"use client";
-import { usePartholnStore } from "@/app/_store/partholnStore";
-import { partholn } from "@/app/_constant/partholn";
-import { usePreviewStore } from "@/app/_store/previewStore";
-import PartholnList from "@/app/_components/preview/menu/PartholnList";
+'use client';
+import { usePartholnStore } from '@/app/_store/partholnStore';
+import { partholn } from '@/app/_constant/partholn';
+import { usePreviewStore } from '@/app/_store/previewStore';
+import PartholnList from '@/app/_components/preview/menu/PartholnList';
 
 const PartholnContent = () => {
   const level = usePartholnStore((state) => state.level);

@@ -1,16 +1,16 @@
-import { memo } from "react";
-import { MaterialsType } from "@/app/_constant/items/item_crafting_materials_list";
-import { itemInfoMap, materialsMap } from "@/app/_constant/items/item_map";
-import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
-import TooltipImage from "../../common/tooltip/TooltipImage";
-import Item from "../../common/item/Item";
-import CraftingQuantity from "../crafting/CraftingQuantity";
-import ItemTooltipByType from "../../tooltip/ItemTooltipByType";
+import { memo } from 'react';
+import { MaterialsType } from '@/app/_constant/items/item_crafting_materials_list';
+import { itemInfoMap, materialsMap } from '@/app/_constant/items/item_map';
+import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
+import TooltipImage from '../../common/tooltip/TooltipImage';
+import Item from '../../common/item/Item';
+import CraftingQuantity from '../crafting/CraftingQuantity';
+import ItemTooltipByType from '../../tooltip/ItemTooltipByType';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from '@/components/ui/popover';
 
 interface MaterialsCraftingItemProps extends MaterialsType {
   depth?: number;
@@ -40,7 +40,7 @@ const MaterialsCraftingItem = memo(
                     itemName={item_name}
                     isRatingBorder={true}
                   />
-                  <Item.Title type={itemRating || materialsRating || "일반"}>
+                  <Item.Title type={itemRating || materialsRating || '일반'}>
                     {item_name}
                   </Item.Title>
                 </div>
@@ -59,9 +59,9 @@ const MaterialsCraftingItem = memo(
         </div>
       </div>
     );
-  },
+  }
 );
 
 export default MaterialsCraftingItem;
 
-MaterialsCraftingItem.displayName = "MaterialsCraftingItem";
+MaterialsCraftingItem.displayName = 'MaterialsCraftingItem';

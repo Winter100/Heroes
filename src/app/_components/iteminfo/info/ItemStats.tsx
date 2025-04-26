@@ -1,5 +1,5 @@
-import { Stat } from "@/app/_type/previewType";
-import Item from "../../common/item/Item";
+import { Stat } from '@/app/_type/previewType';
+import Item from '../../common/item/Item';
 
 interface ItemStatsProps {
   mergedStats: Stat[];

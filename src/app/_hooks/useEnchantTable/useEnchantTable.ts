@@ -1,9 +1,9 @@
-import { useMemo } from "react";
-import { splitEnchantByType } from "@/app/_components/enchant/utils/splitEnchantByType";
-import { useEnchantPriceList } from "../useEnchantPriceList/useEnchantPriceList";
-import { keyword } from "@/app/_constant/keyword";
-import { filteredEnchantData } from "@/app/_components/enchant/utils/filteredEnchantData";
-import { transformedEnchantData } from "@/app/_components/enchant/utils/transformedEnchantData";
+import { useMemo } from 'react';
+import { splitEnchantByType } from '@/app/_components/enchant/utils/splitEnchantByType';
+import { useEnchantPriceList } from '../useEnchantPriceList/useEnchantPriceList';
+import { keyword } from '@/app/_constant/keyword';
+import { filteredEnchantData } from '@/app/_components/enchant/utils/filteredEnchantData';
+import { transformedEnchantData } from '@/app/_components/enchant/utils/transformedEnchantData';
 // import { dummy_enchnat } from "@/app/_constant/dummyEnchantList";
 
 export const useEnchantTable = () => {
@@ -12,32 +12,32 @@ export const useEnchantTable = () => {
 
   const { prefix, suffix } = useMemo(
     () => splitEnchantByType(data || []),
-    [data],
+    [data]
   );
 
   const filteredPrefix = useMemo(
     () => filteredEnchantData(prefix, keyword.upgreadeType.prefix),
-    [prefix],
+    [prefix]
   );
 
   const filteredSuffix = useMemo(
     () => filteredEnchantData(suffix, keyword.upgreadeType.suffix),
-    [suffix],
+    [suffix]
   );
 
   const transformedPrefixData = useMemo(
     () => transformedEnchantData(filteredPrefix, keyword.upgreadeType.prefix),
-    [filteredPrefix],
+    [filteredPrefix]
   );
 
   const transformedSuffixData = useMemo(
     () => transformedEnchantData(filteredSuffix, keyword.upgreadeType.suffix),
-    [filteredSuffix],
+    [filteredSuffix]
   );
 
   const mergedEnchantPriceList = useMemo(
     () => [...transformedPrefixData, ...transformedSuffixData],
-    [transformedPrefixData, transformedSuffixData],
+    [transformedPrefixData, transformedSuffixData]
   );
 
   return { mergedEnchantPriceList, isLoading };

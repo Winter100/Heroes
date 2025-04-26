@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Item from "../../common/item/Item";
-import { formatStringArray } from "@/app/_utils/formatStringArray";
+import Image from 'next/image';
+import Item from '../../common/item/Item';
+import { formatStringArray } from '@/app/_utils/formatStringArray';
 
 const Itemrestrictions = ({ restrictions }: { restrictions: string[] }) => {
   return (

@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useNotice } from "@/app/_hooks/useNotice/useNotice";
-import { NoticeEventDataType } from "@/app/_type/noticeType";
-import EventNotice from "../notice/EventNotice";
-import { useEventNoticeDateStore } from "@/app/_store/noticeEventStore";
+import React from 'react';
+import { useNotice } from '@/app/_hooks/useNotice/useNotice';
+import { NoticeEventDataType } from '@/app/_type/noticeType';
+import EventNotice from '../notice/EventNotice';
+import { useEventNoticeDateStore } from '@/app/_store/noticeEventStore';
 
 const HomeEventNotice = () => {
   const {
     data: noticeEventData,
     isLoading: noticeEventLoading,
     error: noticeEventError,
-  } = useNotice<NoticeEventDataType>("notice-event");
+  } = useNotice<NoticeEventDataType>('notice-event');
   const eventDate = useEventNoticeDateStore((state) => state.eventDate);
   const setEventDate = useEventNoticeDateStore((state) => state.setEventDate);
 

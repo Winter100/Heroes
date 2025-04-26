@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 type State = {
   filter: string;
@@ -15,14 +15,14 @@ type Action = {
 
 export const useMaterialsStore = create<State & Action>((set) => {
   return {
-    filter: "장비",
-    category: "",
-    materials: "",
+    filter: '장비',
+    category: '',
+    materials: '',
     count: 1,
     setMaterials: (item, category) => {
       set((state) => {
         if (state?.materials === item) {
-          return { materials: "", category: "" };
+          return { materials: '', category: '' };
         }
         return { materials: item, category: category };
       });

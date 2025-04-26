@@ -1,5 +1,5 @@
-import { useEquipment } from "../useEquipment/useEquipment";
-import { useOcid } from "../useOcid/useOcid";
+import { useEquipment } from '../useEquipment/useEquipment';
+import { useOcid } from '../useOcid/useOcid';
 
 export const useCharacterData = () => {
   // 프리뷰와 관련된 모든 데이터 여기서 불러오기?
@@ -11,7 +11,7 @@ export const useCharacterData = () => {
     name,
   } = useOcid();
   const { error: equipmentError, isLoading: equipmentLoading } = useEquipment(
-    ocid ?? "",
+    ocid ?? ''
   );
 
   return {

@@ -1,15 +1,15 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 export const useDrag = (
   setDropItem: (start: number, end: number) => void,
-  callback?: () => void,
+  callback?: () => void
 ) => {
   const dragStartItem = useRef<number | null>(null);
   const dragEndItem = useRef<number | null>(null);
 
   const dragStart = (e: React.DragEvent, i: number) => {
     dragStartItem.current = i;
-    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.effectAllowed = 'move';
   };
 
   const dragEnter = (i: number) => {

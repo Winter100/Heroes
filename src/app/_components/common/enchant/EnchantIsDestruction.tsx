@@ -1,4 +1,4 @@
-import Column from "../../layout/Column";
+import Column from '../../layout/Column';
 
 const EnchantIsDestruction = ({ rank }: { rank: string }) => {
   return (

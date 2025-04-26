@@ -1,11 +1,11 @@
-"use client";
-import { useState } from "react";
-import { Tooltip } from "react-tooltip";
-import { itemAbility } from "@/app/_constant/itemAbility";
-import { NewEquipmentType } from "@/app/_type/equipmentType";
-import { useOutsideClick } from "@/app/_hooks/useOutsideClick/useOutsideClick";
-import { getSpecificTitle } from "../utils/getSpecificTitle";
-import { useAbilityStore } from "@/app/_store/abilityStore";
+'use client';
+import { useState } from 'react';
+import { Tooltip } from 'react-tooltip';
+import { itemAbility } from '@/app/_constant/itemAbility';
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import { useOutsideClick } from '@/app/_hooks/useOutsideClick/useOutsideClick';
+import { getSpecificTitle } from '../utils/getSpecificTitle';
+import { useAbilityStore } from '@/app/_store/abilityStore';
 
 interface AbilityProps {
   item: NewEquipmentType;
@@ -72,7 +72,7 @@ const Ability = ({ item }: AbilityProps) => {
             className="relative flex h-8 w-full cursor-pointer items-center justify-center border border-zinc-700 bg-backgroundOne text-center text-gray-500 hover:bg-zinc-700"
             onClick={resetAbility}
           >
-            {"(기존) "}
+            {'(기존) '}
             {item?.item_option?.ability_name}
           </li>
           {sameSlotAbility.map((ability) => (
@@ -82,7 +82,7 @@ const Ability = ({ item }: AbilityProps) => {
               onClick={() => handleSelect(ability.ability_name)}
             >
               <a
-                className={`flex h-full w-full items-center justify-center ${selectedAbility === ability.ability_name ? "text-blue-300" : ""}`}
+                className={`flex h-full w-full items-center justify-center ${selectedAbility === ability.ability_name ? 'text-blue-300' : ''}`}
                 // className={`flex h-full w-full items-center justify-center ${item.item_option.ability_name.includes(ability?.ability_name) ? "text-white" : ""}`}
                 data-tooltip-id={`tooltip-${ability.ability_name}`}
                 // data-tooltip-float={true}
