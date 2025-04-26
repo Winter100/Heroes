@@ -1,9 +1,9 @@
-import { Suspense } from "react";
-import Loading from "@/app/_components/common/Loading";
-import HomeEventNotice from "@/app/_components/home/HomeEventNotice";
-import HomeNotice from "@/app/_components/home/HomeNotice";
-import RoundedContainer from "@/app/_components/layout/RoundedContainer";
-import EventCalendar from "@/app/_components/home/EventCalendar";
+import { Suspense } from 'react';
+import Loading from '@/app/_components/common/Loading';
+import HomeEventNotice from '@/app/_components/home/HomeEventNotice';
+import HomeNotice from '@/app/_components/home/HomeNotice';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import EventCalendar from '@/app/_components/home/EventCalendar';
 
 const Home = () => {
   return (
@@ -12,8 +12,8 @@ const Home = () => {
         <div
           className="relative h-60 w-full rounded-md bg-cover"
           style={{
-            backgroundImage: "url(/art.jpg)",
-            backgroundPosition: "center 12%",
+            backgroundImage: 'url(/art.jpg)',
+            backgroundPosition: 'center 12%',
           }}
         />
         <HomeNotice />

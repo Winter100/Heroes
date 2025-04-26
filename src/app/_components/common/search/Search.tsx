@@ -1,11 +1,11 @@
-import { ComponentProps, RefObject, useState } from "react";
-import { GoSearch } from "react-icons/go";
+import { ComponentProps, RefObject, useState } from 'react';
+import { GoSearch } from 'react-icons/go';
 
-import Row from "../../layout/Row";
-import Input from "../Input";
-import Loading from "../Loading";
+import Row from '../../layout/Row';
+import Input from '../Input';
+import Loading from '../Loading';
 
-interface SearchProps extends ComponentProps<"form"> {
+interface SearchProps extends ComponentProps<'form'> {
   loading?: boolean;
   className?: string;
   placeholder: string;
@@ -15,8 +15,8 @@ interface SearchProps extends ComponentProps<"form"> {
 
 const Search = ({
   loading = false,
-  className = "",
-  placeholder = "",
+  className = '',
+  placeholder = '',
   inputRef,
   maxLength,
   ...props
@@ -25,7 +25,7 @@ const Search = ({
 
   return (
     <Row
-      className={`${isFocused ? "border-blue-300" : "border-borderColor"} ${loading ? "bg-backgroundTwo" : ""} h-8 gap-1 rounded-lg border text-sm ${className}`}
+      className={`${isFocused ? 'border-blue-300' : 'border-borderColor'} ${loading ? 'bg-backgroundTwo' : ''} h-8 gap-1 rounded-lg border text-sm ${className}`}
     >
       <form id="search" {...props} className="flex h-full w-full pl-2">
         <Input

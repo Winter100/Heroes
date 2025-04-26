@@ -1,11 +1,11 @@
-import Image from "next/image";
-import BasicDialog from "../common/BasicDialog";
-import Button from "../common/Button";
-import EnchantDropListContent from "./content/EnchantDropListContent";
-import { useDialog } from "@/app/_hooks/useDialog/useDialog";
-import { CiFilter } from "react-icons/ci";
-import { getImageByName } from "@/app/_utils/getImageByName";
-import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
+import Image from 'next/image';
+import BasicDialog from '../common/BasicDialog';
+import Button from '../common/Button';
+import EnchantDropListContent from './content/EnchantDropListContent';
+import { useDialog } from '@/app/_hooks/useDialog/useDialog';
+import { CiFilter } from 'react-icons/ci';
+import { getImageByName } from '@/app/_utils/getImageByName';
+import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
 
 const EnchantDropListFilterDialog = () => {
   const { isOpen, onClose, onOpen } = useDialog();
@@ -13,7 +13,7 @@ const EnchantDropListFilterDialog = () => {
   const { dropRaidOrItemName } = useEnchantFilterStore((state) => ({
     dropRaidOrItemName: state.dropRaidOrItemName,
   }));
-  const isImage = dropRaidOrItemName === "" || dropRaidOrItemName === "all";
+  const isImage = dropRaidOrItemName === '' || dropRaidOrItemName === 'all';
   return (
     <>
       <Button className="rounded-md" onClick={onOpen}>

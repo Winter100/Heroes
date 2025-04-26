@@ -1,8 +1,8 @@
-import BasicDialog from "@/app/_components/common/BasicDialog";
-import GrindingContent from "./content/GrindingContent";
-import { useDialog } from "@/app/_hooks/useDialog/useDialog";
-import RaidSelectorWithStats from "../preview/table/RaidSelectorWithStats";
-import Button from "../common/Button";
+import BasicDialog from '@/app/_components/common/BasicDialog';
+import GrindingContent from './content/GrindingContent';
+import { useDialog } from '@/app/_hooks/useDialog/useDialog';
+import RaidSelectorWithStats from '../preview/table/RaidSelectorWithStats';
+import Button from '../common/Button';
 
 const GrindingSummaryDialog = () => {
   const { isOpen, onClose, onOpen } = useDialog();

@@ -1,7 +1,7 @@
-import CraftingFilter from "@/app/_components/iteminfo/crafting/CraftingFilter";
-import CraftingList from "@/app/_components/iteminfo/crafting/CraftingList";
-import MaterialsCrafting from "@/app/_components/iteminfo/crafting/MaterialsCrafting";
-import BasicContainer from "@/app/_components/layout/BasicContainer";
+import CraftingFilter from '@/app/_components/iteminfo/crafting/CraftingFilter';
+import CraftingList from '@/app/_components/iteminfo/crafting/CraftingList';
+import MaterialsCrafting from '@/app/_components/iteminfo/crafting/MaterialsCrafting';
+import BasicContainer from '@/app/_components/layout/BasicContainer';
 
 const Page = () => {
   return (

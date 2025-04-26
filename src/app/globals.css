@@ -52,7 +52,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox  */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -124,7 +124,7 @@ input[type="number"] {
 
 .shape::before,
 .shape::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   width: 0;
@@ -133,7 +133,7 @@ input[type="number"] {
 }
 
 .shape::before {
-  border-width: 10px 7px 10px 0;
+  border-width: 5px 7px 10px 0;
   border-color: transparent rgb(49, 51, 54) transparent transparent;
   left: -7px;
 }
@@ -141,7 +141,7 @@ input[type="number"] {
 .shape::after {
   border-width: 10px 0 10px 7px;
   border-color: transparent transparent transparent rgb(49, 51, 54);
-  right: -7px;
+  right: -6px;
 }
 
 @layer base {

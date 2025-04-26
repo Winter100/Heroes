@@ -1,15 +1,15 @@
-"use client";
-import { useState } from "react";
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
 
-import Column from "../../layout/Column";
-import Button from "../../common/Button";
-import { useRaidStore } from "@/app/_store/raidStore";
-import { filterRaidList } from "@/app/_utils/filterRaidList";
-import { getImageByName } from "@/app/_utils/getImageByName";
+import Column from '../../layout/Column';
+import Button from '../../common/Button';
+import { useRaidStore } from '@/app/_store/raidStore';
+import { filterRaidList } from '@/app/_utils/filterRaidList';
+import { getImageByName } from '@/app/_utils/getImageByName';
 
 const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
-  const [entry, setEntry] = useState<"빠른전투" | "상한">("상한");
+  const [entry, setEntry] = useState<'빠른전투' | '상한'>('상한');
   const raidString = useRaidStore((state) => state.raidString);
 
   const selectedBoss = useRaidStore((state) => state.setSelectBoss);
@@ -17,7 +17,7 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
   const onClick = (
     raid_name: string,
     monster_name: string,
-    entry: "빠른전투" | "상한" = "상한",
+    entry: '빠른전투' | '상한' = '상한'
   ) => {
     selectedBoss(raid_name, monster_name, entry);
     setOpen(false);
@@ -31,14 +31,14 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
         <div className="flex h-8 items-center justify-center gap-4 text-xs">
           <div
             className={` ${
-              entry === "상한"
-                ? "rounded-lg border-borderColor text-blue-300"
-                : ""
+              entry === '상한'
+                ? 'rounded-lg border-borderColor text-blue-300'
+                : ''
             } h-full`}
           >
             <Button
               className="!w-20 cursor-default !rounded-md !border-borderColor p-2 !text-blue-300"
-              onClick={() => setEntry("상한")}
+              onClick={() => setEntry('상한')}
             >
               상한
             </Button>
@@ -60,7 +60,7 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
                 <button
                   onClick={() => onClick(item?.raid_name, raid.name, entry)}
                   key={raid?.name}
-                  className={`flex w-full items-center justify-center gap-2 hover:text-blue-300 ${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? "text-blue-300" : ""} `}
+                  className={`flex w-full items-center justify-center gap-2 hover:text-blue-300 ${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? 'text-blue-300' : ''} `}
                 >
                   <Image
                     src={getImageByName(raid?.name)}
@@ -68,7 +68,7 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
                     width={40}
                     height={24}
                     alt={raid?.name}
-                    style={{ width: "40px", height: "24px" }}
+                    style={{ width: '40px', height: '24px' }}
                   />
 
                   <div className="flex h-full flex-1 items-center text-xs">

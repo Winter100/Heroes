@@ -1,6 +1,7 @@
-import ItemTooltip from "./ItemTooltip";
-import MaterialTooltip from "./MaterialTooltip";
-import { memo } from "react";
+import EnchantTooltip from './EnchantTooltip';
+import ItemTooltip from './ItemTooltip';
+import MaterialTooltip from './MaterialTooltip';
+import { memo } from 'react';
 
 interface ItemTooltipByTypeProps {
   itemName: string;
@@ -9,12 +10,31 @@ interface ItemTooltipByTypeProps {
 
 const ItemTooltipByType = memo(
   ({ itemName, category, ...props }: ItemTooltipByTypeProps) => {
-    const RenderComponent = category === "장비" ? ItemTooltip : MaterialTooltip;
+    let RenderComponent;
+
+    switch (category) {
+      case '장비':
+        RenderComponent = ItemTooltip;
+        break;
+
+      case '재료':
+        RenderComponent = MaterialTooltip;
+        break;
+
+      case '인챈트':
+        RenderComponent = EnchantTooltip;
+        break;
+
+      default:
+        RenderComponent = MaterialTooltip;
+    }
+
+    // const RenderComponent = category === '장비' ? ItemTooltip : MaterialTooltip;
 
     return <RenderComponent key={itemName} itemName={itemName} {...props} />;
-  },
+  }
 );
 
 export default ItemTooltipByType;
 
-ItemTooltipByType.displayName = "ItemTooltipByType";
+ItemTooltipByType.displayName = 'ItemTooltipByType';

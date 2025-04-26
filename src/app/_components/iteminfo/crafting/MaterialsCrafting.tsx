@@ -1,29 +1,29 @@
-"use client";
-import React, { useEffect } from "react";
-import { useMaterialsStore } from "@/app/_store/materialsStore";
+'use client';
+import React, { useEffect } from 'react';
+import { useMaterialsStore } from '@/app/_store/materialsStore';
 import {
   ItemListType,
   MaterialsType,
-} from "@/app/_constant/items/item_crafting_materials_list";
+} from '@/app/_constant/items/item_crafting_materials_list';
 import {
   itemCraftingMap,
   itemInfoMap,
   materialsMap,
-} from "@/app/_constant/items/item_map";
+} from '@/app/_constant/items/item_map';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from '@/components/ui/popover';
 
-import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
-import Row from "../../layout/Row";
-import TooltipImage from "../../common/tooltip/TooltipImage";
-import ItemTooltipByType from "../../tooltip/ItemTooltipByType";
-import Item from "../../common/item/Item";
-import ItemCraftingList from "../info/ItemCraftingList";
-import ItemCraftingMaterialList from "../info/ItemCraftingMaterialList";
-import CraftingCount from "../info/CraftingCount";
+import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
+import Row from '../../layout/Row';
+import TooltipImage from '../../common/tooltip/TooltipImage';
+import ItemTooltipByType from '../../tooltip/ItemTooltipByType';
+import Item from '../../common/item/Item';
+import ItemCraftingList from '../info/ItemCraftingList';
+import ItemCraftingMaterialList from '../info/ItemCraftingMaterialList';
+import CraftingCount from '../info/CraftingCount';
 
 const MaterialsCrafting = () => {
   const materials = useMaterialsStore((state) => state.materials);
@@ -54,7 +54,7 @@ const MaterialsCrafting = () => {
                     itemName={materials}
                     isRatingBorder={true}
                   />
-                  <Item.Title type={itemRating || materialsRating || "일반"}>
+                  <Item.Title type={itemRating || materialsRating || '일반'}>
                     {materials}
                   </Item.Title>
                 </div>

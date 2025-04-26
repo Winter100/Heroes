@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { useDrag } from "@/app/_hooks/useDrag/useDrag";
-import { useRankStore } from "@/app/_store/rankStore";
-import { useCharacterStore } from "@/app/_store/characterStore";
-import { useCheckStore } from "@/app/_store/checkStore";
-import CheckBox from "@/app/_components/common/CheckBox";
+import { useDrag } from '@/app/_hooks/useDrag/useDrag';
+import { useRankStore } from '@/app/_store/rankStore';
+import { useCharacterStore } from '@/app/_store/characterStore';
+import { useCheckStore } from '@/app/_store/checkStore';
+import CheckBox from '@/app/_components/common/CheckBox';
 
 const LimitTableHead = () => {
   // 커스텀 훅, 컴포넌트 분리하기
   const rankTitleList = useRankStore((state) => state.rankTitleList);
   const setSortCharacterList = useCharacterStore(
-    (state) => state.setSortCharacterList,
+    (state) => state.setSortCharacterList
   );
   const selectedRankTitle = useRankStore((state) => state.selectedRankTitle);
   const setDropTitleList = useRankStore((state) => state.setDropTitleList);
@@ -23,7 +23,7 @@ const LimitTableHead = () => {
 
   const onRemove = (
     e: React.MouseEvent<HTMLButtonElement>,
-    statName: string,
+    statName: string
   ) => {
     e.stopPropagation();
     toggleView(statName);
@@ -37,7 +37,7 @@ const LimitTableHead = () => {
     if (selectedRankTitle) {
       setSortCharacterList(
         selectedRankTitle?.titleName,
-        selectedRankTitle?.ascending,
+        selectedRankTitle?.ascending
       );
     }
   }, [setSortCharacterList, selectedRankTitle]);
@@ -83,11 +83,11 @@ const LimitTableHead = () => {
               >
                 <div className="relative h-full w-full">
                   <span
-                    className={` ${selectedRankTitle?.titleName === t.stat_name ? (selectedRankTitle.ascending === false ? "text-green-300" : "text-red-300") : "text-white"} flex h-full w-full items-center justify-center rounded-lg text-[10px] hover:bg-zinc-600 md:text-xs`}
+                    className={` ${selectedRankTitle?.titleName === t.stat_name ? (selectedRankTitle.ascending === false ? 'text-green-300' : 'text-red-300') : 'text-white'} flex h-full w-full items-center justify-center rounded-lg text-[10px] hover:bg-zinc-600 md:text-xs`}
                   >
                     {t?.stat_name}
                   </span>
-                  {t.stat_name !== "이름" && (
+                  {t.stat_name !== '이름' && (
                     <button
                       onClick={(e) => onRemove(e, t?.stat_name)}
                       className="absolute right-0 top-0 hidden h-5 w-5 items-center justify-center rounded-lg border-none text-[10px] text-red-200 hover:text-red-400 sm:block"
@@ -97,7 +97,7 @@ const LimitTableHead = () => {
                   )}
                 </div>
               </th>
-            ),
+            )
         )}
       </tr>
     </thead>

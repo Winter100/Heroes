@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import Item from "../../common/item/Item";
-import Row from "../../layout/Row";
-import Column from "../../layout/Column";
-import { formatStringArray } from "@/app/_utils/formatStringArray";
-import { Item_Rating } from "@/app/_type/infoInfoType";
-import { getTooltipImageSrc } from "@/app/_utils/getTooltipImageSrc";
+import clsx from 'clsx';
+import Item from '../../common/item/Item';
+import Row from '../../layout/Row';
+import Column from '../../layout/Column';
+import { formatStringArray } from '@/app/_utils/formatStringArray';
+import { Item_Rating } from '@/app/_type/infoInfoType';
+import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
 
 interface ItemTopProps {
   name: string;
@@ -33,9 +33,9 @@ const ItemTop = ({
     <Row className="flex items-start text-xs">
       <Item.Image
         className={clsx(
-          "h-10 w-10 shrink-0 rounded-sm object-scale-down",
-          name?.includes("레어") && "rounded-sm border border-orange-300",
-          name?.includes("전설") && "rounded-sm border border-pink-400",
+          'h-10 w-10 shrink-0 rounded-sm object-scale-down',
+          name?.includes('레어') && 'rounded-sm border border-orange-300',
+          name?.includes('전설') && 'rounded-sm border border-pink-400'
         )}
         src={src}
         alt={itemName}
@@ -45,7 +45,7 @@ const ItemTop = ({
           className="flex flex-row flex-wrap gap-1 overflow-hidden text-ellipsis whitespace-pre-line"
           type={itemRating}
         >
-          {level && <span>{level || ""}</span>}
+          {level && <span>{level || ''}</span>}
           {prefixEnchantName && <span>{prefixEnchantName}</span>}
           {suffixEnchantName && <span>{suffixEnchantName}</span>}
           {itemName && <span className="truncate">{itemName}</span>}

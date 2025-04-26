@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 const BottomArrow = memo(() => {
   return (
@@ -21,4 +21,4 @@ const BottomArrow = memo(() => {
 
 export default BottomArrow;
 
-BottomArrow.displayName = "BottomArrow";
+BottomArrow.displayName = 'BottomArrow';

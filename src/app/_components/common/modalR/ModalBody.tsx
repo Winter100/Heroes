@@ -1,5 +1,5 @@
-import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import { useModalContext } from "./util/useModalContext";
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
+import { useModalContext } from './util/useModalContext';
 
 const ModalBody = ({ children }: { children: React.ReactNode }) => {
   const { open, setOpen } = useModalContext();

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { getImageByName } from "@/app/_utils/getImageByName";
+import Image from 'next/image';
+import { getImageByName } from '@/app/_utils/getImageByName';
 import {
   Table,
   TableBody,
@@ -7,14 +7,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import SkilDetailCardItem from "../card/SkilDetailCardItem";
-import { extractValue } from "./CharacterSkillAwakeningTable";
+} from '@/components/ui/popover';
+import SkilDetailCardItem from '../card/SkilDetailCardItem';
+import { extractValue } from './CharacterSkillAwakeningTable';
 
 interface CharacterSkillAwakeningProps {
   itemName: string;

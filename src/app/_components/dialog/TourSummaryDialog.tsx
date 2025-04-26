@@ -1,7 +1,7 @@
-import BasicDialog from "@/app/_components/common/BasicDialog";
-import TourContent from "./content/TourContent";
-import { useDialog } from "@/app/_hooks/useDialog/useDialog";
-import Button from "../common/Button";
+import BasicDialog from '@/app/_components/common/BasicDialog';
+import TourContent from './content/TourContent';
+import { useDialog } from '@/app/_hooks/useDialog/useDialog';
+import Button from '../common/Button';
 
 const TourSummaryDialog = () => {
   const { isOpen, onClose, onOpen } = useDialog();

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
 import {
   EquipmentFilterValuesType,
   useEquipmentFilterStore,
-} from "@/app/_store/equipmentFilterStore";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+} from '@/app/_store/equipmentFilterStore';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
-const filters: EquipmentFilterValuesType[] = ["장비", "아바타", "캐쉬"];
+const filters: EquipmentFilterValuesType[] = ['장비', '아바타', '캐쉬'];
 
 const ChracterItemFilter = () => {
   const filter = useEquipmentFilterStore((state) => state.filter);
@@ -20,7 +20,7 @@ const ChracterItemFilter = () => {
           <li key={f}>
             <Button
               variant="ghost"
-              className={cn("p-2", f === filter && "bg-muted text-white")}
+              className={cn('p-2', f === filter && 'bg-muted text-white')}
               size="sm"
               onClick={() => setFilter(f)}
             >

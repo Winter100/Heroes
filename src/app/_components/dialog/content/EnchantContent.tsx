@@ -1,5 +1,5 @@
-import { EnchantContentProps } from "@/app/_type/enchantType";
-import EnchantItem from "../../enchant/EnchantItem";
+import { EnchantContentProps } from '@/app/_type/enchantType';
+import EnchantItem from '../../enchant/EnchantItem';
 
 const EnchantContent = ({
   enchantList,

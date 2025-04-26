@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import Row from "../../layout/Row";
-import Item from "./Item";
+import clsx from 'clsx';
+import Row from '../../layout/Row';
+import Item from './Item';
 
 interface ItemSelectorPrps {
   children: React.ReactNode;
@@ -22,21 +22,21 @@ const ItemSelector = ({
       <Item.Shape
         useNumber={1}
         className={clsx(
-          "w-24 cursor-default",
-          usedNumber === 1 ? "" : "opacity-30",
+          'w-24 cursor-default',
+          usedNumber === 1 ? '' : 'opacity-30'
         )}
       >
-        {useText1 || ""}
+        {useText1 || ''}
       </Item.Shape>
 
       <Item.Shape
         useNumber={2}
         className={clsx(
-          "w-24 cursor-default",
-          usedNumber === 2 ? "" : "opacity-30",
+          'w-24 cursor-default',
+          usedNumber === 2 ? '' : 'opacity-30'
         )}
       >
-        {useText2 || ""}
+        {useText2 || ''}
       </Item.Shape>
     </Row>
   );

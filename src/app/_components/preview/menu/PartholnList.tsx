@@ -1,6 +1,6 @@
-import { PreviewSelectedType, Stat } from "@/app/_type/previewType";
-import clsx from "clsx";
-import { memo } from "react";
+import { PreviewSelectedType, Stat } from '@/app/_type/previewType';
+import clsx from 'clsx';
+import { memo } from 'react';
 
 interface PartholnListProps {
   partholn: {
@@ -16,9 +16,9 @@ const PartholnList = memo(
   ({ partholn, level = 0, setLevel, setBeforeStats }: PartholnListProps) => {
     const onSelect = (level: number, stat: Stat[]) => {
       const beforeStat = {
-        slot: "partholn",
-        upgreadeType: "partholn",
-        name: "partholn",
+        slot: 'partholn',
+        upgreadeType: 'partholn',
+        name: 'partholn',
         stat_value: stat,
       };
       setLevel(level);
@@ -49,8 +49,8 @@ const PartholnList = memo(
               onClick={() => onSelect(item?.level, item?.stat)}
               key={item?.level}
               className={clsx(
-                "h-10 cursor-pointer border-t border-borderColor text-sm hover:text-red-300",
-                level === item?.level && "text-red-300",
+                'h-10 cursor-pointer border-t border-borderColor text-sm hover:text-red-300',
+                level === item?.level && 'text-red-300'
               )}
             >
               <td className="text-center">
@@ -69,9 +69,9 @@ const PartholnList = memo(
         </tbody>
       </table>
     );
-  },
+  }
 );
 
-PartholnList.displayName = "PartholnList";
+PartholnList.displayName = 'PartholnList';
 
 export default PartholnList;

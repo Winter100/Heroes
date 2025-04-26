@@ -1,8 +1,8 @@
-import { useEnchantFilterStore } from "@/app/_store/enchantFilterStore";
+import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
 
 const DontSearch = () => {
   const enchantFilterName = useEnchantFilterStore(
-    (state) => state.enchantFilterName,
+    (state) => state.enchantFilterName
   );
   return (
     <tr className="w-full text-base text-white">

@@ -1,5 +1,5 @@
-import { Item_Rating } from "./infoInfoType";
-import { Stat } from "./previewType";
+import { Item_Rating } from './infoInfoType';
+import { Stat } from './previewType';
 
 export interface Item_equipment {
   item_equipment: EquipmentType[];
@@ -45,61 +45,83 @@ export interface NewEquipmentType {
       color_1: string;
       color_2: string;
       color_3: string;
+      color_4: string;
+      color_5: string;
     };
     avatar_color_use_preset_no: null;
     avatar_color_preset_1: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_2: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_3: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_4: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_5: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_inner_armor_color_preset_1: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_2: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_3: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_4: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_5: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
   };
@@ -131,61 +153,83 @@ export interface EquipmentType {
       color_1: string;
       color_2: string;
       color_3: string;
+      color_4: string;
+      color_5: string;
     };
     avatar_color_use_preset_no: null;
     avatar_color_preset_1: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_2: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_3: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_4: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_5: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_inner_armor_color_preset_1: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_2: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_3: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_4: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_5: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
   };
@@ -216,61 +260,83 @@ export interface CachItemsType {
       color_1: string;
       color_2: string;
       color_3: string;
+      color_4: string;
+      color_5: string;
     };
     avatar_color_use_preset_no: null;
     avatar_color_preset_1: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_2: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_3: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_4: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_color_preset_5: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
     };
     avatar_inner_armor_color_preset_1: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_2: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_3: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_4: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
     avatar_inner_armor_color_preset_5: {
       color_1: null;
       color_2: null;
       color_3: null;
+      color_4: null;
+      color_5: null;
       default_color_flag: null;
     };
   };

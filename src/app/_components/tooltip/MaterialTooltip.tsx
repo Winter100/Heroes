@@ -1,6 +1,6 @@
-import { BasicItemInfoType } from "@/app/_type/infoInfoType";
-import MaterialsInfo from "../iteminfo/MaterialsInfo";
-import { materialsMap } from "@/app/_constant/items/item_map";
+import { BasicItemInfoType } from '@/app/_type/infoInfoType';
+import MaterialsInfo from '../iteminfo/MaterialsInfo';
+import { materialsMap } from '@/app/_constant/items/item_map';
 
 interface MaterialTooltipProps {
   itemName: string;

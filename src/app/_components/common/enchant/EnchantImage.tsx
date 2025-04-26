@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 interface EnchantImageProps {
   alt: string;
@@ -11,7 +11,7 @@ const EnchantImage = ({ src, alt, size = 32 }: EnchantImageProps) => {
     <Image
       width={size}
       height={size}
-      style={{ width: `${size}px`, height: `auto`, objectFit: "contain" }}
+      style={{ width: `${size}px`, height: `auto`, objectFit: 'contain' }}
       className="rounded-md"
       src={src}
       alt={alt}

@@ -1,13 +1,13 @@
-import { create } from "zustand";
-import { PreviewSelectedType, PriceData, Stat } from "../_type/previewType";
+import { create } from 'zustand';
+import { PreviewSelectedType, PriceData, Stat } from '../_type/previewType';
 
 import {
   ItemInfoQuipmentProps,
   NewEquipmentType,
-} from "../_type/equipmentType";
-import { convertInfoStat } from "../_utils/convertInfoStats";
-import { splitStringAndNumber } from "../_components/preview/utils/splitStringAndNumber";
-import { getItemInfoOptions } from "../_components/iteminfo/util/getItemInfoOptions";
+} from '../_type/equipmentType';
+import { convertInfoStat } from '../_utils/convertInfoStats';
+import { splitStringAndNumber } from '../_components/preview/utils/splitStringAndNumber';
+import { getItemInfoOptions } from '../_components/iteminfo/util/getItemInfoOptions';
 
 type State = {
   info: ItemInfoQuipmentProps[];
@@ -43,14 +43,14 @@ type Action = {
   setChangeEnchant: (
     slot: string,
     enchant: string,
-    upgreadeType: string,
+    upgreadeType: string
   ) => void;
 };
 
 export const usePreviewStore = create<State & Action>((set) => {
   return {
     info: [],
-    characterName: "",
+    characterName: '',
     afterStats: [],
     beforeStats: [],
     totalPriceItem: [],
@@ -66,19 +66,19 @@ export const usePreviewStore = create<State & Action>((set) => {
             used_infusion_number,
           } = getItemInfoOptions(item);
           if (item.item_equipment_slot_name === slot) {
-            if (upgreadeType === "prefix") {
+            if (upgreadeType === 'prefix') {
               if (used_prefix_enchant_number === 1) {
                 item.item_option.prefix_enchant_preset_1 = enchant;
               } else {
                 item.item_option.prefix_enchant_preset_2 = enchant;
               }
-            } else if (upgreadeType === "suffix") {
+            } else if (upgreadeType === 'suffix') {
               if (used_suffix_enchant_number === 1) {
                 item.item_option.suffix_enchant_preset_1 = enchant;
               } else {
                 item.item_option.suffix_enchant_preset_2 = enchant;
               }
-            } else if (upgreadeType === "infusions") {
+            } else if (upgreadeType === 'infusions') {
               const { name, level } = splitStringAndNumber(enchant);
 
               if (used_infusion_number === 1) {
@@ -128,8 +128,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const afterStats = [...state.afterStats];
         const existsInafterStats = afterStats.some(
           (stat) =>
-            stat.slot === value.slot &&
-            stat.upgreadeType === value.upgreadeType,
+            stat.slot === value.slot && stat.upgreadeType === value.upgreadeType
         );
         if (existsInafterStats) {
           return {
@@ -137,7 +136,7 @@ export const usePreviewStore = create<State & Action>((set) => {
               stat.slot === value.slot &&
               stat.upgreadeType === value.upgreadeType
                 ? value
-                : stat,
+                : stat
             ),
           };
         } else {
@@ -151,8 +150,7 @@ export const usePreviewStore = create<State & Action>((set) => {
 
         const existsInBeforeStats = beforeStats.some(
           (stat) =>
-            stat.slot === value.slot &&
-            stat.upgreadeType === value.upgreadeType,
+            stat.slot === value.slot && stat.upgreadeType === value.upgreadeType
         );
 
         if (existsInBeforeStats) {
@@ -175,7 +173,7 @@ export const usePreviewStore = create<State & Action>((set) => {
     reset: () => {
       set(() => {
         return {
-          characterName: "",
+          characterName: '',
           afterStats: [],
           beforeStats: [],
           totalPriceItem: [],
@@ -191,8 +189,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const total = [...state.totalPriceItem];
         const existsInTotal = total.some(
           (item) =>
-            item.slot === value.slot &&
-            item.upgreadeType === value.upgreadeType,
+            item.slot === value.slot && item.upgreadeType === value.upgreadeType
         );
 
         if (existsInTotal) {
@@ -201,7 +198,7 @@ export const usePreviewStore = create<State & Action>((set) => {
               item.slot === value.slot &&
               item.upgreadeType === value.upgreadeType
                 ? value
-                : item,
+                : item
             ),
           };
         } else {
@@ -232,7 +229,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                   if (stat.stat_name === statName) {
                     const newStatValue = Math.min(
                       Number(stat.stat_value) + Number(stat.stat_one_value),
-                      Number(stat.stat_max_value),
+                      Number(stat.stat_max_value)
                     ).toString();
                     return {
                       ...stat,
@@ -240,7 +237,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
               return {
                 ...item,
@@ -275,13 +272,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -291,7 +288,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
 
         if (beIndex !== -1) {
@@ -302,8 +299,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {
@@ -330,7 +326,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                   if (stat.stat_name === statName) {
                     const newStatValue = Math.max(
                       Number(stat.stat_min_value),
-                      Number(stat.stat_value) - Number(stat.stat_one_value),
+                      Number(stat.stat_value) - Number(stat.stat_one_value)
                     ).toString();
                     return {
                       ...stat,
@@ -338,7 +334,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
 
               return {
@@ -377,13 +373,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -393,7 +389,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
         if (beIndex !== -1) {
           be[beIndex] = before;
@@ -403,8 +399,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {
@@ -435,7 +430,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
 
               return {
@@ -479,13 +474,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -495,7 +490,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
         if (beIndex !== -1) {
           be[beIndex] = before;
@@ -505,8 +500,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {
@@ -537,7 +531,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
 
               return {
@@ -581,13 +575,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -597,7 +591,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
         if (beIndex !== -1) {
           be[beIndex] = before;
@@ -607,8 +601,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {
@@ -640,7 +633,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
 
               return {
@@ -684,13 +677,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -700,7 +693,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
         if (beIndex !== -1) {
           be[beIndex] = before;
@@ -710,8 +703,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {
@@ -735,7 +727,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
                 (stat) => {
-                  if (stat.stat_name === "해제") {
+                  if (stat.stat_name === '해제') {
                     const newStatValue = stat.stat_min_value.toString();
                     return {
                       ...stat,
@@ -743,7 +735,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
 
               return {
@@ -787,13 +779,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -803,7 +795,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
         if (beIndex !== -1) {
           be[beIndex] = before;
@@ -813,8 +805,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {
@@ -838,7 +829,7 @@ export const usePreviewStore = create<State & Action>((set) => {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
                 (stat) => {
-                  if (stat.stat_name === "해제 2") {
+                  if (stat.stat_name === '해제 2') {
                     const newStatValue = stat.stat_min_value.toString();
                     return {
                       ...stat,
@@ -846,7 +837,7 @@ export const usePreviewStore = create<State & Action>((set) => {
                     };
                   }
                   return stat;
-                },
+                }
               );
 
               return {
@@ -890,13 +881,13 @@ export const usePreviewStore = create<State & Action>((set) => {
           });
 
         const before = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: beforeStat ?? [],
         };
         const after = {
-          upgreadeType: "grinding",
+          upgreadeType: 'grinding',
           slot: slot,
           name: slot,
           stat_value: afterStats ?? [],
@@ -906,7 +897,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const beIndex = be.findIndex(
           (item) =>
             item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot,
+            item.slot === before.slot
         );
         if (beIndex !== -1) {
           be[beIndex] = before;
@@ -916,8 +907,7 @@ export const usePreviewStore = create<State & Action>((set) => {
         const af = [...state.afterStats];
         const afIndex = af.findIndex(
           (item) =>
-            item.upgreadeType === after.upgreadeType &&
-            item.slot === after.slot,
+            item.upgreadeType === after.upgreadeType && item.slot === after.slot
         );
 
         if (afIndex !== -1) {

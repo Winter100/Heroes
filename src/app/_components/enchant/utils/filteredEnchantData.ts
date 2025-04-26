@@ -49,9 +49,9 @@ interface EnchantList {
 
 export const filteredEnchantData = (
   enchantList: EnchantList[],
-  type: string,
+  type: string
 ) => {
-  if (type === "prefix") {
+  if (type === 'prefix') {
     return enchantList.reduce((acc, current) => {
       const enchantKey = current.item_option.prefix_enchant_preset_1;
       const existing = acc.get(enchantKey);

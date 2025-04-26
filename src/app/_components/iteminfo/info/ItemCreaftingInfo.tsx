@@ -1,18 +1,18 @@
-import { memo } from "react";
-import { ItemType } from "@/app/_type/infoInfoType";
-import { formatStringArray } from "@/app/_utils/formatStringArray";
-import { getImageByName } from "@/app/_utils/getImageByName";
-import clsx from "clsx";
-import { getGradeValue } from "@/app/_utils/getStatsByLevel";
-import { oneGrinding } from "@/app/_constant/grinding";
-import Item from "../../common/item/Item";
-import Row from "../../layout/Row";
-import Column from "../../layout/Column";
-import ItemStats from "./ItemStats";
-import Itemrestrictions from "../restrictions/Itemrestrictions";
-import ItemQuality from "../quality/ItemQuality";
-import InfoGrindingList from "../grinding/InfoGrindingList";
-import ItemSet from "./ItemSet";
+import { memo } from 'react';
+import { ItemType } from '@/app/_type/infoInfoType';
+import { formatStringArray } from '@/app/_utils/formatStringArray';
+import { getImageByName } from '@/app/_utils/getImageByName';
+import clsx from 'clsx';
+import { getGradeValue } from '@/app/_utils/getStatsByLevel';
+import { oneGrinding } from '@/app/_constant/grinding';
+import Item from '../../common/item/Item';
+import Row from '../../layout/Row';
+import Column from '../../layout/Column';
+import ItemStats from './ItemStats';
+import Itemrestrictions from '../restrictions/Itemrestrictions';
+import ItemQuality from '../quality/ItemQuality';
+import InfoGrindingList from '../grinding/InfoGrindingList';
+import ItemSet from './ItemSet';
 
 type Stat = {
   stat_name: string;
@@ -26,7 +26,7 @@ type AdditionalStat = {
 
 const craftingStatsMerge = (
   baseStats: Stat[],
-  additionalStats: AdditionalStat[],
+  additionalStats: AdditionalStat[]
 ): Stat[] => {
   const statMap = new Map<string, number>();
 
@@ -53,10 +53,10 @@ const ItemCreaftingInfo = memo(
     description,
     grinding,
     restrictions,
-    set = "",
+    set = '',
     enhancement_options,
     quality,
-    slot = "",
+    slot = '',
   }: ItemType) => {
     const item_stage = getGradeValue(name);
     const mergedStats = enhancement_options?.[item_stage];
@@ -65,12 +65,12 @@ const ItemCreaftingInfo = memo(
       ?.item.find((i) => i.item_slot.includes(slot));
 
     const newTuningStats = grindingItem?.item_value.map((stat) => {
-      if (stat.stat_name === "해제") {
+      if (stat.stat_name === '해제') {
         return {
           ...stat,
           stat_name: stat.stat_name,
-          stat_min_value: "0",
-          stat_value: "0",
+          stat_min_value: '0',
+          stat_value: '0',
         };
       }
 
@@ -84,7 +84,7 @@ const ItemCreaftingInfo = memo(
 
     const newMergedStats = craftingStatsMerge(
       mergedStats || [],
-      newTuningStats || [],
+      newTuningStats || []
     ).filter((stat) => stat.stat_value);
 
     return (
@@ -92,9 +92,9 @@ const ItemCreaftingInfo = memo(
         <Row className="text-xs">
           <Item.Image
             className={clsx(
-              "object-scale-down",
-              name?.includes("레어") && "rounded-sm border border-orange-300",
-              name?.includes("전설") && "rounded-sm border border-pink-400",
+              'object-scale-down',
+              name?.includes('레어') && 'rounded-sm border border-orange-300',
+              name?.includes('전설') && 'rounded-sm border border-pink-400'
             )}
             src={getImageByName(name)}
             alt={name}
@@ -136,9 +136,9 @@ const ItemCreaftingInfo = memo(
           <>
             <Item.Border />
             <InfoGrindingList
-              itemName={name || ""}
-              slot={slot || ""}
-              setName={set || ""}
+              itemName={name || ''}
+              slot={slot || ''}
+              setName={set || ''}
               tuning_stat={newTuningStats || []}
             />
           </>
@@ -147,9 +147,9 @@ const ItemCreaftingInfo = memo(
         {set && <ItemSet set={set} />}
       </Item>
     );
-  },
+  }
 );
 
 export default ItemCreaftingInfo;
 
-ItemCreaftingInfo.displayName = "ItemCreaftingInfo";
+ItemCreaftingInfo.displayName = 'ItemCreaftingInfo';

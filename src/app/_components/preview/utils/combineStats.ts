@@ -1,4 +1,4 @@
-import { CombinedStats, Item } from "@/app/_type/previewType";
+import { CombinedStats, Item } from '@/app/_type/previewType';
 
 export const combineStats = (data: Item[]): CombinedStats => {
   const combinedStats: CombinedStats = {};

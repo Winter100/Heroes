@@ -1,9 +1,9 @@
-"use client";
-import { useEffect } from "react";
-import GrindingItem from "./GrindingItem";
-import { NewEquipmentType } from "@/app/_type/equipmentType";
-import { usePreviewStore } from "@/app/_store/previewStore";
-import clsx from "clsx";
+'use client';
+import { useEffect } from 'react';
+import GrindingItem from './GrindingItem';
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import { usePreviewStore } from '@/app/_store/previewStore';
+import clsx from 'clsx';
 
 interface GrindingProps {
   item: NewEquipmentType;
@@ -20,8 +20,8 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
   const setLimit2Zero = usePreviewStore((state) => state.setLimit2Zero);
 
   const newTuning = item.item_option.tuning_stat?.map((stat, _, arr) => {
-    if (stat.stat_name === "해제") {
-      if (item.item_name.includes("와드네")) {
+    if (stat.stat_name === '해제') {
+      if (item.item_name.includes('와드네')) {
         return {
           ...stat,
           isView: true,
@@ -29,7 +29,7 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
       } else {
         const allOtherStatsMatch =
           arr
-            .filter((s) => s.stat_name !== "해제" && s.stat_name !== "해제 2")
+            .filter((s) => s.stat_name !== '해제' && s.stat_name !== '해제 2')
             .every((s) => s.stat_max_value === s.stat_value) &&
           Number(item.item_option.enhancement_level) >= 13;
         return {
@@ -37,11 +37,11 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
           isView: allOtherStatsMatch,
         };
       }
-    } else if (stat.stat_name === "해제 2") {
+    } else if (stat.stat_name === '해제 2') {
       // const limit1 = arr.find((s) => s.stat_name === "해제");
       // const isLimitTrue = limit1?.stat_max_value === limit1?.stat_value;
       const isLimitTrue = arr
-        .filter((s) => s.stat_name !== "해제 2")
+        .filter((s) => s.stat_name !== '해제 2')
         .every((s) => s.stat_max_value === s.stat_value);
       return {
         ...stat,
@@ -54,16 +54,16 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
 
   const isLimit1Every = newTuning
     ?.filter(
-      (stat) => stat?.stat_name !== "해제" && stat?.stat_name !== "해제 2",
+      (stat) => stat?.stat_name !== '해제' && stat?.stat_name !== '해제 2'
     )
     .every((s) => s?.stat_max_value === s?.stat_value);
 
   const isLimit2Every = item.item_option.tuning_stat
-    ?.filter((stat) => stat.stat_name !== "해제 2")
+    ?.filter((stat) => stat.stat_name !== '해제 2')
     .every((s) => s.stat_max_value === s.stat_value);
 
   useEffect(() => {
-    if (!item.item_name.includes("와드네") && !isLimit1Every) {
+    if (!item.item_name.includes('와드네') && !isLimit1Every) {
       setLimit1Zero(item.item_equipment_slot_name);
     }
   }, [
@@ -82,8 +82,8 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
   return (
     <div
       className={clsx(
-        "flex w-full cursor-default flex-col gap-2 p-1 md:gap-4",
-        className,
+        'flex w-full cursor-default flex-col gap-2 p-1 md:gap-4',
+        className
       )}
     >
       {/* <div className="flex w-full cursor-default flex-col gap-2 p-1 md:gap-4"> */}

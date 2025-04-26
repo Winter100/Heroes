@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   findOcidByName,
   setOcidListToLocalStorage,
-} from "../_utils/localStorage";
+} from '../_utils/localStorage';
 
 export const getOcid = async (characterName: string): Promise<string> => {
   try {
@@ -10,7 +10,7 @@ export const getOcid = async (characterName: string): Promise<string> => {
 
     if (!ocid) {
       const response = await axios.get(
-        `api/getCharacterOcid?character_name=${encodeURIComponent(characterName)}`,
+        `api/getCharacterOcid?character_name=${encodeURIComponent(characterName)}`
       );
 
       const data: { ocid: string } = response.data;

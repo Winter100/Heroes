@@ -1,15 +1,15 @@
-"use client";
-import clsx from "clsx";
-import { ComponentProps, useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
-import Loading from "../common/Loading";
-import { EventDate } from "@/app/_store/noticeEventStore";
-import ErrorDisplay from "../common/error/ErrorDisplay";
-import EventNoticeItem from "./EventNoticeItem";
+'use client';
+import clsx from 'clsx';
+import { ComponentProps, useMemo, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
+import Loading from '../common/Loading';
+import { EventDate } from '@/app/_store/noticeEventStore';
+import ErrorDisplay from '../common/error/ErrorDisplay';
+import EventNoticeItem from './EventNoticeItem';
 
-interface NoteListProps extends ComponentProps<"div"> {
+interface NoteListProps extends ComponentProps<'div'> {
   mainTitle: string;
   eventDate: EventDate | null;
   setEventDate: (date: EventDate | null) => void;
@@ -80,7 +80,7 @@ const EventNotice = ({
   });
 
   return (
-    <div className={clsx("flex flex-col", className)}>
+    <div className={clsx('flex flex-col', className)}>
       <p className="text-center text-sm">{mainTitle}</p>
       <div className="flex h-full w-full flex-col truncate rounded-md">
         {isLoading ? (

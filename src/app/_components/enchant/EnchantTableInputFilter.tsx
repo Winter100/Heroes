@@ -1,10 +1,10 @@
-"use client";
-import Row from "../layout/Row";
-import Button from "../common/Button";
-import EnchantDropListFilterDialog from "../dialog/EnchantDropListFilterDialog";
-import { GrRefresh } from "react-icons/gr";
-import Search from "../common/search/Search";
-import { useEnchantTableInputFilter } from "./hooks/useEnchantTableInputFilter";
+'use client';
+import Row from '../layout/Row';
+import Button from '../common/Button';
+import EnchantDropListFilterDialog from '../dialog/EnchantDropListFilterDialog';
+import { GrRefresh } from 'react-icons/gr';
+import Search from '../common/search/Search';
+import { useEnchantTableInputFilter } from './hooks/useEnchantTableInputFilter';
 
 const EnchantTableInputFilter = () => {
   const { inputRef, onSearch, onReset } = useEnchantTableInputFilter();

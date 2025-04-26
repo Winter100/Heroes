@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 export const useRefFocus = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -6,7 +6,7 @@ export const useRefFocus = () => {
 
   const resetRef = () => {
     if (inputRef.current) {
-      return (inputRef.current.value = "");
+      return (inputRef.current.value = '');
     }
   };
 
