@@ -81,7 +81,7 @@ export default function RootLayout({
       <GoogleAdsense pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''} />
       <body className="flex min-h-dvh flex-col">
         <div className="relative flex flex-1 flex-col font-sans text-fontColor">
-          <div className="left-ad side-ad absolute left-0 top-0 h-full w-[calc((100vw-1280px)/2)]">
+          <div className="left-ad side-ad fixed left-0 top-1/2 flex w-[160px] -translate-y-1/2 items-center justify-center">
             <GoogleAdSenseComponent
               dataSlot={'2056348937'}
               pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
@@ -97,7 +97,7 @@ export default function RootLayout({
               </SidebarInset>
             </SidebarProvider>
           </ScreenContainer>
-          <div className="right-ad side-ad absolute right-0 top-0 h-full w-[calc((100vw-1280px)/2)]">
+          <div className="right-ad side-ad fixed right-0 top-1/2 flex w-[160px] -translate-y-1/2 items-center justify-center">
             <GoogleAdSenseComponent
               dataSlot={'1601053361'}
               pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
