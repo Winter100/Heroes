@@ -4,11 +4,15 @@ import React, { useEffect } from 'react';
 type GoogleAdSenseComponentTypes = {
   pid: string;
   dataSlot: string;
+  width?: string;
+  height?: string;
 };
 
 const GoogleAdSenseComponent = ({
   dataSlot,
   pid,
+  height = '600px',
+  width = '160px',
 }: GoogleAdSenseComponentTypes) => {
   useEffect(() => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -24,11 +28,11 @@ const GoogleAdSenseComponent = ({
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: 'block' }}
+      style={{ display: 'block', width, height }}
       data-ad-client={`ca-pub-${pid}`}
       data-ad-slot={dataSlot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
+      data-ad-format="vertical"
+      data-full-width-responsive="false"
     ></ins>
   );
 };
