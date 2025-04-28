@@ -11,8 +11,6 @@ type GoogleAdSenseComponentTypes = {
 const GoogleAdSenseComponent = ({
   dataSlot,
   pid,
-  height = '600px',
-  width = '160px',
 }: GoogleAdSenseComponentTypes) => {
   useEffect(() => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -28,7 +26,11 @@ const GoogleAdSenseComponent = ({
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: 'block', width, height }}
+      style={{
+        display: 'block',
+        width: '160px',
+        height: '600px',
+      }}
       data-ad-client={`ca-pub-${pid}`}
       data-ad-slot={dataSlot}
       data-ad-format="vertical"
