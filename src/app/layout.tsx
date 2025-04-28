@@ -10,7 +10,6 @@ import { AppSidebar } from '@/components/app-sidebar';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import HomeBreadcrumb from './_components/home/HomeBreadcrumb';
 import GoogleAdsense from './_components/adsense/GoogleAdsense';
-import GoogleAdSenseComponent from './_components/adsense/GoogleAdSenseComponent';
 
 export const metadata: Metadata = {
   applicationName: keyword.project.name,
@@ -81,14 +80,7 @@ export default function RootLayout({
       <GoogleAdsense pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''} />
       <body className="flex min-h-dvh flex-col">
         <div className="relative flex flex-1 flex-col font-sans text-fontColor">
-          <div className="left-ad side-ad fixed left-0 top-1/2 flex w-[calc((100vw-1280px)/2)] -translate-y-1/2 items-center justify-center">
-            {/* <div className="left-ad side-ad absolute left-0 top-0 mr-1 flex h-full w-[calc((100vw-1280px)/2)] items-center justify-end border border-red-600 pr-0.5"> */}
-            <GoogleAdSenseComponent
-              dataSlot={'2056348937'}
-              pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
-            />
-          </div>
-          <ScreenContainer className="dark z-10 flex h-full flex-1 flex-col">
+          <ScreenContainer className="dark flex h-full flex-1 flex-col">
             <SidebarProvider>
               <AppSidebar className="sticky" />
               <SidebarInset>
@@ -98,13 +90,6 @@ export default function RootLayout({
               </SidebarInset>
             </SidebarProvider>
           </ScreenContainer>
-          <div className="right-ad side-ad fixed right-0 top-1/2 z-0 flex w-[calc((100vw-1280px)/2)] -translate-y-1/2 items-center justify-center">
-            {/* <div className="right-ad side-ad absolute right-0 top-0 h-full w-[calc((100vw-1280px)/2)] pl-0.5"> */}
-            <GoogleAdSenseComponent
-              dataSlot={'1601053361'}
-              pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
-            />
-          </div>
         </div>
       </body>
     </html>
