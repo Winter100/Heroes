@@ -1,12 +1,7 @@
 import { create } from 'zustand';
-import { convertToKST } from '../_utils/convertToKST';
-import { parseKoreanDate } from '../_components/preview/utils/dateEvent';
-
-export interface EventDate {
-  notice_id: number;
-  start: string | null;
-  end: string | null;
-}
+import { EventDate } from '../types';
+import { parseKoreanDate } from '@/app/_components/preview/utils/dateEvent';
+import { convertToKST } from '@/app/_utils/convertToKST';
 
 type State = {
   eventDate: EventDate | null;

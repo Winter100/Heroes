@@ -1,12 +1,11 @@
 'use client';
 
-import React from 'react';
-import { useNotice } from '@/app/_hooks/useNotice/useNotice';
-import { NoticeEventDataType } from '@/app/_type/noticeType';
-import EventNotice from '../notice/EventNotice';
-import { useEventNoticeDateStore } from '@/app/_store/noticeEventStore';
+import { NoticeEventDataType } from '../../types';
+import { useNotice } from '../../hooks/useNotice';
+import EventNotice from './event/EventNotice';
+import { useEventNoticeDateStore } from '../../store/noticeEventStore';
 
-const HomeEventNotice = () => {
+const EventPanel = () => {
   const {
     data: noticeEventData,
     isLoading: noticeEventLoading,
@@ -31,4 +30,4 @@ const HomeEventNotice = () => {
   );
 };
 
-export default HomeEventNotice;
+export default EventPanel;

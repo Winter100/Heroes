@@ -1,9 +1,9 @@
 'use client';
 
-import { useEventNoticeDateStore } from '@/app/_store/noticeEventStore';
 import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
+import { useEventNoticeDateStore } from '../../store/noticeEventStore';
 
 const EventCalendar = () => {
   const eventDate = useEventNoticeDateStore((state) => state.eventDate);

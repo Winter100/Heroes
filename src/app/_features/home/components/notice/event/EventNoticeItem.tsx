@@ -1,21 +1,13 @@
 import { isWithinHours } from '@/app/_utils/isWithin24Hours';
-import { getRemainingTime, getYearMonthDay } from '../preview/utils/dateEvent';
 import { convertToKST } from '@/app/_utils/convertToKST';
 import { cn } from '@/lib/utils';
-import { EventDate } from '@/app/_store/noticeEventStore';
 import { Calendar, Clock, SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-
-interface EventNoticeItemProps {
-  title: string;
-  url: string;
-  notice_id: number;
-  date?: string;
-  date_event_start?: string;
-  date_event_end?: string;
-  selectDate: EventDate | null;
-  setEventDate: (event: EventDate) => void;
-}
+import {
+  getRemainingTime,
+  getYearMonthDay,
+} from '@/app/_components/preview/utils/dateEvent';
+import { EventNoticeItemProps } from '../../../types';
 
 const EventNoticeItem = ({
   notice_id,
@@ -29,7 +21,6 @@ const EventNoticeItem = ({
 }: EventNoticeItemProps) => {
   const itemDate = date ? date : date_event_start;
   const is24InHours = isWithinHours(itemDate || '', 24);
-
   const isSelected = selectDate?.notice_id === notice_id;
 
   return (

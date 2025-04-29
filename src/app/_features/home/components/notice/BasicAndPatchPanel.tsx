@@ -1,11 +1,10 @@
 'use client';
-import React from 'react';
-import Notice from '../notice/Notice';
-import { useNotice } from '@/app/_hooks/useNotice/useNotice';
-import { NoticeDataType, NoticePatchDataType } from '@/app/_type/noticeType';
-import RoundedContainer from '../layout/RoundedContainer';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import BasicNotice from './basic/BasicNotice';
+import { useNotice } from '../../hooks/useNotice';
+import { NoticeDataType, NoticePatchDataType } from '../../types';
 
-const HomeNotice = () => {
+const BasicAndPatchPanel = () => {
   const {
     data: noticeData,
     isLoading: noticeLoading,
@@ -21,7 +20,7 @@ const HomeNotice = () => {
   return (
     <div className="flex flex-col gap-2 md:flex-row">
       <RoundedContainer className="flex flex-1 truncate bg-muted/50">
-        <Notice
+        <BasicNotice
           className="h-full w-full items-center justify-center gap-1"
           mainTitle="공지사항"
           isLoading={noticeLoading}
@@ -31,7 +30,7 @@ const HomeNotice = () => {
         />
       </RoundedContainer>
       <RoundedContainer className="flex flex-1 truncate bg-muted/50">
-        <Notice
+        <BasicNotice
           className="h-full w-full items-center justify-center gap-1"
           mainTitle="패치노트"
           isLoading={noticePatchLoading}
@@ -44,4 +43,4 @@ const HomeNotice = () => {
   );
 };
 
-export default HomeNotice;
+export default BasicAndPatchPanel;
