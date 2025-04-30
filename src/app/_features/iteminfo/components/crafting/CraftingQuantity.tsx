@@ -1,4 +1,4 @@
-import { useMaterialsStore } from '@/app/_store/materialsStore';
+import { useMaterialsStore } from '@/app/_features/iteminfo/store/materialsStore';
 import { memo } from 'react';
 
 const CraftingQuantity = memo(

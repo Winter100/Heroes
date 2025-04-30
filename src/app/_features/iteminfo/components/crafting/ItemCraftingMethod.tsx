@@ -1,7 +1,7 @@
 import { ItemListType } from '@/app/_constant/items/item_crafting_materials_list';
 import React, { memo } from 'react';
 
-const ItemCraftingList = memo(
+const ItemCraftingMethod = memo(
   ({ itemCrafting }: { itemCrafting: ItemListType }) => {
     return (
       <div className="px-2 text-sm">
@@ -16,6 +16,6 @@ const ItemCraftingList = memo(
   }
 );
 
-export default ItemCraftingList;
+export default ItemCraftingMethod;
 
-ItemCraftingList.displayName = 'ItemCraftingList';
+ItemCraftingMethod.displayName = 'ItemCraftingMethod';

@@ -1,15 +1,7 @@
 import clsx from 'clsx';
-import Item from '../../common/item/Item';
-import { Item_Rating } from '@/app/_type/infoInfoType';
 import { memo } from 'react';
-
-interface CraftingSelectBtnProps {
-  isSelect: boolean;
-  onClick: () => void;
-  itemRating: Item_Rating;
-  itemName: string;
-  category: string;
-}
+import { CraftingSelectBtnProps } from '../../types';
+import Item from '@/app/_components/common/item/Item';
 
 const CraftingSelectBtn = memo(
   ({ isSelect, onClick, itemName, itemRating }: CraftingSelectBtnProps) => {

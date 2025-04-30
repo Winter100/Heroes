@@ -1,25 +1,16 @@
 import React, { memo, useMemo } from 'react';
-import { MaterialsType } from '@/app/_constant/items/item_crafting_materials_list';
 import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
-import CraftingSelectBtn from './CraftingSelectBtn';
-import CratingSelectImage from './CratingSelectImage';
-import Row from '../../layout/Row';
-import { itemInfoMap, materialsMap } from '@/app/_constant/items/item_map';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import ItemTooltipByType from '../../tooltip/ItemTooltipByType';
-
-interface ItemCraftingItemProps {
-  item_name: string;
-  setMaterials: (item: string, category: string) => void;
-  isSelect: boolean;
-  category: string;
-  materials: MaterialsType[];
-  filter: string;
-}
+import { ItemCraftingItemProps } from '../../types';
+import Row from '@/app/_components/layout/Row';
+import ItemTooltipByType from '@/app/_components/tooltip/ItemTooltipByType';
+import CratingSelectImage from './CratingSelectImage';
+import CraftingSelectBtn from './CraftingSelectBtn';
+import { getItemOrMaterialsRating } from '../../utils/getItemRating';
 
 const CraftingItem = memo(
   ({
@@ -27,15 +18,11 @@ const CraftingItem = memo(
     isSelect,
     setMaterials,
     category,
-    // materials,
     filter,
   }: ItemCraftingItemProps) => {
     const src = useMemo(() => getTooltipImageSrc(item_name), [item_name]);
+    const itemRating = getItemOrMaterialsRating(filter, item_name);
 
-    const itemRating =
-      filter === '장비'
-        ? itemInfoMap?.get(item_name)?.rating
-        : materialsMap?.get(item_name)?.item_rating;
     const handleClick = () => {
       setMaterials(item_name, category);
     };
@@ -61,11 +48,7 @@ const CraftingItem = memo(
               onClick={handleClick}
             />
             <PopoverContent className="dark w-[350px] p-1">
-              <ItemTooltipByType
-                itemName={item_name}
-                category={category}
-                // {...materials}
-              />
+              <ItemTooltipByType itemName={item_name} category={category} />
             </PopoverContent>
           </Popover>
         </Row>

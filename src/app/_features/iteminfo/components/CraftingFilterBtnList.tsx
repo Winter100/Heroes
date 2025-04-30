@@ -1,17 +1,15 @@
 'use client';
 
-import React from 'react';
-import { useMaterialsStore } from '@/app/_store/materialsStore';
 import clsx from 'clsx';
+import { FILTER_VALUES } from '../constant/itemInfo.constant';
+import { useMaterialsStore } from '../store/materialsStore';
 
-const filterArray = [{ value: '장비' }, { value: '소모품' }, { value: '재료' }];
-
-const CraftingFilter = () => {
+const CraftingFilterBtnList = () => {
   const filterValue = useMaterialsStore((state) => state.filter);
   const setFilter = useMaterialsStore((state) => state.setFilter);
   return (
     <ul className="flex w-full gap-1 text-xs">
-      {filterArray.map((filter) => (
+      {FILTER_VALUES.map((filter) => (
         <li key={filter.value}>
           <button
             onClick={() => setFilter(filter.value)}
@@ -28,4 +26,4 @@ const CraftingFilter = () => {
   );
 };
 
-export default CraftingFilter;
+export default CraftingFilterBtnList;

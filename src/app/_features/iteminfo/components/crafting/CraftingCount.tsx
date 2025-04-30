@@ -1,16 +1,17 @@
-import React from 'react';
-import { Button, Field, Input, Label } from '@headlessui/react';
-import { useMaterialsStore } from '@/app/_store/materialsStore';
+import { useMaterialsStore } from '../../store/materialsStore';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 const CraftingCount = () => {
   const count = useMaterialsStore((state) => state.count);
   const setCount = useMaterialsStore((state) => state.setCount);
 
   return (
-    <Field className="bottom-0 flex w-full flex-row items-center justify-center gap-1 text-xs sm:absolute">
-      <Label htmlFor="search-m">수량 </Label>
+    <div className="bottom-0 flex w-full flex-row items-center justify-center gap-1 text-xs sm:absolute">
+      <Label htmlFor="quantity">수량</Label>
       <Input
-        id="search-m"
+        id="quantity"
         className="w-16 appearance-none rounded-md border border-borderColor/50 bg-inherit p-1 outline-none"
         type="number"
         value={count}
@@ -20,18 +21,20 @@ const CraftingCount = () => {
         }
       />
       <Button
+        variant="outline"
         onClick={() => setCount(Math.max(1, Math.min(9999, Number(count) + 1)))}
-        className="w-8 rounded-md border border-borderColor/50 p-1"
+        className="w-8 rounded-md"
       >
         +
       </Button>
       <Button
+        variant="outline"
         onClick={() => setCount(Math.max(1, Math.min(9999, Number(count) - 1)))}
-        className="w-8 rounded-md border border-borderColor/50 p-1"
+        className="w-8 rounded-md"
       >
         -
       </Button>
-    </Field>
+    </div>
   );
 };
 

@@ -1,31 +1,19 @@
 import { memo } from 'react';
-import { MaterialsType } from '@/app/_constant/items/item_crafting_materials_list';
-import { itemInfoMap, materialsMap } from '@/app/_constant/items/item_map';
 import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
-import TooltipImage from '../../common/tooltip/TooltipImage';
-import Item from '../../common/item/Item';
-import CraftingQuantity from '../crafting/CraftingQuantity';
-import ItemTooltipByType from '../../tooltip/ItemTooltipByType';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import TooltipImage from '@/app/_components/common/tooltip/TooltipImage';
+import Item from '@/app/_components/common/item/Item';
+import CraftingQuantity from './CraftingQuantity';
+import ItemTooltipByType from '@/app/_components/tooltip/ItemTooltipByType';
+import { MaterialsCraftingItemProps } from '../../types';
+import { getItemRating, getMaterialsRating } from '../../utils/getItemRating';
 
-interface MaterialsCraftingItemProps extends MaterialsType {
-  depth?: number;
-  category: string;
-}
 const MaterialsCraftingItem = memo(
-  ({
-    item_name,
-    item_quantity,
-    category,
-    // depth,
-  }: MaterialsCraftingItemProps) => {
-    const itemRating = itemInfoMap?.get(item_name)?.rating;
-    const materialsRating = materialsMap?.get(item_name)?.item_rating;
-
+  ({ item_name, item_quantity, category }: MaterialsCraftingItemProps) => {
     const src = getTooltipImageSrc(item_name);
 
     return (
@@ -40,7 +28,13 @@ const MaterialsCraftingItem = memo(
                     itemName={item_name}
                     isRatingBorder={true}
                   />
-                  <Item.Title type={itemRating || materialsRating || '일반'}>
+                  <Item.Title
+                    type={
+                      getItemRating(item_name) ||
+                      getMaterialsRating(item_name) ||
+                      '일반'
+                    }
+                  >
                     {item_name}
                   </Item.Title>
                 </div>

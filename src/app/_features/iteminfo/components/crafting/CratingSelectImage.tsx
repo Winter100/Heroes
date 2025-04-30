@@ -1,11 +1,6 @@
 import { memo } from 'react';
-import TooltipImage from '../../common/tooltip/TooltipImage';
-
-interface CratingSelectImageProps {
-  isSelect: boolean;
-  src: string;
-  itemName: string;
-}
+import { CratingSelectImageProps } from '../../types';
+import TooltipImage from '@/app/_components/common/tooltip/TooltipImage';
 
 const CratingSelectImage = memo(
   ({ isSelect, itemName, src }: CratingSelectImageProps) => {
