@@ -1,13 +1,4 @@
-interface TermsGuideProsp {
-  title: string;
-  data: {
-    section: number;
-    title: string;
-    list: {
-      content: string;
-    }[];
-  }[];
-}
+import { TermsGuideProsp } from '../types';
 
 const TermsGuide = ({ title, data }: TermsGuideProsp) => {
   return (
