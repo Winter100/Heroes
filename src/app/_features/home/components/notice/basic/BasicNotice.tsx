@@ -2,11 +2,11 @@
 import clsx from 'clsx';
 import { useMemo, useState } from 'react';
 import { isWithinHours } from '@/app/_utils/isWithin24Hours';
-import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import Loading from '@/app/_components/common/Loading';
 import BasicNoticeItem from './BasicNoticeItem';
 import NoticePagination from '../../pagination/NoticePagination';
 import { BasicNoticeProps } from '../../../types';
+import ErrorApi from '@/app/_components/common/error/ErrorApi';
 
 const BasicNotice = ({
   items,
@@ -25,21 +25,7 @@ const BasicNotice = ({
 
   const totalPages = Math.ceil(items.length / itemsPerPage);
 
-  if (isError) {
-    return (
-      <ErrorDisplay
-        content={
-          <div className="flex flex-col items-center justify-center gap-2">
-            <p className="text-sm">{mainTitle}</p>
-            <div className="flex flex-col gap-2 text-center text-xs text-red-100">
-              <p>서버 점검이나 일시적인 오류로 데이터를 불러오지 못했습니다.</p>
-              <p>잠시 후 다시 시도해 주세요.</p>
-            </div>
-          </div>
-        }
-      />
-    );
-  }
+  if (isError) return <ErrorApi />;
 
   const handlePrevPage = () => {
     setPage((prev) => Math.max(prev - 1, 1));

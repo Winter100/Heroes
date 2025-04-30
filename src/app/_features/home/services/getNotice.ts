@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NoticeType } from '../_hooks/useNotice/useNotice';
+import { NoticeType } from '../hooks/useNotice';
 
 export const getNotice = async <T>(type: NoticeType): Promise<T | null> => {
   try {
