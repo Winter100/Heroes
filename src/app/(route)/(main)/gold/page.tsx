@@ -1,12 +1,7 @@
-import Section from '@/app/_components/layout/Section';
-import MarketRanking from '@/app/_components/market/MarketRanking';
+import { GoldMarket } from '@/app/_features/gold';
 
 const Page = () => {
-  return (
-    <Section>
-      <MarketRanking />
-    </Section>
-  );
+  return <GoldMarket />;
 };
 
 export default Page;

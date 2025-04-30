@@ -1,9 +1,5 @@
 import axios from 'axios';
-import { MarKetBuyRankList, MarKetSellRankList } from '../_type/marketRankList';
-
-type MarketRankList<T> = T extends 'buy'
-  ? MarKetBuyRankList
-  : MarKetSellRankList;
+import { MarketRankList } from '../types';
 
 export const getMarketRankList = async <T extends 'buy' | 'sell'>(
   type: 'buy' | 'sell'
