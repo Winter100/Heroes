@@ -1,16 +1,16 @@
-import React, { memo } from 'react';
-import Column from '../layout/Column';
+import { memo } from 'react';
 import Image from 'next/image';
 import { getImageByName } from '@/app/_utils/getImageByName';
 import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
 import clsx from 'clsx';
-import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
+import Column from '@/app/_components/layout/Column';
+import { useEnchantFilterStore } from '../store/enchantFilterStore';
 
-interface EnchantDropList {
+const EnchantDropList = ({
+  enchantData,
+}: {
   enchantData: EnchantStoreType;
-}
-
-const EnchantDropList = ({ enchantData }: EnchantDropList) => {
+}) => {
   const { dropRaidOrItemName, setDropRaidOrItemName } = useEnchantFilterStore(
     (state) => ({
       dropRaidOrItemName: state.dropRaidOrItemName,
@@ -62,8 +62,8 @@ const EnchantDropList = ({ enchantData }: EnchantDropList) => {
 };
 
 const arePropsEqual = (
-  prevProps: EnchantDropList,
-  nextProps: EnchantDropList
+  prevProps: { enchantData: EnchantStoreType },
+  nextProps: { enchantData: EnchantStoreType }
 ) => {
   return (
     JSON.stringify(prevProps.enchantData.drop_item_list) ===

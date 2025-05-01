@@ -1,20 +1,12 @@
 import Image from 'next/image';
 import clsx from 'clsx';
-import {
-  prefix_enchant_options,
-  suffix_enchant_options,
-} from '@/app/_constant/enchant';
-import { insertUpgradeType } from '../../enchant/utils/insertUpgradeType';
-import { keyword } from '@/app/_constant/keyword';
 import { getImageByName } from '@/app/_utils/getImageByName';
 import { useSelectEnchantStore } from '@/app/_store/selectEnchantStore';
-import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
+import { useEnchantFilterStore } from '../../store/enchantFilterStore';
+import { DialogClose } from '@/components/ui/dialog';
+import { getDropList } from '../../utils/getDropList';
 
-interface EnchantDropListContentProps {
-  onClose: () => void;
-}
-
-const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
+const EnchantDropListContent = () => {
   const { dropRaidOrItemName, setDropRaidOrItemName } = useEnchantFilterStore(
     (state) => ({
       dropRaidOrItemName: state.dropRaidOrItemName,
@@ -25,23 +17,12 @@ const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
     resetSelectEnchant: state.resetSelectEnchant,
   }));
 
-  const allEnchantList = [
-    ...insertUpgradeType(prefix_enchant_options, keyword.upgreadeType.prefix),
-    ...insertUpgradeType(suffix_enchant_options, keyword.upgreadeType.suffix),
-  ];
-
-  const setDropList = allEnchantList.reduce((acc, cur) => {
-    cur.drop_item_list.forEach((item) => acc.add(item));
-    return acc;
-  }, new Set<string>());
-
-  const dropList = Array.from(setDropList).sort();
-
   const handleSearchParams = (name: string) => {
     setDropRaidOrItemName(name);
     resetSelectEnchant();
-    onClose();
   };
+
+  const dropList = getDropList();
 
   return (
     <ul className="grid grid-cols-2 gap-2 p-2 sm:grid-cols-auto-150-fill">
@@ -55,7 +36,7 @@ const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
               : 'hover:outline hover:outline-1 hover:outline-rose-300'
           )}
         >
-          <button
+          <DialogClose
             onClick={() => handleSearchParams(name)}
             className="flex w-full flex-col items-center justify-center p-1"
           >
@@ -72,7 +53,7 @@ const EnchantDropListContent = ({ onClose }: EnchantDropListContentProps) => {
             <span className="flex h-10 w-full items-center justify-center text-sm">
               {name}
             </span>
-          </button>
+          </DialogClose>
         </li>
       ))}
     </ul>

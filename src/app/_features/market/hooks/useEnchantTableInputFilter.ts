@@ -1,7 +1,7 @@
 import { useRefFocus } from '@/app/_hooks/useRefFocus/useRefFocus';
-import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
 import { useSelectEnchantStore } from '@/app/_store/selectEnchantStore';
 import { FormEvent } from 'react';
+import { useEnchantFilterStore } from '../store/enchantFilterStore';
 
 export const useEnchantTableInputFilter = () => {
   const { inputRef, resetRef } = useRefFocus();

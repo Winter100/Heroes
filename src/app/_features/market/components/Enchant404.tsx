@@ -1,6 +1,6 @@
-import { useEnchantFilterStore } from '@/app/_store/enchantFilterStore';
+import { useEnchantFilterStore } from '../store/enchantFilterStore';
 
-const DontSearch = () => {
+const Enchant404 = () => {
   const enchantFilterName = useEnchantFilterStore(
     (state) => state.enchantFilterName
   );
@@ -16,4 +16,4 @@ const DontSearch = () => {
   );
 };
 
-export default DontSearch;
+export default Enchant404;
