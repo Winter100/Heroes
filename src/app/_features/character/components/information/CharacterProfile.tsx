@@ -1,8 +1,4 @@
-import React from 'react';
-
-interface CharacterProfileProps {
-  profileData: { title: string; value: string | number }[];
-}
+import { CharacterProfileProps } from '@/app/_features/character/types';
 
 const CharacterProfile = ({ profileData }: CharacterProfileProps) => {
   return (

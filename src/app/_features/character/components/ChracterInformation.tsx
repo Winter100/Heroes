@@ -2,26 +2,21 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useOcid } from '@/app/_hooks/useOcid/useOcid';
-import CharacterBasicInfo from '@/app/_components/character/CharacterBasicInfo';
-import CharacterStats from '@/app/_components/character/CharacterStats';
-import RoundedContainer from '../layout/RoundedContainer';
-import Loading from '../common/Loading';
-import CharacterEquipment from './CharacterEquipment';
-import ErrorDisplay from '../common/error/ErrorDisplay';
-import CharacterSkillAwakeningTable from './CharacterSkillAwakeningTable';
+import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
+import Loading from '@/app/_components/common/Loading';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import { CharacterBasicInfo } from './information';
+import CharacterStats from './stats/CharacterStats';
+import { CharacterEquipment } from './equipment';
+import { SkillAwakeningTable } from './skills';
 
-const ChracterData = () => {
+const ChracterInformation = () => {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') ?? '';
   const { data: ocid, isLoading, error } = useOcid(name);
 
-  if (!name) {
-    return <ErrorDisplay content="캐릭터 이름을 입력해주세요." />;
-  }
-  if (isLoading) {
-    return <Loading />;
-  }
-
+  if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요." />;
+  if (isLoading) return <Loading />;
   if (error) {
     return (
       <ErrorDisplay
@@ -50,10 +45,10 @@ const ChracterData = () => {
         </RoundedContainer>
       </div>
       <div className="flex w-full flex-1 flex-col px-6 md:px-0">
-        <CharacterSkillAwakeningTable ocid={ocid || ''} />
+        <SkillAwakeningTable ocid={ocid || ''} />
       </div>
     </div>
   );
 };
 
-export default ChracterData;
+export default ChracterInformation;

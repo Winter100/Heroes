@@ -1,8 +1,8 @@
 'use client';
 
 import clsx from 'clsx';
-import { FILTER_VALUES } from '../constant/itemInfo.constant';
 import { useMaterialsStore } from '../store/materialsStore';
+import { FILTER_VALUES } from '../constant';
 
 const CraftingFilterBtnList = () => {
   const filterValue = useMaterialsStore((state) => state.filter);

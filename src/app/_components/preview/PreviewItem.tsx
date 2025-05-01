@@ -13,7 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import ItemImage from '../iteminfo/info/ItemImage';
+import ItemPrviewImage from '../iteminfo/info/ItemPrviewImage';
 
 const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
   const itemName = {
@@ -46,7 +46,7 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
             <Popover>
               <PopoverTrigger className="h-full w-full">
                 <div className="flex h-full flex-col items-center justify-center">
-                  <ItemImage
+                  <ItemPrviewImage
                     materials={item.item_name}
                     slot={item.item_equipment_slot_name}
                   />

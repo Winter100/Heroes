@@ -1,14 +1,9 @@
-import React from 'react';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 import Image from 'next/image';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { getImageByName } from '@/app/_utils/getImageByName';
+import { ProfileImageProps } from '../../types';
 
-interface CharacterProfileImageProps {
-  job: string;
-  name: string;
-}
-
-const CharacterProfileImage = ({ job, name }: CharacterProfileImageProps) => {
+const ProfileImage = ({ job, name }: ProfileImageProps) => {
   const src = getImageByName(job);
   return (
     <div className="flex h-full flex-1 flex-col items-center justify-center gap-2">
@@ -27,4 +22,4 @@ const CharacterProfileImage = ({ job, name }: CharacterProfileImageProps) => {
   );
 };
 
-export default CharacterProfileImage;
+export default ProfileImage;
