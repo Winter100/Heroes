@@ -1,11 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-
-import { useCharacterStore } from '@/app/_store/characterStore';
 import { useRankStore } from '@/app/_store/rankStore';
-
 import { useDrag } from '@/app/_hooks/useDrag/useDrag';
 import { getLocalStorageItems } from '@/app/_utils/localStorage';
 import { LOCALSTORAGE_KEY } from '@/app/_constant/localstorage';
@@ -13,9 +9,11 @@ import { MergedCharacter } from '@/app/_type/characterType';
 import { useRaidStore } from '@/app/_store/raidStore';
 
 import { useCheckStore } from '@/app/_store/checkStore';
-import { filterCharacters } from '../utils/filterCharacters';
-import CheckBox from '@/app/_components/common/CheckBox';
-import LimitStat from '../stat/LimitStat';
+import { useCharacterStore } from '../../store/characterStore';
+import { filterCharacters } from '@/app/_components/raid/utils/filterCharacters';
+import LimitStat from '../stats/LimitStat';
+import { TableBody, TableCell, TableRow } from '@/components/ui/table';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const LimitTableBody = () => {
   const characters = useCharacterStore((state) => state.characters);
@@ -29,10 +27,9 @@ const LimitTableBody = () => {
   );
 
   const selectedTitleList = useRankStore((state) => state.rankTitleList);
+  const setSeletRankTitle = useRankStore((state) => state.setSeletRankTitle);
 
   const filteredCharacters = filterCharacters(characters, selectedTitleList);
-
-  const setSeletRankTitle = useRankStore((state) => state.setSeletRankTitle);
 
   const { dragEnd, dragEnter, dragOver, dragStart } = useDrag(
     setDropCharacterList,
@@ -56,12 +53,10 @@ const LimitTableBody = () => {
   }, [addCharacter]);
 
   return (
-    <tbody
-      className={`${characters.length >= 1 ? 'border' : 'border-none'} grid h-full w-full grid-rows-8 rounded-lg border-borderColor text-[10px] sm:text-xs`}
-    >
+    <TableBody className="text-xs">
       {filteredCharacters.slice(0, 8).map((c, i) => (
-        <tr
-          key={uuidv4()}
+        <TableRow
+          key={c?.name}
           onClick={() => {
             const name = c?.info?.find(
               (s) => s?.stat_name === '이름'
@@ -73,21 +68,18 @@ const LimitTableBody = () => {
           onDragEnd={dragEnd}
           onDragOver={dragOver}
           onDragEnter={() => dragEnter(i)}
-          className={`flex flex-1 ${selectedCharacter?.name === c?.name ? 'text-blue-300' : ''} min-h-10 w-full items-center justify-center rounded-lg hover:cursor-pointer hover:bg-zinc-600`}
+          className={`h-12 border-b ${selectedCharacter?.name === c?.name ? 'text-blue-300' : ''} hover:cursor-pointer hover:bg-zinc-600`}
         >
           {/* 체크박스 */}
-          <td className="flex h-full w-12 items-center justify-center">
+          <TableCell>
             <div onClick={(e) => onCheck(e, c?.name?.toString() ?? '')}>
-              <CheckBox
+              <Checkbox
                 checked={checkedList.includes(c?.name?.toString() ?? '')}
               />
             </div>
-          </td>
+          </TableCell>
           {c?.info?.map((i) => (
-            <td
-              className="flex h-full flex-1 items-center justify-center"
-              key={i?.stat_name + i?.stat_value}
-            >
+            <TableCell key={i?.stat_name + i?.stat_value}>
               <div className="flex flex-col items-center justify-center">
                 <span>{i?.stat_value}</span>
                 {selectedBoss && (
@@ -98,11 +90,11 @@ const LimitTableBody = () => {
                   />
                 )}
               </div>
-            </td>
+            </TableCell>
           ))}
-        </tr>
+        </TableRow>
       ))}
-    </tbody>
+    </TableBody>
   );
 };
 

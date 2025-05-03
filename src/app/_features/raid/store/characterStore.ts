@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import { MergedCharacter } from '../_type/characterType';
-import { setWaitingRoomCharactersInfo } from '../_utils/localStorage';
-import { sortCharacters } from '../_utils/sortCharacters';
+import { MergedCharacter } from '@/app/_type/characterType';
+import { sortCharacters } from '@/app/_utils/sortCharacters';
+import { setWaitingRoomCharactersInfo } from '@/app/_utils/localStorage';
 
 type State = {
   characters: MergedCharacter[];

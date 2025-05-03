@@ -1,16 +1,15 @@
 import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
-
-import { mergeAtk } from './utils/mergeAtk';
-import { translateAndUnifyStats } from './utils/translateAndUnifyStats';
-import { mergeCharacterData } from './utils/mergeCharacterData';
-import { useCharacterStore } from '@/app/_store/characterStore';
 import { getOcid } from '@/app/_services/getOcid';
 import { getBasic } from '@/app/_services/getBasic';
 import { getStats } from '@/app/_services/getStats';
 import { getGuild } from '@/app/_services/getGuild';
 import { addWaitingRoomCharacterInfo } from '@/app/_utils/localStorage';
 import { useRankStore } from '@/app/_store/rankStore';
+import { useCharacterStore } from '../store/characterStore';
+import { mergeAtk } from '@/app/_hooks/useCharacter/utils/mergeAtk';
+import { translateAndUnifyStats } from '@/app/_hooks/useCharacter/utils/translateAndUnifyStats';
+import { mergeCharacterData } from '@/app/_hooks/useCharacter/utils/mergeCharacterData';
 
 export const useCharacter = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +22,6 @@ export const useCharacter = () => {
       setLoading(true);
 
       try {
-        // 탄스택 쿼리로 바꾸기?
         const ocid = await getOcid(characterName);
         const [basic, stat, guild] = await Promise.all([
           getBasic(ocid),

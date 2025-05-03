@@ -1,14 +1,9 @@
-import { MonstersType } from '@/app/_constant/raidList';
-import { limitCalculator } from '../utils/limitCalculator';
 import { useRankStore } from '@/app/_store/rankStore';
-import { useCharacterStore } from '@/app/_store/characterStore';
+import { useCharacterStore } from '../../store/characterStore';
+import { limitCalculator } from '@/app/_components/raid/utils/limitCalculator';
+import { LimitStatProps } from '../../types';
 
-const LimitStat = (props: {
-  selectedBoss: MonstersType;
-  stat_name: string;
-  stat_value: string | number;
-  characterName: string;
-}) => {
+const LimitStat = (props: LimitStatProps) => {
   const selectedBoss = props.selectedBoss;
   const statName = props.stat_name;
   const statValue = props.stat_value;

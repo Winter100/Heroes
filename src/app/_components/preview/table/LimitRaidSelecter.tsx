@@ -7,11 +7,11 @@ import Button from '../../common/Button';
 import { useRaidStore } from '@/app/_store/raidStore';
 import { filterRaidList } from '@/app/_utils/filterRaidList';
 import { getImageByName } from '@/app/_utils/getImageByName';
+import { DialogClose } from '@/components/ui/dialog';
 
-const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
+const LimitRaidSelecter = () => {
   const [entry, setEntry] = useState<'빠른전투' | '상한'>('상한');
   const raidString = useRaidStore((state) => state.raidString);
-
   const selectedBoss = useRaidStore((state) => state.setSelectBoss);
 
   const onClick = (
@@ -20,7 +20,6 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
     entry: '빠른전투' | '상한' = '상한'
   ) => {
     selectedBoss(raid_name, monster_name, entry);
-    setOpen(false);
   };
 
   const boss = filterRaidList(entry);
@@ -57,7 +56,7 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
             </div>
             <div className="flex flex-col gap-4">
               {item?.monsters.map((raid) => (
-                <button
+                <DialogClose
                   onClick={() => onClick(item?.raid_name, raid.name, entry)}
                   key={raid?.name}
                   className={`flex w-full items-center justify-center gap-2 hover:text-blue-300 ${raidString.monsterName === raid.name && raidString.raidName === item.raid_name && raidString.entry === entry ? 'text-blue-300' : ''} `}
@@ -74,7 +73,7 @@ const LimitRaidSelecter = ({ setOpen }: { setOpen: (is: boolean) => void }) => {
                   <div className="flex h-full flex-1 items-center text-xs">
                     {raid.name}
                   </div>
-                </button>
+                </DialogClose>
               ))}
             </div>
           </div>

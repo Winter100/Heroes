@@ -1,17 +1,18 @@
 import dynamic from 'next/dynamic';
-import LimitTableHead from '../limitTable/LimitTableHead';
+import LimitTableHead from './LimitTableHead';
+import { Table } from '@/components/ui/table';
 
-const LimitTableBody = dynamic(() => import('../limitTable/LimitTableBody'), {
+const LimitTableBody = dynamic(() => import('./LimitTableBody'), {
   ssr: false,
 });
 
 const RaidLimitUserTable = () => {
   return (
-    <table className="flex h-full w-full flex-1 table-auto flex-col gap-1">
+    <Table className="table-fixed caption-top">
       <caption className="hidden">캐릭터 리스트</caption>
       <LimitTableHead />
       <LimitTableBody />
-    </table>
+    </Table>
   );
 };
 

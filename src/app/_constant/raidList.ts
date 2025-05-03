@@ -5,6 +5,16 @@ const item_filter = {
   enchant: '인챈트',
 } as const;
 
+export interface MonstersOmitEntry {
+  raid_name: string;
+  monsters: Omit<MonstersType, 'entry'>[];
+}
+
+export interface MonstersOmitLimit {
+  raid_name: string;
+  monsters: Omit<MonstersType, 'limit'>[];
+}
+
 export interface MonstersType {
   name: string;
   basic_reward?: { name: string; value: string }[];
