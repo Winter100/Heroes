@@ -1,7 +1,7 @@
-import { MonstersType } from '@/app/_constant/raidList';
+import { OptionalEntry } from '@/app/_features/preview/types';
 
 export const limitCalculator = (
-  monsterInfo: MonstersType,
+  monsterInfo: OptionalEntry,
   bossEntry: '상한' | '빠른전투',
   user_stat_name: string,
   user_stat_value: string,

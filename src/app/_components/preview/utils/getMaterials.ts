@@ -37,7 +37,6 @@ export const getMaterials = (items: (NewTuning_stat[] | null)[]) => {
       name,
       value: materialTotals[name],
       src: getImageByName(name),
-      // src: `/images/items/ingredient/${name}.png`,
     }))
     .sort((a, b) => a.name.localeCompare(b.name, 'ko'));
 

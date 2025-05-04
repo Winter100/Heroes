@@ -15,8 +15,8 @@ const DialogTriggerBtn = forwardRef<
   return (
     <Button
       ref={ref}
-      variant="outline"
-      className="flex h-8 w-full items-center justify-center text-xs hover:text-white"
+      variant="ghost"
+      className="flex h-8 w-full items-center justify-center rounded-md text-xs"
       {...props}
     >
       <div className="flex w-full flex-col items-center justify-center">
