@@ -950,6 +950,16 @@ export const imageMap = new Map<string, string>([
   ['J.F 버스트', '/images/characters/skill/k-2-jf.png'],
   ['뎀프시롤', '/images/characters/skill/k-2-ds.png'],
 
+  ['공격력', '/images/icon/att.png'],
+  ['크리티컬', '/images/icon/cri.png'],
+  ['밸런스', '/images/icon/bal.png'],
+  ['대항력', '/images/icon/reg.png'],
+  ['크리티컬 저항', '/images/icon/cridef.png'],
+  ['추가피해', '/images/icon/atkplus.png'],
+  ['방어력', '/images/icon/def.png'],
+  ['공격속도', '/images/icon/atkspeed.png'],
+  ['해제', '/images/icon/limit.png'],
+
   // 카이
   // 공통 X
 

@@ -14,6 +14,7 @@ import {
 import Column from '@/app/_components/layout/Column';
 import PreivewList from './preview/PreivewList';
 import PreviewTitle from './preview/PreviewTitle';
+import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
@@ -46,8 +47,8 @@ const PreviewBody = () => {
         <PreivewList />
         {/* <Row className="flex items-center justify-end text-white">
           <EnchantTotalPrice />
-        </Row>
-        <RaidSelectorWithStats /> */}
+        </Row> */}
+        <RaidSelectorWithStats />
       </Column>
     </>
   );

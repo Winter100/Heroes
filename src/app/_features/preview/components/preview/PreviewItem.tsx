@@ -39,7 +39,7 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
 
   return (
     <Row className="flex h-full w-full items-center gap-2 text-sm">
-      <BeforeAndAfter className="w-20 justify-start sm:justify-center">
+      <BeforeAndAfter className="w-12 justify-start sm:justify-center">
         {/* <BeforeAndAfter.Title>아이템 이름</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">
@@ -63,7 +63,7 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
           </BeforeAndAfter.Before>
         </BeforeAndAfter.Content>
       </BeforeAndAfter>
-      <BeforeAndAfter className="w-6">
+      <BeforeAndAfter className="w-7 sm:w-8">
         {/* <BeforeAndAfter.Title>연마</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
           <BeforeAndAfter.Before className="flex items-center justify-center">

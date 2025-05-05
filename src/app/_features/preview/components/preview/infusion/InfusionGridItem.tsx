@@ -10,7 +10,7 @@ const InfusionGridItem = ({
 }: InfusionGridItemProps) => {
   return (
     <li
-      className="flex w-full rounded-lg shadow-md transition-shadow duration-300 hover:cursor-pointer hover:shadow-xl"
+      className="flex w-full rounded-lg transition-shadow duration-300 hover:cursor-pointer hover:shadow-xl"
       key={infusion?.name + infusion.stat_value}
     >
       <button

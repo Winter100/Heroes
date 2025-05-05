@@ -19,10 +19,7 @@ const GrindingResult = ({ grindingItems, materialsArray }: GrindingProps) => {
       <div>
         <ul className="flex flex-col gap-4 md:grid md:grid-cols-2">
           {grindingItems?.map((item) => (
-            <li
-              className="rounded-lg border border-muted p-2"
-              key={item.item_name}
-            >
+            <li className="rounded-lg bg-background p-2" key={item.item_name}>
               <div className="flex flex-col gap-1">
                 <ItemTitle
                   className="text-sm font-medium text-white"
@@ -38,7 +35,7 @@ const GrindingResult = ({ grindingItems, materialsArray }: GrindingProps) => {
           ))}
         </ul>
       </div>
-      <div className="grid w-full grid-cols-2 items-start justify-items-center gap-4 rounded-md border border-muted p-2 sm:grid-cols-4">
+      <div className="grid w-full grid-cols-2 items-start justify-items-center gap-2 rounded-md bg-background p-2 sm:grid-cols-4">
         {materialsArray.map((item) => (
           <IngredientItem key={item.name} {...item} />
         ))}

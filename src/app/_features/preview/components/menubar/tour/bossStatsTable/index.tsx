@@ -13,6 +13,8 @@ import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
 import CalculatorStat from './CalculatorStat';
 import { filterStats } from '@/app/_features/preview/utils/filterStats';
 import { TableProps } from '@/app/_features/preview/types';
+import Image from 'next/image';
+import { getImageByName } from '@/app/_utils/getImageByName';
 
 const BossStatsTable = ({ boss, filter }: TableProps) => {
   const userStats = usePreviewStore((state) => state.previewAllStats);
@@ -22,13 +24,24 @@ const BossStatsTable = ({ boss, filter }: TableProps) => {
   )?.stat_value;
 
   return (
-    <Table className="table-fixed border">
+    <Table className="table-fixed border bg-background">
       <TableCaption></TableCaption>
       <TableHeader>
         <TableRow className="text-xs">
           {previewInitialTitleList?.map((boss) => (
             <TableHead className="text-center" key={boss?.stat_name}>
-              {boss.stat_name}
+              <div className="hidden text-center text-[11px] sm:block sm:text-xs">
+                {boss.stat_name}
+              </div>
+              <div className="flex items-center justify-center sm:hidden">
+                <Image
+                  width={15}
+                  height={15}
+                  src={getImageByName(boss.stat_name)}
+                  alt="s"
+                />
+              </div>
+              {/* {boss.stat_name} */}
             </TableHead>
           ))}
         </TableRow>

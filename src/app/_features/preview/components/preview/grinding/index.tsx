@@ -22,11 +22,11 @@ const OneGrindingDialog = ({ item }: { item: NewEquipmentType }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="w-8" variant="outline">
-          <Hammer size={20} />
+        <Button className="w-5 p-0 sm:w-7" variant="outline">
+          <Hammer size={10} />
         </Button>
       </DialogTrigger>
-      <DialogContent className="dark max-w-2xl bg-backgroundOne text-white">
+      <DialogContent className="dark max-h-96 max-w-2xl overflow-y-auto bg-backgroundOne px-1 text-white sm:max-h-[950px] sm:px-6">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>
@@ -35,22 +35,6 @@ const OneGrindingDialog = ({ item }: { item: NewEquipmentType }) => {
         <RaidSelectorWithStats />
       </DialogContent>
     </Dialog>
-
-    // <>
-    //   <Button className="" onClick={onOpen}>
-    //     <Image src={src} width={17} height={17} alt="연마" />
-    //   </Button>
-    //   <BasicDialog
-    //     className="max-h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 text-white md:max-h-[1000px] md:p-6 md:pb-4"
-    //     // className="max-h-[500px] overflow-y-auto bg-backgroundOne px-4 pb-4 pt-5 sm:h-[550px] md:h-[800px] md:p-6 md:pb-4 lg:h-full"
-    //     isOpen={isOpen}
-    //     onClose={onClose}
-    //     size="700px"
-    //   >
-    //     <OneGrindingContent isAbility={isAbility} title={title} item={item} />
-    //     <RaidSelectorWithStats />
-    //   </BasicDialog>
-    // </>
   );
 };
 

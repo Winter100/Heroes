@@ -18,7 +18,7 @@ const TourSummaryDialog = () => {
           순회
         </Button>
       </DialogTrigger>
-      <DialogContent className="dark max-h-96 max-w-3xl overflow-y-auto text-white sm:max-h-[750px]">
+      <DialogContent className="dark max-h-96 max-w-3xl overflow-y-auto bg-backgroundOne px-1 text-white sm:max-h-[950px] sm:px-6">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>

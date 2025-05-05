@@ -17,7 +17,7 @@ const StatsSummaryDialog = () => {
           스탯
         </Button>
       </DialogTrigger>
-      <DialogContent className="dark text-white">
+      <DialogContent className="dark max-h-96 overflow-y-auto bg-backgroundOne text-white sm:max-h-[950px]">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>

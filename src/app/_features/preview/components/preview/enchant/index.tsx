@@ -37,16 +37,17 @@ const EnchantChangeDialog = memo(
             {!label && <ChevronDown size={15} />}
           </Button>
         </DialogTrigger>
-        <DialogContent className="dark max-w-2xl bg-backgroundOne text-white">
+        <DialogContent className="dark max-h-96 max-w-2xl overflow-y-auto bg-backgroundOne text-white sm:max-h-[950px]">
           <DialogHeader>
-            <DialogTitle></DialogTitle>
+            <DialogTitle>
+              <ItemTitle
+                className="text-sm font-medium text-white"
+                level={''}
+                name={items.name}
+              />
+            </DialogTitle>
             <DialogDescription></DialogDescription>
           </DialogHeader>
-          <ItemTitle
-            className="text-sm font-medium text-white"
-            level={''}
-            name={items.name}
-          />
           <EnchantContent
             enchantList={enchantList}
             selectedHandler={selectedHandler}

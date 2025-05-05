@@ -15,12 +15,14 @@ const PartholnContent = () => {
         * 시공간왜곡 및 결사대 컷을 계산할때 이용해주세요
       </p>
       <p>기존 스탯에서 원정단으로 증가한 수치만큼 빼게 됩니다</p>
-      <PartholnList
-        partholn={partholn}
-        level={level}
-        setLevel={setLevel}
-        setBeforeStats={setBeforeStats}
-      />
+      <div className="w-full rounded-md bg-background p-2">
+        <PartholnList
+          partholn={partholn}
+          level={level}
+          setLevel={setLevel}
+          setBeforeStats={setBeforeStats}
+        />
+      </div>
     </div>
   );
 };

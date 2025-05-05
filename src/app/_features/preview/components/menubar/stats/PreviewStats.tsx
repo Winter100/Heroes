@@ -19,7 +19,7 @@ const PreviewStats = ({
         <Column className="gap-1">
           <p className="text-center">기존</p>
           <PreviewStatsBox
-            className="max-w-42 h-96 rounded-lg border border-gray-600 bg-zinc-800 p-2 text-white"
+            className="max-w-42 h-96 rounded-lg border border-gray-600 bg-background p-2 text-white"
             stats={data ?? []}
           />
         </Column>
@@ -31,7 +31,7 @@ const PreviewStats = ({
           <p className="text-center">변경</p>
           <PreviewStatsBox
             isTitle={true}
-            className="max-w-42 h-96 rounded-lg border border-gray-600 bg-zinc-800 p-2 text-white"
+            className="max-w-42 h-96 rounded-lg border border-gray-600 bg-background p-2 text-white"
             stats={mergedStats ?? []}
             statDifference={statDifference ?? []}
           />

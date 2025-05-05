@@ -8,6 +8,19 @@ import { limitCalculator } from '../../raid/utils/limitCalculator';
 import { useRaidStore } from '@/app/_store/raidStore';
 import RaidSelecterDialog from '@/app/_features/raid/components/limitTableMenuBar/raidSelecter';
 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import StatDifference from './Statdifference';
+import { getImageByName } from '@/app/_utils/getImageByName';
+import Image from 'next/image';
+
 const RaidSelectorWithStats = () => {
   const previewAllStats = usePreviewStore((state) => state.previewAllStats);
 
@@ -42,24 +55,30 @@ const RaidSelectorWithStats = () => {
         <RaidSelecterDialog onlyLimit={false} />
       </div>
 
-      <table className="flex h-full w-full table-fixed flex-col gap-1 text-[9px] md:text-xs">
-        <caption className="hidden">미리보기</caption>
-        <thead>
-          <tr className="flex w-full items-center justify-center">
-            {previewInitialTitleList.map((item) => (
-              <th
-                className="flex flex-1 items-center justify-center text-[10px] md:text-xs"
-                key={item.stat_name}
+      <Table className="table-fixed caption-top">
+        <TableCaption></TableCaption>
+        <TableHeader>
+          <TableRow className="text-xs">
+            {previewInitialTitleList.map((title) => (
+              <TableHead
+                className="text-center text-white"
+                key={title.stat_name}
               >
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap font-light">
-                  {item.stat_name}
-                </p>
-              </th>
+                <div className="hidden sm:block">{title.stat_name}</div>
+                <div className="flex items-center justify-center sm:hidden">
+                  <Image
+                    width={15}
+                    height={15}
+                    src={getImageByName(title.stat_name)}
+                    alt="s"
+                  />
+                </div>
+              </TableHead>
             ))}
-          </tr>
-        </thead>
-        <tbody className="flex items-center justify-center pt-1 text-xs font-normal">
-          <tr className="flex h-full w-full items-center justify-center">
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
             {filteredStats.map((item) => {
               const stat = limitCalculator(
                 boss,
@@ -68,35 +87,20 @@ const RaidSelectorWithStats = () => {
                 item?.stat_value.toString(),
                 limitValue?.toString()
               );
+
               return (
-                <td
-                  className="flex w-full flex-1 flex-col items-center justify-center text-[9px] md:text-xs"
+                <TableCell
+                  className="text-center text-xs"
                   key={item.stat_name + item.stat_value}
                 >
-                  <p className="flex items-center justify-center">
-                    {item.stat_value}
-                  </p>
-                  {boss && (
-                    <p
-                      className={`flex items-center justify-center text-[8px] md:text-xs ${
-                        stat !== null
-                          ? stat! > 0
-                            ? 'text-green-300'
-                            : stat! < 0
-                              ? 'text-red-300'
-                              : ''
-                          : ''
-                      }`}
-                    >
-                      {stat ? stat : ''}
-                    </p>
-                  )}
-                </td>
+                  {item.stat_value}
+                  {boss && <StatDifference stat={stat} />}
+                </TableCell>
               );
             })}
-          </tr>
-        </tbody>
-      </table>
+          </TableRow>
+        </TableBody>
+      </Table>
     </div>
   );
 };

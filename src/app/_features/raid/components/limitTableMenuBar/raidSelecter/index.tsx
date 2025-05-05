@@ -34,6 +34,7 @@ const RaidSelecterDialog = ({ onlyLimit = false }: { onlyLimit?: boolean }) => {
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <RaidEntryFilterBtn
+          filter={filter}
           onlyLimit={onlyLimit}
           handleLimit={handleLimit}
           handleQuick={handleQuick}

@@ -10,7 +10,7 @@ const PartholnTableRows = ({
   return partholn.map((p) => (
     <TableRow
       className={cn(
-        'w-full cursor-pointer border-b border-white',
+        'w-full cursor-pointer',
         curLevel === p.level && 'text-blue-300'
       )}
       onClick={() => onClick(p.level, p.stat)}

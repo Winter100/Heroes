@@ -28,12 +28,14 @@ const PartholnList = ({
     setBeforeStats(beforeStat);
   };
   return (
-    <Table>
+    <Table className="table-fixed">
       <TableCaption></TableCaption>
       <TableHeader>
         <TableRow>
           {PARTHOLN_TITLE.map((title) => (
-            <TableHead key={title}>{title}</TableHead>
+            <TableHead className="text-center" key={title}>
+              {title}
+            </TableHead>
           ))}
         </TableRow>
       </TableHeader>
