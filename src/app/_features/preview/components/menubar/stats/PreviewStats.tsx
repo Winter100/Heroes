@@ -11,7 +11,7 @@ const PreviewStats = ({
   statDifference,
 }: PreviewStatsProps) => {
   return (
-    <Column className="h-full w-full gap-1 text-xs">
+    <Column className="dark h-full w-full gap-1 text-xs">
       <Row className="min-h-6 items-center justify-center text-sm font-semibold">
         {name}
       </Row>

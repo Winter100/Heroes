@@ -1,7 +1,7 @@
 'use client';
 
 import { useCharacterData } from '@/app/_hooks/useCharacterData/useCharacterData';
-// import { useEnchantPriceList } from '@/app/_hooks/useEnchantPriceList/useEnchantPriceList';
+import { useEnchantPriceList } from '@/app/_hooks/useEnchantPriceList/useEnchantPriceList';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import Loading from '@/app/_components/common/Loading';
 import Row from '@/app/_components/layout/Row';
@@ -15,6 +15,7 @@ import Column from '@/app/_components/layout/Column';
 import PreivewList from './preview/PreivewList';
 import PreviewTitle from './preview/PreviewTitle';
 import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import EnchantTotalPrice from '@/app/_components/enchant/EnchantTotalPrice';
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
@@ -35,14 +36,14 @@ const PreviewBody = () => {
 
   return (
     <>
-      <Row className="absolute end-0 w-full max-w-80 items-center justify-center gap-2 text-xs">
+      <Row className="w-full items-center justify-end gap-2 text-xs">
         <TourSummaryDialog />
         <StatsSummaryDialog />
         <PartholnSummaryDialog />
         <GrindingSummaryDialog />
       </Row>
 
-      <Column className="mt-6">
+      <Column>
         <PreviewTitle />
         <PreivewList />
         {/* <Row className="flex items-center justify-end text-white">

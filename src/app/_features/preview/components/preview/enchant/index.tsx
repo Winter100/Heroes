@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { EnchantChangeDialogProps } from '../../../types';
 import { useFilteredEnchantPriceList } from '../../../hooks/useFilteredEnchantPriceList';
 
@@ -13,8 +13,12 @@ import {
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import ItemTitle from '@/app/_components/common/ItemTitle';
-import EnchantContent from './EnchantContent';
 import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { groupByRank } from '../../../utils/groupByRank';
+import TabItems from './TabItems';
+import SearchInput from '@/app/_components/common/SearchInput';
+import { getSerachEnchant } from '../../../utils/getSerachEnchant';
 
 const EnchantChangeDialog = memo(
   ({
@@ -28,16 +32,33 @@ const EnchantChangeDialog = memo(
   }: EnchantChangeDialogProps) => {
     const { enchantPriceList, enchantPriceLoading } =
       useFilteredEnchantPriceList(upgreadeType);
+    const [selectRank, setSelectRank] = useState<string>('all');
+    const [searchQuery, setSearchQuery] = useState<string>('');
+    const enchantGroup = groupByRank(enchantList);
+
+    const enchants = getSerachEnchant(enchantGroup, searchQuery);
 
     return (
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="h-6 w-full border text-xs" variant="ghost">
+          <Button
+            className="h-6 w-full border p-0 text-[10px] sm:text-xs"
+            variant="ghost"
+          >
             {label}
-            {!label && <ChevronDown size={15} />}
+            {!label && <ChevronDown className="text-fontColor" size={15} />}
           </Button>
         </DialogTrigger>
-        <DialogContent className="dark max-h-96 max-w-2xl overflow-y-auto bg-backgroundOne text-white sm:max-h-[950px]">
+        <DialogContent
+          autoFocus={false}
+          className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]"
+        >
+          <div
+            tabIndex={0}
+            ref={(el) => el?.focus()}
+            style={{ outline: 'none' }}
+          />
+
           <DialogHeader>
             <DialogTitle>
               <ItemTitle
@@ -48,16 +69,66 @@ const EnchantChangeDialog = memo(
             </DialogTitle>
             <DialogDescription></DialogDescription>
           </DialogHeader>
-          <EnchantContent
-            enchantList={enchantList}
-            selectedHandler={selectedHandler}
-            upgreadeType={upgreadeType}
-            slot={slot}
-            enchantPriceList={enchantPriceList || []}
-            enchantPriceLoading={enchantPriceLoading || false}
-            selectedValue={selectedValue || ''}
+          <SearchInput
+            className="dark pl-8"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="인챈트 이름 또는 효과로 검색..."
+            maxLength={10}
           />
-          <RaidSelectorWithStats />
+          <Tabs
+            defaultValue="all"
+            className="dark w-full"
+            onValueChange={setSelectRank}
+            value={selectRank}
+          >
+            <TabsList className="w-full">
+              <TabsTrigger className="w-full" value="all">
+                전체
+              </TabsTrigger>
+              {enchantGroup?.map((enchant) => (
+                <TabsTrigger
+                  className="w-full"
+                  key={enchant.rank}
+                  value={enchant.rank}
+                >
+                  {enchant.rank}
+                  <div className="hidden sm:block">랭크</div>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            <div className="max-h-64 overflow-y-auto pr-2 sm:max-h-[480px]">
+              <TabsContent value="all">
+                <TabItems
+                  selectedHandler={selectedHandler}
+                  slot={slot}
+                  rank="all"
+                  data={enchants}
+                  upgreadeType={upgreadeType}
+                  enchantPriceList={enchantPriceList || []}
+                  enchantPriceLoading={enchantPriceLoading || false}
+                  selectedValue={selectedValue}
+                />
+              </TabsContent>
+              {enchantGroup?.map((item) => (
+                <TabsContent value={item.rank} key={item.rank}>
+                  <TabItems
+                    selectedHandler={selectedHandler}
+                    slot={slot}
+                    rank={item.rank}
+                    data={enchants?.filter(
+                      (enchant) => enchant?.rank === selectRank
+                    )}
+                    upgreadeType={upgreadeType}
+                    enchantPriceList={enchantPriceList || []}
+                    enchantPriceLoading={enchantPriceLoading || false}
+                    selectedValue={selectedValue}
+                  />
+                </TabsContent>
+              ))}
+            </div>
+            <RaidSelectorWithStats />
+          </Tabs>
         </DialogContent>
       </Dialog>
     );

@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export interface RaidEntryFilterBtnProps {
@@ -14,35 +13,39 @@ const RaidEntryFilterBtn = ({
   filter,
 }: RaidEntryFilterBtnProps) => {
   const content = onlyLimit ? (
-    <Button
-      className={cn('', filter === '상한' && 'bg-blue-300')}
+    <button
+      className={`inline-flex items-center overflow-hidden whitespace-nowrap rounded-full px-4 py-2 font-medium ring-1 ring-inset ${
+        filter === '상한'
+          ? 'text-blue-300 ring-[hsla(0,0%,100%,0.12)]'
+          : 'text-zinc-400 ring-[hsla(0,0%,100%,0.06)]'
+      }`}
       disabled={filter === '상한'}
-      variant="outline"
       onClick={handleLimit}
     >
       상한
-    </Button>
+    </button>
   ) : (
     <>
-      <Button
-        className={cn(
-          '',
-          filter === '빠른전투' && 'border-blue-300 text-blue-300'
-        )}
-        disabled={filter === '빠른전투'}
-        variant="outline"
+      <button
+        className={`inline-flex items-center overflow-hidden whitespace-nowrap rounded-full px-4 py-2 font-medium ring-1 ring-inset ${
+          filter === '빠른전투'
+            ? 'text-blue-300 ring-[hsla(0,0%,100%,0.12)]'
+            : 'text-zinc-400 ring-[hsla(0,0%,100%,0.06)]'
+        }`}
         onClick={handleQuick}
       >
         빠른전투
-      </Button>
-      <Button
-        className={cn('', filter === '상한' && 'border-blue-300 text-blue-300')}
-        variant="outline"
-        disabled={filter === '상한'}
+      </button>
+      <button
+        className={`inline-flex items-center overflow-hidden whitespace-nowrap rounded-full px-4 py-2 font-medium ring-1 ring-inset ${
+          filter === '상한'
+            ? 'text-blue-300 ring-[hsla(0,0%,100%,0.12)]'
+            : 'text-zinc-400 ring-[hsla(0,0%,100%,0.06)]'
+        }`}
         onClick={handleLimit}
       >
         상한
-      </Button>
+      </button>
     </>
   );
 

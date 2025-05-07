@@ -15,7 +15,7 @@ export interface GrindingProps {
 
 const GrindingResult = ({ grindingItems, materialsArray }: GrindingProps) => {
   return (
-    <div className="flex flex-col gap-7 py-2">
+    <div className="dark flex flex-col gap-7 py-2">
       <div>
         <ul className="flex flex-col gap-4 md:grid md:grid-cols-2">
           {grindingItems?.map((item) => (
@@ -35,7 +35,7 @@ const GrindingResult = ({ grindingItems, materialsArray }: GrindingProps) => {
           ))}
         </ul>
       </div>
-      <div className="grid w-full grid-cols-2 items-start justify-items-center gap-2 rounded-md bg-background p-2 sm:grid-cols-4">
+      <div className="grid w-full grid-cols-2 items-start justify-items-center gap-2 rounded-md bg-background p-2 sm:grid-cols-3">
         {materialsArray.map((item) => (
           <IngredientItem key={item.name} {...item} />
         ))}

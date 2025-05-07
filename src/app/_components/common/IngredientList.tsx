@@ -16,7 +16,7 @@ const IngredientList = ({ item, className }: IngredientListProps) => {
   return (
     <div
       className={clsx(
-        'grid w-full grid-cols-2 items-start justify-items-center gap-4 md:grid-cols-4',
+        'grid w-full grid-cols-2 items-start justify-items-center gap-2 md:grid-cols-3',
         className
       )}
     >

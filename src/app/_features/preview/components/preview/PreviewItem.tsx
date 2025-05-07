@@ -79,11 +79,11 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
       <BeforeAndAfter className="flex-1">
         {/* <BeforeAndAfter.Title>정령</BeforeAndAfter.Title> */}
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="flex items-center justify-center">
+          <BeforeAndAfter.Before className="flex items-center justify-center text-[10px] sm:text-xs">
             {beforeInfusionName + beforeInfusionValue}
           </BeforeAndAfter.Before>
 
-          <BeforeAndAfter.After className="h-full">
+          <BeforeAndAfter.After className="text-blue-300">
             {usableInfusionList?.length >= 1 && (
               <PreviewModal
                 itemName={itemName}
@@ -99,10 +99,10 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
 
       <BeforeAndAfter className="flex-1">
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="flex items-center justify-center">
+          <BeforeAndAfter.Before className="flex items-center justify-center text-[10px] sm:text-xs">
             {beforePrefixEnchantName || ''}
           </BeforeAndAfter.Before>
-          <BeforeAndAfter.After>
+          <BeforeAndAfter.After className="text-blue-300">
             {usablePrefixEnchantList?.length >= 1 && (
               <PreviewModal
                 itemName={itemName}
@@ -118,10 +118,10 @@ const PreviewItem = memo(({ item, slot }: PrviewItemProps) => {
 
       <BeforeAndAfter className="flex-1">
         <BeforeAndAfter.Content>
-          <BeforeAndAfter.Before className="flex items-center justify-center">
+          <BeforeAndAfter.Before className="flex items-center justify-center text-[10px] sm:text-xs">
             {beforeSuffixEnchantName || ''}
           </BeforeAndAfter.Before>
-          <BeforeAndAfter.After>
+          <BeforeAndAfter.After className="text-blue-300">
             {usableSuffixEnchantList?.length >= 1 && (
               <PreviewModal
                 itemName={itemName}

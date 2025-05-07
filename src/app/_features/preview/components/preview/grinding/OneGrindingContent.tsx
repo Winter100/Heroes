@@ -18,16 +18,16 @@ const OneGrindingContent = ({
 }: OneGrindingContentProps) => {
   return (
     <>
-      <Column className="items-center justify-center gap-2 rounded-lg bg-background py-2">
+      <Column className="dark items-center justify-center gap-2 rounded-lg bg-background py-2">
         <ItemTitle
           className="text-sm font-medium text-white"
           level={title.level ?? ''}
           name={title.name}
         />
         {isAbility && <Ability item={item} />}
-        <GrindingChangeList className="p-3" item={item} />
+        <GrindingChangeList className="p-2" item={item} />
       </Column>
-      <BasicContainer className="items-center justify-center bg-background">
+      <BasicContainer className="dark items-center justify-center bg-background">
         <IngredientList item={item} />
       </BasicContainer>
     </>

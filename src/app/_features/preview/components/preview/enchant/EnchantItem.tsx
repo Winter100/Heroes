@@ -23,14 +23,13 @@ const EnchantItem = ({
   enchantPriceList,
   selectedHandler,
 }: EnchantItemProps) => {
-  const setTotalPrice = usePreviewStore((state) => state.setTotalPrice);
-
   const src = getEnchantImage(rank, upgreadeType);
   const avgPrice = getEnchantAvgPrice({
     upgreadeType,
     enchantPriceList,
     enchantName,
   })?.avgPrice;
+  const setTotalPrice = usePreviewStore((state) => state.setTotalPrice);
 
   const onClick = () => {
     selectedHandler(enchantName, enchantEffects);
@@ -41,13 +40,9 @@ const EnchantItem = ({
       price: avgPrice,
     });
   };
-  // 더블클릭 기능 추가하기?
+
   return (
-    <button
-      className="w-full"
-      onClick={onClick}
-      // onDoubleClick={() => setOpenModal(false)}
-    >
+    <button className="w-full" onClick={onClick}>
       <Column
         className={`${isSelected ? 'text-blue-300' : 'text-zinc-400 hover:text-gray-200'} h-full w-full gap-1 rounded-lg bg-zinc-800 p-1 font-sans text-xs`}
       >

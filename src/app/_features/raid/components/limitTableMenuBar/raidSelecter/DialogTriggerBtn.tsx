@@ -10,8 +10,8 @@ const DialogTriggerBtn = forwardRef<
   React.ComponentPropsWithoutRef<'button'>
 >((props, ref) => {
   const selectedSumUp = useRaidStore((state) => state.selectedSumUp);
-  const { monsterName } = selectedSumUp;
-
+  const { monsterName, entry } = selectedSumUp;
+  const entryText = entry !== null ? entry : null;
   return (
     <Button
       ref={ref}
@@ -20,6 +20,7 @@ const DialogTriggerBtn = forwardRef<
       {...props}
     >
       <div className="flex w-full flex-col items-center justify-center">
+        <div className="text-[10px] text-gray-300">{entryText}</div>
         <div className="flex flex-row items-center justify-center gap-1">
           <Image
             src={getImageByName(monsterName)}

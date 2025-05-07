@@ -17,11 +17,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import StatDifference from './Statdifference';
 import { getImageByName } from '@/app/_utils/getImageByName';
 import Image from 'next/image';
+import StatDifference from './StatDifference';
+import { memo } from 'react';
 
-const RaidSelectorWithStats = () => {
+const RaidSelectorWithStats = memo(() => {
   const previewAllStats = usePreviewStore((state) => state.previewAllStats);
 
   const filteredStats = previewAllStats
@@ -50,13 +51,13 @@ const RaidSelectorWithStats = () => {
     ) as MonstersType;
 
   return (
-    <div className="mt-2 w-full border-t border-borderColor pt-2 text-white">
+    <div className="dark mt-2 w-full border-t border-borderColor pt-2 text-white">
       <div className="mx-auto w-44">
         <RaidSelecterDialog onlyLimit={false} />
       </div>
 
       <Table className="table-fixed caption-top">
-        <TableCaption></TableCaption>
+        <TableCaption className="hidden"></TableCaption>
         <TableHeader>
           <TableRow className="text-xs">
             {previewInitialTitleList.map((title) => (
@@ -103,6 +104,8 @@ const RaidSelectorWithStats = () => {
       </Table>
     </div>
   );
-};
+});
 
 export default RaidSelectorWithStats;
+
+RaidSelectorWithStats.displayName = 'RaidSelectorWithStats';

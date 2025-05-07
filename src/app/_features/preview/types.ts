@@ -3,8 +3,10 @@ import {
   MonstersOmitLimit,
   MonstersType,
 } from '@/app/_constant/raidList';
+import { InfusionType, SelectedHandlerType } from '@/app/_type/infusionType';
 import { PreviewSelectedType, Stat } from '@/app/_type/previewType';
 import { ComponentProps } from 'react';
+import { EnchantPrice } from '@/app/_type/enchantType';
 
 export type OptionalEntry = Partial<MonstersType>;
 export interface MonsterItemProps {
@@ -90,4 +92,38 @@ export interface EnchantChangeDialogProps {
     level: string;
   };
   selectedValue: string;
+}
+
+export interface InfusionTabsItemProps {
+  data: InfusionType[];
+  onClick: SelectedHandlerType;
+  selectedValue: string;
+}
+
+export interface TabItemsProps {
+  rank: string;
+  data: (EnchantGroup | null)[];
+  upgreadeType: string;
+  selectedHandler: (
+    enchant: string,
+    effect: { stat_name: string; stat_value: string }[]
+  ) => void;
+  slot: string;
+  enchantPriceList: EnchantPrice[];
+  enchantPriceLoading: boolean;
+  selectedValue: string;
+}
+
+export interface Items {
+  rank: string;
+  name: string;
+  description: string;
+  stat_value: {
+    stat_name: string;
+    stat_value: string;
+  }[];
+}
+export interface EnchantGroup {
+  rank: string;
+  items: Items[];
 }

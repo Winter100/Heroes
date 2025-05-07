@@ -10,7 +10,7 @@ const PartholnContent = () => {
   const setBeforeStats = usePreviewStore((state) => state.setBeforeStats);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 text-xs sm:text-sm">
+    <div className="dark flex flex-col items-center justify-center gap-4 text-xs sm:text-sm">
       <p className="text-red-300">
         * 시공간왜곡 및 결사대 컷을 계산할때 이용해주세요
       </p>

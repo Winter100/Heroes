@@ -17,7 +17,7 @@ const RaidTourTable = () => {
   };
 
   return (
-    <Column className="h-full w-full gap-4">
+    <Column className="dark h-full w-full gap-4">
       <RaidEntryFilterBtn
         onlyLimit={false}
         handleLimit={handleLimit}
