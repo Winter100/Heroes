@@ -10,7 +10,6 @@ import { AppSidebar } from '@/components/app-sidebar';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import HomeBreadcrumb from './_components/home/HomeBreadcrumb';
 import GoogleAdsense from './_components/adsense/GoogleAdsense';
-import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   applicationName: keyword.project.name,
@@ -92,7 +91,6 @@ export default function RootLayout({
             </SidebarProvider>
           </ScreenContainer>
         </div>
-        <Toaster />
       </body>
     </html>
   );

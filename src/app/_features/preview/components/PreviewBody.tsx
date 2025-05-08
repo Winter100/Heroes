@@ -19,7 +19,7 @@ import EnchantTotalPrice from '@/app/_components/enchant/EnchantTotalPrice';
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
-  // useEnchantPriceList();
+  useEnchantPriceList();
 
   if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요" />;
   if (isLoading) return <Loading />;
@@ -46,9 +46,9 @@ const PreviewBody = () => {
       <Column>
         <PreviewTitle />
         <PreivewList />
-        {/* <Row className="flex items-center justify-end text-white">
+        <Row className="flex items-center justify-end text-white">
           <EnchantTotalPrice />
-        </Row> */}
+        </Row>
         <RaidSelectorWithStats />
       </Column>
     </>

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export interface RaidEntryFilterBtnProps {
+interface RaidEntryFilterBtnProps {
   onlyLimit: boolean;
   handleLimit: () => void;
   handleQuick: () => void;

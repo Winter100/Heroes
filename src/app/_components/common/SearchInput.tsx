@@ -7,9 +7,10 @@ const SearchInput = ({ ...props }: ComponentProps<'input'>) => {
     <div className="relative">
       <Search className="absolute left-2.5 top-2.5" size={15} />
       <Input
+        tabIndex={-1}
+        autoFocus={false}
         type="search"
         className="pl-8 text-xs"
-        autoFocus={false}
         {...props}
       />
     </div>

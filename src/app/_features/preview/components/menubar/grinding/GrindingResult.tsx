@@ -4,7 +4,7 @@ import Ability from '@/app/_components/preview/ability/Ability';
 import GrindingList from '@/app/_components/common/GrindingList';
 import IngredientItem from '@/app/_components/common/IngredientItem';
 
-export interface GrindingProps {
+interface GrindingProps {
   grindingItems: NewEquipmentType[];
   materialsArray: {
     name: string;

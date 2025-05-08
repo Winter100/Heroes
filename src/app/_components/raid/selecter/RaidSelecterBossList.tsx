@@ -6,7 +6,7 @@ import { DialogClose } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-export interface RaidSelecterBossListProps {
+interface RaidSelecterBossListProps {
   raidList: (MonstersOmitEntry | MonstersOmitLimit | null)[];
   filter: '빠른전투' | '상한';
 }

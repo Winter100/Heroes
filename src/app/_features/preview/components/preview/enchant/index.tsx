@@ -43,22 +43,14 @@ const EnchantChangeDialog = memo(
         <DialogTrigger asChild>
           <Button
             className="h-6 w-full border p-0 text-[10px] sm:text-xs"
+            // className="h-6 w-full border p-0 text-[10px] sm:text-xs"
             variant="ghost"
           >
             {label}
             {!label && <ChevronDown className="text-fontColor" size={15} />}
           </Button>
         </DialogTrigger>
-        <DialogContent
-          autoFocus={false}
-          className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]"
-        >
-          <div
-            tabIndex={0}
-            ref={(el) => el?.focus()}
-            style={{ outline: 'none' }}
-          />
-
+        <DialogContent className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]">
           <DialogHeader>
             <DialogTitle>
               <ItemTitle

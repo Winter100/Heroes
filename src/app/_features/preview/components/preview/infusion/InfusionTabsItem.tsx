@@ -28,10 +28,10 @@ const InfusionTabsItem = ({
           >
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <div className="flex w-10 items-start justify-center">
+                <div className="flex items-start justify-center">
                   <Image
-                    width={25}
-                    height={25}
+                    width={45}
+                    height={45}
                     src="/images/enchant/infusion.png"
                     alt="I"
                   />
