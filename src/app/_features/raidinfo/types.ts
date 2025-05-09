@@ -1,4 +1,4 @@
-export interface RaidEntryAndLimitStats {
+interface RaidEntryAndLimitStats {
   stat_name: string;
   stat_value: string;
 }

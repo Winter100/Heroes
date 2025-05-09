@@ -1,17 +1,17 @@
+import EnchantBrin from '@/app/_components/common/enchant/EnchantBrin';
+import EnchantEffects from '@/app/_components/common/enchant/EnchantEffects';
+import EnchantImage from '@/app/_components/common/enchant/EnchantImage';
+import EnchantIsDestruction from '@/app/_components/common/enchant/EnchantIsDestruction';
+import Item from '@/app/_components/common/item/Item';
+import { findEnchantNames } from '@/app/_components/enchant/utils/findEnchantNames';
+import { getEnchantImage } from '@/app/_components/enchant/utils/getEnchantImage';
+import { slotNames } from '@/app/_components/enchant/utils/getSlotName';
+import Column from '@/app/_components/layout/Column';
+import Row from '@/app/_components/layout/Row';
 import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
 import { convertToKST } from '@/app/_utils/convertToKST';
 
 import clsx from 'clsx';
-import Item from '../../common/item/Item';
-import Row from '../../layout/Row';
-import EnchantImage from '../../common/enchant/EnchantImage';
-import { getEnchantImage } from '../../enchant/utils/getEnchantImage';
-import Column from '../../layout/Column';
-import { findEnchantNames } from '../../enchant/utils/findEnchantNames';
-import { slotNames } from '../../enchant/utils/getSlotName';
-import EnchantIsDestruction from '../../common/enchant/EnchantIsDestruction';
-import EnchantBrin from '../../common/enchant/EnchantBrin';
-import EnchantEffects from '../../common/enchant/EnchantEffects';
 
 interface EnchantInfoType extends EnchantStoreType {
   className?: string;

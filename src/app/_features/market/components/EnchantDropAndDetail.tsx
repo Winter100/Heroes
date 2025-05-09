@@ -1,5 +1,5 @@
 'use client';
-import EnchantInfo from '@/app/_components/iteminfo/enchant/EnchantInfo';
+import EnchantInfo from './EnchantInfo';
 import {
   EnchantStoreType,
   useSelectEnchantStore,
