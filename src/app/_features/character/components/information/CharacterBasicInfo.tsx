@@ -10,7 +10,7 @@ import ProfileImage from './ProfileImage';
 import CharacterProfile from './CharacterProfile';
 
 const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
-  const { basic, isLoading, error } = useBasic(ocid || '');
+  const { basic, isLoading, error } = useBasic(ocid);
   const { guild, isLoading: guildLoading } = useGuild(ocid);
 
   if (isLoading || guildLoading) return <Loading />;

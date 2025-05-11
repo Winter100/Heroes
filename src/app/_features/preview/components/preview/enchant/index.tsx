@@ -89,7 +89,7 @@ const EnchantChangeDialog = memo(
                 </TabsTrigger>
               ))}
             </TabsList>
-            <div className="max-h-64 overflow-y-auto pr-2 sm:max-h-[480px]">
+            <div className="h-96 overflow-y-auto pr-2 sm:h-[480px]">
               <TabsContent value="all">
                 <TabItems
                   selectedHandler={selectedHandler}

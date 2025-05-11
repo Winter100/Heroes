@@ -1,1 +1,1 @@
-export { default as ChracterInformation } from './components/ChracterInformation';
+export { default as CharacterInformation } from './components/CharacterInformation';

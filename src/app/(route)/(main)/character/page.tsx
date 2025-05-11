@@ -2,7 +2,7 @@ import SideAd from '@/app/_components/adsense/SideAd';
 import CharacterSearchInput from '@/app/_components/CharacterSearchInput';
 import Loading from '@/app/_components/common/Loading';
 import BasicContainer from '@/app/_components/layout/BasicContainer';
-import { ChracterInformation } from '@/app/_features/character';
+import { CharacterInformation } from '@/app/_features/character';
 import { Suspense } from 'react';
 
 const Page = () => {
@@ -14,7 +14,7 @@ const Page = () => {
           className="mx-auto h-8 w-full max-w-72"
           routeName="character"
         />
-        <ChracterInformation />
+        <CharacterInformation />
       </BasicContainer>
       <SideAd dataSlot="1601053361" position="right" />
     </Suspense>

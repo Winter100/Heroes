@@ -127,3 +127,10 @@ export interface EnchantGroup {
   rank: string;
   items: Items[];
 }
+
+export interface TabEnchantPriceProps {
+  enchantPriceLoading: boolean;
+  upgreadeType: string;
+  enchantPriceList: EnchantPrice[];
+  enchant: string;
+}

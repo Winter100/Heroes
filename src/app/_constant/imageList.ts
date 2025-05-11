@@ -959,6 +959,7 @@ export const imageMap = new Map<string, string>([
   ['방어력', '/images/icon/def.png'],
   ['공격속도', '/images/icon/atkspeed.png'],
   ['해제', '/images/icon/limit.png'],
+  ['해제 2', '/images/icon/limit.png'],
 
   // 카이
   // 공통 X

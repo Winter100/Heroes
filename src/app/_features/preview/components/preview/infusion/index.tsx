@@ -87,30 +87,32 @@ const InfusionsDialog = ({
               </TabsTrigger>
             ))}
           </TabsList>
-          <TabsContent value="all">
-            {searchedInfusion.map((i) => (
-              <InfusionTabsItem
-                key={i.name}
-                data={i.items}
-                onClick={selectedHandler}
-                selectedValue={selectedValue}
-              />
-            ))}
-          </TabsContent>
-          {searchedInfusion.map((infusion) => (
-            <TabsContent key={infusion.name} value={infusion.name}>
-              {searchedInfusion
-                .filter((infusion) => infusion.name === filter)
-                .map((i) => (
-                  <InfusionTabsItem
-                    key={i.name}
-                    data={i.items}
-                    onClick={selectedHandler}
-                    selectedValue={selectedValue}
-                  />
-                ))}
+          <div className="h-48 overflow-y-auto pr-2 sm:h-72">
+            <TabsContent value="all">
+              {searchedInfusion.map((infusion, i) => (
+                <InfusionTabsItem
+                  key={infusion.name + i}
+                  data={infusion.items}
+                  onClick={selectedHandler}
+                  selectedValue={selectedValue}
+                />
+              ))}
             </TabsContent>
-          ))}
+            {searchedInfusion.map((infusion) => (
+              <TabsContent key={infusion.name} value={infusion.name}>
+                {searchedInfusion
+                  .filter((infusion) => infusion.name === filter)
+                  .map((infusion, i) => (
+                    <InfusionTabsItem
+                      key={infusion.name + i}
+                      data={infusion.items}
+                      onClick={selectedHandler}
+                      selectedValue={selectedValue}
+                    />
+                  ))}
+              </TabsContent>
+            ))}
+          </div>
         </Tabs>
         <RaidSelectorWithStats />
       </DialogContent>
