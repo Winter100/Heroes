@@ -496,9 +496,7 @@ export const raidList: RaidListType[] = [
             bonus_value: '28,800',
           },
           {
-            bonus_description:
-              '이루산의 낙인의 불길 2단계 이상에 걸리지 않고 전투 승리',
-            // 이루산의 바람의 상흔에 걸리지 않고 전투 승리 (추후 교체)
+            bonus_description: '이루산의 바람의 상흔에 걸리지 않고 전투 승리',
             bonus_value: '11,100',
           },
         ],
