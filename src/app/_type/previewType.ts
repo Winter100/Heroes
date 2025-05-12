@@ -23,16 +23,6 @@ export interface beforeAndAfterStatsType {
   upgreadeType: string;
 }
 
-export type OptionsType = {
-  rank: string;
-  description: string;
-  name: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-}[];
-
 export interface PreviewModalProps {
   itemName: {
     name: string;

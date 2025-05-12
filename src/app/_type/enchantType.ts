@@ -103,58 +103,6 @@ export interface EnchantPrice {
   };
 }
 
-interface EnchantDialogProps {
-  label: string;
-  slot: string;
-  upgreadeType: string;
-  items: {
-    name: string;
-    level: string;
-  };
-  selectedHandler: (
-    enchantName: string,
-    enchantEffects: {
-      stat_name: string;
-      stat_value: string;
-    }[]
-  ) => void;
-  enchantList: {
-    rank: string;
-    name: string;
-    description: string;
-    stat_value: {
-      stat_name: string;
-      stat_value: string;
-    }[];
-  }[];
-  selectedValue: string;
-}
-
-export interface EnchantContentProps
-  extends Omit<EnchantDialogProps, 'label' | 'items'> {
-  enchantPriceList: EnchantPrice[];
-  enchantPriceLoading: boolean;
-}
-
-export interface EnchantItemProps {
-  slot: string;
-  rank: string;
-  name: string;
-  description: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  upgreadeType: string;
-  enchantPriceList: EnchantPrice[];
-  enchantPriceLoading: boolean;
-  isSelected: boolean;
-  selectedHandler: (
-    enchantName: string,
-    enchantValue: { stat_name: string; stat_value: string }[]
-  ) => void;
-}
-
 export interface EnchantPriceProps {
   label?: string;
   falseLabel?: string;

@@ -83,9 +83,7 @@ const Ability = ({ item }: AbilityProps) => {
             >
               <a
                 className={`flex h-full w-full items-center justify-center ${selectedAbility === ability.ability_name ? 'text-blue-300' : ''}`}
-                // className={`flex h-full w-full items-center justify-center ${item.item_option.ability_name.includes(ability?.ability_name) ? "text-white" : ""}`}
                 data-tooltip-id={`tooltip-${ability.ability_name}`}
-                // data-tooltip-float={true}
                 data-tooltip-place="right"
               >
                 {ability.ability_name}

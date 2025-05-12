@@ -2,10 +2,10 @@
 
 import { usePreviewStore } from '@/app/_store/previewStore';
 import { PreviewModalProps } from '@/app/_type/previewType';
-import EnchantDialog from '../../dialog/EnchantDialog';
-import InfusionsDialog from '../../dialog/InfusionsDialog';
 import { splitStringAndNumber } from '../utils/splitStringAndNumber';
 import { memo } from 'react';
+import InfusionsDialog from '@/app/_features/preview/components/preview/infusion';
+import EnchantChangeDialog from '@/app/_features/preview/components/preview/enchant';
 
 const PreviewModal = memo(
   ({
@@ -54,7 +54,7 @@ const PreviewModal = memo(
     };
 
     return (
-      <div className="w-full">
+      <div className="h-full w-full">
         {upgreadeType === 'infusions' ? (
           <InfusionsDialog
             infusionList={usableItemList}
@@ -66,7 +66,7 @@ const PreviewModal = memo(
             selectedHandler={selectedHandler}
           />
         ) : (
-          <EnchantDialog
+          <EnchantChangeDialog
             items={itemName}
             label={selectedName ?? preName}
             selectedValue={

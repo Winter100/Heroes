@@ -1,15 +1,28 @@
 'use client';
 
-import RaidSelecterModal from '../menu/RaidSelecterModal';
-
 import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
 import { usePreviewStore } from '@/app/_store/previewStore';
-import { useRaidStore } from '@/app/_store/raidStore';
 import { MonstersType } from '@/app/_constant/raidList';
 import { filterRaidList } from '@/app/_utils/filterRaidList';
 import { limitCalculator } from '../../raid/utils/limitCalculator';
+import { useRaidStore } from '@/app/_store/raidStore';
+import RaidSelecterDialog from '@/app/_features/raid/components/limitTableMenuBar/raidSelecter';
 
-const RaidSelectorWithStats = () => {
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { getImageByName } from '@/app/_utils/getImageByName';
+import Image from 'next/image';
+import StatDifference from './StatDifference';
+import { memo } from 'react';
+
+const RaidSelectorWithStats = memo(() => {
   const previewAllStats = usePreviewStore((state) => state.previewAllStats);
 
   const filteredStats = previewAllStats
@@ -21,106 +34,78 @@ const RaidSelectorWithStats = () => {
         previewInitialTitleList.findIndex((c) => c.stat_name === a.stat_name) -
         previewInitialTitleList.findIndex((c) => c.stat_name === b.stat_name)
     );
-  const raidString = useRaidStore((state) => state.raidString);
+  const bossSumUp = useRaidStore((state) => state.selectedSumUp);
 
   const limitValue = filteredStats.find(
     (i) => i.stat_name === '해제'
   )?.stat_value;
 
-  const boss = filterRaidList(raidString.entry)
+  const boss = filterRaidList(bossSumUp.entry || '빠른전투')
     .find((raid) => {
       return raid?.monsters.some(
-        (monster) => monster.name === raidString.monsterName
+        (monster) => monster.name === bossSumUp.monsterName
       );
     })
     ?.monsters.find(
-      (monster) => monster.name === raidString.monsterName
+      (monster) => monster.name === bossSumUp.monsterName
     ) as MonstersType;
 
   return (
-    <div className="mt-2 w-full border-t border-borderColor pt-2 text-white">
-      <RaidSelecterModal isAllBtn={true} />
+    <div className="dark mt-2 w-full border-t border-borderColor pt-2 text-white">
+      <div className="mx-auto w-44">
+        <RaidSelecterDialog onlyLimit={false} />
+      </div>
 
-      <table className="flex h-full w-full table-fixed flex-col gap-1 text-[9px] md:text-xs">
-        <caption className="hidden">미리보기</caption>
-        <thead>
-          <tr className="flex w-full items-center justify-center">
-            {previewInitialTitleList.map((item) => (
-              <th
-                className="flex flex-1 items-center justify-center text-[10px] md:text-xs"
-                key={item.stat_name}
+      <Table className="table-fixed caption-top">
+        <TableCaption className="hidden"></TableCaption>
+        <TableHeader>
+          <TableRow className="text-xs">
+            {previewInitialTitleList.map((title) => (
+              <TableHead
+                className="text-center text-white"
+                key={title.stat_name}
               >
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap font-light">
-                  {item.stat_name}
-                </p>
-              </th>
+                <div className="hidden sm:block">{title.stat_name}</div>
+                <div className="flex items-center justify-center sm:hidden">
+                  <Image
+                    width={15}
+                    height={15}
+                    src={getImageByName(title.stat_name)}
+                    alt="s"
+                  />
+                </div>
+              </TableHead>
             ))}
-          </tr>
-        </thead>
-        <tbody className="flex items-center justify-center pt-1 text-xs font-normal">
-          <tr className="flex h-full w-full items-center justify-center">
-            {filteredStats.map((item) => (
-              <td
-                className="flex w-full flex-1 flex-col items-center justify-center text-[9px] md:text-xs"
-                key={item.stat_name + item.stat_value}
-              >
-                <p className="flex items-center justify-center">
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            {filteredStats.map((item) => {
+              const stat = limitCalculator(
+                boss,
+                bossSumUp.entry ?? '빠른전투',
+                item?.stat_name,
+                item?.stat_value.toString(),
+                limitValue?.toString()
+              );
+
+              return (
+                <TableCell
+                  className="text-center text-xs"
+                  key={item.stat_name + item.stat_value}
+                >
                   {item.stat_value}
-                </p>
-                {boss && (
-                  <p
-                    className={`flex items-center justify-center text-[8px] md:text-xs ${
-                      limitCalculator(
-                        boss,
-                        raidString.entry,
-                        item?.stat_name,
-                        item?.stat_value.toString(),
-                        limitValue?.toString()
-                      ) !== null
-                        ? limitCalculator(
-                            boss,
-                            raidString.entry,
-                            item.stat_name,
-                            item.stat_value.toString(),
-                            limitValue?.toString()
-                          )! > 0
-                          ? 'text-green-300'
-                          : limitCalculator(
-                                boss,
-                                raidString.entry,
-                                item.stat_name,
-                                item.stat_value.toString(),
-                                limitValue?.toString()
-                              )! < 0
-                            ? 'text-red-300'
-                            : ''
-                        : ''
-                    }`}
-                  >
-                    {limitCalculator(
-                      boss,
-                      raidString.entry,
-                      item.stat_name,
-                      item.stat_value?.toString(),
-                      limitValue?.toString()
-                    )
-                      ? limitCalculator(
-                          boss,
-                          raidString.entry,
-                          item.stat_name,
-                          item.stat_value?.toString(),
-                          limitValue?.toString()
-                        )
-                      : ''}
-                  </p>
-                )}
-              </td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
+                  {boss && <StatDifference stat={stat} />}
+                </TableCell>
+              );
+            })}
+          </TableRow>
+        </TableBody>
+      </Table>
     </div>
   );
-};
+});
 
 export default RaidSelectorWithStats;
+
+RaidSelectorWithStats.displayName = 'RaidSelectorWithStats';

@@ -29,8 +29,6 @@ const ItemTooltipByType = memo(
         RenderComponent = MaterialTooltip;
     }
 
-    // const RenderComponent = category === '장비' ? ItemTooltip : MaterialTooltip;
-
     return <RenderComponent key={itemName} itemName={itemName} {...props} />;
   }
 );

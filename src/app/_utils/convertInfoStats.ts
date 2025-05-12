@@ -1,7 +1,7 @@
 import { convertItemNameBySlot } from '../_components/iteminfo/util/convertItemNameBySlot';
-import { getItemInfoOptions } from '../_components/iteminfo/util/getItemInfoOptions';
 import { mergeStats } from '../_components/preview/utils/someStats';
 import { itemInfoMap } from '../_constant/items/item_map';
+import { getItemInfoOptions } from '../_features/preview/utils/getItemInfoOptions';
 import { NewEquipmentType } from '../_type/equipmentType';
 import { getQualityStats } from './getQualityStat';
 import { convertLevel } from './getStatsByLevel';
@@ -57,13 +57,10 @@ export const convertInfoStat = (item: NewEquipmentType) => {
 
   const levelNumber = convertLevel(item_level);
 
-  // 이게 base Item 옵션임
-  // 아이템 제작에서는 이 옵션을 보여주면 됨.
   const itemOptions = baseItem?.enhancement_options?.[levelNumber] ?? null;
 
   // 퀄리티로인한 스탯
   const quality = 5;
-  // const quality = baseItem?.quality || 2;
   const qualityStats = baseItem?.quality_stats || [];
 
   // 와드네의 경우 무기의 경우 무기로 이름을 바꿔줘야함

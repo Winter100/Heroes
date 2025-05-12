@@ -2,7 +2,7 @@ import {
   prefix_enchant_options,
   suffix_enchant_options,
 } from '@/app/_constant/enchant';
-import EnchantInfo from '../iteminfo/enchant/EnchantInfo';
+import EnchantInfo from '@/app/_features/market/components/EnchantInfo';
 import { insertUpgradeType } from '../enchant/utils/insertUpgradeType';
 import { keyword } from '@/app/_constant/keyword';
 
