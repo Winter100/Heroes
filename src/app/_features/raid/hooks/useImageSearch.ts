@@ -3,7 +3,6 @@ import { useCharacterStore } from '../store/characterStore';
 import { useCharacter } from './useCharacter';
 import { imageToName } from '@/app/_utils/imageToName';
 import { toast } from 'react-toastify';
-import { preprocessImage } from '../utils/preprocessImage';
 
 export const useImageSearch = () => {
   const characters = useCharacterStore((state) => state.characters);
@@ -25,15 +24,18 @@ export const useImageSearch = () => {
         for (const type of clipboardItem.types) {
           if (type.startsWith('image/')) {
             const blob = await clipboardItem.getType(type);
-            const processImage = await preprocessImage(blob);
-            if (processImage.size >= 51200) {
+            const image = new File([blob], 'processed-image.png', {
+              type: 'image/png',
+            });
+
+            if (image.size >= 51200) {
               toast.error('50MB가 넘는 이미지는 사용할 수 없습니다.');
               return;
             }
-            const imageUrl = URL.createObjectURL(blob);
+            const imageUrl = URL.createObjectURL(image);
             setPastedImage(imageUrl);
 
-            const resultArray = await imageToName(processImage); // 이름변환
+            const resultArray = await imageToName(image); // 이름변환
             const newArr = resultArray?.slice(0, 8 - characterLength);
             const joinString = newArr?.join(' ') ?? '';
             setSearchValue(joinString);
