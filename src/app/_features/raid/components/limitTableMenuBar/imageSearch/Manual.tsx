@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Manual = () => {
   return (
-    <div>
-      <h3 className="text-center">사용 방법</h3>
+    <div className="text-gray-400">
+      <h3 className="text-center text-white">사용 방법</h3>
       <ol className="flex flex-col items-start justify-start text-sm">
         <li>1. shift + window + s를 눌러 캡처모드로 진입합니다.</li>
         <li>2. 이름만 나오도록 범위를 지정한 후 추출하기 버튼을 클릭합니다.</li>
