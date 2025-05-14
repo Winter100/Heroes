@@ -1,6 +1,6 @@
 import Tesseract from 'tesseract.js';
 
-export const imageToName = async (img: string | File) => {
+export const imageToName = async (img: string | File | Buffer) => {
   if (!img) return;
 
   try {
