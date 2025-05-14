@@ -1,6 +1,6 @@
 import { ItemTitleType } from './itemTitleType';
 
-interface InfusionType {
+export interface InfusionType {
   rank: string;
   name: string;
   description: string;
@@ -15,7 +15,7 @@ interface InfusionEffectsType {
   stat_value: string;
 }
 
-interface SelectedHandlerType {
+export interface SelectedHandlerType {
   (infusionName: string, infusionEffects: InfusionEffectsType[]): void;
 }
 

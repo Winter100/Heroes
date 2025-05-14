@@ -1,11 +1,15 @@
-import BasicContainer from '@/app/_components/layout/BasicContainer';
-import RaidInfoTable from '@/app/_components/raid/raidinfo/RaidInfoTable';
+import SideAd from '@/app/_components/adsense/SideAd';
+import { RaidInfoTable } from '@/app/_features/raidinfo';
 
 const Page = () => {
   return (
-    <BasicContainer className="py-10">
-      <RaidInfoTable />
-    </BasicContainer>
+    <>
+      <SideAd dataSlot="2056348937" position="left" />
+      <div className="px-4">
+        <RaidInfoTable />
+      </div>
+      <SideAd dataSlot="1601053361" position="right" />
+    </>
   );
 };
 

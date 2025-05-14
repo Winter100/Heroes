@@ -816,7 +816,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
   {
     rank: '4',
     name: '굳어버린',
-    description: '주시자 아티팩트 전용',
+    description: '주시자 아티팩트',
     drop_item_list: ['시공의 상자: 주시자의 신전'],
     stat_value: [
       { stat_name: '공격력', stat_value: '450' },
@@ -833,7 +833,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
   {
     rank: '4',
     name: '꿰뚫는',
-    description: '주시자 아티팩트 전용',
+    description: '주시자 아티팩트',
     drop_item_list: ['시공의 상자: 주시자의 신전'],
     stat_value: [
       { stat_name: '공격력', stat_value: '450' },
@@ -849,7 +849,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
   {
     rank: '4',
     name: '파괴하는',
-    description: '주시자 아티팩트 전용',
+    description: '주시자 아티팩트',
     drop_item_list: ['시공의 상자: 주시자의 신전'],
     stat_value: [
       { stat_name: '공격력', stat_value: '450' },
@@ -865,7 +865,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
   {
     rank: '4',
     name: '잦아든',
-    description: '주시자 아티팩트 전용',
+    description: '주시자 아티팩트',
     drop_item_list: ['시공의 상자: 주시자의 신전'],
     stat_value: [
       { stat_name: '공격력', stat_value: '450' },
@@ -881,7 +881,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
   {
     rank: '4',
     name: '삼키는',
-    description: '주시자 아티팩트 전용',
+    description: '주시자 아티팩트',
     drop_item_list: ['시공의 상자: 주시자의 신전'],
     stat_value: [
       { stat_name: '공격력', stat_value: '450' },

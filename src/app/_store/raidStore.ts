@@ -3,18 +3,15 @@ import { MonstersType, raidList, RaidListType } from '../_constant/raidList';
 
 type State = {
   raidList: RaidListType[];
-  raidName: string | null;
   selectedBoss: MonstersType | null;
-  raidString: {
+  selectedSumUp: {
     raidName: string;
     monsterName: string;
-    entry: '상한' | '빠른전투';
-    image: string;
+    entry: '상한' | '빠른전투' | null;
   };
 };
 
 type Action = {
-  setRaidName: (raid: string) => void;
   setSelectBoss: (
     raidName: string,
     monsterName: string,
@@ -27,12 +24,10 @@ export const useRaidStore = create<State & Action>((set) => {
   return {
     raidList: raidList as RaidListType[],
     selectedBoss: null,
-    raidName: null,
-    raidString: {
+    selectedSumUp: {
       raidName: '',
       monsterName: '',
-      entry: '빠른전투',
-      image: '/images/hereta.png',
+      entry: null,
     },
     setSelectBoss: (raidName, monsterName, entry) => {
       set((state) => {
@@ -44,12 +39,10 @@ export const useRaidStore = create<State & Action>((set) => {
         );
 
         return {
-          raidString: {
+          selectedSumUp: {
             raidName,
             monsterName,
             entry,
-            image: '/images/hereta.png',
-            // image: selectedBoss?.image ?? "/images/hereta.png",
           },
           selectedBoss,
         };
@@ -58,19 +51,88 @@ export const useRaidStore = create<State & Action>((set) => {
     resetRaid: () => {
       set({
         selectedBoss: null,
-        raidName: null,
-        raidString: {
+        selectedSumUp: {
           raidName: '',
           monsterName: '',
-          entry: '빠른전투',
-          image: '/images/hereta.png',
+          entry: null,
         },
-      });
-    },
-    setRaidName: (raid) => {
-      set(() => {
-        return { raidName: raid };
       });
     },
   };
 });
+// import { create } from 'zustand';
+// import { MonstersType, raidList, RaidListType } from '../_constant/raidList';
+
+// type State = {
+//   raidList: RaidListType[];
+//   raidName: string | null;
+//   selectedBoss: MonstersType | null;
+//   raidString: {
+//     raidName: string;
+//     monsterName: string;
+//     entry: '상한' | '빠른전투';
+//     image: string;
+//   };
+// };
+
+// type Action = {
+//   setRaidName: (raid: string) => void;
+//   setSelectBoss: (
+//     raidName: string,
+//     monsterName: string,
+//     entry: '상한' | '빠른전투'
+//   ) => void;
+//   resetRaid: () => void;
+// };
+
+// export const useRaidStore = create<State & Action>((set) => {
+//   return {
+//     raidList: raidList as RaidListType[],
+//     selectedBoss: null,
+//     raidName: null,
+//     raidString: {
+//       raidName: '',
+//       monsterName: '',
+//       entry: '빠른전투',
+//       image: '/images/hereta.png',
+//     },
+//     setSelectBoss: (raidName, monsterName, entry) => {
+//       set((state) => {
+//         const selectedRaid = state.raidList.find(
+//           (r) => r.raid_name === raidName
+//         );
+//         const selectedBoss = selectedRaid?.monsters.find(
+//           (m) => m.name === monsterName
+//         );
+
+//         return {
+//           raidString: {
+//             raidName,
+//             monsterName,
+//             entry,
+//             image: '/images/hereta.png',
+//             // image: selectedBoss?.image ?? "/images/hereta.png",
+//           },
+//           selectedBoss,
+//         };
+//       });
+//     },
+//     resetRaid: () => {
+//       set({
+//         selectedBoss: null,
+//         raidName: null,
+//         raidString: {
+//           raidName: '',
+//           monsterName: '',
+//           entry: '빠른전투',
+//           image: '/images/hereta.png',
+//         },
+//       });
+//     },
+//     setRaidName: (raid) => {
+//       set(() => {
+//         return { raidName: raid };
+//       });
+//     },
+//   };
+// });

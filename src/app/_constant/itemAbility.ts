@@ -176,7 +176,7 @@ const getAbilityIngredIent = {
     { name: '뉴에라의 가죽', quantity: '20' },
     { name: '뉴에라의 광석', quantity: '20' },
     { name: '뉴에라의 오브', quantity: '20' },
-    { name: '봉인의 힘 파편', quantity: '450' },
+    { name: '봉인의 힘: 파편', quantity: '450' },
   ],
   orna: [
     { name: '골드', quantity: '3000000' },
@@ -184,7 +184,7 @@ const getAbilityIngredIent = {
     { name: '뉴에라의 가죽', quantity: '20' },
     { name: '뉴에라의 광석', quantity: '20' },
     { name: '뉴에라의 오브', quantity: '20' },
-    { name: '봉인의 힘 파편', quantity: '450' },
+    { name: '봉인의 힘: 파편', quantity: '450' },
   ],
   uaithne: [
     { name: '골드', quantity: '5000000' },
@@ -192,7 +192,7 @@ const getAbilityIngredIent = {
     { name: '힘이 주입된 뉴에라의 가죽', quantity: '20' },
     { name: '힘이 주입된 뉴에라의 광석', quantity: '20' },
     { name: '힘이 주입된 뉴에라의 오브', quantity: '20' },
-    { name: '전승의 힘 파편', quantity: '200' },
+    { name: '전승의 힘: 파편', quantity: '200' },
   ],
 };
 

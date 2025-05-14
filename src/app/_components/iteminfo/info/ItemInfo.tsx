@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { ItemType } from '@/app/_type/infoInfoType';
-import { getItemInfoOptions } from '../util/getItemInfoOptions';
 import { convertItemNameBySlot } from '../util/convertItemNameBySlot';
 import Item from '../../common/item/Item';
 import ItemTop from '../top/ItemTop';
@@ -10,6 +9,7 @@ import ItemInfusion from '../infusion/ItemInfusion';
 import ItemEnchantBox from '../ItemEnchantBox';
 import ItemSet from './ItemSet';
 import { ItemInfoQuipmentProps } from '@/app/_type/equipmentType';
+import { getItemInfoOptions } from '@/app/_features/preview/utils/getItemInfoOptions';
 
 interface ItemInfoProps {
   equipment: ItemInfoQuipmentProps;

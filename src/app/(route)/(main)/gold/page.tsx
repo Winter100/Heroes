@@ -1,11 +1,13 @@
-import Section from '@/app/_components/layout/Section';
-import MarketRanking from '@/app/_components/market/MarketRanking';
+import SideAd from '@/app/_components/adsense/SideAd';
+import { GoldMarket } from '@/app/_features/gold';
 
 const Page = () => {
   return (
-    <Section>
-      <MarketRanking />
-    </Section>
+    <>
+      <SideAd dataSlot="2056348937" position="left" />
+      <GoldMarket />
+      <SideAd dataSlot="1601053361" position="right" />
+    </>
   );
 };
 

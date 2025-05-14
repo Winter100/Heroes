@@ -7,7 +7,8 @@ import {
 } from '../_type/equipmentType';
 import { convertInfoStat } from '../_utils/convertInfoStats';
 import { splitStringAndNumber } from '../_components/preview/utils/splitStringAndNumber';
-import { getItemInfoOptions } from '../_components/iteminfo/util/getItemInfoOptions';
+import { getItemInfoOptions } from '../_features/preview/utils/getItemInfoOptions';
+import { PARTHOLN } from '../_features/preview/components/constant';
 
 type State = {
   info: ItemInfoQuipmentProps[];
@@ -153,20 +154,32 @@ export const usePreviewStore = create<State & Action>((set) => {
             stat.slot === value.slot && stat.upgreadeType === value.upgreadeType
         );
 
-        if (existsInBeforeStats) {
-          return {
-            beforeStats: [...beforeStats],
-          };
-          // return {
-          //   beforeStats: beforeStats.map((stat) =>
-          //     stat.slot === value.slot &&
-          //     stat.upgreadeType === value.upgreadeType
-          //       ? stat
-          //       : stat,
-          //   ),
-          // };
+        if (value.upgreadeType === PARTHOLN) {
+          if (existsInBeforeStats) {
+            const updatedStats = beforeStats.map((stat) =>
+              stat.slot === value.slot &&
+              stat.upgreadeType === value.upgreadeType
+                ? value
+                : stat
+            );
+            return {
+              beforeStats: updatedStats,
+            };
+          } else {
+            return {
+              beforeStats: [...beforeStats, value],
+            };
+          }
         } else {
-          return { beforeStats: [...beforeStats, value] };
+          if (existsInBeforeStats) {
+            return {
+              beforeStats: [...beforeStats],
+            };
+          } else {
+            return {
+              beforeStats: [...beforeStats, value],
+            };
+          }
         }
       });
     },

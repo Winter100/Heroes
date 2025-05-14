@@ -1,18 +1,22 @@
-import ChracterData from '@/app/_components/character/ChracterData';
+import SideAd from '@/app/_components/adsense/SideAd';
+import CharacterSearchInput from '@/app/_components/CharacterSearchInput';
 import Loading from '@/app/_components/common/Loading';
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import PreviewSearchBar from '@/app/_components/preview/previewSearchMenuBar/previewSearchBar/PreviewSearchBar';
+import BasicContainer from '@/app/_components/layout/BasicContainer';
+import { CharacterInformation } from '@/app/_features/character';
 import { Suspense } from 'react';
 
 const Page = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <div className="dark flex flex-1 flex-col gap-2 p-2">
-        <RoundedContainer className="flex h-14 items-center justify-center">
-          <PreviewSearchBar className="w-full max-w-72" routeName="character" />
-        </RoundedContainer>
-        <ChracterData />
-      </div>
+      <SideAd dataSlot="2056348937" position="left" />
+      <BasicContainer className="flex-1 gap-2">
+        <CharacterSearchInput
+          className="mx-auto h-8 w-full max-w-72"
+          routeName="character"
+        />
+        <CharacterInformation />
+      </BasicContainer>
+      <SideAd dataSlot="1601053361" position="right" />
     </Suspense>
   );
 };
