@@ -38,8 +38,7 @@ type Action = {
   setDecreaseStat: (slot: string, statName: string) => void;
   setMin: (slot: string, statName: string) => void;
   setMax: (slot: string, statName: string) => void;
-  setLimit1Zero: (slot: string) => void;
-  setLimit2Zero: (slot: string) => void;
+  setLimitZero: (slot: string, limitName: string) => void;
   setProgeress: (slot: string, statName: string, value: number) => void;
   setChangeEnchant: (
     slot: string,
@@ -733,122 +732,43 @@ export const usePreviewStore = create<State & Action>((set) => {
       });
     },
 
-    setLimit1Zero: (slot) => {
+    setLimitZero: (slot, limitName) => {
       set((state) => {
         const updatedItems = state.info.map((item) => {
           if (item.item_equipment_slot_name === slot) {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
                 (stat) => {
-                  if (stat.stat_name === '해제') {
-                    const newStatValue = stat.stat_min_value.toString();
-                    return {
-                      ...stat,
-                      stat_value: newStatValue,
-                    };
+                  if (limitName === '해제') {
+                    if (stat.stat_name === '해제') {
+                      const newStatValue = stat.stat_min_value.toString();
+                      return {
+                        ...stat,
+                        stat_value: newStatValue,
+                      };
+                    }
                   }
-                  return stat;
-                }
-              );
 
-              return {
-                ...item,
-                item_option: {
-                  ...item.item_option,
-                  tuning_stat: updatedTuningStat,
-                },
-              };
-            }
-          }
-          return item;
-        });
-
-        const newItems = updatedItems.map((item) => {
-          const { mergedStats, quality, rating } = convertInfoStat(item);
-          return {
-            ...item,
-            mergedStats,
-            rating,
-            quality,
-          };
-        });
-
-        const beforeStat = newItems
-          .find((item) => item.item_equipment_slot_name === slot)
-          ?.item_option.tuning_stat?.map((stat) => {
-            return {
-              stat_name: stat.stat_name,
-              stat_value: stat.stat_min_value,
-            };
-          });
-
-        const afterStats = newItems
-          .find((item) => item.item_equipment_slot_name === slot)
-          ?.item_option.tuning_stat?.map((stat) => {
-            return {
-              stat_name: stat.stat_name,
-              stat_value: stat.stat_value,
-            };
-          });
-
-        const before = {
-          upgreadeType: 'grinding',
-          slot: slot,
-          name: slot,
-          stat_value: beforeStat ?? [],
-        };
-        const after = {
-          upgreadeType: 'grinding',
-          slot: slot,
-          name: slot,
-          stat_value: afterStats ?? [],
-        };
-
-        const be = [...state.beforeStats];
-        const beIndex = be.findIndex(
-          (item) =>
-            item.upgreadeType === before.upgreadeType &&
-            item.slot === before.slot
-        );
-        if (beIndex !== -1) {
-          be[beIndex] = before;
-        } else {
-          be.push(before);
-        }
-        const af = [...state.afterStats];
-        const afIndex = af.findIndex(
-          (item) =>
-            item.upgreadeType === after.upgreadeType && item.slot === after.slot
-        );
-
-        if (afIndex !== -1) {
-          af[afIndex] = after;
-        } else {
-          af.push(after);
-        }
-
-        return {
-          info: newItems,
-          beforeStats: [...be],
-          afterStats: [...af],
-        };
-      });
-    },
-
-    setLimit2Zero: (slot) => {
-      set((state) => {
-        const updatedItems = state.info.map((item) => {
-          if (item.item_equipment_slot_name === slot) {
-            if (item.item_option?.tuning_stat) {
-              const updatedTuningStat = item.item_option.tuning_stat.map(
-                (stat) => {
-                  if (stat.stat_name === '해제 2') {
-                    const newStatValue = stat.stat_min_value.toString();
-                    return {
-                      ...stat,
-                      stat_value: newStatValue,
-                    };
+                  if (limitName === '해제 2') {
+                    if (stat.stat_name === '해제 2') {
+                      const newStatValue = stat.stat_min_value.toString();
+                      return {
+                        ...stat,
+                        stat_value: newStatValue,
+                      };
+                    }
                   }
+
+                  if (limitName === '해제 3') {
+                    if (stat.stat_name === '해제 3') {
+                      const newStatValue = stat.stat_min_value.toString();
+                      return {
+                        ...stat,
+                        stat_value: newStatValue,
+                      };
+                    }
+                  }
+
                   return stat;
                 }
               );

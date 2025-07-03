@@ -1093,7 +1093,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['제작의뢰'],
     item_category: '재료',
     item_materials: [
-      { item_name: '골드', item_quantity: 1000000 },
+      { item_name: '골드', item_quantity: 700000 },
       { item_name: '뉴에라의 강화석', item_quantity: 10 },
       { item_name: '신비의 힘: 파편', item_quantity: 3 },
     ],
@@ -1103,7 +1103,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['제작의뢰'],
     item_category: '재료',
     item_materials: [
-      { item_name: '골드', item_quantity: 1000000 },
+      { item_name: '골드', item_quantity: 700000 },
       { item_name: '게브네의 강화석', item_quantity: 2 },
     ],
   },
@@ -1112,7 +1112,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['제작의뢰'],
     item_category: '재료',
     item_materials: [
-      { item_name: '골드', item_quantity: 1000000 },
+      { item_name: '골드', item_quantity: 700000 },
       { item_name: '불안정한 강화의 룬', item_quantity: 2 },
       { item_name: '신비의 힘: 파편', item_quantity: 3 },
     ],
@@ -1122,7 +1122,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['제작의뢰'],
     item_category: '재료',
     item_materials: [
-      { item_name: '골드', item_quantity: 1000000 },
+      { item_name: '골드', item_quantity: 700000 },
       { item_name: '강화의 룬', item_quantity: 2 },
     ],
   },
@@ -1131,7 +1131,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['제작의뢰'],
     item_category: '재료',
     item_materials: [
-      { item_name: '골드', item_quantity: 2000000 },
+      { item_name: '골드', item_quantity: 1400000 },
       { item_name: '프리미엄 강화의 룬', item_quantity: 4 },
     ],
   },
@@ -1140,7 +1140,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['제작의뢰'],
     item_category: '재료',
     item_materials: [
-      { item_name: '골드', item_quantity: 1000000 },
+      { item_name: '골드', item_quantity: 700000 },
       { item_name: '강화의 룬', item_quantity: 3 },
     ],
   },

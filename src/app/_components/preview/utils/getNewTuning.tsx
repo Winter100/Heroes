@@ -45,9 +45,18 @@ export const getNewTuning = (item: EquipmentType) => {
   return newTuning;
 };
 
+{
+  /* 
+  아이템의 해제 정보는 모두 합쳐진 값이 온다. (ex: 8000)
+  하지만 각 해제 단계마다 최대 수치가 정해져있음 '1단계는 최대 2000', '2단계는 최대 3000' 이런 식으로.
+  해제 정보에서 각 단계의 수치를 넘으면 넘치는 수치만큼 다음 해제에 분배 해줘야함.
+  */
+}
 const updateStats = (tuningStats: UpdateStats[]) => {
+  // 해제 정보 세팅
   const limit1 = tuningStats?.find((stat) => stat.stat_name === '해제');
   const limit2 = tuningStats?.find((stat) => stat.stat_name === '해제 2');
+  const limit3 = tuningStats?.find((stat) => stat.stat_name === '해제 3');
 
   if (
     limit1 &&
@@ -62,6 +71,21 @@ const updateStats = (tuningStats: UpdateStats[]) => {
 
     limit2.stat_min_value = limit2Value.toString();
     limit2.stat_value = limit2Value.toString();
+  }
+
+  if (
+    limit2 &&
+    limit3 &&
+    parseInt(limit2.stat_value) > parseInt(limit2.stat_max_value)
+  ) {
+    const limit3Value =
+      Number(limit2.stat_value) - Number(limit2.stat_max_value);
+
+    limit2.stat_min_value = limit2.stat_max_value;
+    limit2.stat_value = limit2.stat_max_value;
+
+    limit3.stat_min_value = limit3Value.toString();
+    limit3.stat_value = limit3Value.toString();
   }
 
   return tuningStats;
