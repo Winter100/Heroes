@@ -6,6 +6,10 @@ type EnchantOptionsType = {
   stat_value: { stat_name: string; stat_value: string }[];
 };
 
+// 해당 단계 이하: 파괴(O), 노랑색 (1,2,3,4,5)
+// 해당 단계 이상: 파괴(X), 보라색 (5 ~ A)
+export const ENCHANT_DESTRUCTION_RANK = 5;
+
 export const prefix_enchant_options: EnchantOptionsType[] = [
   {
     rank: '4',

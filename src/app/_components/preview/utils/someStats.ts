@@ -4,7 +4,12 @@ export const mergeStats = (stats: Stat[]): Stat[] => {
   const mergedStats: Record<string, number> = {};
 
   for (const stat of stats) {
-    const statName = stat.stat_name === '해제 2' ? '해제' : stat.stat_name;
+    let statName = '';
+    if (stat.stat_name === '해제 2' || stat.stat_name === '해제 3') {
+      statName = '해제';
+    } else {
+      statName = stat.stat_name;
+    }
     const statValue = Number(stat.stat_value) || 0;
 
     mergedStats[statName] = (mergedStats[statName] || 0) + statValue;
