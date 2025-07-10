@@ -1,5 +1,4 @@
 import EnchantBrin from '@/app/_components/common/enchant/EnchantBrin';
-import EnchantEffects from '@/app/_components/common/enchant/EnchantEffects';
 import EnchantImage from '@/app/_components/common/enchant/EnchantImage';
 import EnchantIsDestruction from '@/app/_components/common/enchant/EnchantIsDestruction';
 import Item from '@/app/_components/common/item/Item';
@@ -12,6 +11,7 @@ import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
 import { convertToKST } from '@/app/_utils/convertToKST';
 
 import clsx from 'clsx';
+import TabEnchantEffects from '../../preview/components/preview/enchant/TabEnchantEffects';
 
 interface EnchantInfoType extends EnchantStoreType {
   className?: string;
@@ -94,11 +94,9 @@ const EnchantInfo = ({
         </Item.Content>
       </Row>
 
-      <EnchantEffects
-        effectColor="text-yellow-200/90"
-        enchantEffects={stat_value}
-        className="bg-black/50"
-      />
+      <div className="flex-1 rounded-md border border-gray-500/30 px-1 py-2 text-xs">
+        <TabEnchantEffects effects={{ stat_value }} />
+      </div>
     </Item>
   );
 };
