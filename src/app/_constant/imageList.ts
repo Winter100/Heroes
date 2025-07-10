@@ -82,6 +82,7 @@ export const imageMap = new Map<string, string>([
   ['그릇된 고해', '/images/monster/s4/false-confession.png'],
   ['탐욕의 연회장', '/images/monster/s4/banquet-hall-of-greed.png'],
   ['따를 수 없는 예언', '/images/monster/s4/go.png'],
+  ['정의를 망각한 대성당', '/images/monster/s4/cathedral.png'],
 
   ['신념의 상자: 결사대', '/images/items/reward/belief-box.png'],
   ['결의의 상자: 결사대', '/images/items/reward/resolution-box.png'],
