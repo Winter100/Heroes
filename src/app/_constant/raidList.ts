@@ -861,7 +861,7 @@ export const raidList: RaidListType[] = [
       {
         name: '제단을 지키는 자',
         basic_reward: [
-          { name: '골드', value: '129400' },
+          { name: '골드', value: '135800' },
           { name: '경험치', value: '6400000' },
           { name: 'AP', value: '50' },
         ],
@@ -992,7 +992,7 @@ export const raidList: RaidListType[] = [
       {
         name: '그릇된 고해',
         basic_reward: [
-          { name: '골드', value: '129400' },
+          { name: '골드', value: '135800' },
           { name: '경험치', value: '6400000' },
           { name: 'AP', value: '50' },
         ],
@@ -1118,7 +1118,7 @@ export const raidList: RaidListType[] = [
       {
         name: '탐욕의 연회장',
         basic_reward: [
-          { name: '골드', value: '129400' },
+          { name: '골드', value: '135800' },
           { name: '경험치', value: '6400000' },
           { name: 'AP', value: '50' },
         ],
@@ -1244,7 +1244,7 @@ export const raidList: RaidListType[] = [
       {
         name: '따를 수 없는 예언',
         basic_reward: [
-          { name: '골드', value: '129400' },
+          { name: '골드', value: '135800' },
           { name: '경험치', value: '6400000' },
           { name: 'AP', value: '50' },
         ],
@@ -1374,6 +1374,129 @@ export const raidList: RaidListType[] = [
             item_name: '[재봉] 레시피 스크롤',
             item_description: ['와드네 손 방어구', '와드네 발 방어구'],
             item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    raid_name: '에리우',
+    monsters: [
+      {
+        name: '정의를 망각한 대성당',
+        basic_reward: [
+          { name: '골드', value: '135800' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
+        bonus: [
+          {
+            bonus_description: '',
+            bonus_value: '',
+          },
+        ],
+        entry: [
+          { stat_name: '이름', stat_value: '루시안' },
+          { stat_name: '레벨', stat_value: '120' },
+          { stat_name: '공격력', stat_value: '58120' },
+          { stat_name: '크리티컬', stat_value: '312' },
+          { stat_name: '밸런스', stat_value: '168' },
+          { stat_name: '추가피해', stat_value: '7550' },
+          { stat_name: '방어력', stat_value: '34250' },
+          { stat_name: '대항력', stat_value: '330' },
+        ],
+        limit: [
+          { stat_name: '이름', stat_value: '루시안' },
+          { stat_name: '레벨', stat_value: '125' },
+          { stat_name: '공격력', stat_value: '59120' },
+          { stat_name: '크리티컬', stat_value: '370' },
+          { stat_name: '크리티컬 저항', stat_value: '286' },
+          { stat_name: '대항력 저항', stat_value: '266' },
+          { stat_name: '밸런스 저항', stat_value: '77' },
+        ],
+        drop_items: [
+          {
+            item_name: '비극의 인챈트 스크롤',
+            item_filter: item_filter.enchant,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '에리우의 파편: 보조 장비',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '에리우의 파편: 무기',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '에리우의 파편: 머리 방어구',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '예리한 에리우의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '단단한 에리우의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: true,
+            core_boost_drop: false,
+          },
+          {
+            item_name: '루시안의 정수',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '와드네의 결정',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '타리안 강철',
+            item_filter: item_filter.materials,
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '[금속무기] 레시피 스크롤',
+            item_filter: item_filter.materials,
+            item_description: ['에리우 무기'],
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '[금속갑옷] 레시피 스크롤',
+            item_filter: item_filter.materials,
+            item_description: ['에리우 방패, 그랜드타지', '에리우 머리 방어구'],
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '[재봉] 레시피 스크롤',
+            item_filter: item_filter.materials,
+            item_description: ['에리우 머리 방어구'],
+            core_boost_apply: false,
+            core_boost_drop: true,
+          },
+          {
+            item_name: '[세공] 레시피 스크롤',
+            item_filter: item_filter.materials,
+            item_description: ['에리우 무기', '에리우 수호부, 캐스틀릿'],
             core_boost_apply: false,
             core_boost_drop: true,
           },
