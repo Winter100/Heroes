@@ -39,21 +39,24 @@ const ItemsTab = ({ items }: { items: Drop_items[] }) => {
             <TableCell>
               <Popover>
                 <PopoverTrigger className="flex w-full items-center gap-2">
-                  <Image
-                    title={drop.item_name}
-                    alt="item"
-                    src={
-                      drop.item_filter !== '인챈트'
-                        ? getImageByName(drop.item_name)
-                        : getEnchantImage(
-                            getEnchantItemByName(drop.item_name)?.rank || '',
-                            getEnchantItemByName(drop.item_name)
-                              ?.upgreadeType || ''
-                          )
-                    }
-                    width={20}
-                    height={20}
-                  />
+                  <div className="h-auto w-5">
+                    <Image
+                      className="h-auto w-full object-cover"
+                      title={drop.item_name}
+                      alt="item"
+                      src={
+                        drop.item_filter !== '인챈트'
+                          ? getImageByName(drop.item_name)
+                          : getEnchantImage(
+                              getEnchantItemByName(drop.item_name)?.rank || '',
+                              getEnchantItemByName(drop.item_name)
+                                ?.upgreadeType || ''
+                            )
+                      }
+                      width={20}
+                      height={20}
+                    />
+                  </div>
 
                   <div className="flex flex-col">
                     <div className="text-start">{drop.item_name}</div>

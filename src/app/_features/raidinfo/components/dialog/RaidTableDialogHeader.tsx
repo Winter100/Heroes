@@ -16,9 +16,10 @@ const RaidTableDialogHeader = ({
 }: RaidTableDialogHeaderProps) => {
   const rewardIcons = addRewardIcon(basic_reward);
   return (
-    <div className="flex items-center gap-2 pt-14">
-      <div>
+    <div className="flex items-center gap-2 pt-2">
+      <div className="h-auto w-32">
         <Image
+          className="h-auto w-full object-cover"
           src={getImageByName(name)}
           width={130}
           height={130}
