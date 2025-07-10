@@ -894,6 +894,31 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       },
     ],
   },
+  {
+    rank: '3',
+    name: '비극의',
+    description: '',
+    drop_item_list: ['정의를 망각한 대성당'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '8' },
+      { stat_name: '크리티컬', stat_value: '8' },
+      { stat_name: '밸런스', stat_value: '4' },
+    ],
+  },
+  {
+    rank: '4',
+    name: '감춰진',
+    description: '',
+    drop_item_list: ['따를 수 없는 예언'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '1' },
+      { stat_name: '크리티컬 저항', stat_value: '7' },
+    ],
+  },
 ];
 
 export const suffix_enchant_options: EnchantOptionsType[] = [
@@ -1618,12 +1643,25 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '밸런스', stat_value: '-1' },
     ],
   },
+  {
+    rank: '4',
+    name: '운명',
+    description: '',
+    drop_item_list: ['스페셜 던전: 인챈트 주머니'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '400' },
+      { stat_name: '마법 공격력', stat_value: '400' },
+      { stat_name: '크리티컬', stat_value: '4' },
+      { stat_name: '밸런스', stat_value: '4' },
+    ],
+  },
 ];
 
 export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Right Hand'],
     list: [
+      '비극의',
       '복수의',
       '잔혹한',
       '차분한',
@@ -1693,6 +1731,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
     name: ['Right Finger', 'Left Finger'],
     list: [
       '대적자의',
+      '감춰진',
       '뒤틀린',
       '추적자의',
       '뜻깊은',
@@ -1708,6 +1747,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
     name: ['Charm'],
     list: [
       '시공의',
+      '감춰진',
       '뒤틀린',
       '뜻깊은',
       '의미있는',
@@ -1718,7 +1758,15 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   },
   {
     name: ['Earring', 'Necklace'],
-    list: ['뒤틀린', '뜻깊은', '의미있는', '신속한', '호기심 많은', '강인한'],
+    list: [
+      '감춰진',
+      '뒤틀린',
+      '뜻깊은',
+      '의미있는',
+      '신속한',
+      '호기심 많은',
+      '강인한',
+    ],
   },
   {
     name: ['Artifact'],
@@ -1728,6 +1776,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
       '파괴하는',
       '잦아든',
       '삼키는',
+      '감춰진',
       '뒤틀린',
       '뜻깊은',
       '의미있는',
@@ -1741,6 +1790,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
     list: [
       '고대의',
       '강렬한',
+      '감춰진',
       '뒤틀린',
       '뜻깊은',
       '은은한',
@@ -1854,6 +1904,7 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
       '고통',
       '물결',
       '사념',
+      '운명',
     ],
   },
   {

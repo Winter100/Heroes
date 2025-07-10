@@ -1383,6 +1383,45 @@ export const raidList: RaidListType[] = [
   },
 
   {
+    raid_name: '에리우',
+    monsters: [
+      {
+        name: '정의를 망각한 대성당',
+        basic_reward: [
+          // { name: '골드', value: 'null' },
+          // { name: '경험치', value: '6400000' },
+          // { name: 'AP', value: '50' },
+        ],
+        bonus: [
+          {
+            bonus_description: '',
+            bonus_value: '',
+          },
+        ],
+        entry: [
+          { stat_name: '이름', stat_value: '루시안' },
+          { stat_name: '레벨', stat_value: '125' },
+          { stat_name: '공격력', stat_value: '58120' },
+          { stat_name: '크리티컬', stat_value: '312' },
+          { stat_name: '밸런스', stat_value: '168' },
+          { stat_name: '추가피해', stat_value: '7550' },
+          { stat_name: '방어력', stat_value: '34250' },
+          { stat_name: '대항력', stat_value: '330' },
+        ],
+        limit: [
+          { stat_name: '이름', stat_value: '루시안' },
+          { stat_name: '레벨', stat_value: '125' },
+          { stat_name: '공격력', stat_value: '59120' },
+          { stat_name: '크리티컬', stat_value: '370' },
+          { stat_name: '크리티컬 저항', stat_value: '286' },
+          { stat_name: '대항력 저항', stat_value: '266' },
+          { stat_name: '밸런스 저항', stat_value: '77' },
+        ],
+        drop_items: [],
+      },
+    ],
+  },
+  {
     raid_name: '스페셜 전투',
     monsters: [
       {
