@@ -49,10 +49,17 @@ const RaidInfoTable = () => {
               </div>
             </TableCell>
             <TableCell className="text-center">
-              {Number(
-                raid.basic_reward?.find((reward) => reward.name === '골드')
-                  ?.value
-              ).toLocaleString()}
+              {isNaN(
+                Number(
+                  raid.basic_reward?.find((reward) => reward.name === '골드')
+                    ?.value
+                )
+              )
+                ? ''
+                : Number(
+                    raid.basic_reward?.find((reward) => reward.name === '골드')
+                      ?.value
+                  ).toLocaleString()}
             </TableCell>
             <TableCell className="text-center">
               <RaidTableDialog {...raid}>
