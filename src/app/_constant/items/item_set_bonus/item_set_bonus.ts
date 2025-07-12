@@ -1,4 +1,10 @@
-export const itemSetList = ['밀레시안', '아르드리', '오르나', '와드네'];
+export const itemSetList = [
+  '밀레시안',
+  '아르드리',
+  '오르나',
+  '와드네',
+  '에리우',
+];
 export const accessoriesSetList = [
   '황혼의 반지',
   '어둠 반지',
