@@ -28,22 +28,12 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
   );
   const limitFinished2 = isLimitEvery(
     item,
-    (stat) => stat.stat_name !== '해제 2' && stat.stat_name !== '해제 3'
+    (stat) => stat.stat_name !== '해제 2'
   );
 
   {
-    /* 에리우 장비의 해제2단계는 해제1만 완료되어있으면 가능함 */
+    /* 해제를 제외한 나머지 연마가 풀이 아닐 경우 해제를 초기화 */
   }
-  const eliuLimitFinished2 = isLimitEvery(
-    item,
-    (stat) => stat.stat_name === '해제'
-  );
-
-  const limitFinished3 = isLimitEvery(
-    item,
-    (stat) => stat.stat_name !== '해제 3'
-  );
-
   useEffect(() => {
     if (item.item_name.includes('오르나') && !limitFinished1) {
       setLimitZero(item.item_equipment_slot_name, '해제');
@@ -56,35 +46,17 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
   ]);
 
   useEffect(() => {
-    if (item.item_name.includes('와드네') && !limitFinished2) {
+    if (
+      (item.item_name.includes('와드네') ||
+        item.item_name.includes('에리우')) &&
+      !limitFinished2
+    ) {
       setLimitZero(item.item_equipment_slot_name, '해제 2');
     }
   }, [
     item.item_equipment_slot_name,
     item.item_name,
     limitFinished2,
-    setLimitZero,
-  ]);
-
-  useEffect(() => {
-    if (item.item_name.includes('에리우') && !eliuLimitFinished2) {
-      setLimitZero(item.item_equipment_slot_name, '해제 2');
-    }
-  }, [
-    item.item_equipment_slot_name,
-    item.item_name,
-    eliuLimitFinished2,
-    setLimitZero,
-  ]);
-
-  useEffect(() => {
-    if (item.item_name.includes('에리우') && !limitFinished3) {
-      setLimitZero(item.item_equipment_slot_name, '해제 3');
-    }
-  }, [
-    item.item_equipment_slot_name,
-    item.item_name,
-    limitFinished3,
     setLimitZero,
   ]);
 

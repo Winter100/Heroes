@@ -56,7 +56,6 @@ const updateStats = (tuningStats: UpdateStats[]) => {
   // 해제 정보 세팅
   const limit1 = tuningStats?.find((stat) => stat.stat_name === '해제');
   const limit2 = tuningStats?.find((stat) => stat.stat_name === '해제 2');
-  const limit3 = tuningStats?.find((stat) => stat.stat_name === '해제 3');
 
   if (
     limit1 &&
@@ -71,21 +70,6 @@ const updateStats = (tuningStats: UpdateStats[]) => {
 
     limit2.stat_min_value = limit2Value.toString();
     limit2.stat_value = limit2Value.toString();
-  }
-
-  if (
-    limit2 &&
-    limit3 &&
-    parseInt(limit2.stat_value) > parseInt(limit2.stat_max_value)
-  ) {
-    const limit3Value =
-      Number(limit2.stat_value) - Number(limit2.stat_max_value);
-
-    limit2.stat_min_value = limit2.stat_max_value;
-    limit2.stat_value = limit2.stat_max_value;
-
-    limit3.stat_min_value = limit3Value.toString();
-    limit3.stat_value = limit3Value.toString();
   }
 
   return tuningStats;
