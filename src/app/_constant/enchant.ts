@@ -504,7 +504,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '추적자의',
     description: '',
-    drop_item_list: ['잊혀진 제단'],
+    drop_item_list: ['잊혀진 제단', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '밸런스', stat_value: '7' },
       { stat_name: '크리티컬 저항', stat_value: '5' },
@@ -556,7 +556,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '강렬한',
     description: '',
-    drop_item_list: ['왕성 지하감옥'],
+    drop_item_list: ['왕성 지하감옥', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격속도', stat_value: '1' },
       { stat_name: '크리티컬', stat_value: '3' },
@@ -796,7 +796,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '격렬한',
     description: '',
-    drop_item_list: ['실낙원의 첨병'],
+    drop_item_list: ['실낙원의 첨병', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격속도', stat_value: '1' },
       { stat_name: '방어력', stat_value: '800' },
@@ -1080,7 +1080,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '원한',
     description: '',
-    drop_item_list: ['잊혀진 제단'],
+    drop_item_list: ['잊혀진 제단', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '1000' },
       { stat_name: '마법공격력', stat_value: '1000' },
@@ -1244,7 +1244,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '한탄',
     description: '',
-    drop_item_list: ['죽음의 변증법'],
+    drop_item_list: ['죽음의 변증법', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '방어력', stat_value: '120' },
       { stat_name: '최대 스태미나', stat_value: '5' },
@@ -1289,7 +1289,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '진격',
     description: '',
-    drop_item_list: ['왕성 토파즈 홀'],
+    drop_item_list: ['왕성 토파즈 홀', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '285' },
       { stat_name: '마법공격력', stat_value: '285' },
@@ -1336,7 +1336,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '광분',
     description: '',
-    drop_item_list: ['원한의 암굴'],
+    drop_item_list: ['원한의 암굴', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '465' },
       { stat_name: '마법공격력', stat_value: '465' },
@@ -1418,7 +1418,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '격노',
     description: '',
-    drop_item_list: ['죽음의 변증법'],
+    drop_item_list: ['죽음의 변증법', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '방어력', stat_value: '400' },
       { stat_name: '최대 스태미나', stat_value: '2' },
@@ -1575,7 +1575,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '광기',
     description: '',
-    drop_item_list: ['원한의 암굴'],
+    drop_item_list: ['원한의 암굴', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '230' },
       { stat_name: '마법공격력', stat_value: '230' },
