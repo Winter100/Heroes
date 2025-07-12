@@ -67,6 +67,7 @@ export const leg_list: ItemType[] = [
     rating: '레어',
     category: ['플레이트', '발 방어구'],
     set: '오르나',
+    slot: 'Leg',
     enhancement_options: leg_level_options['15오르나'],
     quality_stats: ['공격력', '마법공격력', '힘', '민첩', '지능', '의지'],
     grinding: true,
