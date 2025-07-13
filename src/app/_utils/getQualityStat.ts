@@ -1,6 +1,6 @@
 export const getQualityStats = (
   quality: number,
-  stat_values: { stat_name: string; stat_value: number }[] | null,
+  stat_values: { stat_name: string; stat_value: number | string }[] | null,
   quality_stats: string[] // 품질 계산을 적용할 스탯 목록 추가
 ) => {
   const qualityMultipliers: Record<number, { [key: string]: number }> = {
@@ -25,14 +25,14 @@ export const getQualityStats = (
     if (['공격력', '마법공격력', '방어력'].includes(stat_name)) {
       return {
         stat_name,
-        stat_value: Math.floor(stat_value * multiplier.base),
+        stat_value: Math.floor(Number(stat_value) * multiplier.base),
       };
     }
 
     if (['힘', '민첩', '의지', '지능'].includes(stat_name)) {
       return {
         stat_name,
-        stat_value: Math.floor(stat_value * multiplier.attribute),
+        stat_value: Math.floor(Number(stat_value) * multiplier.attribute),
       };
     }
 
