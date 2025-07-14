@@ -3,16 +3,12 @@ import {
   Table,
   TableBody,
   TableCaption,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import Image from 'next/image';
-import { getImageByName } from '@/app/_utils/getImageByName';
-import { ZoomIn } from 'lucide-react';
-import RaidTableDialog from './dialog/RaidTableDialog';
 import { flatRaidList } from '../utils/flatRaidList';
+import RaidInfoRow from './RaidInfoRow';
 
 const RaidInfoTable = () => {
   const newRaidList = flatRaidList(raidList);
@@ -30,46 +26,8 @@ const RaidInfoTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody className="text-xs sm:text-sm">
-        {newRaidList.map((raid, i) => (
-          <TableRow
-            key={raid.name + i}
-            className="rounded-md border-b hover:text-white"
-          >
-            <TableCell>{raid.region}</TableCell>
-            <TableCell>{raid.name}</TableCell>
-            <TableCell>
-              <div className="flex items-center gap-1">
-                <div className="h-auto w-5">
-                  <Image
-                    className="h-auto w-full object-cover"
-                    width={30}
-                    height={20}
-                    alt="B"
-                    src={getImageByName(raid.name)}
-                  />
-                </div>
-                <div className="hidden sm:block">{raid.boss_name}</div>
-              </div>
-            </TableCell>
-            <TableCell className="text-center">
-              {isNaN(
-                Number(
-                  raid.basic_reward?.find((reward) => reward.name === '골드')
-                    ?.value
-                )
-              )
-                ? ''
-                : Number(
-                    raid.basic_reward?.find((reward) => reward.name === '골드')
-                      ?.value
-                  ).toLocaleString()}
-            </TableCell>
-            <TableCell className="text-center">
-              <RaidTableDialog {...raid}>
-                <ZoomIn className="mx-auto" size={20} />
-              </RaidTableDialog>
-            </TableCell>
-          </TableRow>
+        {newRaidList.map((raid) => (
+          <RaidInfoRow key={raid.boss_name} raid={raid} />
         ))}
       </TableBody>
     </Table>

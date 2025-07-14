@@ -12,12 +12,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import Image from 'next/image';
-import { getImageByName } from '@/app/_utils/getImageByName';
-import { getEnchantImage } from '@/app/_components/enchant/utils/getEnchantImage';
-import { getEnchantItemByName } from '../../../utils/getEnchantItemByName';
 import ItemTooltipByType from '@/app/_components/tooltip/ItemTooltipByType';
 import { Drop_items } from '../../../types';
+import PopoverTriggerImage from './PopoverTriggerImage';
 
 const ItemsTab = ({ items }: { items: Drop_items[] }) => {
   return (
@@ -39,37 +36,7 @@ const ItemsTab = ({ items }: { items: Drop_items[] }) => {
             <TableCell>
               <Popover>
                 <PopoverTrigger className="flex w-full items-center gap-2">
-                  <div className="h-auto w-5">
-                    <Image
-                      className="h-auto w-full object-cover"
-                      title={drop.item_name}
-                      alt="item"
-                      src={
-                        drop.item_filter !== '인챈트'
-                          ? getImageByName(drop.item_name)
-                          : getEnchantImage(
-                              getEnchantItemByName(drop.item_name)?.rank || '',
-                              getEnchantItemByName(drop.item_name)
-                                ?.upgreadeType || ''
-                            )
-                      }
-                      width={20}
-                      height={20}
-                    />
-                  </div>
-
-                  <div className="flex flex-col">
-                    <div className="text-start">{drop.item_name}</div>
-                    {drop.item_description && (
-                      <div className="flex flex-col items-center text-[11px]">
-                        {drop.item_description?.map((item) => (
-                          <div className="w-full text-start" key={item}>
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <PopoverTriggerImage drop={drop} />
                 </PopoverTrigger>
                 <PopoverContent className="dark w-[370px] p-1">
                   <ItemTooltipByType
