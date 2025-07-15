@@ -43,7 +43,6 @@ const EnchantChangeDialog = memo(
         <DialogTrigger asChild>
           <Button
             className="h-6 w-full border p-0 text-[10px] sm:text-xs"
-            // className="h-6 w-full border p-0 text-[10px] sm:text-xs"
             variant="ghost"
           >
             {label}

@@ -63,7 +63,8 @@ export const getItemInfoOptions = ({
 
   const infusion_1 = item_option?.power_infusion_preset_1;
   const infusion_2 = item_option?.power_infusion_preset_2;
-  const used_infusion_number = item_option?.power_infusion_use_preset_no;
+  const used_infusion_number =
+    item_option?.power_infusion_use_preset_no ?? null;
 
   const usablePrefixEnchantList = getUsableItemEnchantList({
     enchantList: prefix_enchant_name_list,
