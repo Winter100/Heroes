@@ -1,13 +1,12 @@
-import clsx from 'clsx';
 import { usePreviewStore } from '@/app/_store/previewStore';
 import { getItemSetOptions } from '../util/getItemSetOptions';
-import EnchantEffects from '../../common/enchant/EnchantEffects';
 import Item from '../../common/item/Item';
 import { useQuery } from '@tanstack/react-query';
 import { getEquipment } from '@/app/_services/getEquipment';
 import { useOcid } from '@/app/_hooks/useOcid/useOcid';
 import { Item_equipment } from '@/app/_type/equipmentType';
 import Loading from '../../common/Loading';
+import { cn } from '@/lib/utils';
 
 interface ItemSetProps {
   set: string;
@@ -38,15 +37,19 @@ const ItemSet = ({ set }: ItemSetProps) => {
         {setName} 세트 {usedSetLength}/{totalSetLength}
       </span>
       <div className="rounded-md border border-gray-500/30">
-        <EnchantEffects
-          className="grid grid-cols-2 !border-none !text-[11px]"
-          isItem={haveSetList || []}
-          enchantEffects={
-            list?.map((title) => {
-              return { stat_name: title?.name || '', stat_value: '' };
-            }) || []
-          }
-        />
+        <div className="grid grid-cols-2 items-center p-2 text-[11px]">
+          {list?.map((title) => (
+            <div
+              className={cn(
+                '',
+                haveSetList?.includes(title?.name || '') && 'text-blue-300'
+              )}
+              key={title?.name}
+            >
+              • {title?.name}
+            </div>
+          ))}
+        </div>
         <Item.SubDescription className="mx-2 pl-4">
           세트 보너스
         </Item.SubDescription>
@@ -54,7 +57,7 @@ const ItemSet = ({ set }: ItemSetProps) => {
         {bonus?.map((stat) => (
           <div
             key={stat.level}
-            className={clsx(
+            className={cn(
               'flex pl-2 text-[11px]',
               stat.level === usedSetLength && 'text-[rgb(145,175,212)]'
             )}

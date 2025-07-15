@@ -2,48 +2,18 @@ import { memo } from 'react';
 import { ItemType } from '@/app/_type/infoInfoType';
 import { formatStringArray } from '@/app/_utils/formatStringArray';
 import { getImageByName } from '@/app/_utils/getImageByName';
-import clsx from 'clsx';
 import { getGradeValue } from '@/app/_utils/getStatsByLevel';
 import { oneGrinding } from '@/app/_constant/grinding';
 import Item from '../../common/item/Item';
 import Row from '../../layout/Row';
 import Column from '../../layout/Column';
 import ItemStats from './ItemStats';
-import Itemrestrictions from '../restrictions/Itemrestrictions';
-import ItemQuality from '../quality/ItemQuality';
+import Itemrestrictions from './Itemrestrictions';
+import ItemQuality from './ItemQuality';
 import InfoGrindingList from '../grinding/InfoGrindingList';
 import ItemSet from './ItemSet';
-
-type Stat = {
-  stat_name: string;
-  stat_value: number;
-};
-
-type AdditionalStat = {
-  stat_name: string;
-  stat_value: string;
-};
-
-const craftingStatsMerge = (
-  baseStats: Stat[],
-  additionalStats: AdditionalStat[]
-): Stat[] => {
-  const statMap = new Map<string, number>();
-
-  for (const stat of baseStats) {
-    statMap.set(stat.stat_name, stat.stat_value);
-  }
-
-  for (const stat of additionalStats) {
-    const value = parseInt(stat.stat_value, 10) || 0;
-    statMap.set(stat.stat_name, (statMap.get(stat.stat_name) || 0) + value);
-  }
-
-  return Array.from(statMap, ([stat_name, stat_value]) => ({
-    stat_name,
-    stat_value,
-  }));
-};
+import ImageIconUseBorder from '../../common/ImageIconUseBorder';
+import { craftingStatsMerge } from '../util/craftingStatsMerge';
 
 const ItemCreaftingInfo = memo(
   ({
@@ -89,17 +59,13 @@ const ItemCreaftingInfo = memo(
 
     return (
       <Item className="flex w-full flex-col gap-1">
-        <Row className="text-xs">
-          <Item.Image
-            className={clsx(
-              'object-scale-down',
-              name?.includes('레어') && 'rounded-sm border border-orange-300',
-              name?.includes('전설') && 'rounded-sm border border-pink-400'
-            )}
+        <Row className="flex flex-row gap-2 text-xs">
+          <ImageIconUseBorder
+            className="w-12"
+            isRatingBorder={true}
+            itemName={name}
             src={getImageByName(name)}
-            alt={name}
           />
-
           <Column className="w-full gap-0.5 text-zinc-400">
             <Item.Title className="flex flex-row gap-1" type={rating}>
               <span>{name}</span>

@@ -1,5 +1,5 @@
+import { Stat } from '@/app/_type/previewType';
 import EnchantEffects from '../common/enchant/EnchantEffects';
-import EnchantRank from '../common/enchant/EnchantRank';
 import Item from '../common/item/Item';
 import Row from '../layout/Row';
 
@@ -10,7 +10,7 @@ interface ItemEnchantBoxProps {
   useNumber: number;
   usedEnchantName: string;
   existingEnchantRank: string;
-  existingEnchantValue: { stat_name: string; stat_value: string }[];
+  existingEnchantValue: Stat[] | null;
 }
 
 const ItemEnchantBox = ({
@@ -35,17 +35,14 @@ const ItemEnchantBox = ({
         <Item.Content>{usedEnchantName}</Item.Content>
         <Item.Content className="flex">
           <span className="pr-1">{title}</span>
-          <EnchantRank
-            className="text-orange-300"
-            enchantRank={existingEnchantRank}
-          />
-          <span>랭크</span>
+          <span>{existingEnchantRank} 랭크</span>
         </Item.Content>
       </Row>
-      <EnchantEffects
-        effectColor="text-yellow-200/70"
-        enchantEffects={existingEnchantValue}
-      />
+      <div className="rounded-md border border-muted p-1">
+        {existingEnchantValue && (
+          <EnchantEffects effects={existingEnchantValue} />
+        )}
+      </div>
     </Item.Description>
   );
 };
