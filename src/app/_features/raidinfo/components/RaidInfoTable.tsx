@@ -15,7 +15,7 @@ const RaidInfoTable = () => {
 
   return (
     <Table className="caption-top">
-      <TableCaption className="py-2 text-xs">레이드</TableCaption>
+      <TableCaption className="sr-only">레이드</TableCaption>
       <TableHeader className="text-xs sm:text-sm">
         <TableRow>
           <TableHead className="text-center">순회</TableHead>
