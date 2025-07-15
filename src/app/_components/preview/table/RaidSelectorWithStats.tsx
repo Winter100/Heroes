@@ -18,9 +18,9 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { getImageByName } from '@/app/_utils/getImageByName';
-import Image from 'next/image';
 import StatDifference from './StatDifference';
 import { memo } from 'react';
+import ImageIcon from '../../common/Image-Icon';
 
 const RaidSelectorWithStats = memo(() => {
   const previewAllStats = usePreviewStore((state) => state.previewAllStats);
@@ -67,9 +67,8 @@ const RaidSelectorWithStats = memo(() => {
               >
                 <div className="hidden sm:block">{title.stat_name}</div>
                 <div className="flex items-center justify-center sm:hidden">
-                  <Image
-                    width={15}
-                    height={15}
+                  <ImageIcon
+                    className="h-4 w-4"
                     src={getImageByName(title.stat_name)}
                     alt="s"
                   />

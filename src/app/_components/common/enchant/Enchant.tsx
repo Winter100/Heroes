@@ -1,23 +1,28 @@
-import EnchantBrin from '@/app/_components/common/enchant/EnchantBrin';
-import EnchantImage from '@/app/_components/common/enchant/EnchantImage';
-import EnchantIsDestruction from '@/app/_components/common/enchant/EnchantIsDestruction';
-import Item from '@/app/_components/common/item/Item';
-import { findEnchantNames } from '@/app/_components/enchant/utils/findEnchantNames';
-import { getEnchantImage } from '@/app/_components/enchant/utils/getEnchantImage';
-import { slotNames } from '@/app/_components/enchant/utils/getSlotName';
-import Column from '@/app/_components/layout/Column';
-import Row from '@/app/_components/layout/Row';
-import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
+import Item from '../item/Item';
+import Row from '../../layout/Row';
+import Column from '../../layout/Column';
+import ImageIcon from '../Image-Icon';
+import EnchantIsDestruction from './EnchantIsDestruction';
+import EnchantBrin from './EnchantBrin';
+import EnchantEffects from './EnchantEffects';
+import { Stat } from '@/app/_type/previewType';
+import { getEnchantImage } from '../../enchant/utils/getEnchantImage';
+import { cn } from '@/lib/utils';
+import { ComponentProps } from 'react';
 import { convertToKST } from '@/app/_utils/convertToKST';
+import { findEnchantNames } from '../../enchant/utils/findEnchantNames';
+import { slotNames } from '../../enchant/utils/getSlotName';
 
-import clsx from 'clsx';
-import TabEnchantEffects from '../../preview/components/preview/enchant/TabEnchantEffects';
-
-interface EnchantInfoType extends EnchantStoreType {
+interface EnchantProps extends ComponentProps<'div'> {
+  name: string;
+  upgreadeType: string;
+  rank: string;
+  stat_value: Stat[];
+  date_update?: string;
+  average_price?: number;
   className?: string;
 }
-
-const EnchantInfo = ({
+const Enchant = ({
   upgreadeType,
   name,
   average_price,
@@ -25,17 +30,17 @@ const EnchantInfo = ({
   stat_value,
   date_update,
   className,
-}: EnchantInfoType) => {
+}: EnchantProps) => {
   const type = upgreadeType === 'prefix' ? '접두' : '접미';
+  const src = getEnchantImage(rank, upgreadeType);
+
+  const update = date_update ? date_update : null;
+  const avgPrice = average_price ? average_price : null;
 
   return (
-    <Item className={clsx('flex flex-col gap-1', className)}>
+    <Item className={cn('flex flex-col gap-1', className)}>
       <Row>
-        <EnchantImage
-          alt={name}
-          src={getEnchantImage(rank, upgreadeType)}
-          size={35}
-        />
+        <ImageIcon src={src} alt={name} />
         <Column className="w-full gap-0.5 pl-2">
           <Item.Title
             className="flex flex-row justify-between text-sm"
@@ -45,11 +50,13 @@ const EnchantInfo = ({
               <Item.Content>{name}</Item.Content>
               <Item.Content className="pl-1">인챈트 스크롤</Item.Content>
             </div>
-            <Item.Content>
-              <div className="text-center text-[11px] text-gray-400">
-                {convertToKST(date_update)}
-              </div>
-            </Item.Content>
+            {update && (
+              <Item.Content>
+                <div className="text-center text-[11px] text-gray-400">
+                  {convertToKST(update)}
+                </div>
+              </Item.Content>
+            )}
           </Item.Title>
 
           <Item.SubDescription className="px-1">
@@ -58,10 +65,12 @@ const EnchantInfo = ({
             </Item.Content>
           </Item.SubDescription>
 
-          <Item.SubDescription className="flex items-center justify-between px-1">
-            <Item.Content>물품거래소 매입가</Item.Content>
-            <Item.Content>{average_price.toLocaleString()}</Item.Content>
-          </Item.SubDescription>
+          {avgPrice && (
+            <Item.SubDescription className="flex items-center justify-between px-1">
+              <Item.Content>물품거래소 매입가</Item.Content>
+              <Item.Content>{avgPrice.toLocaleString()}</Item.Content>
+            </Item.SubDescription>
+          )}
 
           <Item.SubDescription className="flex items-center justify-between px-1">
             <Item.Content className="min-w-7">부위</Item.Content>
@@ -82,6 +91,7 @@ const EnchantInfo = ({
 
       <EnchantIsDestruction rank={rank} />
       <Item.Border />
+
       <EnchantBrin />
       <Item.Border />
 
@@ -95,10 +105,10 @@ const EnchantInfo = ({
       </Row>
 
       <div className="flex-1 rounded-md border border-gray-500/30 px-1 py-2 text-xs">
-        <TabEnchantEffects effects={{ stat_value }} />
+        <EnchantEffects effects={stat_value} />
       </div>
     </Item>
   );
 };
 
-export default EnchantInfo;
+export default Enchant;

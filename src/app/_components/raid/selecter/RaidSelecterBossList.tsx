@@ -4,7 +4,7 @@ import { useRaidStore } from '@/app/_store/raidStore';
 import { getImageByName } from '@/app/_utils/getImageByName';
 import { DialogClose } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
+import ImageIcon from '../../common/Image-Icon';
 
 interface RaidSelecterBossListProps {
   raidList: (MonstersOmitEntry | MonstersOmitLimit | null)[];
@@ -47,14 +47,11 @@ const RaidSelecterBossList = ({
                     'text-blue-300'
                 )}
               >
-                <Image
+                <ImageIcon
+                  className="h-6 w-10"
                   src={getImageByName(boss.name)}
-                  width={40}
-                  height={24}
                   alt={boss.name}
-                  style={{ width: '40px', height: '24px' }}
                 />
-
                 <div className="flex h-full flex-1 items-center text-xs">
                   {boss.name}
                 </div>

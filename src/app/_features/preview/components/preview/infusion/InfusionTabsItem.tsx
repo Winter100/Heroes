@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { InfusionTabsItemProps } from '../../../types';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ITEM_ANIMATION } from '../../../constant';
+import ImageIcon from '@/app/_components/common/Image-Icon';
 
 const InfusionTabsItem = ({
   data,
@@ -36,14 +36,11 @@ const InfusionTabsItem = ({
             >
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="flex items-start justify-center">
-                    <Image
-                      width={45}
-                      height={45}
-                      src="/images/enchant/infusion.png"
-                      alt="I"
-                    />
-                  </div>
+                  <ImageIcon
+                    className="h-8 w-8"
+                    src="/images/enchant/infusion.png"
+                    alt="I"
+                  />
                   <div className="w-full text-xs font-bold">
                     {infusion.stat_name}
                   </div>

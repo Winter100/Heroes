@@ -13,8 +13,8 @@ import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
 import CalculatorStat from './CalculatorStat';
 import { filterStats } from '@/app/_features/preview/utils/filterStats';
 import { TableProps } from '@/app/_features/preview/types';
-import Image from 'next/image';
 import { getImageByName } from '@/app/_utils/getImageByName';
+import ImageIcon from '@/app/_components/common/Image-Icon';
 
 const BossStatsTable = ({ boss, filter }: TableProps) => {
   const userStats = usePreviewStore((state) => state.previewAllStats);
@@ -34,14 +34,12 @@ const BossStatsTable = ({ boss, filter }: TableProps) => {
                 {boss.stat_name}
               </div>
               <div className="flex items-center justify-center sm:hidden">
-                <Image
-                  width={15}
-                  height={15}
+                <ImageIcon
+                  className="h-4 w-4"
                   src={getImageByName(boss.stat_name)}
                   alt="s"
                 />
               </div>
-              {/* {boss.stat_name} */}
             </TableHead>
           ))}
         </TableRow>

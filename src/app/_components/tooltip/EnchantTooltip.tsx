@@ -2,9 +2,9 @@ import {
   prefix_enchant_options,
   suffix_enchant_options,
 } from '@/app/_constant/enchant';
-import EnchantInfo from '@/app/_features/market/components/EnchantInfo';
 import { insertUpgradeType } from '../enchant/utils/insertUpgradeType';
 import { keyword } from '@/app/_constant/keyword';
+import Enchant from '../common/enchant/Enchant';
 
 const allEnchantList = [
   ...insertUpgradeType(prefix_enchant_options, keyword.upgreadeType.prefix),
@@ -31,17 +31,7 @@ const EnchantTooltip = ({ itemName }: EnchantTooltipProps) => {
     }[];
   };
 
-  return (
-    <EnchantInfo
-      average_price={0}
-      max_price={0}
-      min_price={0}
-      date_update={''}
-      item_name={findEnchant?.name || ''}
-      enchant_name={findEnchant?.name || ''}
-      {...findEnchant}
-    />
-  );
+  return <Enchant {...findEnchant} />;
 };
 
 export default EnchantTooltip;

@@ -3,12 +3,11 @@
 import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { useEventNoticeDateStore } from '../../store/noticeEventStore';
+import { EventDate } from '../../types';
 
-const EventCalendar = () => {
-  const eventDate = useEventNoticeDateStore((state) => state.eventDate);
+const EventCalendar = ({ eventDate }: { eventDate: EventDate | null }) => {
   return (
-    <div className="flex w-full flex-1 items-center justify-center">
+    <div className="flex flex-1 items-center justify-center p-2">
       <Calendar
         showOutsideDays={false}
         numberOfMonths={2}

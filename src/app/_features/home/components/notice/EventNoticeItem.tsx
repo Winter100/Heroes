@@ -1,4 +1,3 @@
-import { isWithinHours } from '@/app/_utils/isWithin24Hours';
 import { convertToKST } from '@/app/_utils/convertToKST';
 import { cn } from '@/lib/utils';
 import { Calendar, Clock, SquareArrowOutUpRight } from 'lucide-react';
@@ -7,21 +6,20 @@ import {
   getRemainingTime,
   getYearMonthDay,
 } from '@/app/_components/preview/utils/dateEvent';
-import { EventNoticeItemProps } from '../../../types';
+import { BasicNoticeItemProps } from '../../types';
+import { useEventNoticeDateStore } from '../../store/noticeEventStore';
 
 const EventNoticeItem = ({
+  isIn24,
   notice_id,
   title,
   url,
-  date,
   date_event_end,
   date_event_start,
-  selectDate,
-  setEventDate,
-}: EventNoticeItemProps) => {
-  const itemDate = date ? date : date_event_start;
-  const is24InHours = isWithinHours(itemDate || '', 24);
-  const isSelected = selectDate?.notice_id === notice_id;
+}: BasicNoticeItemProps) => {
+  const { setEventDate, eventDate } = useEventNoticeDateStore();
+
+  const isSelected = eventDate?.notice_id === notice_id;
 
   return (
     <li
@@ -41,9 +39,7 @@ const EventNoticeItem = ({
           <div className="flex h-full flex-col gap-1">
             <div className="pb-1">
               <div className="flex items-center">
-                <div className="pr-1 text-xs text-red-600">
-                  {is24InHours && 'N'}
-                </div>
+                <div className="pr-1 text-xs text-red-600">{isIn24 && 'N'}</div>
 
                 <div className="truncate text-base font-semibold text-white">
                   {title}
@@ -80,7 +76,7 @@ const EventNoticeItem = ({
                 </div>
               </div>
 
-              <div className="flex min-h-5 w-full items-center gap-2">
+              <div className="flex w-full items-center gap-2">
                 <div className="flex items-center">
                   <Clock size={15} />
                 </div>
@@ -95,7 +91,7 @@ const EventNoticeItem = ({
                     <div>남음</div>
                   </div>
                 ) : (
-                  <div>{null}</div>
+                  <div>상시</div>
                 )}
               </div>
             </>

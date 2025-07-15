@@ -2,9 +2,9 @@ import { Stat } from '@/app/_type/previewType';
 import Item from '../../common/item/Item';
 
 interface ItemInfusionProps {
-  infusion1: Stat;
-  infusion2: Stat;
-  usedNumber: number;
+  infusion1: Stat | undefined;
+  infusion2: Stat | undefined;
+  usedNumber: number | undefined;
 }
 
 const formatValue = (name: string, value: number | string) => {
@@ -19,7 +19,7 @@ const formatValue = (name: string, value: number | string) => {
 const ItemInfusion = ({
   infusion1,
   infusion2,
-  usedNumber,
+  usedNumber = 0,
 }: ItemInfusionProps) => {
   const { stat_name: name1, stat_value: value1 } = infusion1 ?? {
     stat_name: '',

@@ -1,41 +1,26 @@
-import clsx from 'clsx';
 import { memo, useRef, useEffect } from 'react';
 import { RxTriangleUp, RxTriangleDown } from 'react-icons/rx';
-
-import { getEnchantImage } from './utils/getEnchantImage';
 import Tr from '../table/Tr';
 import Td from '../table/Td';
 import Row from '../layout/Row';
-import EnchantImage from '../common/enchant/EnchantImage';
-import EnchantTitle from '../common/enchant/EnchantTitle';
 import Loading from '../common/Loading';
 import Column from '../layout/Column';
-import { EnchantStoreType } from '@/app/_store/selectEnchantStore';
+import { EnchantStoreType } from '@/app/_type/enchantStoreType';
+import ImageIcon from '../common/Image-Icon';
+import { cn } from '@/lib/utils';
 
 interface TrItemProps {
   enchant: EnchantStoreType;
   isSelected: boolean;
-  setEnchant: (enchant: EnchantStoreType | null) => void;
   isLoading: boolean;
   length: number;
-  resetSelectEnchant: () => void;
+  src: string;
+  onClick: () => void;
 }
 
 const TrItem = memo(
-  ({
-    enchant,
-    isSelected,
-    setEnchant,
-    isLoading,
-    resetSelectEnchant,
-    length,
-  }: TrItemProps) => {
+  ({ enchant, isSelected, isLoading, length, src, onClick }: TrItemProps) => {
     const selectedRef = useRef<HTMLTableRowElement>(null);
-
-    const onClick = (enchant: EnchantStoreType) => {
-      if (isSelected) return resetSelectEnchant();
-      setEnchant(enchant);
-    };
 
     useEffect(() => {
       if (selectedRef.current) {
@@ -46,11 +31,15 @@ const TrItem = memo(
       }
     }, [length]);
 
+    const enchantAvgPrice = enchant?.average_price;
+    const enchantMaxPrice = enchant?.max_price;
+    const enchantMinPrice = enchant?.min_price;
+
     return (
       <Tr
         ref={isSelected ? selectedRef : null}
-        onClick={() => onClick(enchant)}
-        className={clsx(
+        onClick={onClick}
+        className={cn(
           'transform cursor-pointer border-t border-borderColor text-center transition-all duration-300 ease-in-out hover:bg-backgroundOne',
           isSelected ? 'animate-boundUpDown text-blue-300' : ''
         )}
@@ -58,27 +47,25 @@ const TrItem = memo(
         <Td className="px-0">{enchant?.rank || ''}</Td>
         <Td className="px-0">
           <Row className="h-full items-center gap-0.5 px-0 sm:gap-2 sm:px-2">
-            <EnchantImage
-              size={35}
+            <ImageIcon
+              className="h-8 w-8"
+              imageClassName="rounded-sm"
+              src={src}
               alt={enchant?.name}
-              src={getEnchantImage(enchant?.rank, enchant?.upgreadeType)}
             />
-            <EnchantTitle
-              enchantName={enchant?.name}
-              isViewScrollTitle={false}
-            />
+            <span>{enchant?.name}</span>
           </Row>
         </Td>
         <Td className="px-0">
           {isLoading ? (
             <Loading />
-          ) : enchant?.average_price !== 0 ? (
+          ) : enchantAvgPrice !== 0 ? (
             <Column>
               <span
-                title={enchant?.average_price?.toLocaleString()}
+                title={enchantAvgPrice.toLocaleString()}
                 className="block overflow-hidden truncate whitespace-nowrap"
               >
-                {enchant?.average_price?.toLocaleString()}
+                {enchantAvgPrice.toLocaleString()}
               </span>
             </Column>
           ) : (
@@ -88,15 +75,15 @@ const TrItem = memo(
         <Td className="px-0">
           {isLoading ? (
             <Loading />
-          ) : enchant?.average_price !== 0 ? (
+          ) : enchantAvgPrice !== 0 ? (
             <Column>
               <span className="flex flex-row items-center justify-center gap-1 text-xs text-red-500 opacity-80">
                 <RxTriangleUp />
-                {enchant?.max_price?.toLocaleString()}
+                {enchantMaxPrice.toLocaleString()}
               </span>
               <span className="flex flex-row items-center justify-center gap-1 text-xs text-blue-500 opacity-80">
                 <RxTriangleDown />
-                {enchant?.min_price?.toLocaleString()}
+                {enchantMinPrice.toLocaleString()}
               </span>
             </Column>
           ) : (

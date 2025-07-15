@@ -6,7 +6,7 @@ import { Item_Rating } from '@/app/_type/infoInfoType';
 
 export interface ItemCraftingItemProps {
   item_name: string;
-  setMaterials: (item: string, category: string) => void;
+  handleSelect: () => void;
   isSelect: boolean;
   category: string;
   materials: MaterialsType[];

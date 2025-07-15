@@ -1,15 +1,24 @@
 import { itemInfoMap, materialsMap } from '@/app/_constant/items/item_map';
+import { Item_Rating } from '@/app/_type/infoInfoType';
 
-export const getItemOrMaterialsRating = (filter: string, item_name: string) => {
-  return filter === '장비'
-    ? getItemRating(item_name)
-    : getMaterialsRating(item_name);
+export const getItemOrMaterialsRating = (
+  category: string,
+  itemName: string
+): Item_Rating | null => {
+  return category === '장비'
+    ? getItemRating(itemName)
+    : getMaterialsRating(itemName);
 };
 
-export const getItemRating = (item: string) => {
-  return itemInfoMap?.get(item)?.rating;
+export const getItemRating = (item: string): Item_Rating | null => {
+  const rating = itemInfoMap?.get(item)?.rating;
+  if (!rating) return null;
+
+  return rating;
 };
 
-export const getMaterialsRating = (item: string) => {
-  return materialsMap?.get(item)?.item_rating;
+export const getMaterialsRating = (item: string): Item_Rating | null => {
+  const rating = materialsMap?.get(item)?.item_rating;
+  if (!rating) return null;
+  return rating;
 };
