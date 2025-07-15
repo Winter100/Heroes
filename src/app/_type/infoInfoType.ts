@@ -16,10 +16,10 @@ export type Item_Rating =
 
 type Stat = {
   stat_name: string;
-  stat_value: number;
+  stat_value: number | string;
 };
 
-type ItemStats = Record<number | string, Stat[]>;
+type ItemStats = Record<number, Stat[]>;
 
 export interface ItemType {
   name: string;
