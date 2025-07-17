@@ -10,7 +10,7 @@ export const convertItemNameBySlot = (
 ): ConvertResult => {
   if (slot !== 'Right Hand') return { itemName: name, gradeMatch: null };
 
-  const baseNames = ['밀레시안', '아르드리', '오르나', '와드네'];
+  const baseNames = ['밀레시안', '아르드리', '오르나', '와드네', '에리우'];
   const gradeNames: Item_Rating[] = ['초급', '중급', '고급', '레어', '전설'];
 
   const baseMatch = baseNames.find((base) => name.includes(base));

@@ -28,7 +28,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '잔혹한',
     description: '',
-    drop_item_list: ['으스름달 아래서', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: ['원한의 암굴', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '430' },
       { stat_name: '마법공격력', stat_value: '430' },
@@ -41,7 +41,17 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '혼돈의',
     description: '',
-    drop_item_list: ['급습', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '급습',
+      '마신의 탑',
+      '붉은 낙인',
+      '광기의 무덤',
+      '광휘의 루',
+      '이웨카의 몽마',
+      '지저의 실험실',
+      '잊지 않기 위하여',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '340' },
       { stat_name: '마법공격력', stat_value: '340' },
@@ -221,7 +231,17 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '무한의',
     description: '',
-    drop_item_list: ['광기의 무덤', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '급습',
+      '마신의 탑',
+      '붉은 낙인',
+      '광기의 무덤',
+      '광휘의 루',
+      '이웨카의 몽마',
+      '지저의 실험실',
+      '잊지 않기 위하여',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '방어력', stat_value: '160' },
       { stat_name: '최대 생명력', stat_value: '50' },
@@ -235,7 +255,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '고결한',
     description: '',
-    drop_item_list: ['어둠의 일족', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: ['위대한 사역', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '방어력', stat_value: '160' },
       { stat_name: '최대 생명력', stat_value: '100' },
@@ -278,7 +298,17 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '냉정의',
     description: '',
-    drop_item_list: ['마신의 탑', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '급습',
+      '마신의 탑',
+      '붉은 낙인',
+      '광기의 무덤',
+      '광휘의 루',
+      '이웨카의 몽마',
+      '지저의 실험실',
+      '잊지 않기 위하여',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '245' },
       { stat_name: '마법공격력', stat_value: '245' },
@@ -293,7 +323,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '냉철의',
     description: '',
-    drop_item_list: ['로체스트 공방전', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: ['죽음의 변증법', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '245' },
       { stat_name: '마법공격력', stat_value: '245' },
@@ -338,7 +368,17 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '흐느끼는',
     description: '',
-    drop_item_list: ['이웨카의 몽마', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '급습',
+      '마신의 탑',
+      '붉은 낙인',
+      '광기의 무덤',
+      '광휘의 루',
+      '이웨카의 몽마',
+      '지저의 실험실',
+      '잊지 않기 위하여',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '145' },
       { stat_name: '마법공격력', stat_value: '145' },
@@ -353,7 +393,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '비통한',
     description: '',
-    drop_item_list: ['라다톤 대교', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: ['잊혀진 제단', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '145' },
       { stat_name: '마법공격력', stat_value: '145' },
@@ -443,7 +483,17 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '뜻깊은',
     description: '',
-    drop_item_list: ['잊지 않기 위하여', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '급습',
+      '마신의 탑',
+      '붉은 낙인',
+      '광기의 무덤',
+      '광휘의 루',
+      '이웨카의 몽마',
+      '지저의 실험실',
+      '잊지 않기 위하여',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '200' },
       { stat_name: '마법공격력', stat_value: '200' },
@@ -504,7 +554,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '추적자의',
     description: '',
-    drop_item_list: ['잊혀진 제단'],
+    drop_item_list: ['잊혀진 제단', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '밸런스', stat_value: '7' },
       { stat_name: '크리티컬 저항', stat_value: '5' },
@@ -556,7 +606,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '강렬한',
     description: '',
-    drop_item_list: ['왕성 지하감옥'],
+    drop_item_list: ['왕성 토파즈 홀', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격속도', stat_value: '1' },
       { stat_name: '크리티컬', stat_value: '3' },
@@ -613,7 +663,6 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     drop_item_list: [
       '시공의 상자: 찬탈자의 성채',
       '시공의 상자: 몰락한 기사의 전당',
-      '스페셜 던전: 인챈트 주머니',
     ],
     stat_value: [
       { stat_name: '공격력', stat_value: '-280' },
@@ -763,13 +812,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '7',
     name: '산뜻한',
     description: '방패, 캐스틀릿, 그랜드타지',
-    drop_item_list: [
-      '영혼의 부재',
-      '실패와 대가',
-      '통제',
-      '왜곡된 진실',
-      '스페셜 던전: 인챈트 주머니',
-    ],
+    drop_item_list: ['영혼의 부재', '실패와 대가', '통제', '왜곡된 진실'],
     stat_value: [
       { stat_name: '공격력', stat_value: '55' },
       { stat_name: '마법공격력', stat_value: '55' },
@@ -796,7 +839,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '격렬한',
     description: '',
-    drop_item_list: ['실낙원의 첨병'],
+    drop_item_list: ['왕성 토파즈 홀', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격속도', stat_value: '1' },
       { stat_name: '방어력', stat_value: '800' },
@@ -1030,13 +1073,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '7',
     name: '단죄',
     description: '',
-    drop_item_list: [
-      '영혼의 부재',
-      '실패와 대가',
-      '통제',
-      '왜곡된 진실',
-      '스페셜 던전: 인챈트 주머니',
-    ],
+    drop_item_list: ['영혼의 부재', '실패와 대가', '통제', '왜곡된 진실'],
     stat_value: [
       { stat_name: '공격력', stat_value: '680' },
       { stat_name: '마법공격력', stat_value: '680' },
@@ -1047,13 +1084,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '7',
     name: '심판',
     description: '',
-    drop_item_list: [
-      '영혼의 부재',
-      '실패와 대가',
-      '통제',
-      '왜곡된 진실',
-      '스페셜 던전: 인챈트 주머니',
-    ],
+    drop_item_list: ['영혼의 부재', '실패와 대가', '통제', '왜곡된 진실'],
     stat_value: [
       { stat_name: '공격력', stat_value: '870' },
       { stat_name: '마법공격력', stat_value: '870' },
@@ -1067,7 +1098,15 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '신념',
     description: '',
-    drop_item_list: ['급습', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '로체스트 공방전',
+      '어둠의 일족',
+      '실낙원의 첨병',
+      '으스름달 아래서',
+      '라다톤 대교',
+      '왕성 지하감옥',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '970' },
       { stat_name: '마법공격력', stat_value: '970' },
@@ -1080,7 +1119,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '원한',
     description: '',
-    drop_item_list: ['잊혀진 제단'],
+    drop_item_list: ['잊혀진 제단', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '1000' },
       { stat_name: '마법공격력', stat_value: '1000' },
@@ -1212,13 +1251,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '7',
     name: '낙인',
     description: '',
-    drop_item_list: [
-      '영혼의 부재',
-      '실패와 대가',
-      '통제',
-      '왜곡된 진실',
-      '스페셜 던전: 인챈트 주머니',
-    ],
+    drop_item_list: ['영혼의 부재', '실패와 대가', '통제', '왜곡된 진실'],
     stat_value: [
       { stat_name: '방어력', stat_value: '70' },
       { stat_name: '최대 스태미나', stat_value: '5' },
@@ -1231,7 +1264,15 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '결계',
     description: '',
-    drop_item_list: ['광휘의 루', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '로체스트 공방전',
+      '어둠의 일족',
+      '실낙원의 첨병',
+      '으스름달 아래서',
+      '라다톤 대교',
+      '왕성 지하감옥',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '방어력', stat_value: '120' },
       { stat_name: '최대 스태미나', stat_value: '5' },
@@ -1244,7 +1285,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '한탄',
     description: '',
-    drop_item_list: ['죽음의 변증법'],
+    drop_item_list: ['죽음의 변증법', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '방어력', stat_value: '120' },
       { stat_name: '최대 스태미나', stat_value: '5' },
@@ -1257,13 +1298,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '7',
     name: '원정',
     description: '',
-    drop_item_list: [
-      '영혼의 부재',
-      '실패와 대가',
-      '통제',
-      '왜곡된 진실',
-      '스페셜 던전: 인챈트 주머니',
-    ],
+    drop_item_list: ['영혼의 부재', '실패와 대가', '통제', '왜곡된 진실'],
     stat_value: [
       { stat_name: '공격력', stat_value: '285' },
       { stat_name: '마법공격력', stat_value: '285' },
@@ -1276,7 +1311,15 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '포획',
     description: '',
-    drop_item_list: ['붉은 낙인', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '로체스트 공방전',
+      '어둠의 일족',
+      '실낙원의 첨병',
+      '으스름달 아래서',
+      '라다톤 대교',
+      '왕성 지하감옥',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '285' },
       { stat_name: '마법공격력', stat_value: '285' },
@@ -1289,7 +1332,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '진격',
     description: '',
-    drop_item_list: ['왕성 토파즈 홀'],
+    drop_item_list: ['왕성 토파즈 홀', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '285' },
       { stat_name: '마법공격력', stat_value: '285' },
@@ -1302,13 +1345,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '7',
     name: '메아리',
     description: '',
-    drop_item_list: [
-      '영혼의 부재',
-      '실패와 대가',
-      '통제',
-      '왜곡된 진실',
-      '스페셜 던전: 인챈트 주머니',
-    ],
+    drop_item_list: ['영혼의 부재', '실패와 대가', '통제', '왜곡된 진실'],
     stat_value: [
       { stat_name: '공격력', stat_value: '365' },
       { stat_name: '마법공격력', stat_value: '365' },
@@ -1322,7 +1359,15 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '영혼',
     description: '',
-    drop_item_list: ['지저의 실험실', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '로체스트 공방전',
+      '어둠의 일족',
+      '실낙원의 첨병',
+      '으스름달 아래서',
+      '라다톤 대교',
+      '왕성 지하감옥',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '공격력', stat_value: '465' },
       { stat_name: '마법공격력', stat_value: '465' },
@@ -1336,7 +1381,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '광분',
     description: '',
-    drop_item_list: ['원한의 암굴'],
+    drop_item_list: ['원한의 암굴', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '465' },
       { stat_name: '마법공격력', stat_value: '465' },
@@ -1407,7 +1452,15 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '6',
     name: '소망',
     description: '',
-    drop_item_list: ['잊지 않기 위하여', '스페셜 던전: 인챈트 주머니'],
+    drop_item_list: [
+      '로체스트 공방전',
+      '어둠의 일족',
+      '실낙원의 첨병',
+      '으스름달 아래서',
+      '라다톤 대교',
+      '왕성 지하감옥',
+      '스페셜 던전: 인챈트 주머니',
+    ],
     stat_value: [
       { stat_name: '방어력', stat_value: '300' },
       { stat_name: '최대 스태미나', stat_value: '2' },
@@ -1418,7 +1471,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '격노',
     description: '',
-    drop_item_list: ['죽음의 변증법'],
+    drop_item_list: ['죽음의 변증법', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '방어력', stat_value: '400' },
       { stat_name: '최대 스태미나', stat_value: '2' },
@@ -1456,7 +1509,6 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     drop_item_list: [
       '시공의 상자: 찬탈자의 성채',
       '시공의 상자: 몰락한 기사의 전당',
-      '스페셜 던전: 인챈트 주머니',
     ],
     stat_value: [
       { stat_name: '고유 그룹', stat_value: '공격속도 증가' },
@@ -1575,7 +1627,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     rank: '5',
     name: '광기',
     description: '',
-    drop_item_list: ['원한의 암굴'],
+    drop_item_list: ['원한의 암굴', '스페셜 던전: 인챈트 주머니'],
     stat_value: [
       { stat_name: '공격력', stat_value: '230' },
       { stat_name: '마법공격력', stat_value: '230' },
