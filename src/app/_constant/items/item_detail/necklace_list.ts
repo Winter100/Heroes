@@ -119,4 +119,27 @@ export const necklace_list: ItemType[] = [
       ],
     },
   },
+  {
+    name: '칠흑빛 고양이 목걸이',
+    restrictions: [''],
+    quality: 2,
+    quality_selection_available: true,
+    rating: '중급',
+    category: ['액세서리', '목걸이'],
+    quality_stats: ['힘', '민첩', '지능', '의지'],
+    color: true,
+    enhancement_options: {
+      0: [
+        { stat_name: '밸런스', stat_value: 4 },
+        { stat_name: '크리티컬', stat_value: 4 },
+        { stat_name: '방어력', stat_value: 50 },
+        { stat_name: '힘', stat_value: 10 },
+        { stat_name: '민첩', stat_value: 16 },
+        { stat_name: '지능', stat_value: 13 },
+        { stat_name: '의지', stat_value: 10 },
+        { stat_name: '최대 생명력', stat_value: 100 },
+        { stat_name: '크리티컬 저항', stat_value: 4 },
+      ],
+    },
+  },
 ];

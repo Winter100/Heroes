@@ -4,11 +4,7 @@ import GrindingItem from './GrindingItem';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import { usePreviewStore } from '@/app/_store/previewStore';
 import clsx from 'clsx';
-import {
-  convertNewTuning,
-  isLimit1Every,
-  isLimit2Every,
-} from '@/app/_utils/convertNewTuning';
+import { convertNewTuning, isLimitEvery } from '@/app/_utils/convertNewTuning';
 
 interface GrindingProps {
   item: NewEquipmentType;
@@ -21,24 +17,48 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
   const setMin = usePreviewStore((state) => state.setMin);
   const setMax = usePreviewStore((state) => state.setMax);
 
-  const setLimit1Zero = usePreviewStore((state) => state.setLimit1Zero);
-  const setLimit2Zero = usePreviewStore((state) => state.setLimit2Zero);
+  const setLimitZero = usePreviewStore((state) => state.setLimitZero);
 
+  // convert 작업을 통해 연마 버튼 활성화 여부 결정
   const newTuning = convertNewTuning(item);
-  const isLimit1 = isLimit1Every(newTuning);
-  const isLimit2 = isLimit2Every(item);
+
+  const limitFinished1 = isLimitEvery(
+    item,
+    (stat) => !stat.stat_name.includes('해제')
+  );
+  const limitFinished2 = isLimitEvery(
+    item,
+    (stat) => stat.stat_name !== '해제 2'
+  );
+
+  {
+    /* 해제를 제외한 나머지 연마가 풀이 아닐 경우 해제를 초기화 */
+  }
+  useEffect(() => {
+    if (item.item_name.includes('오르나') && !limitFinished1) {
+      setLimitZero(item.item_equipment_slot_name, '해제');
+    }
+  }, [
+    item.item_equipment_slot_name,
+    item.item_name,
+    limitFinished1,
+    setLimitZero,
+  ]);
 
   useEffect(() => {
-    if (!item.item_name.includes('와드네') && !isLimit1) {
-      setLimit1Zero(item.item_equipment_slot_name);
+    if (
+      (item.item_name.includes('와드네') ||
+        item.item_name.includes('에리우')) &&
+      !limitFinished2
+    ) {
+      setLimitZero(item.item_equipment_slot_name, '해제 2');
     }
-  }, [item.item_equipment_slot_name, item.item_name, isLimit1, setLimit1Zero]);
-
-  useEffect(() => {
-    if (!isLimit2) {
-      setLimit2Zero(item.item_equipment_slot_name);
-    }
-  }, [item.item_equipment_slot_name, isLimit2, setLimit2Zero]);
+  }, [
+    item.item_equipment_slot_name,
+    item.item_name,
+    limitFinished2,
+    setLimitZero,
+  ]);
 
   return (
     <div

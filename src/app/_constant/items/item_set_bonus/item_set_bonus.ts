@@ -1,4 +1,10 @@
-export const itemSetList = ['밀레시안', '아르드리', '오르나', '와드네'];
+export const itemSetList = [
+  '밀레시안',
+  '아르드리',
+  '오르나',
+  '와드네',
+  '에리우',
+];
 export const accessoriesSetList = [
   '황혼의 반지',
   '어둠 반지',
@@ -239,6 +245,86 @@ export const item_set_bonus = [
         stat_bonus: [
           { stat_name: '밸런스', stat_value: 10 },
           { stat_name: '방어력', stat_value: 630 },
+          { stat_name: '힘', stat_value: 155 },
+          { stat_name: '지능', stat_value: 209 },
+          { stat_name: '생명력', stat_value: 490 },
+          { stat_name: '스태미나', stat_value: 10 },
+        ],
+      },
+    ],
+  },
+  {
+    item_name: '에리우',
+    item_set_slot: ['Right Hand', 'Head', 'Upper', 'Lower', 'Hand', 'Leg'],
+    item_set_list: [
+      { name: '에리우 무기', slot: 'Right Hand' },
+      { name: '에리우 머리 방어구', slot: 'Head' },
+      { name: '에리우 가슴 방어구', slot: 'Upper' },
+      { name: '에리우 다리 방어구', slot: 'Lower' },
+      { name: '에리우 손 방어구', slot: 'Hand' },
+      { name: '에리우 발 방어구', slot: 'Leg' },
+    ],
+    item_set_bonus: [
+      {
+        level: 1,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 3 },
+          { stat_name: '방어력', stat_value: 120 },
+          { stat_name: '힘', stat_value: 23 },
+          { stat_name: '지능', stat_value: 32 },
+          { stat_name: '생명력', stat_value: 120 },
+          { stat_name: '스태미나', stat_value: 3 },
+        ],
+      },
+      {
+        level: 2,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 6 },
+          { stat_name: '방어력', stat_value: 240 },
+          { stat_name: '힘', stat_value: 46 },
+          { stat_name: '지능', stat_value: 65 },
+          { stat_name: '생명력', stat_value: 240 },
+          { stat_name: '스태미나', stat_value: 6 },
+        ],
+      },
+      {
+        level: 3,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 7 },
+          { stat_name: '방어력', stat_value: 485 },
+          { stat_name: '힘', stat_value: 95 },
+          { stat_name: '지능', stat_value: 131 },
+          { stat_name: '생명력', stat_value: 370 },
+          { stat_name: '스태미나', stat_value: 5 },
+        ],
+      },
+      {
+        level: 4,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 8 },
+          { stat_name: '방어력', stat_value: 550 },
+          { stat_name: '힘', stat_value: 115 },
+          { stat_name: '지능', stat_value: 158 },
+          { stat_name: '생명력', stat_value: 410 },
+          { stat_name: '스태미나', stat_value: 6 },
+        ],
+      },
+      {
+        level: 5,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 10 },
+          { stat_name: '방어력', stat_value: 615 },
+          { stat_name: '힘', stat_value: 135 },
+          { stat_name: '지능', stat_value: 185 },
+          { stat_name: '생명력', stat_value: 450 },
+          { stat_name: '스태미나', stat_value: 7 },
+        ],
+      },
+      {
+        level: 6,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 12 },
+          { stat_name: '방어력', stat_value: 680 },
           { stat_name: '힘', stat_value: 155 },
           { stat_name: '지능', stat_value: 209 },
           { stat_name: '생명력', stat_value: 490 },

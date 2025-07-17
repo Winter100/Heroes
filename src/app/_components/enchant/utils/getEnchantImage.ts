@@ -1,3 +1,4 @@
+import { ENCHANT_DESTRUCTION_RANK } from '@/app/_constant/enchant';
 import { keyword } from '@/app/_constant/keyword';
 
 const prefix6 = '/images/enchant/prefix6.png';
@@ -12,7 +13,7 @@ export const getEnchantImage = (enchantRank: string, upgreadeType: string) => {
   const isRankValidNumber = !isNaN(rank);
 
   const src =
-    isRankValidNumber && rank <= 6
+    isRankValidNumber && rank <= ENCHANT_DESTRUCTION_RANK
       ? isPrefix
         ? prefix6
         : suffix6

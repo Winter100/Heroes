@@ -39,12 +39,15 @@ const RaidInfoTable = () => {
             <TableCell>{raid.name}</TableCell>
             <TableCell>
               <div className="flex items-center gap-1">
-                <Image
-                  width={30}
-                  height={30}
-                  alt="B"
-                  src={getImageByName(raid.name)}
-                />
+                <div className="h-auto w-5">
+                  <Image
+                    className="h-auto w-full object-cover"
+                    width={30}
+                    height={20}
+                    alt="B"
+                    src={getImageByName(raid.name)}
+                  />
+                </div>
                 <div className="hidden sm:block">{raid.boss_name}</div>
               </div>
             </TableCell>

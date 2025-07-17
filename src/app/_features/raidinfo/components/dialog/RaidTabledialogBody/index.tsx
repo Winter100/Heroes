@@ -28,8 +28,8 @@ const RaidTableDialogBody = ({
     <Tabs defaultValue="entry" className="dark w-full">
       <TabsList className="grid grid-cols-4">
         <TabsTrigger value="entry">빠른 전투</TabsTrigger>
-        <TabsTrigger value="limit">상한</TabsTrigger>
-        <TabsTrigger value="items">보상</TabsTrigger>
+        {limit.length > 1 && <TabsTrigger value="limit">상한</TabsTrigger>}
+        {drop_items.length > 1 && <TabsTrigger value="items">보상</TabsTrigger>}
         {bonus.length > 1 && <TabsTrigger value="bonus">보너스</TabsTrigger>}
       </TabsList>
       <TabsContent value="entry">

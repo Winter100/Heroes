@@ -332,21 +332,21 @@ export const hand_level_options = {
   ['15오르나']: {
     15: [
       { stat_name: '추가피해', stat_value: 750 },
-      { stat_name: '방어력', stat_value: 3833 },
-      { stat_name: '파괴시 방어력', stat_value: 3558 },
+      { stat_name: '방어력', stat_value: 4085 },
+      // { stat_name: '파괴시 방어력', stat_value: 3558 },
       { stat_name: '힘', stat_value: 180 },
       { stat_name: '민첩', stat_value: 90 },
       { stat_name: '지능', stat_value: 243 },
       { stat_name: '의지', stat_value: 80 },
       { stat_name: '최대 생명력', stat_value: 500 },
-      { stat_name: '크리티컬 저항', stat_value: 23 },
+      { stat_name: '크리티컬 저항', stat_value: 26 },
     ],
   },
   ['와드네']: {
     0: [
       { stat_name: '추가피해', stat_value: 750 },
       { stat_name: '방어력', stat_value: 4338 },
-      { stat_name: '파괴시 방어력', stat_value: 3904 },
+      // { stat_name: '파괴시 방어력', stat_value: 3904 },
       { stat_name: '힘', stat_value: 225 },
       { stat_name: '민첩', stat_value: 113 },
       { stat_name: '지능', stat_value: 304 },
@@ -357,7 +357,7 @@ export const hand_level_options = {
     1: [
       { stat_name: '추가피해', stat_value: 780 },
       { stat_name: '방어력', stat_value: 4448 },
-      { stat_name: '파괴시 방어력', stat_value: 4003 },
+      // { stat_name: '파괴시 방어력', stat_value: 4003 },
       { stat_name: '힘', stat_value: 225 },
       { stat_name: '민첩', stat_value: 113 },
       { stat_name: '지능', stat_value: 304 },
@@ -368,7 +368,7 @@ export const hand_level_options = {
     2: [
       { stat_name: '추가피해', stat_value: 810 },
       { stat_name: '방어력', stat_value: 4558 },
-      { stat_name: '파괴시 방어력', stat_value: 4102 },
+      // { stat_name: '파괴시 방어력', stat_value: 4102 },
       { stat_name: '힘', stat_value: 225 },
       { stat_name: '민첩', stat_value: 113 },
       { stat_name: '지능', stat_value: 304 },
@@ -379,7 +379,7 @@ export const hand_level_options = {
     3: [
       { stat_name: '추가피해', stat_value: 840 },
       { stat_name: '방어력', stat_value: 4668 },
-      { stat_name: '파괴시 방어력', stat_value: 4201 },
+      // { stat_name: '파괴시 방어력', stat_value: 4201 },
       { stat_name: '힘', stat_value: 225 },
       { stat_name: '민첩', stat_value: 113 },
       { stat_name: '지능', stat_value: 304 },
@@ -390,7 +390,7 @@ export const hand_level_options = {
     4: [
       { stat_name: '추가피해', stat_value: 870 },
       { stat_name: '방어력', stat_value: 4778 },
-      { stat_name: '파괴시 방어력', stat_value: 4300 },
+      // { stat_name: '파괴시 방어력', stat_value: 4300 },
       { stat_name: '힘', stat_value: 225 },
       { stat_name: '민첩', stat_value: 113 },
       { stat_name: '지능', stat_value: 304 },
@@ -401,7 +401,7 @@ export const hand_level_options = {
     5: [
       { stat_name: '추가피해', stat_value: 900 },
       { stat_name: '방어력', stat_value: 4888 },
-      { stat_name: '파괴시 방어력', stat_value: 4399 },
+      // { stat_name: '파괴시 방어력', stat_value: 4399 },
       { stat_name: '힘', stat_value: 225 },
       { stat_name: '민첩', stat_value: 113 },
       { stat_name: '지능', stat_value: 304 },
