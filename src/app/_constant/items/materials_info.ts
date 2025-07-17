@@ -37,9 +37,11 @@ export const materials_info: BasicItemInfoType[] = [
   },
   {
     item_name: '타리안 강철',
-    item_rating: '레어',
+    item_rating: '고급',
     item_crafting: [],
-    item_description: '',
+    item_description: `신비한 타리안 광석을 오래 공들여 제련한 강철. 강력한 보호의 기운을 내뿜는다.
+    
+    ※ 에리우 장비를 승급할 때 재료로 사용됩니다.`,
   },
   {
     item_name: '[스페셜] 와드네 장비 상자',

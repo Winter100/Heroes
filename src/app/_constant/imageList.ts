@@ -694,6 +694,23 @@ export const imageMap = new Map<string, string>([
     '/images/items/equipment/120/orientalblade-120.png',
   ],
 
+  // 125 에리우네 무기
+  ['에리우 헬름', '/images/items/equipment/125/er-head.png'],
+  ['초급 에리우 헬름', '/images/items/equipment/125/er-head.png'],
+  ['중급 에리우 헬름', '/images/items/equipment/125/er-head.png'],
+  ['고급 에리우 헬름', '/images/items/equipment/125/er-head.png'],
+  ['레어 에리우 헬름', '/images/items/equipment/125/er-head.png'],
+  ['전설 에리우 헬름', '/images/items/equipment/125/er-head.png'],
+
+  ['에리우 무기', '/images/items/equipment/125/er-ri.png'],
+  ['초급 에리우 무기', '/images/items/equipment/125/er-ri.png'],
+
+  ['에리우의 서', '/images/items/equipment/125/er-b.png'],
+  ['에리우 스몰실드', '/images/items/equipment/125/er-ss.png'],
+  ['에리우 라지실드', '/images/items/equipment/125/er-ls.png'],
+  ['에리우 그랜드타지', '/images/items/equipment/125/er-gs.png'],
+  ['에리우 캐스틀릿', '/images/items/equipment/125/er-c.png'],
+
   // 로드
   ['찬탈자의 녹슨 로드', '/images/items/equipment/taros-01.png'],
   ['찬탈자의 로드', '/images/items/equipment/taros-02.png'],
