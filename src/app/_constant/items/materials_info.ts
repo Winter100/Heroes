@@ -36,6 +36,26 @@ export const materials_info: BasicItemInfoType[] = [
       '모르간트의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 모르간트를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
   },
   {
+    item_name: '타리안 강철',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description: '',
+  },
+  {
+    item_name: '[스페셜] 와드네 장비 상자',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description:
+      '획득한 아이템은 모든 거래 가능 (귀속 해제 불가) 속성으로 획득합니다, 획득한 아이템의 연마는 진행 되지 않는 상태로 획득합니다.',
+  },
+  {
+    item_name: '루시안의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
+    item_description:
+      '루시안의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 루시안을 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
+  },
+  {
     item_name: '와드네의 파편: 무기',
     item_rating: '레어',
     item_crafting: ['금속 무기', '세공'],
@@ -43,10 +63,23 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 무기를 제작하거나 와드네 승급석: 무기를 제작할 때 주재료로 사용됩니다.',
   },
   {
+    item_name: '에리우의 파편: 무기',
+    item_rating: '레어',
+    item_crafting: ['금속 무기', '세공'],
+    item_description:
+      '에리우 무기를 제작하거나 에리우 승급석: 무기를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
     item_name: '와드네의 파편: 보조 장비',
     item_rating: '레어',
     item_crafting: ['금속 갑옷', '세공'],
     item_description: '와드네 보조 장비를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우의 파편: 보조 장비',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '세공'],
+    item_description: '에리우 보조 장비를 제작할 때 주재료로 사용됩니다.',
   },
   {
     item_name: '와드네의 파편: 저주의 허리띠',
@@ -85,11 +118,25 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 헬름을 제작하거나 와드네 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
+    item_name: '에리우의 파편: 머리 방어구',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description:
+      '에리우 헬름을 제작하거나 에리우 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
     item_name: '와드네의 파편: 가슴 방어구',
     item_rating: '레어',
     item_crafting: ['금속 갑옷', '재봉'],
     item_description:
       '와드네 메일을 제작하거나 와드네 승급석: 가슴 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우의 파편: 가슴 방어구',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉'],
+    item_description:
+      '에리우 메일을 제작하거나 에리우 승급석: 가슴 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
     item_name: '와드네의 파편: 다리 방어구',
@@ -99,11 +146,25 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 그리브즈를 제작하거나 와드네 승급석: 다리 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
+    item_name: '에리우의 파편: 다리 방어구',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉'],
+    item_description:
+      '에리우 그리브즈를 제작하거나 에리우 승급석: 다리 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
     item_name: '와드네의 파편: 손 방어구',
     item_rating: '레어',
     item_crafting: [],
     item_description:
       '와드네 건틀릿를 제작하거나 와드네 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우의 파편: 손 방어구',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description:
+      '에리우 건틀릿를 제작하거나 에리우 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
     item_name: '와드네의 파편: 발 방어구',
@@ -113,11 +174,25 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 부츠를 제작하거나 와드네 승급석: 발 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
+    item_name: '에리우의 파편: 발 방어구',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description:
+      '에리우 부츠를 제작하거나 에리우 승급석: 발 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
     item_name: '와드네 승급석: 무기',
     item_rating: '중급',
     item_crafting: [],
     item_description:
       '와드네 무기를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우 승급석: 무기',
+    item_rating: '중급',
+    item_crafting: [],
+    item_description:
+      '에리우 무기를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
     item_name: '와드네 승급석: 머리 방어구',
@@ -127,11 +202,25 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 헬름을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
+    item_name: '에리우 승급석: 머리 방어구',
+    item_rating: '중급',
+    item_crafting: [],
+    item_description:
+      '에리우 헬름을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
+  },
+  {
     item_name: '와드네 승급석: 가슴 방어구',
     item_rating: '중급',
     item_crafting: [],
     item_description:
       '와드네 메일을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우 승급석: 가슴 방어구',
+    item_rating: '중급',
+    item_crafting: [],
+    item_description:
+      '에리우 메일을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
     item_name: '와드네 승급석: 다리 방어구',
@@ -141,11 +230,25 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
+    item_name: '에리우 승급석: 다리 방어구',
+    item_rating: '중급',
+    item_crafting: [],
+    item_description:
+      '에리우 그리브즈를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
+  },
+  {
     item_name: '와드네 승급석: 손 방어구',
     item_rating: '중급',
     item_crafting: [],
     item_description:
       '와드네 건틀릿을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우 승급석: 손 방어구',
+    item_rating: '중급',
+    item_crafting: [],
+    item_description:
+      '에리우 건틀릿을 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
     item_name: '와드네 승급석: 발 방어구',
@@ -155,11 +258,25 @@ export const materials_info: BasicItemInfoType[] = [
       '와드네 부츠를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
   },
   {
+    item_name: '에리우 승급석: 발 방어구',
+    item_rating: '중급',
+    item_crafting: [],
+    item_description:
+      '에리우 부츠를 승급할 때 필요한 중요한 재료. 승급 재료로 사용됩니다.',
+  },
+  {
     item_name: '단단한 와드네의 결정',
     item_rating: '레어',
     item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
       '와드네 헬름, 와드네 보조 무기를 제작하거나 와드네 머리 방어구를 승급할 때 보조 재료로 사용됩니다.',
+  },
+  {
+    item_name: '단단한 에리우의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
+    item_description:
+      '에리우 헬름, 에리우 보조 무기를 제작하거나 에리우 머리 방어구를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
     item_name: '매끈한 와드네의 결정',
@@ -187,6 +304,13 @@ export const materials_info: BasicItemInfoType[] = [
     item_crafting: ['금속 무기', '세공'],
     item_description:
       '와드네 무기를 제작하거나 와드네 무기를 승급할 때 보조 재료로 사용됩니다.',
+  },
+  {
+    item_name: '예리한 에리우의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 무기', '세공'],
+    item_description:
+      '에리우 무기를 제작하거나 에리우 무기를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
     item_name: '굳건한 와드네의 결정',

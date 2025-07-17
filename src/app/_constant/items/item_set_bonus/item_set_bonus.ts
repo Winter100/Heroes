@@ -265,8 +265,28 @@ export const item_set_bonus = [
       { name: '에리우 발 방어구', slot: 'Leg' },
     ],
     item_set_bonus: [
-      { level: 1, stat_bonus: [{ stat_name: '밸런스', stat_value: 3 }] },
-      { level: 2, stat_bonus: [{ stat_name: '밸런스', stat_value: 6 }] },
+      {
+        level: 1,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 3 },
+          { stat_name: '방어력', stat_value: 120 },
+          { stat_name: '힘', stat_value: 23 },
+          { stat_name: '지능', stat_value: 32 },
+          { stat_name: '생명력', stat_value: 120 },
+          { stat_name: '스태미나', stat_value: 3 },
+        ],
+      },
+      {
+        level: 2,
+        stat_bonus: [
+          { stat_name: '밸런스', stat_value: 6 },
+          { stat_name: '방어력', stat_value: 240 },
+          { stat_name: '힘', stat_value: 46 },
+          { stat_name: '지능', stat_value: 65 },
+          { stat_name: '생명력', stat_value: 240 },
+          { stat_name: '스태미나', stat_value: 6 },
+        ],
+      },
       {
         level: 3,
         stat_bonus: [

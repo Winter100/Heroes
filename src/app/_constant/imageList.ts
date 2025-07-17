@@ -89,6 +89,8 @@ export const imageMap = new Map<string, string>([
   ['용맹의 상자: 결사대', '/images/items/reward/valor-box.png'],
   ['강림의 상자: 결사대', '/images/items/reward/advent-box.png'],
 
+  ['[스페셜] 와드네 장비 상자', '/images/items/reward/special-box-u.png'],
+
   // 스페셜
   ['스페셜 전투', '/images/monster/special/garden-of-tears.png'],
   [
@@ -431,6 +433,17 @@ export const imageMap = new Map<string, string>([
   ['[금속갑옷] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
   ['[세공] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
   ['[재봉] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
+
+  ['단단한 에리우의 결정', '/images/items/materials/s4/re_hard.png'],
+  ['예리한 에리우의 결정', '/images/items/materials/s4/re_we.png'],
+  ['에리우 승급석: 무기', '/images/items/materials/s4/re_s_w.png'],
+  ['에리우 승급석: 머리 방어구', '/images/items/materials/s4/re_s_h.png'],
+
+  ['루시안의 정수', '/images/items/materials/s4/ru_j.png'],
+  ['에리우의 파편: 머리 방어구', '/images/items/materials/s4/re_h.png'],
+  ['에리우의 파편: 무기', '/images/items/materials/s4/re_rw.png'],
+  ['에리우의 파편: 보조 장비', '/images/items/materials/s4/re_lw.png'],
+  ['타리안 강철', '/images/items/materials/s4/tar.png'],
 
   // 장비
   // 105 액세서리
@@ -805,6 +818,8 @@ export const imageMap = new Map<string, string>([
     '주시자의 완전한 웨어울프의 앞발',
     '/images/items/equipment/werewolf-05.png',
   ],
+
+  ['칠흑빛 고양이 목걸이', '/images/items/equipment/bl-nec.png'],
 
   // 스킬
 
