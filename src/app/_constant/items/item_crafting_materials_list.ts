@@ -1183,6 +1183,30 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
+    item_name: '에리우 승급석: 무기',
+    item_crafting: ['전문기술'],
+    item_category: '재료',
+    item_materials: [
+      { item_name: '에리우의 파편: 무기', item_quantity: 1 },
+      { item_name: '고급 강화의 비약', item_quantity: 20 },
+      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
+      { item_name: '전승의 힘: 파편', item_quantity: 150 },
+      { item_name: '+ 게브네의 강화석', item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: '에리우 승급석: 머리 방어구',
+    item_crafting: ['전문기술'],
+    item_category: '재료',
+    item_materials: [
+      { item_name: '에리우의 파편: 머리 방어구', item_quantity: 1 },
+      { item_name: '고급 강화의 비약', item_quantity: 15 },
+      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
+      { item_name: '전승의 힘: 파편', item_quantity: 150 },
+      { item_name: '게브네의 강화석', item_quantity: 3 },
+    ],
+  },
+  {
     item_name: '와드네 승급석: 무기',
     item_crafting: ['전문기술'],
     item_category: '재료',
@@ -1445,31 +1469,6 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: '골드', item_quantity: 50000 },
       { item_name: '뉴에라의 오브', item_quantity: 1 },
       { item_name: '와드네의 흔적', item_quantity: 1 },
-    ],
-  },
-
-  {
-    item_name: '에리우 승급석: 무기',
-    item_crafting: ['전문기술'],
-    item_category: '재료',
-    item_materials: [
-      { item_name: '에리우의 파편: 무기', item_quantity: 1 },
-      { item_name: '고급 강화의 비약', item_quantity: 20 },
-      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
-      { item_name: '전승의 힘: 파편', item_quantity: 150 },
-      { item_name: '+ 게브네의 강화석', item_quantity: 2 },
-    ],
-  },
-  {
-    item_name: '에리우 승급석: 머리 방어구',
-    item_crafting: ['전문기술'],
-    item_category: '재료',
-    item_materials: [
-      { item_name: '에리우의 파편: 머리 방어구', item_quantity: 1 },
-      { item_name: '고급 강화의 비약', item_quantity: 15 },
-      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
-      { item_name: '전승의 힘: 파편', item_quantity: 150 },
-      { item_name: '게브네의 강화석', item_quantity: 3 },
     ],
   },
 ];

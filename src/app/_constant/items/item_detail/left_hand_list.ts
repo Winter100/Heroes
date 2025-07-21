@@ -330,7 +330,7 @@ export const left_hand_list: ItemType[] = [
         { stat_name: '마법공격력', stat_value: 1910 },
         { stat_name: '크리티컬', stat_value: 13 },
         { stat_name: '공격속도', stat_value: 3 },
-        { stat_name: '방어력', stat_value: 3590 },
+        { stat_name: '방어력', stat_value: 4030 },
         { stat_name: '힘', stat_value: 180 },
         { stat_name: '민첩', stat_value: 90 },
         { stat_name: '지능', stat_value: 243 },

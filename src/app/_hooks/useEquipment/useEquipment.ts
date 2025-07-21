@@ -6,6 +6,7 @@ import { Item_equipment } from '@/app/_type/equipmentType';
 import { bagList } from '@/app/_components/preview/utils/bagList';
 import { getNewTuning } from '@/app/_components/preview/utils/getNewTuning';
 import { usePreviewStore } from '@/app/_store/previewStore';
+// import item from '@/app/_constant/jsonData/items2.json';
 
 export const useEquipment = (ocid: string) => {
   const { data, isLoading, error } = useQuery<Item_equipment>({
@@ -15,6 +16,7 @@ export const useEquipment = (ocid: string) => {
   });
 
   const items = data?.item_equipment;
+  // const items = item.item_equipment;
 
   const b = items?.filter((i) => i.item_equipment_page === 'Bag') ?? [];
   const cash = items?.filter((i) => i.item_equipment_page === 'Cash') ?? [];
