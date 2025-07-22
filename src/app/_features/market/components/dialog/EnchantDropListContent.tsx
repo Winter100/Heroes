@@ -1,7 +1,7 @@
-import { getImageByName } from '@/app/_utils/getImageByName';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 import { DialogClose } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import ImageIcon from '@/app/_components/common/Image-Icon';
 
 interface EnchantDropListContentProps {
   dropList: string[];

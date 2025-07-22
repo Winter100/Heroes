@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Item from '@/app/_components/common/item/Item';
-import { getImageByName } from '@/app/_utils/getImageByName';
 import { SkillDescriptionProps } from '../../types';
 import { getSkillDescription } from '../../utils/getSkillDescription';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const SkillDescription = ({ skillName, jobName }: SkillDescriptionProps) => {
   return (

@@ -1,14 +1,14 @@
 'use client';
 import { memo } from 'react';
-import Thead from '@/app/_components/table/Thead';
-import TrItem from '@/app/_components/enchant/TrItem';
 import { useEnchantRankTable } from '../hooks/useEnchantRankTable';
 import { EnchantRankTableProps } from '../types';
 import Enchant404 from './Enchant404';
+import Thead from '@/app/_components/table/Thead';
 import Tbody from '@/app/_components/table/Tbody';
-import { getEnchantImage } from '@/app/_components/enchant/utils/getEnchantImage';
+import { getEnchantImage } from '@/app/_utils/enchant/utils/getEnchantImage';
 import { EnchantStoreType } from '@/app/_type/enchantStoreType';
 import { cn } from '@/lib/utils';
+import TrItem from './TrItem';
 
 const EnchantRankTable = memo(
   ({ enchantData, className }: EnchantRankTableProps) => {
@@ -27,6 +27,7 @@ const EnchantRankTable = memo(
       if (isSelected) return resetSelectEnchant();
       setEnchant(enchant);
     };
+    // Table 폴더 없애고 shadcn으로 바꾸기.
 
     return (
       <div className={cn('', className)}>

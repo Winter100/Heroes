@@ -1,4 +1,3 @@
-import { getImageByName } from '@/app/_utils/getImageByName';
 import { addRewardIcon } from '../../utils/addRewardIcon';
 import { RaidTableDialogHeaderProps } from '../../types';
 import {
@@ -6,7 +5,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import ImageIcon from '@/app/_components/common/Image-Icon';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const RaidTableDialogHeader = ({
   basic_reward,

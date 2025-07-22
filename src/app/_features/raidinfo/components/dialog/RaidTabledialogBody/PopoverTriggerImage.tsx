@@ -1,4 +1,4 @@
-import ImageIcon from '@/app/_components/common/Image-Icon';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
 import { Drop_items } from '../../../types';
 import { getImageByFilter } from '../../../utils/getImageByFilter';
 

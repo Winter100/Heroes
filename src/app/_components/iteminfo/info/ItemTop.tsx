@@ -3,8 +3,8 @@ import Row from '../../layout/Row';
 import Column from '../../layout/Column';
 import { formatStringArray } from '@/app/_utils/formatStringArray';
 import { Item_Rating } from '@/app/_type/infoInfoType';
-import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
-import ImageIconUseBorder from '../../common/ImageIconUseBorder';
+import ImageIconUseBorder from '../../common/image/ImageIconUseBorder';
+import { getTooltipImageSrc } from '@/app/_utils/get/getTooltipImageSrc';
 
 interface ItemTopProps {
   name: string;

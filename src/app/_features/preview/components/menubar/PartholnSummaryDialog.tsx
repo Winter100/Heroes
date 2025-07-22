@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import PartholnContent from './partholn';
-import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
 
 const PartholnSummaryDialog = () => {
   return (

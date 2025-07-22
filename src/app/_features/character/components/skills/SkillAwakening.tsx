@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { getImageByName } from '@/app/_utils/getImageByName';
 import {
   Table,
   TableBody,
@@ -10,6 +8,8 @@ import {
 } from '@/components/ui/table';
 import { SkillAwakeningProps } from '../../types';
 import SkillPopover from './SkillPopover';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
+import Image from 'next/image';
 
 const SkillAwakening = ({
   itemName,

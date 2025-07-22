@@ -1,4 +1,4 @@
-import ImageIcon from './Image-Icon';
+import ImageIcon from './image/Image-Icon';
 
 interface IngredientItemProps {
   name: string;

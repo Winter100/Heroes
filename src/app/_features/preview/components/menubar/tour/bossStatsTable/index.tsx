@@ -13,8 +13,8 @@ import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
 import CalculatorStat from './CalculatorStat';
 import { filterStats } from '@/app/_features/preview/utils/filterStats';
 import { TableProps } from '@/app/_features/preview/types';
-import { getImageByName } from '@/app/_utils/getImageByName';
-import ImageIcon from '@/app/_components/common/Image-Icon';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const BossStatsTable = ({ boss, filter }: TableProps) => {
   const userStats = usePreviewStore((state) => state.previewAllStats);

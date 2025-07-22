@@ -5,10 +5,10 @@ import {
   ItemInfoQuipmentProps,
   NewEquipmentType,
 } from '../_type/equipmentType';
-import { convertInfoStat } from '../_utils/convertInfoStats';
-import { splitStringAndNumber } from '../_components/preview/utils/splitStringAndNumber';
+import { convertInfoStat } from '../_utils/convert/convertInfoStats';
+import { splitStringAndNumber } from '../_utils/preview/splitStringAndNumber';
 import { getItemInfoOptions } from '../_features/preview/utils/getItemInfoOptions';
-import { PARTHOLN } from '../_features/preview/components/constant';
+import { PARTHOLN } from '../_features/preview/components/menubar/partholn/PartholnList';
 
 type State = {
   info: ItemInfoQuipmentProps[];

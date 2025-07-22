@@ -1,15 +1,13 @@
-import { useEnchantTable } from '@/app/_hooks/useEnchantTable/useEnchantTable';
 import { useEffect, useMemo, useRef } from 'react';
 
-import {
-  EnchantStoreType,
-  useSelectEnchantStore,
-} from '@/app/_store/selectEnchantStore';
 import { EnchantKeyType, EnchantRankTableProps } from '@/app/_type/enchantType';
-import { useSortKey } from '@/app/_hooks/useSortKey/useSortKey';
-import { mergeEnchantData } from '@/app/_components/enchant/utils/mergeEnchantData';
-import { sortedEnchantData } from '@/app/_components/enchant/utils/sortedEnchantData';
+import { useSortKey } from '@/app/_hooks/useSortKey';
+import { mergeEnchantData } from '@/app/_utils/enchant/utils/mergeEnchantData';
+import { sortedEnchantData } from '@/app/_utils/enchant/utils/sortedEnchantData';
 import { useEnchantFilterStore } from '../store/enchantFilterStore';
+import { useEnchantTable } from '@/app/_hooks/useEnchantTable';
+import { useSelectEnchantStore } from '@/app/_store/selectEnchantStore';
+import { EnchantStoreType } from '@/app/_type/enchantStoreType';
 
 export const useEnchantRankTable = ({ enchantData }: EnchantRankTableProps) => {
   const { mergedEnchantPriceList, isLoading } = useEnchantTable();

@@ -1,7 +1,7 @@
 'use client';
 import { usePreviewStore } from '@/app/_store/previewStore';
 import { useAbilityStore } from '@/app/_store/abilityStore';
-import { getMaterials } from '@/app/_components/preview/utils/getMaterials';
+import { getMaterials } from '@/app/_utils/preview/getMaterials';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import GrindingResult from './GrindingResult';
 

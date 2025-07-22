@@ -1,4 +1,3 @@
-import { getImageByName } from '@/app/_utils/getImageByName';
 import {
   Popover,
   PopoverContent,
@@ -8,6 +7,7 @@ import Image from 'next/image';
 import { extractValue } from '../../utils/extractValue';
 import { SkillPopoverProps } from '../../types';
 import SkillDescription from './SkillDescription';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const SkillPopover = ({ jobName, skill: s }: SkillPopoverProps) => {
   return (

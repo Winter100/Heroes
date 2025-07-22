@@ -1,13 +1,13 @@
 'use client';
 import { itemInfoMap } from '@/app/_constant/items/item_map';
 import { ItemInfoQuipmentProps } from '@/app/_type/equipmentType';
-import { convertItemNameBySlot } from '../iteminfo/util/convertItemNameBySlot';
+import { convertItemNameBySlot } from '../../_utils/iteminfo/convertItemNameBySlot';
 import ItemInfo from '../iteminfo/info/ItemInfo';
 import { memo } from 'react';
 import { getItemInfoOptions } from '@/app/_features/preview/utils/getItemInfoOptions';
 import { oneGrinding } from '@/app/_constant/grinding';
-import { craftingStatsMerge } from '../iteminfo/util/craftingStatsMerge';
-import { getGradeValue } from '@/app/_utils/getStatsByLevel';
+import { craftingStatsMerge } from '../../_utils/iteminfo/craftingStatsMerge';
+import { getGradeValue } from '@/app/_utils/get/getStatsByLevel';
 
 const ItemTooltip = memo(
   ({

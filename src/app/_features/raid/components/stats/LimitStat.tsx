@@ -1,6 +1,6 @@
 import { useRankStore } from '@/app/_store/rankStore';
 import { useCharacterStore } from '../../store/characterStore';
-import { limitCalculator } from '@/app/_components/raid/utils/limitCalculator';
+import { limitCalculator } from '@/app/_utils/raid/limitCalculator';
 import { LimitStatProps } from '../../types';
 
 const LimitStat = (props: LimitStatProps) => {

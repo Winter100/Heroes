@@ -1,4 +1,4 @@
-import { getImageByName } from '@/app/_utils/getImageByName';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { memo } from 'react';

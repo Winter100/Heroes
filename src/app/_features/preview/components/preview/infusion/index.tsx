@@ -1,6 +1,4 @@
-import ItemTitle from '@/app/_components/common/ItemTitle';
 import { InfusionsDialogProps } from '@/app/_type/infusionType';
-
 import {
   Dialog,
   DialogContent,
@@ -10,7 +8,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { ChevronDown } from 'lucide-react';
-import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
 import { Button } from '@/components/ui/button';
 import InfusionTabsItem from './InfusionTabsItem';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -49,11 +47,9 @@ const InfusionsDialog = ({
       >
         <DialogHeader>
           <DialogTitle>
-            <ItemTitle
-              className="text-sm font-medium text-white"
-              level={level}
-              name={name}
-            />
+            <div className="text-sm font-medium text-white">
+              <p>{`${level} ${name}`}</p>
+            </div>
           </DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>

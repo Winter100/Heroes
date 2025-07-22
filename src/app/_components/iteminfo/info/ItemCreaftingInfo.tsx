@@ -1,8 +1,7 @@
 import { memo } from 'react';
 import { ItemType } from '@/app/_type/infoInfoType';
 import { formatStringArray } from '@/app/_utils/formatStringArray';
-import { getImageByName } from '@/app/_utils/getImageByName';
-import { getGradeValue } from '@/app/_utils/getStatsByLevel';
+
 import { oneGrinding } from '@/app/_constant/grinding';
 import Item from '../../common/item/Item';
 import Row from '../../layout/Row';
@@ -12,8 +11,10 @@ import Itemrestrictions from './Itemrestrictions';
 import ItemQuality from './ItemQuality';
 import InfoGrindingList from '../grinding/InfoGrindingList';
 import ItemSet from './ItemSet';
-import ImageIconUseBorder from '../../common/ImageIconUseBorder';
-import { craftingStatsMerge } from '../util/craftingStatsMerge';
+import { craftingStatsMerge } from '../../../_utils/iteminfo/craftingStatsMerge';
+import ImageIconUseBorder from '../../common/image/ImageIconUseBorder';
+import { getGradeValue } from '@/app/_utils/get/getStatsByLevel';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const ItemCreaftingInfo = memo(
   ({

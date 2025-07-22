@@ -1,8 +1,7 @@
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import ItemTitle from '@/app/_components/common/ItemTitle';
-import Ability from '@/app/_components/preview/ability/Ability';
 import IngredientItem from '@/app/_components/common/IngredientItem';
-import GrindingChangeList from '@/app/_components/common/GrindingChangeList';
+import GrindingChangeList from '@/app/_features/preview/components/menubar/grinding/GrindingChangeList';
+import Ability from './Ability';
 
 interface GrindingProps {
   grindingItems: NewEquipmentType[];
@@ -21,11 +20,9 @@ const GrindingResult = ({ grindingItems, materialsArray }: GrindingProps) => {
           {grindingItems?.map((item) => (
             <li className="rounded-lg bg-background p-2" key={item.item_name}>
               <div className="flex flex-col gap-1">
-                <ItemTitle
-                  className="text-sm font-medium text-white"
-                  level={item?.item_option?.enhancement_level ?? ''}
-                  name={item?.item_name}
-                />
+                <div className="flex items-center justify-center text-sm font-medium text-white">
+                  <p>{`${item?.item_option?.enhancement_level ?? ''} ${item?.item_name}`}</p>
+                </div>
                 <div className="flex h-8 items-center justify-center">
                   {!!item.item_option.ability_name && <Ability item={item} />}
                 </div>

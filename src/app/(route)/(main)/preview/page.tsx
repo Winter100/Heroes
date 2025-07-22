@@ -1,9 +1,9 @@
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import CharacterSearchInput from '@/app/_components/CharacterSearchInput';
+import CharacterSearchInput from '@/app/_components/common/CharacterSearchInput';
 import { PreviewBody, PreviewLayout } from '@/app/_features/preview';
 import { Suspense } from 'react';
 import Loading from '@/app/_components/common/Loading';
 import SideAd from '@/app/_components/adsense/SideAd';
+import AutoAd from '@/app/_components/adsense/AutoAd';
 
 const Page = () => {
   return (
@@ -11,12 +11,11 @@ const Page = () => {
       <SideAd dataSlot="2056348937" position="left" />
       <Suspense fallback={<Loading />}>
         <div className="flex flex-1 flex-col gap-2 p-2">
-          <RoundedContainer className="flex h-14 items-center justify-center">
-            <CharacterSearchInput
-              className="w-full max-w-72"
-              routeName="preview"
-            />
-          </RoundedContainer>
+          <AutoAd dataSlot="9712379035" className="h-40" />
+          <CharacterSearchInput
+            className="mx-auto w-full max-w-72"
+            routeName="preview"
+          />
           <PreviewLayout>
             <PreviewBody />
           </PreviewLayout>

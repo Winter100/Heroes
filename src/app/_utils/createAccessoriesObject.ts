@@ -1,4 +1,4 @@
-import { calculateAccessoriesStats } from '../_components/iteminfo/util/calculateAccessoriesStats';
+import { calculateAccessoriesStats } from './iteminfo/calculateAccessoriesStats';
 
 type StatItem = {
   stat_name: string;

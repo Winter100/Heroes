@@ -1,6 +1,6 @@
-import { getImageByName } from '@/app/_utils/getImageByName';
 import Image from 'next/image';
 import { PrivewProps } from '../../../types';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const Preview = ({ pastedImage }: PrivewProps) => {
   return (

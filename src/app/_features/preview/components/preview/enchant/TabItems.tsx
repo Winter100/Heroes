@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { getEnchantAvgPrice } from '@/app/_components/enchant/utils/getEnchantAvgPrice';
+import { getEnchantAvgPrice } from '@/app/_utils/enchant/utils/getEnchantAvgPrice';
 import { usePreviewStore } from '@/app/_store/previewStore';
 import { TabItemsProps } from '../../../types';
 import TabEnchantDescription from './TabEnchantDescription';
@@ -7,9 +7,9 @@ import TabEnchantPrice from './TabEnchantPrice';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ITEM_ANIMATION } from '../../../constant';
 import EnchantEffects from '@/app/_components/common/enchant/EnchantEffects';
-import ImageIcon from '@/app/_components/common/Image-Icon';
-import { getEnchantImage } from '@/app/_components/enchant/utils/getEnchantImage';
+import { getEnchantImage } from '@/app/_utils/enchant/utils/getEnchantImage';
 import { ENCHANT_DESTRUCTION_RANK } from '@/app/_constant/enchant';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
 
 const TabItems = ({
   data,

@@ -1,13 +1,13 @@
 import React, { memo, useMemo } from 'react';
-import { getTooltipImageSrc } from '@/app/_utils/getTooltipImageSrc';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
 import ItemTooltipByType from '@/app/_components/tooltip/ItemTooltipByType';
-import ImageIconUseBorder from '@/app/_components/common/ImageIconUseBorder';
 import { cn } from '@/lib/utils';
+import ImageIconUseBorder from '../image/ImageIconUseBorder';
+import { getTooltipImageSrc } from '@/app/_utils/get/getTooltipImageSrc';
 
 interface PopOverImageProps {
   item_name: string;

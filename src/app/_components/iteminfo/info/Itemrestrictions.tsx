@@ -1,6 +1,6 @@
+import ImageIcon from '../../common/image/Image-Icon';
 import Item from '../../common/item/Item';
 import { formatStringArray } from '@/app/_utils/formatStringArray';
-import ImageIcon from '../../common/Image-Icon';
 
 const Itemrestrictions = ({ restrictions }: { restrictions: string[] }) => {
   return (

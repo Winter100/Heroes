@@ -1,5 +1,4 @@
 import ItemPrviewImage from '@/app/_components/iteminfo/info/ItemPrviewImage';
-import ItemTooltip from '@/app/_components/tooltip/ItemTooltip';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import {
   Popover,
@@ -7,6 +6,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import ItemPreivewInfo from '../item/ItemPreivewInfo';
+import ItemTooltip from '@/app/_components/tooltip/ItemTooltip';
 
 const ItemPopover = ({ ...item }: NewEquipmentType) => {
   return (
@@ -25,7 +25,7 @@ const ItemPopover = ({ ...item }: NewEquipmentType) => {
         </div>
       </PopoverTrigger>
       <PopoverContent className="dark w-[350px] p-1">
-        <ItemTooltip isItemInfo={true} itemName={item.item_name} {...item} />
+        <ItemTooltip itemName={item.item_name} {...item} />
       </PopoverContent>
     </Popover>
   );

@@ -1,9 +1,9 @@
 import { usePreviewStore } from '@/app/_store/previewStore';
-import { getItemSetOptions } from '../util/getItemSetOptions';
+import { getItemSetOptions } from '../../../_utils/iteminfo/getItemSetOptions';
 import Item from '../../common/item/Item';
 import { useQuery } from '@tanstack/react-query';
 import { getEquipment } from '@/app/_services/getEquipment';
-import { useOcid } from '@/app/_hooks/useOcid/useOcid';
+import { useOcid } from '@/app/_hooks/useOcid';
 import { Item_equipment } from '@/app/_type/equipmentType';
 import Loading from '../../common/Loading';
 import { cn } from '@/lib/utils';

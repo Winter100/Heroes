@@ -1,11 +1,11 @@
-import { convertToKST } from '@/app/_utils/convertToKST';
+import { convertToKST } from '@/app/_utils/convert/convertToKST';
 import { cn } from '@/lib/utils';
 import { Calendar, Clock, SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
 import {
   getRemainingTime,
   getYearMonthDay,
-} from '@/app/_components/preview/utils/dateEvent';
+} from '@/app/_utils/preview/dateEvent';
 import { BasicNoticeItemProps } from '../../types';
 import { useEventNoticeDateStore } from '../../store/noticeEventStore';
 

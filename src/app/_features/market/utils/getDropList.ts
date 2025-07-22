@@ -1,4 +1,4 @@
-import { insertUpgradeType } from '@/app/_components/enchant/utils/insertUpgradeType';
+import { insertUpgradeType } from '@/app/_utils/enchant/utils/insertUpgradeType';
 import {
   prefix_enchant_options,
   suffix_enchant_options,

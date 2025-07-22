@@ -1,8 +1,13 @@
 'use client';
 
 import clsx from 'clsx';
-import { FILTER_VALUES } from '../constant';
 import { CraftingProps } from './CraftingInfo';
+
+const FILTER_VALUES = [
+  { value: '장비' },
+  { value: '소모품' },
+  { value: '재료' },
+];
 
 const CraftingFilterBtnList = ({ filterValue, setFilter }: CraftingProps) => {
   return (

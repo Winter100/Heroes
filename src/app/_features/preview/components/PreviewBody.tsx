@@ -1,7 +1,7 @@
 'use client';
 
-import { useCharacterData } from '@/app/_hooks/useCharacterData/useCharacterData';
-import { useEnchantPriceList } from '@/app/_hooks/useEnchantPriceList/useEnchantPriceList';
+import { useCharacterData } from '@/app/_hooks/useCharacterData';
+import { useEnchantPriceList } from '@/app/_hooks/useEnchantPriceList';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import Loading from '@/app/_components/common/Loading';
 import Row from '@/app/_components/layout/Row';
@@ -14,8 +14,8 @@ import {
 import Column from '@/app/_components/layout/Column';
 import PreivewList from './preview/PreivewList';
 import PreviewTitle from './preview/PreviewTitle';
-import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
-import EnchantTotalPrice from '@/app/_components/enchant/EnchantTotalPrice';
+import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
+import EnchantTotalPrice from '@/app/_features/preview/components/EnchantTotalPrice';
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();

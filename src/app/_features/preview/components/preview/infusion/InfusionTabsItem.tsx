@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { InfusionTabsItemProps } from '../../../types';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ITEM_ANIMATION } from '../../../constant';
-import ImageIcon from '@/app/_components/common/Image-Icon';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
 
 const InfusionTabsItem = ({
   data,

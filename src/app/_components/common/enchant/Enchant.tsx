@@ -1,17 +1,17 @@
 import Item from '../item/Item';
 import Row from '../../layout/Row';
 import Column from '../../layout/Column';
-import ImageIcon from '../Image-Icon';
 import EnchantIsDestruction from './EnchantIsDestruction';
 import EnchantBrin from './EnchantBrin';
 import EnchantEffects from './EnchantEffects';
 import { Stat } from '@/app/_type/previewType';
-import { getEnchantImage } from '../../enchant/utils/getEnchantImage';
+import { getEnchantImage } from '../../../_utils/enchant/utils/getEnchantImage';
 import { cn } from '@/lib/utils';
 import { ComponentProps } from 'react';
-import { convertToKST } from '@/app/_utils/convertToKST';
-import { findEnchantNames } from '../../enchant/utils/findEnchantNames';
-import { slotNames } from '../../enchant/utils/getSlotName';
+import { convertToKST } from '@/app/_utils/convert/convertToKST';
+import { findEnchantNames } from '../../../_utils/enchant/utils/findEnchantNames';
+import { slotNames } from '../../../_utils/enchant/utils/getSlotName';
+import ImageIcon from '../image/Image-Icon';
 
 interface EnchantProps extends ComponentProps<'div'> {
   name: string;

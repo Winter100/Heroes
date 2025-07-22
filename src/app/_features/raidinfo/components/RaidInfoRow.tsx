@@ -1,9 +1,9 @@
-import ImageIcon from '@/app/_components/common/Image-Icon';
-import { getImageByName } from '@/app/_utils/getImageByName';
 import { TableCell, TableRow } from '@/components/ui/table';
 import RaidTableDialog from './dialog/RaidTableDialog';
 import { ZoomIn } from 'lucide-react';
 import { RaidTableDialogProps } from '../types';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 interface RaidInfoRowProps {
   raid: RaidTableDialogProps;

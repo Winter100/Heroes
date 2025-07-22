@@ -1,7 +1,7 @@
 import { MonsterItemProps } from '@/app/_features/preview/types';
-import { getImageByName } from '@/app/_utils/getImageByName';
 import BossStatsTable from './bossStatsTable';
-import ImageIcon from '@/app/_components/common/Image-Icon';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const MonsterItem = ({ filter, name, raid }: MonsterItemProps) => {
   return (
