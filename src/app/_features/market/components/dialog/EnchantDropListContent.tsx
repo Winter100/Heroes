@@ -32,7 +32,7 @@ const EnchantDropListContent = ({
           >
             <div title={name}>
               <ImageIcon
-                className="h-10 w-10"
+                className="h-7 w-7"
                 src={getImageByName(name)}
                 alt={name}
               />

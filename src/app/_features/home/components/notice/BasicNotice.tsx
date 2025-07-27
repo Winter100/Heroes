@@ -7,6 +7,22 @@ import { BasicNoticeProps } from '../../types';
 import { usePagination } from '../../hooks/usePagination';
 import { sortEventsByDate } from '../../utils/sortEventsByDate';
 import NoticeItemRenderer from './NoticeItemRenderer';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { BookText, BookUser, Calendar, Clock } from 'lucide-react';
+
+const eventTable = [
+  { title: '이벤트', icon: BookText, haedClassName: 'w-2/5' },
+  { title: '기간', icon: Calendar, haedClassName: '' },
+  { title: '남은 기간', icon: Clock, haedClassName: 'w-1/6' },
+  { title: '자세히', icon: BookUser, haedClassName: 'w-1/7 md:w-1/6' },
+];
 
 const BasicNotice = ({
   items,
@@ -43,21 +59,45 @@ const BasicNotice = ({
           </div>
         ) : (
           <>
-            <ul
-              className={cn(
-                'gap-2 p-2 text-sm',
-                isBasicEvent && 'flex flex-col',
-                !isBasicEvent && 'grid grid-cols-2 grid-rows-3 md:grid-cols-3'
-              )}
-            >
-              {eventList?.map((item) => (
-                <NoticeItemRenderer
-                  key={item.notice_id}
-                  item={item}
-                  isBasicEvent={isBasicEvent}
-                />
-              ))}
-            </ul>
+            {isBasicEvent ? (
+              <ul className={cn('flex flex-col gap-2 p-2 text-sm')}>
+                {eventList?.map((item) => (
+                  <NoticeItemRenderer
+                    key={item.notice_id}
+                    item={item}
+                    isBasicEvent={isBasicEvent}
+                  />
+                ))}
+              </ul>
+            ) : (
+              <Table className="caption-top">
+                <TableCaption></TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    {eventTable.map((table) => (
+                      <TableHead
+                        key={table.title}
+                        className={cn('text-inherit', table.haedClassName)}
+                      >
+                        <div className="flex flex-row items-center justify-center gap-2">
+                          {table.icon && <table.icon size={15} />}
+                          <p className="hidden md:block">{table.title}</p>
+                        </div>
+                      </TableHead>
+                    ))}
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {eventList?.map((item) => (
+                    <NoticeItemRenderer
+                      key={item.notice_id}
+                      item={item}
+                      isBasicEvent={isBasicEvent}
+                    />
+                  ))}
+                </TableBody>
+              </Table>
+            )}
             <NoticePagination
               handlePrevPage={handlePrevPage}
               handleNextPage={handleNextPage}

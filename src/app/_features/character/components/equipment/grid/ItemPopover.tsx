@@ -1,4 +1,3 @@
-import ItemPrviewImage from '@/app/_components/iteminfo/info/ItemPrviewImage';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import {
   Popover,
@@ -7,16 +6,22 @@ import {
 } from '@/components/ui/popover';
 import ItemPreivewInfo from '../item/ItemPreivewInfo';
 import ItemTooltip from '@/app/_components/tooltip/ItemTooltip';
+import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';
+import { getTooltipImageSrc } from '@/app/_utils/get/getTooltipImageSrc';
 
 const ItemPopover = ({ ...item }: NewEquipmentType) => {
+  const src = getTooltipImageSrc(item.item_name, item.item_equipment_slot_name);
+
   return (
     <Popover>
       <PopoverTrigger className="h-full w-full">
         <div className="flex h-full w-full flex-col p-1 hover:bg-muted/70 sm:flex-row">
           <div className="mx-auto flex w-12 items-center justify-center">
-            <ItemPrviewImage
-              materials={item.item_name}
-              slot={item.item_equipment_slot_name}
+            <ImageIconUseBorder
+              className="h-9 w-9"
+              src={src}
+              itemName={item.item_name}
+              isRatingBorder={true}
             />
           </div>
           <div className="flex w-full items-center gap-0.5 text-xs">

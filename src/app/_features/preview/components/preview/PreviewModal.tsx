@@ -57,13 +57,13 @@ const PreviewModal = memo(
       <div className="h-full w-full">
         {upgreadeType === 'infusions' ? (
           <InfusionsDialog
-            infusionList={usableItemList}
             items={itemName}
             label={selectedName ?? preName}
             selectedValue={
               selectedName !== undefined ? selectedName : (existing.name ?? '')
             }
             selectedHandler={selectedHandler}
+            infusionList={usableItemList}
           />
         ) : (
           <EnchantChangeDialog

@@ -11,7 +11,7 @@ import {
 import PartholnTableRows from './PartholnTableBody';
 
 export const PARTHOLN = 'partholn';
-export const PARTHOLN_TITLE = [
+const PARTHOLN_TITLE = [
   '단계',
   '스태미나',
   '공격력',

@@ -92,7 +92,7 @@ const TabItems = ({
                   </div>
                 </div>
 
-                <div className="gap-1 text-xs">
+                <div className="gap-1 p-1 text-xs">
                   <EnchantEffects effects={enchant.stat_value} />
                 </div>
               </div>

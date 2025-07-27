@@ -20,7 +20,7 @@ const RaidInfoRow = (props: RaidInfoRowProps) => {
   const goldValue = Number(
     reward?.find((reward) => reward.name === '골드')?.value
   );
-  const rewardGold = isNaN(goldValue) ? '' : goldValue.toString();
+  const rewardGold = isNaN(goldValue) ? '' : goldValue.toLocaleString();
 
   return (
     <TableRow className="rounded-md border-b hover:text-white">

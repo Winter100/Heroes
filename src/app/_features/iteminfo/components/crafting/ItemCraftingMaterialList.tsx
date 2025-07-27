@@ -21,10 +21,11 @@ const ItemCraftingMaterialList = memo(
                 <PopOverItem
                   className="w-full"
                   category={category || ''}
+                  isColorName={true}
                   itemName={item.item_name}
                 />
                 <div className="flex items-center">
-                  <div className="w-4">x</div>
+                  <div className="w-3">x</div>
                   <div className="flex items-center">
                     <CraftingQuantity item_quantity={item.item_quantity} />
                   </div>

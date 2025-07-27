@@ -25,27 +25,32 @@ const EnchantInformation = () => {
   const { dropRaidOrItemName, setDropRaidOrItemName } = useEnchantFilterStore();
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col gap-2 lg:flex-row">
-      <div className="w-full lg:max-w-lg">
-        <EnchantRankTable
-          className="fixed-scrollbar h-96 overflow-x-hidden overflow-y-scroll md:h-[750px]"
-          enchantData={allEnchantList}
-        />
-        <EnchantTableInputFilter
-          inputRef={inputRef}
-          onReset={onReset}
-          onSearch={onSearch}
-        />
-      </div>
+    <div className="mx-auto flex flex-col gap-2 lg:flex-row">
       <div className="w-full">
+        <div className="mb-1">
+          <EnchantTableInputFilter
+            inputRef={inputRef}
+            onReset={onReset}
+            onSearch={onSearch}
+          />
+        </div>
+        <div className="max-h-96 w-full overflow-y-scroll border lg:h-full lg:max-h-[700px]">
+          <EnchantRankTable enchantData={allEnchantList} />
+        </div>
+      </div>
+      <div className="w-full lg:max-w-sm">
         {selectEnchant && (
           <div className="flex h-full flex-col gap-2">
-            <EnchantDropList
-              dropList={selectEnchant.drop_item_list}
-              dropRaidOrItemName={dropRaidOrItemName}
-              setDropRaidOrItemName={setDropRaidOrItemName}
-            />
+            <div className="h-full max-h-72 overflow-y-auto">
+              <EnchantDropList
+                dropList={selectEnchant.drop_item_list}
+                dropRaidOrItemName={dropRaidOrItemName}
+                setDropRaidOrItemName={setDropRaidOrItemName}
+              />
+            </div>
+
             <Enchant
+              className="rounded-md border"
               name={selectEnchant.name}
               average_price={selectEnchant.average_price}
               date_update={selectEnchant.date_update}

@@ -14,14 +14,14 @@ const EnchantDropList = ({
 }: EnchantDropListProps) => {
   if (dropList?.length === 0 || !dropList) {
     return (
-      <div className="flex flex-1 items-center justify-center rounded-md border border-muted p-2 font-sans text-sm font-light text-white">
+      <div className="flex h-full flex-1 items-center justify-center rounded-md border border-muted p-2 font-sans text-sm font-light text-white">
         추가 예정
       </div>
     );
   }
 
   return (
-    <ul className="grid h-full max-h-56 w-full flex-1 grid-cols-3 gap-1 overflow-y-auto rounded-md border border-muted p-1 text-sm text-white">
+    <ul className="grid h-full w-full flex-1 grid-cols-3 gap-1 rounded-md border border-muted p-1 text-sm text-white">
       {dropList?.sort().map((name: string) => (
         <li
           onClick={() => setDropRaidOrItemName(name)}
@@ -34,7 +34,7 @@ const EnchantDropList = ({
           key={name}
         >
           <ImageIcon
-            className="h-10 w-10"
+            className="h-7 w-7"
             src={getImageByName(name)}
             alt={name}
           />

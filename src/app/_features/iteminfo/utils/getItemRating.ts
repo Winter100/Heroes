@@ -10,14 +10,14 @@ export const getItemOrMaterialsRating = (
     : getMaterialsRating(itemName);
 };
 
-export const getItemRating = (item: string): Item_Rating | null => {
+const getItemRating = (item: string): Item_Rating | null => {
   const rating = itemInfoMap?.get(item)?.rating;
   if (!rating) return null;
 
   return rating;
 };
 
-export const getMaterialsRating = (item: string): Item_Rating | null => {
+const getMaterialsRating = (item: string): Item_Rating | null => {
   const rating = materialsMap?.get(item)?.item_rating;
   if (!rating) return null;
   return rating;

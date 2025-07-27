@@ -39,7 +39,11 @@ const MaterialsCrafting = ({
       {itemName && (
         <>
           <div className="flex items-center justify-center">
-            <PopOverItem category={category} itemName={itemName} />
+            <PopOverItem
+              category={category}
+              itemName={itemName}
+              isColorName={true}
+            />
           </div>
           <Item.Border />
 

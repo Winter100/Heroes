@@ -16,7 +16,7 @@ const CraftingItemList = ({
   setItemName,
 }: CraftingItemListProps) => {
   return (
-    <ul className="flex h-[300px] w-full flex-col gap-1 overflow-y-auto md:h-[800px]">
+    <ul className="flex h-[300px] w-full flex-col gap-1 overflow-y-auto lg:h-[800px]">
       {item_crafting_materials_list
         .filter(
           (crafting) =>

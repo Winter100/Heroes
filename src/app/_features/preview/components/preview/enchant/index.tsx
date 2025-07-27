@@ -48,7 +48,10 @@ const EnchantChangeDialog = memo(
             {!label && <ChevronDown className="text-fontColor" size={15} />}
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]">
+        <DialogContent
+          autoFocus={false}
+          className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]"
+        >
           <DialogHeader>
             <DialogTitle>
               <div className="text-sm font-medium text-white">
@@ -57,7 +60,9 @@ const EnchantChangeDialog = memo(
             </DialogTitle>
             <DialogDescription></DialogDescription>
           </DialogHeader>
+
           <SearchInput
+            autoFocus={false}
             className="dark pl-8"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
