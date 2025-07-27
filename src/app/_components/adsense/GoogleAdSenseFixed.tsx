@@ -1,15 +1,18 @@
 'use client';
+
 import { useEffect } from 'react';
 
-type GoogleAdSenseAutoTypes = {
+interface Props {
   pid: string;
   dataSlot: string;
-};
+  width: string;
+  height: string;
+}
 
-const GoogleAdSenseAuto = ({ dataSlot, pid }: GoogleAdSenseAutoTypes) => {
+const GoogleAdSenseFixed = ({ pid, dataSlot, width, height }: Props) => {
   useEffect(() => {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
     try {
+      /* eslint-disable @typescript-eslint/no-explicit-any */
       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
         {}
       );
@@ -23,13 +26,15 @@ const GoogleAdSenseAuto = ({ dataSlot, pid }: GoogleAdSenseAutoTypes) => {
       className="adsbygoogle"
       style={{
         display: 'block',
+        maxWidth: '720px',
+        margin: '0 auto',
+        width,
+        height,
       }}
       data-ad-client={`ca-pub-${pid}`}
       data-ad-slot={dataSlot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
     ></ins>
   );
 };
 
-export default GoogleAdSenseAuto;
+export default GoogleAdSenseFixed;
