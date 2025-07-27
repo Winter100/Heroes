@@ -8,7 +8,7 @@ import {
   NoticeEventDataType,
   NoticePatchDataType,
 } from '../types';
-import AutoAd from '@/app/_components/adsense/AutoAd';
+import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 
 const HomeMainContent = () => {
   const {
@@ -65,12 +65,7 @@ const HomeMainContent = () => {
             itemsPerPage={10}
           />
         </RoundedContainer>
-        <div className="w-full">
-          <AutoAd
-            dataSlot="9712379035"
-            className="h-32 w-80 sm:w-[500px] md:w-[700px] lg:w-[900px]"
-          />
-        </div>
+        <AutoResponsiveAd />
       </div>
     </div>
   );
