@@ -9,11 +9,13 @@ const Page = () => {
       <SideAd dataSlot="2056348937" position="left" />
       <RoundedContainer className="p-2">
         <AutoAd dataSlot="9712379035" className="h-40" />
-        <h1 className="text-center text-lg">인챈트 정보</h1>
-        <div className="pb-4 text-center text-xs">
-          거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
+        <div className="p-2 md:px-14">
+          <h1 className="text-center text-lg">인챈트 정보</h1>
+          <div className="pb-4 text-center text-xs">
+            거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
+          </div>
+          <EnchantInformation />
         </div>
-        <EnchantInformation />
       </RoundedContainer>
       <SideAd dataSlot="1601053361" position="right" />
     </>
