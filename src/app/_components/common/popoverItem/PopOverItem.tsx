@@ -7,16 +7,18 @@ import { cn } from '@/lib/utils';
 interface PopOverItemProps extends ComponentProps<'div'> {
   category: string;
   itemName: string;
-  isSelect?: boolean;
+  isColorName?: boolean;
 }
 
 const PopOverItem = ({
   category,
   itemName,
-  isSelect = false,
+  isColorName = false,
   className,
 }: PopOverItemProps) => {
-  const type = isSelect ? getItemOrMaterialsRating(category, itemName) : null;
+  const type = isColorName
+    ? getItemOrMaterialsRating(category, itemName)
+    : null;
 
   return (
     <div className={cn('flex flex-row items-center gap-1 text-sm', className)}>

@@ -14,8 +14,8 @@ const MaterialsInfo = ({
   const src = getImageByName(item_name);
   return (
     <Item className="flex w-full flex-col gap-1">
-      <Row>
-        <ImageIcon src={src} alt={item_name} />
+      <Row className="gap-2">
+        <ImageIcon src={src} alt={item_name} className="object-cover" />
         <Column className="w-full gap-0.5 text-gray-400">
           <Item.Title className="text-xs" type={item_rating}>
             {item_name}

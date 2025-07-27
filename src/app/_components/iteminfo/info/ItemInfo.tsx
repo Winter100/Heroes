@@ -169,7 +169,7 @@ const ItemInfo = memo(
 
         {prefixEnchantName && (
           <ItemEnchantBox
-            title="접두"
+            type="접두"
             useText1={prefix_enchant_name_1 ?? ''}
             useText2={prefix_enchant_name_2 ?? ''}
             useNumber={used_prefix_enchant_number ?? 0}
@@ -181,7 +181,7 @@ const ItemInfo = memo(
 
         {suffixEnchantName && (
           <ItemEnchantBox
-            title="접미"
+            type="접미"
             useText1={suffix_enchant_name_1 ?? ''}
             useText2={suffix_enchant_name_2 ?? ''}
             useNumber={used_suffix_enchant_number ?? 0}

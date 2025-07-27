@@ -124,7 +124,7 @@ const ItemTooltip = memo(
           suffixValue={existingSuffixEnchant?.stat_value}
           set={itemInfo?.set}
           newTuningStats={!tuningStats ? craftingNeedTuningStats : null}
-          newMergedStats={!tuningStats ? newMergedStats : null}
+          newMergedStats={!equipmentSlotName ? newMergedStats : null}
         />
       </div>
     );

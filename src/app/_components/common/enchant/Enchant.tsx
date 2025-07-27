@@ -12,6 +12,7 @@ import { convertToKST } from '@/app/_utils/convert/convertToKST';
 import { findEnchantNames } from '../../../_utils/enchant/utils/findEnchantNames';
 import { slotNames } from '../../../_utils/enchant/utils/getSlotName';
 import ImageIcon from '../image/Image-Icon';
+import EnchantSubTitle from './EnchantSubTitle';
 
 interface EnchantProps extends ComponentProps<'div'> {
   name: string;
@@ -95,14 +96,12 @@ const Enchant = ({
       <EnchantBrin />
       <Item.Border />
 
-      <Row className="justify-between px-2 text-sm">
-        <Item.Content>{name}</Item.Content>
-        <Item.Content className="flex">
-          <span className="pr-1">{type}</span>
-          <div className="text-orange-300">{rank}</div>
-          <span>랭크</span>
-        </Item.Content>
-      </Row>
+      <EnchantSubTitle
+        className="text-xs"
+        name={name}
+        type={type}
+        rank={rank}
+      />
 
       <div className="flex-1 rounded-md border border-gray-500/30 px-1 py-2 text-xs">
         <EnchantEffects effects={stat_value} />

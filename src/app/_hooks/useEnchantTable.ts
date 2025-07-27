@@ -4,7 +4,7 @@ import { keyword } from '@/app/_constant/keyword';
 import { filteredEnchantData } from '@/app/_utils/enchant/utils/filteredEnchantData';
 import { transformedEnchantData } from '@/app/_utils/enchant/utils/transformedEnchantData';
 import { useEnchantPriceList } from './useEnchantPriceList';
-// import { dummy_enchnat } from "@/app/_constant/dummyEnchantList";
+// import { dummy_enchnat } from '@/app/_constant/dummyEnchantList';
 
 export const useEnchantTable = () => {
   const { data, isLoading } = useEnchantPriceList();

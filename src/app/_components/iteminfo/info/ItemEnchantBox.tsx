@@ -1,10 +1,10 @@
 import { Stat } from '@/app/_type/previewType';
 import Item from '../../common/item/Item';
-import Row from '../../layout/Row';
 import EnchantEffects from '../../common/enchant/EnchantEffects';
+import EnchantSubTitle from '../../common/enchant/EnchantSubTitle';
 
 interface ItemEnchantBoxProps {
-  title: string;
+  type: '접두' | '접미';
   useText1: string;
   useText2: string;
   useNumber: number;
@@ -14,7 +14,7 @@ interface ItemEnchantBoxProps {
 }
 
 const ItemEnchantBox = ({
-  title,
+  type,
   useNumber,
   useText1,
   useText2,
@@ -29,15 +29,14 @@ const ItemEnchantBox = ({
         useText2={useText2}
         usedNumber={useNumber === 0 ? 2 : useNumber}
       >
-        <span className="text-[11px] text-gray-400">{title}</span>
+        <span className="text-[11px] text-gray-400">{type}</span>
       </Item.Selector>
-      <Row className="mb-1 mt-3 justify-between px-2">
-        <Item.Content>{usedEnchantName}</Item.Content>
-        <Item.Content className="flex">
-          <span className="pr-1">{title}</span>
-          <span>{existingEnchantRank} 랭크</span>
-        </Item.Content>
-      </Row>
+      <EnchantSubTitle
+        className="mb-1 mt-3 justify-between px-2 text-[11px]"
+        name={usedEnchantName}
+        rank={existingEnchantRank}
+        type={type}
+      />
       <div className="rounded-md border border-muted p-1">
         {existingEnchantValue && (
           <EnchantEffects effects={existingEnchantValue} />
