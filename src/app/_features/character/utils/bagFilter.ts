@@ -1,5 +1,5 @@
-import { bagList, cachList } from '@/app/_components/preview/utils/bagList';
-import { getNewTuning } from '@/app/_components/preview/utils/getNewTuning';
+import { bagList, cachList } from '@/app/_utils/preview/bagList';
+import { getNewTuning } from '@/app/_utils/preview/getNewTuning';
 import { Item_equipment } from '@/app/_type/equipmentType';
 
 export const bagFilter = (data: Item_equipment | undefined) => {

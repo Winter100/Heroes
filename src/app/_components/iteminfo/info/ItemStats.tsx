@@ -8,7 +8,6 @@ interface ItemStatsProps {
 const ItemStats = ({ mergedStats }: ItemStatsProps) => {
   return (
     <>
-      {/* <Item.Border /> */}
       <Item.Description>
         <Item.Content className="flex flex-wrap gap-1 font-sans text-xs text-yellow-200/90">
           {mergedStats.map((stat) => (

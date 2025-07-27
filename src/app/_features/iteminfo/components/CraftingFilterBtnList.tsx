@@ -1,15 +1,18 @@
 'use client';
 
 import clsx from 'clsx';
-import { useMaterialsStore } from '../store/materialsStore';
-import { FILTER_VALUES } from '../constant';
+import { CraftingProps } from './CraftingInfo';
 
-const CraftingFilterBtnList = () => {
-  const filterValue = useMaterialsStore((state) => state.filter);
-  const setFilter = useMaterialsStore((state) => state.setFilter);
+const FILTER_VALUES = [
+  { value: '장비' },
+  { value: '소모품' },
+  { value: '재료' },
+];
+
+const CraftingFilterBtnList = ({ filterValue, setFilter }: CraftingProps) => {
   return (
     <ul className="flex w-full gap-1 text-xs">
-      {FILTER_VALUES.map((filter) => (
+      {FILTER_VALUES?.map((filter) => (
         <li key={filter.value}>
           <button
             onClick={() => setFilter(filter.value)}

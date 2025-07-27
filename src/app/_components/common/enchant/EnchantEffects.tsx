@@ -1,42 +1,32 @@
-import { ComponentProps } from 'react';
-import Column from '../../layout/Column';
-import clsx from 'clsx';
+import { Stat } from '@/app/_type/previewType';
+import { cn } from '@/lib/utils';
 
-interface EnchantDescriptionProps extends ComponentProps<'div'> {
-  enchantEffects: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  effectColor?: string;
-  isItem?: string[];
-}
 const EnchantEffects = ({
-  enchantEffects,
+  effects,
   className,
-  isItem = [],
-  effectColor,
-}: EnchantDescriptionProps) => {
+}: {
+  effects: Stat[];
+  className?: string;
+}) => {
   return (
-    <Column
-      className={clsx(
-        'flex-1 rounded-md border border-gray-500/30 px-1 py-2 text-xs',
-        className
-      )}
-    >
-      {enchantEffects?.map((option) => (
+    <>
+      {effects.map((effect) => (
         <div
-          className={clsx(
-            'flex items-center gap-1 px-1',
-            isItem.includes(option.stat_name) && 'text-[rgb(145,175,212)]'
-          )}
-          key={option.stat_name + option.stat_value}
+          key={effect.stat_name}
+          className={cn('flex items-center gap-1', className)}
         >
-          <span className="text-gray-600/50">•</span>
-          <span className={clsx('', effectColor)}>{option.stat_name}</span>
-          <span className={clsx('', effectColor)}>{option.stat_value}</span>
+          <div className="text-gray-400">• {effect.stat_name}</div>
+          <div
+            className={cn(
+              'text-blue-300',
+              effect.stat_value.toString().includes('-') && 'text-red-300'
+            )}
+          >
+            {effect.stat_value}
+          </div>
         </div>
       ))}
-    </Column>
+    </>
   );
 };
 

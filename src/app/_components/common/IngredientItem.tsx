@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageIcon from './image/Image-Icon';
 
 interface IngredientItemProps {
   name: string;
@@ -17,16 +17,7 @@ const IngredientItem = ({
     >
       <div className="flex items-center justify-center text-xs">{name}</div>
       <div className="flex w-full flex-row items-center gap-2 rounded-lg border border-muted p-0.5">
-        <div className="flex items-center justify-center">
-          <Image
-            width={18}
-            height={18}
-            className="rounded-sm object-cover"
-            src={src}
-            alt={name}
-            {...{ title: name }}
-          />
-        </div>
+        <ImageIcon className="h-4 w-4" src={src} alt={name} />
         <p className="w-full">{value.toLocaleString()}</p>
       </div>
     </div>

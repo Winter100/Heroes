@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Hammer } from 'lucide-react';
 import OneGrindingContent from './OneGrindingContent';
-import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
 
 const OneGrindingDialog = ({ item }: { item: NewEquipmentType }) => {
   const title = {

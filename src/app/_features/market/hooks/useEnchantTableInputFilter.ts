@@ -1,4 +1,4 @@
-import { useRefFocus } from '@/app/_hooks/useRefFocus/useRefFocus';
+import { useRefFocus } from '@/app/_hooks/useRefFocus';
 import { useSelectEnchantStore } from '@/app/_store/selectEnchantStore';
 import { FormEvent } from 'react';
 import { useEnchantFilterStore } from '../store/enchantFilterStore';

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { EventDate } from '../types';
-import { parseKoreanDate } from '@/app/_components/preview/utils/dateEvent';
-import { convertToKST } from '@/app/_utils/convertToKST';
+import { parseKoreanDate } from '@/app/_utils/preview/dateEvent';
+import { convertToKST } from '@/app/_utils/convert/convertToKST';
 
 type State = {
   eventDate: EventDate | null;

@@ -26,18 +26,3 @@ export interface InfusionsDialogProps {
   selectedHandler: SelectedHandlerType;
   infusionList: InfusionType[];
 }
-
-export interface InfusionGroupProps
-  extends Omit<InfusionsDialogProps, 'label' | 'items'> {
-  title: string;
-}
-
-export interface InfusionGridItemProps {
-  infusion: InfusionType;
-  isSelected: boolean;
-  selectedHandler: SelectedHandlerType;
-}
-
-export interface InfusionValuesProps {
-  infusionValue: InfusionEffectsType[];
-}

@@ -2,9 +2,9 @@
 import { useEffect, useState } from 'react';
 import { CiFilter } from 'react-icons/ci';
 import { useRankStore } from '@/app/_store/rankStore';
-import { useDrag } from '@/app/_hooks/useDrag/useDrag';
+import { useDrag } from '@/app/_hooks/useDrag';
 import BottomArrow from '@/app/_components/common/BottomArrow';
-import { useOutsideClick } from '@/app/_hooks/useOutsideClick/useOutsideClick';
+import { useOutsideClick } from '@/app/_hooks/useOutsideClick';
 import { getLocalStorageRankTitle } from '@/app/_utils/localStorage';
 import { TitleType } from '@/app/_type/RankTitleListType';
 import { Button } from '@/components/ui/button';

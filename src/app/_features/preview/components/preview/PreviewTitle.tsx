@@ -1,99 +1,38 @@
-import BeforeAndAfter from '@/app/_components/common/beforeAndAfter/BeforeAndAfter';
 import Row from '@/app/_components/layout/Row';
 
 const PreviewTitle = () => {
   return (
-    <Row className="mt-1 h-12 gap-2 border-b border-borderColor">
-      <BeforeAndAfter className="w-12 justify-start sm:justify-center">
-        <BeforeAndAfter.Title className="overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
-          아이템
-        </BeforeAndAfter.Title>
-      </BeforeAndAfter>
+    <Row className="mt-1 h-12 gap-2 border-b border-borderColor text-center text-xs">
+      <div className="flex w-12 items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
+        아이템
+      </div>
+      <div className="w-5">{null}</div>
 
-      <BeforeAndAfter className="w-5">
-        <BeforeAndAfter.Title className=""></BeforeAndAfter.Title>
-      </BeforeAndAfter>
+      <div className="flex flex-1 flex-col justify-center">
+        <div>정령합성</div>
+        <div className="hidden flex-col sm:flex sm:flex-row">
+          <div className="w-full">기존</div>
+          <div className="w-full">변경</div>
+        </div>
+      </div>
 
-      <BeforeAndAfter className="flex-1">
-        <BeforeAndAfter.Title>정령합성</BeforeAndAfter.Title>
-        <BeforeAndAfter.Content className="flex-col sm:flex-row">
-          <BeforeAndAfter.Before className="flex items-center justify-center">
-            기존
-          </BeforeAndAfter.Before>
-          <BeforeAndAfter.After>변경</BeforeAndAfter.After>
-        </BeforeAndAfter.Content>
-      </BeforeAndAfter>
+      <div className="flex flex-1 flex-col justify-center">
+        <div>접두</div>
+        <div className="hidden flex-col sm:flex sm:flex-row">
+          <div className="w-full">기존</div>
+          <div className="w-full">변경</div>
+        </div>
+      </div>
 
-      <BeforeAndAfter className="flex-1">
-        <BeforeAndAfter.Title>접두</BeforeAndAfter.Title>
-        <BeforeAndAfter.Content className="flex-col sm:flex-row">
-          <BeforeAndAfter.Before className="flex items-center justify-center">
-            기존
-          </BeforeAndAfter.Before>
-          <BeforeAndAfter.After>변경</BeforeAndAfter.After>
-        </BeforeAndAfter.Content>
-      </BeforeAndAfter>
-
-      <BeforeAndAfter className="flex-1">
-        <BeforeAndAfter.Title>접미</BeforeAndAfter.Title>
-        <BeforeAndAfter.Content className="flex-col sm:flex-row">
-          <BeforeAndAfter.Before className="flex items-center justify-center">
-            기존
-          </BeforeAndAfter.Before>
-          <BeforeAndAfter.After>변경</BeforeAndAfter.After>
-        </BeforeAndAfter.Content>
-      </BeforeAndAfter>
+      <div className="flex flex-1 flex-col justify-center">
+        <div>접미</div>
+        <div className="hidden flex-col sm:flex sm:flex-row">
+          <div className="w-full">기존</div>
+          <div className="w-full">변경</div>
+        </div>
+      </div>
     </Row>
   );
 };
 
 export default PreviewTitle;
-// import Row from '@/app/_components/layout/Row';
-
-// const PreviewTitle = () => {
-//   return (
-//     <Row className="mt-1 h-12 gap-1 border-b border-borderColor sm:gap-2">
-//       <BeforeAndAfter className="w-20 justify-start sm:justify-center">
-//         <BeforeAndAfter.Title className="overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
-//           아이템
-//         </BeforeAndAfter.Title>
-//       </BeforeAndAfter>
-
-//       <BeforeAndAfter className="w-5 sm:w-7">
-//         <BeforeAndAfter.Title className=""></BeforeAndAfter.Title>
-//       </BeforeAndAfter>
-
-//       <BeforeAndAfter className="flex-1">
-//         <BeforeAndAfter.Title>정령합성</BeforeAndAfter.Title>
-//         <BeforeAndAfter.Content>
-//           <BeforeAndAfter.Before className="flex items-center justify-center">
-//             기존
-//           </BeforeAndAfter.Before>
-//           <BeforeAndAfter.After>변경</BeforeAndAfter.After>
-//         </BeforeAndAfter.Content>
-//       </BeforeAndAfter>
-
-//       <BeforeAndAfter className="flex-1">
-//         <BeforeAndAfter.Title>접두</BeforeAndAfter.Title>
-//         <BeforeAndAfter.Content>
-//           <BeforeAndAfter.Before className="flex items-center justify-center">
-//             기존
-//           </BeforeAndAfter.Before>
-//           <BeforeAndAfter.After>변경</BeforeAndAfter.After>
-//         </BeforeAndAfter.Content>
-//       </BeforeAndAfter>
-
-//       <BeforeAndAfter className="flex-1">
-//         <BeforeAndAfter.Title>접미</BeforeAndAfter.Title>
-//         <BeforeAndAfter.Content>
-//           <BeforeAndAfter.Before className="flex items-center justify-center">
-//             기존
-//           </BeforeAndAfter.Before>
-//           <BeforeAndAfter.After>변경</BeforeAndAfter.After>
-//         </BeforeAndAfter.Content>
-//       </BeforeAndAfter>
-//     </Row>
-//   );
-// };
-
-// export default PreviewTitle;

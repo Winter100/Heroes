@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useOcid } from '@/app/_hooks/useOcid/useOcid';
+import { useOcid } from '@/app/_hooks/useOcid';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import Loading from '@/app/_components/common/Loading';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';

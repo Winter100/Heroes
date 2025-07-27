@@ -2,8 +2,8 @@ import { forwardRef } from 'react';
 import Image from 'next/image';
 import BottomArrow from '@/app/_components/common/BottomArrow';
 import { useRaidStore } from '@/app/_store/raidStore';
-import { getImageByName } from '@/app/_utils/getImageByName';
 import { Button } from '@/components/ui/button';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const DialogTriggerBtn = forwardRef<
   HTMLButtonElement,

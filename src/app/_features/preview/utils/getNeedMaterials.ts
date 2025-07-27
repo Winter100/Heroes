@@ -1,5 +1,5 @@
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import { getImageByName } from '@/app/_utils/getImageByName';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 export const getNeedMaterials = (
   item: NewEquipmentType,

@@ -1,39 +1,22 @@
+import AutoAd from '@/app/_components/adsense/AutoAd';
 import SideAd from '@/app/_components/adsense/SideAd';
-import { insertUpgradeType } from '@/app/_components/enchant/utils/insertUpgradeType';
-import BasicContainer from '@/app/_components/layout/BasicContainer';
-import Column from '@/app/_components/layout/Column';
-import {
-  prefix_enchant_options,
-  suffix_enchant_options,
-} from '@/app/_constant/enchant';
-import { keyword } from '@/app/_constant/keyword';
-import {
-  EnchantDropAndDetail,
-  EnchantRankTable,
-  EnchantTableInputFilter,
-} from '@/app/_features/market';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import EnchantInformation from '@/app/_features/market/components/EnchnatInformation';
 
 const Page = () => {
-  const allEnchantList = [
-    ...insertUpgradeType(prefix_enchant_options, keyword.upgreadeType.prefix),
-    ...insertUpgradeType(suffix_enchant_options, keyword.upgreadeType.suffix),
-  ];
-
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
-      <BasicContainer className="p-2 lg:mt-10">
-        <div className="mx-auto flex w-full max-w-md flex-col flex-wrap justify-center gap-3 rounded-md border-borderColor/50 p-2 md:max-w-5xl md:flex-row md:p-6 lg:p-10">
-          <Column className="z-10 max-w-md">
-            <EnchantRankTable enchantData={allEnchantList} />
-            <EnchantTableInputFilter />
-          </Column>
-          <EnchantDropAndDetail />
+      <RoundedContainer className="p-2">
+        <AutoAd dataSlot="9712379035" className="h-40" />
+        <div className="p-2 md:px-14">
+          <h1 className="text-center text-lg">인챈트 정보</h1>
+          <div className="pb-4 text-center text-xs">
+            거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
+          </div>
+          <EnchantInformation />
         </div>
-        <div className="my-4 hidden text-center text-xs sm:block">
-          거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
-        </div>
-      </BasicContainer>
+      </RoundedContainer>
       <SideAd dataSlot="1601053361" position="right" />
     </>
   );

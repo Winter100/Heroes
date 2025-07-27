@@ -137,12 +137,22 @@ export interface getEnchantAvgPricePropsP {
   enchantName: string;
 }
 
+export enum EnchantTableKeyEnum {
+  rank = 'rank',
+  name = 'name',
+  average_price = 'average_price',
+  max_price = 'max_price',
+  min_price = 'min_price',
+  // drop = 'drop',
+}
+
 export type EnchantKeyType = {
-  rank: string;
-  name: string;
-  average_price: number;
-  max_price: number;
-  min_price: number;
+  rank: EnchantTableKeyEnum.rank;
+  name: EnchantTableKeyEnum.name;
+  average_price: EnchantTableKeyEnum.average_price;
+  max_price: EnchantTableKeyEnum.max_price;
+  min_price: EnchantTableKeyEnum.min_price;
+  // drop: EnchantTableKeyEnum.drop;
 };
 
 export interface EnchantRankTableProps extends ComponentProps<'table'> {

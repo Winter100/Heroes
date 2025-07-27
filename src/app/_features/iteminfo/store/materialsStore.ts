@@ -3,12 +3,12 @@ import { create } from 'zustand';
 type State = {
   filter: string;
   category: string;
-  materials: string;
+  itemName: string;
   count: number;
 };
 
 type Action = {
-  setMaterials: (item: string, category: string) => void;
+  setItemName: (item: string, category: string) => void;
   setCount: (count: number) => void;
   setFilter: (count: string) => void;
 };
@@ -17,14 +17,14 @@ export const useMaterialsStore = create<State & Action>((set) => {
   return {
     filter: '장비',
     category: '',
-    materials: '',
+    itemName: '',
     count: 1,
-    setMaterials: (item, category) => {
+    setItemName: (item, category) => {
       set((state) => {
-        if (state?.materials === item) {
-          return { materials: '', category: '' };
+        if (state?.itemName === item) {
+          return { itemName: '', category: '' };
         }
-        return { materials: item, category: category };
+        return { itemName: item, category: category };
       });
     },
     setCount: (count) => {

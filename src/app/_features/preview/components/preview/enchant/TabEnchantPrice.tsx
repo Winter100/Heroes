@@ -1,5 +1,5 @@
 import Loading from '@/app/_components/common/Loading';
-import { getEnchantAvgPrice } from '@/app/_components/enchant/utils/getEnchantAvgPrice';
+import { getEnchantAvgPrice } from '@/app/_utils/enchant/utils/getEnchantAvgPrice';
 import { TabEnchantPriceProps } from '../../../types';
 
 const TabEnchantPrice = ({

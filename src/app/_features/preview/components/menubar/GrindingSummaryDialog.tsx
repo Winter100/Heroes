@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import GrindingContent from './grinding';
-import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
 
 const GrindingSummaryDialog = () => {
   return (

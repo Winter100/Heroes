@@ -1,31 +1,22 @@
 import SideAd from '@/app/_components/adsense/SideAd';
-import BasicContainer from '@/app/_components/layout/BasicContainer';
-import {
-  CraftingFilterBtnList,
-  CraftingItemList,
-  MaterialsCrafting,
-} from '@/app/_features/iteminfo';
+import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import CraftingInfo from '@/app/_features/iteminfo/components/CraftingInfo';
+import AutoAd from '@/app/_components/adsense/AutoAd';
 
 const Page = () => {
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
-      <div className="mx-auto flex w-full max-w-screen-md flex-col items-center justify-center gap-1 px-4 sm:mt-20 sm:p-2">
-        <h1 className="text-sm">아이템 제작 정보</h1>
-        <CraftingFilterBtnList />
-        <div className="flex w-full flex-col gap-2 sm:flex-row">
-          <div className="flex h-96 w-full flex-row gap-1 sm:h-[700px] sm:w-72">
-            <BasicContainer className="w-full overflow-y-auto border border-borderColor/50">
-              <CraftingItemList />
-            </BasicContainer>
+      <RoundedContainer>
+        <AutoAd dataSlot="9712379035" className="h-40" />
+        <div className="p-2 md:px-20">
+          <h1 className="text-center text-lg">아이템 제작 정보</h1>
+          <div className="pb-4 text-center text-xs">
+            이미지를 클릭하면 상세 정보를 볼 수 있습니다.
           </div>
-          <div className="flex h-96 w-full flex-1 flex-row gap-1 sm:h-[700px]">
-            <BasicContainer className="flex w-full flex-1 justify-center border border-borderColor/50">
-              <MaterialsCrafting />
-            </BasicContainer>
-          </div>
+          <CraftingInfo />
         </div>
-      </div>
+      </RoundedContainer>
       <SideAd dataSlot="1601053361" position="right" />
     </>
   );

@@ -3,14 +3,22 @@ import { GrRefresh } from 'react-icons/gr';
 import Row from '@/app/_components/layout/Row';
 import { Button } from '@/components/ui/button';
 import Search from '@/app/_components/common/search/Search';
-import { useEnchantTableInputFilter } from '../hooks/useEnchantTableInputFilter';
 import EnchantDropListFilterDialog from './dialog/EnchantDropListFilterDialog';
+import { FormEvent, RefObject } from 'react';
 
-const EnchantTableInputFilter = () => {
-  const { inputRef, onSearch, onReset } = useEnchantTableInputFilter();
+interface EnchantTableInputFilterProps {
+  inputRef: RefObject<HTMLInputElement>;
+  onSearch: (e: FormEvent) => void;
+  onReset: () => void;
+}
 
+const EnchantTableInputFilter = ({
+  inputRef,
+  onReset,
+  onSearch,
+}: EnchantTableInputFilterProps) => {
   return (
-    <Row className="mt-2 flex h-8 items-center justify-center gap-1 rounded-md text-xs text-white">
+    <Row className="mt-1 flex h-8 items-center justify-center gap-1 rounded-md text-xs text-white">
       <Search
         maxLength={10}
         className="w-full px-2"

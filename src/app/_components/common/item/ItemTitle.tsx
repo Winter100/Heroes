@@ -1,6 +1,6 @@
 import { materialsMap } from '@/app/_constant/items/item_map';
 import { Item_Rating } from '@/app/_type/infoInfoType';
-import clsx from 'clsx';
+import { cn } from '@/lib/utils';
 import { ComponentProps, memo } from 'react';
 
 interface ItemTitleProps extends ComponentProps<'div'> {
@@ -31,7 +31,7 @@ const ItemTitle = memo(
     }[finalType || ''];
 
     return (
-      <div className={clsx(colorClass, className)} {...props}>
+      <div className={cn(colorClass, className)} {...props}>
         {children}
       </div>
     );

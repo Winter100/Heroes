@@ -1,10 +1,5 @@
 import { CachItemsType, NewEquipmentType } from '@/app/_type/equipmentType';
 
-export interface ProfileImageProps {
-  job: string;
-  name: string;
-}
-
 export interface CharacterProfileProps {
   profileData: { title: string; value: string | number }[];
 }

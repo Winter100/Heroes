@@ -11,11 +11,13 @@ export const getOption = <T>(
   presetNoKey: keyof ItemOption,
   preset1Key: keyof ItemOption,
   preset2Key: keyof ItemOption
-): T | undefined => {
+): T | null => {
   try {
+    if (!option) return null;
     const presetNo = option[presetNoKey];
     return presetNo === 1 ? option[preset1Key] : option[preset2Key];
   } catch (e) {
     console.error(e);
+    return null;
   }
 };

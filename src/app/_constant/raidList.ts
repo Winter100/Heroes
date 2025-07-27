@@ -62,7 +62,7 @@ export const raidList: RaidListType[] = [
           { stat_name: '이름', stat_value: '로메르' },
           { stat_name: '레벨', stat_value: '110' },
           { stat_name: '공격력', stat_value: '40630' },
-          { stat_name: '크리티컬', stat_value: '214' },
+          { stat_name: '크리티컬', stat_value: '209' },
           { stat_name: '밸런스', stat_value: '93' },
           { stat_name: '추가피해', stat_value: '4400' },
           { stat_name: '방어력', stat_value: '23300' },
@@ -161,7 +161,7 @@ export const raidList: RaidListType[] = [
           { stat_name: '이름', stat_value: '나베리우스' },
           { stat_name: '레벨', stat_value: '110' },
           { stat_name: '공격력', stat_value: '42110' },
-          { stat_name: '크리티컬', stat_value: '217' },
+          { stat_name: '크리티컬', stat_value: '212' },
           { stat_name: '밸런스', stat_value: '94' },
           { stat_name: '추가피해', stat_value: '4500' },
           { stat_name: '방어력', stat_value: '23310' },
@@ -254,7 +254,7 @@ export const raidList: RaidListType[] = [
           { stat_name: '이름', stat_value: '밀레드' },
           { stat_name: '레벨', stat_value: '110' },
           { stat_name: '공격력', stat_value: '43110' },
-          { stat_name: '크리티컬', stat_value: '220' },
+          { stat_name: '크리티컬', stat_value: '215' },
           { stat_name: '밸런스', stat_value: '96' },
           { stat_name: '추가피해', stat_value: '4600' },
           { stat_name: '방어력', stat_value: '24300' },
@@ -348,7 +348,7 @@ export const raidList: RaidListType[] = [
           { stat_name: '이름', stat_value: '카사르' },
           { stat_name: '레벨', stat_value: '110' },
           { stat_name: '공격력', stat_value: '44280' },
-          { stat_name: '크리티컬', stat_value: '227' },
+          { stat_name: '크리티컬', stat_value: '222' },
           { stat_name: '밸런스', stat_value: '98' },
           { stat_name: '추가피해', stat_value: '4700' },
           { stat_name: '방어력', stat_value: '25350' },
@@ -441,7 +441,7 @@ export const raidList: RaidListType[] = [
           { stat_name: '이름', stat_value: '에녹' },
           { stat_name: '레벨', stat_value: '110' },
           { stat_name: '공격력', stat_value: '45280' },
-          { stat_name: '크리티컬', stat_value: '234' },
+          { stat_name: '크리티컬', stat_value: '229' },
           { stat_name: '밸런스', stat_value: '100' },
           { stat_name: '추가피해', stat_value: '4800' },
           { stat_name: '방어력', stat_value: '26350' },
@@ -1430,14 +1430,18 @@ export const raidList: RaidListType[] = [
       {
         name: '정의를 망각한 대성당',
         basic_reward: [
-          // { name: '골드', value: 'null' },
-          // { name: '경험치', value: '6400000' },
-          // { name: 'AP', value: '50' },
+          { name: '골드', value: '142300' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
         ],
         bonus: [
           {
-            bonus_description: '',
-            bonus_value: '',
+            bonus_description: '개인 장비가 5회 이상 파괴되지 않음',
+            bonus_value: '28,800',
+          },
+          {
+            bonus_description: '1회 행동 불능 되지 않고 보스 처치',
+            bonus_value: '11,000',
           },
         ],
         entry: [
@@ -1551,9 +1555,9 @@ export const raidList: RaidListType[] = [
       {
         name: '급습',
         basic_reward: [
-          // { name: '골드', value: '64700' },
-          // { name: '경험치', value: '3000000' },
-          // { name: 'AP', value: '100' },
+          { name: '골드', value: '64700' },
+          { name: '경험치', value: '3000000' },
+          { name: 'AP', value: '100' },
         ],
         bonus: [
           {

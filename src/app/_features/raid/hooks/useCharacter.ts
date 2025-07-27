@@ -7,9 +7,9 @@ import { getGuild } from '@/app/_services/getGuild';
 import { addWaitingRoomCharacterInfo } from '@/app/_utils/localStorage';
 import { useRankStore } from '@/app/_store/rankStore';
 import { useCharacterStore } from '../store/characterStore';
-import { mergeAtk } from '@/app/_hooks/useCharacter/utils/mergeAtk';
-import { translateAndUnifyStats } from '@/app/_hooks/useCharacter/utils/translateAndUnifyStats';
-import { mergeCharacterData } from '@/app/_hooks/useCharacter/utils/mergeCharacterData';
+import { mergeAtk } from '@/app/_utils/character/mergeAtk';
+import { translateAndUnifyStats } from '@/app/_utils/character/translateAndUnifyStats';
+import { mergeCharacterData } from '@/app/_utils/character/mergeCharacterData';
 
 export const useCharacter = () => {
   const [loading, setLoading] = useState(false);

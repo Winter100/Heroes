@@ -1,5 +1,6 @@
+import AutoAd from '@/app/_components/adsense/AutoAd';
 import SideAd from '@/app/_components/adsense/SideAd';
-import CharacterSearchInput from '@/app/_components/CharacterSearchInput';
+import CharacterSearchInput from '@/app/_components/common/CharacterSearchInput';
 import Loading from '@/app/_components/common/Loading';
 import BasicContainer from '@/app/_components/layout/BasicContainer';
 import { CharacterInformation } from '@/app/_features/character';
@@ -10,6 +11,7 @@ const Page = () => {
     <Suspense fallback={<Loading />}>
       <SideAd dataSlot="2056348937" position="left" />
       <BasicContainer className="flex-1 gap-2">
+        <AutoAd dataSlot="9712379035" className="h-40" />
         <CharacterSearchInput
           className="mx-auto h-8 w-full max-w-72"
           routeName="character"

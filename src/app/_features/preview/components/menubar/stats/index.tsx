@@ -1,6 +1,6 @@
 'use client';
 
-import { useStats } from '@/app/_hooks/useStats/useStats';
+import { useStats } from '@/app/_hooks/useStats';
 import PreviewStats from './PreviewStats';
 
 const StatsContent = () => {

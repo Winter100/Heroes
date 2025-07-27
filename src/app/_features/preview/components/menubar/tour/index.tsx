@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { filterRaidList } from '@/app/_utils/filterRaidList';
 import Column from '@/app/_components/layout/Column';
-import RaidEntryFilterBtn from '@/app/_components/raid/selecter/RaidEntryFilterBtn';
+import RaidEntryFilterBtn from '@/app/_components/selecter/RaidEntryFilterBtn';
 import BossList from './BossList';
 
 const RaidTourTable = () => {

@@ -26,7 +26,7 @@ export interface RaidTableDialogProps {
   drop_items: Drop_items[];
   raid_description?: string;
   bonus: Bonus[];
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface LimitStatsFilterType {
