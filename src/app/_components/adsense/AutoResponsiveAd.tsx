@@ -7,7 +7,7 @@ const AutoResponsiveAd = () => {
       <div className="block md:hidden">
         <GoogleAdSenseFixed
           pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
-          dataSlot="MOBILE_SLOT_ID"
+          dataSlot="5231360897"
           width="320px"
           height="50px"
         />
@@ -15,7 +15,7 @@ const AutoResponsiveAd = () => {
       <div className="hidden md:block">
         <GoogleAdSenseFixed
           pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
-          dataSlot="DESKTOP_SLOT_ID"
+          dataSlot="9712379035"
           width="728px"
           height="90px"
         />
