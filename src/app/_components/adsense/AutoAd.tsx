@@ -10,7 +10,7 @@ const AutoAd = ({ dataSlot, className }: AutoAdProps) => {
   return (
     <div
       className={cn(
-        'mx-auto mb-2 flex w-full max-w-screen-md items-center justify-center p-2',
+        'mx-auto mb-2 flex w-full items-center justify-center p-2 md:px-40',
         className
       )}
     >
