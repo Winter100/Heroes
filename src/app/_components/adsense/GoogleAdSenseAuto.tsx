@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 type GoogleAdSenseAutoTypes = {
   pid: string;
@@ -7,16 +7,31 @@ type GoogleAdSenseAutoTypes = {
 };
 
 const GoogleAdSenseAuto = ({ dataSlot, pid }: GoogleAdSenseAutoTypes) => {
+  const [canLoadAd, setCanLoadAd] = useState(false);
+
   useEffect(() => {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-        {}
-      );
-    } catch (e: any) {
-      console.error(e.message);
-    }
+    const timer = setTimeout(() => {
+      setCanLoadAd(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (canLoadAd) {
+      try {
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        if ((window as any).adsbygoogle) {
+          ((window as any).adsbygoogle =
+            (window as any).adsbygoogle || []).push({});
+        } else {
+          console.warn('adsbygoogle script not yet loaded.');
+        }
+      } catch (e: any) {
+        console.error('adsbygoogle.push() error:', e.message);
+      }
+    }
+  }, [canLoadAd]);
 
   return (
     <ins
