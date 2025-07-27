@@ -66,7 +66,10 @@ const HomeMainContent = () => {
           />
         </RoundedContainer>
         <div className="w-full">
-          <AutoAd dataSlot="9712379035" className="h-32" />
+          <AutoAd
+            dataSlot="9712379035"
+            className="h-32 w-80 sm:w-[500px] md:w-[700px] lg:w-[900px]"
+          />
         </div>
       </div>
     </div>
