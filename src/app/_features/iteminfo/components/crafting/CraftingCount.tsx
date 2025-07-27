@@ -1,12 +1,13 @@
-import { useMaterialsStore } from '../../store/materialsStore';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-const CraftingCount = () => {
-  const count = useMaterialsStore((state) => state.count);
-  const setCount = useMaterialsStore((state) => state.setCount);
+interface CraftingCountProps {
+  count: number;
+  setCount: (count: number) => void;
+}
 
+const CraftingCount = ({ count, setCount }: CraftingCountProps) => {
   return (
     <div className="bottom-0 flex w-full flex-row items-center justify-center gap-1 text-xs sm:absolute">
       <Label htmlFor="quantity">수량</Label>

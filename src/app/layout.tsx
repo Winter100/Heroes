@@ -8,7 +8,7 @@ import ScreenContainer from './_components/layout/ScreenContainer';
 import { AppSidebar } from '@/components/app-sidebar';
 
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
-import HomeBreadcrumb from './_components/home/HomeBreadcrumb';
+import HomeBreadcrumb from './_features/home/components/HomeBreadcrumb';
 import GoogleAdsense from './_components/adsense/GoogleAdsense';
 
 export const metadata: Metadata = {

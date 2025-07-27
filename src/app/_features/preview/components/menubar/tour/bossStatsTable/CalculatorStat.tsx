@@ -1,4 +1,4 @@
-import { limitCalculator } from '@/app/_components/raid/utils/limitCalculator';
+import { limitCalculator } from '@/app/_utils/raid/limitCalculator';
 import { CalculatorStatProps } from '@/app/_features/preview/types';
 import { memo } from 'react';
 

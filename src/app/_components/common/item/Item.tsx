@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { ComponentProps } from 'react';
-import ItemImage from './ItemImage';
 import ItemSubDescription from './ItemSubDescription';
 import ItemTitle from './ItemTitle';
 import ItemDescription from './ItemDescription';
@@ -19,7 +18,6 @@ const Item = ({ children, className, ...props }: ComponentProps<'div'>) => {
 
 export default Item;
 
-Item.Image = ItemImage;
 Item.Title = ItemTitle;
 Item.Shape = ItemShape;
 Item.Content = ItemContent;

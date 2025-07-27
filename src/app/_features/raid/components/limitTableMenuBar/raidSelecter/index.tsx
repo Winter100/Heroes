@@ -8,8 +8,8 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import DialogTriggerBtn from './DialogTriggerBtn';
-import RaidSelecter from '@/app/_components/raid/selecter/RaidSelecter';
-import RaidEntryFilterBtn from '@/app/_components/raid/selecter/RaidEntryFilterBtn';
+import RaidSelecter from '@/app/_components/selecter/RaidSelecter';
+import RaidEntryFilterBtn from '@/app/_components/selecter/RaidEntryFilterBtn';
 import { useState } from 'react';
 
 const RaidSelecterDialog = ({ onlyLimit = false }: { onlyLimit?: boolean }) => {

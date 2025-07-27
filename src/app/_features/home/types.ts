@@ -43,17 +43,7 @@ export interface BasicNoticeProps extends ComponentProps<'div'> {
   itemsPerPage?: number;
   isLoading: boolean;
   isError: Error | null;
-}
-
-export interface EventNoticeItemProps {
-  title: string;
-  url: string;
-  notice_id: number;
-  date?: string;
-  date_event_start?: string;
-  date_event_end?: string;
-  selectDate: EventDate | null;
-  setEventDate: (event: EventDate) => void;
+  eventType: 'basic' | 'event';
 }
 
 export interface EventDate {
@@ -73,10 +63,13 @@ export interface NoteListProps extends ComponentProps<'div'> {
 }
 
 export interface BasicNoticeItemProps {
-  isIn24: boolean;
-  url: string;
+  notice_id: number;
   title: string;
-  date: string;
+  url: string;
+  isIn24: boolean;
+  date?: string;
+  date_event_start?: string;
+  date_event_end?: string;
 }
 
 export interface NoticePaginationProps {

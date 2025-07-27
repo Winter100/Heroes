@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { InfusionTabsItemProps } from '../../../types';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ITEM_ANIMATION } from '../../../constant';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import EnchantEffects from '@/app/_components/common/enchant/EnchantEffects';
 
 const InfusionTabsItem = ({
   data,
@@ -36,34 +37,18 @@ const InfusionTabsItem = ({
             >
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="flex items-start justify-center">
-                    <Image
-                      width={45}
-                      height={45}
-                      src="/images/enchant/infusion.png"
-                      alt="I"
-                    />
-                  </div>
+                  <ImageIcon
+                    className="h-8 w-8"
+                    src="/images/enchant/infusion.png"
+                    alt="I"
+                  />
                   <div className="w-full text-xs font-bold">
                     {infusion.stat_name}
                   </div>
                 </div>
 
-                <div className="gap-1 text-xs">
-                  <div
-                    key={infusion.stat_name}
-                    className="flex items-center gap-1"
-                  >
-                    <div className="text-gray-400">• {infusion.stat_name}</div>
-                    <div
-                      className={cn(
-                        'text-blue-300',
-                        infusion.stat_value.includes('-') && 'text-red-300'
-                      )}
-                    >
-                      {infusion.stat_value}
-                    </div>
-                  </div>
+                <div className="gap-1 p-1 text-xs">
+                  <EnchantEffects effects={[infusion]} />
                 </div>
               </div>
             </motion.div>

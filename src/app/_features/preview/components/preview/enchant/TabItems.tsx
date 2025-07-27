@@ -1,13 +1,15 @@
 import { cn } from '@/lib/utils';
-import { getEnchantAvgPrice } from '@/app/_components/enchant/utils/getEnchantAvgPrice';
+import { getEnchantAvgPrice } from '@/app/_utils/enchant/utils/getEnchantAvgPrice';
 import { usePreviewStore } from '@/app/_store/previewStore';
 import { TabItemsProps } from '../../../types';
-import TabEnchantEffects from './TabEnchantEffects';
-import TabEnchantImage from './TabEnchantImage';
 import TabEnchantDescription from './TabEnchantDescription';
 import TabEnchantPrice from './TabEnchantPrice';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ITEM_ANIMATION } from '../../../constant';
+import EnchantEffects from '@/app/_components/common/enchant/EnchantEffects';
+import { getEnchantImage } from '@/app/_utils/enchant/utils/getEnchantImage';
+import { ENCHANT_DESTRUCTION_RANK } from '@/app/_constant/enchant';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
 
 const TabItems = ({
   data,
@@ -57,11 +59,23 @@ const TabItems = ({
             >
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <TabEnchantImage
-                    rank={enchant?.rank}
-                    upgreadeType={upgreadeType}
-                  />
-
+                  <div className="relative">
+                    <ImageIcon
+                      className="h-8 w-8"
+                      src={getEnchantImage(enchant?.rank, upgreadeType)}
+                      alt="e"
+                    />
+                    <div
+                      className={cn(
+                        'absolute -left-2 -top-2 h-3.5 w-3.5 rounded-full text-center text-[9px] text-gray-900',
+                        Number(enchant?.rank) <= ENCHANT_DESTRUCTION_RANK
+                          ? 'bg-yellow-500'
+                          : 'bg-purple-500'
+                      )}
+                    >
+                      {enchant?.rank}
+                    </div>
+                  </div>
                   <div className="flex w-full flex-col">
                     <div className="text-xs font-bold">{enchant.name}</div>
                     {enchant.description && (
@@ -78,8 +92,8 @@ const TabItems = ({
                   </div>
                 </div>
 
-                <div className="gap-1 text-xs">
-                  <TabEnchantEffects effects={enchant} />
+                <div className="gap-1 p-1 text-xs">
+                  <EnchantEffects effects={enchant.stat_value} />
                 </div>
               </div>
             </motion.div>

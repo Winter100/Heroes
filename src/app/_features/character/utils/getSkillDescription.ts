@@ -1,4 +1,4 @@
-import { skillDescription } from '@/app/_constant/character/skill/skill';
+import { skillDescription } from '@/app/_constant/character/skill';
 
 export const getSkillDescription = (skillName: string, jobName: string) => {
   const skills = skillDescription[jobName] || [];

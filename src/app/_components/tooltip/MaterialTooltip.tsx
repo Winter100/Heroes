@@ -1,5 +1,5 @@
 import { BasicItemInfoType } from '@/app/_type/infoInfoType';
-import MaterialsInfo from '../iteminfo/MaterialsInfo';
+import MaterialsInfo from './MaterialsInfo';
 import { materialsMap } from '@/app/_constant/items/item_map';
 
 interface MaterialTooltipProps {

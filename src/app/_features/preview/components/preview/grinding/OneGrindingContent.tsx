@@ -1,10 +1,9 @@
-import GrindingChangeList from '@/app/_components/common/GrindingChangeList';
-import IngredientList from '@/app/_components/common/IngredientList';
-import ItemTitle from '@/app/_components/common/ItemTitle';
+import GrindingChangeList from '@/app/_features/preview/components/menubar/grinding/GrindingChangeList';
 import BasicContainer from '@/app/_components/layout/BasicContainer';
 import Column from '@/app/_components/layout/Column';
-import Ability from '@/app/_components/preview/ability/Ability';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
+import IngredientList from './IngredientList';
+import Ability from '../../menubar/grinding/Ability';
 
 interface OneGrindingContentProps {
   title: { level: string; name: string };
@@ -19,11 +18,9 @@ const OneGrindingContent = ({
   return (
     <>
       <Column className="dark items-center justify-center gap-2 rounded-lg bg-background py-2">
-        <ItemTitle
-          className="text-sm font-medium text-white"
-          level={title.level ?? ''}
-          name={title.name}
-        />
+        <div className="flex items-center justify-center text-sm font-medium text-white">
+          <p>{`${title?.level} ${title?.name}`}</p>
+        </div>
         {isAbility && <Ability item={item} />}
         <GrindingChangeList className="p-2" item={item} />
       </Column>

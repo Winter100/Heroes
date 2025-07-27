@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import { splitEnchantByType } from '../_components/enchant/utils/splitEnchantByType';
+import { splitEnchantByType } from '../_utils/enchant/utils/splitEnchantByType';
 import { EnchantPrice, EnchantPriceType } from '../_type/enchantType';
-import { getEnchantDate } from '../_components/enchant/utils/getEnchantDate';
+import { getEnchantDate } from '../_utils/enchant/utils/getEnchantDate';
 
 type State = {
   prefix: EnchantPrice[];

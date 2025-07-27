@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useDrag } from '@/app/_hooks/useDrag/useDrag';
+import { useDrag } from '@/app/_hooks/useDrag';
 import { useRankStore } from '@/app/_store/rankStore';
 import { useCheckStore } from '@/app/_store/checkStore';
 import { useCharacterStore } from '../../store/characterStore';

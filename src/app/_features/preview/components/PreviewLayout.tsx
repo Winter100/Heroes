@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { usePreviewStore } from '@/app/_store/previewStore';
 import { useRaidStore } from '@/app/_store/raidStore';
-import { useStats } from '@/app/_hooks/useStats/useStats';
+import { useStats } from '@/app/_hooks/useStats';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import Column from '@/app/_components/layout/Column';
 

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { getImageByName } from '@/app/_utils/getImageByName';
 import { addRewardIcon } from '../../utils/addRewardIcon';
 import { RaidTableDialogHeaderProps } from '../../types';
 import {
@@ -7,6 +5,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
 
 const RaidTableDialogHeader = ({
   basic_reward,
@@ -17,15 +17,11 @@ const RaidTableDialogHeader = ({
   const rewardIcons = addRewardIcon(basic_reward);
   return (
     <div className="flex items-center gap-2 pt-2">
-      <div className="h-auto w-32">
-        <Image
-          className="h-auto w-full object-cover"
-          src={getImageByName(name)}
-          width={130}
-          height={130}
-          alt={boss_name}
-        />
-      </div>
+      <ImageIcon
+        className="h-20 w-32"
+        src={getImageByName(name)}
+        alt={boss_name}
+      />
       <div>
         <DialogHeader>
           <DialogTitle>{name}</DialogTitle>

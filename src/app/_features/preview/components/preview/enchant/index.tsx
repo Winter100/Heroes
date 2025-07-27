@@ -12,8 +12,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
-import ItemTitle from '@/app/_components/common/ItemTitle';
-import RaidSelectorWithStats from '@/app/_components/preview/table/RaidSelectorWithStats';
+import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { groupByRank } from '../../../utils/groupByRank';
 import TabItems from './TabItems';
@@ -43,25 +42,27 @@ const EnchantChangeDialog = memo(
         <DialogTrigger asChild>
           <Button
             className="h-6 w-full border p-0 text-[10px] sm:text-xs"
-            // className="h-6 w-full border p-0 text-[10px] sm:text-xs"
             variant="ghost"
           >
             {label}
             {!label && <ChevronDown className="text-fontColor" size={15} />}
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]">
+        <DialogContent
+          autoFocus={false}
+          className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]"
+        >
           <DialogHeader>
             <DialogTitle>
-              <ItemTitle
-                className="text-sm font-medium text-white"
-                level={''}
-                name={items.name}
-              />
+              <div className="text-sm font-medium text-white">
+                <p>{`${items.name}`}</p>
+              </div>
             </DialogTitle>
             <DialogDescription></DialogDescription>
           </DialogHeader>
+
           <SearchInput
+            autoFocus={false}
             className="dark pl-8"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
