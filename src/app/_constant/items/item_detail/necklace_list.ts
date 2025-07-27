@@ -121,7 +121,7 @@ export const necklace_list: ItemType[] = [
   },
   {
     name: '칠흑빛 고양이 목걸이',
-    restrictions: [''],
+    restrictions: ['125 레벨 이상'],
     quality: 2,
     quality_selection_available: true,
     rating: '중급',
