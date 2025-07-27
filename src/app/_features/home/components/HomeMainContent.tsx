@@ -65,7 +65,9 @@ const HomeMainContent = () => {
             itemsPerPage={10}
           />
         </RoundedContainer>
-        <AutoAd dataSlot="9712379035" className="h-32" />
+        <div className="w-full">
+          <AutoAd dataSlot="9712379035" className="h-32" />
+        </div>
       </div>
     </div>
   );
