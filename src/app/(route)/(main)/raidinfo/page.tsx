@@ -1,4 +1,4 @@
-import AutoAd from '@/app/_components/adsense/AutoAd';
+import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 import SideAd from '@/app/_components/adsense/SideAd';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { RaidInfoTable } from '@/app/_features/raidinfo';
@@ -8,7 +8,7 @@ const Page = () => {
     <>
       <SideAd dataSlot="2056348937" position="left" />
       <RoundedContainer className="p-2">
-        <AutoAd dataSlot="9712379035" className="h-40" />
+        <AutoResponsiveAd />
         <div className="p-2 md:px-20">
           <h1 className="text-center text-lg">레이드 정보</h1>
           <div className="pb-4 text-center text-xs">
