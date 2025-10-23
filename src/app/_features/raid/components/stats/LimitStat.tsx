@@ -10,14 +10,14 @@ const LimitStat = (props: LimitStatProps) => {
   const characterName = props.characterName;
 
   const rankTitleList = useRankStore((state) => state?.rankTitleList);
-  const isLimit = rankTitleList.find((t) => t.stat_name === '해제')?.isView;
+  const isLimit = rankTitleList.find((t) => t.stat_name === '파괴력')?.isView;
 
   const limitValue = useCharacterStore((state) => {
     if (isLimit) {
       return (
         state?.characters
           .find((c) => c?.name === characterName)
-          ?.stat.find((i) => i.stat_name === '해제')?.stat_value ?? '0'
+          ?.stat.find((i) => i.stat_name === '파괴력')?.stat_value ?? '0'
       );
     }
     return '0';
@@ -27,9 +27,19 @@ const LimitStat = (props: LimitStatProps) => {
     selectedBoss,
     '상한',
     statName,
-    statValue?.toString(),
-    limitValue?.toString()
+    statValue?.toString()
+    // limitValue?.toString()
   );
+
+  if (statName === '파괴력') {
+    return (
+      <span
+        className={`block text-center text-[10px] ${Number(stat) >= 0 ? 'text-green-300' : 'text-red-300'} `}
+      >
+        {limitValue}
+      </span>
+    );
+  }
 
   return (
     <>

@@ -12,6 +12,7 @@ import { combineStats } from '@/app/_utils/preview/combineStats';
 import { someStats } from '@/app/_utils/preview/someStats';
 import { calculateStatsDifference } from '@/app/_utils/preview/calculateStatsDifference';
 import { Stat } from '@/app/_type/previewType';
+// import stats from '@/app/_constant/jsonData/stats.json';
 
 export const useStats = () => {
   const searchParams = useSearchParams();
@@ -24,6 +25,8 @@ export const useStats = () => {
     queryKey: [ocid, name, '스텟'],
     queryFn: () => getStats(ocid ?? ''),
     select: (data) => {
+      // const mergeAtk = mergeAtkAndMatk(stats);
+      // return translatedStats(mergeAtk);
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);
     },

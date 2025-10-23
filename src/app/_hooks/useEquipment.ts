@@ -10,6 +10,7 @@ import { usePreviewStore } from '@/app/_store/previewStore';
 
 export const useEquipment = (ocid: string) => {
   const { data, isLoading, error } = useQuery<Item_equipment>({
+    // enabled: false,
     enabled: !!ocid,
     queryKey: [ocid, '장비'],
     queryFn: () => getEquipment(ocid ?? ''),

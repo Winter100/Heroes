@@ -498,5 +498,17 @@ export const right_hand_level_options = {
       { stat_name: '지능', stat_value: 148 },
       { stat_name: '의지', stat_value: 80 },
     ],
+    2: [
+      { stat_name: '공격력', stat_value: 39900 },
+      { stat_name: '마법공격력', stat_value: 39900 },
+      { stat_name: '밸런스', stat_value: 77 },
+      { stat_name: '크리티컬', stat_value: 138 },
+      { stat_name: '공격속도', stat_value: 47 },
+      { stat_name: '추가피해', stat_value: 4550 },
+      { stat_name: '힘', stat_value: 110 },
+      { stat_name: '민첩', stat_value: 60 },
+      { stat_name: '지능', stat_value: 148 },
+      { stat_name: '의지', stat_value: 80 },
+    ],
   },
 };

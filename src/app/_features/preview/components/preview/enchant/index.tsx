@@ -50,7 +50,7 @@ const EnchantChangeDialog = memo(
         </DialogTrigger>
         <DialogContent
           autoFocus={false}
-          className="max-h-full max-w-2xl border-none text-white sm:max-h-[840px]"
+          className="max-h-full max-w-3xl border-none text-white sm:max-h-[840px]"
         >
           <DialogHeader>
             <DialogTitle>

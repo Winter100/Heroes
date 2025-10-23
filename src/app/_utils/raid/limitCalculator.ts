@@ -4,8 +4,8 @@ export const limitCalculator = (
   monsterInfo: OptionalEntry,
   bossEntry: '상한' | '빠른전투',
   user_stat_name: string,
-  user_stat_value: string,
-  user_limit_stat?: string | null
+  user_stat_value: string
+  // user_limit_stat?: string | null
 ) => {
   if (bossEntry === '상한') {
     //상한
@@ -14,8 +14,9 @@ export const limitCalculator = (
         const Mstat = monsterInfo?.limit?.find(
           (s) => s?.stat_name === '공격력'
         );
-        const limit = user_limit_stat !== null ? Number(user_limit_stat) : 0;
-        return Number(user_stat_value) - (Number(Mstat?.stat_value) + limit);
+        return (
+          Number(user_stat_value) - (Number(Mstat?.stat_value) - 10000 + 22000)
+        );
       }
 
       case '크리티컬': {
@@ -30,23 +31,25 @@ export const limitCalculator = (
         );
         return Number(user_stat_value) - (Number(Mstat?.stat_value) + 100);
       }
-      case '대항력': {
-        const Mstat = monsterInfo?.limit?.find(
-          (s) => s?.stat_name === '대항력 저항'
-        );
-        return Number(user_stat_value) - (Number(Mstat?.stat_value) + 100);
-      }
+      // case '대항력': {
+      //   const Mstat = monsterInfo?.limit?.find(
+      //     (s) => s?.stat_name === '대항력 저항'
+      //   );
+      //   return Number(user_stat_value) - (Number(Mstat?.stat_value) + 100);
+      // }
       case '크리티컬 저항': {
         const Mstat = monsterInfo?.limit?.find(
           (s) => s.stat_name === '크리티컬'
         );
         return Number(user_stat_value) - (Number(Mstat?.stat_value) - 3);
       }
-      // case "방어력": {
-      //   const Mstat = 36000;
-      //   return Number(user_stat_value) - Number(Mstat);
+      // case '파괴력': {
+      //   return parseFloat((Number(user_stat_value) * 0.0022).toFixed(2));
+      //   // const Mstat = monsterInfo?.limit?.find(
+      //   //   (s) => s.stat_name === '크리티컬'
+      //   // );
+      //   // return Number(user_stat_value) - (Number(Mstat?.stat_value) - 3);
       // }
-
       default:
         return null;
     }
@@ -73,9 +76,9 @@ export const limitCalculator = (
         );
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
-      case '대항력': {
+      case '방어력 관통': {
         const Mstat = monsterInfo?.entry?.find(
-          (s) => s?.stat_name === '대항력'
+          (s) => s?.stat_name === '방어력 관통'
         );
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
@@ -89,8 +92,8 @@ export const limitCalculator = (
         const Mstat = monsterInfo?.entry?.find((s) => s.stat_name === '방어력');
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
-      case '해제': {
-        const Mstat = monsterInfo?.entry?.find((s) => s.stat_name === '해제');
+      case '파괴력': {
+        const Mstat = monsterInfo?.entry?.find((s) => s.stat_name === '파괴력');
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
 

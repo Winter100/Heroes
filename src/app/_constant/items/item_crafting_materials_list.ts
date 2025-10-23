@@ -155,7 +155,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_materials: [
       {
         item_name: '+15 오르나 무기',
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '파괴력을 제외한 모든 능력치를 최대한 연마',
         item_quantity: 1,
       },
       { item_name: '스렝의 정수', item_quantity: 4 },
@@ -363,8 +363,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_materials: [
       {
         item_name: '전설 와드네 무기',
-        // 연마 유무 확인
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '에리우 승급 시 연마가 필요하지 않습니다',
         item_quantity: 1,
       },
       { item_name: '루시안의 정수', item_quantity: 4 },
@@ -415,6 +414,44 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
+    item_name: '중급 에리우 무기',
+    item_crafting: ['승급'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '골드', item_quantity: 2250000 },
+      {
+        item_name: '초급 에리우 무기',
+        item_quantity: 1,
+      },
+      { item_name: '세미아스 정수', item_quantity: 2 },
+      {
+        item_name: '에리우의 파편: 무기',
+        item_quantity: 2,
+      },
+      {
+        item_name: '예리한 에리우의 결정',
+        item_quantity: 10,
+      },
+      {
+        item_name: '가벼운 에리우의 결정',
+        item_quantity: 10,
+      },
+      {
+        item_name: '고급 강화의 비약',
+        item_quantity: 10,
+      },
+      {
+        item_name: '타리안 강철',
+        item_quantity: 33,
+      },
+      { item_name: '에리우 승급석: 무기', item_quantity: 2 },
+      {
+        item_name: '프리미엄 강화의 룬',
+        item_quantity: 2,
+      },
+    ],
+  },
+  {
     item_name: '와드네 헬름',
     item_crafting: ['전문기술'],
     item_category: '장비',
@@ -422,7 +459,7 @@ export const item_crafting_materials_list: ItemListType[] = [
       {
         item_name: '+15 오르나 헬름',
         item_quantity: 1,
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '파괴력을 제외한 모든 능력치를 최대한 연마',
       },
       { item_name: '스렝의 정수', item_quantity: 4 },
       { item_name: '와드네의 파편: 머리 방어구', item_quantity: 2 },
@@ -527,13 +564,18 @@ export const item_crafting_materials_list: ItemListType[] = [
       {
         item_name: '전설 와드네 헬름',
         item_quantity: 1,
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '에리우 승급 시 연마가 필요하지 않습니다',
       },
       { item_name: '루시안의 정수', item_quantity: 4 },
       { item_name: '에리우의 파편: 머리 방어구', item_quantity: 2 },
       { item_name: '단단한 에리우의 결정', item_quantity: 10 },
       { item_name: '고급 강화의 비약', item_quantity: 15 },
       { item_name: '프리미엄 방어구 강화의 룬', item_quantity: 2 },
+      {
+        item_name: '추출의 룬',
+        item_quantity: 1,
+        item_description: '선택 재료',
+      },
     ],
   },
   {
@@ -624,7 +666,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_materials: [
       {
         item_name: '+15 오르나 메일',
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '파괴력을 제외한 모든 능력치를 최대한 연마',
         item_quantity: 1,
       },
       { item_name: '고르바스의 정수', item_quantity: 4 },
@@ -727,7 +769,7 @@ export const item_crafting_materials_list: ItemListType[] = [
       {
         item_name: '+15 오르나 그리브즈',
         item_quantity: 1,
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '파괴력을 제외한 모든 능력치를 최대한 연마',
       },
       { item_name: '스피노스의 정수', item_quantity: 4 },
       { item_name: '와드네의 파편: 다리 방어구', item_quantity: 2 },
@@ -820,6 +862,108 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
+    item_name: '에리우 그리브즈',
+    item_crafting: ['금속갑옷', '재봉'],
+    item_category: '장비',
+    item_materials: [
+      // { item_name: '골드', item_quantity: 3750000 },
+      {
+        item_name: '전설 와드네 그리브즈',
+        item_description: '에리우 승급 시 연마가 필요하지 않습니다',
+        item_quantity: 1,
+      },
+      { item_name: '세미아스의 정수', item_quantity: 4 },
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 2 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
+      { item_name: '고급 강화의 비약', item_quantity: 15 },
+      { item_name: '에리우 승급석: 머리 방어구', item_quantity: 2 },
+      {
+        item_name: '추출의 룬',
+        item_quantity: 1,
+        item_description: '선택 재료',
+      },
+    ],
+  },
+  {
+    item_name: '초급 에리우 그리브즈',
+    item_crafting: ['승급'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '골드', item_quantity: 750000 },
+      { item_name: '에리우 그리브즈', item_quantity: 1 },
+      { item_name: '세미아스의 정수', item_quantity: 1 },
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 5 },
+      { item_name: '타리안 강철', item_quantity: 1 },
+      { item_name: '에리우 승급석: 다리 방어구', item_quantity: 1 },
+      { item_name: '프리미엄 방어구 강화의 룬', item_quantity: 1 },
+    ],
+  },
+  {
+    item_name: '중급 에리우 그리브즈',
+    item_crafting: ['승급'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '골드', item_quantity: 1125000 },
+      { item_name: '초급 에리우 그리브즈', item_quantity: 1 },
+      { item_name: '세미아스의 정수', item_quantity: 1 },
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 5 },
+      { item_name: '타리안 강철', item_quantity: 2 },
+      { item_name: '고급 강화의 비약', item_quantity: 8 },
+      { item_name: '에리우 승급석: 다리 방어구', item_quantity: 1 },
+      { item_name: '프리미엄 방어구 강화의 룬', item_quantity: 1 },
+    ],
+  },
+  {
+    item_name: '고급 에리우 그리브즈',
+    item_crafting: ['승급'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '골드', item_quantity: 1725000 },
+      { item_name: '중급 에리우 그리브즈', item_quantity: 1 },
+      { item_name: '세미아스의 정수', item_quantity: 1 },
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
+      { item_name: '타리안 강철', item_quantity: 4 },
+      { item_name: '고급 강화의 비약', item_quantity: 16 },
+      { item_name: '에리우 승급석: 다리 방어구', item_quantity: 2 },
+      { item_name: '프리미엄 방어구 강화의 룬', item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: '레어 에리우 그리브즈',
+    item_crafting: ['승급'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '골드', item_quantity: 2550000 },
+      { item_name: '고급 에리우 그리브즈', item_quantity: 1 },
+      { item_name: '세미아스의 정수', item_quantity: 1 },
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
+      { item_name: '타리안 강철', item_quantity: 8 },
+      { item_name: '고급 강화의 비약', item_quantity: 24 },
+      { item_name: '에리우 승급석: 다리 방어구', item_quantity: 2 },
+      { item_name: '프리미엄 방어구 강화의 룬', item_quantity: 2 },
+    ],
+  },
+  {
+    item_name: '전설 에리우 그리브즈',
+    item_crafting: ['승급'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '골드', item_quantity: 3750000 },
+      { item_name: '레어 에리우 그리브즈', item_quantity: 1 },
+      { item_name: '세미아스의 정수', item_quantity: 1 },
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
+      { item_name: '타리안 강철', item_quantity: 16 },
+      { item_name: '고급 강화의 비약', item_quantity: 48 },
+      { item_name: '에리우 승급석: 다리 방어구', item_quantity: 2 },
+      { item_name: '프리미엄 방어구 강화의 룬', item_quantity: 2 },
+    ],
+  },
+  {
     item_name: '와드네 건틀릿',
     item_crafting: ['전문기술'],
     item_category: '장비',
@@ -827,7 +971,7 @@ export const item_crafting_materials_list: ItemListType[] = [
       {
         item_name: '+15 오르나 건틀릿',
         item_quantity: 1,
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '파괴력을 제외한 모든 능력치를 최대한 연마',
       },
       { item_name: '모르간트의 정수', item_quantity: 4 },
       { item_name: '와드네의 파편: 손 방어구', item_quantity: 2 },
@@ -928,7 +1072,7 @@ export const item_crafting_materials_list: ItemListType[] = [
       {
         item_name: '+15 오르나 부츠',
         item_quantity: 1,
-        item_description: '해제를 제외한 모든 능력치를 최대한 연마',
+        item_description: '파괴력을 제외한 모든 능력치를 최대한 연마',
       },
       { item_name: '모르간트의 정수', item_quantity: 4 },
       { item_name: '와드네의 파편: 발 방어구', item_quantity: 2 },
@@ -1029,6 +1173,20 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: '와드네의 파편: 태양의 비원', item_quantity: 2 },
       { item_name: '단단한 와드네의 결정', item_quantity: 10 },
       { item_name: '매끈한 와드네의 결정', item_quantity: 10 },
+      { item_name: '힘이 주입된 뉴에라의 오브', item_quantity: 35 },
+      { item_name: '힘이 주입된 뉴에라의 옷감', item_quantity: 20 },
+      { item_name: '힘이 주입된 뉴에라의 광석', item_quantity: 60 },
+    ],
+  },
+  {
+    item_name: '풍요의 근본',
+    item_crafting: ['전문기술'],
+    item_category: '장비',
+    item_materials: [
+      { item_name: '세미아스 정수', item_quantity: 2 },
+      { item_name: '에리우의 파편: 풍요의 근본', item_quantity: 2 },
+      { item_name: '단단한 에리우의 결정', item_quantity: 10 },
+      { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
       { item_name: '힘이 주입된 뉴에라의 오브', item_quantity: 35 },
       { item_name: '힘이 주입된 뉴에라의 옷감', item_quantity: 20 },
       { item_name: '힘이 주입된 뉴에라의 광석', item_quantity: 60 },
@@ -1251,6 +1409,18 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: '고급 강화의 비약', item_quantity: 10 },
       { item_name: '봉인의 힘: 파편', item_quantity: 100 },
       { item_name: '전승의 힘: 파편', item_quantity: 100 },
+      { item_name: '게브네의 강화석', item_quantity: 3 },
+    ],
+  },
+  {
+    item_name: '에리우 승급석: 다리 방어구',
+    item_crafting: ['금속갑옷', '재봉'],
+    item_category: '재료',
+    item_materials: [
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '고급 강화의 비약', item_quantity: 15 },
+      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
+      { item_name: '전승의 힘: 파편', item_quantity: 150 },
       { item_name: '게브네의 강화석', item_quantity: 3 },
     ],
   },

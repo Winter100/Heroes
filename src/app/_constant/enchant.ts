@@ -653,7 +653,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '밸런스', stat_value: '7' },
       { stat_name: '고유 그룹', stat_value: '자원 회복' },
       { stat_name: '일정 확률로 SP 회복', stat_value: '125' },
-      { stat_name: '해제', stat_value: '50' },
+      { stat_name: '파괴력', stat_value: '50' },
     ],
   },
   {
@@ -699,7 +699,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '밸런스', stat_value: '7' },
       { stat_name: '고유 그룹', stat_value: '자원 회복' },
       { stat_name: '매초 마나 회복', stat_value: '2' },
-      { stat_name: '해제', stat_value: '50' },
+      { stat_name: '파괴력', stat_value: '50' },
     ],
   },
   {
@@ -745,7 +745,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '밸런스', stat_value: '7' },
       { stat_name: '고유 그룹', stat_value: '자원 회복' },
       { stat_name: '높은 확률로 SP 회복', stat_value: '125' },
-      { stat_name: '해제', stat_value: '50' },
+      { stat_name: '파괴력', stat_value: '50' },
     ],
   },
   {
@@ -964,6 +964,46 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '마법공격력', stat_value: '700' },
       { stat_name: '공격속도', stat_value: '1' },
       { stat_name: '크리티컬 저항', stat_value: '7' },
+    ],
+  },
+  {
+    rank: '3',
+    name: '공허한',
+    description: '',
+    drop_item_list: ['정의를 망각한 대성당'],
+    stat_value: [
+      { stat_name: '공격속도', stat_value: '1' },
+      { stat_name: '방어력', stat_value: '1000' },
+      { stat_name: '크리티컬', stat_value: '4' },
+      { stat_name: '크리티컬 저항', stat_value: '8' },
+    ],
+  },
+  {
+    rank: '3',
+    name: '가득한',
+    description: '',
+    drop_item_list: ['풍요의 숲'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '245' },
+      { stat_name: '마법공격력', stat_value: '245' },
+      { stat_name: '방어력', stat_value: '200' },
+      { stat_name: '공격속도', stat_value: '2' },
+      { stat_name: '크리티컬', stat_value: '3' },
+      { stat_name: '크리티컬 저항', stat_value: '11' },
+      { stat_name: '밸런스', stat_value: '6' },
+    ],
+  },
+  {
+    rank: '4',
+    name: '질풍의',
+    description: '',
+    drop_item_list: ['풍요의 숲'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '5' },
+      { stat_name: '크리티컬', stat_value: '-4' },
+      { stat_name: '밸런스', stat_value: '-4' },
     ],
   },
 ];
@@ -1497,7 +1537,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     drop_item_list: ['시공의 상자: 몰락한 기사의 전당'],
     stat_value: [
       { stat_name: '크리티컬', stat_value: '2' },
-      { stat_name: '해제', stat_value: '100' },
+      { stat_name: '파괴력', stat_value: '100' },
       { stat_name: '고유 그룹', stat_value: '공격속도 증가' },
       { stat_name: '발동시 공격속도 증가', stat_value: '' },
     ],
@@ -1534,7 +1574,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     drop_item_list: ['시공의 상자: 몰락한 기사의 전당'],
     stat_value: [
       { stat_name: '크리티컬', stat_value: '2' },
-      { stat_name: '해제', stat_value: '100' },
+      { stat_name: '파괴력', stat_value: '100' },
       { stat_name: '고유 그룹', stat_value: '공격속도 증가' },
       {
         stat_name: '발동시 (쿨 30초) 공격속도 증가',
@@ -1736,6 +1776,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Left Hand'],
     list: [
+      '공허한',
       '맷집 좋은',
       '현자의',
       '짜릿한',
@@ -1748,6 +1789,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Head', 'Lower'],
     list: [
+      '가득한',
       '잊혀진',
       '냉철의',
       '냉정의',
@@ -1786,6 +1828,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Right Finger', 'Left Finger'],
     list: [
+      '질풍의',
       '감춰진',
       '대적자의',
       '뒤틀린',
@@ -1802,6 +1845,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Charm'],
     list: [
+      '질풍의',
       '감춰진',
       '시공의',
       '뒤틀린',
@@ -1815,6 +1859,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Earring', 'Necklace'],
     list: [
+      '질풍의',
       '감춰진',
       '뒤틀린',
       '뜻깊은',
@@ -1827,6 +1872,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Artifact'],
     list: [
+      '질풍의',
       '굳어버린',
       '꿰뚫는',
       '파괴하는',
@@ -1844,6 +1890,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Belt'],
     list: [
+      '질풍의',
       '감춰진',
       '고대의',
       '강렬한',

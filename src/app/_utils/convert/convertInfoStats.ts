@@ -23,9 +23,9 @@ const filterData = [
   '파괴시 방어력',
   '최대 스태미나',
   '크리티컬 저항',
-  '대항력',
+  '방어력 관통',
   '추가피해',
-  '해제',
+  '파괴력',
 ];
 
 export const convertInfoStat = (item: NewEquipmentType) => {

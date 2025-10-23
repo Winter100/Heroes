@@ -21,6 +21,6 @@ export const calculateAccessoriesStats = (
   return [
     { stat_name: '공격력', stat_value: totalAttack },
     { stat_name: '마법공격력', stat_value: totalAttack },
-    { stat_name: '대항력', stat_value: totalDefense },
+    { stat_name: '방어력 관통', stat_value: totalDefense },
   ];
 };

@@ -6,7 +6,7 @@ const CalculatorStat = memo(
   ({
     bossData,
     filter,
-    limitValue,
+    // limitValue,
     stat_name,
     stat_value,
   }: CalculatorStatProps) => {
@@ -14,8 +14,8 @@ const CalculatorStat = memo(
       bossData,
       filter,
       stat_name,
-      stat_value?.toString(),
-      limitValue?.toString()
+      stat_value?.toString()
+      // limitValue?.toString()
     );
 
     return (

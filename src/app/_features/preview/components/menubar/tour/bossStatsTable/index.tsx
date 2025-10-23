@@ -20,7 +20,7 @@ const BossStatsTable = ({ boss, filter }: TableProps) => {
   const userStats = usePreviewStore((state) => state.previewAllStats);
   const filteredUserStats = filterStats(userStats);
   const limitValue = filteredUserStats.find(
-    (i) => i.stat_name === '해제'
+    (i) => i.stat_name === '파괴력'
   )?.stat_value;
 
   return (
