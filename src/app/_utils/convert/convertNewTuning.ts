@@ -5,16 +5,16 @@ export const convertNewTuning = (item: NewEquipmentType) => {
     {
       /*
       와드네 및 에리우의 경우
-      해제2 를 제외한 모든 연마가 완료되어야 해제2 연마 버튼 활성화
+      파괴력2 를 제외한 모든 연마가 완료되어야 파괴력2 연마 버튼 활성화
       */
     }
     if (
       item.item_name.includes('와드네') ||
       item.item_name.includes('에리우')
     ) {
-      if (stat.stat_name === '해제 2') {
+      if (stat.stat_name === '파괴력 2') {
         const isLimitTrue = arr
-          .filter((s) => s.stat_name !== '해제 2')
+          .filter((s) => s.stat_name !== '파괴력 2')
           .every((s) => s.stat_max_value === s.stat_value);
         return {
           ...stat,
@@ -28,10 +28,10 @@ export const convertNewTuning = (item: NewEquipmentType) => {
       };
     }
 
-    if (stat.stat_name === '해제') {
+    if (stat.stat_name === '파괴력') {
       const allOtherStatsMatch =
         arr
-          .filter((s) => !s.stat_name.includes('해제'))
+          .filter((s) => !s.stat_name.includes('파괴력'))
           .every((s) => s.stat_max_value === s.stat_value) &&
         Number(item.item_option.enhancement_level) >= 13;
       return {

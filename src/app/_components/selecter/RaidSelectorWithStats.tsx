@@ -36,9 +36,9 @@ const RaidSelectorWithStats = memo(() => {
     );
   const bossSumUp = useRaidStore((state) => state.selectedSumUp);
 
-  const limitValue = filteredStats.find(
-    (i) => i.stat_name === '해제'
-  )?.stat_value;
+  // const limitValue = filteredStats.find(
+  //   (i) => i.stat_name === '파괴력'
+  // )?.stat_value;
 
   const boss = filterRaidList(bossSumUp.entry || '빠른전투')
     .find((raid) => {
@@ -84,8 +84,8 @@ const RaidSelectorWithStats = memo(() => {
                 boss,
                 bossSumUp.entry ?? '빠른전투',
                 item?.stat_name,
-                item?.stat_value.toString(),
-                limitValue?.toString()
+                item?.stat_value.toString()
+                // limitValue?.toString()
               );
 
               return (

@@ -739,8 +739,8 @@ export const usePreviewStore = create<State & Action>((set) => {
             if (item.item_option?.tuning_stat) {
               const updatedTuningStat = item.item_option.tuning_stat.map(
                 (stat) => {
-                  if (limitName === '해제') {
-                    if (stat.stat_name === '해제') {
+                  if (limitName === '파괴력') {
+                    if (stat.stat_name === '파괴력') {
                       const newStatValue = stat.stat_min_value.toString();
                       return {
                         ...stat,
@@ -749,8 +749,8 @@ export const usePreviewStore = create<State & Action>((set) => {
                     }
                   }
 
-                  if (limitName === '해제 2') {
-                    if (stat.stat_name === '해제 2') {
+                  if (limitName === '파괴력 2') {
+                    if (stat.stat_name === '파괴력 2') {
                       const newStatValue = stat.stat_min_value.toString();
                       return {
                         ...stat,
@@ -759,8 +759,8 @@ export const usePreviewStore = create<State & Action>((set) => {
                     }
                   }
 
-                  if (limitName === '해제 3') {
-                    if (stat.stat_name === '해제 3') {
+                  if (limitName === '파괴력 3') {
+                    if (stat.stat_name === '파괴력 3') {
                       const newStatValue = stat.stat_min_value.toString();
                       return {
                         ...stat,

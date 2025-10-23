@@ -57,7 +57,7 @@ export const bagList = (bag: EquipmentType[]) => {
             ...foundItem.item_option,
             tuning_stat: foundItem.item_option.tuning_stat.map((stat) =>
               stat.stat_name === '공격력 제한 해제'
-                ? { ...stat, stat_name: '해제' }
+                ? { ...stat, stat_name: '파괴력' }
                 : stat
             ),
           },

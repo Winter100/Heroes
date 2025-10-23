@@ -8,12 +8,14 @@ interface PopOverItemProps extends ComponentProps<'div'> {
   category: string;
   itemName: string;
   isColorName?: boolean;
+  description?: string;
 }
 
 const PopOverItem = ({
   category,
   itemName,
   isColorName = false,
+  description,
   className,
 }: PopOverItemProps) => {
   const type = isColorName
@@ -27,7 +29,10 @@ const PopOverItem = ({
         item_name={itemName}
         isRatingBorder={true}
       />
-      <Item.Title type={type}>{itemName}</Item.Title>
+      <div className="flex flex-col">
+        <Item.Title type={type}>{itemName}</Item.Title>
+        {description && <div className="text-xs">{description}</div>}
+      </div>
     </div>
   );
 };

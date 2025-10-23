@@ -23,6 +23,7 @@ const ItemCraftingMaterialList = memo(
                   category={category || ''}
                   isColorName={true}
                   itemName={item.item_name}
+                  description={item.item_description}
                 />
                 <div className="flex items-center">
                   <div className="w-3">x</div>

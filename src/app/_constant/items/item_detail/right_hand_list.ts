@@ -197,4 +197,20 @@ export const right_hand_list: ItemType[] = [
     set: '에리우',
     enhancement_options: right_hand_level_options['에리우'],
   },
+  {
+    name: '중급 에리우 무기',
+    restrictions: [
+      '125 레벨 이상',
+      '무기 마스터리 4랭크 이상',
+      '최대 품질 5성',
+    ],
+    quality: 2,
+    quality_selection_available: true,
+    quality_stats: ['공격력', '마법공격력', '힘', '민첩', '지능', '의지'],
+    rating: '중급',
+    category: ['무기'],
+    color: false,
+    set: '에리우',
+    enhancement_options: right_hand_level_options['에리우'],
+  },
 ];

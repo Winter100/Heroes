@@ -5,8 +5,8 @@ export const mergeStats = (stats: Stat[]): Stat[] => {
 
   for (const stat of stats) {
     let statName = '';
-    if (stat.stat_name === '해제 2' || stat.stat_name === '해제 3') {
-      statName = '해제';
+    if (stat.stat_name === '파괴력 2' || stat.stat_name === '파괴력 3') {
+      statName = '파괴력';
     } else {
       statName = stat.stat_name;
     }

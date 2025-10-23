@@ -47,15 +47,15 @@ export const getNewTuning = (item: EquipmentType) => {
 
 {
   /* 
-  아이템의 해제 정보는 모두 합쳐진 값이 온다. (ex: 8000)
-  하지만 각 해제 단계마다 최대 수치가 정해져있음 '1단계는 최대 2000', '2단계는 최대 3000' 이런 식으로.
-  해제 정보에서 각 단계의 수치를 넘으면 넘치는 수치만큼 다음 해제에 분배 해줘야함.
+  아이템의 파괴력 정보는 모두 합쳐진 값이 온다. (ex: 8000)
+  하지만 각 파괴력 단계마다 최대 수치가 정해져있음 '1단계는 최대 2000', '2단계는 최대 3000' 이런 식으로.
+  파괴력 정보에서 각 단계의 수치를 넘으면 넘치는 수치만큼 다음 파괴력에 분배 해줘야함.
   */
 }
 const updateStats = (tuningStats: UpdateStats[]) => {
-  // 해제 정보 세팅
-  const limit1 = tuningStats?.find((stat) => stat.stat_name === '해제');
-  const limit2 = tuningStats?.find((stat) => stat.stat_name === '해제 2');
+  // 파괴력 정보 세팅
+  const limit1 = tuningStats?.find((stat) => stat.stat_name === '파괴력');
+  const limit2 = tuningStats?.find((stat) => stat.stat_name === '파괴력 2');
 
   if (
     limit1 &&

@@ -31,7 +31,9 @@ const GrindingItem = ({
 
   const isMin = stat_min_value === stat_value || !isView;
   const isMax =
-    stat_name === '해제 3' || stat_name === '해제 2' || stat_name === '해제'
+    stat_name === '파괴력 3' ||
+    stat_name === '파괴력 2' ||
+    stat_name === '파괴력'
       ? (stat_max_value === stat_value) === isView
       : stat_max_value === stat_value;
 

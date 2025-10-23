@@ -1,5 +1,23 @@
 import { ItemType } from '@/app/_type/infoInfoType';
 import { createAccessoriesObject } from '@/app/_utils/createAccessoriesObject';
+const 풍요의근본 = [
+  {
+    name: '풍요의 근본',
+    max_stage: 20,
+    base_stat: [
+      { stat_name: '크리티컬', stat_value: 15 },
+      { stat_name: '힘', stat_value: 125 },
+      { stat_name: '민첩', stat_value: 50 },
+      { stat_name: '지능', stat_value: 167 },
+      { stat_name: '의지', stat_value: 58 },
+      { stat_name: '스태미나', stat_value: 4 },
+    ],
+    firstAttackIncrease: 16,
+    firstDefenseIncrease: 7,
+    secondAttackIncrease: 16,
+    secondDefenseIncrease: 6,
+  },
+];
 const 태양의비원 = [
   {
     name: '태양의 비원',
@@ -56,6 +74,17 @@ const 차원의귀걸이 = [
 ];
 
 export const earring_list: ItemType[] = [
+  {
+    name: '풍요의 근본',
+    restrictions: ['125 레벨 이상'],
+    quality: 2,
+    quality_selection_available: true,
+    rating: '고급',
+    category: ['액세서리', '귀걸이'],
+    quality_stats: ['힘', '민첩', '지능', '의지'],
+    enhancement_options: createAccessoriesObject(풍요의근본)[0],
+    color: true,
+  },
   {
     name: '태양의 비원',
     restrictions: ['120 레벨 이상'],

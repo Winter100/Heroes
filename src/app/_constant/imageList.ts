@@ -83,6 +83,7 @@ export const imageMap = new Map<string, string>([
   ['탐욕의 연회장', '/images/monster/s4/banquet-hall-of-greed.png'],
   ['따를 수 없는 예언', '/images/monster/s4/go.png'],
   ['정의를 망각한 대성당', '/images/monster/s4/cathedral.png'],
+  ['풍요의 숲', '/images/monster/s4/125n.png'],
 
   ['신념의 상자: 결사대', '/images/items/reward/belief-box.png'],
   ['결의의 상자: 결사대', '/images/items/reward/resolution-box.png'],
@@ -704,6 +705,10 @@ export const imageMap = new Map<string, string>([
 
   ['에리우 무기', '/images/items/equipment/125/er-ri.png'],
   ['초급 에리우 무기', '/images/items/equipment/125/er-ri.png'],
+  ['중급 에리우 무기', '/images/items/equipment/125/er-ri.png'],
+  ['고급 에리우 무기', '/images/items/equipment/125/er-ri.png'],
+  ['레어 에리우 무기', '/images/items/equipment/125/er-ri.png'],
+  ['전설 에리우 무기', '/images/items/equipment/125/er-ri.png'],
 
   ['에리우의 서', '/images/items/equipment/125/er-b.png'],
   ['에리우 스몰실드', '/images/items/equipment/125/er-ss.png'],
@@ -761,6 +766,7 @@ export const imageMap = new Map<string, string>([
   ['차원의 귀걸이', '/images/items/equipment/earring-110.png'],
   ['성소의 귀걸이', '/images/items/equipment/earring-115.png'],
   ['태양의 비원', '/images/items/equipment/sun_earring.png'],
+  ['풍요의 근본', '/images/items/equipment/125/125_ear.png'],
 
   // 반지
   ['균열의 분노', '/images/items/equipment/ring-110-01.png'],
@@ -986,13 +992,13 @@ export const imageMap = new Map<string, string>([
   ['공격력', '/images/icon/att.png'],
   ['크리티컬', '/images/icon/cri.png'],
   ['밸런스', '/images/icon/bal.png'],
-  ['대항력', '/images/icon/reg.png'],
+  ['방어력 관통', '/images/icon/reg.png'],
   ['크리티컬 저항', '/images/icon/cridef.png'],
   ['추가피해', '/images/icon/atkplus.png'],
   ['방어력', '/images/icon/def.png'],
   ['공격속도', '/images/icon/atkspeed.png'],
-  ['해제', '/images/icon/limit.png'],
-  ['해제 2', '/images/icon/limit.png'],
+  ['파괴력', '/images/icon/limit.png'],
+  ['파괴력 2', '/images/icon/limit.png'],
 
   // 카이
   // 공통 X
