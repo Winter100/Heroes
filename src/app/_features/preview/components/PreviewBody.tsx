@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useCharacterData } from '@/app/_hooks/useCharacterData';
 import { useEnchantPriceList } from '@/app/_hooks/useEnchantPriceList';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
@@ -16,9 +17,12 @@ import PreivewList from './preview/PreivewList';
 import PreviewTitle from './preview/PreviewTitle';
 import RaidSelectorWithStats from '@/app/_components/selecter/RaidSelectorWithStats';
 import EnchantTotalPrice from '@/app/_features/preview/components/EnchantTotalPrice';
+import { Button } from '@/components/ui/button';
+import AttackPower from './preview/AttackPower';
 
 const PreviewBody = () => {
   const { isLoading, error, name } = useCharacterData();
+  const [isChartVisible, setIsChartVisible] = useState(false);
   useEnchantPriceList();
 
   if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요" />;
@@ -41,6 +45,13 @@ const PreviewBody = () => {
         <StatsSummaryDialog />
         <PartholnSummaryDialog />
         <GrindingSummaryDialog />
+        <Button
+          className="text-xs"
+          onClick={() => setIsChartVisible((prev) => !prev)}
+          variant="outline"
+        >
+          공격력 그래프
+        </Button>
       </Row>
 
       <Column>
@@ -49,8 +60,11 @@ const PreviewBody = () => {
         <Row className="flex items-center justify-end text-white">
           <EnchantTotalPrice />
         </Row>
-        <RaidSelectorWithStats />
       </Column>
+
+      <RaidSelectorWithStats />
+
+      {isChartVisible && <AttackPower setIsChartVisible={setIsChartVisible} />}
     </>
   );
 };

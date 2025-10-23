@@ -27,19 +27,19 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
 
   const limitFinished1 = isLimitEvery(
     item,
-    (stat) => !stat.stat_name.includes('해제')
+    (stat) => !stat.stat_name.includes('파괴력')
   );
   const limitFinished2 = isLimitEvery(
     item,
-    (stat) => stat.stat_name !== '해제 2'
+    (stat) => stat.stat_name !== '파괴력 2'
   );
 
   {
-    /* 해제를 제외한 나머지 연마가 풀이 아닐 경우 해제를 초기화 */
+    /* 파괴력를 제외한 나머지 연마가 풀이 아닐 경우 파괴력를 초기화 */
   }
   useEffect(() => {
     if (item.item_name.includes('오르나') && !limitFinished1) {
-      setLimitZero(item.item_equipment_slot_name, '해제');
+      setLimitZero(item.item_equipment_slot_name, '파괴력');
     }
   }, [
     item.item_equipment_slot_name,
@@ -54,7 +54,7 @@ const GrindingChangeList = ({ item, className }: GrindingProps) => {
         item.item_name.includes('에리우')) &&
       !limitFinished2
     ) {
-      setLimitZero(item.item_equipment_slot_name, '해제 2');
+      setLimitZero(item.item_equipment_slot_name, '파괴력 2');
     }
   }, [
     item.item_equipment_slot_name,

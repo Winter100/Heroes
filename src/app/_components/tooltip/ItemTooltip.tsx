@@ -68,7 +68,7 @@ const ItemTooltip = memo(
       ?.item.find((i) => i.item_slot.includes(slot || ''));
 
     const craftingNeedTuningStats = grindingItem?.item_value.map((stat) => {
-      if (stat.stat_name === '해제') {
+      if (stat.stat_name === '파괴력') {
         return {
           ...stat,
           stat_name: stat.stat_name,

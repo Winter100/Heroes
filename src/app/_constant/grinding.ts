@@ -6,7 +6,7 @@ export const oneGrinding = [
         item_slot: ['Right Hand'],
         item_value: [
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '72',
             stat_max_value: '4032',
             one_ingredient: [
@@ -22,7 +22,7 @@ export const oneGrinding = [
         item_slot: ['Head', 'Hand', 'Leg'],
         item_value: [
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '20',
             stat_max_value: '480',
             one_ingredient: [
@@ -38,7 +38,7 @@ export const oneGrinding = [
         item_slot: ['Upper', 'Lower'],
         item_value: [
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '20',
             stat_max_value: '680',
             one_ingredient: [
@@ -107,7 +107,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '50',
             stat_max_value: '5400',
             one_ingredient: [
@@ -147,7 +147,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '700',
             one_ingredient: [
@@ -187,7 +187,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '1050',
             one_ingredient: [
@@ -227,7 +227,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '1050',
             one_ingredient: [
@@ -288,7 +288,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '50',
             stat_max_value: '5400',
             one_ingredient: [
@@ -299,9 +299,11 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제 2',
-            stat_one_value: '15',
-            stat_max_value: '1500',
+            stat_name: '파괴력 2',
+            stat_one_value: '45',
+            stat_max_value: '4500',
+            // stat_one_value: '15',
+            // stat_max_value: '1500',
             one_ingredient: [
               { name: '골드', quantity: '2100000' },
               { name: '힘이 주입된 뉴에라의 광석', quantity: '35' },
@@ -341,7 +343,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '700',
             one_ingredient: [
@@ -352,9 +354,11 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제 2',
-            stat_one_value: '5',
-            stat_max_value: '440',
+            stat_name: '파괴력 2',
+            stat_one_value: '15',
+            stat_max_value: '1320',
+            // stat_one_value: '5',
+            // stat_max_value: '440',
             one_ingredient: [
               { name: '골드', quantity: '700000' },
               { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
@@ -395,7 +399,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '1050',
             one_ingredient: [
@@ -406,9 +410,11 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제 2',
-            stat_one_value: '5',
-            stat_max_value: '740',
+            stat_name: '파괴력 2',
+            stat_one_value: '15',
+            stat_max_value: '2220',
+            // stat_one_value: '5',
+            // stat_max_value: '740',
             one_ingredient: [
               { name: '골드', quantity: '700000' },
               { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
@@ -449,7 +455,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '1050',
             one_ingredient: [
@@ -460,9 +466,11 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제 2',
-            stat_one_value: '5',
-            stat_max_value: '740',
+            stat_name: '파괴력 2',
+            stat_one_value: '15',
+            stat_max_value: '2220',
+            // stat_one_value: '5',
+            // stat_max_value: '740',
             one_ingredient: [
               { name: '골드', quantity: '700000' },
               { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
@@ -521,7 +529,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '50',
             stat_max_value: '5400',
             one_ingredient: [
@@ -532,9 +540,9 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제 2',
-            stat_one_value: '15',
-            stat_max_value: '3000',
+            stat_name: '파괴력 2',
+            stat_one_value: '45',
+            stat_max_value: '9000',
             one_ingredient: [
               { name: '골드', quantity: '2100000' },
               { name: '힘이 주입된 뉴에라의 광석', quantity: '35' },
@@ -542,17 +550,6 @@ export const oneGrinding = [
               { name: '미지의 결정', quantity: '3' },
             ],
           },
-          // {
-          //   stat_name: '해제 3',
-          //   stat_one_value: '15',
-          //   stat_max_value: '1500',
-          //   one_ingredient: [
-          //     { name: '골드', quantity: '2100000' },
-          //     { name: '힘이 주입된 뉴에라의 광석', quantity: '35' },
-          //     { name: '힘이 주입된 뉴에라의 오브', quantity: '35' },
-          //     { name: '미지의 결정', quantity: '3' },
-          //   ],
-          // },
         ],
       },
       {
@@ -585,7 +582,7 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제',
+            stat_name: '파괴력',
             stat_one_value: '14',
             stat_max_value: '700',
             one_ingredient: [
@@ -596,9 +593,9 @@ export const oneGrinding = [
             ],
           },
           {
-            stat_name: '해제 2',
-            stat_one_value: '5',
-            stat_max_value: '880',
+            stat_name: '파괴력 2',
+            stat_one_value: '15',
+            stat_max_value: '2640',
             one_ingredient: [
               { name: '골드', quantity: '700000' },
               { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
@@ -606,17 +603,6 @@ export const oneGrinding = [
               { name: '투쟁의 결정', quantity: '1' },
             ],
           },
-          // {
-          //   stat_name: '해제 3',
-          //   stat_one_value: '5',
-          //   stat_max_value: '440',
-          //   one_ingredient: [
-          //     { name: '골드', quantity: '700000' },
-          //     { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
-          //     { name: '힘이 주입된 뉴에라의 가죽', quantity: '17' },
-          //     { name: '투쟁의 결정', quantity: '1' },
-          //   ],
-          // },
         ],
       },
 
@@ -650,7 +636,7 @@ export const oneGrinding = [
       //       ],
       //     },
       //     {
-      //       stat_name: '해제',
+      //       stat_name: '파괴력',
       //       stat_one_value: '14',
       //       stat_max_value: '1050',
       //       one_ingredient: [
@@ -661,7 +647,7 @@ export const oneGrinding = [
       //       ],
       //     },
       //     {
-      //       stat_name: '해제 2',
+      //       stat_name: '파괴력 2',
       //       stat_one_value: '5',
       //       stat_max_value: '740',
       //       one_ingredient: [
@@ -672,7 +658,7 @@ export const oneGrinding = [
       //       ],
       //     },
       //     {
-      //       stat_name: '해제 3',
+      //       stat_name: '파괴력 3',
       //       stat_one_value: '5',
       //       stat_max_value: '740',
       //       one_ingredient: [
@@ -685,70 +671,59 @@ export const oneGrinding = [
       //   ],
       // },
 
-      // {
-      //   item_slot: ['Lower'],
-      //   item_value: [
-      //     {
-      //       stat_name: '방어력',
-      //       stat_one_value: '10',
-      //       stat_max_value: '850',
-      //       one_ingredient: [
-      //         { name: '골드', quantity: '350000' },
-      //         { name: '힘이 주입된 뉴에라의 옷감', quantity: '3' },
-      //         { name: '힘이 주입된 뉴에라의 가죽', quantity: '3' },
-      //         { name: '힘이 주입된 뉴에라의 광석', quantity: '3' },
-      //         { name: '힘이 주입된 뉴에라의 오브', quantity: '3' },
-      //         { name: '봉인의 힘: 파편', quantity: '25' },
-      //       ],
-      //     },
-      //     {
-      //       stat_name: '크리티컬 저항',
-      //       stat_one_value: '1',
-      //       stat_max_value: '9',
-      //       one_ingredient: [
-      //         { name: '골드', quantity: '3500000' },
-      //         { name: '힘이 주입된 뉴에라의 옷감', quantity: '14' },
-      //         { name: '힘이 주입된 뉴에라의 가죽', quantity: '14' },
-      //         { name: '힘이 주입된 뉴에라의 광석', quantity: '14' },
-      //         { name: '힘이 주입된 뉴에라의 오브', quantity: '14' },
-      //         { name: '전승의 힘: 파편', quantity: '200' },
-      //       ],
-      //     },
-      //     {
-      //       stat_name: '해제',
-      //       stat_one_value: '14',
-      //       stat_max_value: '1050',
-      //       one_ingredient: [
-      //         { name: '골드', quantity: '280000' },
-      //         { name: '뉴에라의 옷감', quantity: '12' },
-      //         { name: '뉴에라의 가죽', quantity: '12' },
-      //         { name: '투쟁의 조각 3단계', quantity: '1' },
-      //       ],
-      //     },
-      //     {
-      //       stat_name: '해제 2',
-      //       stat_one_value: '5',
-      //       stat_max_value: '740',
-      //       one_ingredient: [
-      //         { name: '골드', quantity: '700000' },
-      //         { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
-      //         { name: '힘이 주입된 뉴에라의 가죽', quantity: '17' },
-      //         { name: '투쟁의 결정', quantity: '1' },
-      //       ],
-      //     },
-      //     {
-      //       stat_name: '해제 3',
-      //       stat_one_value: '5',
-      //       stat_max_value: '740',
-      //       one_ingredient: [
-      //         { name: '골드', quantity: '700000' },
-      //         { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
-      //         { name: '힘이 주입된 뉴에라의 가죽', quantity: '17' },
-      //         { name: '투쟁의 결정', quantity: '1' },
-      //       ],
-      //     },
-      //   ],
-      // },
+      {
+        item_slot: ['Lower'],
+        item_value: [
+          {
+            stat_name: '방어력',
+            stat_one_value: '10',
+            stat_max_value: '567',
+            one_ingredient: [
+              { name: '골드', quantity: '350000' },
+              { name: '힘이 주입된 뉴에라의 옷감', quantity: '3' },
+              { name: '힘이 주입된 뉴에라의 가죽', quantity: '3' },
+              { name: '힘이 주입된 뉴에라의 광석', quantity: '3' },
+              { name: '힘이 주입된 뉴에라의 오브', quantity: '3' },
+              { name: '봉인의 힘: 파편', quantity: '25' },
+            ],
+          },
+          {
+            stat_name: '크리티컬 저항',
+            stat_one_value: '1',
+            stat_max_value: '6',
+            one_ingredient: [
+              { name: '골드', quantity: '3500000' },
+              { name: '힘이 주입된 뉴에라의 옷감', quantity: '14' },
+              { name: '힘이 주입된 뉴에라의 가죽', quantity: '14' },
+              { name: '힘이 주입된 뉴에라의 광석', quantity: '14' },
+              { name: '힘이 주입된 뉴에라의 오브', quantity: '14' },
+              { name: '전승의 힘: 파편', quantity: '200' },
+            ],
+          },
+          {
+            stat_name: '파괴력',
+            stat_one_value: '14',
+            stat_max_value: '1050',
+            one_ingredient: [
+              { name: '골드', quantity: '280000' },
+              { name: '뉴에라의 옷감', quantity: '12' },
+              { name: '뉴에라의 가죽', quantity: '12' },
+              { name: '투쟁의 조각 3단계', quantity: '1' },
+            ],
+          },
+          {
+            stat_name: '파괴력 2',
+            stat_one_value: '15',
+            stat_max_value: '4400',
+            one_ingredient: [
+              { name: '골드', quantity: '700000' },
+              { name: '힘이 주입된 뉴에라의 옷감', quantity: '17' },
+              { name: '힘이 주입된 뉴에라의 가죽', quantity: '17' },
+              { name: '투쟁의 결정', quantity: '1' },
+            ],
+          },
+        ],
+      },
     ],
   },
 ];

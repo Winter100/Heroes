@@ -43,7 +43,7 @@ const InfusionsDialog = ({
       </DialogTrigger>
       <DialogContent
         autoFocus={false}
-        className="max-h-96 max-w-2xl overflow-y-auto border-none bg-background px-1 text-white sm:max-h-[700px] sm:px-6"
+        className="max-h-96 max-w-3xl overflow-y-auto border-none bg-background px-1 text-white sm:max-h-[700px] sm:px-6"
       >
         <DialogHeader>
           <DialogTitle>
