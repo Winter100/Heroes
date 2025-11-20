@@ -134,11 +134,10 @@ export const materials_info: BasicItemInfoType[] = [
       '에리우 헬름을 제작하거나 에리우 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
-    item_name: '에리우의 파편: 다리 방어구',
+    item_name: '에리우의 파편: 풍요의 근본',
     item_rating: '레어',
     item_crafting: [],
-    item_description:
-      '에리우 그리브즈를 제작하거나 에리우 승급석: 다리 방어구를 제작할 때 주재료로 사용됩니다.',
+    item_description: '풍요의 근본을 제작할 때 주재료로 사용됩니다.',
   },
   {
     item_name: '와드네의 파편: 가슴 방어구',
@@ -815,6 +814,12 @@ export const materials_info: BasicItemInfoType[] = [
     item_rating: '레어',
     item_crafting: [''],
     item_description: `시공간 왜곡: 주시자의 신전을 완수하여 획득한 상자.`,
+  },
+  {
+    item_name: '시공의 상자: 찬탈자의 왕좌',
+    item_rating: '레어',
+    item_crafting: [''],
+    item_description: `시공간 왜곡: 찬탈자의 왕좌를 완수하여 획득한 상자.`,
   },
   {
     item_name: '[금속갑옷] 아바타 레시피 스크롤',

@@ -423,7 +423,7 @@ export const item_crafting_materials_list: ItemListType[] = [
         item_name: '초급 에리우 무기',
         item_quantity: 1,
       },
-      { item_name: '세미아스 정수', item_quantity: 2 },
+      { item_name: '세미아스의 정수', item_quantity: 2 },
       {
         item_name: '에리우의 파편: 무기',
         item_quantity: 2,
@@ -866,7 +866,6 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['금속갑옷', '재봉'],
     item_category: '장비',
     item_materials: [
-      // { item_name: '골드', item_quantity: 3750000 },
       {
         item_name: '전설 와드네 그리브즈',
         item_description: '에리우 승급 시 연마가 필요하지 않습니다',
@@ -876,7 +875,6 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: '에리우의 파편: 다리 방어구', item_quantity: 2 },
       { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
       { item_name: '고급 강화의 비약', item_quantity: 15 },
-      { item_name: '에리우 승급석: 머리 방어구', item_quantity: 2 },
       {
         item_name: '추출의 룬',
         item_quantity: 1,
@@ -1183,7 +1181,7 @@ export const item_crafting_materials_list: ItemListType[] = [
     item_crafting: ['전문기술'],
     item_category: '장비',
     item_materials: [
-      { item_name: '세미아스 정수', item_quantity: 2 },
+      { item_name: '세미아스의 정수', item_quantity: 2 },
       { item_name: '에리우의 파편: 풍요의 근본', item_quantity: 2 },
       { item_name: '단단한 에리우의 결정', item_quantity: 10 },
       { item_name: '매끈한 에리우의 결정', item_quantity: 10 },
@@ -1365,6 +1363,18 @@ export const item_crafting_materials_list: ItemListType[] = [
     ],
   },
   {
+    item_name: '에리우 승급석: 다리 방어구',
+    item_crafting: ['금속갑옷', '재봉'],
+    item_category: '재료',
+    item_materials: [
+      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
+      { item_name: '고급 강화의 비약', item_quantity: 15 },
+      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
+      { item_name: '전승의 힘: 파편', item_quantity: 150 },
+      { item_name: '게브네의 강화석', item_quantity: 3 },
+    ],
+  },
+  {
     item_name: '와드네 승급석: 무기',
     item_crafting: ['전문기술'],
     item_category: '재료',
@@ -1409,18 +1419,6 @@ export const item_crafting_materials_list: ItemListType[] = [
       { item_name: '고급 강화의 비약', item_quantity: 10 },
       { item_name: '봉인의 힘: 파편', item_quantity: 100 },
       { item_name: '전승의 힘: 파편', item_quantity: 100 },
-      { item_name: '게브네의 강화석', item_quantity: 3 },
-    ],
-  },
-  {
-    item_name: '에리우 승급석: 다리 방어구',
-    item_crafting: ['금속갑옷', '재봉'],
-    item_category: '재료',
-    item_materials: [
-      { item_name: '에리우의 파편: 다리 방어구', item_quantity: 1 },
-      { item_name: '고급 강화의 비약', item_quantity: 15 },
-      { item_name: '봉인의 힘: 파편', item_quantity: 150 },
-      { item_name: '전승의 힘: 파편', item_quantity: 150 },
       { item_name: '게브네의 강화석', item_quantity: 3 },
     ],
   },

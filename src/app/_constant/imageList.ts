@@ -119,6 +119,7 @@ export const imageMap = new Map<string, string>([
 
   // 시공간 왜곡
   ['찬탈자의 성채', '/images/monster/space/soul-usurper-taros.png'],
+  ['찬탈자의 왕좌', '/images/monster/space/soul-usurper-taros.png'],
   ['몰락한 기사의 전당', '/images/monster/space/fallen-eisenritter.png'],
   ['주시자의 신전', '/images/monster/space/temple-of-the-watcher.png'],
   [
@@ -133,6 +134,7 @@ export const imageMap = new Map<string, string>([
     '시공의 상자: 주시자의 신전',
     '/images/items/reward/space-time-box-the-watchers-temple.png',
   ],
+  ['시공의 상자: 찬탈자의 왕좌', '/images/items/reward/125-box-k.png'],
 
   // 재료
   [
@@ -151,6 +153,15 @@ export const imageMap = new Map<string, string>([
   ['스렝의 정수', '/images/items/materials/s4/essence-of-sreng.png'],
   ['스피노스의 정수', '/images/items/materials/s4/essence-of-spinos.png'],
   ['모르간트의 정수', '/images/items/materials/s4/essence-of-morgant.png'],
+  ['세미아스의 정수', '/images/items/materials/s4/125-essence-se.png'],
+  ['매끈한 에리우의 결정', '/images/items/materials/s4/125-st-ha.png'],
+  ['가벼운 에리우의 결정', '/images/items/materials/s4/125-e-lwe.png'],
+  [
+    '에리우의 파편: 풍요의 근본',
+    '/images/items/materials/s4/125-earring-l.png',
+  ],
+  ['에리우의 파편: 다리 방어구', '/images/items/materials/s4/125-lower-l.png'],
+  ['에리우 승급석: 다리 방어구', '/images/items/materials/s4/125-er-lower.png'],
   [
     '와드네의 파편: 무기',
     '/images/items/materials/s4/fragment-of-uaithne-weapon.png',
@@ -641,6 +652,13 @@ export const imageMap = new Map<string, string>([
   ['고급 와드네 그리브즈', '/images/items/equipment/120/uaithne-lower.png'],
   ['레어 와드네 그리브즈', '/images/items/equipment/120/uaithne-lower.png'],
   ['전설 와드네 그리브즈', '/images/items/equipment/120/uaithne-lower.png'],
+
+  ['에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
+  ['초급 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
+  ['중급 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
+  ['고급 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
+  ['레어 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
+  ['전설 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
 
   ['와드네 건틀릿', '/images/items/equipment/120/uaithne-hand.png'],
   ['초급 와드네 건틀릿', '/images/items/equipment/120/uaithne-hand.png'],
