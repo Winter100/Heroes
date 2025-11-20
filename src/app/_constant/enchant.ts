@@ -1006,6 +1006,87 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '밸런스', stat_value: '-4' },
     ],
   },
+  {
+    rank: '3',
+    name: '고조되는',
+    description: '110레벨 이상 아티팩트',
+    drop_item_list: ['시공의 상자: 찬탈자의 왕좌'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '5' },
+      { stat_name: '크리티컬', stat_value: '2' },
+      { stat_name: '밸런스', stat_value: '2' },
+      { stat_name: '추가피해', stat_value: '50' },
+      { stat_name: '20초간 추가피해 능력치 10% 증가', stat_value: '' },
+    ],
+  },
+  {
+    rank: '3',
+    name: '불굴의',
+    description: '110레벨 이상 아티팩트',
+    drop_item_list: ['시공의 상자: 찬탈자의 왕좌'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '5' },
+      { stat_name: '크리티컬', stat_value: '2' },
+      { stat_name: '밸런스', stat_value: '2' },
+      { stat_name: '추가피해', stat_value: '50' },
+      { stat_name: '20초간 슈아, 받는 피해 50% 감소', stat_value: '' },
+    ],
+  },
+  {
+    rank: '3',
+    name: '순환의',
+    description: '110레벨 이상 아티팩트',
+    drop_item_list: ['시공의 상자: 찬탈자의 왕좌'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '5' },
+      { stat_name: '크리티컬', stat_value: '2' },
+      { stat_name: '밸런스', stat_value: '2' },
+      { stat_name: '추가피해', stat_value: '50' },
+      {
+        stat_name: '20초간 대미지의 0.02% SP 추가 회복',
+        stat_value: '',
+      },
+    ],
+  },
+  {
+    rank: '3',
+    name: '증폭된',
+    description: '110레벨 이상 아티팩트',
+    drop_item_list: ['시공의 상자: 찬탈자의 왕좌'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '700' },
+      { stat_name: '마법공격력', stat_value: '700' },
+      { stat_name: '공격속도', stat_value: '5' },
+      { stat_name: '크리티컬', stat_value: '2' },
+      { stat_name: '밸런스', stat_value: '2' },
+      { stat_name: '추가피해', stat_value: '50' },
+      {
+        stat_name: '20초간 최대 약 25%의 피해를 추가 ',
+        stat_value: '',
+      },
+    ],
+  },
+  {
+    rank: '4',
+    name: '초월의',
+    description: '110레벨 이상 브로치',
+    drop_item_list: ['시공의 상자: 찬탈자의 왕좌'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '600' },
+      { stat_name: '마법공격력', stat_value: '600' },
+      { stat_name: '공격속도', stat_value: '1' },
+      { stat_name: '크리티컬', stat_value: '2' },
+      { stat_name: '밸런스', stat_value: '2' },
+      { stat_name: '크리티컬 저항', stat_value: '10' },
+      { stat_name: '추가피해', stat_value: '150' },
+    ],
+  },
 ];
 
 export const suffix_enchant_options: EnchantOptionsType[] = [
@@ -1751,6 +1832,19 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '밸런스', stat_value: '4' },
     ],
   },
+  {
+    rank: '4',
+    name: '강림',
+    description: '110레벨 이상 아티팩트',
+    drop_item_list: ['시공의 상자: 찬탈자의 왕좌'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '450' },
+      { stat_name: '마법 공격력', stat_value: '450' },
+      { stat_name: '크리티컬', stat_value: '2' },
+      { stat_name: '밸런스', stat_value: '2' },
+      { stat_name: '크리티컬 저항', stat_value: '5' },
+    ],
+  },
 ];
 
 export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
@@ -1845,6 +1939,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Charm'],
     list: [
+      '초월의',
       '질풍의',
       '감춰진',
       '시공의',
@@ -1872,6 +1967,12 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Artifact'],
     list: [
+      '고조되는',
+      '불굴의',
+      '순환의',
+      '증폭된',
+      '처단하는',
+      '초월의',
       '질풍의',
       '굳어버린',
       '꿰뚫는',
@@ -2016,7 +2117,17 @@ export const suffix_enchant_name_list: { name: string[]; list: string[] }[] = [
   },
   {
     name: ['Artifact'],
-    list: ['격노', '소망', '마음', '열망', '활력', '고통', '물결', '사념'],
+    list: [
+      '강림',
+      '격노',
+      '소망',
+      '마음',
+      '열망',
+      '활력',
+      '고통',
+      '물결',
+      '사념',
+    ],
   },
   {
     name: ['Rhod'],
