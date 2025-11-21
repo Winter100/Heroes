@@ -1972,7 +1972,6 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
       '순환의',
       '증폭된',
       '처단하는',
-      '초월의',
       '질풍의',
       '굳어버린',
       '꿰뚫는',
