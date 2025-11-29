@@ -1715,7 +1715,7 @@ export const raidList: RaidListType[] = [
       {
         name: '찬탈자의 성채',
         basic_reward: [
-          { name: '골드', value: '300000' },
+          { name: '골드', value: '450000' },
           { name: '경험치', value: '2054000' },
           { name: 'AP', value: '200' },
         ],
@@ -1754,7 +1754,7 @@ export const raidList: RaidListType[] = [
       {
         name: '몰락한 기사의 전당',
         basic_reward: [
-          { name: '골드', value: '400000' },
+          { name: '골드', value: '600000' },
           { name: '경험치', value: '2054000' },
           { name: 'AP', value: '200' },
         ],
@@ -1793,7 +1793,7 @@ export const raidList: RaidListType[] = [
       {
         name: '주시자의 신전',
         basic_reward: [
-          { name: '골드', value: '800000' },
+          { name: '골드', value: '1200000' },
           { name: '경험치', value: '2054000' },
           { name: 'AP', value: '200' },
         ],
@@ -1832,7 +1832,7 @@ export const raidList: RaidListType[] = [
       {
         name: '찬탈자의 왕좌',
         basic_reward: [
-          { name: '골드', value: '1000000' },
+          { name: '골드', value: '1500000' },
           { name: '경험치', value: '2054000' },
           { name: 'AP', value: '200' },
         ],
@@ -1852,7 +1852,7 @@ export const raidList: RaidListType[] = [
           { stat_name: '이름', stat_value: '혼의 군주 타로스' },
           { stat_name: '레벨', stat_value: '125' },
           { stat_name: '공격력', stat_value: '84000' },
-          { stat_name: '크리티컬', stat_value: '480' },
+          { stat_name: '크리티컬', stat_value: '460' },
           { stat_name: '크리티컬 저항', stat_value: '340' },
           { stat_name: '밸런스 저항', stat_value: '145' },
           { stat_name: '방어력', stat_value: '43000' },
