@@ -9,9 +9,6 @@ const Page = () => {
     <>
       <SideAd dataSlot="2056348937" position="left" />
       <BasicContainer className="flex-1 gap-2">
-        {/* <div className="flex flex-col items-center justify-center py-36">
-          <h1 className="text-lg">현재 조회 서비스 점검중입니다</h1>
-        </div> */}
         <AutoResponsiveAd />
         <LimitTableMenuBar />
         <LimitTable />
