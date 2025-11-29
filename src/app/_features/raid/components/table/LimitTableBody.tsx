@@ -78,20 +78,22 @@ const LimitTableBody = () => {
               />
             </div>
           </TableCell>
-          {c?.info?.map((i) => (
-            <TableCell key={i?.stat_name + i?.stat_value}>
-              <div className="flex flex-col items-center justify-center">
-                <span>{i?.stat_value}</span>
-                {selectedBoss && (
-                  <LimitStat
-                    characterName={c?.name?.toString() ?? ''}
-                    selectedBoss={selectedBoss}
-                    {...i}
-                  />
-                )}
-              </div>
-            </TableCell>
-          ))}
+          {c?.info
+            ?.filter((s) => s.stat_name !== '방어력')
+            .map((i) => (
+              <TableCell key={i?.stat_name + i?.stat_value}>
+                <div className="flex flex-col items-center justify-center">
+                  <span>{i?.stat_value}</span>
+                  {selectedBoss && (
+                    <LimitStat
+                      characterName={c?.name?.toString() ?? ''}
+                      selectedBoss={selectedBoss}
+                      {...i}
+                    />
+                  )}
+                </div>
+              </TableCell>
+            ))}
         </TableRow>
       ))}
     </TableBody>
