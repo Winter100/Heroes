@@ -40,7 +40,27 @@ export const materials_info: BasicItemInfoType[] = [
     item_rating: '레어',
     item_crafting: ['금속 갑옷', '재봉', '세공'],
     item_description:
-      '세미아스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 세미아스 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
+      '세미아스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 세미아스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
+  },
+  {
+    item_name: '우스키아스의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
+    item_description:
+      '우스키아스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 우스키아스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
+  },
+  {
+    item_name: '안정된 에리우의 결정',
+    item_rating: '레어',
+    item_crafting: [''],
+    item_description: '에리우 무기를 승급할 때 보조 재료로 사용됩니다.',
+  },
+  {
+    item_name: '견고한 에리우의 결정',
+    item_rating: '레어',
+    item_crafting: [''],
+    item_description:
+      '에리우 가슴, 신규 125레벨 허리띠를 제작하거나 에리우 가슴 방어구를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
     item_name: '타리안 강철',
@@ -77,6 +97,13 @@ export const materials_info: BasicItemInfoType[] = [
     item_crafting: ['금속 무기', '세공'],
     item_description:
       '에리우 무기를 제작하거나 에리우 승급석: 무기를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우의 파편: 스타라이트 벨트',
+    item_rating: '레어',
+    item_crafting: ['세공'],
+    item_description:
+      '세공 전문기술을 통해 스타라이트 벨트를 제작할 때 주재료로 사용됩니다.',
   },
   {
     item_name: '와드네의 파편: 보조 장비',

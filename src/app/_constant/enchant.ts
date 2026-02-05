@@ -1087,6 +1087,33 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '추가피해', stat_value: '150' },
     ],
   },
+  {
+    rank: '3',
+    name: '영원한',
+    description: '',
+    drop_item_list: ['하늘과 땅이 만나는 곳'],
+    stat_value: [
+      { stat_name: '방어력', stat_value: '160' },
+      { stat_name: '생명력', stat_value: '100' },
+      { stat_name: '최대 스태미나', stat_value: '8' },
+      { stat_name: '크리티컬', stat_value: '9' },
+      { stat_name: '크리티컬 저항', stat_value: '14' },
+      { stat_name: '밸런스', stat_value: '-3' },
+    ],
+  },
+  {
+    rank: '3',
+    name: '메마른',
+    description: '115 레벨 이상 아이템',
+    drop_item_list: ['하늘과 땅이 만나는 곳'],
+    stat_value: [
+      { stat_name: '공격속도', stat_value: '1' },
+      { stat_name: '크리티컬', stat_value: '6' },
+      { stat_name: '크리티컬 저항', stat_value: '-3' },
+      { stat_name: '밸런스', stat_value: '4' },
+      { stat_name: '최대 스태미나', stat_value: '5' },
+    ],
+  },
 ];
 
 export const suffix_enchant_options: EnchantOptionsType[] = [
@@ -1814,7 +1841,7 @@ export const suffix_enchant_options: EnchantOptionsType[] = [
     drop_item_list: ['탐욕의 연회장'],
     stat_value: [
       { stat_name: '방어력', stat_value: '120' },
-      { stat_name: '스태미나', stat_value: '5' },
+      { stat_name: '최대 스태미나', stat_value: '5' },
       { stat_name: '크리티컬', stat_value: '12' },
       { stat_name: '크리티컬 저항', stat_value: '13' },
       { stat_name: '밸런스', stat_value: '-1' },
@@ -1896,6 +1923,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Upper'],
     list: [
+      '영원한',
       '예언의',
       '고결한',
       '무한의',
@@ -1990,6 +2018,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Belt'],
     list: [
+      '메마른',
       '질풍의',
       '감춰진',
       '고대의',
