@@ -105,6 +105,8 @@ export const imageMap = new Map<string, string>([
   ['모루 위의 검', '/images/monster/forlornhope/the-sword-on-the-moru.png'],
   ['생명의 나무', '/images/monster/forlornhope/the-tree-of-life.png'],
 
+  ['하늘과 땅이 만나는 곳', '/images/monster/s4/125-n-d.png'],
+
   // 결사대 [헬]
   ['사념의 바다 [헬]', '/images/monster/forlornhope/the-sea-of-thoughts.png'],
   [
@@ -162,6 +164,7 @@ export const imageMap = new Map<string, string>([
   ],
   ['에리우의 파편: 다리 방어구', '/images/items/materials/s4/125-lower-l.png'],
   ['에리우 승급석: 다리 방어구', '/images/items/materials/s4/125-er-lower.png'],
+  ['에리우 승급석: 가슴 방어구', '/images/items/materials/s4/125-s-ts.png'],
   [
     '와드네의 파편: 무기',
     '/images/items/materials/s4/fragment-of-uaithne-weapon.png',
@@ -205,6 +208,10 @@ export const imageMap = new Map<string, string>([
   [
     '와드네의 파편: 고요의 증표',
     '/images/items/materials/s4/fragment-of-uaithne-finger-02.png',
+  ],
+  [
+    '에리우의 파편: 스타라이트 벨트',
+    '/images/items/materials/s4/125-star-belt.png',
   ],
   [
     '와드네 승급석: 무기',
@@ -446,6 +453,8 @@ export const imageMap = new Map<string, string>([
   ['[세공] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
   ['[재봉] 레시피 스크롤', '/images/items/materials/s4/recipe.png'],
 
+  ['안정된 에리우의 결정', '/images/items/materials/s4/125-bst.png'],
+  ['견고한 에리우의 결정', '/images/items/materials/s4/125-hard-st.png'],
   ['단단한 에리우의 결정', '/images/items/materials/s4/re_hard.png'],
   ['예리한 에리우의 결정', '/images/items/materials/s4/re_we.png'],
   ['에리우 승급석: 무기', '/images/items/materials/s4/re_s_w.png'],
@@ -457,6 +466,8 @@ export const imageMap = new Map<string, string>([
   ['에리우의 파편: 보조 장비', '/images/items/materials/s4/re_lw.png'],
   ['타리안 강철', '/images/items/materials/s4/tar.png'],
 
+  ['우스키아스의 정수', '/images/items/materials/s4/125-usk.png'],
+  ['에리우의 파편: 가슴 방어구', '/images/items/materials/s4/125-t-se.png'],
   // 장비
   // 105 액세서리
   ['황혼의 수호', '/images/items/equipment/105/finger-105-01.png'],
@@ -660,6 +671,13 @@ export const imageMap = new Map<string, string>([
   ['레어 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
   ['전설 에리우 그리브즈', '/images/items/equipment/125/125-er-lower.png'],
 
+  ['에리우 메일', '/images/items/equipment/125/125-e-t-b.png'],
+  ['초급 에리우 메일', '/images/items/equipment/125/125-e-t-b.png'],
+  ['중급 에리우 메일', '/images/items/equipment/125/125-e-t-b.png'],
+  ['고급 에리우 메일', '/images/items/equipment/125/125-e-t-b.png'],
+  ['레어 에리우 메일', '/images/items/equipment/125/125-e-t-b.png'],
+  ['전설 에리우 메일', '/images/items/equipment/125/125-e-t-b.png'],
+
   ['와드네 건틀릿', '/images/items/equipment/120/uaithne-hand.png'],
   ['초급 와드네 건틀릿', '/images/items/equipment/120/uaithne-hand.png'],
   ['중급 와드네 건틀릿', '/images/items/equipment/120/uaithne-hand.png'],
@@ -779,6 +797,7 @@ export const imageMap = new Map<string, string>([
   ['어둠의 허리띠', '/images/items/equipment/belt-110.png'],
   ['투쟁의 허리띠', '/images/items/equipment/belt-115.png'],
   ['저주의 허리띠', '/images/items/equipment/belt-120.png'],
+  ['스타라이트 벨트', '/images/items/equipment/125/belt-125.png'],
 
   // 귀걸이
   ['차원의 귀걸이', '/images/items/equipment/earring-110.png'],
