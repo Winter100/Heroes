@@ -16,7 +16,7 @@ export interface MonstersOmitLimit {
 }
 
 export interface MonstersType {
-  name: string;
+  battle: string;
   basic_reward?: { name: string; value: string }[];
   entry: { stat_name: string; stat_value: string }[];
   limit: { stat_name: string; stat_value: string }[];
@@ -29,6 +29,7 @@ export interface MonstersType {
   }[];
   raid_description?: string;
   bonus: { bonus_description: string; bonus_value: string }[];
+  image?: string;
 }
 
 export interface RaidListType {
