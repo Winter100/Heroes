@@ -2,9 +2,6 @@
 
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { useSearchParams } from 'next/navigation';
-
-import { useOcid } from './useOcid';
 import { getStats } from '@/app/_services/getStats';
 import { mergeStats } from '@/app/_utils/mergeStats';
 import { usePreviewStore } from '@/app/_store/previewStore';
@@ -14,19 +11,13 @@ import { calculateStatsDifference } from '@/app/_utils/preview/calculateStatsDif
 import { Stat } from '@/app/_type/previewType';
 // import stats from '@/app/_constant/jsonData/stats.json';
 
-export const useStats = () => {
-  const searchParams = useSearchParams();
-  const name = searchParams.get('name') ?? '';
-  const { data: ocid } = useOcid();
-
+export const useStats = (ocid?: string) => {
   const { mergeAtkAndMatk, translatedStats } = mergeStats();
   const { data, isLoading, error } = useQuery({
     enabled: !!ocid,
-    queryKey: [ocid, name, '스텟'],
+    queryKey: [ocid, '스텟'],
     queryFn: () => getStats(ocid ?? ''),
     select: (data) => {
-      // const mergeAtk = mergeAtkAndMatk(stats);
-      // return translatedStats(mergeAtk);
       const mergeAtk = mergeAtkAndMatk(data);
       return translatedStats(mergeAtk);
     },
@@ -71,5 +62,5 @@ export const useStats = () => {
     }
   }, [mergedStats, setPreviewAllStats, isLoading]);
 
-  return { data, isLoading, error, mergedStats, statDifference, name };
+  return { data, isLoading, error, mergedStats, statDifference };
 };

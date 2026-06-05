@@ -6,18 +6,15 @@ import { Item_equipment } from '@/app/_type/equipmentType';
 import { bagList } from '@/app/_utils/preview/bagList';
 import { getNewTuning } from '@/app/_utils/preview/getNewTuning';
 import { usePreviewStore } from '@/app/_store/previewStore';
-// import item from '@/app/_constant/jsonData/items2.json';
 
 export const useEquipment = (ocid: string) => {
-  const { data, isLoading, error } = useQuery<Item_equipment>({
-    // enabled: false,
+  const { data, isLoading, error } = useQuery<Item_equipment, Error>({
     enabled: !!ocid,
     queryKey: [ocid, '장비'],
     queryFn: () => getEquipment(ocid ?? ''),
   });
 
   const items = data?.item_equipment;
-  // const items = item.item_equipment;
 
   const b = items?.filter((i) => i.item_equipment_page === 'Bag') ?? [];
   const cash = items?.filter((i) => i.item_equipment_page === 'Cash') ?? [];
