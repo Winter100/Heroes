@@ -1137,7 +1137,7 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
     stat_value: [
       { stat_name: '밸런스', stat_value: '12' },
       { stat_name: '크리티컬 저항', stat_value: '5' },
-      { stat_name: '생명력', stat_value: '-450' },
+      { stat_name: '최대 생명력', stat_value: '-450' },
     ],
   },
 ];
