@@ -1568,16 +1568,7 @@ export const raidList: RaidListType[] = [
           { name: '경험치', value: '6400000' },
           { name: 'AP', value: '50' },
         ],
-        bonus: [
-          // {
-          //   bonus_description: '개인 장비가 5회 이상 파괴되지 않음',
-          //   bonus_value: '28,800',
-          // },
-          // {
-          //   bonus_description: '1회 행동 불능 되지 않고 보스 처치',
-          //   bonus_value: '11,000',
-          // },
-        ],
+        bonus: [],
         entry: [
           { stat_name: '이름', stat_value: '세미아스' },
           { stat_name: '레벨', stat_value: '125' },
@@ -1606,16 +1597,7 @@ export const raidList: RaidListType[] = [
           { name: '경험치', value: '6400000' },
           { name: 'AP', value: '50' },
         ],
-        bonus: [
-          // {
-          //   bonus_description: '개인 장비가 5회 이상 파괴되지 않음',
-          //   bonus_value: '28,800',
-          // },
-          // {
-          //   bonus_description: '1회 행동 불능 되지 않고 보스 처치',
-          //   bonus_value: '11,000',
-          // },
-        ],
+        bonus: [],
         entry: [
           { stat_name: '이름', stat_value: '우스키아스' },
           { stat_name: '레벨', stat_value: '125' },
@@ -1629,11 +1611,40 @@ export const raidList: RaidListType[] = [
         limit: [
           { stat_name: '이름', stat_value: '우스키아스' },
           { stat_name: '레벨', stat_value: '125' },
-          { stat_name: '공격력', stat_value: '63120' }, // 추가하기
+          { stat_name: '공격력', stat_value: '63120' },
           { stat_name: '크리티컬', stat_value: '405' },
           { stat_name: '크리티컬 저항', stat_value: '311' },
           { stat_name: '방어력', stat_value: '37750' },
           { stat_name: '밸런스 저항', stat_value: '99' },
+        ],
+        drop_items: [],
+      },
+      {
+        name: '황금 나무 언덕',
+        basic_reward: [
+          { name: '골드', value: '142300' },
+          { name: '경험치', value: '6400000' },
+          { name: 'AP', value: '50' },
+        ],
+        bonus: [],
+        entry: [
+          { stat_name: '이름', stat_value: '에스라스' },
+          { stat_name: '레벨', stat_value: '125' },
+          { stat_name: '공격력', stat_value: '66120' },
+          { stat_name: '크리티컬', stat_value: '354' },
+          { stat_name: '밸런스', stat_value: '202' },
+          { stat_name: '추가피해', stat_value: '8650' },
+          { stat_name: '방어력', stat_value: '39750' },
+          { stat_name: '방어력 관통', stat_value: '390' },
+        ],
+        limit: [
+          { stat_name: '이름', stat_value: '에스라스' },
+          { stat_name: '레벨', stat_value: '125' },
+          { stat_name: '공격력', stat_value: '66120' },
+          { stat_name: '크리티컬', stat_value: '427' },
+          { stat_name: '크리티컬 저항', stat_value: '328' },
+          { stat_name: '방어력', stat_value: '39750' },
+          { stat_name: '밸런스 저항', stat_value: '111' },
         ],
         drop_items: [],
       },

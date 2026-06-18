@@ -50,6 +50,13 @@ export const materials_info: BasicItemInfoType[] = [
       '우스키아스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 우스키아스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
   },
   {
+    item_name: '에스라스의 정수',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '재봉', '세공'],
+    item_description:
+      '에스라스의 정수가 담긴 아이템. 귀중한 아이템을 제작하거나, 제작할 수 있는 레시피를 획득할 때 필요한 아이템입니다. 에스라스를 처치하거나, 주간 레이드 보상을 통하여 획득할 수 있습니다.',
+  },
+  {
     item_name: '안정된 에리우의 결정',
     item_rating: '레어',
     item_crafting: [''],
@@ -145,6 +152,13 @@ export const materials_info: BasicItemInfoType[] = [
     item_description:
       '세공 전문기술을 통해 고요의 증표 반지를 제작할 때 주재료로 사용됩니다.',
   },
+  {
+    item_name: '에리우의 파편: 필멸의 굴레',
+    item_rating: '레어',
+    item_crafting: ['세공'],
+    item_description:
+      '세공 전문기술을 통해 필멸의 굴레 반지를 제작할 때 주재료로 사용됩니다.',
+  },
 
   {
     item_name: '와드네의 파편: 머리 방어구',
@@ -159,6 +173,13 @@ export const materials_info: BasicItemInfoType[] = [
     item_crafting: [],
     item_description:
       '에리우 헬름을 제작하거나 에리우 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
+    item_name: '에리우의 파편: 손 방어구',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description:
+      '에리우 건틀릿을 제작하거나 에리우 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
     item_name: '에리우의 파편: 풍요의 근본',
@@ -348,6 +369,12 @@ export const materials_info: BasicItemInfoType[] = [
     item_description: '와드네 무기를 승급할 때 보조 재료로 사용됩니다.',
   },
   {
+    item_name: '오롯한 에리우의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 갑옷', '금속무기', '세공'],
+    item_description: '에리우 무기를 승급할 때 보조 재료로 사용됩니다.',
+  },
+  {
     item_name: '예리한 와드네의 결정',
     item_rating: '레어',
     item_crafting: ['금속 무기', '세공'],
@@ -367,6 +394,13 @@ export const materials_info: BasicItemInfoType[] = [
     item_crafting: ['금속 무기', '세공'],
     item_description:
       '와드네 건틀릿, 와드네 부츠, 침묵의 증표, 고요의 증표를 제작하거나 와드네 건틀릿, 와드네 부츠를 승급할 때 보조 재료로 사용됩니다.',
+  },
+  {
+    item_name: '굳건한 에리우의 결정',
+    item_rating: '레어',
+    item_crafting: ['금속 무기', '세공'],
+    item_description:
+      '에리우 건틀릿, 필멸의 굴레를 제작하거나 에리우 건틀릿을 승급할 때 보조 재료로 사용됩니다.',
   },
   {
     item_name: '가벼운 와드네의 결정',

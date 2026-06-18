@@ -1114,6 +1114,32 @@ export const prefix_enchant_options: EnchantOptionsType[] = [
       { stat_name: '최대 스태미나', stat_value: '5' },
     ],
   },
+  {
+    rank: '3',
+    name: '물드는',
+    description: '',
+    drop_item_list: ['황금 나무 언덕'],
+    stat_value: [
+      { stat_name: '공격력', stat_value: '145' },
+      { stat_name: '마법공격력', stat_value: '145' },
+      { stat_name: '방어력', stat_value: '300' },
+      { stat_name: '공격속도', stat_value: '2' },
+      { stat_name: '크리티컬', stat_value: '6' },
+      { stat_name: '크리티컬 저항', stat_value: '-1' },
+      { stat_name: '밸런스', stat_value: '7' },
+    ],
+  },
+  {
+    rank: '3',
+    name: '헤매는',
+    description: '',
+    drop_item_list: ['황금 나무 언덕'],
+    stat_value: [
+      { stat_name: '밸런스', stat_value: '12' },
+      { stat_name: '크리티컬 저항', stat_value: '5' },
+      { stat_name: '최대 생명력', stat_value: '-450' },
+    ],
+  },
 ];
 
 export const suffix_enchant_options: EnchantOptionsType[] = [
@@ -1938,6 +1964,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Hand', 'Leg'],
     list: [
+      '물드는',
       '우아한',
       '비통한',
       '흐느끼는',
@@ -1950,6 +1977,7 @@ export const prefix_enchant_name_list: { name: string[]; list: string[] }[] = [
   {
     name: ['Right Finger', 'Left Finger'],
     list: [
+      '헤매는',
       '질풍의',
       '감춰진',
       '대적자의',
