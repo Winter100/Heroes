@@ -1,80 +1,52 @@
-'use client';
+import { useRef } from 'react';
 
-import { usePreviewStore } from '@/app/_store/previewStore';
-import { NewTuning_stat } from '@/app/_type/equipmentType';
-import { MouseEvent, useRef } from 'react';
-import { calculateNearestProgress } from '../../../../../_utils/preview/calculateNearestProgress';
-
-interface GrindingItemProps extends NewTuning_stat {
-  onIncrease: () => void;
-  onDecrease: () => void;
+interface Props {
+  increaseValue: number;
+  minPercentage: number;
+  reMainPercentage: number;
+  stat_name: string;
+  stat_value: string;
+  stat_max_value: string;
+  isActivateOption: boolean;
+  isMin: boolean;
+  isMax: boolean;
   onMin: () => void;
   onMax: () => void;
-  isView: boolean;
-  slot: string;
+  onDecrease: () => void;
+  onIncrease: () => void;
+  onGaugeClick: (percentage: number) => void;
 }
 
-const GrindingItem = ({
-  stat_name,
+const GrindingStat = ({
+  increaseValue,
+  minPercentage,
+  reMainPercentage,
   stat_value,
-  stat_min_value,
   stat_max_value,
-  stat_one_value,
-  onIncrease,
+  stat_name,
+  isMin,
+  isMax,
+  isActivateOption,
   onDecrease,
+  onIncrease,
   onMin,
   onMax,
-  isView,
-  slot,
-}: GrindingItemProps) => {
-  const setProgeress = usePreviewStore((state) => state.setProgeress);
-
-  const isMin = stat_min_value === stat_value || !isView;
-  const isMax =
-    stat_name === '파괴력 3' ||
-    stat_name === '파괴력 2' ||
-    stat_name === '파괴력'
-      ? (stat_max_value === stat_value) === isView
-      : stat_max_value === stat_value;
-
-  const increaseValue = Math.ceil(Number(stat_value) - Number(stat_min_value));
-
-  const minPercentage = Math.ceil(
-    (Number(stat_min_value) / Number(stat_max_value)) * 100
-  );
-  const reMainPercentage = Math.ceil(
-    (Number(stat_value) / Number(stat_max_value)) * 100
-  );
-
+  onGaugeClick,
+}: Props) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
-    if (progressBarRef === null) return;
-    if (!isView) return;
-    const barWidth = progressBarRef?.current?.offsetWidth;
-    const clickPosition = e.nativeEvent.offsetX;
-
-    const newProgress = Math.ceil(
-      (Number(clickPosition) / Number(barWidth)) * 100
-    );
-
-    if (newProgress <= minPercentage) return;
-
-    if (!barWidth) return;
-
-    const percentage = (clickPosition / barWidth) * 100;
-    const newProgeress = calculateNearestProgress(
-      percentage,
-      stat_max_value,
-      stat_one_value
-    );
-
-    setProgeress(slot, stat_name, newProgeress);
+  const handleGaugeClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isActivateOption) return;
+    if (!progressBarRef.current) return;
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percentage = (x / rect.width) * 100;
+    onGaugeClick(Math.max(0, Math.min(100, percentage)));
   };
 
   return (
     <div
-      className={`${isView ? 'text-white' : 'opacity-40'} flex w-full flex-col text-sm`}
+      className={`${isActivateOption ? 'text-white' : 'opacity-40'} flex w-full flex-col text-sm`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex flex-row gap-2">
@@ -91,14 +63,13 @@ const GrindingItem = ({
       </div>
 
       <div className="flex w-full flex-col items-center justify-center gap-2">
-        <div className="flex w-full items-center gap-2">
+        <div className="flex w-full items-center gap-2 text-xs">
           <div className="h-2 w-full flex-1 bg-gray-600">
             <div
               ref={progressBarRef}
-              onClick={handleClick}
-              className={`${isView ? 'cursor-pointer' : ''} h-2`}
+              onClick={handleGaugeClick}
+              className={`${isActivateOption ? 'cursor-pointer' : ''} h-full w-full`}
               style={{
-                width: '100%',
                 background: `linear-gradient(to right, 
           #047857 0%, 
           #047857 ${minPercentage}%, 
@@ -118,8 +89,8 @@ const GrindingItem = ({
           </p>
         </div>
 
-        <div className="flex w-52 flex-1 flex-row items-center justify-center md:w-auto">
-          <div className="flex flex-1 flex-row items-center justify-center gap-1 text-xs">
+        <div className="flex w-52 flex-1 flex-row items-center justify-center text-xs md:w-auto">
+          <div className="flex flex-1 flex-row items-center justify-center gap-1">
             <button
               disabled={isMin}
               onClick={onMin}
@@ -154,5 +125,4 @@ const GrindingItem = ({
     </div>
   );
 };
-
-export default GrindingItem;
+export default GrindingStat;

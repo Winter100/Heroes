@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import AttackPowerChart from '@/app/_components/AttackPowerChart';
+import ChartAttackPower from '@/app/_features/preview/components/menubar/chart/chart-attack-power';
 import { useSimulationStats } from '@/app/_hooks/useSimulationStats';
 import { useRaidStore } from '@/app/_store/useRaidStore';
 import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
@@ -38,7 +38,7 @@ const ChartContainer = ({ ocid }: { ocid: string }) => {
           <DialogDescription></DialogDescription>
         </DialogHeader>
         {boss ? (
-          <AttackPowerChart
+          <ChartAttackPower
             bossAttackCap={Number(bossAttackCap) ?? 0}
             userAttack={Number(userAttack)}
           />

@@ -80,7 +80,7 @@ const TourRaidTableDialog = ({
                             <TableCell title={raid.battle}>
                               <ImageIcon
                                 className="h-4 w-4 object-contain"
-                                src={raid.image ?? ''}
+                                src={raid.image}
                                 alt="R"
                               />
                             </TableCell>

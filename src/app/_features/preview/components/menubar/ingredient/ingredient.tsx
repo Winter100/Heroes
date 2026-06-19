@@ -16,7 +16,11 @@ const Ingredient = ({ items }: { items: NewEquipmentType[] }) => {
         >
           <div className="flex items-center justify-center">{item.name}</div>
           <div className="flex w-full flex-row items-center gap-2 rounded-lg border border-muted p-0.5">
-            <ImageIcon className="h-4 w-4" src={item.src} alt={item.name} />
+            <ImageIcon
+              className="h-4 w-4"
+              src={item.src ?? ''}
+              alt={item.name}
+            />
             <p className="w-full">{item.value.toLocaleString()}</p>
           </div>
         </div>

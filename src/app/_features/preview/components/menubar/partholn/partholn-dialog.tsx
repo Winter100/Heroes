@@ -18,7 +18,7 @@ import {
 } from '@/components/ui/table';
 import { cn } from '@/lib/utils';
 import { SetSimulationsParams } from '@/app/_store/useEnchantStore';
-import { EnchantOptionType } from '@/app/_constant/enchant';
+import { EnchantOptionType } from '@/app/_type/enchantType';
 
 interface Props {
   partholns: EnchantOptionType[];
