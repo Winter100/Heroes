@@ -1,11 +1,11 @@
 import CharacterSearchInput from '@/app/_components/common/CharacterSearchInput';
-import { PreviewBody, PreviewLayout } from '@/app/_features/preview';
 import { Suspense } from 'react';
 import Loading from '@/app/_components/common/Loading';
+import PreviewTable from '@/app/_features/preview/components/preview/items/preview-table';
 import SideAd from '@/app/_components/adsense/SideAd';
 import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 
-const Page = () => {
+const Page = async () => {
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
@@ -16,9 +16,7 @@ const Page = () => {
             className="mx-auto w-full max-w-72"
             routeName="preview"
           />
-          <PreviewLayout>
-            <PreviewBody />
-          </PreviewLayout>
+          <PreviewTable />
         </div>
       </Suspense>
       <SideAd dataSlot="1601053361" position="right" />
