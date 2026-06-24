@@ -1,4 +1,4 @@
-import { DefferenceStatsProps } from '../../../types';
+import { DefferenceStatsProps } from '@/app/_type/enchantType';
 
 const PreviewDefferenceStats = ({
   simulationsStats,

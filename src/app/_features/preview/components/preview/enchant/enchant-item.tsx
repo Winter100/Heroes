@@ -1,11 +1,11 @@
 import { cn } from '@/lib/utils';
 import EnchantEffects from '@/app/_components/common/enchant/EnchantEffects';
 import ImageIcon from '@/app/_components/common/image/Image-Icon';
-import { getEnchantImage } from '@/app/_utils/enchant/utils/getEnchantImage';
 import {
   ENCHANT_DESTRUCTION_RANK,
   EnchantOptionType,
 } from '@/app/_type/enchantType';
+import { getEnchantImage } from '@/app/_utils/enchant';
 
 const EnchantItem = ({ enchant }: { enchant: EnchantOptionType }) => {
   return (

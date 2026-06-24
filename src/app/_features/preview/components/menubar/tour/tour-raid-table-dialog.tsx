@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/dialog';
 import Column from '@/app/_components/layout/Column';
 import RaidFilterBtnContainer from '@/app/_components/selector/raid-filter-btn-container';
-import { RaidListType } from '@/app/_constant/raidList';
 import { Button } from '@/components/ui/button';
 import { RaidType } from '@/app/_store/useRaidStore';
 import { Stat } from '@/app/_type/previewType';
@@ -24,6 +23,7 @@ import {
 import PreviewStatsTableHead from '@/app/_components/stats/preview-stats-table-head';
 import PreviewStatsTableCell from '@/app/_components/stats/preview-stats-table-cell';
 import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { RaidListType } from '@/app/_type/raidType';
 
 interface Props {
   raidList: RaidListType[];
@@ -80,7 +80,7 @@ const TourRaidTableDialog = ({
                             <TableCell title={raid.battle}>
                               <ImageIcon
                                 className="h-4 w-4 object-contain"
-                                src={raid.image}
+                                src={raid?.image ?? ''}
                                 alt="R"
                               />
                             </TableCell>

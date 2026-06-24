@@ -1,10 +1,15 @@
 'use client';
-import { useUserEquipment } from '@/app/_hooks';
 import GrindingSummaryDialog from './grinding-summary-dialog';
+import { NewEquipmentType } from '@/app/_type/equipmentType';
 
-const GrindingSummaryContainer = ({ ocid }: { ocid: string }) => {
-  const { data } = useUserEquipment(ocid);
-  const grindingItems = data?.item_equipment.filter(
+const GrindingSummaryContainer = ({
+  items,
+  ocid,
+}: {
+  items: NewEquipmentType[];
+  ocid: string;
+}) => {
+  const grindingItems = items?.filter(
     (item) => item.item_option.tuning_stat?.length
   );
 

@@ -1,4 +1,4 @@
-import { StatsProps } from '../../../types';
+import { StatsProps } from '@/app/_type/enchantType';
 import DefferenceStats from './preview-defference-stats';
 
 const PreviewStatsBox = ({

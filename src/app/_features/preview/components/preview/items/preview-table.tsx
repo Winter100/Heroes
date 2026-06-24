@@ -16,7 +16,7 @@ import { useCharacterData, usePreviewAllData } from '@/app/_hooks';
 
 const PreviewTable = () => {
   const { name, ocid, error, isLoading, equipment } = useCharacterData();
-  const { enchantOptions, infusionOptions } = usePreviewAllData();
+  const { enchantsBySlot } = usePreviewAllData();
 
   if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요" />;
   if (isLoading) return <Loading />;
@@ -50,8 +50,7 @@ const PreviewTable = () => {
         <PreviewTableHeader />
         <PreviewTableBody
           items={equipment.data?.items ?? []}
-          enchantOptions={enchantOptions.data ?? []}
-          infusions={infusionOptions.data ?? []}
+          enchantsBySlot={enchantsBySlot}
         />
       </Column>
 

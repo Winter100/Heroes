@@ -1,36 +1,33 @@
-import { useMemo } from 'react';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import PreviewItem from './preview-table-item';
-import { enchantsByGroupSlot } from '@/app/_utils/enchant/utils/enchantsByGroupSlot';
 import { EnchantOptionType } from '@/app/_type/enchantType';
 
 interface PreviewListProps {
   items: NewEquipmentType[];
-  enchantOptions: EnchantOptionType[];
-  infusions: EnchantOptionType[];
+  enchantsBySlot: Map<
+    string,
+    {
+      prefix: EnchantOptionType[];
+      suffix: EnchantOptionType[];
+      infusion: EnchantOptionType[];
+    }
+  >;
 }
 
-const PreviewTableBody = ({
-  items,
-  enchantOptions,
-  infusions,
-}: PreviewListProps) => {
-  const enchantsBySlot = useMemo(() => {
-    return enchantsByGroupSlot({ enchantOptions, infusions });
-  }, [enchantOptions, infusions]);
-
+const PreviewTableBody = ({ items, enchantsBySlot }: PreviewListProps) => {
   return (
     <ul className="grid grid-rows-17 gap-y-3 pt-1 sm:gap-y-5">
+      {/* 슬롯별로 사용 가능한 인챈트 필터링 */}
       {items?.map((item) => {
-        const slotName = item.item_equipment_slot_name;
+        const slot = item.item_equipment_slot_name;
         const {
           prefix = [],
           suffix = [],
           infusion = [],
-        } = enchantsBySlot.get(slotName) || {};
+        } = enchantsBySlot.get(slot) || {};
 
         return (
-          <li key={slotName}>
+          <li key={slot}>
             <PreviewItem
               item={item}
               prefix={prefix}

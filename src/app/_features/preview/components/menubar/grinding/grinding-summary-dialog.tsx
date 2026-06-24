@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import GrindingStatContainer from './grinding-stat-container';
+import GrindingPreviewStatContainer from './grinding-preview-stat-container';
 import Ingredient from '../ingredient/ingredient';
 import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';
 import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
@@ -40,14 +40,8 @@ const GrindingDialog = ({ items, ocid }: Props) => {
               <div className="text-center text-sm">
                 {item?.item_option?.enhancement_level} {item.item_name}
               </div>
-              {/* <div className="my-2 flex min-h-8 items-center">
-                <div className="mx-auto">
-                  {item.item_option.ability_name && <Ability item={item} />}
-                  어빌 자리
-                </div>
-              </div> */}
               {item.item_option.tuning_stat?.map((stat) => (
-                <GrindingStatContainer
+                <GrindingPreviewStatContainer
                   key={stat.stat_name}
                   item={item}
                   {...stat}

@@ -1,29 +1,27 @@
-import { EnchantGroup } from '../types';
+import { EnchantGroup } from '@/app/_type/enchantType';
 
 export const getSerachEnchant = (
   enchantList: EnchantGroup[],
   searchQuery: string
 ) => {
-  const trimQuery = searchQuery.trim();
+  const trimQuery = searchQuery.trim().toLowerCase();
   if (!trimQuery) return enchantList;
 
-  return enchantList
-    .map((enchant) => {
-      const filteredItems = enchant.items.filter((item) => {
-        const isNameMatch = item.name.includes(trimQuery);
-        const isStatMatch = item.stat_value.some((stat) =>
-          stat.stat_name.includes(trimQuery)
-        );
-        return isNameMatch || isStatMatch;
-      });
+  return enchantList.map((enchant) => {
+    const filteredEnchants = enchant.enchants.filter((item) => {
+      const isNameMatch = item.name
+        .toString()
+        .toLowerCase()
+        .includes(trimQuery);
+      const isStatMatch = item.effects.some((stat) =>
+        stat.stat_name.toString().toLowerCase().includes(trimQuery)
+      );
+      return isNameMatch || isStatMatch;
+    });
 
-      if (filteredItems.length > 0) {
-        return {
-          ...enchant,
-          items: filteredItems,
-        };
-      }
-      return null;
-    })
-    .filter(Boolean);
+    return {
+      ...enchant,
+      enchants: filteredEnchants,
+    };
+  });
 };

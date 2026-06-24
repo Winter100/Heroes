@@ -1,4 +1,4 @@
-import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
+import { previewInitialTitleList } from '@/app/_constant/keyword';
 import { Stat } from '@/app/_type/previewType';
 
 export const filterStats = (stats: Stat[]) => {
