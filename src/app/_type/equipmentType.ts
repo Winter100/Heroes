@@ -2,7 +2,7 @@ import { Item_Rating } from './infoInfoType';
 import { Stat } from './previewType';
 
 export interface Item_equipment {
-  item_equipment: EquipmentType[];
+  item_equipment: NewEquipmentType[];
 }
 
 export interface NewTuning_stat {
@@ -24,7 +24,7 @@ export interface NewEquipmentType {
   item_name: string;
   item_option: {
     enhancement_level: null;
-    tuning_stat: NewTuning_stat[] | null;
+    tuning_stat: NewTuning_stat[];
     ability_name: string;
     prefix_enchant_use_preset_no: number;
     suffix_enchant_use_preset_no: number;
@@ -132,7 +132,7 @@ export interface EquipmentType {
   item_name: string;
   item_option: {
     enhancement_level: null;
-    tuning_stat: Tuning_stat[];
+    tuning_stat?: Tuning_stat[] | null;
     ability_name: string;
     prefix_enchant_use_preset_no: number;
     suffix_enchant_use_preset_no: number;

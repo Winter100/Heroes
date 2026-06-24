@@ -40,3 +40,8 @@ export interface MergedCharacter {
   stat: Stat[];
   skill: Skill[];
 }
+
+export interface SkillData {
+  skill_name: string;
+  item_name: string;
+}
