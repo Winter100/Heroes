@@ -1,10 +1,16 @@
 import Image from 'next/image';
 import Item from '@/app/_components/common/item/Item';
-import { SkillDescriptionProps } from '../../types';
-import { getSkillDescription } from '../../utils/getSkillDescription';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 
-const SkillDescription = ({ skillName, jobName }: SkillDescriptionProps) => {
+// Todo
+// 스킬 설명 DB에서 가져오기
+const SkillDescription = ({
+  skillName,
+  jobName,
+}: {
+  skillName: string;
+  jobName: string;
+}) => {
   return (
     <div className="flex select-none flex-col gap-2">
       <div className="flex items-center gap-2">
@@ -20,7 +26,7 @@ const SkillDescription = ({ skillName, jobName }: SkillDescriptionProps) => {
       </div>
       <Item.Border />
       <div className="whitespace-pre-wrap text-xs text-gray-400">
-        {getSkillDescription(skillName, jobName)}
+        {/* {getSkillDescription(skillName, jobName)} */}
       </div>
     </div>
   );

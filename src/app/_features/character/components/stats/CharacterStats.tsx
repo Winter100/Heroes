@@ -1,10 +1,10 @@
 'use client';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import Loading from '@/app/_components/common/Loading';
-import { useCharacterStats } from '../../hooks/useCharacterStats';
+import { useUserStat } from '@/app/_hooks/useUserStat';
 
 const CharacterStats = ({ ocid }: { ocid: string }) => {
-  const { data, isLoading, error } = useCharacterStats(ocid);
+  const { data, isLoading, error } = useUserStat(ocid);
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorApi />;

@@ -7,7 +7,7 @@ import {
 import ItemPreivewInfo from '../item/ItemPreivewInfo';
 import ItemTooltip from '@/app/_components/tooltip/ItemTooltip';
 import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';
-import { getTooltipImageSrc } from '@/app/_utils/get/getTooltipImageSrc';
+import { getTooltipImageSrc } from '@/app/_utils/get';
 
 const ItemPopover = ({ ...item }: NewEquipmentType) => {
   const src = getTooltipImageSrc(item.item_name, item.item_equipment_slot_name);
@@ -25,12 +25,12 @@ const ItemPopover = ({ ...item }: NewEquipmentType) => {
             />
           </div>
           <div className="flex w-full items-center gap-0.5 text-xs">
-            <ItemPreivewInfo {...item} />
+            {/* <ItemPreivewInfo {...item} /> */}
           </div>
         </div>
       </PopoverTrigger>
       <PopoverContent className="dark w-[350px] p-1">
-        <ItemTooltip itemName={item.item_name} {...item} />
+        {/* <ItemTooltip itemName={item.item_name} {...item} /> */}
       </PopoverContent>
     </Popover>
   );

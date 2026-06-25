@@ -4,7 +4,7 @@ import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import { useBasic } from '@/app/_hooks/useBasic';
 import SkillAwakening from './SkillAwakening';
-import { filterByStoneName } from '../../utils/filterByStoneName';
+import { filterByStoneName } from '@/app/_utils/convert';
 
 const SkillAwakeningTable = ({ ocid }: { ocid: string }) => {
   const { basic, isLoading, error } = useBasic(ocid || '');

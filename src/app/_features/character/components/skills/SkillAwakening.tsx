@@ -6,17 +6,22 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { SkillAwakeningProps } from '../../types';
 import SkillPopover from './SkillPopover';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import Image from 'next/image';
+import { SkillData } from '@/app/_type/characterType';
 
 const SkillAwakening = ({
   itemName,
   title,
   jobName,
   skillData = [],
-}: SkillAwakeningProps) => {
+}: {
+  itemName: string;
+  title: string;
+  jobName: string;
+  skillData: SkillData[];
+}) => {
   return (
     <Table className="rounded-md bg-muted/50">
       <TableHeader>

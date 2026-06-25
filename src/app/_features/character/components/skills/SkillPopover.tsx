@@ -4,12 +4,18 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import Image from 'next/image';
-import { extractValue } from '../../utils/extractValue';
-import { SkillPopoverProps } from '../../types';
 import SkillDescription from './SkillDescription';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
+import { extractValue } from '@/app/_utils/get';
+import { SkillData } from '../../types';
 
-const SkillPopover = ({ jobName, skill: s }: SkillPopoverProps) => {
+const SkillPopover = ({
+  jobName,
+  skill: s,
+}: {
+  jobName: string;
+  skill: SkillData;
+}) => {
   return (
     <Popover>
       <PopoverTrigger className="h-full w-full">
