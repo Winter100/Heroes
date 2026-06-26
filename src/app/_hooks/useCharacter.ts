@@ -5,7 +5,7 @@ import { getBasic } from '@/app/_services/getBasic';
 import { getStats } from '@/app/_services/getStats';
 import { getGuild } from '@/app/_services/getGuild';
 import { useRankStore } from '@/app/_store/rankStore';
-import { useCharacterStore } from '../_features/raid/store/characterStore';
+import { useCharacterStore } from '../_store/characterStore';
 import {
   mergeAtk,
   mergeCharacterData,

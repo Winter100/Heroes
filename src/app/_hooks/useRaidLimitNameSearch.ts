@@ -1,5 +1,5 @@
 import { FormEvent, useRef } from 'react';
-import { useCharacterStore } from '../_features/raid/store/characterStore';
+import { useCharacterStore } from '../_store/characterStore';
 import { useCharacter } from './useCharacter';
 import { toast } from 'react-toastify';
 
