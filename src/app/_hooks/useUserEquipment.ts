@@ -1,8 +1,8 @@
 import { Item_equipment } from './../_type/equipmentType';
 import { useQuery } from '@tanstack/react-query';
 import { getEquipment } from '../_services/getEquipment';
-import { bagList } from '../_utils/preview/bagList';
-import { getNewTuning } from '../_utils/preview/getNewTuning';
+import { GrindType } from '../api/getGrindOption';
+import { bagList, getNewTuning } from '../_utils/preview';
 
 /**
  * 리액트쿼리를 이용, 유저의 OCID로 장착 장비 및 캐쉬 장비를 조회합니다.
@@ -13,9 +13,9 @@ import { getNewTuning } from '../_utils/preview/getNewTuning';
  * @returns 유저의 장착 장비 및 캐쉬 장비 (연마 포함)
  */
 
-export const useUserEquipment = (ocid: string) => {
+export const useUserEquipment = (ocid: string, grind: GrindType[]) => {
   return useQuery<Item_equipment, Error>({
-    enabled: !!ocid,
+    enabled: !!ocid && !!grind,
     queryKey: [ocid, 'equipment'],
     queryFn: () => getEquipment(ocid ?? ''),
     select: (data) => {
@@ -27,7 +27,7 @@ export const useUserEquipment = (ocid: string) => {
         rawItems?.filter((i) => i.item_equipment_page === 'Cash') ?? [];
 
       const processedBag = bagList(bagItems).map((item) => {
-        const newTuning = getNewTuning(item);
+        const newTuning = getNewTuning(item, grind ?? []);
         return {
           ...item,
           item_option: { ...item.item_option, tuning_stat: newTuning ?? [] },

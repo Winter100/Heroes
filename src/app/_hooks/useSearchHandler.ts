@@ -1,6 +1,7 @@
-import { usePreviewStore } from '@/app/_store/previewStore';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, RefObject } from 'react';
+import { useEnchantStore } from '../_store/useEnchantStore';
+import { useGrindStore } from '../_store/useGrindStore';
 
 export const useSearchHandler = (
   inputRef: RefObject<HTMLInputElement>,
@@ -8,9 +9,14 @@ export const useSearchHandler = (
   routeName?: string
 ) => {
   const router = useRouter();
-  const previewReset = usePreviewStore((state) => state.reset);
   const searchParams = useSearchParams();
   const name = searchParams.get('name') ?? '';
+  const resetEnchantSimulations = useEnchantStore(
+    (state) => state.resetSimulations
+  );
+  const resetGrindSimulations = useGrindStore(
+    (state) => state.resetSimulations
+  );
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -18,10 +24,11 @@ export const useSearchHandler = (
     const value = inputRef.current?.value;
     if (!value || value.length === 0 || name === value) return focus();
 
-    previewReset();
     const resultArray = value.trim().split(' ')[0];
     if (resultArray.length >= 1) {
       inputRef.current.value = resultArray;
+      resetEnchantSimulations();
+      resetGrindSimulations();
 
       if (routeName) {
         return router.push(`/${routeName}?name=${resultArray}`);
