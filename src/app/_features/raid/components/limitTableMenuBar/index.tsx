@@ -1,12 +1,12 @@
 'use client';
 import Row from '@/app/_components/layout/Row';
 import Search from '@/app/_components/common/search/Search';
-import { useRaidLimitNameSearch } from '../../hooks/useRaidLimitNameSearch';
 import ResetBtn from './ResetBtn';
-import RaidSelecterDialog from './raidSelecter';
 import StatFilterDropDown from './filter';
 import ImageSearch from './imageSearch';
 import Column from '@/app/_components/layout/Column';
+import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
+import { useRaidLimitNameSearch } from '@/app/_hooks';
 
 const LimitTableMenuBar = () => {
   const { inputRef, loading, onSubmitHandler } = useRaidLimitNameSearch();
@@ -15,7 +15,7 @@ const LimitTableMenuBar = () => {
     <Column className="gap-2">
       <Row className="items-center justify-end gap-1">
         <div className="w-52">
-          <RaidSelecterDialog onlyLimit={true} />
+          <RaidSelectorContainer />
         </div>
         <div className="w-20">
           <StatFilterDropDown />

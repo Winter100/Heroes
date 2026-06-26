@@ -2,7 +2,7 @@
 
 import { useCheckStore } from '@/app/_store/checkStore';
 import { useDetailStore } from '@/app/_store/DetailStore';
-import { useCharacterStore } from '../../store/characterStore';
+import { useCharacterStore } from '../../../../_store/characterStore';
 import { Trash } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
