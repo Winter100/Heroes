@@ -3,6 +3,8 @@ import { getImageByName } from './getImageByName';
 import { TitleType } from '@/app/_type/RankTitleListType';
 import { LOCALSTORAGE_KEY } from '@/app/_constant/keyword';
 import { MergedCharacter } from '@/app/_type/characterType';
+import { EnchantGroup } from '@/app/_type/enchantType';
+import { previewInitialTitleList } from '@/app/_constant/keyword';
 
 /**
  * - 서치 파람스 값을 리턴
@@ -190,4 +192,71 @@ export const extractNumber = (itemName: string): number | null => {
     return parseInt(match[0], 10);
   }
   return null;
+};
+
+type ItemOption = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+  power_infusion_use_preset_no?: number;
+  prefix_enchant_use_preset_no?: number;
+  suffix_enchant_use_preset_no?: number;
+};
+
+export const getOption = <T>(
+  option: ItemOption,
+  presetNoKey: keyof ItemOption,
+  preset1Key: keyof ItemOption,
+  preset2Key: keyof ItemOption
+): T | null => {
+  try {
+    if (!option) return null;
+    const presetNo = option[presetNoKey];
+    return presetNo === 1 ? option[preset1Key] : option[preset2Key];
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+};
+
+export const getSerachEnchant = (
+  enchantList: EnchantGroup[],
+  searchQuery: string
+) => {
+  const trimQuery = searchQuery.trim().toLowerCase();
+  if (!trimQuery) return enchantList;
+
+  return enchantList.map((enchant) => {
+    const filteredEnchants = enchant.enchants.filter((item) => {
+      const isNameMatch = item.name
+        .toString()
+        .toLowerCase()
+        .includes(trimQuery);
+      const isStatMatch = item.effects.some((stat) =>
+        stat.stat_name.toString().toLowerCase().includes(trimQuery)
+      );
+      return isNameMatch || isStatMatch;
+    });
+
+    return {
+      ...enchant,
+      enchants: filteredEnchants,
+    };
+  });
+};
+
+export const previewStatsFilter = (
+  stats: {
+    stat_name: string;
+    stat_value: number;
+  }[]
+) => {
+  return stats
+    .filter((stat) =>
+      previewInitialTitleList.some((c) => c.stat_name === stat.stat_name)
+    )
+    .sort(
+      (a, b) =>
+        previewInitialTitleList.findIndex((c) => c.stat_name === a.stat_name) -
+        previewInitialTitleList.findIndex((c) => c.stat_name === b.stat_name)
+    );
 };

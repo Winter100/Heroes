@@ -1,5 +1,6 @@
 import { AFFIX, getInfusionIndex } from '@/app/_constant/keyword';
 import {
+  EnchantGroupByAffix,
   EnchantOptionType,
   EnchantPrice,
   EnchantPriceType,
@@ -54,7 +55,7 @@ export const enchantsByGroupSlot = ({
   enchantOptions: EnchantOptionType[];
   infusions: EnchantOptionType[];
 }) => {
-  const map = new Map<
+  const map: EnchantGroupByAffix = new Map<
     string,
     {
       prefix: EnchantOptionType[];

@@ -1,9 +1,17 @@
-import { SkillData } from '@/app/_features/character/types';
 import { RaidType } from '@/app/_store/useRaidStore';
-import { Basic, Guild, MergedCharacter } from '@/app/_type/characterType';
+import {
+  Basic,
+  Guild,
+  MergedCharacter,
+  SkillData,
+} from '@/app/_type/characterType';
 import { Item_Rating } from '@/app/_type/infoInfoType';
 import { RaidListType } from '@/app/_type/raidType';
 import { extractNumber } from '../get';
+import { enchantEffectOrderMap } from '@/app/_constant/keyword';
+import { EnchantGroup, EnchantOptionType } from '@/app/_type/enchantType';
+import { EnchantOptionSort } from '@/app/_utils/enchant';
+import { BasicEventType } from '@/app/_type/homeType';
 
 interface ConvertResult {
   itemName: string;
@@ -22,7 +30,14 @@ export const convertItemNameBySlot = (
   if (slot !== 'Right Hand') return { itemName: name, gradeMatch: null };
 
   const baseNames = ['밀레시안', '아르드리', '오르나', '와드네', '에리우'];
-  const gradeNames: Item_Rating[] = ['초급', '중급', '고급', '레어', '전설'];
+  const gradeNames: Item_Rating[] = [
+    '일반',
+    '초급',
+    '중급',
+    '고급',
+    '레어',
+    '전설',
+  ];
 
   const baseMatch = baseNames.find((base) => name.includes(base));
   if (!baseMatch) return { itemName: name, gradeMatch: null };
@@ -198,4 +213,55 @@ export const mergeProfileData = (basic: Basic, guild: Guild) => {
     { title: '타이틀', value: basic?.total_title_count },
     { title: '길드', value: guild?.guild_name },
   ];
+};
+
+export const groupByRank = (
+  data: EnchantOptionType[],
+  type: 'prefix' | 'suffix' | 'infusion' = 'infusion'
+): EnchantGroup[] => {
+  const rankMap = new Map();
+
+  rankMap.set('all', []);
+
+  const list = EnchantOptionSort(data, enchantEffectOrderMap, type);
+
+  list.forEach((item) => {
+    const rank = item.rank;
+
+    if (!rankMap.has(rank)) {
+      rankMap.set(rank, []);
+    }
+
+    rankMap.get('all').push(item);
+    rankMap.get(rank).push(item);
+  });
+
+  return Array.from(rankMap, ([rank, enchants]) => {
+    const strRank = rank.toString();
+    return {
+      title: rank === 'all' ? '전체' : `${strRank}`,
+      rank: strRank,
+      enchants,
+    };
+  });
+};
+
+export const sortEventsByDate = (items: BasicEventType[]) => {
+  return items?.slice().sort((a, b) => {
+    const aStart = a.date_event_start
+      ? new Date(a.date_event_start).getTime()
+      : Infinity;
+    const bStart = b.date_event_start
+      ? new Date(b.date_event_start).getTime()
+      : Infinity;
+
+    const aEnd = a.date_event_end
+      ? new Date(a.date_event_end).getTime()
+      : Infinity;
+    const bEnd = b.date_event_end
+      ? new Date(b.date_event_end).getTime()
+      : Infinity;
+    if (aEnd !== bEnd) return aEnd - bEnd;
+    return aStart - bStart;
+  });
 };
