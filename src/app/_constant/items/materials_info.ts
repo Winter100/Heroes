@@ -161,6 +161,13 @@ export const materials_info: BasicItemInfoType[] = [
       '에리우 헬름을 제작하거나 에리우 승급석: 머리 방어구를 제작할 때 주재료로 사용됩니다.',
   },
   {
+    item_name: '에리우의 파편: 손 방어구',
+    item_rating: '레어',
+    item_crafting: [],
+    item_description:
+      '에리우 건틀릿을 제작하거나 에리우 승급석: 손 방어구를 제작할 때 주재료로 사용됩니다.',
+  },
+  {
     item_name: '에리우의 파편: 풍요의 근본',
     item_rating: '레어',
     item_crafting: [],

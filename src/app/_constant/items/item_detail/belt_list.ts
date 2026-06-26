@@ -1,5 +1,5 @@
 import { ItemType } from '@/app/_type/infoInfoType';
-import { createAccessoriesObject } from '@/app/_utils/createAccessoriesObject';
+import { createAccessoriesObject } from '@/app/_utils/calculate/calculate-util';
 
 const 어둠의허리띠 = [
   {

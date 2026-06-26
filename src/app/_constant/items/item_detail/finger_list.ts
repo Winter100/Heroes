@@ -1,5 +1,5 @@
 import { ItemType } from '@/app/_type/infoInfoType';
-import { createAccessoriesObject } from '@/app/_utils/createAccessoriesObject';
+import { createAccessoriesObject } from '@/app/_utils/calculate/calculate-util';
 
 const 균열의공포 = [
   {
@@ -56,6 +56,25 @@ const 침묵의증표 = [
     firstDefenseIncrease: 6,
     secondAttackIncrease: 15,
     secondDefenseIncrease: 5,
+  },
+];
+const 필멸의굴레 = [
+  {
+    name: '필멸의굴레',
+    max_stage: 20,
+    base_stat: [
+      { stat_name: '밸런스', stat_value: 9 },
+      { stat_name: '크리티컬', stat_value: 8 },
+      { stat_name: '힘', stat_value: 140 },
+      { stat_name: '민첩', stat_value: 70 },
+      { stat_name: '지능', stat_value: 180 },
+      { stat_name: '의지', stat_value: 80 },
+      { stat_name: '최대 생명력', stat_value: 125 },
+    ],
+    firstAttackIncrease: 16,
+    firstDefenseIncrease: 7,
+    secondAttackIncrease: 16,
+    secondDefenseIncrease: 6,
   },
 ];
 const 고요의증표 = [

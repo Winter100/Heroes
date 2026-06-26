@@ -33,13 +33,119 @@ export const keyword = {
     orna: '오르나',
     uaithne: '와드네',
   },
-  upgreadeType: {
+  upgradeType: {
     infusion: 'infusion',
     prefix: 'prefix',
     suffix: 'suffix',
+    접두: 'prefix',
+    접미: 'suffix',
   },
   project: {
     name: '망스비',
     url: 'https://heroes-dev.com/',
   },
+};
+
+export const AFFIX = {
+  prefix: 'prefix',
+  suffix: 'suffix',
+  infusion: 'infusion',
+};
+
+export const LOCALSTORAGE_KEY = {
+  ocidList: 'ocidList',
+  characterInfoList: 'characterInfoList',
+  waiting: 'waitingRoom',
+};
+
+export const QUERY_KEY = {
+  enchant: 'enchantOption',
+  infusion: 'infusionOption',
+  raid: 'raidOption',
+  partholn: 'partholnOption',
+  enchantPrice: 'enchantPrice',
+  grind: 'grindOption',
+  itemSetOption: 'itemSetOption',
+};
+
+export const initialTitleList = [
+  { stat_name: '이름', isView: true },
+  { stat_name: '직업', isView: true },
+  { stat_name: '공격력', isView: true },
+  { stat_name: '파괴력', isView: true },
+  { stat_name: '추가피해', isView: true },
+  { stat_name: '방어력 관통', isView: true },
+  { stat_name: '크리티컬', isView: true },
+  { stat_name: '밸런스', isView: true },
+  { stat_name: '크리티컬 저항', isView: false },
+  { stat_name: '공격속도', isView: false },
+  { stat_name: '길드', isView: false },
+  { stat_name: '카르제', isView: false },
+  { stat_name: '레벨', isView: false },
+];
+
+export const previewInitialTitleList = [
+  { stat_name: '공격력', isView: true },
+  { stat_name: '크리티컬', isView: true },
+  { stat_name: '밸런스', isView: true },
+  { stat_name: '방어력 관통', isView: true },
+  { stat_name: '크리티컬 저항', isView: true },
+  { stat_name: '추가피해', isView: true },
+  { stat_name: '방어력', isView: true },
+  { stat_name: '공격속도', isView: true },
+  { stat_name: '파괴력', isView: true },
+];
+
+export const SEARCH_PARAMS_KEY = {
+  basic: 'basic',
+  ocid: 'ocid',
+  stat: 'stat',
+  guild: 'guild',
+  character_name: 'character_name',
+  type: 'type',
+};
+
+const ENCHANT_EFFECTS_SORT_DATA = [
+  '공격력',
+  '마법공격력',
+  '방어력',
+  '공격속도',
+  '크리티컬',
+  '크리티컬 저항',
+  '밸런스',
+  '파괴력',
+  '관통력',
+  '최대 스태미나',
+  '최대 생명력',
+];
+const INFUSIONS_SORT_DATA = [
+  '방어력 101',
+  '방어력 102',
+  '방어력 103',
+  '크리티컬 저항 1',
+  '크리티컬 저항 2',
+  '크리티컬 저항 3',
+  '밸런스 1',
+  '밸런스 2',
+  '밸런스 3',
+  '크리티컬 1',
+  '크리티컬 2',
+  '크리티컬 3',
+  '공격속도 1',
+];
+
+export const enchantEffectOrderMap = new Map(
+  ENCHANT_EFFECTS_SORT_DATA.map((name, index) => [name, index])
+);
+
+export const infusionEffectOrderMap = new Map(
+  INFUSIONS_SORT_DATA.map((name, index) => [name, index])
+);
+
+export const getInfusionIndex = (text: string) => {
+  const index = INFUSIONS_SORT_DATA.findIndex((keyword) =>
+    text.startsWith(keyword)
+  );
+
+  return index === -1 ? Infinity : index;
 };
