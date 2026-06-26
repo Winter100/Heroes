@@ -2,13 +2,12 @@
 
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
-import { useUserEquipment } from '@/app/_hooks';
-import { useGrind } from '@/app/_hooks/useGrind';
+import { useUserEquipment, useGrind } from '@/app/_hooks';
 import { EnchantGroupByAffix } from '@/app/_type/enchantType';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import { ITEM_SLOT } from '../../constant';
 import { cn } from '@/lib/utils';
-import EquipmentItemContainer from './grid/equipment-item-container';
+import EquipmentItemContainer from './equipment-item-container';
+import { ITEM_SLOT } from '@/app/_constant/character/item-slot-name';
 
 const CharacterEquipment = ({
   ocid,

@@ -1,10 +1,11 @@
 import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';
-import { getItemInfoOptions } from '@/app/_features/preview/utils/getItemInfoOptions';
+import { getItemInfoOptions } from '@/app/_utils/get/getItemInfoOptions';
 import { EnchantGroupByAffix } from '@/app/_type/enchantType';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import EquipmentItemEnchant from './equipment-item-enchant';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import Item from '@/app/_components/common/item/Item';
+import { cn } from '@/lib/utils';
 
 const EquipmentItemContainer = ({
   item,
@@ -38,7 +39,7 @@ const EquipmentItemContainer = ({
       <div className="flex h-full w-full flex-col gap-1 text-xs">
         <div className="flex flex-row items-center justify-center">
           {/* 아이템 이미지 */}
-          <div className="flex h-full w-10">
+          <div className="hidden h-full md:flex md:w-10">
             <ImageIconUseBorder
               isRatingBorder={true}
               itemName={item.item_name}
@@ -75,15 +76,20 @@ const EquipmentItemContainer = ({
         <Item.Border />
         {/* 연마 수치 */}
         {item.item_option.tuning_stat.length > 0 && (
-          <div className="grid grid-cols-2 gap-x-2 text-[11px]">
+          <div className="flex flex-col text-[11px]">
             {item.item_option.tuning_stat.map((t) => (
               <div
                 key={t.stat_name + t.stat_value}
-                className="flex flex-row items-center justify-start"
+                className={cn(
+                  'flex w-full flex-col items-center justify-start md:flex-row',
+                  Number(t?.stat_value) >= Number(t?.stat_max_value)
+                    ? 'text-blue-300'
+                    : 'text-red-300'
+                )}
               >
-                <div>{t.stat_name}</div>
-                <div className="ml-auto">
-                  [ {t?.stat_value} / {t?.stat_max_value} ]
+                <div className="truncate">{t.stat_name}</div>
+                <div className="md:ml-auto">
+                  {t?.stat_value} / {t?.stat_max_value}
                 </div>
               </div>
             ))}

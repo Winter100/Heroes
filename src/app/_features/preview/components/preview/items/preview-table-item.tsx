@@ -7,7 +7,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import Row from '@/app/_components/layout/Row';
-import { getItemInfoOptions } from '../../../utils/getItemInfoOptions';
+import { getItemInfoOptions } from '../../../../../_utils/get/getItemInfoOptions';
 import { EquipmentType, NewEquipmentType } from '@/app/_type/equipmentType';
 import PreviewEnchantModal from '../enchant/preview-enchant-modal';
 import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';

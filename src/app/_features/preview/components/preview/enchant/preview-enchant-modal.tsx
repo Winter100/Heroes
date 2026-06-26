@@ -10,17 +10,22 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SearchInput from '@/app/_components/common/SearchInput';
-import { groupByRank } from '../../../utils/groupByRank';
 import EnchantItem from './enchant-item';
 import { useState } from 'react';
-import { getSerachEnchant } from '../../../utils/getSerachEnchant';
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 import { EnchantOptionType } from '@/app/_type/enchantType';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { ITEM_ANIMATION } from '../../../constant';
 import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';
+import { getSerachEnchant } from '@/app/_utils/get';
+import { groupByRank } from '@/app/_utils/convert';
 import { useCharacterData } from '@/app/_hooks';
+
+const ITEM_ANIMATION = {
+  hidden: { opacity: 0, y: -10 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 10 },
+};
 
 const PreviewEnchantModal = ({
   itemName,

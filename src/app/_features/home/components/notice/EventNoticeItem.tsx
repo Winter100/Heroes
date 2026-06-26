@@ -1,4 +1,3 @@
-import { convertToKST } from '@/app/_utils/convert/convertToKST';
 import { cn } from '@/lib/utils';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -6,10 +5,11 @@ import {
   getRemainingTime,
   getYearMonthDay,
 } from '@/app/_utils/preview/dateEvent';
-import { BasicNoticeItemProps } from '../../types';
-import { useEventNoticeDateStore } from '../../store/noticeEventStore';
+import { useEventNoticeDateStore } from '../../../../_store/noticeEventStore';
 import { TableCell, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
+import { convertToKST } from '@/app/_utils/convert';
+import { BasicNoticeItemProps } from '@/app/_type/homeType';
 
 const EventNoticeItem = ({
   isIn24,

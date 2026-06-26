@@ -1,11 +1,12 @@
 'use client';
-import { useBasic } from '@/app/_hooks/useBasic';
-import { useGuild } from '@/app/_hooks/useGuild';
+import { useGuild, useBasic } from '@/app/_hooks';
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { mergeProfileData } from '@/app/_utils/convert';
+import { getImageByName } from '@/app/_utils/get/getImageByName';
+import Image from 'next/image';
 
 const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
   const { basic, isLoading, error } = useBasic(ocid);
@@ -15,13 +16,16 @@ const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
   if (error) return <ErrorApi />;
 
   const mergedProfileData = mergeProfileData(basic, guild);
+  const src = getImageByName(basic?.character_class_name);
 
   return (
     <div className="flex h-full flex-col gap-1">
       <div className="flex h-full gap-2">
         <RoundedContainer className="h-full w-full max-w-36">
           <div className="flex h-full flex-1 flex-col items-center justify-center gap-2">
-            <AspectRatio ratio={4 / 3}></AspectRatio>
+            <AspectRatio ratio={3 / 3}>
+              <Image src={src} alt={basic?.character_name} fill />
+            </AspectRatio>
             <div className="w-full text-center text-sm">
               {basic?.character_name}
             </div>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 import { itemAbility } from '@/app/_constant/itemAbility';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import { useOutsideClick } from '@/app/_hooks/useOutsideClick';
+import { useOutsideClick } from '@/app/_hooks';
 import { useAbilityStore } from '@/app/_store/abilityStore';
 import { getSpecificTitle } from '@/app/_utils/preview/getSpecificTitle';
 

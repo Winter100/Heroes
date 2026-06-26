@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import ChartAttackPower from '@/app/_features/preview/components/menubar/chart/chart-attack-power';
-import { useSimulationStats } from '@/app/_hooks/useSimulationStats';
+import { useSimulationStats } from '@/app/_hooks';
 import { useRaidStore } from '@/app/_store/useRaidStore';
 import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
 import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';

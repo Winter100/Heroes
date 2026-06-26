@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTimeDifference } from '@/app/_utils/preview/dateEvent';
-import { convertToKST } from '@/app/_utils/convert/convertToKST';
-import { BasicNoticeItemProps } from '../../types';
+import { convertToKST } from '@/app/_utils/convert';
+import { BasicNoticeItemProps } from '@/app/_type/homeType';
 
 const BasicNoticeItem = ({
   isIn24,

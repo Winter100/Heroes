@@ -1,3 +1,4 @@
+import { ENCHANT_DESTRUCTION_RANK } from '@/app/_type/enchantType';
 import { cn } from '@/lib/utils';
 
 const EquipmentItemEnchant = ({
@@ -12,7 +13,9 @@ const EquipmentItemEnchant = ({
       <div
         className={cn(
           '',
-          rank <= 6 ? 'text-amber-300/90' : 'text-purple-400/90'
+          Number(rank) <= ENCHANT_DESTRUCTION_RANK
+            ? 'text-amber-300/90'
+            : 'text-purple-400/90'
         )}
       >
         {enchant}

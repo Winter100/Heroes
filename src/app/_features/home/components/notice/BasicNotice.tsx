@@ -3,9 +3,7 @@ import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import NoticePagination from './NoticePagination';
 import { cn } from '@/lib/utils';
-import { BasicNoticeProps } from '../../types';
-import { usePagination } from '../../hooks/usePagination';
-import { sortEventsByDate } from '../../utils/sortEventsByDate';
+import { usePagination } from '../../../../_hooks';
 import NoticeItemRenderer from './NoticeItemRenderer';
 import {
   Table,
@@ -16,6 +14,8 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { BookText, BookUser, Calendar, Clock } from 'lucide-react';
+import { sortEventsByDate } from '@/app/_utils/convert';
+import { BasicNoticeProps } from '@/app/_type/homeType';
 
 const eventTable = [
   { title: '이벤트', icon: BookText, haedClassName: 'w-2/5' },

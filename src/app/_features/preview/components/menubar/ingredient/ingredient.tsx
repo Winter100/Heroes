@@ -1,7 +1,7 @@
 'use client';
 
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import { useIngredient } from '@/app/_hooks/useIngredient';
+import { useIngredient } from '@/app/_hooks';
 import ImageIcon from '@/app/_components/common/image/Image-Icon';
 
 const Ingredient = ({ items }: { items: NewEquipmentType[] }) => {

@@ -1,4 +1,4 @@
-import { useSimulationStats } from '@/app/_hooks/useSimulationStats';
+import { useSimulationStats } from '@/app/_hooks';
 import PreviewStatsSummaryDialog from './preview-stats-summary-dialog';
 
 /**

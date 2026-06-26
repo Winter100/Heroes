@@ -1,14 +1,13 @@
 'use client';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import HomeTopImage from './top/HomeTopImage';
 import BasicNotice from './notice/BasicNotice';
-import { useNotice } from '../hooks/useNotice';
+import { useNotice } from '../../../_hooks';
+import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 import {
   NoticeDataType,
   NoticeEventDataType,
   NoticePatchDataType,
-} from '../types';
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
+} from '@/app/_type/homeType';
 
 const HomeMainContent = () => {
   const {
@@ -31,7 +30,13 @@ const HomeMainContent = () => {
 
   return (
     <div className="dark flex flex-1 flex-col gap-2 p-2">
-      <HomeTopImage />
+      <div
+        className="relative h-60 w-full rounded-md bg-cover"
+        style={{
+          backgroundImage: 'url(/art.jpg)',
+          backgroundPosition: 'center 12%',
+        }}
+      />
       <div className="flex flex-col gap-2 md:flex-row">
         <RoundedContainer className="flex flex-1 truncate bg-muted/50">
           <BasicNotice

@@ -2,7 +2,7 @@
 
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 import PartholnDialog from './partholn-dialog';
-import { usePartholn } from '@/app/_hooks/usePartholn';
+import { usePartholn } from '@/app/_hooks';
 
 // 에러핸들링
 const PartholnContainer = () => {
