@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { EnchantOptionType, SIMULATION_AFFIX_TYPE } from '../_constant/enchant';
+import { EnchantOptionType, SIMULATION_AFFIX_TYPE } from '../_type/enchantType';
 
 export type Simulations = Record<
   string,
@@ -38,6 +38,7 @@ interface EnchantAction {
     after: EnchantOptionType | null,
     isExisting: boolean
   ) => void;
+  resetSimulations: () => void;
 }
 export type SetSimulationsParams = Parameters<EnchantAction['setSimulations']>;
 
@@ -75,10 +76,6 @@ export const useEnchantStore = create<EnchantState & EnchantAction>((set) => {
       });
     },
 
-    setGrindSimulations: () => {
-      set(() => {
-        return {};
-      });
-    },
+    resetSimulations: () => set({ simulations: {} }),
   };
 });

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { MonstersType } from '../_constant/raidList';
+import { MonstersType } from '../_type/raidType';
 
 export type RaidType = '빠른전투' | '상한';
 

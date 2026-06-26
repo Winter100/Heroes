@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 
-export type GrindSimulation = {
+type GrindSimulation = {
   grind: {
     before: Record<string, number>;
     after: Record<string, number>;
   };
 };
 
-export type GrindSimulations = Record<string, GrindSimulation>;
+type GrindSimulations = Record<string, GrindSimulation>;
 
 interface GrindState {
   simulations: GrindSimulations;
@@ -22,6 +22,7 @@ interface GrindAction {
     max: number,
     originalValue: number
   ) => void;
+  resetSimulations: () => void;
 }
 
 /**
@@ -58,5 +59,6 @@ export const useGrindStore = create<GrindState & GrindAction>((set) => {
         };
       });
     },
+    resetSimulations: () => set({ simulations: {} }),
   };
 });
