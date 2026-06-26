@@ -179,3 +179,12 @@ export interface DefferenceStatsProps {
   simulationsStats: Stat[];
   stat: Stat;
 }
+
+export type EnchantGroupByAffix = Map<
+  string,
+  {
+    prefix: EnchantOptionType[];
+    suffix: EnchantOptionType[];
+    infusion: EnchantOptionType[];
+  }
+>;
