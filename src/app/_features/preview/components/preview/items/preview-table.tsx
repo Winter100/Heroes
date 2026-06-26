@@ -32,7 +32,7 @@ const PreviewTable = () => {
     );
 
   return (
-    <>
+    <div className="flex flex-col gap-2">
       {/* 각종 메뉴 리스트 */}
       <Row className="w-full items-center justify-end gap-2 text-xs">
         <TourRaidTableContainer ocid={ocid ?? ''} />
@@ -46,7 +46,7 @@ const PreviewTable = () => {
       </Row>
 
       {/* 캐릭터 아이템 정보 */}
-      <Column>
+      <Column className="rounded-md bg-muted/40 p-2">
         <PreviewTableHeader />
         <PreviewTableBody
           items={equipment.data?.items ?? []}
@@ -60,8 +60,10 @@ const PreviewTable = () => {
       </div>
 
       {/* 스텟 미리보기 테이블 */}
-      <PreviewStatsContainer ocid={ocid ?? ''} />
-    </>
+      <div className="rounded-md bg-muted/40 p-2">
+        <PreviewStatsContainer ocid={ocid ?? ''} />
+      </div>
+    </div>
   );
 };
 

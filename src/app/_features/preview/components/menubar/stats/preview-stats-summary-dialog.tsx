@@ -31,7 +31,7 @@ const PreviewStatsSummaryDialog = ({
           스텟
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-96 overflow-y-auto border-none bg-background text-white sm:max-h-[950px]">
+      <DialogContent className="max-h-96 overflow-y-auto border-none bg-zinc-900 text-white sm:max-h-[950px]">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>

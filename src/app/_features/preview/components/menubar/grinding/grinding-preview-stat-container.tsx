@@ -16,7 +16,12 @@ const GrindingPreviewStatContainer = ({
   stat_one_value,
   item,
   isViewBtn = true,
-}: NewTuning_stat & { item: NewEquipmentType; isViewBtn?: boolean }) => {
+  isIncreaseView = true,
+}: NewTuning_stat & {
+  item: NewEquipmentType;
+  isViewBtn?: boolean;
+  isIncreaseView?: boolean;
+}) => {
   const simulatedValue = useGrindStore(
     (state) =>
       state.simulations[item.item_name]?.grind.after[stat_name] ??
@@ -127,6 +132,7 @@ const GrindingPreviewStatContainer = ({
     >
       {/* 그래프 수치 */}
       <ItemGrindHeader
+        isIncreaseView={isIncreaseView}
         increaseValue={increaseValue}
         stat_name={stat_name}
         stat_value={stat_value}

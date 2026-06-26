@@ -32,7 +32,7 @@ const ChartContainer = ({ ocid }: { ocid: string }) => {
           공격력 그래프
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-96 max-w-3xl overflow-hidden overflow-y-auto break-all border-none bg-background text-white sm:max-h-[950px]">
+      <DialogContent className="max-h-96 max-w-3xl overflow-hidden overflow-y-auto break-all border-none bg-zinc-900 text-white sm:max-h-[950px]">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>

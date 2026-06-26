@@ -46,7 +46,7 @@ const TourRaidTableDialog = ({
           순회
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-96 max-w-5xl overflow-y-auto border-none bg-background px-1 text-white sm:max-h-[650px] sm:px-6 md:max-h-[950px]">
+      <DialogContent className="max-h-96 max-w-5xl overflow-y-auto border-none bg-zinc-900 px-1 text-white sm:max-h-[650px] sm:px-6 md:max-h-[950px]">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>

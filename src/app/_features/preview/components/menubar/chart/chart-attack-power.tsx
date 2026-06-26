@@ -207,7 +207,7 @@ const ChartAttackPower: React.FC<AttackCurveChartProps> = ({
   );
 
   return (
-    <div className="h-[550px] w-full rounded-lg bg-[#181A1B] p-5 font-sans text-gray-300">
+    <div className="h-[550px] w-full rounded-lg bg-background p-5 font-sans text-gray-300">
       <h3 className="mb-2.5 text-center text-lg font-semibold">
         적용 공격력 그래프
       </h3>

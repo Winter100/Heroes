@@ -19,6 +19,8 @@ import { EnchantOptionType } from '@/app/_type/enchantType';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ITEM_ANIMATION } from '../../../constant';
+import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';
+import { useCharacterData } from '@/app/_hooks';
 
 const PreviewEnchantModal = ({
   itemName,
@@ -36,6 +38,7 @@ const PreviewEnchantModal = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const enchantRankGroup = groupByRank(enchants, affix);
   const enchantList = getSerachEnchant(enchantRankGroup, searchQuery);
+  const { ocid } = useCharacterData();
 
   const simulations = useEnchantStore((state) => state.simulations);
   const setSimulations = useEnchantStore((state) => state.setSimulations);
@@ -55,7 +58,7 @@ const PreviewEnchantModal = ({
       </DialogTrigger>
       <DialogContent
         autoFocus={false}
-        className="max-h-full max-w-3xl border-none text-white sm:max-h-[840px]"
+        className="max-h-full max-w-3xl border-none bg-zinc-900 text-white sm:max-h-[840px]"
       >
         <DialogHeader>
           <DialogTitle>
@@ -135,6 +138,8 @@ const PreviewEnchantModal = ({
             ))}
           </div>
         </Tabs>
+
+        {ocid && <PreviewStatsContainer ocid={ocid ?? ''} />}
       </DialogContent>
     </Dialog>
   );

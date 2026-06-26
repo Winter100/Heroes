@@ -16,7 +16,9 @@ const Page = async () => {
             className="mx-auto w-full max-w-72"
             routeName="preview"
           />
-          <PreviewTable />
+          <div className="flex items-center justify-center md:min-h-[600px]">
+            <PreviewTable />
+          </div>
         </div>
       </Suspense>
       <SideAd dataSlot="1601053361" position="right" />
