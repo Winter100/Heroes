@@ -1,8 +1,9 @@
-import { useEnchantStore } from '../_store/useEnchantStore';
-import { useGrindStore } from '../_store/useGrindStore';
-import { Stat } from '../_type/previewType';
-import { allStatSumCalculator } from '../_utils/calculate/calculate-util';
-import { useUserStat } from './useUserStat';
+'use client';
+import { useEnchantStore } from '../../_store/useEnchantStore';
+import { useGrindStore } from '../../_store/useGrindStore';
+import { Stat } from '../../_type/previewType';
+import { allStatSumCalculator } from '../../_utils/calculate/calculate-util';
+import { useUserStat } from '../get/useUserStat';
 
 export const useSimulationStats = (ocid: string) => {
   const { data: beforeStats, isError } = useUserStat(ocid);

@@ -1,3 +1,4 @@
+'use client';
 import { useCallback, useState } from 'react';
 
 export const useSortKey = <T>(initialKey: keyof T) => {

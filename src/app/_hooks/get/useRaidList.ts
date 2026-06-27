@@ -1,7 +1,8 @@
+'use client';
 import { useQuery } from '@tanstack/react-query';
-import { getRaidData } from '../api/getRaidData';
-import { RaidListType } from '../_type/raidType';
-import { QUERY_KEY } from '../_constant/keyword';
+import { getRaidData } from '../../api/getRaidData';
+import { RaidListType } from '../../_type/raidType';
+import { QUERY_KEY } from '../../_constant/keyword';
 
 export const useRaidList = () => {
   return useQuery<RaidListType[], Error>({

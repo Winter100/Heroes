@@ -1,5 +1,6 @@
+'use client';
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
-import { getNotice } from '../_services/getNotice';
+import { getNotice } from '../../_services/getNotice';
 
 export type NoticeType = 'notice' | 'notice-patch' | 'notice-event';
 

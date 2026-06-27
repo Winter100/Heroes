@@ -1,7 +1,8 @@
+'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, RefObject } from 'react';
-import { useEnchantStore } from '../_store/useEnchantStore';
-import { useGrindStore } from '../_store/useGrindStore';
+import { useEnchantStore } from '../../_store/useEnchantStore';
+import { useGrindStore } from '../../_store/useGrindStore';
 
 export const useSearchHandler = (
   inputRef: RefObject<HTMLInputElement>,

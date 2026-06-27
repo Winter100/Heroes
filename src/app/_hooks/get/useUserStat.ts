@@ -1,10 +1,11 @@
+'use client';
 import { useQuery } from '@tanstack/react-query';
-import { getStats } from '../_services/getStats';
+import { getStats } from '../../_services/getStats';
 import {
   transformAtkLimitAndForce,
   transformHighAttack,
-} from '../_utils/character';
-import { Stat } from '../_type/previewType';
+} from '../../_utils/character';
+import { Stat } from '../../_type/previewType';
 
 /**
  * 유저의 스탯 정보를 조회합니다.

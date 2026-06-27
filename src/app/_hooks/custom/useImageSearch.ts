@@ -1,8 +1,9 @@
+'use client';
 import { FormEvent, useEffect, useState } from 'react';
-import { useCharacterStore } from '../_store/characterStore';
+import { useCharacterStore } from '../../_store/characterStore';
 import { toast } from 'react-toastify';
 import { imageToName } from '@/app/_utils/get';
-import { useCharacter } from './useCharacter';
+import { useCharacter } from '../get/useCharacter';
 
 export const useImageSearch = () => {
   const characters = useCharacterStore((state) => state.characters);

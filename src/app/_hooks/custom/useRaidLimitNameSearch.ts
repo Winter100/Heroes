@@ -1,6 +1,7 @@
+'use client';
 import { FormEvent, useRef } from 'react';
-import { useCharacterStore } from '../_store/characterStore';
-import { useCharacter } from './useCharacter';
+import { useCharacterStore } from '../../_store/characterStore';
+import { useCharacter } from '../get/useCharacter';
 import { toast } from 'react-toastify';
 
 export const useRaidLimitNameSearch = () => {

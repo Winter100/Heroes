@@ -1,13 +1,14 @@
+'use client';
 import { useQueries } from '@tanstack/react-query';
-import { getStats } from '../_services/getStats';
-import { getEquipment } from '../_services/getEquipment';
+import { getStats } from '../../_services/getStats';
+import { getEquipment } from '../../_services/getEquipment';
 import { useOcid } from './useOcid';
 import { useSearchParams } from 'next/navigation';
-import { Item_equipment, NewEquipmentType } from '../_type/equipmentType';
+import { Item_equipment, NewEquipmentType } from '../../_type/equipmentType';
 import { useEffect, useRef } from 'react';
-import { useEnchantStore } from '../_store/useEnchantStore';
-import { useGrindStore } from '../_store/useGrindStore';
-import { bagList, getNewTuning } from '../_utils/preview';
+import { useEnchantStore } from '../../_store/useEnchantStore';
+import { useGrindStore } from '../../_store/useGrindStore';
+import { bagList, getNewTuning } from '../../_utils/preview';
 import { useGrind } from './useGrind';
 
 export const useCharacterData = (characterName?: string) => {

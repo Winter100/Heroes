@@ -1,6 +1,7 @@
-import { imageMap } from '../_constant/imageList';
-import { useGrindStore } from '../_store/useGrindStore';
-import { NewEquipmentType } from '../_type/equipmentType';
+'use client';
+import { imageMap } from '../../_constant/imageList';
+import { useGrindStore } from '../../_store/useGrindStore';
+import { NewEquipmentType } from '../../_type/equipmentType';
 
 export const useIngredient = (items: NewEquipmentType[]) => {
   const simulations = useGrindStore((state) => state.simulations);

@@ -1,3 +1,4 @@
+'use client';
 import { BasicEventType } from '@/app/_type/homeType';
 import { useMemo, useState } from 'react';
 

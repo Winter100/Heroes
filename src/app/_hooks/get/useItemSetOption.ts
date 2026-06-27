@@ -1,6 +1,7 @@
+'use client';
 import { useQuery } from '@tanstack/react-query';
-import { getItemSetOption } from '../api/getItemSetOption';
-import { QUERY_KEY } from '../_constant/keyword';
+import { getItemSetOption } from '../../api/getItemSetOption';
+import { QUERY_KEY } from '../../_constant/keyword';
 
 export const useItemSetOption = () => {
   const { data, isLoading, error } = useQuery({

@@ -1,3 +1,4 @@
+'use client';
 import { getOcid } from '@/app/_services/getOcid';
 import { useQuery } from '@tanstack/react-query';
 import { useSearchParams } from 'next/navigation';

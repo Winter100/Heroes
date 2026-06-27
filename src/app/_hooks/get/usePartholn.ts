@@ -1,7 +1,8 @@
+'use client';
 import { useQuery } from '@tanstack/react-query';
-import { PartholnApiType, PartholnType } from '../_type/partholnType';
-import { getPartholn } from '../api/getPartholn';
-import { QUERY_KEY } from '../_constant/keyword';
+import { PartholnApiType, PartholnType } from '../../_type/partholnType';
+import { getPartholn } from '../../api/getPartholn';
+import { QUERY_KEY } from '../../_constant/keyword';
 
 /**
  * 파르홀른 데이터 조회

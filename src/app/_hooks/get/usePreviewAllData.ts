@@ -1,17 +1,18 @@
+'use client';
 import { useQueries } from '@tanstack/react-query';
-import { getEnchantOption } from '../api/getEnchantOption';
-import { getRaidData } from '../api/getRaidData';
-import { getPartholn } from '../api/getPartholn';
-import { getGrindOption } from '../api/getGrindOption';
-import { EnchantOptionType } from '../_type/enchantType';
+import { getEnchantOption } from '../../api/getEnchantOption';
+import { getRaidData } from '../../api/getRaidData';
+import { getPartholn } from '../../api/getPartholn';
+import { getGrindOption } from '../../api/getGrindOption';
+import { EnchantOptionType } from '../../_type/enchantType';
 import { useMemo } from 'react';
-import { getItemSetOption } from '../api/getItemSetOption';
-import { EnchantOptionSort, enchantsByGroupSlot } from '../_utils/enchant';
+import { getItemSetOption } from '../../api/getItemSetOption';
+import { EnchantOptionSort, enchantsByGroupSlot } from '../../_utils/enchant';
 import {
   enchantEffectOrderMap,
   infusionEffectOrderMap,
   QUERY_KEY,
-} from '../_constant/keyword';
+} from '../../_constant/keyword';
 
 export const usePreviewAllData = () => {
   const [enchantOptions, infusionOptions, grindOption, itemSetOption] =

@@ -1,8 +1,9 @@
-import { Item_equipment } from './../_type/equipmentType';
+'use client';
+import { Item_equipment } from '../../_type/equipmentType';
 import { useQuery } from '@tanstack/react-query';
-import { getEquipment } from '../_services/getEquipment';
-import { GrindType } from '../api/getGrindOption';
-import { bagList, getNewTuning } from '../_utils/preview';
+import { getEquipment } from '../../_services/getEquipment';
+import { GrindType } from '../../api/getGrindOption';
+import { bagList, getNewTuning } from '../../_utils/preview';
 
 /**
  * 리액트쿼리를 이용, 유저의 OCID로 장착 장비 및 캐쉬 장비를 조회합니다.
