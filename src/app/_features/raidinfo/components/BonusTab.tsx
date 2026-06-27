@@ -1,3 +1,4 @@
+import { Bonus } from '@/app/_type/raidType';
 import {
   Table,
   TableBody,
@@ -7,7 +8,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Bonus } from '../../../types';
 
 const BonusTab = ({ bonus }: { bonus: Bonus[] }) => {
   if (bonus.length === 0) {
@@ -31,10 +31,10 @@ const BonusTab = ({ bonus }: { bonus: Bonus[] }) => {
         {bonus.map((b) => (
           <TableRow
             className="text-xs hover:text-white sm:text-sm"
-            key={b.bonus_description}
+            key={b.bonus}
           >
-            <TableCell className="">{b.bonus_description}</TableCell>
-            <TableCell className="text-center">{b.bonus_value} Gold</TableCell>
+            <TableCell className="">{b.bonus}</TableCell>
+            <TableCell className="text-center">{b.value} Gold</TableCell>
           </TableRow>
         ))}
       </TableBody>

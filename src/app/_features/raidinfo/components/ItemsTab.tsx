@@ -12,9 +12,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import ItemTooltipByType from '@/app/_components/tooltip/ItemTooltipByType';
-import { Drop_items } from '../../../types';
-import PopoverTriggerImage from './PopoverTriggerImage';
+import ImageIcon from '@/app/_components/common/image/Image-Icon';
+import { Drop_items } from '@/app/_type/raidType';
 
 const ItemsTab = ({ items }: { items: Drop_items[] }) => {
   return (
@@ -36,13 +35,10 @@ const ItemsTab = ({ items }: { items: Drop_items[] }) => {
             <TableCell>
               <Popover>
                 <PopoverTrigger className="flex w-full items-center gap-2">
-                  <PopoverTriggerImage drop={drop} />
+                  <ImageIcon src={''} alt="" />
                 </PopoverTrigger>
                 <PopoverContent className="dark w-[370px] p-1">
-                  <ItemTooltipByType
-                    itemName={drop.item_name}
-                    category={drop.item_filter}
-                  />
+                  {drop.item_name}
                 </PopoverContent>
               </Popover>
             </TableCell>
