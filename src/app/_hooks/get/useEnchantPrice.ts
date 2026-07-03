@@ -1,4 +1,3 @@
-import { QUERY_KEY } from '@/app/_constant/keyword';
 import { getEnchantPrice } from '@/app/_services/getEnchantPrice';
 import {
   EnchantPriceItemType,
@@ -9,7 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 
 export const useEnchantPrice = () => {
   return useQuery<EnchantPriceType[], Error, EnchantPriceItemType[]>({
-    queryKey: [QUERY_KEY.enchantPrice],
+    queryKey: ['enchant-price'],
     queryFn: () => getEnchantPrice(),
     staleTime: Infinity,
     select: (data) => {

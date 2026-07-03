@@ -9,7 +9,7 @@ import { useEffect, useRef } from 'react';
 import { useEnchantStore } from '../../_store/useEnchantStore';
 import { useGrindStore } from '../../_store/useGrindStore';
 import { bagList, getNewTuning } from '../../_utils/preview';
-import { useGrind } from './useGrind';
+import { usePreviewAllData } from './usePreviewAllData';
 
 export const useCharacterData = (characterName?: string) => {
   const serachParams = useSearchParams();
@@ -37,11 +37,7 @@ export const useCharacterData = (characterName?: string) => {
     error: ocidError,
   } = useOcid(name);
 
-  const {
-    data: grind,
-    isLoading: isGrindLoading,
-    error: grindError,
-  } = useGrind();
+  const { grindOption } = usePreviewAllData();
 
   const [stats, equipment] = useQueries({
     queries: [
@@ -53,7 +49,7 @@ export const useCharacterData = (characterName?: string) => {
       {
         queryKey: ['equipment', ocid],
         queryFn: () => getEquipment(ocid),
-        enabled: !!ocid && !!grind,
+        enabled: !!ocid && !!grindOption.data,
         select: (data: Item_equipment) => {
           const rawItems = data?.item_equipment;
 
@@ -63,7 +59,7 @@ export const useCharacterData = (characterName?: string) => {
             rawItems?.filter((i) => i.item_equipment_page === 'Cash') ?? [];
 
           const processedBag = bagList(bagItems).map((item) => {
-            const newTuning = getNewTuning(item, grind ?? []);
+            const newTuning = getNewTuning(item, grindOption.data ?? []);
             return {
               ...item,
               item_option: {
@@ -82,9 +78,8 @@ export const useCharacterData = (characterName?: string) => {
     ],
   });
 
-  const isLoading =
-    isOcidLoading || isGrindLoading || stats.isLoading || equipment.isLoading;
-  const error = ocidError || grindError || stats.error || equipment.error;
+  const isLoading = isOcidLoading || stats.isLoading || equipment.isLoading;
+  const error = ocidError || stats.error || equipment.error;
 
   const items = equipment.data?.items as NewEquipmentType[];
   const cach_items = equipment.data?.cach_items;
@@ -97,7 +92,7 @@ export const useCharacterData = (characterName?: string) => {
     cach_items,
     isLoading,
     error,
-    grind,
+    grindOption,
     equipment,
   };
 };

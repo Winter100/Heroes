@@ -1,61 +1,93 @@
 'use client';
 import { useQueries } from '@tanstack/react-query';
-import { getEnchantOption } from '../../api/getEnchantOption';
-import { getRaidData } from '../../api/getRaidData';
-import { getPartholn } from '../../api/getPartholn';
-import { getGrindOption } from '../../api/getGrindOption';
 import { EnchantOptionType } from '../../_type/enchantType';
 import { useMemo } from 'react';
-import { getItemSetOption } from '../../api/getItemSetOption';
 import { EnchantOptionSort, enchantsByGroupSlot } from '../../_utils/enchant';
 import {
+  API_PATH,
   enchantEffectOrderMap,
   infusionEffectOrderMap,
-  QUERY_KEY,
 } from '../../_constant/keyword';
+import { getApi } from '@/app/api/getIApi';
+import { GrindType, ItemRecipeType, ItemSetType } from '@/app/_type/itemType';
+import { RaidListType } from '@/app/_type/raidType';
+import { raidSort } from '@/app/_utils/convert';
 
 export const usePreviewAllData = () => {
-  const [enchantOptions, infusionOptions, grindOption, itemSetOption] =
-    useQueries({
-      queries: [
-        {
-          queryKey: [QUERY_KEY.enchant],
-          queryFn: () => getEnchantOption('ENCHANT'),
-          staleTime: Infinity,
-          select: (data: EnchantOptionType[]) => {
-            return EnchantOptionSort(data, enchantEffectOrderMap, 'enchant');
-          },
+  const [
+    enchantOptions,
+    infusionOptions,
+    grindOption,
+    itemSetOption,
+    itemRecipe,
+    raid,
+    partholn,
+  ] = useQueries({
+    queries: [
+      {
+        queryKey: [API_PATH.enchant],
+        queryFn: () => getApi<EnchantOptionType>(API_PATH.enchant),
+        staleTime: Infinity,
+        select: (data: EnchantOptionType[]) => {
+          return EnchantOptionSort(data, enchantEffectOrderMap, 'enchant');
         },
-        {
-          queryKey: [QUERY_KEY.infusion],
-          queryFn: () => getEnchantOption('INFUSION'),
-          staleTime: Infinity,
-          select: (data: EnchantOptionType[]) => {
-            return EnchantOptionSort(data, infusionEffectOrderMap, 'infusion');
-          },
+        retry: 2,
+      },
+      {
+        queryKey: [API_PATH.infusion],
+        queryFn: () => getApi<EnchantOptionType>(API_PATH.infusion),
+        staleTime: Infinity,
+        select: (data: EnchantOptionType[]) => {
+          return EnchantOptionSort(data, infusionEffectOrderMap, 'infusion');
         },
-        {
-          queryKey: [QUERY_KEY.grind],
-          queryFn: getGrindOption,
-          staleTime: Infinity,
+        retry: 2,
+      },
+      {
+        queryKey: [API_PATH.grind],
+        queryFn: () => getApi<GrindType>(API_PATH.grind),
+        staleTime: Infinity,
+        retry: 2,
+      },
+      {
+        queryKey: [API_PATH.itemSetOption],
+        queryFn: () => getApi<ItemSetType>(API_PATH.itemSetOption),
+        staleTime: Infinity,
+        retry: 2,
+      },
+      {
+        queryKey: [API_PATH.recipe],
+        queryFn: () => getApi<ItemRecipeType>(API_PATH.recipe),
+        staleTime: Infinity,
+        retry: 2,
+      },
+      {
+        queryKey: [API_PATH.raid],
+        queryFn: () => getApi<RaidListType>(API_PATH.raid),
+        staleTime: Infinity,
+        retry: 2,
+        select: (data: RaidListType[]) => {
+          return raidSort(data);
         },
-        {
-          queryKey: [QUERY_KEY.itemSetOption],
-          queryFn: getItemSetOption,
-          staleTime: Infinity,
+      },
+      {
+        queryKey: [API_PATH.partholn],
+        queryFn: () => getApi<EnchantOptionType>(API_PATH.partholn),
+        staleTime: Infinity,
+        retry: 2,
+        select: (data: EnchantOptionType[]) => {
+          return data
+            .map((partholn) => {
+              const { affix, ...rest } = partholn;
+              return {
+                ...rest,
+                affix: affix.toLowerCase() as 'partholn',
+              };
+            })
+            .sort((a, b) => Number(a.rank) - Number(b.rank));
         },
-        {
-          queryKey: [QUERY_KEY.raid],
-          queryFn: getRaidData,
-          staleTime: Infinity,
-        },
-        {
-          queryKey: [QUERY_KEY.partholn],
-          queryFn: getPartholn,
-          staleTime: Infinity,
-        },
-      ],
-    });
+      },
+    ],
+  });
 
   const enchantsBySlot = useMemo(() => {
     return enchantsByGroupSlot({
@@ -70,5 +102,8 @@ export const usePreviewAllData = () => {
     grindOption,
     enchantsBySlot,
     itemSetOption,
+    itemRecipe,
+    raid,
+    partholn,
   };
 };
