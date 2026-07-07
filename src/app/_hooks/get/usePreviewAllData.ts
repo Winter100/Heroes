@@ -12,6 +12,7 @@ import { getApi } from '@/app/api/getIApi';
 import { GrindType, ItemRecipeType, ItemSetType } from '@/app/_type/itemType';
 import { RaidListType } from '@/app/_type/raidType';
 import { raidSort } from '@/app/_utils/convert';
+import { CharacterInfo } from '@/app/_type/characterType';
 
 export const usePreviewAllData = () => {
   const [
@@ -22,6 +23,7 @@ export const usePreviewAllData = () => {
     itemRecipe,
     raid,
     partholn,
+    character,
   ] = useQueries({
     queries: [
       {
@@ -86,6 +88,10 @@ export const usePreviewAllData = () => {
             .sort((a, b) => Number(a.rank) - Number(b.rank));
         },
       },
+      {
+        queryKey: [API_PATH.character],
+        queryFn: () => getApi<CharacterInfo>(API_PATH.character),
+      },
     ],
   });
 
@@ -105,5 +111,6 @@ export const usePreviewAllData = () => {
     itemRecipe,
     raid,
     partholn,
+    character,
   };
 };

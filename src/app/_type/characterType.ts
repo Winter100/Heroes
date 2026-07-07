@@ -1,4 +1,7 @@
+import { FormEvent } from 'react';
 import { Stat } from './previewType';
+import { MonstersType } from './raidType';
+import { RaidType } from '../_store/useRaidStore';
 
 export interface Basic {
   character_name: string;
@@ -24,6 +27,12 @@ export interface Basic {
   };
 }
 
+export interface CharacterInfo {
+  id: number;
+  name: string;
+  image: string;
+}
+
 export interface Guild {
   guild_name: string;
 }
@@ -44,4 +53,18 @@ export interface MergedCharacter {
 export interface SkillData {
   skill_name: string;
   item_name: string;
+}
+
+export interface SearchFormProps {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  submitHandler: (e: FormEvent) => void;
+  loading: boolean;
+  searchValue: string;
+}
+
+export interface LimitStatProps {
+  selectedBoss: MonstersType & { type: RaidType };
+  stat_name: string;
+  stat_value: string | number;
+  characterName: string;
 }

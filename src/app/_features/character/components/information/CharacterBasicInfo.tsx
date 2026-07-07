@@ -1,22 +1,26 @@
 'use client';
-import { useGuild, useBasic } from '@/app/_hooks';
+import { useGuild, useBasic, usePreviewAllData } from '@/app/_hooks';
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { mergeProfileData } from '@/app/_utils/convert';
-import { getImageByName } from '@/app/_utils/get/getImageByName';
 import Image from 'next/image';
 
 const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
   const { basic, isLoading, error } = useBasic(ocid);
   const { guild, isLoading: guildLoading } = useGuild(ocid);
+  const { character } = usePreviewAllData();
 
   if (isLoading || guildLoading) return <Loading />;
   if (error) return <ErrorApi />;
 
   const mergedProfileData = mergeProfileData(basic, guild);
-  const src = getImageByName(basic?.character_class_name);
+  const characterImage =
+    character?.data?.find((c) => c.name === basic.character_class_name)
+      ?.image ?? '';
+  const src =
+    characterImage?.length > 1 ? characterImage : '/images/hereta.png';
 
   return (
     <div className="flex h-full flex-col gap-1">
