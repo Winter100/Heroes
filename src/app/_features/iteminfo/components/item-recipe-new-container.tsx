@@ -13,7 +13,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import ImageIcon from '@/app/_components/common/image/Image-Icon';
 import ItemTitle from '@/app/_components/item/item-title';
 import { sortRecipe } from '@/app/_utils/convert';
 import ItemTag from '@/app/_components/common/item/item-tag';
@@ -24,8 +23,9 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { LiaQuestionCircle } from 'react-icons/lia';
+import ItemTooltipContainer from '@/app/_components/item/item-tooltip-container';
 
-// 1. [Best Practice] 카테고리 데이터 구조 정의 (상위 - 하위 계층 구조화)
+// 1. 카테고리 데이터 구조 정의 (상위 - 하위 계층 구조화)
 interface CategoryConfig {
   [mainCategory: string]: string[];
 }
@@ -192,20 +192,21 @@ const ItemrecipeNewContainer = () => {
 
         {/* 오른쪽 콘텐츠 영역 (구조 및 사이즈 변경 없음) */}
         <div className="flex flex-1 flex-col gap-4 overflow-y-hidden">
-          <RoundedContainer className="flex h-12 items-center justify-between bg-muted/70 px-4 py-2">
+          <RoundedContainer className="flex h-12 items-center gap-2 bg-muted/70 px-4 py-2">
+            <div className="w-10">
+              {selectedItem && (
+                <button
+                  onClick={handleBackToList}
+                  className="rounded bg-zinc-700 px-3 py-1 text-sm text-white transition hover:bg-zinc-600"
+                >
+                  ←
+                </button>
+              )}
+            </div>
             <div className="text-sm text-zinc-300">
               {currentCategory ? `${currentCategory}` : '전체'}
               {currentSubCategory ? ` ➔ ${currentSubCategory}` : ''} 리스트
             </div>
-
-            {selectedItem && (
-              <button
-                onClick={handleBackToList}
-                className="rounded bg-zinc-700 px-3 py-1 text-sm text-white transition hover:bg-zinc-600"
-              >
-                ← 리스트로 돌아가기
-              </button>
-            )}
           </RoundedContainer>
 
           <div className="flex-1 overflow-y-auto rounded-md">
@@ -213,11 +214,13 @@ const ItemrecipeNewContainer = () => {
               /* 상세 정보 화면 */
               <RoundedContainer className="flex h-full flex-col gap-4 bg-muted/70 p-4">
                 <div className="flex items-center gap-4">
-                  <ImageIconUseBorder
-                    src={selectedItem?.image ?? ''}
-                    itemName={selectedItem?.name ?? ''}
-                    isRatingBorder={true}
-                  />
+                  <ItemTooltipContainer itemRecipe={selectedItem}>
+                    <ImageIconUseBorder
+                      src={selectedItem?.image ?? ''}
+                      itemName={selectedItem?.name ?? ''}
+                      isRatingBorder={true}
+                    />
+                  </ItemTooltipContainer>
                   <div>
                     <ItemTitle
                       name={selectedItem.name}
@@ -236,7 +239,7 @@ const ItemrecipeNewContainer = () => {
                       <h4 className="text-sm font-semibold text-zinc-300">
                         설명
                       </h4>
-                      <p className="mt-1 rounded-md bg-background p-2 text-sm">
+                      <p className="mt-1 max-h-96 overflow-y-auto whitespace-pre-wrap rounded-md bg-background p-2 text-sm">
                         {selectedItem?.description}
                       </p>
                     </>
@@ -253,11 +256,13 @@ const ItemrecipeNewContainer = () => {
                           className="flex items-center gap-3 rounded-lg border bg-background p-3 transition-colors hover:border-slate-700/60"
                         >
                           <div className="flex w-10 items-center justify-center rounded border border-slate-700 bg-slate-800 text-xl">
-                            <ImageIconUseBorder
-                              src={material?.image ?? ''}
-                              itemName={material?.name ?? ''}
-                              isRatingBorder={true}
-                            />
+                            <ItemTooltipContainer itemRecipe={material}>
+                              <ImageIconUseBorder
+                                src={material?.image ?? ''}
+                                itemName={material?.name ?? ''}
+                                isRatingBorder={true}
+                              />
+                            </ItemTooltipContainer>
                           </div>
                           <div className="min-w-0 flex-1">
                             <ItemTitle
@@ -300,11 +305,16 @@ const ItemrecipeNewContainer = () => {
                   <TableCaption></TableCaption>
                   <TableHeader className="sticky top-0 z-10 bg-zinc-950">
                     <TableRow className="bg-muted-foreground/10">
-                      <TableHead className="w-[10%]">번호</TableHead>
-                      <TableHead className="w-[45%]">아이템명</TableHead>
-                      <TableHead className="w-[15%]">카테고리</TableHead>
-                      <TableHead className="w-[15%]">부위</TableHead>
-                      <TableHead className="w-[15%]">등급</TableHead>
+                      <TableHead className="w-[10%] text-center">
+                        번호
+                      </TableHead>
+                      <TableHead className="w-[50%]">아이템명</TableHead>
+                      <TableHead className="w-[20%] text-center">
+                        카테고리
+                      </TableHead>
+                      <TableHead className="w-[20%] text-center">
+                        등급
+                      </TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -314,13 +324,17 @@ const ItemrecipeNewContainer = () => {
                         className="cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
                         onClick={() => handleSelectItem(item.name)}
                       >
-                        <TableCell className="font-medium">{i + 1}</TableCell>
+                        <TableCell className="text-center font-medium">
+                          {i + 1}
+                        </TableCell>
                         <TableCell className="flex items-center gap-2">
-                          <ImageIcon
-                            className="h-8 w-8"
-                            src={item?.image ?? ''}
-                            alt="a"
-                          />
+                          <ItemTooltipContainer itemRecipe={item}>
+                            <ImageIconUseBorder
+                              src={item?.image ?? ''}
+                              itemName={item?.name ?? ''}
+                              isRatingBorder={true}
+                            />
+                          </ItemTooltipContainer>
                           <div className="flex flex-col gap-1">
                             <ItemTitle
                               name={item?.name}
@@ -329,12 +343,15 @@ const ItemrecipeNewContainer = () => {
                             >
                               {item.name}
                             </ItemTitle>
-                            <div className="text-xs">{item?.option}</div>
+                            {/* <div className="text-xs">{item?.option}</div> */}
                           </div>
                         </TableCell>
-                        <TableCell>{item?.category}</TableCell>
-                        <TableCell>부위</TableCell>
-                        <TableCell>{item?.tier}</TableCell>
+                        <TableCell className="text-center">
+                          <ItemTag>{item?.category}</ItemTag>
+                        </TableCell>
+                        <TableCell className="text-center">
+                          {item?.tier}
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

@@ -2,11 +2,11 @@
 
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 import PartholnDialog from './partholn-dialog';
-import { usePartholn } from '@/app/_hooks';
+import { usePreviewAllData } from '@/app/_hooks';
 
 // 에러핸들링
 const PartholnContainer = () => {
-  const { data: partholns } = usePartholn();
+  const { partholn } = usePreviewAllData();
   const simulations = useEnchantStore((state) => state.simulations);
   const setSimulations = useEnchantStore((state) => state.setSimulations);
 
@@ -14,7 +14,7 @@ const PartholnContainer = () => {
 
   return (
     <PartholnDialog
-      partholns={partholns ?? []}
+      partholns={partholn.data ?? []}
       selectData={data}
       onClick={setSimulations}
     />

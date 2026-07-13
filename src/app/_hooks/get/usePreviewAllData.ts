@@ -9,7 +9,7 @@ import {
   infusionEffectOrderMap,
 } from '../../_constant/keyword';
 import { getApi } from '@/app/api/getIApi';
-import { GrindType, ItemRecipeType, ItemSetType } from '@/app/_type/itemType';
+import { GrindType, ItemRecipe, ItemSetType } from '@/app/_type/itemType';
 import { RaidListType } from '@/app/_type/raidType';
 import { raidSort } from '@/app/_utils/convert';
 import { CharacterInfo } from '@/app/_type/characterType';
@@ -58,7 +58,7 @@ export const usePreviewAllData = () => {
       },
       {
         queryKey: [API_PATH.recipe],
-        queryFn: () => getApi<ItemRecipeType>(API_PATH.recipe),
+        queryFn: () => getApi<ItemRecipe>(API_PATH.recipe),
         staleTime: Infinity,
         retry: 2,
       },

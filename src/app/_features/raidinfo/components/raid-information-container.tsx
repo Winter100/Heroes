@@ -1,15 +1,15 @@
 'use client';
 
 import ImageIcon from '@/app/_components/common/image/Image-Icon';
-import { useRaidList } from '@/app/_hooks';
 import RaidInformationDialogContainer from './raid-information-dialog-container';
+import { usePreviewAllData } from '@/app/_hooks';
 
 const RaidInformationContainer = () => {
-  const { data: raidList } = useRaidList();
+  const { raid } = usePreviewAllData();
 
   return (
     <div className="grid grid-cols-4 gap-4">
-      {raidList
+      {raid.data
         ?.filter((r) => r?.raid_name !== '미분류')
         .map((raid) => (
           <div key={raid?.raid_name} className="rounded-md bg-muted/50 p-2">

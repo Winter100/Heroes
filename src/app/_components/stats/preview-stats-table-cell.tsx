@@ -1,12 +1,12 @@
-import { MonstersType } from '@/app/_constant/raidList';
 import { RaidType } from '@/app/_store/useRaidStore';
 import { Stat } from '@/app/_type/previewType';
-import { limitCalculator } from '@/app/_utils/raid/limitCalculator';
 import { TableCell } from '@/components/ui/table';
 import StatDifference from '../common/StatDifference';
+import { limitCalculator } from '@/app/_utils/calculate/calculate-util';
+import { MonstersType } from '@/app/_type/raidType';
 
 interface Props {
-  raid: MonstersType | null;
+  raid: MonstersType;
   raidType: RaidType;
   simulationStats: Stat[];
 }

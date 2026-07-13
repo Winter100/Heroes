@@ -1,6 +1,6 @@
 'use client';
 
-import { useRaidList, useSimulationStats } from '@/app/_hooks';
+import { usePreviewAllData, useSimulationStats } from '@/app/_hooks';
 import TourRaidTable from './tour-raid-table-dialog';
 import { useState } from 'react';
 import { RaidType } from '@/app/_store/useRaidStore';
@@ -13,9 +13,9 @@ import { previewStatsFilter } from '@/app/_utils/get';
  */
 const TourRaidTableContainer = ({ ocid }: { ocid: string }) => {
   const [type, setType] = useState<RaidType>('빠른전투');
-  const { data } = useRaidList();
+  const { raid } = usePreviewAllData();
   const { finalStatsArray } = useSimulationStats(ocid);
-  const raidList = filterRaidList(data ?? [], type);
+  const raidList = filterRaidList(raid.data ?? [], type);
   const userStats = previewStatsFilter(finalStatsArray ?? []);
 
   return (

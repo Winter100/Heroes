@@ -1,5 +1,4 @@
 'use client';
-import { RaidListType } from '@/app/_constant/raidList';
 import {
   Dialog,
   DialogContent,
@@ -8,12 +7,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { raidTypeFilter } from '@/app/_utils/filterRaidList';
 import { useState } from 'react';
 import { RaidType, useRaidStore } from '@/app/_store/useRaidStore';
 import RaidList from './raid-list';
 import RaidFilterBtnContainer from './raid-filter-btn-container';
 import RaidDialogTrigger from './raid-dialog-trigger';
+import { RaidListType } from '@/app/_type/raidType';
+import { filterRaidList } from '@/app/_utils/convert';
 
 const RaidSelector = ({
   raid,
@@ -25,7 +25,7 @@ const RaidSelector = ({
   const [type, setType] = useState<RaidType>(initType);
   const setRaid = useRaidStore((state) => state.setRaid);
   const selectRaid = useRaidStore((state) => state.raid);
-  const raidList = raidTypeFilter(type, raid);
+  const raidList = filterRaidList(raid ?? [], type);
 
   return (
     <Dialog>
@@ -33,7 +33,7 @@ const RaidSelector = ({
         {/* 레이드 선택창 트리거 */}
         <RaidDialogTrigger raid={selectRaid} />
       </DialogTrigger>
-      <DialogContent className="max-h-96 max-w-5xl overflow-y-auto border-none text-white sm:max-h-[600px]">
+      <DialogContent className="dark max-h-96 max-w-5xl overflow-y-auto border-none bg-zinc-900 text-white sm:max-h-[600px]">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>
@@ -44,7 +44,7 @@ const RaidSelector = ({
 
         {/* 타입에 따른 선택 가능한 레이드 리스트 */}
         <RaidList
-          raid={raidList}
+          raid={raidList || []}
           raidType={type}
           selectRaid={selectRaid}
           onClick={setRaid}

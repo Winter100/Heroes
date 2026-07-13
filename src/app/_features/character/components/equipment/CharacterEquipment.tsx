@@ -2,7 +2,7 @@
 
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
-import { useUserEquipment, useGrind } from '@/app/_hooks';
+import { useUserEquipment, usePreviewAllData } from '@/app/_hooks';
 import { EnchantGroupByAffix } from '@/app/_type/enchantType';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import { cn } from '@/lib/utils';
@@ -20,8 +20,11 @@ const CharacterEquipment = ({
   equipment: NewEquipmentType | null;
   onClick: (item: NewEquipmentType) => void;
 }) => {
-  const { data: grind } = useGrind();
-  const { isLoading, error, data } = useUserEquipment(ocid, grind ?? []);
+  const { grindOption } = usePreviewAllData();
+  const { isLoading, error, data } = useUserEquipment(
+    ocid,
+    grindOption.data ?? []
+  );
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorApi />;

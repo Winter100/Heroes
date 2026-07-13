@@ -13,7 +13,7 @@ const ImageIcon = ({ src, alt, className, imageClassName }: ImageIconProps) => {
     <div className={cn('relative h-10 w-10', className)}>
       <Image
         unoptimized={true}
-        src={src}
+        src={!!src ? src : 'images/hereta.png'}
         alt={alt}
         fill
         className={cn('object-contain', imageClassName)}

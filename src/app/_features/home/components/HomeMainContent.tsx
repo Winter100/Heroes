@@ -60,7 +60,7 @@ const HomeMainContent = () => {
         </RoundedContainer>
       </div>
       <div className="flex flex-col gap-2">
-        <RoundedContainer className="flex bg-muted/50">
+        <RoundedContainer className="flex flex-1 bg-muted/50">
           <BasicNotice
             eventType="event"
             mainTitle="이벤트"

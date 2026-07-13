@@ -1,10 +1,10 @@
 'use client';
 
-import { useSimulationStats } from '@/app/_hooks/useSimulationStats';
+import { useSimulationStats } from '@/app/_hooks';
 import { useRaidStore } from '@/app/_store/useRaidStore';
 import PreviewStatsTable from './preview-stats-table';
-import { previewStatsFilter } from '@/app/_features/preview/utils/previewStatsFilter';
-import { previewInitialTitleList } from '@/app/_constant/rankTitleList';
+import { previewInitialTitleList } from '@/app/_constant/keyword';
+import { previewStatsFilter } from '@/app/_utils/get';
 
 const PreviewStatsContainer = ({ ocid }: { ocid: string }) => {
   const { finalStatsArray, isError } = useSimulationStats(ocid);

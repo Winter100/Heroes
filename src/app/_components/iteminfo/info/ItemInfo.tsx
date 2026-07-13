@@ -13,7 +13,7 @@ import { Stat } from '@/app/_type/previewType';
 import ItemStats from './ItemStats';
 import ImageIconUseBorder from '../../common/image/ImageIconUseBorder';
 import ItemEnchantBox from './ItemEnchantBox';
-import { getTooltipImageSrc } from '@/app/_utils/get/getTooltipImageSrc';
+import { getTooltipImageSrc } from '@/app/_utils/get';
 
 interface ItemInfoProps {
   itemName: string;

@@ -46,7 +46,7 @@ const PreviewTable = () => {
       </Row>
 
       {/* 캐릭터 아이템 정보 */}
-      <Column className="rounded-md bg-muted/40 p-2">
+      <Column className="rounded-md bg-muted/50 p-2">
         <PreviewTableHeader />
         <PreviewTableBody
           items={equipment.data?.items ?? []}
@@ -54,14 +54,16 @@ const PreviewTable = () => {
         />
       </Column>
 
-      {/* 레이드 선택창 */}
-      <div className="mx-auto w-full max-w-72">
-        <RaidSelectorContainer />
-      </div>
+      <div className="bg-muted/50">
+        {/* 레이드 선택창 */}
+        <div className="mx-auto w-full max-w-72">
+          <RaidSelectorContainer />
+        </div>
 
-      {/* 스텟 미리보기 테이블 */}
-      <div className="rounded-md bg-muted/40 p-2">
-        <PreviewStatsContainer ocid={ocid ?? ''} />
+        {/* 스텟 미리보기 테이블 */}
+        <div className="rounded-md p-2">
+          <PreviewStatsContainer ocid={ocid ?? ''} />
+        </div>
       </div>
     </div>
   );

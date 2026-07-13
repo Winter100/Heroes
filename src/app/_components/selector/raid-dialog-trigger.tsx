@@ -1,9 +1,9 @@
-import { MonstersType } from '@/app/_constant/raidList';
 import { RaidType } from '@/app/_store/useRaidStore';
 import { Button } from '@/components/ui/button';
 import { forwardRef } from 'react';
 import BottomArrow from '../common/BottomArrow';
 import Image from 'next/image';
+import { MonstersType } from '@/app/_type/raidType';
 
 const RaidDialogTrigger = forwardRef<
   HTMLButtonElement,

@@ -1,4 +1,3 @@
-import { MonstersType } from '@/app/_constant/raidList';
 import { Stat } from '@/app/_type/previewType';
 import {
   Table,
@@ -10,6 +9,7 @@ import {
 import { RaidType } from '@/app/_store/useRaidStore';
 import PreviewStatsTableHead from './preview-stats-table-head';
 import PreviewStatsTableCell from './preview-stats-table-cell';
+import { MonstersType } from '@/app/_type/raidType';
 
 const PreviewStatsTable = ({
   raid,
@@ -17,7 +17,7 @@ const PreviewStatsTable = ({
   userStats,
   statNameList,
 }: {
-  raid: (MonstersType & { type: RaidType }) | null;
+  raid: MonstersType & { type: RaidType };
   raidType: RaidType;
   userStats: Stat[];
   statNameList: { stat_name: string }[];

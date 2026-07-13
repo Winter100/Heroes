@@ -47,14 +47,14 @@ const BasicNotice = ({
   return (
     <div
       className={cn(
-        'h-full min-h-60 w-full items-center justify-center gap-1',
+        'h-full w-full items-center justify-center gap-1',
         className
       )}
     >
       <p className="text-center text-sm">{mainTitle}</p>
       <div className="flex h-full w-full flex-col rounded-md">
         {isLoading ? (
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex h-full min-h-60 w-full items-center justify-center">
             <Loading />
           </div>
         ) : (

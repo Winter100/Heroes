@@ -3,7 +3,7 @@ import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
   return (
-    <footer className="flex h-16 w-full flex-col items-center justify-center gap-1 bg-background py-1 text-xs">
+    <footer className="flex h-16 w-full flex-col items-center justify-center gap-1 py-1 text-xs">
       <ul className="flex items-center gap-2">
         <li className="flex items-center gap-2">
           <Link href={'/service/tos'}>이용약관</Link>

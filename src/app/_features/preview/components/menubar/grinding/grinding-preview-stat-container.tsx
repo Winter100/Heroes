@@ -171,7 +171,7 @@ const GrindingPreviewStatContainer = ({
 export default GrindingPreviewStatContainer;
 
 // stat_value는 연마 시뮬레이션으로 인해 변화 되는 수치임.
-const getPercentageStat = (
+export const getPercentageStat = (
   stat_value: string,
   stat_min_value: string,
   stat_max_value: string

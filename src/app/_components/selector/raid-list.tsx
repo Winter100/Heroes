@@ -1,8 +1,8 @@
-import { MonstersType, RaidListType } from '@/app/_constant/raidList';
 import { DialogClose } from '@/components/ui/dialog';
 import ImageIcon from '../common/image/Image-Icon';
 import { cn } from '@/lib/utils';
 import { RaidType } from '@/app/_store/useRaidStore';
+import { MonstersType, RaidListType } from '@/app/_type/raidType';
 
 const RaidList = ({
   raid,
