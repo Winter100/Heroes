@@ -17,20 +17,29 @@ export interface MonstersOmitLimit {
   monsters: Omit<MonstersType, 'limit'>[];
 }
 
+export interface Drop_items {
+  item_name: string;
+  item_description?: string[];
+  item_filter: (typeof item_filter)[keyof typeof item_filter];
+  core_boost_apply: boolean;
+  core_boost_drop: boolean;
+}
+
+export interface Bonus {
+  bonus: string;
+  value: string;
+}
+
 export interface MonstersType {
   battle: string;
-  basic_reward?: { name: string; value: string }[];
+  boss: string;
+  level: number;
+  clear?: { name: string; value: string }[];
   entry: Stat[];
   limit: Stat[];
-  drop_items: {
-    item_name: string;
-    item_description?: string[];
-    item_filter: (typeof item_filter)[keyof typeof item_filter];
-    core_boost_apply: boolean;
-    core_boost_drop: boolean;
-  }[];
-  raid_description?: string;
-  bonus: { bonus_description: string; bonus_value: string }[];
+  items: Drop_items[];
+  description?: string;
+  bonus: Bonus[];
   image?: string;
 }
 

@@ -58,14 +58,15 @@ export const LOCALSTORAGE_KEY = {
   waiting: 'waitingRoom',
 };
 
-export const QUERY_KEY = {
-  enchant: 'enchantOption',
-  infusion: 'infusionOption',
-  raid: 'raidOption',
-  partholn: 'partholnOption',
-  enchantPrice: 'enchantPrice',
-  grind: 'grindOption',
-  itemSetOption: 'itemSetOption',
+export const API_PATH = {
+  enchant: `/enchants?category=ENCHANT`,
+  infusion: `/enchants?category=INFUSION`,
+  grind: `/items/grind`,
+  recipe: `/items/recipe`,
+  itemSetOption: `/items/set-option`,
+  raid: `/raids/table`,
+  partholn: `/partholn`,
+  character: `/characters/image`,
 };
 
 export const initialTitleList = [
@@ -103,6 +104,7 @@ export const SEARCH_PARAMS_KEY = {
   guild: 'guild',
   character_name: 'character_name',
   type: 'type',
+  item_name: 'item_name',
 };
 
 const ENCHANT_EFFECTS_SORT_DATA = [
@@ -132,6 +134,17 @@ const INFUSIONS_SORT_DATA = [
   '크리티컬 2',
   '크리티컬 3',
   '공격속도 1',
+];
+
+export const raidSortKey = [
+  '아르드리',
+  '오르나',
+  '와드네',
+  '에리우',
+  '스페셜 전투',
+  '시공간 왜곡',
+  '결사대',
+  '결사대 [헬]',
 ];
 
 export const enchantEffectOrderMap = new Map(

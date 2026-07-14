@@ -159,7 +159,7 @@ export const isLimitPower = (
   targetRecord: Record<string, number>,
   stat_name: string
 ): boolean => {
-  const { tuning_stat, enhancement_level } = item.item_option;
+  const { tuning_stat, enhancement_level } = item?.item_option;
   const isSpecialItem =
     item.item_name.includes('와드네') || item.item_name.includes('에리우');
 

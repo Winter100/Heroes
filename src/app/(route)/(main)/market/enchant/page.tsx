@@ -1,7 +1,7 @@
 import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 import SideAd from '@/app/_components/adsense/SideAd';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import EnchantInformationContainer from '@/app/_features/market/components/dialog/enchant-information-container';
+import EnchantInformationContainer from '@/app/_features/market/components/enchant-information-container';
 
 const Page = () => {
   return (
@@ -11,8 +11,8 @@ const Page = () => {
         <AutoResponsiveAd />
         <div className="p-2">
           <h1 className="text-center text-lg">인챈트 정보</h1>
-          <div className="pb-4 text-center text-xs">
-            거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
+          <div className="pb-4 text-center text-sm">
+            아이템을 클릭하여 상세 정보를 볼 수 있습니다
           </div>
           <div>
             <EnchantInformationContainer />

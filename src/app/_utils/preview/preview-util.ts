@@ -3,8 +3,8 @@ import {
   slot_name,
 } from '@/app/_constant/character/item-slot-name';
 import { EquipmentType } from '@/app/_type/equipmentType';
-import { GrindType } from '@/app/api/getGrindOption';
 import { getSpecificTitle } from './getSpecificTitle';
+import { GrindType } from '@/app/_type/itemType';
 
 interface UpdateStats {
   stat_min_value: string;

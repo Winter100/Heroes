@@ -9,11 +9,18 @@ interface ImageIconProps extends ComponentProps<'image'> {
   imageClassName?: string;
 }
 const ImageIcon = ({ src, alt, className, imageClassName }: ImageIconProps) => {
+  const isValidSrc =
+    src &&
+    src?.toLowerCase() !== 'null' &&
+    src?.toLowerCase() !== 'undefined' &&
+    src.trim() !== '';
+
+  const finalSrc = isValidSrc ? src : '/images/hereta.png';
   return (
     <div className={cn('relative h-10 w-10', className)}>
       <Image
         unoptimized={true}
-        src={!!src ? src : 'images/hereta.png'}
+        src={finalSrc}
         alt={alt}
         fill
         className={cn('object-contain', imageClassName)}

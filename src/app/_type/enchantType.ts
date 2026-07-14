@@ -1,68 +1,14 @@
 import { ComponentProps } from 'react';
 import { Stat } from './previewType';
 
-export interface EnchantPriceType {
-  next_cursor: string;
-  item: [
-    {
-      date_update: string;
-      item_name: string;
-      average_price: 0;
-      min_price: 0;
-      max_price: 0;
-      item_option: {
-        enhancement_level: 0;
-        tuning_stat: [
-          {
-            stat_name: string;
-            stat_value: string;
-          },
-        ];
-        ability_name: string;
-        prefix_enchant_preset_1: string;
-        suffix_enchant_preset_1: string;
-        prefix_enchant_preset_2: string;
-        suffix_enchant_preset_2: string;
-        power_infusion_preset_1: [
-          {
-            stat_name: string;
-            stat_value: string;
-          },
-        ];
-        power_infusion_preset_2: [
-          {
-            stat_name: string;
-            stat_value: string;
-          },
-        ];
-        bind_release_limit: string;
-        item_shape_name: string;
-        item_quality: string;
-        bracelet_gem_composite: [
-          {
-            item_name: string;
-            stat: [
-              {
-                stat_name: string;
-                stat_value: string;
-              },
-            ];
-          },
-        ];
-        value: string;
-      };
-    },
-  ];
-}
-
-export interface EnchantPrice {
+export interface ItemPriceType {
   date_update: string;
   item_name: string;
-  average_price: 0;
-  min_price: 0;
-  max_price: 0;
+  average_price: number;
+  min_price: number;
+  max_price: number;
   item_option: {
-    enhancement_level: 0;
+    enhancement_level: number;
     tuning_stat: [
       {
         stat_name: string;
@@ -102,6 +48,28 @@ export interface EnchantPrice {
     ];
     value: string;
   };
+}
+
+export interface ItemPriceApiType {
+  next_cursor: string;
+  item: ItemPriceType[];
+}
+
+export interface EnchantFormatingType {
+  item_name: string;
+  min_price: number;
+  max_price: number;
+  average_price: number;
+  date_update: string;
+  affix: SIMULATION_AFFIX_TYPE;
+}
+
+export interface EnchantMergePriceType
+  extends EnchantFormatingType,
+    EnchantOptionType {}
+
+export interface EnchantTableType extends Omit<EnchantMergePriceType, 'slot'> {
+  slot: string[];
 }
 
 export interface EnchantPriceProps {
@@ -158,8 +126,14 @@ export type EnchantOptionType = {
   effects: Stat[];
   slot?: { name: string; value: string }[];
   description?: string;
-  drop_item_list?: string[];
+  drop_list?: DropType[];
 };
+
+interface DropType {
+  name: string;
+  image: string | null;
+  type: string;
+}
 
 export interface EnchantGroup {
   title: string;

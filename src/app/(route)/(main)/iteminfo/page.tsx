@@ -10,9 +10,9 @@ const Page = () => {
       <RoundedContainer>
         <AutoResponsiveAd />
         <div className="p-2">
-          <h1 className="text-center text-lg">아이템 제작 정보</h1>
+          <h1 className="text-center text-lg">아이템 정보</h1>
           <div className="pb-4 text-center text-xs">
-            이미지를 클릭하면 상세 정보를 볼 수 있습니다.
+            아이템을 클릭하면 상세 정보를 볼 수 있습니다.
           </div>
           <ItemrecipeNewContainer />
         </div>

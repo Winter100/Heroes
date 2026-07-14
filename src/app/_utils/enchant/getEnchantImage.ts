@@ -1,4 +1,4 @@
-import { keyword } from '@/app/_constant/keyword';
+import { AFFIX } from '@/app/_constant/keyword';
 import { ENCHANT_DESTRUCTION_RANK } from '@/app/_type/enchantType';
 
 const prefix6 = '/images/enchant/prefix6.png';
@@ -15,19 +15,16 @@ const infusion = '/images/enchant/infusion.png';
  */
 export const getEnchantImage = (enchantRank: string, upgradeType: string) => {
   if (upgradeType === 'infusion') return infusion;
-  const isPrefix = upgradeType === keyword.upgradeType.prefix;
+  const isPrefix = upgradeType === AFFIX.prefix;
 
   const rank = Number(enchantRank);
   const isRankValidNumber = !isNaN(rank);
 
-  const src =
-    isRankValidNumber && rank <= ENCHANT_DESTRUCTION_RANK
-      ? isPrefix
-        ? prefix6
-        : suffix6
-      : isPrefix
-        ? prefix7
-        : suffix7;
+  if (!isRankValidNumber) {
+    if (isPrefix) return prefix7;
+    return suffix7;
+  }
 
-  return src;
+  if (isPrefix) return rank <= ENCHANT_DESTRUCTION_RANK ? prefix6 : prefix7;
+  return rank <= ENCHANT_DESTRUCTION_RANK ? suffix6 : suffix7;
 };

@@ -6,24 +6,29 @@ import EnchantBrin from './EnchantBrin';
 import EnchantEffects from './EnchantEffects';
 import ImageIcon from '../image/Image-Icon';
 import EnchantSubTitle from './EnchantSubTitle';
-import { EnchantMergePriceType } from '@/app/_type/enchantType';
+import { EnchantTableType } from '@/app/_type/enchantType';
 import { getEnchantImage } from '@/app/_utils/enchant';
-import { convertToKST } from '@/app/_utils/convert';
-import { slotNames } from '@/app/_constant/enchant/enchant-slot-constant';
 
 const affix = {
   ['PREFIX']: '접두',
   ['SUFFIX']: '접미',
 };
 
-const Enchant = ({ enchant }: { enchant: EnchantMergePriceType }) => {
-  const src = getEnchantImage(enchant?.rank.toString(), enchant?.affix);
+const Enchant = ({ enchant }: { enchant: EnchantTableType }) => {
   const convertedAffix = affix[enchant?.affix as keyof typeof affix];
 
   return (
     <Item className="flex flex-col gap-2">
       <Row>
-        <ImageIcon src={src} alt={'e'} />
+        <ImageIcon
+          className="h-4 w-4 md:h-8 md:w-8"
+          imageClassName="rounded-sm"
+          src={getEnchantImage(
+            enchant?.rank.toString(),
+            enchant?.affix.toLowerCase().toString()
+          )}
+          alt={enchant?.name.toString()}
+        />
         <Column className="w-full gap-1 pl-2">
           <Item.Title
             className="flex flex-row justify-between text-sm"
@@ -33,13 +38,6 @@ const Enchant = ({ enchant }: { enchant: EnchantMergePriceType }) => {
               <Item.Content>{enchant?.name}</Item.Content>
               <Item.Content className="pl-1">인챈트 스크롤</Item.Content>
             </div>
-            {enchant?.date_update && (
-              <Item.Content>
-                <div className="text-center text-[11px] text-gray-400">
-                  {convertToKST(enchant?.date_update)}
-                </div>
-              </Item.Content>
-            )}
           </Item.Title>
 
           <Item.SubDescription className="px-1">
@@ -48,7 +46,7 @@ const Enchant = ({ enchant }: { enchant: EnchantMergePriceType }) => {
             </Item.Content>
           </Item.SubDescription>
 
-          {enchant?.average_price && (
+          {enchant?.average_price > 0 && (
             <Item.SubDescription className="flex items-center justify-between px-1">
               <Item.Content>물품거래소 매입가</Item.Content>
               <Item.Content>
@@ -59,10 +57,10 @@ const Enchant = ({ enchant }: { enchant: EnchantMergePriceType }) => {
 
           <Item.SubDescription className="flex items-center justify-between px-1">
             <Item.Content className="min-w-7">부위</Item.Content>
-            <Item.Content className="flex flex-row gap-1">
-              {enchant.slot
-                ?.map((slot) => slotNames[slot?.value]?.toString())
-                .join(', ')}
+            <Item.Content className="flex flex-row flex-wrap gap-1">
+              {enchant.slot?.map((slot, idx) => (
+                <span key={slot + idx}>{slot}</span>
+              ))}
             </Item.Content>
           </Item.SubDescription>
 
