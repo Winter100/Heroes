@@ -1,6 +1,5 @@
 'use client';
 
-import Loading from '@/app/_components/common/Loading';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { usePreviewAllData } from '@/app/_hooks';
 import { sortRecipe } from '@/app/_utils/convert';
@@ -15,7 +14,7 @@ const CATEGORY_MAP = {
   재료: ['오르나 관련', '와드네 관련', '에리우 관련', '기타'],
 };
 
-const ItemrecipeNewContainer = () => {
+const ItemRecipeNewContainer = () => {
   const {
     currentCategory,
     currentSubCategory,
@@ -28,8 +27,6 @@ const ItemrecipeNewContainer = () => {
   } = useCategory();
 
   const { itemRecipe } = usePreviewAllData();
-
-  if (itemRecipe.isLoading) return <Loading />;
 
   const allRecipe = sortRecipe(itemRecipe?.data ?? []);
 
@@ -58,13 +55,22 @@ const ItemrecipeNewContainer = () => {
     return true;
   });
 
-  const selectedItem = filteredRecipe.find(
-    (item) => item.name === selectedItemId
-  );
+  const findMaterialItem = (itemName: string | null) => {
+    if (!itemName) return;
+    return allRecipe.find((item) => item.name === itemName);
+  };
+
+  const selectedItem = findMaterialItem(selectedItemId);
+
+  const handleMaterial = (itemName: string) => {
+    const findItem = findMaterialItem(itemName);
+    if (findItem?.materials && findItem.materials.length > 0) {
+      handleSelectItem(itemName);
+    }
+  };
 
   return (
     <div className="flex-1">
-      <h2>아이템 정보</h2>
       <div className="flex h-[750px] gap-4 overflow-y-hidden">
         {/* 왼쪽 카테고리 메뉴 패널 */}
         <ItemInfoTableCategory
@@ -78,7 +84,7 @@ const ItemrecipeNewContainer = () => {
 
         {/* 오른쪽 콘텐츠 영역 (구조 및 사이즈 변경 없음) */}
         <div className="flex flex-1 flex-col gap-4 overflow-y-hidden">
-          <RoundedContainer className="flex h-12 items-center gap-2 bg-muted/70 px-4 py-2">
+          <RoundedContainer className="flex h-12 items-center gap-2 bg-zinc-900 px-4 py-2">
             <div className="w-10">
               {selectedItem && (
                 <button
@@ -95,9 +101,13 @@ const ItemrecipeNewContainer = () => {
             </div>
           </RoundedContainer>
 
-          <div className="flex-1 overflow-y-auto rounded-md">
+          <div className="flex-1 overflow-y-auto rounded-md bg-zinc-900">
             {selectedItem ? (
-              <ItemRecipeSelectedItem selectedItem={selectedItem} />
+              <ItemRecipeSelectedItem
+                selectedItem={selectedItem}
+                handleSelectItem={handleMaterial}
+                findMaterialItem={findMaterialItem}
+              />
             ) : (
               <ItemRecipeTable
                 handleSelectItem={handleSelectItem}
@@ -111,4 +121,4 @@ const ItemrecipeNewContainer = () => {
   );
 };
 
-export default ItemrecipeNewContainer;
+export default ItemRecipeNewContainer;

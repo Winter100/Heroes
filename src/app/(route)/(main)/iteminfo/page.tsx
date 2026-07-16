@@ -1,7 +1,7 @@
 import SideAd from '@/app/_components/adsense/SideAd';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
-import ItemrecipeNewContainer from '@/app/_features/iteminfo/components/item-recipe-new-container';
+import ItemRecipeNewContainer from '@/app/_features/iteminfo/components/item-recipe-new-container';
 
 const Page = () => {
   return (
@@ -14,7 +14,7 @@ const Page = () => {
           <div className="pb-4 text-center text-xs">
             아이템을 클릭하면 상세 정보를 볼 수 있습니다.
           </div>
-          <ItemrecipeNewContainer />
+          <ItemRecipeNewContainer />
         </div>
       </RoundedContainer>
       <SideAd dataSlot="1601053361" position="right" />

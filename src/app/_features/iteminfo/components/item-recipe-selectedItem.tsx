@@ -8,26 +8,35 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { LiaQuestionCircle } from 'react-icons/lia';
-import ItemTooltipContainer from '@/app/_components/item/item-tooltip-container';
 import { ItemRecipe } from '@/app/_type/itemType';
+import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
 
 interface ItemRecipeSelectedItemProps {
   selectedItem: ItemRecipe;
+  handleSelectItem: (item: string) => void;
+  findMaterialItem: (itemName: string) => ItemRecipe | undefined;
 }
 
 const ItemRecipeSelectedItem = ({
   selectedItem,
+  handleSelectItem,
+  findMaterialItem,
 }: ItemRecipeSelectedItemProps) => {
   return (
-    <RoundedContainer className="flex h-full flex-col gap-4 bg-muted/70 p-4">
-      <div className="flex items-center gap-4">
-        <ItemTooltipContainer itemRecipe={selectedItem}>
-          <ImageIconUseBorder
-            src={selectedItem?.image ?? ''}
-            itemName={selectedItem?.name ?? ''}
-            isRatingBorder={true}
-          />
-        </ItemTooltipContainer>
+    <RoundedContainer className="flex h-full flex-col gap-4 p-4">
+      <div className="flex items-center gap-4 rounded-md bg-background p-2">
+        <Tooltip delayDuration={100}>
+          <TooltipTrigger className="text-base text-gray-400">
+            <ImageIconUseBorder
+              src={selectedItem?.image ?? ''}
+              itemName={selectedItem?.name ?? ''}
+              isRatingBorder={true}
+            />
+          </TooltipTrigger>
+          <TooltipContent className="w-80 border bg-background">
+            <ItemTooltipItem item={selectedItem} />
+          </TooltipContent>
+        </Tooltip>
         <div>
           <ItemTitle
             name={selectedItem.name}
@@ -36,7 +45,7 @@ const ItemRecipeSelectedItem = ({
           >
             <h3>{selectedItem.name}</h3>
           </ItemTitle>
-          <ItemTag>{selectedItem.category}</ItemTag>
+          {/* <ItemTag>{selectedItem.category}</ItemTag> */}
         </div>
       </div>
       <hr className="border-zinc-700" />
@@ -59,13 +68,18 @@ const ItemRecipeSelectedItem = ({
                 className="flex items-center gap-3 rounded-lg border bg-background p-3 transition-colors hover:border-slate-700/60"
               >
                 <div className="flex w-10 items-center justify-center rounded border border-slate-700 bg-slate-800 text-xl">
-                  <ItemTooltipContainer itemRecipe={material}>
-                    <ImageIconUseBorder
-                      src={material?.image ?? ''}
-                      itemName={material?.name ?? ''}
-                      isRatingBorder={true}
-                    />
-                  </ItemTooltipContainer>
+                  <Tooltip delayDuration={100}>
+                    <TooltipTrigger className="text-base text-gray-400">
+                      <ImageIconUseBorder
+                        src={material?.image ?? ''}
+                        itemName={material?.name ?? ''}
+                        isRatingBorder={true}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent className="w-80 border bg-background">
+                      <ItemTooltipItem item={material} />
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
                 <div className="min-w-0 flex-1">
                   <ItemTitle
@@ -74,7 +88,7 @@ const ItemRecipeSelectedItem = ({
                     name={material?.name}
                     className="flex items-center truncate text-sm font-medium"
                   >
-                    <span>{material?.name}</span>
+                    <strong aria-label="아이템명">{material?.name}</strong>
                     {material?.option && (
                       <Tooltip delayDuration={100}>
                         <TooltipTrigger className="ml-1 text-base text-gray-400">
@@ -86,14 +100,25 @@ const ItemRecipeSelectedItem = ({
                       </Tooltip>
                     )}
                   </ItemTitle>
-                  <div>
-                    {material?.category && (
+                  <div className="flex items-center gap-2">
+                    {/* {material?.category && (
                       <ItemTag>{material?.category}</ItemTag>
+                    )} */}
+                    {!!findMaterialItem(material.name) && (
+                      <button onClick={() => handleSelectItem(material.name)}>
+                        <ItemTag>제작 정보</ItemTag>
+                      </button>
                     )}
                   </div>
                 </div>
-                <div className="rounded border px-2 py-0.5 text-right text-sm text-white">
-                  x {material.quantity?.toLocaleString() || 0}
+                <div>
+                  <span>x</span>
+                  <strong
+                    aria-label="수량"
+                    className="px-2 py-0.5 text-sm text-white"
+                  >
+                    {material.quantity?.toLocaleString() || 0}
+                  </strong>
                 </div>
               </div>
             ))}
