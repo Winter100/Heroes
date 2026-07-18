@@ -10,8 +10,7 @@ import { Button } from '@/components/ui/button';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import GrindingPreviewStatContainer from './grinding-preview-stat-container';
 import Ingredient from '../ingredient/ingredient';
-import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';
-import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
+import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
 
 interface Props {
   items: NewEquipmentType[];
@@ -50,13 +49,9 @@ const GrindingDialog = ({ items, ocid }: Props) => {
             </div>
           ))}
         </div>
-        <div className="dark">
-          <Ingredient items={items} />
-          <div className="mx-auto my-2 w-full max-w-72">
-            <RaidSelectorContainer />
-          </div>
-          <PreviewStatsContainer ocid={ocid} />
-        </div>
+
+        <Ingredient items={items} />
+        <RaidSelectorAndPreviewStatsContainer ocid={ocid} />
       </DialogContent>
     </Dialog>
   );

@@ -62,7 +62,7 @@ const PreviewTableItem = memo(
                 />
               </div>
             </PopoverTrigger>
-            <PopoverContent className="dark w-[350px] p-1 text-xs">
+            <PopoverContent className="dark w-[310px] p-1 text-xs">
               <ItemEquipmentContainer
                 item={item as NewEquipmentType}
                 isIncreaseView={true}

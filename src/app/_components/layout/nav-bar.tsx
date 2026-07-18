@@ -57,7 +57,7 @@ const TopNavbar = () => {
           <NavigationMenuList>
             {navMain.map((item) => (
               <NavigationMenuItem key={item.title}>
-                <NavigationMenuTrigger className="min-w-36 text-lg font-bold text-white">
+                <NavigationMenuTrigger className="min-w-36 font-bold text-white">
                   {item.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-36">

@@ -1,3 +1,4 @@
+'use client';
 import { ItemRecipe } from '@/app/_type/itemType';
 import ImageIconUseBorder from '../common/image/ImageIconUseBorder';
 import Item from '../common/item/Item';
@@ -13,14 +14,14 @@ const ItemTooltipItem = ({ item }: { item: ItemRecipe }) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-2 p-2 text-zinc-400">
       <Row className="flex items-start gap-2 text-xs">
         <ImageIconUseBorder
           isRatingBorder={true}
           itemName={item?.name}
           src={item?.image ?? ''}
         />
-        <Column className="w-full min-w-0 flex-1 gap-0.5 text-zinc-400">
+        <Column className="w-full min-w-0 flex-1 gap-0.5">
           <ItemTitle
             tier={item.tier}
             category={item.category}
@@ -95,8 +96,54 @@ const ItemTooltipItem = ({ item }: { item: ItemRecipe }) => {
           );
         });
       })}
+
+      {item?.sets?.map((set) => (
+        <div
+          key={set.set_name}
+          className="flex flex-col gap-1 rounded-md border border-border p-2 text-[11px]"
+        >
+          <div className="flex flex-col gap-1">
+            {/* 세트명 */}
+            <p className="border border-border pl-4">
+              {set?.set_name ?? ''} 세트 0/{set?.set_title?.length ?? 0}
+            </p>
+            {/* 세트 필요 아이템 목록 */}
+            <div className="grid grid-cols-2 items-center gap-0.5">
+              {set?.set_title
+                ?.sort((a, b) => getPriority(a) - getPriority(b))
+                .map((item_title) => (
+                  <div key={item_title}>• {item_title}</div>
+                ))}
+            </div>
+          </div>
+          {/* 세트 보너스 효과 */}
+          <div className="flex flex-col gap-1">
+            <p className="border border-border pl-4">세트 보너스</p>
+            {set?.set_options?.map((bonus) => (
+              <div key={bonus.level} className="flex">
+                <div className="w-5">• {bonus.level}:</div>
+                <div className="ml-1 flex flex-1 flex-wrap items-center gap-x-1">
+                  {bonus?.effects?.map((effect) => (
+                    <span key={effect.stat_name}>
+                      {effect.stat_name}+{effect.stat_value}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
 export default ItemTooltipItem;
+
+const SLOT_ORDER = ['무기', '머리', '가슴', '다리', '손', '발'];
+
+const getPriority = (item: string): number => {
+  const index = SLOT_ORDER.findIndex((keyword) => item.includes(keyword));
+
+  return index === -1 ? Infinity : index;
+};

@@ -1,27 +1,36 @@
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
-import SideAd from '@/app/_components/adsense/SideAd';
+import CheckError from '@/app/_components/common/check-error';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import EnchantInformationContainer from '@/app/_features/market/components/enchant-information-container';
+import { API_PATH, keyword } from '@/app/_constant/keyword';
+import EnchantFilterList from '@/app/_features/market/enchant-fiter-list';
+import { EnchantOptionType } from '@/app/_type/enchantType';
+import { getApi } from '@/app/api/getIApi';
+import { Suspense } from 'react';
 
-const Page = () => {
+const Page = async () => {
+  const enchants = await getEnchantData();
+
+  if (enchants.length === 0) return <CheckError />;
+
   return (
-    <>
-      <SideAd dataSlot="2056348937" position="left" />
-      <RoundedContainer className="p-2">
-        <AutoResponsiveAd />
-        <div className="p-2">
-          <h1 className="text-center text-lg">인챈트 정보</h1>
-          <div className="pb-4 text-center text-sm">
-            아이템을 클릭하여 상세 정보를 볼 수 있습니다
-          </div>
-          <div>
-            <EnchantInformationContainer />
-          </div>
-        </div>
+    <div className="flex flex-1 flex-col gap-2 overflow-hidden">
+      <RoundedContainer className="h-14 bg-zinc-900 p-4 text-center font-semibold">
+        <h1>{`${keyword.project.name} - 인챈트`}</h1>
       </RoundedContainer>
-      <SideAd dataSlot="1601053361" position="right" />
-    </>
+      <RoundedContainer className="flex h-full min-h-0 flex-col gap-4 overflow-auto bg-zinc-900 p-0">
+        <Suspense fallback={null}>
+          <EnchantFilterList enchants={enchants} />
+        </Suspense>
+      </RoundedContainer>
+    </div>
   );
 };
 
 export default Page;
+
+export const getEnchantData = async () => {
+  try {
+    return await getApi<EnchantOptionType>(API_PATH.enchant);
+  } catch {
+    return [];
+  }
+};

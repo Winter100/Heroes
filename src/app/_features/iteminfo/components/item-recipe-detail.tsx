@@ -1,4 +1,3 @@
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import ItemTitle from '@/app/_components/item/item-title';
 import ItemTag from '@/app/_components/common/item/item-tag';
 import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';
@@ -10,20 +9,21 @@ import {
 import { LiaQuestionCircle } from 'react-icons/lia';
 import { ItemRecipe } from '@/app/_type/itemType';
 import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
+import Link from 'next/link';
 
-interface ItemRecipeSelectedItemProps {
+interface ItemRecipeDetailProps {
   selectedItem: ItemRecipe;
-  handleSelectItem: (item: string) => void;
-  findMaterialItem: (itemName: string) => ItemRecipe | undefined;
+  isMaterial: (item: string) => boolean;
+  handleSelectItem: (item: string) => string;
 }
-
-const ItemRecipeSelectedItem = ({
+// Todo 2칸으로 나누도 아이템정보 와 재료 2개로 나눠서 보여주기
+const ItemRecipeDetail = ({
   selectedItem,
+  isMaterial,
   handleSelectItem,
-  findMaterialItem,
-}: ItemRecipeSelectedItemProps) => {
+}: ItemRecipeDetailProps) => {
   return (
-    <RoundedContainer className="flex h-full flex-col gap-4 p-4">
+    <div className="flex flex-col gap-2">
       <div className="flex items-center gap-4 rounded-md bg-background p-2">
         <Tooltip delayDuration={100}>
           <TooltipTrigger className="text-base text-gray-400">
@@ -45,7 +45,6 @@ const ItemRecipeSelectedItem = ({
           >
             <h3>{selectedItem.name}</h3>
           </ItemTitle>
-          {/* <ItemTag>{selectedItem.category}</ItemTag> */}
         </div>
       </div>
       <hr className="border-zinc-700" />
@@ -64,8 +63,8 @@ const ItemRecipeSelectedItem = ({
           <div className="mt-1 grid grid-cols-2 gap-3">
             {selectedItem?.materials?.map((material, idx) => (
               <div
-                key={idx}
-                className="flex items-center gap-3 rounded-lg border bg-background p-3 transition-colors hover:border-slate-700/60"
+                key={material.name + idx}
+                className="flex items-center gap-3 rounded-lg border bg-background p-2 transition-colors hover:border-slate-700/60"
               >
                 <div className="flex w-10 items-center justify-center rounded border border-slate-700 bg-slate-800 text-xl">
                   <Tooltip delayDuration={100}>
@@ -100,14 +99,11 @@ const ItemRecipeSelectedItem = ({
                       </Tooltip>
                     )}
                   </ItemTitle>
-                  <div className="flex items-center gap-2">
-                    {/* {material?.category && (
-                      <ItemTag>{material?.category}</ItemTag>
-                    )} */}
-                    {!!findMaterialItem(material.name) && (
-                      <button onClick={() => handleSelectItem(material.name)}>
+                  <div>
+                    {isMaterial(material.name) && (
+                      <Link href={handleSelectItem(material.name)}>
                         <ItemTag>제작 정보</ItemTag>
-                      </button>
+                      </Link>
                     )}
                   </div>
                 </div>
@@ -125,8 +121,8 @@ const ItemRecipeSelectedItem = ({
           </div>
         </div>
       </div>
-    </RoundedContainer>
+    </div>
   );
 };
 
-export default ItemRecipeSelectedItem;
+export default ItemRecipeDetail;

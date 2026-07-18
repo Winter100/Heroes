@@ -91,6 +91,8 @@ export const usePreviewAllData = () => {
       {
         queryKey: [API_PATH.character],
         queryFn: () => getApi<CharacterInfo>(API_PATH.character),
+        staleTime: Infinity,
+        retry: 2,
       },
     ],
   });

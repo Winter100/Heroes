@@ -12,6 +12,7 @@ import Row from '@/app/_components/layout/Row';
 import { ArrowRight } from 'lucide-react';
 import PreviewStatsBox from './preview-stats-box';
 import { Stat } from '@/app/_type/previewType';
+import { PREVIEW_BEFORE_AND_AFTER_STATS_TITLE } from '@/app/_constant/keyword';
 
 interface Props {
   beforeStats: Stat[];
@@ -24,6 +25,10 @@ const PreviewStatsSummaryDialog = ({
   diffStatsArray,
   finalStatsArray,
 }: Props) => {
+  const afterStats = PREVIEW_BEFORE_AND_AFTER_STATS_TITLE.map((statName) =>
+    finalStatsArray.find((stat) => stat.stat_name === statName)
+  ).filter((stat) => stat !== undefined);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -52,9 +57,8 @@ const PreviewStatsSummaryDialog = ({
             <Column className="gap-1">
               <p className="text-center">변경</p>
               <PreviewStatsBox
-                isTitle={true}
                 className="max-w-42 h-96 rounded-lg border border-gray-600 bg-background p-2 text-white"
-                stats={finalStatsArray ?? []}
+                stats={afterStats ?? []}
                 simulationsStats={diffStatsArray ?? []}
               />
             </Column>

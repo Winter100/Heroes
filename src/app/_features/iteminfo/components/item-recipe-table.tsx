@@ -2,7 +2,6 @@ import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorde
 import ItemTag from '@/app/_components/common/item/item-tag';
 import ItemTitle from '@/app/_components/item/item-title';
 import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { ItemRecipe } from '@/app/_type/itemType';
 import {
   Table,
@@ -18,37 +17,36 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import Link from 'next/link';
 
-interface ItemRecipeTableProps {
-  itemRecipe: ItemRecipe[];
-  handleSelectItem: (item: string) => void;
-}
-
-const ItemRecipeTable = ({
-  itemRecipe,
-  handleSelectItem,
-}: ItemRecipeTableProps) => {
+type Props = {
+  recipes: ItemRecipe[];
+  handleSelectItem: (item: string) => string;
+};
+const ItemRecipeTable = ({ recipes, handleSelectItem }: Props) => {
   return (
-    <RoundedContainer className="flex flex-col gap-4 p-0">
-      <Table className="relative w-full table-fixed border-collapse">
-        <TableCaption></TableCaption>
-        <TableHeader className="sticky top-0 z-10 bg-zinc-950">
-          <TableRow className="bg-muted-foreground/10">
-            <TableHead className="w-[10%] text-center">번호</TableHead>
-            <TableHead className="w-[50%]">아이템명</TableHead>
-            <TableHead className="w-[20%] text-center">카테고리</TableHead>
-            <TableHead className="w-[20%] text-center">등급</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {itemRecipe.map((item, i) => (
-            <TableRow
-              key={item.name}
-              className="cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
-              onClick={() => handleSelectItem(item.name)}
-            >
-              <TableCell className="text-center font-medium">{i + 1}</TableCell>
-              <TableCell className="flex items-center gap-2">
+    <Table className="relative w-full table-fixed border-collapse">
+      <TableCaption></TableCaption>
+      <TableHeader className="sticky top-0 z-10 bg-zinc-950">
+        <TableRow className="bg-muted-foreground/10">
+          <TableHead className="w-[10%] text-center">번호</TableHead>
+          <TableHead className="w-[50%]">아이템명</TableHead>
+          <TableHead className="w-[20%] text-center">카테고리</TableHead>
+          <TableHead className="w-[20%] text-center">등급</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {recipes?.map((item, i) => (
+          <TableRow
+            key={item.name}
+            className="cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
+          >
+            <TableCell className="text-center font-medium">{i + 1}</TableCell>
+            <TableCell>
+              <Link
+                href={handleSelectItem(item.name)}
+                className="flex items-center gap-2"
+              >
                 <Tooltip delayDuration={100}>
                   <TooltipTrigger className="text-base text-gray-400">
                     <ImageIconUseBorder
@@ -70,16 +68,16 @@ const ItemRecipeTable = ({
                     {item.name}
                   </ItemTitle>
                 </div>
-              </TableCell>
-              <TableCell className="text-center">
-                <ItemTag>{item?.category}</ItemTag>
-              </TableCell>
-              <TableCell className="text-center">{item?.tier}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </RoundedContainer>
+              </Link>
+            </TableCell>
+            <TableCell className="text-center">
+              <ItemTag>{item?.category}</ItemTag>
+            </TableCell>
+            <TableCell className="text-center">{item?.tier}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 };
 

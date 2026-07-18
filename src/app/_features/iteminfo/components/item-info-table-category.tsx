@@ -1,40 +1,40 @@
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+'use client';
+import { useCategory } from '@/app/_hooks/custom/useCategory';
+import { SlRefresh } from 'react-icons/sl';
 
-interface ItemInfoTableCategoryProps {
-  categoryMap: Record<string, string[]>;
-  currentCategory: string | null;
-  currentSubCategory: string | null;
-  handleSelectCategory: (categoryName: string) => void;
-  handleSelectSubCategory: (subCategoryName: string) => void;
-  handleClearAll: () => void;
-}
+type Props = {
+  itemCategory: { [key: string]: string[] };
+  pathName: string;
+};
 
-const ItemInfoTableCategory = ({
-  categoryMap,
-  currentCategory,
-  currentSubCategory,
-  handleClearAll,
-  handleSelectCategory,
-  handleSelectSubCategory,
-}: ItemInfoTableCategoryProps) => {
+const ItemInfoTableCategory = ({ itemCategory, pathName }: Props) => {
+  const {
+    currentCategory,
+    currentSubCategory,
+    handleClearAll,
+    handleSelectCategory,
+    handleSelectSubCategory,
+  } = useCategory(pathName);
+
   return (
-    <RoundedContainer className="flex min-w-64 flex-col gap-4 overflow-y-auto bg-muted/70 p-4">
+    <>
       <div className="flex items-center justify-between border-b border-zinc-700 pb-2">
         <h4 className="font-bold">카테고리</h4>
         {(currentCategory || currentSubCategory) && (
           <button
             onClick={handleClearAll}
-            className="text-xs text-zinc-400 underline hover:text-white"
+            className="text-zinc-400 underline hover:text-white"
           >
-            전체보기
+            <SlRefresh />
           </button>
         )}
       </div>
 
       <div className="flex flex-col gap-3">
-        {Object.keys(categoryMap).map((mainCat) => {
+        {Object.keys(itemCategory).map((mainCat) => {
           const isMainActive = currentCategory === mainCat;
-          const subCategories = categoryMap[mainCat];
+          const subCategories =
+            itemCategory[mainCat as keyof typeof itemCategory];
 
           return (
             <div key={mainCat} className="flex flex-col gap-1">
@@ -53,7 +53,7 @@ const ItemInfoTableCategory = ({
               {/* 소분류 버튼 리스트 (대분류가 활성화되어 있고 하위 항목이 있을 때만 오픈) */}
               {isMainActive && subCategories.length > 0 && (
                 <div className="ml-3 mt-1 flex flex-col gap-1 border-l border-zinc-700 pl-3">
-                  {subCategories.map((subCat) => {
+                  {subCategories?.map((subCat) => {
                     const isSubActive = currentSubCategory === subCat;
                     return (
                       <button
@@ -75,7 +75,7 @@ const ItemInfoTableCategory = ({
           );
         })}
       </div>
-    </RoundedContainer>
+    </>
   );
 };
 

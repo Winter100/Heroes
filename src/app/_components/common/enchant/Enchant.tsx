@@ -2,19 +2,18 @@ import Item from '../item/Item';
 import Row from '../../layout/Row';
 import Column from '../../layout/Column';
 import EnchantIsDestruction from './EnchantIsDestruction';
-import EnchantBrin from './EnchantBrin';
 import EnchantEffects from './EnchantEffects';
 import ImageIcon from '../image/Image-Icon';
 import EnchantSubTitle from './EnchantSubTitle';
-import { EnchantTableType } from '@/app/_type/enchantType';
-import { getEnchantImage } from '@/app/_utils/enchant';
+import { getEnchantImage, getUniqueBaseStrings } from '@/app/_utils/enchant';
+import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
 
 const affix = {
   ['PREFIX']: '접두',
   ['SUFFIX']: '접미',
 };
 
-const Enchant = ({ enchant }: { enchant: EnchantTableType }) => {
+const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
   const convertedAffix = affix[enchant?.affix as keyof typeof affix];
 
   return (
@@ -46,7 +45,7 @@ const Enchant = ({ enchant }: { enchant: EnchantTableType }) => {
             </Item.Content>
           </Item.SubDescription>
 
-          {enchant?.average_price > 0 && (
+          {enchant?.average_price && enchant?.average_price > 0 && (
             <Item.SubDescription className="flex items-center justify-between px-1">
               <Item.Content>물품거래소 매입가</Item.Content>
               <Item.Content>
@@ -58,9 +57,11 @@ const Enchant = ({ enchant }: { enchant: EnchantTableType }) => {
           <Item.SubDescription className="flex items-center justify-between px-1">
             <Item.Content className="min-w-7">부위</Item.Content>
             <Item.Content className="flex flex-row flex-wrap gap-1">
-              {enchant.slot?.map((slot, idx) => (
-                <span key={slot + idx}>{slot}</span>
-              ))}
+              {getUniqueBaseStrings(enchant.slot?.map((e) => e.name) ?? [])
+                .sort((a, b) => a.localeCompare(b))
+                .map((slot) => {
+                  return <span key={slot}>{slot}</span>;
+                })}
             </Item.Content>
           </Item.SubDescription>
 
@@ -75,8 +76,8 @@ const Enchant = ({ enchant }: { enchant: EnchantTableType }) => {
       <EnchantIsDestruction rank={enchant?.rank?.toString()} />
       <Item.Border />
 
-      <EnchantBrin />
-      <Item.Border />
+      {/* <EnchantBrin /> */}
+      {/* <Item.Border /> */}
 
       <EnchantSubTitle
         name={enchant?.name?.toString()}

@@ -6,7 +6,7 @@ import { limitCalculator } from '@/app/_utils/calculate/calculate-util';
 import { MonstersType } from '@/app/_type/raidType';
 
 interface Props {
-  raid: MonstersType;
+  raid: MonstersType | null;
   raidType: RaidType;
   simulationStats: Stat[];
 }

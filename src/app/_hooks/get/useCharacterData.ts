@@ -37,7 +37,7 @@ export const useCharacterData = (characterName?: string) => {
     error: ocidError,
   } = useOcid(name);
 
-  const { grindOption } = usePreviewAllData();
+  const { grindOption, enchantsBySlot } = usePreviewAllData();
 
   const [stats, equipment] = useQueries({
     queries: [
@@ -94,5 +94,6 @@ export const useCharacterData = (characterName?: string) => {
     error,
     grindOption,
     equipment,
+    enchantsBySlot,
   };
 };

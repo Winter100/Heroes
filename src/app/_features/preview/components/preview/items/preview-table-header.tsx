@@ -2,7 +2,7 @@ import Row from '@/app/_components/layout/Row';
 
 const PreviewTableHeader = () => {
   return (
-    <Row className="mt-1 h-12 gap-2 border-b border-borderColor text-center text-xs">
+    <Row className="h-12 gap-2 rounded-md bg-background px-2 text-center text-xs">
       <div className="flex w-12 items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap">
         아이템
       </div>

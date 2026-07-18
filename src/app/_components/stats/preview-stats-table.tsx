@@ -17,29 +17,31 @@ const PreviewStatsTable = ({
   userStats,
   statNameList,
 }: {
-  raid: MonstersType & { type: RaidType };
+  raid: (MonstersType & { type: RaidType }) | null;
   raidType: RaidType;
   userStats: Stat[];
   statNameList: { stat_name: string }[];
 }) => {
   return (
-    <Table className="table-fixed caption-top">
-      <TableCaption className="hidden"></TableCaption>
-      <TableHeader>
-        <TableRow>
-          <PreviewStatsTableHead statsNameList={statNameList} />
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow>
-          <PreviewStatsTableCell
-            raid={raid}
-            raidType={raidType}
-            simulationStats={userStats}
-          />
-        </TableRow>
-      </TableBody>
-    </Table>
+    <div className="rounded-md bg-background">
+      <Table className="table-fixed caption-top">
+        <TableCaption className="hidden"></TableCaption>
+        <TableHeader>
+          <TableRow>
+            <PreviewStatsTableHead statsNameList={statNameList} />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <PreviewStatsTableCell
+              raid={raid}
+              raidType={raidType}
+              simulationStats={userStats}
+            />
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
   );
 };
 

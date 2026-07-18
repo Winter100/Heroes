@@ -11,8 +11,7 @@ import { Button } from '@/components/ui/button';
 import ChartAttackPower from '@/app/_features/preview/components/menubar/chart/chart-attack-power';
 import { useSimulationStats } from '@/app/_hooks';
 import { useRaidStore } from '@/app/_store/useRaidStore';
-import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
-import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';
+import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
 
 const ChartContainer = ({ ocid }: { ocid: string }) => {
   const { finalStatsArray } = useSimulationStats(ocid);
@@ -49,12 +48,7 @@ const ChartContainer = ({ ocid }: { ocid: string }) => {
             </p>
           </div>
         )}
-        <div className="dark">
-          <div className="mx-auto mb-2 w-full max-w-72">
-            <RaidSelectorContainer />
-          </div>
-          <PreviewStatsContainer ocid={ocid} />
-        </div>
+        <RaidSelectorAndPreviewStatsContainer ocid={ocid} />
       </DialogContent>
     </Dialog>
   );
