@@ -330,11 +330,11 @@ export function aggregateByEnchantPreset(
     // 만약 인챈트 정보가 아예 없는 아이템 데이터라면 스킵 처리 (방어 코드)
     if (!enchantInfo || !enchantInfo.name) return;
 
-    const enchantName = enchantInfo?.name ?? '';
-    const currentMin = currentItem?.min_price ?? 0;
-    const currentMax = currentItem?.max_price ?? 0;
-    const currentAvg = currentItem?.average_price ?? 0;
-    const currentDate = new Date(currentItem?.date_update) ?? '';
+    const enchantName = enchantInfo.name ?? '';
+    const currentMin = currentItem.min_price ?? 0;
+    const currentMax = currentItem.max_price ?? 0;
+    const currentAvg = currentItem.average_price ?? 0;
+    const currentDate = new Date(currentItem.date_update) ?? '';
 
     if (!enchantMap.has(enchantName)) {
       // 최초 등록
@@ -415,78 +415,59 @@ export const raidSort = (raid: RaidListType[]): RaidListType[] => {
   });
 };
 
-export const PREFIX_PRIORITY = {
-  '': 0,
-  초급: 1,
-  중급: 2,
-  고급: 3,
-  레어: 4,
-  전설: 5,
-};
+export const recipeFilter = (
+  recipes: ItemRecipe[],
+  currentCategory: string | null,
+  currentSubCategory?: string | null
+) => {
+  return recipes.filter((item) => {
+    if (currentCategory && item.category !== currentCategory) return false;
 
-const PREFIXES = Object.keys(PREFIX_PRIORITY).filter((p) => p !== '');
-
-// 아이템 이름에서 수식어와 핵심 키워드(와드네/에리우)를 분석하는 헬퍼 함수
-export const parseGameItem = (name: string) => {
-  const isSpecial = name.includes('와드네') || name.includes('에리우');
-
-  if (!isSpecial) {
-    return { isSpecial: false, baseName: name, priority: Infinity };
-  }
-
-  const firstWord = name.split(' ')[0];
-  const hasPrefix = PREFIXES.includes(firstWord);
-
-  const prefix = hasPrefix ? firstWord : '';
-  const baseName = hasPrefix ? name.replace(`${firstWord} `, '') : name;
-  const priority = PREFIX_PRIORITY[prefix as keyof typeof PREFIX_PRIORITY] ?? 0;
-
-  return { isSpecial: true, baseName, priority };
-};
-
-// 1. 부위별 우선순위를 명시적인 배열로 선언 (인덱스가 작을수록 우선순위가 높음)
-const PARTS_ORDER = ['무기', '헬름', '메일', '그리브즈', '건틀릿', '부츠'];
-
-// 2. 아이템 이름이나 baseName을 받아 부위 점수를 반환하는 헬퍼 함수
-const getPartsPriority = (name: string): number => {
-  const index = PARTS_ORDER.findIndex((part) => name.includes(part));
-
-  // 배열에 없는 부위(예: 악세서리, 반지 등)는 가장 뒤로 보냄 (큰 숫자 부여)
-  return index === -1 ? PARTS_ORDER.length : index;
-};
-
-export const sortRecipe = (items: ItemRecipe[]): ItemRecipe[] => {
-  return items
-    .sort((a, b) => {
-      const itemA = parseGameItem(a.name);
-      const itemB = parseGameItem(b.name);
-
-      // 규칙 1: 특수 아이템 그룹을 일반 아이템보다 무조건 앞으로
-      if (itemA.isSpecial !== itemB.isSpecial) {
-        return itemA.isSpecial ? -1 : 1;
+    if (currentCategory === '장비' && currentSubCategory) {
+      if (currentSubCategory === '악세서리') {
+        return !['오르나', '와드네', '에리우'].some((keyword) =>
+          item.name.includes(keyword)
+        );
       }
+      return item.name.includes(currentSubCategory);
+    }
 
-      // 둘 다 특수 아이템인 경우
-      if (itemA.isSpecial && itemB.isSpecial) {
-        // [추가된 규칙]: 무기, 헬름, 메일, 그리브즈, 건틀릿, 부츠 순서로 먼저 정렬
-        const partPriorityA = getPartsPriority(itemA.baseName);
-        const partPriorityB = getPartsPriority(itemB.baseName);
-
-        if (partPriorityA !== partPriorityB) {
-          return partPriorityA - partPriorityB; // 점수가 낮은(우선순위가 높은) 것이 앞으로
-        }
-
-        // 규칙 2: 부위 순서가 같다면(예: 둘 다 그리브즈), 진짜 아이템 종류(baseName)가 같은지 비교
-        if (itemA.baseName !== itemB.baseName) {
-          return itemA.baseName.localeCompare(itemB.baseName, 'ko');
-        }
-
-        // 규칙 3: 아이템 종류까지 완벽히 일치한다면, 그 안에서 등급 순서대로 세웁니다.
-        return itemA.priority - itemB.priority;
+    if (currentCategory === '재료' && currentSubCategory) {
+      if (currentSubCategory === '기타') {
+        return !['오르나', '와드네', '에리우'].some((keyword) =>
+          item.name.includes(keyword)
+        );
       }
+      const keyword = currentSubCategory.replace(' 관련', '');
+      return item.name.includes(keyword);
+    }
 
-      // 둘 다 일반 아이템인 경우 가나다순 정렬
-      return a.name.localeCompare(b.name, 'ko');
-    })
-    .filter((i) => !i.name.includes('+15'));
+    return true;
+  });
+};
+
+export const enchantFilter = (
+  enchants: EnchantOptionType[],
+  currentCategory: string | null,
+  currentSubCategory: string | null
+) => {
+  const curCategory = category[currentCategory as keyof typeof category];
+  return enchants.filter((item) => {
+    // 카테고리만 있고 서브카테고리 없으면 카테고리만 렌더링
+    if (currentCategory && !currentSubCategory) {
+      return item.affix.toUpperCase() === curCategory;
+    }
+
+    if (curCategory && currentSubCategory) {
+      return item.slot?.some((slot) => slot?.name.includes(currentSubCategory));
+    }
+
+    // 아무것도 선택이 안되어 있을때 모두 보기
+    return true;
+  });
+};
+
+const category = {
+  ['접두']: 'PREFIX',
+  ['접미']: 'SUFFIX',
 };

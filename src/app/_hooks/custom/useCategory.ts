@@ -8,6 +8,8 @@ export const useCategory = (pathName: string) => {
 
   const currentCategory = searchParams.get('category');
   const currentSubCategory = searchParams.get('subCategory');
+  const currentSortKey = searchParams.get('sortKey');
+  const currentSortOrder = searchParams.get('sortOrder');
 
   const handleSelectItem = (itemName: string) => {
     const queryString = searchParams.toString();
@@ -16,15 +18,38 @@ export const useCategory = (pathName: string) => {
     }`;
   };
 
+  const handleSort = (sortKey: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set('sortKey', sortKey);
+
+    if (currentSortKey === sortKey) {
+      params.set('sortOrder', currentSortOrder !== 'desc' ? 'desc' : 'asc');
+    } else {
+      params.set('sortOrder', 'desc');
+    }
+
+    router.push(`${pathName}?${params.toString()}`);
+  };
+
   const handleSelectCategory = (categoryName: string) => {
-    router.push(`${pathName}/?category=${encodeURIComponent(categoryName)}`);
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set('category', categoryName);
+    params.delete('subCategory');
+
+    router.push(`${pathName}?${params.toString()}`);
   };
 
   const handleSelectSubCategory = (subCategoryName: string) => {
     if (!currentCategory) return;
-    router.push(
-      `${pathName}/?category=${encodeURIComponent(currentCategory)}&subCategory=${encodeURIComponent(subCategoryName)}`
-    );
+
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set('category', currentCategory);
+    params.set('subCategory', subCategoryName);
+
+    router.push(`${pathName}?${params.toString()}`);
   };
 
   const handleClearAll = () => {
@@ -43,5 +68,8 @@ export const useCategory = (pathName: string) => {
     handleSelectSubCategory,
     currentCategory,
     currentSubCategory,
+    currentSortKey,
+    currentSortOrder,
+    handleSort,
   };
 };

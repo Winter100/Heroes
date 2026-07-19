@@ -41,7 +41,7 @@ export const keyword = {
     접미: 'suffix',
   },
   project: {
-    name: '망스비',
+    name: '마영전',
     url: 'https://heroes-dev.com/',
   },
 };
@@ -95,6 +95,26 @@ export const previewInitialTitleList = [
   { stat_name: '방어력', isView: true },
   { stat_name: '공격속도', isView: true },
   { stat_name: '파괴력', isView: true },
+];
+
+export const PREVIEW_BEFORE_AND_AFTER_STATS_TITLE = [
+  '공격력',
+  '방어력',
+  '힘',
+  '민첩',
+  '지능',
+  '의지',
+  '행운',
+  '최대 생명력',
+  '최대 스태미나',
+  '공격속도',
+  '추가피해',
+  '크리티컬',
+  '크리티컬 피해량',
+  '크리티컬 저항',
+  '밸런스',
+  '파괴력',
+  '방어력 관통',
 ];
 
 export const SEARCH_PARAMS_KEY = {
@@ -161,4 +181,10 @@ export const getInfusionIndex = (text: string) => {
   );
 
   return index === -1 ? Infinity : index;
+};
+
+export const ITEM_CATEGORY_MAP = {
+  장비: ['와드네', '에리우', '악세서리'],
+  소모품: [],
+  재료: ['오르나 관련', '와드네 관련', '에리우 관련', '기타'],
 };

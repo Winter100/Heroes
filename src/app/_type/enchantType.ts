@@ -121,7 +121,7 @@ export type SIMULATION_AFFIX_TYPE = (typeof SIMULATION_AFFIX_PART)[number];
 
 export type EnchantOptionType = {
   rank: string | number;
-  name: string | number;
+  name: string;
   affix: SIMULATION_AFFIX_TYPE;
   effects: Stat[];
   slot?: { name: string; value: string }[];

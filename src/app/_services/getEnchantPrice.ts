@@ -1,17 +1,13 @@
-import axios from 'axios';
-import { ItemPriceApiType } from '../_type/enchantType';
-
-// Todo 아이템 도 가능하게 추후 바꾸기
-export const getEnchantPrice = async () => {
+export const getEnchantPrice = async <T>(): Promise<T[]> => {
   try {
-    const response = await axios.get(
-      `/api/getItemPrice?item_name=인챈트 스크롤`
-    );
+    const response = await fetch(`/api/getItemPrice?item_name=인챈트 스크롤`);
 
-    const data = await response.data;
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
 
-    return data as ItemPriceApiType[];
-  } catch (e) {
-    throw e;
+    return response.json();
+  } catch {
+    return [];
   }
 };

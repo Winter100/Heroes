@@ -2,11 +2,8 @@ import { AFFIX, getInfusionIndex } from '@/app/_constant/keyword';
 import {
   EnchantGroupByAffix,
   EnchantOptionType,
-  EnchantPrice,
-  EnchantPriceType,
 } from '@/app/_type/enchantType';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
-import { convertToKST } from '../convert';
 /**
  * - 인챈트의 효과를 정렬해주는 함수
  * @param data
@@ -84,70 +81,6 @@ export const enchantsByGroupSlot = ({
 };
 
 /**
- * - 인챈트별 가격 정리해 주는 함수
- * @param enchantList
- * @param type
- * @returns
- */
-export const filteredEnchantData = (
-  enchantList: EnchantPrice[],
-  type: string
-) => {
-  if (type === 'prefix') {
-    return enchantList.reduce((acc, current) => {
-      const enchantKey = current.item_option.prefix_enchant_preset_1;
-      const existing = acc.get(enchantKey);
-
-      if (
-        !existing ||
-        new Date(current.date_update) > new Date(existing.date_update)
-      ) {
-        acc.set(enchantKey, current);
-      }
-
-      return acc;
-    }, new Map());
-  } else {
-    return enchantList.reduce((acc, current) => {
-      const enchantKey = current.item_option.suffix_enchant_preset_1;
-      const existing = acc.get(enchantKey);
-
-      if (
-        !existing ||
-        new Date(current.date_update) > new Date(existing.date_update)
-      ) {
-        acc.set(enchantKey, current);
-      }
-
-      return acc;
-    }, new Map());
-  }
-};
-
-/**
- * - 인챈트 팔린 날짜 알려주는 함수
- * @param enchantList
- * @returns
- */
-export const getEnchantDate = (enchantList: EnchantPriceType[]) => {
-  if (enchantList.length === 0) return { firstDate: null, lastDate: null };
-
-  const first =
-    enchantList[0].item.length > 0 ? enchantList[0].item[0].date_update : null;
-
-  const lastItem = enchantList[enchantList.length - 1];
-  const last =
-    lastItem.item.length > 0
-      ? lastItem.item[lastItem.item.length - 1].date_update
-      : null;
-
-  const firstDate = convertToKST(first || '');
-  const lastDate = convertToKST(last || '');
-
-  return { firstDate, lastDate };
-};
-
-/**
  * - 연마 조건 확인 함수
  * @param item
  * @param targetRecord
@@ -213,3 +146,41 @@ export const isLimitPower = (
 
   return false;
 };
+
+export const getRankCategoryMap = (
+  enchantList: EnchantOptionType[]
+): Record<string, string[]> => {
+  const prefixSlots = new Set<string>();
+  const suffixSlots = new Set<string>();
+
+  enchantList.forEach((item) => {
+    if (item.affix.toUpperCase() === 'PREFIX') {
+      if (!item.slot) return;
+      getUniqueBaseStrings(item.slot.map((s) => s.name)).forEach((enchant) =>
+        prefixSlots.add(enchant)
+      );
+    } else if (item.affix.toUpperCase() === 'SUFFIX') {
+      if (!item.slot) return;
+      getUniqueBaseStrings(item.slot.map((s) => s.name)).forEach((enchant) =>
+        suffixSlots.add(enchant)
+      );
+    }
+  });
+
+  const sortDescending = (Slotset: Set<string>): string[] => {
+    return Array.from(Slotset).sort((a, b) => Number(a) - Number(b));
+  };
+
+  return {
+    접두: sortDescending(prefixSlots),
+    접미: sortDescending(suffixSlots),
+  };
+};
+
+export function getUniqueBaseStrings(inputArray: string[]): string[] {
+  const suffixRegex = /\s*\([a-zA-Z]\)$/;
+  const uniqueSet = new Set<string>(
+    inputArray.map((str) => str.replace(suffixRegex, '').trim())
+  );
+  return Array.from(uniqueSet);
+}
