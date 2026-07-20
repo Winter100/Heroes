@@ -30,8 +30,9 @@ const ItemRecipeTable = ({ recipes, handleSelectItem }: Props) => {
       <TableHeader className="sticky top-0 z-10 bg-zinc-950">
         <TableRow className="bg-muted-foreground/10">
           <TableHead className="w-[10%] text-center">번호</TableHead>
-          <TableHead className="w-[50%]">아이템명</TableHead>
+          <TableHead className="w-[30%]">아이템명</TableHead>
           <TableHead className="w-[20%] text-center">카테고리</TableHead>
+          <TableHead className="w-[20%] text-center">부위</TableHead>
           <TableHead className="w-[20%] text-center">등급</TableHead>
         </TableRow>
       </TableHeader>
@@ -73,6 +74,10 @@ const ItemRecipeTable = ({ recipes, handleSelectItem }: Props) => {
             <TableCell className="text-center">
               <ItemTag>{item?.category}</ItemTag>
             </TableCell>
+            <TableCell className="text-center">
+              {item?.slot?.name && <ItemTag>{item?.slot?.name}</ItemTag>}
+            </TableCell>
+
             <TableCell className="text-center">{item?.tier}</TableCell>
           </TableRow>
         ))}

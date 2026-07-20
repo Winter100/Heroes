@@ -310,69 +310,37 @@ function extractEnchantInfo(itemOption: ItemPriceType['item_option']) {
 export function aggregateByEnchantPreset(
   items: ItemPriceType[]
 ): EnchantFormatingType[] {
-  // Key: 인챈트 이름, Value: 누적 집계 데이터
-  const enchantMap = new Map<
-    string,
-    {
-      min_price: number;
-      max_price: number;
-      total_price: number;
-      count: number;
-      date_update: string;
-      affix: SIMULATION_AFFIX_TYPE;
-    }
-  >();
+  // Key: 인챈트 이름, Value: 최신 인챈트 데이터
+  const enchantMap = new Map<string, EnchantFormatingType>();
 
-  items.forEach((currentItem) => {
-    // 1. 4개 필드 중 값이 있는 인챈트 이름과 PREFIX/SUFFIX 종류를 추출
+  for (const currentItem of items) {
     const enchantInfo = extractEnchantInfo(currentItem.item_option);
 
-    // 만약 인챈트 정보가 아예 없는 아이템 데이터라면 스킵 처리 (방어 코드)
-    if (!enchantInfo || !enchantInfo.name) return;
+    // 방어 코드: 인챈트 정보가 없으면 다음 아이템으로 넘어감
+    if (!enchantInfo || !enchantInfo.name) continue;
 
-    const enchantName = enchantInfo.name ?? '';
-    const currentMin = currentItem.min_price ?? 0;
-    const currentMax = currentItem.max_price ?? 0;
-    const currentAvg = currentItem.average_price ?? 0;
-    const currentDate = new Date(currentItem.date_update) ?? '';
+    const enchantName = enchantInfo.name;
+    const currentItemDate = new Date(currentItem.date_update).getTime();
+    const existing = enchantMap.get(enchantName);
 
-    if (!enchantMap.has(enchantName)) {
-      // 최초 등록
+    // Map에 해당 인챈트가 없거나,
+    // 현재 아이템의 날짜가 기존 저장된 아이템의 날짜보다 최신일 경우에만 데이터 세팅(덮어쓰기)
+    if (
+      !existing ||
+      currentItemDate > new Date(existing.date_update).getTime()
+    ) {
       enchantMap.set(enchantName, {
-        min_price: currentMin,
-        max_price: currentMax,
-        total_price: currentAvg,
-        count: 1,
+        item_name: enchantName,
+        min_price: currentItem.min_price ?? 0,
+        max_price: currentItem.max_price ?? 0,
+        average_price: currentItem.average_price ?? 0,
         date_update: currentItem.date_update,
         affix: enchantInfo.affix,
       });
-    } else {
-      // 기존 데이터가 있다면 갱신
-      const existing = enchantMap.get(enchantName)!;
-
-      existing.min_price = Math.min(existing.min_price, currentMin);
-      existing.max_price = Math.max(existing.max_price, currentMax);
-      existing.total_price += currentAvg;
-      existing.count += 1;
-
-      if (currentDate > new Date(existing.date_update)) {
-        existing.date_update = currentItem.date_update;
-      }
     }
-  });
+  }
 
-  // 최종 배열 변환 및 포맷팅
-  return Array.from(enchantMap.entries()).map(([enchantName, info]) => {
-    return {
-      ...info,
-      item_name: enchantName,
-      min_price: info.min_price,
-      max_price: info.max_price,
-      average_price: Math.round(info.total_price / info.count),
-      date_update: info.date_update,
-      affix: info.affix,
-    };
-  });
+  return Array.from(enchantMap.values());
 }
 
 export const mergeEnchantPrice = (

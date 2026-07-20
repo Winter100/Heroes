@@ -9,7 +9,12 @@ import { Suspense } from 'react';
 const Page = async () => {
   const enchants = await getEnchantData();
 
-  if (enchants.length === 0) return <CheckError />;
+  const content =
+    enchants.length === 0 ? (
+      <CheckError />
+    ) : (
+      <EnchantFilterList enchants={enchants} />
+    );
 
   return (
     <div className="flex flex-1 flex-col gap-2 overflow-hidden">
@@ -17,9 +22,7 @@ const Page = async () => {
         <h1>{`${keyword.project.name} - 인챈트`}</h1>
       </RoundedContainer>
       <RoundedContainer className="flex h-full min-h-0 flex-col gap-4 overflow-auto bg-zinc-900 p-0">
-        <Suspense fallback={null}>
-          <EnchantFilterList enchants={enchants} />
-        </Suspense>
+        <Suspense fallback={null}>{content}</Suspense>
       </RoundedContainer>
     </div>
   );

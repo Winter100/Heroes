@@ -2,7 +2,7 @@ import { Stat } from './previewType';
 
 type ItemBonus = {
   level: number;
-  stat_bonus: { stat_name: string; stat_value: number }[];
+  effects: { stat_name: string; stat_value: number }[];
 };
 
 type ItemSlot = {
@@ -21,12 +21,19 @@ export interface ItemRecipe {
   name: string;
   level: string;
   image?: string;
-  slot: string[];
+  slot?: { id: number; name: string; value: string };
   effects: Stat[];
   category: string;
   grinds: GrindResponse;
   tier: string;
   description?: string;
+  sets?: {
+    set_name?: string;
+    title?: string;
+    set_title?: string[];
+    slots?: { name: string; value: string }[];
+    set_options?: ItemBonus[];
+  }[];
   materials: MaterialsType[];
 }
 

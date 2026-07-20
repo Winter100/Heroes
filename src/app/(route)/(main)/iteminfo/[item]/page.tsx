@@ -28,7 +28,12 @@ const Page = async ({ params }: Props) => {
   const { item } = await params;
   const decodeName = decodeURIComponent(item);
 
-  if (recipes.length === 0) return <CheckError />;
+  const content =
+    recipes.length === 0 ? (
+      <CheckError />
+    ) : (
+      <ItemRecipeFind recipes={recipes} findItemName={decodeName} />
+    );
 
   return (
     <div className="flex flex-1 flex-col gap-2 overflow-hidden">
@@ -36,7 +41,7 @@ const Page = async ({ params }: Props) => {
         <ItemRecipeTableBack />
       </RoundedContainer>
       <RoundedContainer className="flex h-full min-h-0 flex-col gap-4 bg-zinc-900 p-4">
-        <ItemRecipeFind recipes={recipes} findItemName={decodeName} />
+        {content}
       </RoundedContainer>
     </div>
   );

@@ -28,9 +28,14 @@ const Page = async ({ params }: Props) => {
   const { item } = await params;
   const enchants = await getEnchantData();
 
-  if (enchants.length === 0) return <CheckError />;
-
   const decodeEnchantName = decodeURIComponent(item);
+
+  const content =
+    enchants.length === 0 ? (
+      <CheckError />
+    ) : (
+      <EnchantFind enchants={enchants} findEnchantName={decodeEnchantName} />
+    );
 
   return (
     <div className="flex flex-1 flex-col gap-2 overflow-hidden">
@@ -38,12 +43,7 @@ const Page = async ({ params }: Props) => {
         <ItemRecipeTableBack />
       </RoundedContainer>
       <RoundedContainer className="flex h-full min-h-0 flex-col gap-4 overflow-auto bg-zinc-900 p-0">
-        <Suspense fallback={null}>
-          <EnchantFind
-            enchants={enchants}
-            findEnchantName={decodeEnchantName}
-          />
-        </Suspense>
+        <Suspense fallback={null}>{content}</Suspense>
       </RoundedContainer>
     </div>
   );

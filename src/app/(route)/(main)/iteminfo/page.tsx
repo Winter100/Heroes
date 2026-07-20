@@ -9,7 +9,12 @@ import CheckError from '@/app/_components/common/check-error';
 const Page = async () => {
   const recipes = await getRecipeData();
 
-  if (recipes.length === 0) return <CheckError />;
+  const content =
+    recipes.length === 0 ? (
+      <CheckError />
+    ) : (
+      <ItemFilteredList recipes={recipes} />
+    );
 
   return (
     <div className="flex flex-1 flex-col gap-2 overflow-hidden">
@@ -17,9 +22,7 @@ const Page = async () => {
         <h1>{`${keyword.project.name} - 아이템`}</h1>
       </RoundedContainer>
       <RoundedContainer className="flex h-full min-h-0 flex-col gap-4 overflow-auto bg-zinc-900 p-0">
-        <Suspense fallback={null}>
-          <ItemFilteredList recipes={recipes} />
-        </Suspense>
+        <Suspense fallback={null}>{content}</Suspense>
       </RoundedContainer>
     </div>
   );
