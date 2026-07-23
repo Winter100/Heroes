@@ -1,5 +1,13 @@
 export const imageMap = new Map<string, string>([
   // 캐릭터
+  ['필멸의 굴레', '/images/125-fg-l1.png'],
+  ['에리우 건틀릿', '/images/e-125-h.png'],
+  ['에리우의 파편: 손 방어구', '/images/e-125-h1.png'],
+  ['에리우 승급석: 손 방어구', '/images/e-125-up-h1.png'],
+  ['에스라스의 정수', '/images/125-es.png'],
+  ['오롯한 에리우의 결정', '/images/125-or-st.png'],
+  ['굳건한 에리우의 결정', '/images/125-g-st.png'],
+  ['에리우의 파편: 필멸의 굴레', '/images/125-f-mi.png'],
   ['리시타', '/images/characters/lethita.png'],
   ['피오나', '/images/characters/fiona.png'],
   ['이비', '/images/characters/evy.png'],
@@ -378,7 +386,6 @@ export const imageMap = new Map<string, string>([
     '오르나의 봉인된 힘: 무기',
     '/images/items/materials/s4/combine-orna-weapon.png',
   ],
-  // ['오르나의 봉인된 힘', '/images/items/materials/s4/combine-orna-b.png'],
   ['골드', '/images/items/materials/basic/gold.png'],
   ['고급 철광석', '/images/items/materials/basic/high-grade-iron-ore.png'],
   ['마나 더스트', '/images/items/materials/basic/mana-dust.png'],

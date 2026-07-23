@@ -12,6 +12,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 const navMain = [
   {
@@ -40,8 +49,8 @@ const TopNavbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex w-full items-center justify-between rounded-md p-2">
+    <header className="sticky top-0 z-50 mt-6 w-full border-y border-border backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="flex w-full items-center justify-between rounded-md p-3">
         <Link
           href="/"
           className="flex items-center gap-2 font-semibold text-foreground"
@@ -66,7 +75,7 @@ const TopNavbar = () => {
                       render={<Link href={nav.url} />}
                       key={nav.url}
                       className={cn(
-                        pathname === nav.url ? 'text-blue-300' : ''
+                        pathname.includes(nav.url) ? 'text-blue-300' : ''
                       )}
                     >
                       {nav.title}
@@ -81,32 +90,47 @@ const TopNavbar = () => {
         <div aria-hidden="true" className="hidden md:flex"></div>
 
         {/* Mobile Nav */}
-        <NavigationMenu className="flex flex-1 md:hidden">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <Menu className="h-5 w-5" />
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                {navMain.map((item) => (
-                  <div key={item.title}>
-                    {item.nav.map((nav) => (
-                      <NavigationMenuLink
-                        render={<Link href={nav.url} />}
-                        key={nav.url}
-                        className={cn(
-                          pathname === nav.url ? 'text-blue-300' : ''
-                        )}
-                      >
-                        {nav.title}
-                      </NavigationMenuLink>
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent side="right" className="w-72 p-0">
+            <SheetHeader className="border-b px-6 py-4">
+              <SheetTitle>메뉴</SheetTitle>
+            </SheetHeader>
+
+            <nav className="flex flex-col py-4">
+              {navMain.map((group) => (
+                <div key={group.title} className="mb-6">
+                  <div className="px-6 pb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {group.title}
+                  </div>
+
+                  <div className="flex flex-col">
+                    {group.nav.map((nav) => (
+                      <SheetClose asChild key={nav.url}>
+                        <Link
+                          href={nav.url}
+                          className={cn(
+                            'mx-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors',
+                            pathname.startsWith(nav.url)
+                              ? 'bg-primary text-primary-foreground'
+                              : 'hover:bg-muted'
+                          )}
+                        >
+                          {nav.title}
+                        </Link>
+                      </SheetClose>
                     ))}
                   </div>
-                ))}
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+                </div>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

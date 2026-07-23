@@ -47,7 +47,7 @@ const CharacterInformationContainer = () => {
 
   return (
     <div className="flex flex-1 flex-col gap-2">
-      <div className="flex flex-1 flex-col gap-2 px-6 md:flex-row md:px-0">
+      <div className="flex flex-1 flex-col gap-2 md:flex-row md:px-0">
         <div className="flex flex-1 flex-col gap-2 md:max-w-[370px]">
           {!equipment ? (
             <div className="flex h-full w-full flex-col gap-2">
@@ -74,7 +74,7 @@ const CharacterInformationContainer = () => {
         </div>
         <div className="flex-1">
           {/* 아이템 정보 리스트 */}
-          <RoundedContainer className="h-full bg-muted/50">
+          <RoundedContainer className="h-full bg-muted/50 p-0">
             <CharacterEquipment
               ocid={ocid}
               enchants={enchantsBySlot}

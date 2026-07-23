@@ -19,7 +19,7 @@ const ItemInfoTableCategory = ({ itemCategory, pathName }: Props) => {
   return (
     <>
       <div className="flex items-center justify-between border-b border-zinc-700 pb-2">
-        <h4 className="font-bold">카테고리</h4>
+        <h4 className="text-xs md:text-base md:font-bold">카테고리</h4>
         {(currentCategory || currentSubCategory) && (
           <button
             onClick={handleClearAll}

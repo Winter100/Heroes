@@ -43,8 +43,10 @@ const ItemTooltipItem = ({ item }: { item: ItemRecipe }) => {
       </Row>
 
       {item?.description && (
-        <div>
-          <p className="py-1.5 text-[rgb(189,164,123)]">{item?.description}</p>
+        <div className="max-h-96 overflow-y-auto">
+          <p className="whitespace-pre-wrap py-1.5 text-[rgb(189,164,123)]">
+            {item?.description}
+          </p>
         </div>
       )}
 

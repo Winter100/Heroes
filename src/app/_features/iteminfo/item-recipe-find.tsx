@@ -1,7 +1,5 @@
-'use client';
 import { ItemRecipe } from '@/app/_type/itemType';
 import ItemRecipeDetail from './components/item-recipe-detail';
-import { useCategory } from '@/app/_hooks/custom/useCategory';
 import CheckError from '@/app/_components/common/check-error';
 
 type Props = {
@@ -10,8 +8,6 @@ type Props = {
 };
 
 const ItemRecipeFind = ({ recipes, findItemName }: Props) => {
-  const { handleSelectItem } = useCategory('/iteminfo');
-
   const findRecipe = recipes.find((recipe) => recipe.name === findItemName);
 
   if (!findRecipe)
@@ -23,13 +19,7 @@ const ItemRecipeFind = ({ recipes, findItemName }: Props) => {
     return true;
   };
 
-  return (
-    <ItemRecipeDetail
-      selectedItem={findRecipe}
-      isMaterial={isMaterial}
-      handleSelectItem={handleSelectItem}
-    />
-  );
+  return <ItemRecipeDetail selectedItem={findRecipe} isMaterial={isMaterial} />;
 };
 
 export default ItemRecipeFind;

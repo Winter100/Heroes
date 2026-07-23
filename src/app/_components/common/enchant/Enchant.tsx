@@ -7,6 +7,7 @@ import ImageIcon from '../image/Image-Icon';
 import EnchantSubTitle from './EnchantSubTitle';
 import { getEnchantImage, getUniqueBaseStrings } from '@/app/_utils/enchant';
 import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
+import ItemTitle from '../../item/item-title';
 
 const affix = {
   ['PREFIX']: '접두',
@@ -29,16 +30,12 @@ const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
           alt={enchant?.name.toString()}
         />
         <Column className="w-full gap-1 pl-2">
-          <Item.Title
-            className="flex flex-row justify-between text-sm"
-            type="초급"
-          >
+          <ItemTitle tier="초급">
             <div>
               <Item.Content>{enchant?.name}</Item.Content>
               <Item.Content className="pl-1">인챈트 스크롤</Item.Content>
             </div>
-          </Item.Title>
-
+          </ItemTitle>
           <Item.SubDescription className="px-1">
             <Item.Content>
               {enchant?.rank}랭크 {convertedAffix} 인챈트
@@ -66,9 +63,9 @@ const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
           </Item.SubDescription>
 
           <Item.SubDescription className="flex items-center justify-between px-1">
-            <Item.Title type="초급">
+            <ItemTitle tier="초급">
               <Item.Content>초급 아이템</Item.Content>
-            </Item.Title>
+            </ItemTitle>
           </Item.SubDescription>
         </Column>
       </Row>

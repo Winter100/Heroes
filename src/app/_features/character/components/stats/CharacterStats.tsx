@@ -14,8 +14,10 @@ const CharacterStats = ({ ocid }: { ocid: string }) => {
       {data?.map((s) => (
         <li key={s.stat_name} className="px-4">
           <div className="flex items-center gap-2">
-            <div className="flex-1">• {s.stat_name}</div>
-            <div className="">{s.stat_value}</div>
+            <div className="flex-1 truncate" title={s.stat_name}>
+              • {s.stat_name}
+            </div>
+            <div>{s.stat_value}</div>
           </div>
         </li>
       ))}

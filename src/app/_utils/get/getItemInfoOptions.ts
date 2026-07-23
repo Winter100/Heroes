@@ -48,7 +48,7 @@ export const getItemInfoOptions = (item: EquipmentType) => {
     ) || '';
 
   const grade: Item_Rating =
-    grades.find((grade) => item?.item_name.includes(grade)) || null;
+    grades.find((grade) => item?.item_name?.includes(grade)) || null;
 
   const level = itemOption?.enhancement_level;
   const prefix_enchant_name_1 = itemOption?.prefix_enchant_preset_1;

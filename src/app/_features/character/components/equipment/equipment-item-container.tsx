@@ -47,7 +47,7 @@ const EquipmentItemContainer = ({
             />
           </div>
           <div className="flex flex-1 flex-col items-center justify-center">
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               {/* 아이템 접두 인챈트 */}
               {used_prefix_enchant_name && (
                 <EquipmentItemEnchant
@@ -75,9 +75,9 @@ const EquipmentItemContainer = ({
         </div>
         <Item.Border />
         {/* 연마 수치 */}
-        {item.item_option.tuning_stat.length > 0 && (
-          <div className="flex flex-col text-[11px]">
-            {item.item_option.tuning_stat.map((t) => (
+        {item.item_option?.tuning_stat.length > 0 && (
+          <div className="flex flex-col gap-y-1 text-[11px] md:gap-y-0">
+            {item.item_option?.tuning_stat.map((t) => (
               <div
                 key={t.stat_name + t.stat_value}
                 className={cn(

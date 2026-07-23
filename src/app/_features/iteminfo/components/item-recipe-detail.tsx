@@ -9,21 +9,19 @@ import {
 import { LiaQuestionCircle } from 'react-icons/lia';
 import { ItemRecipe } from '@/app/_type/itemType';
 import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
-import Link from 'next/link';
+import { IoMdArrowForward } from 'react-icons/io';
+import SuspenseContainer from './suspense-container';
 
 interface ItemRecipeDetailProps {
   selectedItem: ItemRecipe;
   isMaterial: (item: string) => boolean;
-  handleSelectItem: (item: string) => string;
 }
-// Todo 2칸으로 나누도 아이템정보 와 재료 2개로 나눠서 보여주기
 const ItemRecipeDetail = ({
   selectedItem,
   isMaterial,
-  handleSelectItem,
 }: ItemRecipeDetailProps) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex h-full flex-col gap-2">
       <div className="flex items-center gap-4 rounded-md bg-background p-2">
         <Tooltip delayDuration={100}>
           <TooltipTrigger className="text-base text-gray-400">
@@ -48,76 +46,88 @@ const ItemRecipeDetail = ({
         </div>
       </div>
       <hr className="border-zinc-700" />
-      <div className="flex flex-col gap-2">
-        {selectedItem?.description && (
-          <>
-            <h4 className="text-sm font-semibold text-zinc-300">설명</h4>
-            <p className="mt-1 max-h-96 overflow-y-auto whitespace-pre-wrap rounded-md bg-background p-2 text-sm">
-              {selectedItem?.description}
-            </p>
-          </>
-        )}
-
-        <div>
-          <h4 className="text-sm font-semibold text-zinc-300">제작 재료</h4>
-          <div className="mt-1 grid grid-cols-2 gap-3">
-            {selectedItem?.materials?.map((material, idx) => (
-              <div
-                key={material.name + idx}
-                className="flex items-center gap-3 rounded-lg border bg-background p-2 transition-colors hover:border-slate-700/60"
-              >
-                <div className="flex w-10 items-center justify-center rounded border border-slate-700 bg-slate-800 text-xl">
-                  <Tooltip delayDuration={100}>
-                    <TooltipTrigger className="text-base text-gray-400">
-                      <ImageIconUseBorder
-                        src={material?.image ?? ''}
-                        itemName={material?.name ?? ''}
-                        isRatingBorder={true}
-                      />
-                    </TooltipTrigger>
-                    <TooltipContent className="w-80 border bg-background">
-                      <ItemTooltipItem item={material} />
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <ItemTitle
-                    tier={material?.tier ?? ''}
-                    category={material?.category}
-                    name={material?.name}
-                    className="flex items-center truncate text-sm font-medium"
-                  >
-                    <strong aria-label="아이템명">{material?.name}</strong>
-                    {material?.option && (
-                      <Tooltip delayDuration={100}>
-                        <TooltipTrigger className="ml-1 text-base text-gray-400">
-                          <LiaQuestionCircle />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>{material?.option}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    )}
-                  </ItemTitle>
+      <div className="flex h-full flex-col gap-2">
+        <div className="flex h-full flex-row gap-2 overflow-y-auto">
+          <div className="flex-1">
+            <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
+              제작 재료
+            </h4>
+            <div className="mt-1 flex flex-col gap-0.5">
+              {selectedItem?.materials?.map((material, idx) => (
+                <div
+                  key={material.name + idx}
+                  className="flex items-center gap-2 rounded-lg border bg-background p-2 transition-colors hover:border-slate-700/60"
+                >
+                  <div className="flex w-8 items-center justify-center rounded border border-slate-700 bg-slate-800 text-xl">
+                    <Tooltip delayDuration={100}>
+                      <TooltipTrigger className="text-base text-gray-400">
+                        <ImageIconUseBorder
+                          className="h-8 w-8"
+                          src={material?.image ?? ''}
+                          itemName={material?.name ?? ''}
+                          isRatingBorder={true}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent className="w-80 border bg-background">
+                        <ItemTooltipItem item={material} />
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <ItemTitle
+                      tier={material?.tier ?? ''}
+                      category={material?.category}
+                      name={material?.name}
+                      className="flex items-center truncate text-xs font-medium"
+                    >
+                      <strong aria-label="아이템명">{material?.name}</strong>
+                      {material?.option && (
+                        <Tooltip delayDuration={100}>
+                          <TooltipTrigger className="ml-1 text-base text-gray-400">
+                            <LiaQuestionCircle />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>{material?.option}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      )}
+                    </ItemTitle>
+                    <div>
+                      {isMaterial(material.name) && (
+                        <SuspenseContainer
+                          link={material.name}
+                          path="/iteminfo"
+                        >
+                          <ItemTag>제작 정보</ItemTag>
+                        </SuspenseContainer>
+                      )}
+                    </div>
+                  </div>
                   <div>
-                    {isMaterial(material.name) && (
-                      <Link href={handleSelectItem(material.name)}>
-                        <ItemTag>제작 정보</ItemTag>
-                      </Link>
-                    )}
+                    <span>x</span>
+                    <strong
+                      aria-label="수량"
+                      className="px-2 py-0.5 text-sm text-white"
+                    >
+                      {material.quantity?.toLocaleString() || 0}
+                    </strong>
                   </div>
                 </div>
-                <div>
-                  <span>x</span>
-                  <strong
-                    aria-label="수량"
-                    className="px-2 py-0.5 text-sm text-white"
-                  >
-                    {material.quantity?.toLocaleString() || 0}
-                  </strong>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center">
+            <IoMdArrowForward />
+          </div>
+
+          <div className="h-full flex-1">
+            <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
+              정보
+            </h4>
+            <div className="mt-1 rounded-md bg-background text-xs">
+              <ItemTooltipItem item={selectedItem} />
+            </div>
           </div>
         </div>
       </div>

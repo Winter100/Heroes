@@ -3,13 +3,10 @@
 import { useEffect } from 'react';
 
 interface Props {
-  pid: string;
   dataSlot: string;
-  width: string;
-  height: string;
 }
 
-const GoogleAdSenseFixed = ({ pid, dataSlot, width, height }: Props) => {
+const GoogleAdSenseMobile = ({ dataSlot }: Props) => {
   useEffect(() => {
     try {
       /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -26,15 +23,13 @@ const GoogleAdSenseFixed = ({ pid, dataSlot, width, height }: Props) => {
       className="adsbygoogle"
       style={{
         display: 'inline-block',
-        // maxWidth: '720px',
-        // margin: '0 auto',
-        width,
-        height,
+        width: '320px',
+        height: '100px',
       }}
-      data-ad-client={`ca-pub-${pid}`}
+      data-ad-client={`ca-pub-${process.env.NEXT_PUBLIC_GOOGLE_CID}`}
       data-ad-slot={dataSlot}
     ></ins>
   );
 };
 
-export default GoogleAdSenseFixed;
+export default GoogleAdSenseMobile;

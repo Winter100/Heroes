@@ -5,16 +5,13 @@ import GoogleAnalytics from './_lib/GoogleAnalytics';
 import { keyword } from './_constant/keyword';
 import Footer from './_components/layout/Footer';
 import ScreenContainer from './_components/layout/ScreenContainer';
-import { AppSidebar } from '@/components/app-sidebar';
-
-import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
-import HomeBreadcrumb from './_features/home/components/HomeBreadcrumb';
 import GoogleAdsense from './_components/adsense/GoogleAdsense';
+import NavBar from './_components/layout/nav-bar';
 
 export const metadata: Metadata = {
   applicationName: keyword.project.name,
   metadataBase: new URL(keyword.project.url),
-  title: keyword.project.name,
+  title: '망스비',
   keywords: [
     '마비노기 영웅전',
     '마영전',
@@ -78,17 +75,12 @@ export default function RootLayout({
     <html lang="ko" className="dark-1">
       <GoogleAnalytics />
       <GoogleAdsense pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''} />
-      <body className="flex min-h-dvh flex-col">
+      <body className="dark flex min-h-dvh flex-col bg-background">
         <div className="relative flex flex-1 flex-col font-sans text-fontColor">
           <ScreenContainer className="dark flex h-full flex-1 flex-col">
-            <SidebarProvider>
-              <AppSidebar className="sticky" />
-              <SidebarInset>
-                <HomeBreadcrumb />
-                <main className="flex flex-1 flex-col">{children}</main>
-                <Footer />
-              </SidebarInset>
-            </SidebarProvider>
+            <NavBar />
+            <main className="flex flex-1 flex-col">{children}</main>
+            <Footer />
           </ScreenContainer>
         </div>
       </body>

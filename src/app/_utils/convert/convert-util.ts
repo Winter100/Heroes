@@ -427,7 +427,11 @@ export const enchantFilter = (
     }
 
     if (curCategory && currentSubCategory) {
-      return item.slot?.some((slot) => slot?.name.includes(currentSubCategory));
+      const isCategory = item.affix.toUpperCase() === curCategory;
+      const isSubCategory = item.slot?.some((slot) =>
+        slot?.name.includes(currentSubCategory)
+      );
+      return isCategory && isSubCategory;
     }
 
     // 아무것도 선택이 안되어 있을때 모두 보기

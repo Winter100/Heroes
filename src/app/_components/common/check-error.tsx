@@ -20,7 +20,7 @@ const CheckError = ({ text }: { text?: React.ReactNode }) => {
     </>
   );
   return (
-    <div className="flex h-full items-center justify-center text-red-100">
+    <div className="flex h-full items-center justify-center bg-inherit text-red-100">
       <ErrorDisplay
         content={
           <div className="flex flex-col items-center justify-center gap-2">

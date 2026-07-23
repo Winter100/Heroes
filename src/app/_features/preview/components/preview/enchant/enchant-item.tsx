@@ -41,7 +41,7 @@ const EnchantItem = ({ enchant }: { enchant: EnchantOptionType }) => {
         </div>
       </div>
 
-      <div className="gap-1 p-1 text-xs">
+      <div className="gap-1 p-0 text-xs md:p-1">
         <EnchantEffects effects={enchant.effects} />
       </div>
     </div>

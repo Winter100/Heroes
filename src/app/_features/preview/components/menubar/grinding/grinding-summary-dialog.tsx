@@ -25,18 +25,18 @@ const GrindingDialog = ({ items, ocid }: Props) => {
           연마
         </Button>
       </DialogTrigger>
-      <DialogContent className="dark max-h-96 max-w-3xl overflow-y-auto border-none bg-zinc-900 text-white sm:max-h-[950px]">
+      <DialogContent className="dark max-h-96 max-w-3xl overflow-y-auto border-none bg-zinc-900 p-2 text-white sm:max-h-[950px] md:p-6">
         <DialogHeader>
           <DialogTitle className="text-center">연마</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-2 md:gap-4">
           {items.map((item) => (
             <div
               key={item.item_name}
               className="dark rounded-lg bg-background p-2"
             >
-              <div className="text-center text-sm">
+              <div className="text-center text-xs md:text-sm">
                 {item?.item_option?.enhancement_level} {item.item_name}
               </div>
               {item.item_option.tuning_stat?.map((stat) => (

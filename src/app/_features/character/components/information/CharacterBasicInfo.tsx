@@ -28,7 +28,7 @@ const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
         <RoundedContainer className="h-full w-full max-w-36">
           <div className="flex h-full flex-1 flex-col items-center justify-center gap-2">
             <AspectRatio ratio={3 / 3}>
-              <Image src={src} alt={basic?.character_name} fill />
+              <Image src={src} alt={basic?.character_name ?? ''} fill />
             </AspectRatio>
             <div className="w-full text-center text-sm">
               {basic?.character_name}

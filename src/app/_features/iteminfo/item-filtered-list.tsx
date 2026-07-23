@@ -10,8 +10,7 @@ type Props = {
 };
 
 const ItemFilteredList = ({ recipes }: Props) => {
-  const { handleSelectItem, currentCategory, currentSubCategory } =
-    useCategory('/iteminfo');
+  const { currentCategory, currentSubCategory } = useCategory('/iteminfo');
 
   const filtered = useMemo(() => {
     const isFilterValue = !!currentCategory || !!currentSubCategory;
@@ -20,9 +19,7 @@ const ItemFilteredList = ({ recipes }: Props) => {
       : recipes;
   }, [recipes, currentCategory, currentSubCategory]);
 
-  return (
-    <ItemRecipeTable recipes={filtered} handleSelectItem={handleSelectItem} />
-  );
+  return <ItemRecipeTable recipes={filtered} />;
 };
 
 export default ItemFilteredList;

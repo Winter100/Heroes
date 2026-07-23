@@ -71,28 +71,23 @@ const TourRaidTableDialog = ({
                   <TableBody className="bg-black/50">
                     {raids.monsters.map((raid) => {
                       return (
-                        <>
-                          <TableRow
-                            className="p-2 text-center"
-                            key={raid.battle}
-                          >
-                            {/* 이미지 전용 셀 생성 */}
-                            <TableCell title={raid.battle}>
-                              <ImageIcon
-                                className="h-4 w-4 object-contain"
-                                src={raid?.image ?? ''}
-                                alt="R"
-                              />
-                            </TableCell>
-
-                            {/* 스텟 데이터 로우 */}
-                            <PreviewStatsTableCell
-                              raid={raid}
-                              raidType={type}
-                              simulationStats={userStats}
+                        <TableRow className="text-center" key={raid.battle}>
+                          {/* 이미지 전용 셀 생성 */}
+                          <TableCell title={raid.battle}>
+                            <ImageIcon
+                              className="h-4 w-4 object-contain"
+                              src={raid?.image ?? ''}
+                              alt="R"
                             />
-                          </TableRow>
-                        </>
+                          </TableCell>
+
+                          {/* 스텟 데이터 로우 */}
+                          <PreviewStatsTableCell
+                            raid={raid}
+                            raidType={type}
+                            simulationStats={userStats}
+                          />
+                        </TableRow>
                       );
                     })}
                   </TableBody>

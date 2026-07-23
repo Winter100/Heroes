@@ -1,5 +1,3 @@
-import { EnchantPrice } from './enchantType';
-
 export interface PreviewSelectedType {
   slot: string;
   upgreadeType: string;

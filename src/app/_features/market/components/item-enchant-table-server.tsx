@@ -25,15 +25,11 @@ import SuspenseContainer from '../../iteminfo/components/suspense-container';
 interface ItemEnchantTableProps {
   enchants: MergedEnchantType[];
   isLoading: boolean;
-  handleSort: (key: string) => void;
-  renderSortIndicator: (key: string) => string | null;
 }
 
-const ItemEnchantTable = ({
+const ItemEnchantTableServer = ({
   enchants,
   isLoading,
-  handleSort,
-  renderSortIndicator,
 }: ItemEnchantTableProps) => {
   return (
     <RoundedContainer className="flex flex-col gap-4 p-0">
@@ -41,35 +37,20 @@ const ItemEnchantTable = ({
         <TableCaption></TableCaption>
         <TableHeader className="sticky top-0 z-10 bg-zinc-950">
           <TableRow className="bg-muted-foreground/10">
-            <TableHead
-              className="w-[10%] cursor-pointer select-none text-center hover:text-white"
-              onClick={() => handleSort('rank')}
-            >
-              랭크{renderSortIndicator('rank')}
+            <TableHead className="w-[10%] cursor-pointer select-none text-center hover:text-white">
+              랭크
             </TableHead>
-            <TableHead
-              className="w-[15%] cursor-pointer select-none hover:text-white"
-              onClick={() => handleSort('name')}
-            >
-              아이템명{renderSortIndicator('name')}
+            <TableHead className="w-[15%] cursor-pointer select-none hover:text-white">
+              아이템명
             </TableHead>
-            <TableHead
-              className="w-[10%] cursor-pointer select-none text-center hover:text-white"
-              onClick={() => handleSort('affix')}
-            >
-              접사{renderSortIndicator('affix')}
+            <TableHead className="w-[10%] cursor-pointer select-none text-center hover:text-white">
+              접사
             </TableHead>
-            <TableHead
-              className="w-[15%] cursor-pointer select-none text-center hover:text-white"
-              onClick={() => handleSort('average_price')}
-            >
-              평균가{renderSortIndicator('average_price')}
+            <TableHead className="w-[15%] cursor-pointer select-none text-center hover:text-white">
+              평균가
             </TableHead>
-            <TableHead
-              className="w-[15%] cursor-pointer select-none text-center hover:text-white"
-              onClick={() => handleSort('max_price')}
-            >
-              최대/최소가{renderSortIndicator('max_price')}
+            <TableHead className="w-[15%] cursor-pointer select-none text-center hover:text-white">
+              최대/최소가
             </TableHead>
             <TableHead className="w-[35%] text-center">부위</TableHead>
           </TableRow>
@@ -81,7 +62,7 @@ const ItemEnchantTable = ({
                 key={item.name}
                 className="relative h-14 cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
               >
-                <TableCell className="text-center text-xs font-medium md:text-base">
+                <TableCell className="text-center font-medium">
                   <SuspenseContainer
                     aria-label={item.name}
                     className="absolute inset-0"
@@ -169,7 +150,7 @@ const ItemEnchantTable = ({
   );
 };
 
-export default ItemEnchantTable;
+export default ItemEnchantTableServer;
 
 const affix = {
   ['PREFIX']: '접두',

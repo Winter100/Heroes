@@ -4,6 +4,7 @@ import {
   EnchantOptionType,
 } from '@/app/_type/enchantType';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
+import { RaidListType } from '@/app/_type/raidType';
 /**
  * - 인챈트의 효과를 정렬해주는 함수
  * @param data
@@ -175,6 +176,14 @@ export const getRankCategoryMap = (
     접두: sortDescending(prefixSlots),
     접미: sortDescending(suffixSlots),
   };
+};
+export const getRaidCategoryMap = (
+  raidList: RaidListType[]
+): Record<string, string[]> => {
+  return raidList.reduce<Record<string, string[]>>((acc, cur) => {
+    acc[cur.raid_name] = [];
+    return acc;
+  }, {});
 };
 
 export function getUniqueBaseStrings(inputArray: string[]): string[] {

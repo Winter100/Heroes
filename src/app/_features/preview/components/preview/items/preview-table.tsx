@@ -31,7 +31,7 @@ const PreviewTable = () => {
     );
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-1 flex-col gap-2">
       {/* 각종 메뉴 리스트 */}
       <Row className="w-full items-center justify-end gap-2 text-xs">
         <TourRaidTableContainer ocid={ocid ?? ''} />
@@ -44,7 +44,7 @@ const PreviewTable = () => {
         <ChartContainer ocid={ocid ?? ''} />
       </Row>
 
-      <div className="flex flex-col gap-2 bg-zinc-900 p-4">
+      <div className="flex flex-col gap-2 rounded-md bg-zinc-900 p-2">
         {/* 캐릭터 아이템 정보 */}
         <Column className="flex flex-col gap-2 rounded-md">
           <PreviewTableHeader />

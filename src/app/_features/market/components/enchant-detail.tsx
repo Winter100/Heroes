@@ -9,6 +9,7 @@ import { getEnchantImage } from '@/app/_utils/enchant';
 import Enchant from '@/app/_components/common/enchant/Enchant';
 import { convertToKST } from '@/app/_utils/convert';
 import Loading from '@/app/_components/common/Loading';
+import { IoMdArrowForward } from 'react-icons/io';
 
 interface EnchantDetailProps {
   selectedItem: EnchantOptionType;
@@ -56,22 +57,9 @@ const EnchantDetail = ({
       <hr className="border-zinc-700" />
       {/* 인챈트 상세 정보 */}
       <div className="flex h-full flex-1 flex-row gap-6">
-        {/* 왼쪽 인챈트 UI */}
-        <div className="flex flex-1 flex-col items-center gap-2">
-          <h4 className="text-center text-sm font-semibold text-zinc-300">
-            {`${selectedItem?.name} 상세 정보 `}
-          </h4>
-
-          <div className="w-80 rounded-md border-borderColor/50 bg-background p-2">
-            <Enchant enchant={mergedPriceEnchant} />
-          </div>
-        </div>
-
-        <div className="h-full w-0.5 bg-zinc-700 fill-zinc-900" />
-
         {/* 오른족 인챈트 얻는곳 */}
         <div className="flex flex-1 flex-col gap-2">
-          <h4 className="text-center text-sm font-semibold text-zinc-300">
+          <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
             얻는 곳
           </h4>
           <div className="flex flex-col gap-2">
@@ -100,6 +88,21 @@ const EnchantDetail = ({
                 정보가 없습니다
               </div>
             )}
+          </div>
+        </div>
+
+        <div className="flex items-center">
+          <IoMdArrowForward />
+        </div>
+
+        {/* 왼쪽 인챈트 UI */}
+        <div className="flex flex-1 flex-col items-center gap-2">
+          <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
+            {`${selectedItem?.name} 상세 정보 `}
+          </h4>
+
+          <div className="w-full rounded-md border-borderColor/50 bg-background p-2">
+            <Enchant enchant={mergedPriceEnchant} />
           </div>
         </div>
       </div>

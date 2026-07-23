@@ -21,7 +21,6 @@ export type MergedEnchantType = EnchantOptionType &
 
 const EnchantFilterList = ({ enchants }: Props) => {
   const {
-    handleSelectItem,
     currentCategory,
     currentSubCategory,
     currentSortKey,
@@ -85,7 +84,6 @@ const EnchantFilterList = ({ enchants }: Props) => {
     <ItemEnchantTable
       enchants={sortedEnchants}
       isLoading={isLoading}
-      handleSelectItem={handleSelectItem}
       handleSort={handleSort}
       renderSortIndicator={renderSortIndicator}
     />

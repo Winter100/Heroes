@@ -10,7 +10,7 @@ import { usePreviewAllData } from '@/app/_hooks';
 import Row from '../layout/Row';
 import ImageIconUseBorder from '../common/image/ImageIconUseBorder';
 import Column from '../layout/Column';
-import Item from '../common/item/Item';
+// import Item from '../common/item/Item';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 
@@ -39,7 +39,7 @@ const ItemEquipmentContainer = ({
     suffix_enchant_name_2,
     used_suffix_enchant_name,
     used_suffix_enchant_number,
-    grade,
+    // grade,
   } = getItemInfoOptions(item);
 
   const beforePrefixEnchant = enchantsBySlot
@@ -76,12 +76,12 @@ const ItemEquipmentContainer = ({
           src={src}
         />
         <Column className="w-full min-w-0 flex-1 gap-0.5 text-zinc-400">
-          <Item.Title
+          {/* <Item.Title
             className="flex flex-row flex-wrap gap-1 overflow-hidden text-ellipsis whitespace-pre-line"
             type={grade}
           >
-            {item?.item_option.enhancement_level && (
-              <span>{item?.item_option.enhancement_level || ''}</span>
+            {item?.item_option?.enhancement_level && (
+              <span>{item?.item_option?.enhancement_level || ''}</span>
             )}
             {prefixEnchant?.name && <span>{prefixEnchant?.name}</span>}
             {suffixEnchant?.name && <span>{suffixEnchant?.name}</span>}
@@ -93,7 +93,7 @@ const ItemEquipmentContainer = ({
             <Item.Title className="text-[11px]" type={grade}>
               {grade} 아이템
             </Item.Title>
-          </Item.SubDescription>
+          </Item.SubDescription> */}
         </Column>
       </Row>
 

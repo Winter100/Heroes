@@ -12,7 +12,7 @@ const PreviewStatsTableHead = ({ statsNameList }: Props) => {
           className="text-center text-xs text-white"
           key={title.stat_name}
         >
-          <div>{title.stat_name}</div>
+          <p>{title.stat_name}</p>
         </TableHead>
       ))}
     </>
