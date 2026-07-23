@@ -6,7 +6,9 @@ import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -28,25 +30,28 @@ const ItemInfoTableCategoryMobile = ({ itemCategory, pathName }: Props) => {
     handleSelectSubCategory,
   } = useCategory(pathName);
 
+  // Todo 반응형 수정하기
   return (
     <Sheet>
       <SheetTrigger asChild>
         <Button
           variant="outline"
-          className="flex w-full items-center justify-between md:hidden"
+          className="flex w-full items-center justify-between"
         >
           <span className="flex items-center gap-2">
-            <Filter className="h-4 w-4" />
-            카테고리
+            {currentCategory || currentSubCategory ? (
+              `${currentCategory ?? ''}${currentSubCategory ?? ''}`
+            ) : (
+              <Filter className="h-4 w-4" />
+            )}
           </span>
-
-          {currentSubCategory ?? currentCategory ?? '전체'}
         </Button>
       </SheetTrigger>
 
       <SheetContent side="bottom" className="max-h-[80vh] overflow-y-auto">
         <SheetHeader>
           <SheetTitle>카테고리 선택</SheetTitle>
+          <SheetDescription>카테고리를 선택해주세요</SheetDescription>
         </SheetHeader>
 
         {(currentCategory || currentSubCategory) && (
@@ -67,7 +72,7 @@ const ItemInfoTableCategoryMobile = ({ itemCategory, pathName }: Props) => {
             return (
               <div key={mainCat}>
                 <Button
-                  variant={isMainActive ? 'default' : 'outline'}
+                  variant={isMainActive ? 'secondary' : 'outline'}
                   className="w-full justify-start"
                   onClick={() => handleSelectCategory(mainCat)}
                 >
@@ -78,14 +83,15 @@ const ItemInfoTableCategoryMobile = ({ itemCategory, pathName }: Props) => {
                   <div className="ml-3 mt-2 flex flex-col gap-2 border-l pl-4">
                     {subCategories.map((subCat) => (
                       <Button
+                        asChild
                         key={subCat}
                         variant={
-                          currentSubCategory === subCat ? 'default' : 'ghost'
+                          currentSubCategory === subCat ? 'secondary' : 'ghost'
                         }
                         className="justify-start"
                         onClick={() => handleSelectSubCategory(subCat)}
                       >
-                        {subCat}
+                        <SheetClose>{subCat}</SheetClose>
                       </Button>
                     ))}
                   </div>

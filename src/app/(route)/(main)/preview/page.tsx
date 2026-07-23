@@ -11,7 +11,9 @@ const Page = async () => {
       <SideAd dataSlot="2056348937" position="left" />
       <Suspense fallback={<Loading />}>
         <div className="flex flex-1 flex-col gap-2 p-2">
-          <AutoResponsiveAd />
+          <div className="py-2">
+            <AutoResponsiveAd />
+          </div>
           <CharacterSearchInput
             className="mx-auto w-full max-w-72"
             routeName="preview"

@@ -8,18 +8,22 @@ import { Suspense } from 'react';
 
 const Page = () => {
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       <SideAd dataSlot="2056348937" position="left" />
       <BasicContainer className="dark flex-1 gap-2">
-        <AutoResponsiveAd />
-        <CharacterSearchInput
-          className="mx-auto h-8 w-full max-w-72"
-          routeName="character"
-        />
-        <CharacterInformationContainer />
+        <div className="py-2">
+          <AutoResponsiveAd />
+        </div>
+        <Suspense fallback={<Loading />}>
+          <CharacterSearchInput
+            className="mx-auto h-8 w-full max-w-72"
+            routeName="character"
+          />
+          <CharacterInformationContainer />
+        </Suspense>
       </BasicContainer>
       <SideAd dataSlot="1601053361" position="right" />
-    </Suspense>
+    </>
   );
 };
 

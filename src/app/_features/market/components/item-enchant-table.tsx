@@ -42,13 +42,13 @@ const ItemEnchantTable = ({
         <TableHeader className="sticky top-0 z-10 bg-zinc-950">
           <TableRow className="bg-muted-foreground/10">
             <TableHead
-              className="w-[10%] cursor-pointer select-none text-center hover:text-white"
+              className="hidden w-[10%] cursor-pointer select-none text-center hover:text-white md:block"
               onClick={() => handleSort('rank')}
             >
               랭크{renderSortIndicator('rank')}
             </TableHead>
             <TableHead
-              className="w-[15%] cursor-pointer select-none hover:text-white"
+              className="w-[20%] cursor-pointer select-none hover:text-white md:w-[15%]"
               onClick={() => handleSort('name')}
             >
               아이템명{renderSortIndicator('name')}
@@ -60,28 +60,33 @@ const ItemEnchantTable = ({
               접사{renderSortIndicator('affix')}
             </TableHead>
             <TableHead
-              className="w-[15%] cursor-pointer select-none text-center hover:text-white"
+              className="w-[20%] cursor-pointer select-none text-center hover:text-white md:w-[15%]"
               onClick={() => handleSort('average_price')}
             >
               평균가{renderSortIndicator('average_price')}
             </TableHead>
             <TableHead
-              className="w-[15%] cursor-pointer select-none text-center hover:text-white"
+              className="w-[20%] cursor-pointer select-none text-center hover:text-white md:w-[15%]"
               onClick={() => handleSort('max_price')}
             >
               최대/최소가{renderSortIndicator('max_price')}
             </TableHead>
-            <TableHead className="w-[35%] text-center">부위</TableHead>
+            <TableHead className="hidden text-center md:block md:w-[35%]">
+              부위
+            </TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody>
+        <TableBody className="text-xs md:text-balance">
           {enchants.map((item) => {
             return (
               <TableRow
                 key={item.name}
                 className="relative h-14 cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
               >
-                <TableCell className="text-center text-xs font-medium md:text-base">
+                <TableCell className="hidden text-center md:block">
+                  {item.rank}
+                </TableCell>
+                <TableCell>
                   <SuspenseContainer
                     aria-label={item.name}
                     className="absolute inset-0"
@@ -90,11 +95,8 @@ const ItemEnchantTable = ({
                   >
                     {null}
                   </SuspenseContainer>
-                  {item.rank}
-                </TableCell>
-                <TableCell>
                   <Tooltip delayDuration={100}>
-                    <TooltipTrigger className="text-base text-gray-400">
+                    <TooltipTrigger className="text-gray-400">
                       <div className="flex items-center gap-2">
                         <ImageIcon
                           className="h-4 w-4 shrink-0 md:h-6 md:w-6"
@@ -147,8 +149,8 @@ const ItemEnchantTable = ({
                     </span>
                   </div>
                 </TableCell>
-                <TableCell className="align-middle">
-                  <div className="flex flex-nowrap items-center gap-1 overflow-x-auto px-1 py-2">
+                <TableCell className="hidden align-middle md:block">
+                  <div className="flex flex-wrap items-center gap-1 px-1 py-2">
                     {getUniqueBaseStrings(item.slot?.map((e) => e.name) ?? [])
                       .sort((a, b) => a.localeCompare(b))
                       .map((slot) => {

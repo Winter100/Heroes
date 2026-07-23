@@ -29,7 +29,7 @@ const HomeMainContent = () => {
   } = useNotice<NoticeEventDataType>('notice-event');
 
   return (
-    <div className="dark flex flex-1 flex-col gap-2 p-2">
+    <div className="flex flex-1 flex-col gap-2 p-2">
       <div
         className="relative h-60 w-full rounded-md bg-cover"
         style={{
@@ -38,7 +38,7 @@ const HomeMainContent = () => {
         }}
       />
       <div className="flex flex-col gap-2 md:flex-row">
-        <RoundedContainer className="flex flex-1 truncate bg-muted/50">
+        <RoundedContainer className="bg- flex flex-1 truncate">
           <BasicNotice
             eventType="basic"
             mainTitle="공지사항"
@@ -48,7 +48,7 @@ const HomeMainContent = () => {
             itemsPerPage={5}
           />
         </RoundedContainer>
-        <RoundedContainer className="flex flex-1 truncate bg-muted/50">
+        <RoundedContainer className="flex flex-1 truncate">
           <BasicNotice
             eventType="basic"
             mainTitle="패치노트"
@@ -60,7 +60,7 @@ const HomeMainContent = () => {
         </RoundedContainer>
       </div>
       <div className="flex flex-col gap-2">
-        <RoundedContainer className="flex flex-1 bg-muted/50">
+        <RoundedContainer className="flex flex-1">
           <BasicNotice
             eventType="event"
             mainTitle="이벤트"

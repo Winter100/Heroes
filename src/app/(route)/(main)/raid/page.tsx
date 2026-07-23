@@ -9,13 +9,15 @@ const Page = async () => {
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
-      <Suspense fallback={<Loading />}>
-        <BasicContainer className="flex-1 gap-2">
+      <BasicContainer className="flex-1 gap-2">
+        <div className="py-2">
           <AutoResponsiveAd />
+        </div>
+        <Suspense fallback={<Loading />}>
           <LimitTableMenuBar />
           <LimitTable />
-        </BasicContainer>
-      </Suspense>
+        </Suspense>
+      </BasicContainer>
       <SideAd dataSlot="1601053361" position="right" />
     </>
   );

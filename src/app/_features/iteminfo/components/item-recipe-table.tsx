@@ -24,9 +24,9 @@ type Props = {
 };
 const ItemRecipeTable = ({ recipes }: Props) => {
   return (
-    <Table className="relative w-full table-fixed border-collapse">
+    <Table className="relative w-full table-fixed border-collapse bg-zinc-900">
       <TableCaption></TableCaption>
-      <TableHeader className="sticky top-0 z-10 bg-zinc-950">
+      <TableHeader className="sticky top-0 z-10 bg-zinc-800">
         <TableRow className="bg-muted-foreground/10">
           <TableHead className="w-[10%] text-center">번호</TableHead>
           <TableHead className="w-[45%]">아이템명</TableHead>

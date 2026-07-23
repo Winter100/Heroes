@@ -8,7 +8,9 @@ const Page = () => {
     <>
       <SideAd dataSlot="2056348937" position="left" />
       <BasicContainer>
-        <AutoResponsiveAd />
+        <div className="py-2">
+          <AutoResponsiveAd />
+        </div>
         <GoldMarket />
       </BasicContainer>
       <SideAd dataSlot="1601053361" position="right" />
