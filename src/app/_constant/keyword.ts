@@ -183,8 +183,12 @@ export const getInfusionIndex = (text: string) => {
   return index === -1 ? Infinity : index;
 };
 
+// export const ITEM_CATEGORY_MAP = {
+//   category: ['장비', '소모품', '재료'],
+//   subCategory: ['오르나', '와드네', '에리우', '기타'],
+// };
 export const ITEM_CATEGORY_MAP = {
   장비: ['와드네', '에리우', '악세서리'],
   소모품: [],
-  재료: ['오르나 관련', '와드네 관련', '에리우 관련', '기타'],
+  재료: ['오르나', '와드네', '에리우', '기타'],
 };

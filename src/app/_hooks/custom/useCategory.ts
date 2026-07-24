@@ -11,12 +11,20 @@ export const useCategory = (pathName: string) => {
   const currentSortKey = searchParams.get('sortKey');
   const currentSortOrder = searchParams.get('sortOrder');
 
+  const getSelectedValues = (key: string) => {
+    const value = searchParams.get(key);
+    return value ? value.split(',') : [];
+  };
+
   const handleSelectItem = (itemName: string) => {
     const queryString = searchParams.toString();
     return `${pathName}/${encodeURIComponent(itemName)}${
       queryString ? `?${queryString}` : ''
     }`;
   };
+
+  const categoryArray = getSelectedValues(currentCategory ?? '');
+  const subCategoryArray = getSelectedValues(currentSubCategory ?? '');
 
   const handleSort = (sortKey: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -70,6 +78,8 @@ export const useCategory = (pathName: string) => {
     currentSubCategory,
     currentSortKey,
     currentSortOrder,
+    categoryArray,
+    subCategoryArray,
     handleSort,
   };
 };

@@ -62,7 +62,7 @@ const CharacterInformationContainer = () => {
           ) : (
             <>
               {/* 선택한 아이템 정보 */}
-              <RoundedContainer className="h-full bg-muted/50 text-xs">
+              <RoundedContainer className="bg-muted/50 text-xs">
                 <ItemEquipmentContainer
                   item={equipment}
                   isIncreaseView={false}

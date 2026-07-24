@@ -1,4 +1,3 @@
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import ItemTag from '@/app/_components/common/item/item-tag';
 import {
   EnchantFormatingType,
@@ -29,9 +28,8 @@ const EnchantDetail = ({
   const date_update = enchantPriceData.get(selectedItem.name)?.date_update;
 
   return (
-    <RoundedContainer className="flex h-full flex-col gap-4 p-4">
-      {/* 상단 타이틀 */}
-      <div className="flex items-center gap-2 rounded-md bg-background p-2">
+    <div className="flex h-full flex-col gap-4">
+      <div className="flex items-center gap-4 rounded-md bg-muted/50 p-2">
         <ImageIcon
           className="h-4 w-4 md:h-6 md:w-6"
           imageClassName="rounded-sm"
@@ -54,59 +52,61 @@ const EnchantDetail = ({
           )}
         </div>
       </div>
-      <hr className="border-zinc-700" />
-      {/* 인챈트 상세 정보 */}
-      <div className="flex h-full flex-1 flex-row gap-6">
-        {/* 오른족 인챈트 얻는곳 */}
-        <div className="flex flex-1 flex-col gap-2">
-          <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
-            얻는 곳
-          </h4>
-          <div className="flex flex-col gap-2">
-            {selectedItem?.drop_list && selectedItem?.drop_list?.length > 0 ? (
-              selectedItem?.drop_list?.map((drop, idx) => (
-                <div
-                  key={drop.name + idx}
-                  className="flex items-center justify-between gap-2 rounded-md bg-background p-2"
-                >
-                  <div className="flex items-center gap-2">
-                    <ImageIcon
-                      className="h-4 w-4 md:h-8 md:w-8"
-                      imageClassName="rounded-sm"
-                      src={drop?.image ?? ''}
-                      alt={drop?.name}
-                    />
-                    <span>{drop.name}</span>
+
+      <div className="flex flex-col justify-center gap-2 overflow-y-auto lg:flex-row">
+        <div className="flex-1 bg-muted/50">
+          <div className="mx-auto max-w-96 rounded-md p-4">
+            <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
+              얻는 곳
+            </h4>
+            <div className="flex flex-col gap-2">
+              {selectedItem?.drop_list &&
+              selectedItem?.drop_list?.length > 0 ? (
+                selectedItem?.drop_list?.map((drop, idx) => (
+                  <div
+                    key={drop.name + idx}
+                    className="flex items-center justify-between gap-2 rounded-md bg-background p-2"
+                  >
+                    <div className="flex items-center gap-2">
+                      <ImageIcon
+                        className="h-4 w-4 md:h-8 md:w-8"
+                        imageClassName="rounded-sm"
+                        src={drop?.image ?? ''}
+                        alt={drop?.name}
+                      />
+                      <span>{drop.name}</span>
+                    </div>
+                    <ItemTag>
+                      {type[drop.type as keyof typeof type] ?? ''}
+                    </ItemTag>
                   </div>
-                  <ItemTag>
-                    {type[drop.type as keyof typeof type] ?? ''}
-                  </ItemTag>
+                ))
+              ) : (
+                <div className="flex items-center justify-between gap-2 rounded-md bg-background p-2">
+                  정보가 없습니다
                 </div>
-              ))
-            ) : (
-              <div className="flex items-center justify-between gap-2 rounded-md bg-background p-2">
-                정보가 없습니다
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="mx-auto flex items-center">
           <IoMdArrowForward />
         </div>
 
-        {/* 왼쪽 인챈트 UI */}
-        <div className="flex flex-1 flex-col items-center gap-2">
-          <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
-            {`${selectedItem?.name} 상세 정보 `}
-          </h4>
+        <div className="flex-1 bg-muted/50">
+          <div className="mx-auto max-w-96 rounded-md p-4">
+            <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
+              상세 정보
+            </h4>
 
-          <div className="w-full rounded-md border-borderColor/50 bg-background p-2">
-            <Enchant enchant={mergedPriceEnchant} />
+            <div className="w-full rounded-md bg-background text-xs">
+              <Enchant enchant={mergedPriceEnchant} />
+            </div>
           </div>
         </div>
       </div>
-    </RoundedContainer>
+    </div>
   );
 };
 

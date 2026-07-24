@@ -72,11 +72,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <GoogleAnalytics />
       <GoogleAdsense pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''} />
-      <body className="dark flex min-h-dvh flex-col">
-        <div className="relative flex flex-1 flex-col bg-background">
+      <body className="flex min-h-dvh flex-col bg-background text-slate-400">
+        <div className="relative flex flex-1 flex-col">
           <ScreenContainer className="flex h-full flex-1 flex-col">
             <NavBar />
             <div className="flex flex-1 flex-col">{children}</div>

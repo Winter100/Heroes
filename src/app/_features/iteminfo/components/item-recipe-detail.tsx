@@ -21,8 +21,8 @@ const ItemRecipeDetail = ({
   isMaterial,
 }: ItemRecipeDetailProps) => {
   return (
-    <div className="flex h-full flex-col gap-2">
-      <div className="flex items-center gap-4 rounded-md bg-background p-2">
+    <div className="flex h-full flex-col gap-4">
+      <div className="flex items-center gap-4 rounded-md bg-muted/50 p-2">
         <Tooltip delayDuration={100}>
           <TooltipTrigger className="text-base text-gray-400">
             <ImageIconUseBorder
@@ -45,18 +45,17 @@ const ItemRecipeDetail = ({
           </ItemTitle>
         </div>
       </div>
-      <hr className="border-zinc-700" />
-      <div className="flex h-full flex-col gap-2">
-        <div className="flex h-full flex-row gap-2 overflow-y-auto">
-          <div className="flex-1">
-            <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
+      <div className="flex flex-col justify-center gap-2 overflow-y-auto lg:flex-row">
+        <div className="flex-1 bg-muted/50">
+          <div className="mx-auto max-w-96 rounded-md p-4">
+            <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
               제작 재료
             </h4>
-            <div className="mt-1 flex flex-col gap-0.5">
+            <div className="flex flex-col gap-1">
               {selectedItem?.materials?.map((material, idx) => (
                 <div
                   key={material.name + idx}
-                  className="flex items-center gap-2 rounded-lg border bg-background p-2 transition-colors hover:border-slate-700/60"
+                  className="flex w-full items-center gap-2 rounded-lg border bg-background p-2 transition-colors hover:border-slate-700/60"
                 >
                   <div className="flex w-8 items-center justify-center rounded border border-slate-700 bg-slate-800 text-xl">
                     <Tooltip delayDuration={100}>
@@ -116,16 +115,18 @@ const ItemRecipeDetail = ({
               ))}
             </div>
           </div>
+        </div>
 
-          <div className="flex items-center">
-            <IoMdArrowForward />
-          </div>
+        <div className="mx-auto flex items-center">
+          <IoMdArrowForward />
+        </div>
 
-          <div className="h-full flex-1">
-            <h4 className="p-0.5 text-center text-sm font-semibold text-zinc-300">
-              정보
+        <div className="flex-1 bg-muted/50">
+          <div className="mx-auto max-w-96 rounded-md p-4">
+            <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
+              아이템
             </h4>
-            <div className="mt-1 rounded-md bg-background text-xs">
+            <div className="w-full rounded-md bg-background text-xs">
               <ItemTooltipItem item={selectedItem} />
             </div>
           </div>

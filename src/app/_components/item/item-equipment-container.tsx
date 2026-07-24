@@ -13,6 +13,8 @@ import Column from '../layout/Column';
 // import Item from '../common/item/Item';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
+import ItemTitle from './item-title';
+import Item from '../common/item/Item';
 
 const ItemEquipmentContainer = ({
   item,
@@ -76,9 +78,11 @@ const ItemEquipmentContainer = ({
           src={src}
         />
         <Column className="w-full min-w-0 flex-1 gap-0.5 text-zinc-400">
-          {/* <Item.Title
-            className="flex flex-row flex-wrap gap-1 overflow-hidden text-ellipsis whitespace-pre-line"
-            type={grade}
+          <ItemTitle
+            className="flex items-center gap-1 rounded-sm border px-1 py-0.5"
+            tier={'일반'}
+            category={'장비'}
+            name={item?.item_name}
           >
             {item?.item_option?.enhancement_level && (
               <span>{item?.item_option?.enhancement_level || ''}</span>
@@ -88,17 +92,13 @@ const ItemEquipmentContainer = ({
             {item?.item_name && (
               <span className="truncate">{item?.item_name}</span>
             )}
-          </Item.Title>
-          <Item.SubDescription className="px-1">
-            <Item.Title className="text-[11px]" type={grade}>
-              {grade} 아이템
-            </Item.Title>
-          </Item.SubDescription> */}
+            <Item.SubDescription className="px-1"></Item.SubDescription>
+          </ItemTitle>
         </Column>
       </Row>
 
       {item?.item_option?.tuning_stat?.length >= 1 && (
-        <div className="flex flex-col gap-2 rounded-md p-2">
+        <div className="flex flex-col gap-2 p-2">
           {item.item_option.tuning_stat?.map((stat) => (
             <GrindingPreviewStatContainer
               key={stat.stat_name}

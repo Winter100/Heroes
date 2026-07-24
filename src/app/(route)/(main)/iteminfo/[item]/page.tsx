@@ -42,11 +42,11 @@ const Page = async ({ params }: Props) => {
     );
 
   return (
-    <div className="flex flex-1 flex-col gap-2">
-      <RoundedContainer className="h-14 bg-zinc-900 px-4 font-semibold">
+    <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:px-6">
+      <RoundedContainer className="h-14 bg-muted/50 px-4 font-semibold">
         <ItemRecipeTableBack />
       </RoundedContainer>
-      <RoundedContainer className="flex min-h-0 flex-1 flex-col gap-4 bg-zinc-900 p-4">
+      <RoundedContainer className="flex min-h-0 flex-1 flex-col gap-4 p-0">
         {content}
       </RoundedContainer>
     </div>

@@ -32,7 +32,7 @@ const ImageSearch = () => {
           <ImagePlus size={18} />
         </Button>
       </DialogTrigger>
-      <DialogContent className="border-none bg-backgroundOne text-white">
+      <DialogContent className="border-none bg-zinc-900 text-white">
         <DialogHeader>
           <DialogTitle className="dark text-center">이미지 검색</DialogTitle>
           <DialogDescription className="text-center text-gray-400">

@@ -56,9 +56,9 @@ const CharacterEquipment = ({
             {item ? (
               <button
                 className={cn(
-                  'h-full w-full rounded-md border border-border p-2 hover:bg-muted/70',
+                  'h-full w-full rounded-md border border-border p-2 hover:bg-card',
                   equipment?.item_equipment_slot_name ===
-                    item.item_equipment_slot_name && 'bg-muted'
+                    item.item_equipment_slot_name && 'border-blue-300'
                 )}
                 onClick={() => onClick(item)}
               >

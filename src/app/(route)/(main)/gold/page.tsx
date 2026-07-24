@@ -1,18 +1,19 @@
 import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 import SideAd from '@/app/_components/adsense/SideAd';
-import BasicContainer from '@/app/_components/layout/BasicContainer';
 import { GoldMarket } from '@/app/_features/gold';
 
 const Page = () => {
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
-      <BasicContainer>
+      <div>
         <div className="py-2">
           <AutoResponsiveAd />
         </div>
-        <GoldMarket />
-      </BasicContainer>
+        <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+          <GoldMarket />
+        </div>
+      </div>
       <SideAd dataSlot="1601053361" position="right" />
     </>
   );
