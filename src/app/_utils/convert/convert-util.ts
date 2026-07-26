@@ -20,6 +20,7 @@ import {
 import { EnchantOptionSort } from '@/app/_utils/enchant';
 import { BasicEventType } from '@/app/_type/homeType';
 import { ItemRecipe } from '@/app/_type/itemType';
+import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
 
 interface ConvertResult {
   itemName: string;
@@ -415,7 +416,7 @@ export const recipeFilter = (
 };
 
 export const enchantFilter = (
-  enchants: EnchantOptionType[],
+  enchants: MergedEnchantType[],
   currentCategory: string | null,
   currentSubCategory: string | null
 ) => {
@@ -442,4 +443,27 @@ export const enchantFilter = (
 const category = {
   ['접두']: 'PREFIX',
   ['접미']: 'SUFFIX',
+};
+
+export const convertPriceMap = (priceData: EnchantFormatingType[]) => {
+  if (!priceData) {
+    return new Map<string, EnchantFormatingType>();
+  }
+
+  return new Map<string, EnchantFormatingType>(
+    priceData.map((price) => [price.item_name, price])
+  );
+};
+
+export const mergeEnchantPriceServer = (
+  enchants: EnchantOptionType[],
+  priceMap: Map<string, EnchantFormatingType>
+) => {
+  return enchants.map((item) => {
+    const priceInfo = priceMap.get(item.name);
+    return {
+      ...item,
+      ...priceInfo,
+    };
+  });
 };

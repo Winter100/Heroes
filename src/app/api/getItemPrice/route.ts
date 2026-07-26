@@ -4,7 +4,6 @@ import { ItemPriceApiType } from '@/app/_type/enchantType';
 import { getSearchParamsValue } from '@/app/_utils/get';
 import { NextResponse } from 'next/server';
 
-// export const dynamic = "force-dynamic";
 export const revalidate = 60;
 
 export const GET = async (request: Request) => {
@@ -37,18 +36,13 @@ export const GET = async (request: Request) => {
       nextCursor = data.next_cursor;
 
       if (nextCursor) {
-        await delay(200);
+        await delay(150);
       }
     } while (nextCursor);
 
     return NextResponse.json(allData);
   } catch (e) {
     console.error(e);
-    return NextResponse.json(
-      {
-        error: 'Failed to fetch data',
-      },
-      { status: 500 }
-    );
+    return NextResponse.json([]);
   }
 };

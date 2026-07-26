@@ -5,6 +5,11 @@ import { API_PATH, keyword } from '@/app/_constant/keyword';
 import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe-table-back';
 import { EnchantOptionType } from '@/app/_type/enchantType';
 import { getApi } from '@/app/api/getIApi';
+import { getEnchantPrice } from '@/app/_services/getEnchantPrice';
+import { convertPriceMap, mergeEnchantPriceServer } from '@/app/_utils/convert';
+import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
+
+export const revalidate = 3600;
 
 type Props = {
   params: Promise<{ item: string }>;
@@ -31,7 +36,17 @@ export async function generateMetadata({ params }: Props) {
 
 const Page = async ({ params }: Props) => {
   const { item } = await params;
-  const enchants = await getApi<EnchantOptionType>(API_PATH.enchant);
+
+  const [enchants, enchantPrice] = await Promise.all([
+    getApi<EnchantOptionType>(API_PATH.enchant),
+    getEnchantPrice(),
+  ]);
+  const enchantPriceMap = convertPriceMap(enchantPrice);
+
+  const mergedData: MergedEnchantType[] = mergeEnchantPriceServer(
+    enchants,
+    enchantPriceMap
+  );
 
   const decodeEnchantName = decodeURIComponent(item);
 
@@ -39,7 +54,7 @@ const Page = async ({ params }: Props) => {
     enchants.length === 0 ? (
       <CheckError />
     ) : (
-      <EnchantFind enchants={enchants} findEnchantName={decodeEnchantName} />
+      <EnchantFind enchants={mergedData} findEnchantName={decodeEnchantName} />
     );
 
   return (

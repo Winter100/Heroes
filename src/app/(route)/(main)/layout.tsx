@@ -5,7 +5,7 @@ import {
 } from '@tanstack/react-query';
 import Providers from './providers';
 import { API_PATH } from '@/app/_constant/keyword';
-import { GrindType, ItemRecipe, ItemSetType } from '@/app/_type/itemType';
+import { GrindType, ItemSetType } from '@/app/_type/itemType';
 import { getApi } from '@/app/api/getIApi';
 import { EnchantOptionType } from '@/app/_type/enchantType';
 import { RaidListType } from '@/app/_type/raidType';
@@ -43,11 +43,6 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
     queryClient.prefetchQuery({
       queryKey: [API_PATH.itemSetOption],
       queryFn: () => getApi<ItemSetType>(API_PATH.itemSetOption),
-      staleTime: Infinity,
-    }),
-    queryClient.prefetchQuery({
-      queryKey: [API_PATH.recipe],
-      queryFn: () => getApi<ItemRecipe>(API_PATH.recipe),
       staleTime: Infinity,
     }),
     queryClient.prefetchQuery({

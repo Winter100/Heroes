@@ -1,76 +1,48 @@
 'use client';
-
-import { useMemo, useState } from 'react';
-import {
-  EnchantFormatingType,
-  EnchantOptionType,
-} from '@/app/_type/enchantType';
-import ItemEnchantTable from './components/item-enchant-table';
-import { useCategory } from '@/app/_hooks/custom/useCategory';
-import { enchantFilter } from '@/app/_utils/convert';
-import { getRankCategoryMap } from '@/app/_utils/enchant';
+import { RaidListType } from '@/app/_type/raidType';
+import RaidInfoTable from './components/raid-info-table';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { useCategory } from '@/app/_hooks/custom/useCategory';
+import { getRaidCategoryMap } from '@/app/_utils/enchant';
 import ItemInfoTableCategory from '../iteminfo/components/item-info-table-category';
-
-type SortKey = 'rank' | 'name' | 'affix' | 'average_price' | 'max_price';
-
-export type MergedEnchantType = EnchantOptionType &
-  Partial<EnchantFormatingType>;
-
+import { raidSort } from '@/app/_utils/convert';
 type Props = {
-  enchants: MergedEnchantType[];
+  raid: RaidListType[];
 };
+const RaidInfoContainer = ({ raid }: Props) => {
+  const [battleName, setBattledName] = useState<string>('');
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
-const EnchantFilterList = ({ enchants }: Props) => {
   const {
     currentCategory,
     currentSubCategory,
-    currentSortKey,
-    currentSortOrder,
     handleClearAll,
     handleSelectCategory,
     handleSelectSubCategory,
-    handleSort,
-  } = useCategory('/market/enchant');
+  } = useCategory('/raidinfo');
 
-  const CATEGORY_MAP = getRankCategoryMap(enchants);
-  const [itemName, setItemName] = useState<string>('');
-  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const sortRaid = useMemo(() => {
+    return raidSort(raid).filter((r) => r.raid_name !== '미분류');
+  }, [raid]);
 
-  const filteredData = useMemo(() => {
-    const filterValue = !!currentCategory || !!currentSubCategory;
-    return filterValue
-      ? enchantFilter(enchants, currentCategory, currentSubCategory)
-      : enchants;
-  }, [enchants, currentCategory, currentSubCategory]);
+  const RAID_CATEGORY_MAP = getRaidCategoryMap(sortRaid);
 
-  const sortedEnchants = useMemo(() => {
-    return [...filteredData].sort((a, b) => {
-      const key = currentSortKey as SortKey;
+  const filterRaid = useMemo(() => {
+    if (!currentCategory) {
+      return sortRaid;
+    }
+    return sortRaid.filter((r) => r.raid_name === currentCategory);
+  }, [sortRaid, currentCategory]);
 
-      const aExists = a[key] !== null && a[key] !== undefined && a[key] !== 0;
-      const bExists = b[key] !== null && b[key] !== undefined && b[key] !== 0;
-
-      if (!aExists && bExists) return 1;
-      if (aExists && !bExists) return -1;
-
-      const aValue = a[key] ?? 0;
-      const bValue = b[key] ?? 0;
-
-      if (aValue < bValue) return currentSortOrder === 'asc' ? -1 : 1;
-      if (aValue > bValue) return currentSortOrder === 'asc' ? 1 : -1;
-      return 0;
-    });
-  }, [filteredData, currentSortKey, currentSortOrder]);
-
-  const renderSortIndicator = (key: string): string | null => {
-    if (currentSortKey !== key) return null;
-    return currentSortOrder === 'asc' ? ' ▲' : ' ▼';
-  };
-
-  const searchItem = sortedEnchants.filter((enchant) =>
-    enchant.name.includes(itemName)
-  );
+  const searchRaid = filterRaid
+    .map((raid) => ({
+      ...raid,
+      monsters: raid.monsters.filter((monster) =>
+        monster.battle.includes(battleName)
+      ),
+    }))
+    .filter((raid) => raid.monsters.length > 0);
 
   return (
     <div className="flex flex-col gap-2">
@@ -80,8 +52,8 @@ const EnchantFilterList = ({ enchants }: Props) => {
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="search"
-            onChange={(e) => setItemName(e.target.value)}
-            placeholder="아이템 이름 검색"
+            onChange={(e) => setBattledName(e.target.value)}
+            placeholder="전투 검색"
             className="w-full rounded-md border border-border bg-card py-2 pl-9 pr-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring"
           />
         </div>
@@ -101,7 +73,7 @@ const EnchantFilterList = ({ enchants }: Props) => {
             {/* PC 카테고리 */}
             <div className="hidden lg:block">
               <ItemInfoTableCategory
-                itemCategory={CATEGORY_MAP}
+                itemCategory={RAID_CATEGORY_MAP}
                 handleClearAll={handleClearAll}
                 handleSelectCategory={handleSelectCategory}
                 handleSelectSubCategory={handleSelectSubCategory}
@@ -113,11 +85,7 @@ const EnchantFilterList = ({ enchants }: Props) => {
         </aside>
         <main className="flex w-full min-w-0 flex-col gap-2">
           <div className="max-h-[calc(80vh-8rem)] w-full overflow-auto bg-muted/50">
-            <ItemEnchantTable
-              enchants={searchItem}
-              handleSort={handleSort}
-              renderSortIndicator={renderSortIndicator}
-            />
+            <RaidInfoTable raid={searchRaid} />
           </div>
         </main>
       </div>
@@ -156,7 +124,7 @@ const EnchantFilterList = ({ enchants }: Props) => {
 
           <div className="flex-1 overflow-y-auto">
             <ItemInfoTableCategory
-              itemCategory={CATEGORY_MAP}
+              itemCategory={RAID_CATEGORY_MAP}
               handleClearAll={handleClearAll}
               handleSelectCategory={handleSelectCategory}
               handleSelectSubCategory={handleSelectSubCategory}
@@ -170,4 +138,4 @@ const EnchantFilterList = ({ enchants }: Props) => {
   );
 };
 
-export default EnchantFilterList;
+export default RaidInfoContainer;

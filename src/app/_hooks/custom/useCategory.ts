@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
+// Todo 서치파람 push 빼고 네트워크 요청 안생기게 하기
 export const useCategory = (pathName: string) => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -11,20 +12,12 @@ export const useCategory = (pathName: string) => {
   const currentSortKey = searchParams.get('sortKey');
   const currentSortOrder = searchParams.get('sortOrder');
 
-  const getSelectedValues = (key: string) => {
-    const value = searchParams.get(key);
-    return value ? value.split(',') : [];
-  };
-
   const handleSelectItem = (itemName: string) => {
     const queryString = searchParams.toString();
     return `${pathName}/${encodeURIComponent(itemName)}${
       queryString ? `?${queryString}` : ''
     }`;
   };
-
-  const categoryArray = getSelectedValues(currentCategory ?? '');
-  const subCategoryArray = getSelectedValues(currentSubCategory ?? '');
 
   const handleSort = (sortKey: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -37,7 +30,7 @@ export const useCategory = (pathName: string) => {
       params.set('sortOrder', 'desc');
     }
 
-    router.push(`${pathName}?${params.toString()}`);
+    window.history.pushState(null, '', `${pathName}?${params.toString()}`);
   };
 
   const handleSelectCategory = (categoryName: string) => {
@@ -46,7 +39,7 @@ export const useCategory = (pathName: string) => {
     params.set('category', categoryName);
     params.delete('subCategory');
 
-    router.push(`${pathName}?${params.toString()}`);
+    window.history.pushState(null, '', `${pathName}?${params.toString()}`);
   };
 
   const handleSelectSubCategory = (subCategoryName: string) => {
@@ -57,11 +50,11 @@ export const useCategory = (pathName: string) => {
     params.set('category', currentCategory);
     params.set('subCategory', subCategoryName);
 
-    router.push(`${pathName}?${params.toString()}`);
+    window.history.pushState(null, '', `${pathName}?${params.toString()}`);
   };
 
   const handleClearAll = () => {
-    router.push(pathName);
+    window.history.pushState(null, '', `${pathName}`);
   };
 
   const handleBackToList = () => {
@@ -78,8 +71,6 @@ export const useCategory = (pathName: string) => {
     currentSubCategory,
     currentSortKey,
     currentSortOrder,
-    categoryArray,
-    subCategoryArray,
     handleSort,
   };
 };

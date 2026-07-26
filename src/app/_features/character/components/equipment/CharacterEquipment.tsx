@@ -27,7 +27,12 @@ const CharacterEquipment = ({
   );
 
   if (isLoading) return <Loading />;
-  if (error) return <ErrorApi />;
+  if (error)
+    return (
+      <div className="flex h-full items-center justify-center">
+        <ErrorApi />
+      </div>
+    );
 
   const bagItems =
     data?.item_equipment?.filter((i) => i.item_equipment_page === 'Bag') ?? [];

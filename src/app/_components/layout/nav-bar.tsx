@@ -69,7 +69,7 @@ const TopNavbar = () => {
                 <NavigationMenuTrigger className="min-w-36 font-bold text-white">
                   {item.title}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-36">
+                <NavigationMenuContent className="min-w-36 rounded-sm bg-muted/50">
                   {item.nav.map((nav) => (
                     <NavigationMenuLink
                       render={<Link href={nav.url} />}

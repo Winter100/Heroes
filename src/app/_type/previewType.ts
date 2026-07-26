@@ -18,6 +18,7 @@ export interface beforeAndAfterStatsType {
 export type Stat = {
   stat_name: string;
   stat_value: string | number;
+  image?: string;
 };
 
 export type Item = {

@@ -1,6 +1,5 @@
 import Enchant from '@/app/_components/common/enchant/Enchant';
 import ImageIcon from '@/app/_components/common/image/Image-Icon';
-import Loading from '@/app/_components/common/Loading';
 import { getEnchantImage, getUniqueBaseStrings } from '@/app/_utils/enchant';
 import {
   Table,
@@ -22,14 +21,12 @@ import SuspenseContainer from '../../iteminfo/components/suspense-container';
 
 interface ItemEnchantTableProps {
   enchants: MergedEnchantType[];
-  isLoading: boolean;
   handleSort: (key: string) => void;
   renderSortIndicator: (key: string) => string | null;
 }
 
 const ItemEnchantTable = ({
   enchants,
-  isLoading,
   handleSort,
   renderSortIndicator,
 }: ItemEnchantTableProps) => {
@@ -91,7 +88,7 @@ const ItemEnchantTable = ({
                 </SuspenseContainer>
                 <Tooltip delayDuration={100}>
                   <TooltipTrigger className="text-gray-400">
-                    <div className="flex items-center gap-2 px-2">
+                    <div className="flex items-center gap-1.5 px-1">
                       <ImageIcon
                         className="h-4 w-4 shrink-0 md:h-6 md:w-6"
                         imageClassName="rounded-sm"
@@ -101,9 +98,10 @@ const ItemEnchantTable = ({
                         )}
                         alt={item?.name.toString()}
                       />
-                      <strong className="flex items-center justify-center">
-                        {item?.name}
-                      </strong>
+                      <strong>{item?.name}</strong>
+                      <span className="shrink-0 rounded-sm bg-zinc-800/70 px-1.5 py-0.5">
+                        {item?.rank}
+                      </span>
                     </div>
                   </TooltipTrigger>
                   <TooltipContent className="w-[340px] rounded-md border bg-background text-gray-400">
@@ -123,36 +121,18 @@ const ItemEnchantTable = ({
                 </span>
               </TableCell>
               <TableCell className="text-center">
-                <span>
-                  {isLoading ? (
-                    <Loading />
-                  ) : (
-                    item?.average_price?.toLocaleString()
-                  )}
-                </span>
+                <span>{item?.average_price?.toLocaleString()}</span>
               </TableCell>
               <TableCell className="text-center">
                 <span className="flex items-center justify-center gap-1 text-blue-500">
-                  {isLoading ? (
-                    <Loading />
-                  ) : (
-                    <>
-                      {item?.min_price && <RxTriangleDown />}
-                      {item?.min_price?.toLocaleString()}
-                    </>
-                  )}
+                  {item?.min_price && <RxTriangleDown />}
+                  {item?.min_price?.toLocaleString()}
                 </span>
               </TableCell>
               <TableCell className="text-center">
                 <span className="flex items-center justify-center gap-1 text-red-500">
-                  {isLoading ? (
-                    <Loading />
-                  ) : (
-                    <>
-                      {item?.max_price && <RxTriangleUp />}
-                      {item?.max_price?.toLocaleString()}
-                    </>
-                  )}
+                  {item?.max_price && <RxTriangleUp />}
+                  {item?.max_price?.toLocaleString()}
                 </span>
               </TableCell>
               <TableCell className="items-center">

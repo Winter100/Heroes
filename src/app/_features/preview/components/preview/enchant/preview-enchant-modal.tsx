@@ -63,7 +63,7 @@ const PreviewEnchantModal = ({
       </DialogTrigger>
       <DialogContent
         autoFocus={false}
-        className="max-h-full max-w-3xl border-none bg-zinc-900 text-white sm:max-h-[840px]"
+        className="max-h-full max-w-3xl border-none bg-neutral-900 text-white sm:max-h-[840px]"
       >
         <DialogHeader>
           <DialogTitle>
@@ -117,8 +117,13 @@ const PreviewEnchantModal = ({
                           <motion.div
                             className={cn(
                               'h-full rounded-md border border-muted/10 bg-background p-2 hover:animate-boundUpDown hover:cursor-pointer',
-                              selectedData?.name.toString() ===
-                                enchantItem.name && 'border-blue-300'
+                              selectedData?.name.toString() === enchantItem.name
+                                ? 'border-blue-300'
+                                : existing?.name && !selectedData?.name
+                                  ? existing.name === enchantItem.name
+                                    ? 'border-blue-300'
+                                    : ''
+                                  : ''
                             )}
                             key={enchantItem.name}
                             variants={ITEM_ANIMATION}

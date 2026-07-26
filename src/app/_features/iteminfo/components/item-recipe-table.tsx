@@ -1,5 +1,4 @@
 import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';
-import ItemTag from '@/app/_components/common/item/item-tag';
 import ItemTitle from '@/app/_components/item/item-title';
 import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
 import { ItemRecipe } from '@/app/_type/itemType';
@@ -29,13 +28,14 @@ const ItemRecipeTable = ({ recipes }: Props) => {
       <TableHeader className="sticky top-0 z-10 bg-zinc-900">
         <TableRow>
           <TableHead className="w-[10%] text-center">번호</TableHead>
-          <TableHead className="w-[45%]">아이템명</TableHead>
+          <TableHead className="w-[35%]">아이템명</TableHead>
+          <TableHead className="w-[10%] text-center">재료</TableHead>
           <TableHead className="w-[15%] text-center">카테고리</TableHead>
           <TableHead className="w-[15%] text-center">부위</TableHead>
           <TableHead className="w-[15%] text-center">등급</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody className="text-xs">
         {recipes?.map((item, i) => (
           <TableRow
             key={item.name}
@@ -64,24 +64,37 @@ const ItemRecipeTable = ({ recipes }: Props) => {
                   <ItemTooltipItem item={item} />
                 </TooltipContent>
               </Tooltip>
-              <strong className="flex flex-col gap-1">
-                <ItemTitle
-                  name={item?.name}
-                  category={item.category}
-                  tier={item?.tier}
-                >
-                  {item.name}
-                </ItemTitle>
-              </strong>
+              <ItemTitle
+                name={item?.name}
+                category={item.category}
+                tier={item?.tier}
+              >
+                <strong>{item.name}</strong>
+              </ItemTitle>
             </TableCell>
             <TableCell className="text-center">
-              <ItemTag>{item?.category}</ItemTag>
+              <span className="shrink-0 rounded-sm bg-zinc-800/70 px-2 py-0.5">
+                {item?.materials.length ?? ''}
+              </span>
             </TableCell>
             <TableCell className="text-center">
-              {item?.slot?.name && <ItemTag>{item?.slot?.name}</ItemTag>}
+              <span className="shrink-0 rounded-sm bg-zinc-800/70 px-2 py-0.5">
+                {item?.category}
+              </span>
+            </TableCell>
+            <TableCell className="text-center">
+              {item?.slot?.name && (
+                <span className="shrink-0 rounded-sm bg-zinc-800/70 px-2 py-0.5">
+                  {item?.slot?.name}
+                </span>
+              )}
             </TableCell>
 
-            <TableCell className="text-center">{item?.tier}</TableCell>
+            <TableCell className="text-center">
+              <span className="shrink-0 rounded-sm bg-zinc-800/70 px-2 py-0.5">
+                {item?.tier}
+              </span>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

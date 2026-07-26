@@ -9,8 +9,18 @@ import { useBasic } from '@/app/_hooks';
 const SkillAwakeningTable = ({ ocid }: { ocid: string }) => {
   const { basic, isLoading, error } = useBasic(ocid || '');
 
-  if (isLoading) return <Loading />;
-  if (error) return <ErrorApi />;
+  if (isLoading)
+    return (
+      <div className="p-4">
+        <Loading />
+      </div>
+    );
+  if (error)
+    return (
+      <div className="p-4">
+        <ErrorApi />
+      </div>
+    );
 
   const awakening = basic?.skill_awakening || [];
 

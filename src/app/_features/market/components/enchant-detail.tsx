@@ -1,32 +1,16 @@
 import ItemTag from '@/app/_components/common/item/item-tag';
-import {
-  EnchantFormatingType,
-  EnchantOptionType,
-} from '@/app/_type/enchantType';
 import ImageIcon from '@/app/_components/common/image/Image-Icon';
 import { getEnchantImage } from '@/app/_utils/enchant';
 import Enchant from '@/app/_components/common/enchant/Enchant';
 import { convertToKST } from '@/app/_utils/convert';
-import Loading from '@/app/_components/common/Loading';
 import { IoMdArrowForward } from 'react-icons/io';
+import { MergedEnchantType } from '../enchant-fiter-list';
 
 interface EnchantDetailProps {
-  selectedItem: EnchantOptionType;
-  enchantPriceData: Map<string, EnchantFormatingType>;
-  isLoading: boolean;
+  selectedItem: MergedEnchantType;
 }
 
-const EnchantDetail = ({
-  selectedItem,
-  enchantPriceData,
-  isLoading,
-}: EnchantDetailProps) => {
-  const mergedPriceEnchant = {
-    ...selectedItem,
-    average_price: enchantPriceData.get(selectedItem.name)?.average_price,
-  };
-  const date_update = enchantPriceData.get(selectedItem.name)?.date_update;
-
+const EnchantDetail = ({ selectedItem }: EnchantDetailProps) => {
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="flex items-center gap-4 rounded-md bg-muted/50 p-2">
@@ -41,15 +25,9 @@ const EnchantDetail = ({
         />
         <div className="flex w-full items-center justify-between gap-1">
           <div>{selectedItem?.name}</div>
-          {isLoading ? (
-            <div className="w-20">
-              <Loading />
-            </div>
-          ) : (
-            date_update && (
-              <span className="text-xs">{convertToKST(date_update)}</span>
-            )
-          )}
+          <span className="text-xs" aria-label="갱신 시간">
+            {convertToKST(selectedItem?.date_update ?? '')}
+          </span>
         </div>
       </div>
 
@@ -101,7 +79,7 @@ const EnchantDetail = ({
             </h4>
 
             <div className="w-full rounded-md bg-background text-xs">
-              <Enchant enchant={mergedPriceEnchant} />
+              <Enchant enchant={selectedItem} />
             </div>
           </div>
         </div>

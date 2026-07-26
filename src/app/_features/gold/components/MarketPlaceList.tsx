@@ -31,8 +31,8 @@ const MarketPlaceList = ({ type = 'buy' }: MarketPlaceListProps) => {
   const goldRankListData = 'buy_gold' in data ? data.buy_gold : data.sell_gold;
 
   return (
-    <Table className="mx-auto max-w-md table-fixed caption-top border">
-      <TableCaption>{`골드 ${convertTradeType(type)} 순위`}</TableCaption>
+    <Table className="mx-auto max-w-md table-fixed caption-top rounded-md border bg-muted/50">
+      <TableCaption className="py-4">{`골드 ${convertTradeType(type)} 순위`}</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-16 text-center">순위</TableHead>

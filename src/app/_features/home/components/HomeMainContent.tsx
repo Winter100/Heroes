@@ -2,7 +2,6 @@
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import BasicNotice from './notice/BasicNotice';
 import { useNotice } from '../../../_hooks';
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
 import {
   NoticeDataType,
   NoticeEventDataType,
@@ -70,7 +69,6 @@ const HomeMainContent = () => {
             itemsPerPage={10}
           />
         </RoundedContainer>
-        <AutoResponsiveAd />
       </div>
     </div>
   );
