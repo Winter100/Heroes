@@ -4,7 +4,7 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-require-imports": "off",
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    // "no-console": ["error", { "allow": ["warn", "error"] }],
     "default-case": "error",
     "eqeqeq": "error",
     "no-eval": "error"

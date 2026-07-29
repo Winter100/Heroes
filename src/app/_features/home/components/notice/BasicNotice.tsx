@@ -1,11 +1,7 @@
 'use client';
-import Loading from '@/app/_components/common/Loading';
-import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import NoticePagination from './NoticePagination';
 import { cn } from '@/lib/utils';
-import { BasicNoticeProps } from '../../types';
-import { usePagination } from '../../hooks/usePagination';
-import { sortEventsByDate } from '../../utils/sortEventsByDate';
+import { usePagination } from '../../../../_hooks';
 import NoticeItemRenderer from './NoticeItemRenderer';
 import {
   Table,
@@ -16,6 +12,8 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { BookText, BookUser, Calendar, Clock } from 'lucide-react';
+import { sortEventsByDate } from '@/app/_utils/convert';
+import { BasicNoticeProps } from '@/app/_type/homeType';
 
 const eventTable = [
   { title: '이벤트', icon: BookText, haedClassName: 'w-2/5' },
@@ -29,14 +27,10 @@ const BasicNotice = ({
   mainTitle,
   className,
   itemsPerPage = 5,
-  isLoading,
-  isError,
   eventType,
 }: BasicNoticeProps) => {
   const { page, currentItems, handleNextPage, handlePrevPage, totalPages } =
     usePagination(items, itemsPerPage);
-
-  if (isError) return <ErrorApi />;
 
   const isBasicEvent = eventType === 'basic';
 
@@ -47,20 +41,42 @@ const BasicNotice = ({
   return (
     <div
       className={cn(
-        'h-full min-h-60 w-full items-center justify-center gap-1',
+        'h-full w-full items-center justify-center gap-1',
         className
       )}
     >
       <p className="text-center text-sm">{mainTitle}</p>
       <div className="flex h-full w-full flex-col rounded-md">
-        {isLoading ? (
-          <div className="flex h-full w-full items-center justify-center">
-            <Loading />
-          </div>
-        ) : (
-          <>
-            {isBasicEvent ? (
-              <ul className={cn('flex flex-col gap-2 p-2 text-sm')}>
+        <>
+          {isBasicEvent ? (
+            <ul className={cn('flex flex-col gap-2 p-2 text-sm')}>
+              {eventList?.map((item) => (
+                <NoticeItemRenderer
+                  key={item.notice_id}
+                  item={item}
+                  isBasicEvent={isBasicEvent}
+                />
+              ))}
+            </ul>
+          ) : (
+            <Table className="caption-top">
+              <TableCaption></TableCaption>
+              <TableHeader>
+                <TableRow>
+                  {eventTable.map((table) => (
+                    <TableHead
+                      key={table.title}
+                      className={cn('text-inherit', table.haedClassName)}
+                    >
+                      <div className="flex flex-row items-center justify-center gap-2">
+                        {table.icon && <table.icon size={15} />}
+                        <p className="hidden md:block">{table.title}</p>
+                      </div>
+                    </TableHead>
+                  ))}
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {eventList?.map((item) => (
                   <NoticeItemRenderer
                     key={item.notice_id}
@@ -68,46 +84,18 @@ const BasicNotice = ({
                     isBasicEvent={isBasicEvent}
                   />
                 ))}
-              </ul>
-            ) : (
-              <Table className="caption-top">
-                <TableCaption></TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    {eventTable.map((table) => (
-                      <TableHead
-                        key={table.title}
-                        className={cn('text-inherit', table.haedClassName)}
-                      >
-                        <div className="flex flex-row items-center justify-center gap-2">
-                          {table.icon && <table.icon size={15} />}
-                          <p className="hidden md:block">{table.title}</p>
-                        </div>
-                      </TableHead>
-                    ))}
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {eventList?.map((item) => (
-                    <NoticeItemRenderer
-                      key={item.notice_id}
-                      item={item}
-                      isBasicEvent={isBasicEvent}
-                    />
-                  ))}
-                </TableBody>
-              </Table>
-            )}
-            <NoticePagination
-              handlePrevPage={handlePrevPage}
-              handleNextPage={handleNextPage}
-              prevDisable={page === 1}
-              nextDisable={page === totalPages}
-              page={page}
-              totalPages={totalPages}
-            />
-          </>
-        )}
+              </TableBody>
+            </Table>
+          )}
+          <NoticePagination
+            handlePrevPage={handlePrevPage}
+            handleNextPage={handleNextPage}
+            prevDisable={page === 1}
+            nextDisable={page === totalPages}
+            page={page}
+            totalPages={totalPages}
+          />
+        </>
       </div>
     </div>
   );

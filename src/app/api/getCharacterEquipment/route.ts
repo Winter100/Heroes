@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { SEARCH_PARAMS_KEY } from '@/app/_constant/searchParamsKey';
 import { nexonInstance } from '@/app/_services/nexonInstance';
-import { getSearchParamsValue } from '@/app/_utils/get/getSearchParamsValue';
+import { SEARCH_PARAMS_KEY } from '@/app/_constant/keyword';
+import { getSearchParamsValue } from '@/app/_utils/get';
 
 export const GET = async (request: Request) => {
   const ocid = getSearchParamsValue(request, SEARCH_PARAMS_KEY.ocid);

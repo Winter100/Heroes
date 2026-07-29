@@ -26,7 +26,8 @@
     "next-env.d.ts",
     "src/app/**/*",
     "src/components/**/*",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/app/_utils/character/.ts"
   ],
   // "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "delete"]

@@ -1,6 +1,6 @@
+import { NoticePaginationProps } from '@/app/_type/homeType';
 import { Button } from '@/components/ui/button';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { NoticePaginationProps } from '../../types';
 
 const NoticePagination = ({
   handlePrevPage,

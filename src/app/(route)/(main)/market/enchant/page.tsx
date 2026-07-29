@@ -1,24 +1,42 @@
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
-import SideAd from '@/app/_components/adsense/SideAd';
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import EnchantInformation from '@/app/_features/market/components/EnchnatInformation';
+import CheckError from '@/app/_components/common/check-error';
+import { API_PATH } from '@/app/_constant/keyword';
+import ItemEnchantTableServer from '@/app/_features/market/components/item-enchant-table-server';
+import EnchantFilterList, {
+  MergedEnchantType,
+} from '@/app/_features/market/enchant-fiter-list';
+import { getEnchantPrice } from '@/app/_services/getEnchantPrice';
+import { EnchantOptionType } from '@/app/_type/enchantType';
+import { convertPriceMap, mergeEnchantPriceServer } from '@/app/_utils/convert';
+import { getApi } from '@/app/api/getIApi';
+import { Suspense } from 'react';
 
-const Page = () => {
+export const revalidate = 3600;
+
+const Page = async () => {
+  const [enchants, enchantPrice] = await Promise.all([
+    getApi<EnchantOptionType>(API_PATH.enchant),
+    getEnchantPrice(),
+  ]);
+  const enchantPriceMap = convertPriceMap(enchantPrice);
+
+  const mergedData: MergedEnchantType[] = mergeEnchantPriceServer(
+    enchants,
+    enchantPriceMap
+  );
+
+  const content =
+    enchants.length === 0 ? (
+      <CheckError />
+    ) : (
+      <EnchantFilterList enchants={mergedData} />
+    );
+
   return (
-    <>
-      <SideAd dataSlot="2056348937" position="left" />
-      <RoundedContainer className="p-2">
-        <AutoResponsiveAd />
-        <div className="p-2 md:px-14">
-          <h1 className="text-center text-lg">인챈트 정보</h1>
-          <div className="pb-4 text-center text-xs">
-            거래량이 적은 인챈트는 가격 정보가 표시되지 않습니다
-          </div>
-          <EnchantInformation />
-        </div>
-      </RoundedContainer>
-      <SideAd dataSlot="1601053361" position="right" />
-    </>
+    <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+      <Suspense fallback={<ItemEnchantTableServer enchants={mergedData} />}>
+        {content}
+      </Suspense>
+    </div>
   );
 };
 

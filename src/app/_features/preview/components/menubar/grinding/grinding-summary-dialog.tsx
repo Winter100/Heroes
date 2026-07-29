@@ -1,0 +1,62 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import GrindingPreviewStatContainer from './grinding-preview-stat-container';
+import Ingredient from '../ingredient/ingredient';
+import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
+import { RaidListType } from '@/app/_type/raidType';
+
+interface Props {
+  items: NewEquipmentType[];
+  raid: RaidListType[];
+  ocid: string;
+}
+
+const GrindingDialog = ({ items, raid, ocid }: Props) => {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="text-xs" variant="outline">
+          연마
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="dark max-h-96 max-w-3xl overflow-y-auto border-none bg-zinc-900 p-2 text-white sm:max-h-[950px] md:p-6">
+        <DialogHeader>
+          <DialogTitle className="text-center">연마</DialogTitle>
+          <DialogDescription></DialogDescription>
+        </DialogHeader>
+        <div className="grid grid-cols-2 gap-2 md:gap-4">
+          {items.map((item) => (
+            <div
+              key={item.item_name}
+              className="dark rounded-lg bg-background p-2"
+            >
+              <div className="text-center text-xs md:text-sm">
+                {item?.item_option?.enhancement_level} {item.item_name}
+              </div>
+              {item.item_option.tuning_stat?.map((stat) => (
+                <GrindingPreviewStatContainer
+                  key={stat.stat_name}
+                  item={item}
+                  {...stat}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <Ingredient items={items} />
+        <RaidSelectorAndPreviewStatsContainer ocid={ocid} raid={raid} />
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export default GrindingDialog;

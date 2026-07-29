@@ -1,8 +1,5 @@
 import axios from 'axios';
-import {
-  findOcidByName,
-  setOcidListToLocalStorage,
-} from '../_utils/localStorage';
+import { findOcidByName, setOcidListToLocalStorage } from '../_utils/get';
 
 export const getOcid = async (characterName: string): Promise<string> => {
   try {

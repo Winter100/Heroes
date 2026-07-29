@@ -1,8 +1,7 @@
 'use client';
 
 import Search from '@/app/_components/common/search/Search';
-import { useRefFocus } from '@/app/_hooks/useRefFocus';
-import { useSearchHandler } from '@/app/_hooks/useSearchHandler';
+import { useRefFocus, useSearchHandler } from '@/app/_hooks';
 
 const CharacterSearchInput = ({
   className = '',

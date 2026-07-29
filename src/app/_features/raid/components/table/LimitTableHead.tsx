@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useDrag } from '@/app/_hooks/useDrag';
+import { useDrag } from '@/app/_hooks';
 import { useRankStore } from '@/app/_store/rankStore';
 import { useCheckStore } from '@/app/_store/checkStore';
-import { useCharacterStore } from '../../store/characterStore';
+import { useCharacterStore } from '../../../../_store/characterStore';
 
 import {
   TableCaption,

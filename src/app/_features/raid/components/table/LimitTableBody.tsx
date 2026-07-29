@@ -2,18 +2,18 @@
 
 import { useEffect } from 'react';
 import { useRankStore } from '@/app/_store/rankStore';
-import { useDrag } from '@/app/_hooks/useDrag';
-import { getLocalStorageItems } from '@/app/_utils/localStorage';
-import { LOCALSTORAGE_KEY } from '@/app/_constant/localstorage';
+import { useDrag } from '@/app/_hooks';
 import { MergedCharacter } from '@/app/_type/characterType';
-import { useRaidStore } from '@/app/_store/raidStore';
 
 import { useCheckStore } from '@/app/_store/checkStore';
-import { useCharacterStore } from '../../store/characterStore';
-import { filterCharacters } from '@/app/_utils/raid/filterCharacters';
+import { useCharacterStore } from '../../../../_store/characterStore';
 import LimitStat from '../stats/LimitStat';
 import { TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useRaidStore } from '@/app/_store/useRaidStore';
+import { LOCALSTORAGE_KEY } from '@/app/_constant/keyword';
+import { filterCharacters } from '@/app/_utils/convert';
+import { getLocalStorageItems } from '@/app/_utils/get';
 
 const LimitTableBody = () => {
   const characters = useCharacterStore((state) => state.characters);
@@ -36,7 +36,7 @@ const LimitTableBody = () => {
     () => setSeletRankTitle(null)
   );
 
-  const selectedBoss = useRaidStore((state) => state.selectedBoss);
+  const selectedBoss = useRaidStore((state) => state.raid);
 
   const checkedList = useCheckStore((state) => state.checkedList);
   const setChecked = useCheckStore((state) => state.setChecked);

@@ -9,7 +9,7 @@ const AutoResponsiveAd = () => {
           pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}
           dataSlot="5231360897"
           width="320px"
-          height="50px"
+          height="100px"
         />
       </div>
       <div className="hidden md:block">

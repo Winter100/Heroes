@@ -1,8 +1,8 @@
 import React from 'react';
-import { BasicEventType } from '../../types';
-import { isWithinHours } from '@/app/_utils/isWithin24Hours';
 import BasicNoticeItem from './BasicNoticeItem';
 import EventNoticeItem from './EventNoticeItem';
+import { isWithinHours } from '@/app/_utils/get';
+import { BasicEventType } from '@/app/_type/homeType';
 
 interface NoticeItemRendererProps {
   item: BasicEventType;
