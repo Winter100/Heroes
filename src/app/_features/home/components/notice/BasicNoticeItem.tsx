@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTimeDifference } from '@/app/_utils/preview/dateEvent';
-import { convertToKST } from '@/app/_utils/convert/convertToKST';
-import { BasicNoticeItemProps } from '../../types';
+import { convertToKST } from '@/app/_utils/convert';
+import { BasicNoticeItemProps } from '@/app/_type/homeType';
 
 const BasicNoticeItem = ({
   isIn24,
@@ -19,7 +19,7 @@ const BasicNoticeItem = ({
       >
         <div
           title={title}
-          className="rounded-md bg-backgroundOne p-2 outline-1 outline-borderColor/50 hover:outline"
+          className="rounded-md bg-muted/50 p-2 hover:outline hover:outline-1"
         >
           <div className="flex flex-1 items-center gap-2">
             {isIn24 && (

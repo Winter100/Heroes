@@ -1,4 +1,4 @@
-import { ENCHANT_DESTRUCTION_RANK } from '@/app/_constant/enchant';
+import { ENCHANT_DESTRUCTION_RANK } from '@/app/_type/enchantType';
 import Column from '../../layout/Column';
 
 const EnchantIsDestruction = ({ rank }: { rank: string }) => {

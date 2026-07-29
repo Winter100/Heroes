@@ -18,8 +18,8 @@ const ImageIconUseBorder = memo(
     className,
     imageClassName,
   }: ImageIconUseBorderProps) => {
-    const rare = itemName.includes('레어');
-    const legend = itemName.includes('전설');
+    const rare = itemName?.includes('레어');
+    const legend = itemName?.includes('전설');
     return (
       <ImageIcon
         className={className}

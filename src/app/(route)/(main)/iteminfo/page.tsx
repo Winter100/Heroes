@@ -1,24 +1,29 @@
-import SideAd from '@/app/_components/adsense/SideAd';
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import CraftingInfo from '@/app/_features/iteminfo/components/CraftingInfo';
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
+import { API_PATH } from '@/app/_constant/keyword';
+import ItemFilteredList from '@/app/_features/iteminfo/item-filtered-list';
+import { getApi } from '@/app/api/getIApi';
+import { ItemRecipe } from '@/app/_type/itemType';
+import CheckError from '@/app/_components/common/check-error';
+import { Suspense } from 'react';
+import ItemRecipeTable from '@/app/_features/iteminfo/components/item-recipe-table';
 
-const Page = () => {
+export const revalidate = false;
+
+const Page = async () => {
+  const recipes = await getApi<ItemRecipe>(API_PATH.recipe);
+
+  const content =
+    recipes.length === 0 ? (
+      <CheckError />
+    ) : (
+      <ItemFilteredList recipes={recipes} />
+    );
+
   return (
-    <>
-      <SideAd dataSlot="2056348937" position="left" />
-      <RoundedContainer>
-        <AutoResponsiveAd />
-        <div className="p-2 md:px-20">
-          <h1 className="text-center text-lg">아이템 제작 정보</h1>
-          <div className="pb-4 text-center text-xs">
-            이미지를 클릭하면 상세 정보를 볼 수 있습니다.
-          </div>
-          <CraftingInfo />
-        </div>
-      </RoundedContainer>
-      <SideAd dataSlot="1601053361" position="right" />
-    </>
+    <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+      <Suspense fallback={<ItemRecipeTable recipes={recipes} />}>
+        {content}
+      </Suspense>
+    </div>
   );
 };
 

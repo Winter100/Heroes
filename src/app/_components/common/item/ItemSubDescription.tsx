@@ -5,7 +5,7 @@ const ItemSubDescription = ({ className, ...props }: ComponentProps<'div'>) => {
   return (
     <div
       className={clsx(
-        'rounded-sm border border-borderColor/50 font-sans text-[11px]',
+        'rounded-sm border border-muted font-sans text-[11px]',
         className
       )}
       {...props}

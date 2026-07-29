@@ -1,7 +1,7 @@
 import Loading from '@/app/_components/common/Loading';
+import { SearchFormProps } from '@/app/_type/characterType';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { SearchFormProps } from '../../../types';
 
 const SearchForm = ({
   submitHandler,

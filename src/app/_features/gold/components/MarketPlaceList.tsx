@@ -1,7 +1,5 @@
 'use client';
-import Loading from '@/app/_components/common/Loading';
-import { useMarketRankList } from '../hooks/useMarketRankList';
-import { MarketPlaceListProps } from '../types';
+import { MarketRankList } from '../types';
 import {
   Table,
   TableBody,
@@ -11,28 +9,19 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { convertTradeType } from '../utils/convertTradeType';
-import ErrorApi from '@/app/_components/common/error/ErrorApi';
 
-const MarketPlaceList = ({ type = 'buy' }: MarketPlaceListProps) => {
-  const { data, isLoading, error } = useMarketRankList(type);
-
-  if (isLoading) return <Loading />;
-  if (error) {
-    return (
-      <ErrorApi>
-        <div>{`골드 ${convertTradeType(type)} 순위`}</div>
-      </ErrorApi>
-    );
-  }
-
+type Props = {
+  data: MarketRankList<'buy'> | MarketRankList<'sell'>;
+  type: 'buy' | 'sell';
+};
+const MarketPlaceList = ({ data, type }: Props) => {
   if (!data) return null;
 
   const goldRankListData = 'buy_gold' in data ? data.buy_gold : data.sell_gold;
 
   return (
-    <Table className="mx-auto max-w-md table-fixed caption-top border">
-      <TableCaption>{`골드 ${convertTradeType(type)} 순위`}</TableCaption>
+    <Table className="mx-auto max-w-md table-fixed caption-top rounded-md border bg-muted/50">
+      <TableCaption className="py-4">{`골드 ${type === 'buy' ? '구매' : '판매'} 순위`}</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-16 text-center">순위</TableHead>

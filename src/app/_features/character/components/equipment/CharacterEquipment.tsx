@@ -1,20 +1,82 @@
 'use client';
 
-import ItemGridDisplay from './ItemGridDisplay';
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
-import { bagFilter } from '../../utils/bagFilter';
-import { useEquipment } from '../../hooks/useEquipment';
+import { useUserEquipment } from '@/app/_hooks';
+import { EnchantGroupByAffix } from '@/app/_type/enchantType';
+import { NewEquipmentType } from '@/app/_type/equipmentType';
+import { cn } from '@/lib/utils';
+import EquipmentItemContainer from './equipment-item-container';
+import { ITEM_SLOT } from '@/app/_constant/character/item-slot-name';
+import { GrindType } from '@/app/_type/itemType';
 
-const CharacterEquipment = ({ ocid }: { ocid: string }) => {
-  const { data, isLoading, error } = useEquipment(ocid);
+const CharacterEquipment = ({
+  ocid,
+  enchantsBySlot,
+  equipment,
+  grind,
+  onClick,
+}: {
+  ocid: string;
+  enchantsBySlot: EnchantGroupByAffix;
+  equipment: NewEquipmentType | null;
+  grind: GrindType[];
+  onClick: (item: NewEquipmentType) => void;
+}) => {
+  const { isLoading, error, data } = useUserEquipment(ocid, grind ?? []);
 
   if (isLoading) return <Loading />;
-  if (error) return <ErrorApi />;
+  if (error)
+    return (
+      <div className="flex h-full items-center justify-center">
+        <ErrorApi />
+      </div>
+    );
 
-  const { bag, cach } = bagFilter(data);
+  const bagItems =
+    data?.item_equipment?.filter((i) => i.item_equipment_page === 'Bag') ?? [];
 
-  return <ItemGridDisplay bag={bag} cach={cach} />;
+  return (
+    <ul className="grid h-full min-h-[480px] w-full grid-cols-3 grid-rows-6 items-center justify-items-center gap-2">
+      {ITEM_SLOT.flat().map((slot, index) => {
+        if (!slot)
+          return (
+            <div
+              key={index}
+              className="flex h-full w-full items-center justify-center"
+            >
+              {null}
+            </div>
+          );
+
+        const item = bagItems.find(
+          (item) => item.item_equipment_slot_name === slot
+        );
+        return (
+          <li
+            className="flex h-full min-h-20 w-full items-center justify-center"
+            key={slot}
+          >
+            {item ? (
+              <button
+                className={cn(
+                  'h-full w-full rounded-md border border-border p-2 hover:bg-card',
+                  equipment?.item_equipment_slot_name ===
+                    item.item_equipment_slot_name && 'border-blue-300'
+                )}
+                onClick={() => onClick(item)}
+              >
+                <EquipmentItemContainer
+                  item={item}
+                  enchantsBySlot={enchantsBySlot}
+                />
+              </button>
+            ) : null}
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default CharacterEquipment;

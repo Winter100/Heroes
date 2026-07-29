@@ -25,9 +25,9 @@ const GoogleAdSenseFixed = ({ pid, dataSlot, width, height }: Props) => {
     <ins
       className="adsbygoogle"
       style={{
-        display: 'block',
-        maxWidth: '720px',
-        margin: '0 auto',
+        display: 'inline-block',
+        // maxWidth: '720px',
+        // margin: '0 auto',
         width,
         height,
       }}

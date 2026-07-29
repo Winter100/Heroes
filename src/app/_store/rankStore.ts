@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
-import { setLocalStoreageRankTitle } from '../_utils/localStorage';
 import { TitleType } from '../_type/RankTitleListType';
-import { initialTitleList } from '../_constant/rankTitleList';
+import { initialTitleList } from '../_constant/keyword';
+import { setLocalStoreageRankTitle } from '../_utils/get';
 
 type State = {
   rankTitleList: { stat_name: string; isView: boolean }[];
@@ -24,7 +24,8 @@ export const useRankStore = create<State & Action>((set) => {
     toggleView: (title: string) =>
       set((state) => {
         if (title === '이름') {
-          toast.error('이름은 필수값 입니다.');
+          alert('이름은 필수값 입니다.');
+          // toast.error('이름은 필수값 입니다.');
           return { rankTitleList: state.rankTitleList };
         }
         const updatedRankTitleList = state.rankTitleList

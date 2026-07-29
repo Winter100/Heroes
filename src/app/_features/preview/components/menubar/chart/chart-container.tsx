@@ -1,0 +1,64 @@
+'use client';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import ChartAttackPower from '@/app/_features/preview/components/menubar/chart/chart-attack-power';
+import { useSimulationStats } from '@/app/_hooks';
+import { useRaidStore } from '@/app/_store/useRaidStore';
+import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
+import { RaidListType } from '@/app/_type/raidType';
+
+const ChartContainer = ({
+  ocid,
+  raid,
+}: {
+  ocid: string;
+  raid: RaidListType[];
+}) => {
+  const { finalStatsArray } = useSimulationStats(ocid);
+
+  const userAttack = finalStatsArray.find(
+    (s) => s.stat_name === '공격력'
+  )?.stat_value;
+  const boss = useRaidStore((state) => state.raid);
+  const bossAttackCap = boss?.limit.find(
+    (s) => s.stat_name === '공격력'
+  )?.stat_value;
+
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="text-xs" variant="outline">
+          공격력 그래프
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-h-96 max-w-3xl overflow-hidden overflow-y-auto break-all border-none bg-zinc-900 text-white sm:max-h-[950px]">
+        <DialogHeader>
+          <DialogTitle></DialogTitle>
+          <DialogDescription></DialogDescription>
+        </DialogHeader>
+        {boss ? (
+          <ChartAttackPower
+            bossAttackCap={Number(bossAttackCap) ?? 0}
+            userAttack={Number(userAttack)}
+          />
+        ) : (
+          <div className="py-2">
+            <p className="text-center text-sm text-red-300">
+              레이드 선택이 필요합니다.
+            </p>
+          </div>
+        )}
+        <RaidSelectorAndPreviewStatsContainer ocid={ocid} raid={raid} />
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export default ChartContainer;

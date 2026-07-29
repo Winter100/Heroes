@@ -1,71 +1,70 @@
 'use client';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import HomeTopImage from './top/HomeTopImage';
 import BasicNotice from './notice/BasicNotice';
-import { useNotice } from '../hooks/useNotice';
 import {
   NoticeDataType,
-  NoticeEventDataType,
   NoticePatchDataType,
-} from '../types';
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
+  NoticeEventDataType,
+} from '@/app/_type/homeType';
+import ErrorApi from '@/app/_components/common/error/ErrorApi';
 
-const HomeMainContent = () => {
-  const {
-    data: noticeData,
-    isLoading: noticeLoading,
-    error: noticeError,
-  } = useNotice<NoticeDataType>('notice');
-
-  const {
-    data: noticePatchData,
-    isLoading: noticePatchLoading,
-    error: noticePatchError,
-  } = useNotice<NoticePatchDataType>('notice-patch');
-
-  const {
-    data: noticeEventData,
-    isLoading: noticeEventLoading,
-    error: noticeEventError,
-  } = useNotice<NoticeEventDataType>('notice-event');
-
+type Props = {
+  notice: NoticeDataType;
+  patchNotice: NoticePatchDataType;
+  eventNotice: NoticeEventDataType;
+};
+const HomeMainContent = ({ notice, patchNotice, eventNotice }: Props) => {
+  const noticeItem = notice.notice;
+  const patchItem = patchNotice.patch_notice;
+  const eventItem = eventNotice.event_notice;
   return (
-    <div className="dark flex flex-1 flex-col gap-2 p-2">
-      <HomeTopImage />
+    <div className="flex flex-1 flex-col gap-2 p-2">
+      <div
+        className="relative h-60 w-full rounded-md bg-cover"
+        style={{
+          backgroundImage: 'url(/art.jpg)',
+          backgroundPosition: 'center 12%',
+        }}
+      />
       <div className="flex flex-col gap-2 md:flex-row">
-        <RoundedContainer className="flex flex-1 truncate bg-muted/50">
-          <BasicNotice
-            eventType="basic"
-            mainTitle="공지사항"
-            isLoading={noticeLoading}
-            isError={noticeError}
-            items={noticeData?.notice || []}
-            itemsPerPage={5}
-          />
+        <RoundedContainer className="bg- flex flex-1 truncate bg-muted/50">
+          {noticeItem.length > 0 ? (
+            <BasicNotice
+              eventType="basic"
+              mainTitle="공지사항"
+              items={noticeItem}
+              itemsPerPage={5}
+            />
+          ) : (
+            <ErrorApi />
+          )}
         </RoundedContainer>
         <RoundedContainer className="flex flex-1 truncate bg-muted/50">
-          <BasicNotice
-            eventType="basic"
-            mainTitle="패치노트"
-            isLoading={noticePatchLoading}
-            isError={noticePatchError}
-            items={noticePatchData?.patch_notice || []}
-            itemsPerPage={5}
-          />
+          {patchItem.length > 0 ? (
+            <BasicNotice
+              eventType="basic"
+              mainTitle="패치노트"
+              items={patchItem}
+              itemsPerPage={5}
+            />
+          ) : (
+            <ErrorApi />
+          )}
         </RoundedContainer>
       </div>
       <div className="flex flex-col gap-2">
-        <RoundedContainer className="flex bg-muted/50">
-          <BasicNotice
-            eventType="event"
-            mainTitle="이벤트"
-            isLoading={noticeEventLoading}
-            isError={noticeEventError}
-            items={noticeEventData?.event_notice || []}
-            itemsPerPage={10}
-          />
+        <RoundedContainer className="flex flex-1 bg-muted/50">
+          {eventItem.length > 0 ? (
+            <BasicNotice
+              eventType="event"
+              mainTitle="이벤트"
+              items={eventItem}
+              itemsPerPage={10}
+            />
+          ) : (
+            <ErrorApi />
+          )}
         </RoundedContainer>
-        <AutoResponsiveAd />
       </div>
     </div>
   );
