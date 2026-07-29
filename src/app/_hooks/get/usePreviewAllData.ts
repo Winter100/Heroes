@@ -27,7 +27,10 @@ export const usePreviewAllData = () => {
     queries: [
       {
         queryKey: [API_PATH.enchant],
-        queryFn: () => getApi<EnchantOptionType>(API_PATH.enchant),
+        queryFn: () =>
+          getApi<EnchantOptionType>(API_PATH.enchant, {
+            next: { tags: [API_PATH.enchant] },
+          }),
         staleTime: Infinity,
         select: (data: EnchantOptionType[]) => {
           return EnchantOptionSort(data, enchantEffectOrderMap, 'enchant');
@@ -36,7 +39,10 @@ export const usePreviewAllData = () => {
       },
       {
         queryKey: [API_PATH.infusion],
-        queryFn: () => getApi<EnchantOptionType>(API_PATH.infusion),
+        queryFn: () =>
+          getApi<EnchantOptionType>(API_PATH.infusion, {
+            next: { tags: [API_PATH.infusion] },
+          }),
         staleTime: Infinity,
         select: (data: EnchantOptionType[]) => {
           return EnchantOptionSort(data, infusionEffectOrderMap, 'infusion');
@@ -45,31 +51,46 @@ export const usePreviewAllData = () => {
       },
       {
         queryKey: [API_PATH.grind],
-        queryFn: () => getApi<GrindType>(API_PATH.grind),
+        queryFn: () =>
+          getApi<GrindType>(API_PATH.grind, {
+            next: { tags: [API_PATH.grind] },
+          }),
         staleTime: Infinity,
         retry: 2,
       },
       {
         queryKey: [API_PATH.itemSetOption],
-        queryFn: () => getApi<ItemSetType>(API_PATH.itemSetOption),
+        queryFn: () =>
+          getApi<ItemSetType>(API_PATH.itemSetOption, {
+            next: { tags: [API_PATH.itemSetOption] },
+          }),
         staleTime: Infinity,
         retry: 2,
       },
       {
         queryKey: [API_PATH.recipe],
-        queryFn: () => getApi<ItemRecipe>(API_PATH.recipe),
+        queryFn: () =>
+          getApi<ItemRecipe>(API_PATH.recipe, {
+            next: { tags: [API_PATH.recipe] },
+          }),
         staleTime: Infinity,
         retry: 2,
       },
       {
         queryKey: [API_PATH.raid],
-        queryFn: () => getApi<RaidListType>(API_PATH.raid),
+        queryFn: () =>
+          getApi<RaidListType>(API_PATH.raid, {
+            next: { tags: [API_PATH.raid] },
+          }),
         staleTime: Infinity,
         retry: 2,
       },
       {
         queryKey: [API_PATH.partholn],
-        queryFn: () => getApi<EnchantOptionType>(API_PATH.partholn),
+        queryFn: () =>
+          getApi<EnchantOptionType>(API_PATH.partholn, {
+            next: { tags: [API_PATH.partholn] },
+          }),
         staleTime: Infinity,
         retry: 2,
         select: (data: EnchantOptionType[]) => {
@@ -85,7 +106,10 @@ export const usePreviewAllData = () => {
         },
       },
       {
-        queryKey: [API_PATH.character],
+        queryKey: [
+          API_PATH.character,
+          { next: { tags: [API_PATH.character] } },
+        ],
         queryFn: () => getApi<CharacterInfo[]>(API_PATH.character),
         staleTime: Infinity,
         retry: 2,

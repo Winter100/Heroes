@@ -13,11 +13,19 @@ import { Suspense } from 'react';
 const Page = async () => {
   const [enchants, infusion, itemSetOption, grind, character] =
     await Promise.all([
-      getApi<EnchantOptionType>(API_PATH.enchant),
-      getApi<EnchantOptionType>(API_PATH.infusion),
-      getApi<ItemSetType>(API_PATH.itemSetOption),
-      getApi<GrindType>(API_PATH.grind),
-      getApi<CharacterInfo>(API_PATH.character),
+      getApi<EnchantOptionType>(API_PATH.enchant, {
+        next: { tags: [API_PATH.enchant] },
+      }),
+      getApi<EnchantOptionType>(API_PATH.infusion, {
+        next: { tags: [API_PATH.infusion] },
+      }),
+      getApi<ItemSetType>(API_PATH.itemSetOption, {
+        next: { tags: [API_PATH.itemSetOption] },
+      }),
+      getApi<GrindType>(API_PATH.grind, { next: { tags: [API_PATH.grind] } }),
+      getApi<CharacterInfo>(API_PATH.character, {
+        next: { tags: [API_PATH.character] },
+      }),
     ]);
 
   return (

@@ -1,11 +1,11 @@
-export const getApi = async <T>(path: string): Promise<T[]> => {
+export const getApi = async <T>(
+  path: string,
+  options?: RequestInit
+): Promise<T[]> => {
   try {
     const url = process.env.BACKEND_URL;
     const response = await fetch(`${url}${path}`, {
-      cache: 'force-cache',
-      next: {
-        tags: [path],
-      },
+      ...options,
     });
 
     if (!response.ok) {

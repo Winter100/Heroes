@@ -12,11 +12,21 @@ import { RaidListType } from '@/app/_type/raidType';
 
 const Page = async () => {
   const [enchants, infusion, grind, itemSetOption, raid] = await Promise.all([
-    getApi<EnchantOptionType>(API_PATH.enchant),
-    getApi<EnchantOptionType>(API_PATH.infusion),
-    getApi<GrindType>(API_PATH.grind),
-    getApi<ItemSetType>(API_PATH.itemSetOption),
-    getApi<RaidListType>(API_PATH.raid),
+    getApi<EnchantOptionType>(API_PATH.enchant, {
+      next: { tags: [API_PATH.enchant] },
+    }),
+    getApi<EnchantOptionType>(API_PATH.infusion, {
+      next: { tags: [API_PATH.infusion] },
+    }),
+    getApi<GrindType>(API_PATH.grind, {
+      next: { tags: [API_PATH.grind] },
+    }),
+    getApi<ItemSetType>(API_PATH.itemSetOption, {
+      next: { tags: [API_PATH.itemSetOption] },
+    }),
+    getApi<RaidListType>(API_PATH.raid, {
+      next: { tags: [API_PATH.raid] },
+    }),
   ]);
 
   return (
