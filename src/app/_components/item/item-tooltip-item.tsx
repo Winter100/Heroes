@@ -12,7 +12,6 @@ import { getPercentageStat } from '@/app/_features/preview/components/menubar/gr
 
 const ItemTooltipItem = ({ item }: { item: ItemRecipe }) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
-
   return (
     <div className="flex flex-col gap-2 p-2 text-zinc-400">
       <Row className="flex items-start gap-2 text-xs">
@@ -125,7 +124,7 @@ const ItemTooltipItem = ({ item }: { item: ItemRecipe }) => {
               <div key={bonus.level} className="flex">
                 <div className="w-5">• {bonus.level}:</div>
                 <div className="ml-1 flex flex-1 flex-wrap items-center gap-x-1">
-                  {bonus?.effects?.map((effect) => (
+                  {bonus?.stat_bonus?.map((effect) => (
                     <span key={effect.stat_name}>
                       {effect.stat_name}+{effect.stat_value}
                     </span>
@@ -144,7 +143,7 @@ export default ItemTooltipItem;
 
 const SLOT_ORDER = ['무기', '머리', '가슴', '다리', '손', '발'];
 
-const getPriority = (item: string): number => {
+export const getPriority = (item: string): number => {
   const index = SLOT_ORDER.findIndex((keyword) => item.includes(keyword));
 
   return index === -1 ? Infinity : index;

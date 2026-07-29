@@ -11,13 +11,15 @@ import { NewEquipmentType } from '@/app/_type/equipmentType';
 import GrindingPreviewStatContainer from './grinding-preview-stat-container';
 import Ingredient from '../ingredient/ingredient';
 import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
+import { RaidListType } from '@/app/_type/raidType';
 
 interface Props {
   items: NewEquipmentType[];
+  raid: RaidListType[];
   ocid: string;
 }
 
-const GrindingDialog = ({ items, ocid }: Props) => {
+const GrindingDialog = ({ items, raid, ocid }: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -51,7 +53,7 @@ const GrindingDialog = ({ items, ocid }: Props) => {
         </div>
 
         <Ingredient items={items} />
-        <RaidSelectorAndPreviewStatsContainer ocid={ocid} />
+        <RaidSelectorAndPreviewStatsContainer ocid={ocid} raid={raid} />
       </DialogContent>
     </Dialog>
   );

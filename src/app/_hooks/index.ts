@@ -2,9 +2,7 @@
 export * from './get/useBasic';
 export * from './get/useCharacterData';
 export * from './get/useCharacter';
-// export * from './get/useEnchantPrice';
 export * from './get/useGuild';
-export * from './get/useNotice';
 export * from './get/useOcid';
 export * from './get/usePreviewAllData';
 export * from './get/useUserEquipment';

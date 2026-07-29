@@ -12,8 +12,15 @@ import ChartAttackPower from '@/app/_features/preview/components/menubar/chart/c
 import { useSimulationStats } from '@/app/_hooks';
 import { useRaidStore } from '@/app/_store/useRaidStore';
 import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
+import { RaidListType } from '@/app/_type/raidType';
 
-const ChartContainer = ({ ocid }: { ocid: string }) => {
+const ChartContainer = ({
+  ocid,
+  raid,
+}: {
+  ocid: string;
+  raid: RaidListType[];
+}) => {
   const { finalStatsArray } = useSimulationStats(ocid);
 
   const userAttack = finalStatsArray.find(
@@ -48,7 +55,7 @@ const ChartContainer = ({ ocid }: { ocid: string }) => {
             </p>
           </div>
         )}
-        <RaidSelectorAndPreviewStatsContainer ocid={ocid} />
+        <RaidSelectorAndPreviewStatsContainer ocid={ocid} raid={raid} />
       </DialogContent>
     </Dialog>
   );

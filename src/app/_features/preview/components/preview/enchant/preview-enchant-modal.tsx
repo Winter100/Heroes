@@ -19,7 +19,6 @@ import { cn } from '@/lib/utils';
 import PreviewStatsContainer from '@/app/_components/stats/preview-stats-container';
 import { getSerachEnchant } from '@/app/_utils/get';
 import { groupByRank } from '@/app/_utils/convert';
-import { useCharacterData } from '@/app/_hooks';
 
 const ITEM_ANIMATION = {
   hidden: { opacity: 0, y: -10 },
@@ -33,17 +32,18 @@ const PreviewEnchantModal = ({
   affix,
   existing,
   existingName,
+  ocid,
 }: {
   itemName: string;
   enchants: EnchantOptionType[];
   affix: 'prefix' | 'suffix' | 'infusion';
   existing: EnchantOptionType | null;
   existingName: string;
+  ocid: string;
 }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const enchantRankGroup = groupByRank(enchants, affix);
   const enchantList = getSerachEnchant(enchantRankGroup, searchQuery);
-  const { ocid } = useCharacterData();
 
   const simulations = useEnchantStore((state) => state.simulations);
   const setSimulations = useEnchantStore((state) => state.setSimulations);

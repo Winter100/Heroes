@@ -1,19 +1,14 @@
 'use client';
 import { RaidType } from '@/app/_store/useRaidStore';
 import RaidSelector from './raid-selector';
-import { usePreviewAllData } from '@/app/_hooks';
-import ErrorDisplay from '../common/error/ErrorDisplay';
+import { RaidListType } from '@/app/_type/raidType';
 
-const RaidSelectorContainer = ({
-  initType = '상한',
-}: {
+type Props = {
+  raid: RaidListType[];
   initType?: RaidType;
-}) => {
-  const { raid } = usePreviewAllData();
-
-  if (raid.error) return <ErrorDisplay content="레이드 조회에 실패했습니다." />;
-
-  return <RaidSelector raid={raid.data ?? []} initType={initType} />;
+};
+const RaidSelectorContainer = ({ raid, initType = '상한' }: Props) => {
+  return <RaidSelector raid={raid ?? []} initType={initType} />;
 };
 
 export default RaidSelectorContainer;

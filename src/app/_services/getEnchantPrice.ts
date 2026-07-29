@@ -26,7 +26,7 @@ const fetchEnchantPrice = async (
       allData.push(data);
       nextCursor = data.next_cursor;
 
-      if (nextCursor) await delay(200);
+      if (nextCursor) await delay(300);
     } while (nextCursor);
 
     const flatEnchant = allData.flatMap((data) => data.item);

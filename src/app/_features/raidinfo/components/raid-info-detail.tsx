@@ -19,7 +19,7 @@ interface RaidInfoDetailProps {
 const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
   return (
     <div className="flex h-full flex-col gap-4">
-      <div className="flex items-center gap-4 rounded-md bg-muted/50 p-2">
+      <div className="flex items-center justify-center gap-4 rounded-md bg-muted/50 p-2">
         <ImageIcon
           className="h-4 w-4 md:h-6 md:w-6"
           imageClassName="rounded-sm"
@@ -142,7 +142,7 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
                     key={bonusList.value}
                     className="text-center font-medium"
                   >
-                    {bonusList.value}
+                    {Number(bonusList.value)?.toLocaleString() ?? ''}
                   </TableCell>
                 ))}
               </TableRow>

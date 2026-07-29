@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 import { TitleType } from '../_type/RankTitleListType';
 import { initialTitleList } from '../_constant/keyword';
@@ -24,7 +24,8 @@ export const useRankStore = create<State & Action>((set) => {
     toggleView: (title: string) =>
       set((state) => {
         if (title === '이름') {
-          toast.error('이름은 필수값 입니다.');
+          alert('이름은 필수값 입니다.');
+          // toast.error('이름은 필수값 입니다.');
           return { rankTitleList: state.rankTitleList };
         }
         const updatedRankTitleList = state.rankTitleList

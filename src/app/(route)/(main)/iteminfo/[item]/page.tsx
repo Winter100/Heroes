@@ -6,6 +6,8 @@ import CheckError from '@/app/_components/common/check-error';
 import { getApi } from '@/app/api/getIApi';
 import { ItemRecipe } from '@/app/_type/itemType';
 
+export const revalidate = false;
+
 type Props = {
   params: Promise<{ item: string }>;
 };

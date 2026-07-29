@@ -7,15 +7,19 @@ import ImageSearch from './imageSearch';
 import Column from '@/app/_components/layout/Column';
 import RaidSelectorContainer from '@/app/_components/selector/raid-selector-container';
 import { useRaidLimitNameSearch } from '@/app/_hooks';
+import { RaidListType } from '@/app/_type/raidType';
 
-const LimitTableMenuBar = () => {
+type Props ={
+  raid: RaidListType[]
+}
+const LimitTableMenuBar = ({raid}:Props) => {
   const { inputRef, loading, onSubmitHandler } = useRaidLimitNameSearch();
 
   return (
     <Column className="gap-2">
       <Row className="items-center justify-end gap-1">
         <div className="w-52">
-          <RaidSelectorContainer />
+          <RaidSelectorContainer raid={raid} />
         </div>
         <div className="w-20">
           <StatFilterDropDown />

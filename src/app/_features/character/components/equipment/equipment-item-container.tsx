@@ -6,13 +6,14 @@ import EquipmentItemEnchant from './equipment-item-enchant';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import Item from '@/app/_components/common/item/Item';
 import { cn } from '@/lib/utils';
+import ItemTitle from '@/app/_components/item/item-title';
 
 const EquipmentItemContainer = ({
   item,
-  enchants,
+  enchantsBySlot,
 }: {
   item: NewEquipmentType;
-  enchants: EnchantGroupByAffix;
+  enchantsBySlot: EnchantGroupByAffix;
 }) => {
   const {
     used_infusion_name,
@@ -22,13 +23,13 @@ const EquipmentItemContainer = ({
   } = getItemInfoOptions(item);
 
   const prefixEnchantRank = Number(
-    enchants
+    enchantsBySlot
       .get(item.item_equipment_slot_name)
       ?.prefix.find((e) => e.name === used_prefix_enchant_name)?.rank
   );
 
   const suffixEnchantRank = Number(
-    enchants
+    enchantsBySlot
       .get(item.item_equipment_slot_name)
       ?.suffix.find((e) => e.name === used_suffix_enchant_name)?.rank
   );
@@ -69,7 +70,9 @@ const EquipmentItemContainer = ({
             </div>
             {/* 강화 수치 + 아이템 이름 */}
             <div className="text-center">
-              {level && level} {item.item_name}
+              <ItemTitle tier="" category="장비" name={item.item_name}>
+                {level && level} {item.item_name}
+              </ItemTitle>
             </div>
           </div>
         </div>

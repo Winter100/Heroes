@@ -5,16 +5,20 @@ import { RaidListType } from './_type/raidType';
 import { EnchantOptionType } from './_type/enchantType';
 import { ItemRecipe } from './_type/itemType';
 
-export const revalidate = 86400;
+export const revalidate = false;
 
+const baseUrl = 'https://www.heroes-dev.com';
 export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
-  const baseUrl = 'https://www.heroes-dev.com';
-
-  const [raid, enchant, recipe] = await Promise.all([
+  const results = await Promise.allSettled([
     getApi<RaidListType>(API_PATH.raid),
     getApi<EnchantOptionType>(API_PATH.enchant),
     getApi<ItemRecipe>(API_PATH.recipe),
   ]);
+
+  const [raid, enchant, recipe] = results.map((r) =>
+    r.status === 'fulfilled' ? r.value : []
+  ) as [RaidListType[], EnchantOptionType[], ItemRecipe[]];
+
   const flatRaid = raid
     .filter((f) => f.raid_name !== '미분류')
     .flatMap((r) => [...r.monsters]);

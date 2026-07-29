@@ -2,7 +2,7 @@
 import { FormEvent, useRef } from 'react';
 import { useCharacterStore } from '../../_store/characterStore';
 import { useCharacter } from '../get/useCharacter';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 export const useRaidLimitNameSearch = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -13,7 +13,8 @@ export const useRaidLimitNameSearch = () => {
     e.preventDefault();
     const characterLength = characters.length;
     if (!characters || characterLength >= 8) {
-      toast.error('최대 8명까지 등록 가능합니다.');
+      // toast.error('최대 8명까지 등록 가능합니다.');
+      alert('최대 8명까지 등록 가능합니다.');
       return;
     }
     if (inputRef.current) {
@@ -30,7 +31,8 @@ export const useRaidLimitNameSearch = () => {
         }
       } else {
         inputRef.current.focus();
-        toast.error('캐릭터 이름을 입력해주세요.');
+        // toast.error('캐릭터 이름을 입력해주세요.');
+        alert('캐릭터 이름을 입력해주세요.');
       }
       inputRef.current.focus();
       inputRef.current.value = '';

@@ -43,7 +43,7 @@ export const EnchantOptionSort = (
 
 /**
  * - affix별로 인챈트를 그룹화 해주는 함수
- * @param param0
+ * @param param
  * @returns
  */
 export const enchantsByGroupSlot = ({

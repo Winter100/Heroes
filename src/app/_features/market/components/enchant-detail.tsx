@@ -13,7 +13,7 @@ interface EnchantDetailProps {
 const EnchantDetail = ({ selectedItem }: EnchantDetailProps) => {
   return (
     <div className="flex h-full flex-col gap-4">
-      <div className="flex items-center gap-4 rounded-md bg-muted/50 p-2">
+      <div className="flex items-center justify-center gap-4 rounded-md bg-muted/50 p-2">
         <ImageIcon
           className="h-4 w-4 md:h-6 md:w-6"
           imageClassName="rounded-sm"
@@ -23,12 +23,10 @@ const EnchantDetail = ({ selectedItem }: EnchantDetailProps) => {
           )}
           alt={selectedItem?.name.toString()}
         />
-        <div className="flex w-full items-center justify-between gap-1">
-          <div>{selectedItem?.name}</div>
-          <span className="text-xs" aria-label="갱신 시간">
-            {convertToKST(selectedItem?.date_update ?? '')}
-          </span>
-        </div>
+        <div>{selectedItem?.name}</div>
+        <span className="text-xs" aria-label="갱신 시간">
+          {convertToKST(selectedItem?.date_update ?? '')}
+        </span>
       </div>
 
       <div className="flex flex-col justify-center gap-2 overflow-y-auto lg:flex-row">

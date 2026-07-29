@@ -8,7 +8,7 @@ import {
 import { Item_Rating } from '@/app/_type/infoInfoType';
 import { RaidListType } from '@/app/_type/raidType';
 import { extractNumber } from '../get';
-import { enchantEffectOrderMap, raidSortKey } from '@/app/_constant/keyword';
+import { enchantEffectOrderMap } from '@/app/_constant/keyword';
 import {
   EnchantFormatingType,
   EnchantGroup,
@@ -370,18 +370,6 @@ export const mergeEnchantPrice = (
   return Array.from(enchantMap, ([, value]) => ({
     ...value,
   }));
-};
-
-export const raidSort = (raid: RaidListType[]): RaidListType[] => {
-  return [...raid].sort((a, b) => {
-    const indexA = raidSortKey.indexOf(a.raid_name);
-    const indexB = raidSortKey.indexOf(b.raid_name);
-
-    const posA = indexA === -1 ? Infinity : indexA;
-    const posB = indexB === -1 ? Infinity : indexB;
-
-    return posA - posB;
-  });
 };
 
 export const recipeFilter = (

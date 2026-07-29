@@ -22,7 +22,7 @@ const ItemRecipeDetail = ({
 }: ItemRecipeDetailProps) => {
   return (
     <div className="flex h-full flex-col gap-4">
-      <div className="flex items-center gap-4 rounded-md bg-muted/50 p-2">
+      <div className="flex items-center justify-center gap-4 rounded-md bg-muted/50 p-2">
         <Tooltip delayDuration={100}>
           <TooltipTrigger className="text-base text-gray-400">
             <ImageIconUseBorder

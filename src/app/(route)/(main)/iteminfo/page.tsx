@@ -6,6 +6,8 @@ import CheckError from '@/app/_components/common/check-error';
 import { Suspense } from 'react';
 import ItemRecipeTable from '@/app/_features/iteminfo/components/item-recipe-table';
 
+export const revalidate = false;
+
 const Page = async () => {
   const recipes = await getApi<ItemRecipe>(API_PATH.recipe);
 

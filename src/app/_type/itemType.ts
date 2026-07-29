@@ -2,7 +2,7 @@ import { Stat } from './previewType';
 
 type ItemBonus = {
   level: number;
-  effects: { stat_name: string; stat_value: number }[];
+  stat_bonus: { stat_name: string; stat_value: number }[];
 };
 
 type ItemSlot = {

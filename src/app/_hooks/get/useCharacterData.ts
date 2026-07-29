@@ -9,9 +9,12 @@ import { useEffect, useRef } from 'react';
 import { useEnchantStore } from '../../_store/useEnchantStore';
 import { useGrindStore } from '../../_store/useGrindStore';
 import { bagList, getNewTuning } from '../../_utils/preview';
-import { usePreviewAllData } from './usePreviewAllData';
+import { GrindType } from '@/app/_type/itemType';
 
-export const useCharacterData = (characterName?: string) => {
+export const useCharacterData = (
+  grind: GrindType[],
+  characterName?: string
+) => {
   const serachParams = useSearchParams();
   const name = characterName || serachParams.get('name') || '';
   const previousNameRef = useRef(name);
@@ -37,8 +40,6 @@ export const useCharacterData = (characterName?: string) => {
     error: ocidError,
   } = useOcid(name);
 
-  const { grindOption, enchantsBySlot } = usePreviewAllData();
-
   const [stats, equipment] = useQueries({
     queries: [
       {
@@ -49,7 +50,7 @@ export const useCharacterData = (characterName?: string) => {
       {
         queryKey: ['equipment', ocid],
         queryFn: () => getEquipment(ocid),
-        enabled: !!ocid && !!grindOption.data,
+        enabled: !!ocid && !!grind,
         select: (data: Item_equipment) => {
           const rawItems = data?.item_equipment;
 
@@ -59,7 +60,7 @@ export const useCharacterData = (characterName?: string) => {
             rawItems?.filter((i) => i.item_equipment_page === 'Cash') ?? [];
 
           const processedBag = bagList(bagItems).map((item) => {
-            const newTuning = getNewTuning(item, grindOption.data ?? []);
+            const newTuning = getNewTuning(item, grind ?? []);
             return {
               ...item,
               item_option: {
@@ -92,8 +93,6 @@ export const useCharacterData = (characterName?: string) => {
     cach_items,
     isLoading,
     error,
-    grindOption,
     equipment,
-    enchantsBySlot,
   };
 };

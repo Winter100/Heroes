@@ -1,24 +1,28 @@
 'use client';
-import { useGuild, useBasic, usePreviewAllData } from '@/app/_hooks';
+import { useGuild, useBasic } from '@/app/_hooks';
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { mergeProfileData } from '@/app/_utils/convert';
 import Image from 'next/image';
+import { CharacterInfo } from '@/app/_type/characterType';
 
-const CharacterBasicInfo = ({ ocid }: { ocid: string }) => {
+type Props = {
+  ocid: string;
+  character: CharacterInfo[];
+};
+
+const CharacterBasicInfo = ({ ocid, character }: Props) => {
   const { basic, isLoading, error } = useBasic(ocid);
   const { guild, isLoading: guildLoading } = useGuild(ocid);
-  const { character } = usePreviewAllData();
 
   if (isLoading || guildLoading) return <Loading />;
   if (error) return <ErrorApi />;
 
   const mergedProfileData = mergeProfileData(basic, guild);
   const characterImage =
-    character?.data?.find((c) => c.name === basic.character_class_name)
-      ?.image ?? '';
+    character?.find((c) => c.name === basic.character_class_name)?.image ?? '';
   const src =
     characterImage?.length > 1 ? characterImage : '/images/hereta.png';
 

@@ -11,7 +11,6 @@ import {
 import { getApi } from '@/app/api/getIApi';
 import { GrindType, ItemRecipe, ItemSetType } from '@/app/_type/itemType';
 import { RaidListType } from '@/app/_type/raidType';
-import { raidSort } from '@/app/_utils/convert';
 import { CharacterInfo } from '@/app/_type/characterType';
 
 export const usePreviewAllData = () => {
@@ -67,9 +66,6 @@ export const usePreviewAllData = () => {
         queryFn: () => getApi<RaidListType>(API_PATH.raid),
         staleTime: Infinity,
         retry: 2,
-        select: (data: RaidListType[]) => {
-          return raidSort(data);
-        },
       },
       {
         queryKey: [API_PATH.partholn],
@@ -90,7 +86,7 @@ export const usePreviewAllData = () => {
       },
       {
         queryKey: [API_PATH.character],
-        queryFn: () => getApi<CharacterInfo>(API_PATH.character),
+        queryFn: () => getApi<CharacterInfo[]>(API_PATH.character),
         staleTime: Infinity,
         retry: 2,
       },

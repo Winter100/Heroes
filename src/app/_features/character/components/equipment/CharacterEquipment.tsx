@@ -2,29 +2,28 @@
 
 import Loading from '@/app/_components/common/Loading';
 import ErrorApi from '@/app/_components/common/error/ErrorApi';
-import { useUserEquipment, usePreviewAllData } from '@/app/_hooks';
+import { useUserEquipment } from '@/app/_hooks';
 import { EnchantGroupByAffix } from '@/app/_type/enchantType';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import { cn } from '@/lib/utils';
 import EquipmentItemContainer from './equipment-item-container';
 import { ITEM_SLOT } from '@/app/_constant/character/item-slot-name';
+import { GrindType } from '@/app/_type/itemType';
 
 const CharacterEquipment = ({
   ocid,
-  enchants,
+  enchantsBySlot,
   equipment,
+  grind,
   onClick,
 }: {
   ocid: string;
-  enchants: EnchantGroupByAffix;
+  enchantsBySlot: EnchantGroupByAffix;
   equipment: NewEquipmentType | null;
+  grind: GrindType[];
   onClick: (item: NewEquipmentType) => void;
 }) => {
-  const { grindOption } = usePreviewAllData();
-  const { isLoading, error, data } = useUserEquipment(
-    ocid,
-    grindOption.data ?? []
-  );
+  const { isLoading, error, data } = useUserEquipment(ocid, grind ?? []);
 
   if (isLoading) return <Loading />;
   if (error)
@@ -67,7 +66,10 @@ const CharacterEquipment = ({
                 )}
                 onClick={() => onClick(item)}
               >
-                <EquipmentItemContainer item={item} enchants={enchants} />
+                <EquipmentItemContainer
+                  item={item}
+                  enchantsBySlot={enchantsBySlot}
+                />
               </button>
             ) : null}
           </li>

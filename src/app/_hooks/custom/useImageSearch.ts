@@ -1,7 +1,6 @@
 'use client';
 import { FormEvent, useEffect, useState } from 'react';
 import { useCharacterStore } from '../../_store/characterStore';
-import { toast } from 'react-toastify';
 import { imageToName } from '@/app/_utils/get';
 import { useCharacter } from '../get/useCharacter';
 
@@ -30,7 +29,8 @@ export const useImageSearch = () => {
             });
 
             if (image.size >= 51200) {
-              toast.error('50MB가 넘는 이미지는 사용할 수 없습니다.');
+              // toast.error('50MB가 넘는 이미지는 사용할 수 없습니다.');
+              alert('50MB가 넘는 이미지는 사용할 수 없습니다.');
               return;
             }
             const imageUrl = URL.createObjectURL(image);
@@ -44,10 +44,12 @@ export const useImageSearch = () => {
           }
         }
       }
-      toast.error('이미지가 없거나 이미지 형식이 아닙니다.');
+      // toast.error('이미지가 없거나 이미지 형식이 아닙니다.');
+      alert('이미지가 없거나 이미지 형식이 아닙니다.');
     } catch (err) {
       console.error('이미지를 가져오는 데 실패했습니다:', err);
-      toast.error('이미지를 가져오는 데 실패했습니다.');
+      // toast.error('이미지를 가져오는 데 실패했습니다.');
+      alert('이미지를 가져오는 데 실패했습니다.');
     }
   };
 
@@ -66,7 +68,8 @@ export const useImageSearch = () => {
     clear();
 
     if (!characters || characterLength >= 8) {
-      toast.error('캐릭터는 최대 8명까지 등록 가능합니다.');
+      // toast.error('캐릭터는 최대 8명까지 등록 가능합니다.');
+      alert('캐릭터는 최대 8명까지 등록 가능합니다.');
       return;
     }
 

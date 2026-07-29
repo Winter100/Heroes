@@ -75,7 +75,7 @@ const TopNavbar = () => {
                       render={<Link href={nav.url} />}
                       key={nav.url}
                       className={cn(
-                        pathname.includes(nav.url) ? 'text-blue-300' : ''
+                        isActiveRoute(pathname, nav.url) ? 'text-blue-300' : ''
                       )}
                     >
                       {nav.title}
@@ -116,7 +116,7 @@ const TopNavbar = () => {
                           href={nav.url}
                           className={cn(
                             'mx-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors',
-                            pathname.startsWith(nav.url)
+                            isActiveRoute(pathname, nav.url)
                               ? 'bg-primary text-primary-foreground'
                               : 'hover:bg-muted'
                           )}
@@ -137,3 +137,11 @@ const TopNavbar = () => {
 };
 
 export default TopNavbar;
+
+export function isActiveRoute(pathname: string, navUrl: string): boolean {
+  if (navUrl === '/') {
+    return pathname === '/';
+  }
+
+  return pathname === navUrl || pathname.startsWith(`${navUrl}/`);
+}

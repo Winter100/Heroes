@@ -41,8 +41,6 @@ export interface BasicNoticeProps extends ComponentProps<'div'> {
   mainTitle: string;
   items: BasicEventType[];
   itemsPerPage?: number;
-  isLoading: boolean;
-  isError: Error | null;
   eventType: 'basic' | 'event';
 }
 

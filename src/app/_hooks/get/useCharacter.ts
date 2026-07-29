@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useState } from 'react';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { getOcid } from '@/app/_services/getOcid';
 import { getBasic } from '@/app/_services/getBasic';
 import { getStats } from '@/app/_services/getStats';
@@ -45,7 +45,8 @@ export const useCharacter = () => {
 
         selectedHandler(characterName);
       } catch (e) {
-        toast.error('생성된 캐릭터가 없습니다.');
+        // toast.error('생성된 캐릭터가 없습니다.');
+        alert('생성된 캐릭터가 없습니다.');
         if (e instanceof Error) {
           console.error('e', e);
         } else {

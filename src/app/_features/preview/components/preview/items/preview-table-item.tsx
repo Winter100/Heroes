@@ -14,6 +14,25 @@ import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorde
 import { EnchantOptionType } from '@/app/_type/enchantType';
 import ItemEquipmentContainer from '@/app/_components/item/item-equipment-container';
 import { getTooltipImageSrc } from '@/app/_utils/get';
+import { GrindType, ItemSetType } from '@/app/_type/itemType';
+
+type Props = {
+  item: EquipmentType;
+  prefix: EnchantOptionType[];
+  suffix: EnchantOptionType[];
+  infusion: EnchantOptionType[];
+  grind: GrindType[];
+  itemSetOption: ItemSetType[];
+  ocid: string;
+  enchantsBySlot: Map<
+    string,
+    {
+      prefix: EnchantOptionType[];
+      suffix: EnchantOptionType[];
+      infusion: EnchantOptionType[];
+    }
+  >;
+};
 
 const PreviewTableItem = memo(
   ({
@@ -21,12 +40,11 @@ const PreviewTableItem = memo(
     prefix = [],
     suffix = [],
     infusion = [],
-  }: {
-    item: EquipmentType;
-    prefix: EnchantOptionType[];
-    suffix: EnchantOptionType[];
-    infusion: EnchantOptionType[];
-  }) => {
+    grind,
+    itemSetOption,
+    ocid,
+    enchantsBySlot,
+  }: Props) => {
     const {
       used_infusion_name,
       used_prefix_enchant_name,
@@ -67,6 +85,10 @@ const PreviewTableItem = memo(
                 item={item as NewEquipmentType}
                 isIncreaseView={true}
                 isViewBtn={false}
+                enchantsBySlot={enchantsBySlot}
+                grind={grind}
+                itemSetOption={itemSetOption}
+                ocid={ocid}
               />
             </PopoverContent>
           </Popover>
@@ -77,6 +99,7 @@ const PreviewTableItem = memo(
           <div className="w-full text-blue-300">
             {infusion?.length >= 1 && (
               <PreviewEnchantModal
+                ocid={ocid}
                 itemName={item.item_name}
                 enchants={infusion}
                 affix="infusion"
@@ -92,6 +115,7 @@ const PreviewTableItem = memo(
           <div className="w-full text-blue-300">
             {prefix?.length >= 1 && (
               <PreviewEnchantModal
+                ocid={ocid}
                 itemName={item.item_name}
                 enchants={prefix}
                 affix="prefix"
@@ -107,6 +131,7 @@ const PreviewTableItem = memo(
           <div className="w-full text-blue-300">
             {suffix?.length >= 1 && (
               <PreviewEnchantModal
+                ocid={ocid}
                 itemName={item.item_name}
                 enchants={suffix}
                 affix="suffix"

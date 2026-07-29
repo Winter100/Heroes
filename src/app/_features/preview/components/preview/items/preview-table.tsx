@@ -12,10 +12,39 @@ import GrindingSummaryContainer from '../../menubar/grinding/grinding-summary-co
 import ChartContainer from '../../menubar/chart/chart-container';
 import { useCharacterData } from '@/app/_hooks';
 import RaidSelectorAndPreviewStatsContainer from '@/app/_components/common/enchant/raid-selector-and-preview-stats-container';
+import { EnchantOptionType } from '@/app/_type/enchantType';
+import { EnchantOptionSort, enchantsByGroupSlot } from '@/app/_utils/enchant';
+import { GrindType, ItemSetType } from '@/app/_type/itemType';
+import {
+  enchantEffectOrderMap,
+  infusionEffectOrderMap,
+} from '@/app/_constant/keyword';
+import { RaidListType } from '@/app/_type/raidType';
 
-const PreviewTable = () => {
-  const { name, ocid, error, isLoading, equipment, enchantsBySlot } =
-    useCharacterData();
+type Props = {
+  enchants: EnchantOptionType[];
+  infusion: EnchantOptionType[];
+  grind: GrindType[];
+  itemSetOption: ItemSetType[];
+  raid: RaidListType[];
+};
+const PreviewTable = ({
+  enchants = [],
+  infusion = [],
+  grind = [],
+  itemSetOption = [],
+  raid = [],
+}: Props) => {
+  const { name, ocid, error, isLoading, equipment } = useCharacterData(grind);
+
+  const enchantsBySlot = enchantsByGroupSlot({
+    enchantOptions: EnchantOptionSort(
+      enchants,
+      enchantEffectOrderMap,
+      'enchant'
+    ),
+    infusions: EnchantOptionSort(infusion, infusionEffectOrderMap, 'infusion'),
+  });
 
   if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요" />;
   if (isLoading) return <Loading />;
@@ -34,14 +63,15 @@ const PreviewTable = () => {
     <div className="flex flex-1 flex-col gap-2">
       {/* 각종 메뉴 리스트 */}
       <Row className="w-full items-center justify-end gap-2 text-xs">
-        <TourRaidTableContainer ocid={ocid ?? ''} />
+        <TourRaidTableContainer ocid={ocid ?? ''} raid={raid} />
         <PreviewStatsSummaryContainer ocid={ocid ?? ''} />
         <PartholnContainer />
         <GrindingSummaryContainer
           items={equipment.data?.items ?? []}
           ocid={ocid ?? ''}
+          raid={raid}
         />
-        <ChartContainer ocid={ocid ?? ''} />
+        <ChartContainer ocid={ocid ?? ''} raid={raid} />
       </Row>
 
       <div className="flex flex-col gap-2 rounded-md bg-zinc-900 p-2">
@@ -51,11 +81,14 @@ const PreviewTable = () => {
           <PreviewTableBody
             items={equipment.data?.items ?? []}
             enchantsBySlot={enchantsBySlot}
+            grind={grind}
+            itemSetOption={itemSetOption}
+            ocid={ocid ?? ''}
           />
         </Column>
 
         <div className="rounded-md">
-          <RaidSelectorAndPreviewStatsContainer ocid={ocid ?? ''} />
+          <RaidSelectorAndPreviewStatsContainer ocid={ocid ?? ''} raid={raid} />
         </div>
       </div>
     </div>

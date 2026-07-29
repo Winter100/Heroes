@@ -58,11 +58,18 @@ const RaidInfoTable = ({ raid }: RaidInfoTableProps) => {
                   </div>
                 </TableCell>
                 <TableCell className="text-center">{monster.level}</TableCell>
-                {monster.clear?.map((clear) => (
-                  <TableCell key={clear.name} className="text-center">
-                    {Number(clear.value)?.toLocaleString()}
-                  </TableCell>
-                ))}
+                {monster.clear
+                  ?.sort((a, b) => {
+                    const priorityA = PRIORITY_MAP[a.name] ?? 999;
+                    const priorityB = PRIORITY_MAP[b.name] ?? 999;
+
+                    return priorityA - priorityB;
+                  })
+                  .map((clear) => (
+                    <TableCell key={clear.name} className="text-center">
+                      {Number(clear.value)?.toLocaleString()}
+                    </TableCell>
+                  ))}
               </TableRow>
             );
           });
@@ -73,3 +80,9 @@ const RaidInfoTable = ({ raid }: RaidInfoTableProps) => {
 };
 
 export default RaidInfoTable;
+
+const PRIORITY_MAP: Record<string, number> = {
+  골드: 1,
+  경험치: 2,
+  AP: 3,
+};

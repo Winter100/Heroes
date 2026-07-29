@@ -6,27 +6,52 @@ import ItemUsedAffix from './item-used-affix';
 import { getItemInfoOptions } from '@/app/_utils/get/getItemInfoOptions';
 import EnchantEffects from '../common/enchant/EnchantEffects';
 import EnchantSubTitle from '../common/enchant/EnchantSubTitle';
-import { usePreviewAllData } from '@/app/_hooks';
 import Row from '../layout/Row';
 import ImageIconUseBorder from '../common/image/ImageIconUseBorder';
 import Column from '../layout/Column';
-// import Item from '../common/item/Item';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 import ItemTitle from './item-title';
 import Item from '../common/item/Item';
+import { EnchantGroupByAffix } from '@/app/_type/enchantType';
+import { GrindType, ItemSetType } from '@/app/_type/itemType';
+import ItemSetOptionBox from './item-setoption-box';
+import { useUserEquipment } from '@/app/_hooks';
+import Loading from '../common/Loading';
+import ErrorApi from '../common/error/ErrorApi';
+
+type Props = {
+  item: NewEquipmentType | null;
+  ocid: string;
+  grind: GrindType[];
+  isViewBtn?: boolean;
+  isIncreaseView?: boolean;
+  enchantsBySlot: EnchantGroupByAffix;
+  itemSetOption: ItemSetType[];
+};
 
 const ItemEquipmentContainer = ({
   item,
   isViewBtn = false,
   isIncreaseView = false,
-}: {
-  item: NewEquipmentType | null;
-  isViewBtn?: boolean;
-  isIncreaseView?: boolean;
-}) => {
-  const { enchantsBySlot } = usePreviewAllData();
+  enchantsBySlot,
+  itemSetOption,
+  grind,
+  ocid,
+}: Props) => {
   const simulations = useEnchantStore((state) => state.simulations);
+  const { isLoading, error, data } = useUserEquipment(ocid, grind);
+
+  if (isLoading) return <Loading />;
+  if (error)
+    return (
+      <div className="flex h-full items-center justify-center">
+        <ErrorApi />
+      </div>
+    );
+
+  const bagItems =
+    data?.item_equipment?.filter((i) => i.item_equipment_page === 'Bag') ?? [];
   if (!item) return <div>아이템 정보가 없습니다</div>;
 
   const {
@@ -186,6 +211,14 @@ const ItemEquipmentContainer = ({
             </div>
           </>
         )}
+
+      <div>
+        <ItemSetOptionBox
+          item={item}
+          itemSetOption={itemSetOption}
+          bagItems={bagItems}
+        />
+      </div>
     </div>
   );
 };

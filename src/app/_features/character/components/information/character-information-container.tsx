@@ -3,27 +3,50 @@ import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import { NewEquipmentType } from '@/app/_type/equipmentType';
 import ErrorDisplay from '@/app/_components/common/error/ErrorDisplay';
 import { useSearchParams } from 'next/navigation';
-import { useOcid, usePreviewAllData } from '@/app/_hooks';
-import { useEffect, useState } from 'react';
+import { useOcid } from '@/app/_hooks';
+import { useEffect, useMemo, useState } from 'react';
 import Loading from '@/app/_components/common/Loading';
 import CharacterStats from '../stats/CharacterStats';
 import ItemEquipmentContainer from '@/app/_components/item/item-equipment-container';
 import SkillAwakeningTable from '../skills/SkillAwakeningTable';
 import CharacterBasicInfo from './CharacterBasicInfo';
 import CharacterEquipment from '../equipment/CharacterEquipment';
+import { GrindType, ItemSetType } from '@/app/_type/itemType';
+import { EnchantOptionType } from '@/app/_type/enchantType';
+import { CharacterInfo } from '@/app/_type/characterType';
+import { enchantsByGroupSlot } from '@/app/_utils/enchant';
 
-const CharacterInformationContainer = () => {
+type Props = {
+  enchants: EnchantOptionType[];
+  infusion: EnchantOptionType[];
+  itemSetOption: ItemSetType[];
+  grind: GrindType[];
+  character: CharacterInfo[];
+};
+const CharacterInformationContainer = ({
+  enchants,
+  infusion,
+  itemSetOption,
+  grind,
+  character,
+}: Props) => {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') ?? '';
   const { data: ocid, isLoading, error } = useOcid(name);
-  const { enchantsBySlot } = usePreviewAllData();
   const [equipment, setEquipment] = useState<NewEquipmentType | null>(null);
 
   useEffect(() => {
     setEquipment(null);
   }, [name]);
 
-  if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요." />;
+  const enchantsBySlot = useMemo(() => {
+    return enchantsByGroupSlot({
+      enchantOptions: enchants,
+      infusions: infusion,
+    });
+  }, [enchants, infusion]);
+
+  if (!name) return <ErrorDisplay content="캐릭터 이름을 입력해주세요" />;
   if (isLoading) return <Loading />;
   if (error || !ocid) {
     return (
@@ -53,7 +76,7 @@ const CharacterInformationContainer = () => {
             <div className="flex h-full w-full flex-col gap-2">
               {/* 캐릭터 정보 */}
               <RoundedContainer className="flex min-h-40 flex-col gap-2 bg-muted/50">
-                <CharacterBasicInfo ocid={ocid} />
+                <CharacterBasicInfo ocid={ocid} character={character} />
               </RoundedContainer>
               <RoundedContainer className="flex max-h-[400px] min-h-[300px] flex-1 flex-col gap-2 bg-muted/50">
                 <CharacterStats ocid={ocid} />
@@ -67,18 +90,23 @@ const CharacterInformationContainer = () => {
                   item={equipment}
                   isIncreaseView={false}
                   isViewBtn={false}
+                  enchantsBySlot={enchantsBySlot}
+                  itemSetOption={itemSetOption}
+                  ocid={ocid}
+                  grind={grind}
                 />
               </RoundedContainer>
             </>
           )}
         </div>
         <div className="flex-1">
-          {/* 아이템 정보 리스트 */}
+          {/* 모든 아이템 정보 */}
           <RoundedContainer className="h-full bg-muted/50 p-0">
             <CharacterEquipment
               ocid={ocid}
-              enchants={enchantsBySlot}
+              enchantsBySlot={enchantsBySlot}
               equipment={equipment}
+              grind={grind}
               onClick={handleClick}
             />
           </RoundedContainer>

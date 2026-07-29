@@ -67,6 +67,7 @@ export const API_PATH = {
   raid: `/raids/table`,
   partholn: `/partholn`,
   character: `/characters/image`,
+  notice: '/notice',
 };
 
 export const initialTitleList = [
@@ -154,17 +155,6 @@ const INFUSIONS_SORT_DATA = [
   '크리티컬 2',
   '크리티컬 3',
   '공격속도 1',
-];
-
-export const raidSortKey = [
-  '아르드리',
-  '오르나',
-  '와드네',
-  '에리우',
-  '스페셜 전투',
-  '시공간 왜곡',
-  '결사대',
-  '결사대 [헬]',
 ];
 
 export const enchantEffectOrderMap = new Map(

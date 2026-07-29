@@ -6,6 +6,8 @@ import { getApi } from '@/app/api/getIApi';
 import { RaidListType } from '@/app/_type/raidType';
 import RaidInfoDetail from '@/app/_features/raidinfo/components/raid-info-detail';
 
+export const revalidate = false;
+
 type Props = {
   params: Promise<{ battle: string }>;
 };

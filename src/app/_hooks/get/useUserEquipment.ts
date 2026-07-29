@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import { getEquipment } from '../../_services/getEquipment';
 import { bagList, getNewTuning } from '../../_utils/preview';
 import { GrindType } from '@/app/_type/itemType';
-
 /**
  * 리액트쿼리를 이용, 유저의 OCID로 장착 장비 및 캐쉬 장비를 조회합니다.
  *
@@ -14,11 +13,12 @@ import { GrindType } from '@/app/_type/itemType';
  * @returns 유저의 장착 장비 및 캐쉬 장비 (연마 포함)
  */
 
-export const useUserEquipment = (ocid: string, grind: GrindType[]) => {
+export const useUserEquipment = (ocid: string, grind?: GrindType[]) => {
   return useQuery<Item_equipment, Error>({
     enabled: !!ocid && !!grind,
-    queryKey: [ocid, 'equipment'],
+    queryKey: ['equipment', ocid],
     queryFn: () => getEquipment(ocid ?? ''),
+    staleTime: Infinity,
     select: (data) => {
       const rawItems = data?.item_equipment;
 

@@ -6,7 +6,6 @@ import { useMemo, useState } from 'react';
 import { useCategory } from '@/app/_hooks/custom/useCategory';
 import { getRaidCategoryMap } from '@/app/_utils/enchant';
 import ItemInfoTableCategory from '../iteminfo/components/item-info-table-category';
-import { raidSort } from '@/app/_utils/convert';
 type Props = {
   raid: RaidListType[];
 };
@@ -23,7 +22,7 @@ const RaidInfoContainer = ({ raid }: Props) => {
   } = useCategory('/raidinfo');
 
   const sortRaid = useMemo(() => {
-    return raidSort(raid).filter((r) => r.raid_name !== '미분류');
+    return raid.filter((r) => r.raid_name !== '미분류');
   }, [raid]);
 
   const RAID_CATEGORY_MAP = getRaidCategoryMap(sortRaid);
