@@ -8,7 +8,9 @@ import { getApi } from '@/app/api/getIApi';
 import { Suspense } from 'react';
 
 const Page = async () => {
-  const data = await getApi<RaidListType>(API_PATH.raid);
+  const data = await getApi<RaidListType>(API_PATH.raid, {
+    next: { tags: [API_PATH.raid] },
+  });
   data.sort(
     (a, b) => (a.monsters[0]?.level ?? 0) - (b.monsters[0]?.level ?? 0)
   );

@@ -3,7 +3,7 @@ import GoogleAdSenseFixed from './GoogleAdSenseFixed';
 
 const AutoResponsiveAd = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex max-h-[110px] justify-center">
       <div className="block md:hidden">
         <GoogleAdSenseFixed
           pid={process.env.NEXT_PUBLIC_GOOGLE_CID || ''}

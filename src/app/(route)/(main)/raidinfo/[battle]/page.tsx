@@ -13,7 +13,9 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const raidList = await getApi<RaidListType>(API_PATH.raid);
+  const raidList = await getApi<RaidListType>(API_PATH.raid, {
+    next: { tags: [API_PATH.raid] },
+  });
   const battleList = [
     ...new Set(raidList.flatMap((raid) => raid.monsters.map((r) => r.battle))),
   ];
@@ -35,7 +37,9 @@ export async function generateMetadata({ params }: Props) {
 }
 
 const Page = async ({ params }: Props) => {
-  const raidList = await getApi<RaidListType>(API_PATH.raid);
+  const raidList = await getApi<RaidListType>(API_PATH.raid, {
+    next: { tags: [API_PATH.raid] },
+  });
   const { battle } = await params;
   const decodeName = decodeURIComponent(battle);
 
