@@ -9,7 +9,9 @@ import { Suspense } from 'react';
 export const revalidate = false;
 
 const Page = async () => {
-  const raidData = await getApi<RaidListType>(API_PATH.raid);
+  const raidData = await getApi<RaidListType>(API_PATH.raid, {
+    next: { tags: [API_PATH.raid] },
+  });
   const content =
     raidData.length === 0 ? (
       <CheckError />

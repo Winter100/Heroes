@@ -15,13 +15,19 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
   await Promise.all([
     queryClient.prefetchQuery({
       queryKey: [API_PATH.partholn],
-      queryFn: () => getApi<EnchantOptionType>(API_PATH.partholn),
+      queryFn: () =>
+        getApi<EnchantOptionType>(API_PATH.partholn, {
+          next: { tags: [API_PATH.partholn] },
+        }),
       staleTime: Infinity,
     }),
     ,
     queryClient.prefetchQuery({
       queryKey: [API_PATH.raid],
-      queryFn: () => getApi<RaidListType>(API_PATH.raid),
+      queryFn: () =>
+        getApi<RaidListType>(API_PATH.raid, {
+          next: { tags: [API_PATH.raid] },
+        }),
       staleTime: Infinity,
     }),
   ]);

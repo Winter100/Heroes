@@ -4,18 +4,22 @@ import ItemEnchantTableServer from '@/app/_features/market/components/item-encha
 import EnchantFilterList, {
   MergedEnchantType,
 } from '@/app/_features/market/enchant-fiter-list';
-import { getEnchantPrice } from '@/app/_services/getEnchantPrice';
-import { EnchantOptionType } from '@/app/_type/enchantType';
+import {
+  EnchantFormatingType,
+  EnchantOptionType,
+} from '@/app/_type/enchantType';
 import { convertPriceMap, mergeEnchantPriceServer } from '@/app/_utils/convert';
 import { getApi } from '@/app/api/getIApi';
 import { Suspense } from 'react';
 
-export const revalidate = 3600;
-
 const Page = async () => {
   const [enchants, enchantPrice] = await Promise.all([
-    getApi<EnchantOptionType>(API_PATH.enchant),
-    getEnchantPrice(),
+    getApi<EnchantOptionType>(API_PATH.enchant, {
+      next: { tags: [API_PATH.enchant] },
+    }),
+    getApi<EnchantFormatingType>(API_PATH.enchantPrice, {
+      next: { revalidate: 7200 },
+    }),
   ]);
   const enchantPriceMap = convertPriceMap(enchantPrice);
 

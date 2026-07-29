@@ -9,7 +9,9 @@ import ItemRecipeTable from '@/app/_features/iteminfo/components/item-recipe-tab
 export const revalidate = false;
 
 const Page = async () => {
-  const recipes = await getApi<ItemRecipe>(API_PATH.recipe);
+  const recipes = await getApi<ItemRecipe>(API_PATH.recipe, {
+    next: { tags: [API_PATH.recipe] },
+  });
 
   const content =
     recipes.length === 0 ? (

@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: `${keyword.project.name} - 인챈트 정보`,
-  description: '마비노기 영웅전(마영전)의 인챈트 정보 및 거래가를 제공합니다.',
+  description: '마비노기 영웅전의 인챈트 효과 및 거래가를 제공합니다.',
 };
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {

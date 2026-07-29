@@ -13,7 +13,9 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const recipes = await getApi<ItemRecipe>(API_PATH.recipe);
+  const recipes = await getApi<ItemRecipe>(API_PATH.recipe, {
+    next: { tags: [API_PATH.recipe] },
+  });
 
   return recipes.map((recipe) => ({
     item: recipe.name,
@@ -27,12 +29,14 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: `${keyword.project.name} ${decodeName}`,
-    description: `${decodeName} 제작 재료 및 정보를 확인할 수 있습니다.`,
+    description: `${decodeName} 제작 재료 및 승급 재료와 능력치 정보를 제공합니다.`,
   };
 }
 
 const Page = async ({ params }: Props) => {
-  const recipes = await getApi<ItemRecipe>(API_PATH.recipe);
+  const recipes = await getApi<ItemRecipe>(API_PATH.recipe, {
+    next: { tags: [API_PATH.recipe] },
+  });
   const { item } = await params;
   const decodeName = decodeURIComponent(item);
 

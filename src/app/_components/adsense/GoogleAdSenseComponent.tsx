@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 type GoogleAdSenseComponentTypes = {
   pid: string;
@@ -14,19 +14,27 @@ const GoogleAdSenseComponent = ({
   width = '160px',
   height = '600px',
 }: GoogleAdSenseComponentTypes) => {
+  const insRef = useRef<HTMLModElement>(null);
+
   useEffect(() => {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-        {}
-      );
-    } catch (e: any) {
-      console.error(e.message);
+    if (
+      insRef.current &&
+      !insRef.current.hasAttribute('data-adsbygoogle-status')
+    ) {
+      try {
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+          {}
+        );
+      } catch (e: any) {
+        console.error('AdSense Error:', e.message);
+      }
     }
   }, []);
 
   return (
     <ins
+      ref={insRef}
       className="adsbygoogle"
       style={{
         display: 'block',

@@ -20,7 +20,6 @@ const TourRaidTableContainer = ({
   raid: RaidListType[];
 }) => {
   const [type, setType] = useState<RaidType>('빠른전투');
-  // const { raid } = usePreviewAllData();
   const { finalStatsArray } = useSimulationStats(ocid);
   const raidList = filterRaidList(raid ?? [], type);
   const userStats = previewStatsFilter(finalStatsArray ?? []);

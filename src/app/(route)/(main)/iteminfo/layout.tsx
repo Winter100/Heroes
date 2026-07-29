@@ -5,7 +5,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: `${keyword.project.name} - 아이템 정보`,
-  description: '마영전의 아이템 정보를 제공 합니다.',
+  description:
+    '마비노기 영웅전 아이템의 승급, 제작 재료와 함께 능력치 정보를 확인하세요.',
 };
 
 const layout = async ({ children }: { children: React.ReactNode }) => {

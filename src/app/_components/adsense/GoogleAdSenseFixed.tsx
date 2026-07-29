@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Props {
   pid: string;
@@ -10,24 +10,30 @@ interface Props {
 }
 
 const GoogleAdSenseFixed = ({ pid, dataSlot, width, height }: Props) => {
+  const insRef = useRef<HTMLModElement>(null);
+
   useEffect(() => {
-    try {
-      /* eslint-disable @typescript-eslint/no-explicit-any */
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-        {}
-      );
-    } catch (e: any) {
-      console.error(e.message);
+    if (
+      insRef.current &&
+      !insRef.current.hasAttribute('data-adsbygoogle-status')
+    ) {
+      try {
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+          {}
+        );
+      } catch (e: any) {
+        console.error('AdSense Error:', e.message);
+      }
     }
   }, []);
 
   return (
     <ins
+      ref={insRef}
       className="adsbygoogle"
       style={{
         display: 'inline-block',
-        // maxWidth: '720px',
-        // margin: '0 auto',
         width,
         height,
       }}

@@ -10,9 +10,11 @@ export const revalidate = false;
 const baseUrl = 'https://www.heroes-dev.com';
 export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const results = await Promise.allSettled([
-    getApi<RaidListType>(API_PATH.raid),
-    getApi<EnchantOptionType>(API_PATH.enchant),
-    getApi<ItemRecipe>(API_PATH.recipe),
+    getApi<RaidListType>(API_PATH.raid, { next: { tags: [API_PATH.raid] } }),
+    getApi<EnchantOptionType>(API_PATH.enchant, {
+      next: { tags: [API_PATH.enchant] },
+    }),
+    getApi<ItemRecipe>(API_PATH.recipe, { next: { tags: [API_PATH.recipe] } }),
   ]);
 
   const [raid, enchant, recipe] = results.map((r) =>
@@ -25,20 +27,20 @@ export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
   const recipeUrls: MetadataRoute.Sitemap = recipe.map((item) => ({
     url: `${baseUrl}/iteminfo/${encodeURIComponent(item.name)}`,
-    lastModified: new Date(),
+    // lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
   const raidUrls: MetadataRoute.Sitemap = flatRaid.map((raid) => ({
     url: `${baseUrl}/raidinfo/${encodeURIComponent(raid.battle)}`,
-    lastModified: new Date(),
+    // lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   const enchantUrls: MetadataRoute.Sitemap = enchant.map((enchant) => ({
     url: `${baseUrl}/market/enchant/${encodeURIComponent(enchant.name)}`,
-    lastModified: new Date(),
+    // lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
@@ -46,7 +48,7 @@ export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   return [
     {
       url: `${baseUrl}`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'hourly',
       priority: 1,
     },
@@ -55,44 +57,44 @@ export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
     ...enchantUrls,
     {
       url: `${baseUrl}/iteminfo`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/raidinfo`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/market/enchant`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'hourly',
       priority: 0.7,
     },
 
     {
       url: `${baseUrl}/preview`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/character`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/raid`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.4,
     },
     {
       url: `${baseUrl}/gold`,
-      lastModified: new Date(),
+      // lastModified: new Date(),
       changeFrequency: 'hourly',
       priority: 0.3,
     },

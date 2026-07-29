@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     '마영전 인챈트',
   ],
   description:
-    '마비노기 영웅전(마영전) 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
+    '마비노기 영웅전 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
   verification: {
     google: 'NWuO_jx2ujHe0lQeiHDEolhbhews2UnrQccL0yPX4RY',
     other: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: keyword.project.name,
     siteName: keyword.project.name,
     description:
-      '마비노기 영웅전(마영전)의 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
+      '마비노기 영웅전의 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
     type: 'website',
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     title: keyword.project.name,
     description:
-      '마비노기 영웅전(마영전)의 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
+      '마비노기 영웅전의 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
     images: [
       {
         url: '/bg.jpg',
