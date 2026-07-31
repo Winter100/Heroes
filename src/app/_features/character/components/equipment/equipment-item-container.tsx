@@ -79,7 +79,7 @@ const EquipmentItemContainer = ({
         <Item.Border />
         {/* 연마 수치 */}
         {item.item_option?.tuning_stat.length > 0 && (
-          <div className="flex flex-col gap-y-1 text-[11px] md:gap-y-0">
+          <div className="flex flex-col gap-y-1 text-xs md:gap-y-0">
             {item.item_option?.tuning_stat.map((t) => (
               <div
                 key={t.stat_name + t.stat_value}

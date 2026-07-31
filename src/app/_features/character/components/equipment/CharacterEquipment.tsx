@@ -25,10 +25,15 @@ const CharacterEquipment = ({
 }) => {
   const { isLoading, error, data } = useUserEquipment(ocid, grind ?? []);
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <div className="flex h-60 items-center justify-center">
+        <Loading />
+      </div>
+    );
   if (error)
     return (
-      <div className="flex h-full items-center justify-center">
+      <div className="flex h-60 items-center justify-center">
         <ErrorApi />
       </div>
     );
