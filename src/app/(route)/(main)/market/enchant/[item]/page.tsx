@@ -5,6 +5,7 @@ import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe
 import { EnchantOptionType } from '@/app/_type/enchantType';
 import { getApi } from '@/app/api/getIApi';
 import EnchantDetail from '@/app/_features/market/components/enchant-detail';
+import AdBanner from '@/app/_components/adsense/AdBanner';
 
 type Props = {
   params: Promise<{ item: string }>;
@@ -50,6 +51,7 @@ const Page = async ({ params }: Props) => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:px-6">
+      <AdBanner />
       <RoundedContainer className="h-14 bg-muted/50 px-4 font-semibold">
         <ItemRecipeTableBack />
       </RoundedContainer>

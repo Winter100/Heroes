@@ -1,4 +1,4 @@
-import AutoResponsiveAd from '@/app/_components/adsense/AutoResponsiveAd';
+import AdBanner from '@/app/_components/adsense/AdBanner';
 import SideAd from '@/app/_components/adsense/SideAd';
 import { API_PATH } from '@/app/_constant/keyword';
 import HomeMainContent from '@/app/_features/home/components/HomeMainContent';
@@ -31,7 +31,7 @@ const Home = async () => {
           eventNotice={notice?.eventNotice ?? { event_notice: [] }}
           patchNotice={notice?.patchNotice ?? { patch_notice: [] }}
         />
-        <AutoResponsiveAd />
+        <AdBanner />
       </div>
       <SideAd dataSlot="1601053361" position="right" />
     </>

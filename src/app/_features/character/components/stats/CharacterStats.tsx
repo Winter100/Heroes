@@ -6,7 +6,12 @@ import { useUserStat } from '@/app/_hooks';
 const CharacterStats = ({ ocid }: { ocid: string }) => {
   const { data, isLoading, error } = useUserStat(ocid);
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <div className="flex flex-1 items-center justify-center">
+        <Loading />
+      </div>
+    );
   if (error) return <ErrorApi />;
 
   return (
