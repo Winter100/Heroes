@@ -5,6 +5,7 @@ import CheckError from '@/app/_components/common/check-error';
 import { getApi } from '@/app/api/getIApi';
 import { RaidListType } from '@/app/_type/raidType';
 import RaidInfoDetail from '@/app/_features/raidinfo/components/raid-info-detail';
+import AdBanner from '@/app/_components/adsense/AdBanner';
 
 export const revalidate = false;
 
@@ -61,6 +62,7 @@ const Page = async ({ params }: Props) => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:px-6">
+      <AdBanner />
       <RoundedContainer className="h-14 bg-muted/50 px-4 font-semibold">
         <ItemRecipeTableBack />
       </RoundedContainer>

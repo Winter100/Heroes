@@ -70,11 +70,11 @@ const CharacterInformationContainer = ({
 
   return (
     <div className="flex flex-1 flex-col gap-2">
-      <div className="flex flex-1 flex-col gap-2 md:flex-row md:px-0">
+      <div className="flex h-full flex-1 flex-col gap-2 md:flex-row md:items-start md:px-0">
+        {/* 왼쪽 영역 (캐릭터 정보 or 선택 아이템 정보) */}
         <div className="flex flex-1 flex-col gap-2 md:max-w-[370px]">
           {!equipment ? (
             <div className="flex h-full w-full flex-col gap-2">
-              {/* 캐릭터 정보 */}
               <RoundedContainer className="flex min-h-40 flex-col gap-2 bg-muted/50">
                 <CharacterBasicInfo ocid={ocid} character={character} />
               </RoundedContainer>
@@ -84,7 +84,6 @@ const CharacterInformationContainer = ({
             </div>
           ) : (
             <>
-              {/* 선택한 아이템 정보 */}
               <RoundedContainer className="bg-muted/50 text-xs">
                 <ItemEquipmentContainer
                   item={equipment}
@@ -99,8 +98,9 @@ const CharacterInformationContainer = ({
             </>
           )}
         </div>
-        <div className="flex-1">
-          {/* 모든 아이템 정보 */}
+
+        {/* 오른쪽 영역 (모든 아이템 정보) */}
+        <div className="flex-1 md:sticky md:top-4">
           <RoundedContainer className="h-full bg-muted/50 p-0">
             <CharacterEquipment
               ocid={ocid}
@@ -112,6 +112,7 @@ const CharacterInformationContainer = ({
           </RoundedContainer>
         </div>
       </div>
+
       <div className="flex w-full flex-1 flex-col items-center justify-center rounded-md bg-muted/50 px-6 md:px-0">
         <SkillAwakeningTable ocid={ocid} />
       </div>

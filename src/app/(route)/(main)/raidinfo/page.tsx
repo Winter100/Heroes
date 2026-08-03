@@ -1,3 +1,4 @@
+import AdBanner from '@/app/_components/adsense/AdBanner';
 import CheckError from '@/app/_components/common/check-error';
 import { API_PATH } from '@/app/_constant/keyword';
 import RaidInfoTable from '@/app/_features/raidinfo/components/raid-info-table';
@@ -20,6 +21,7 @@ const Page = async () => {
     );
   return (
     <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+      <AdBanner />
       <Suspense fallback={<RaidInfoTable raid={raidData} />}>
         {content}
       </Suspense>

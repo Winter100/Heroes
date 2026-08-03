@@ -17,7 +17,12 @@ const CharacterBasicInfo = ({ ocid, character }: Props) => {
   const { basic, isLoading, error } = useBasic(ocid);
   const { guild, isLoading: guildLoading } = useGuild(ocid);
 
-  if (isLoading || guildLoading) return <Loading />;
+  if (isLoading || guildLoading)
+    return (
+      <div className="flex flex-1 items-center justify-center">
+        <Loading />
+      </div>
+    );
   if (error) return <ErrorApi />;
 
   const mergedProfileData = mergeProfileData(basic, guild);
