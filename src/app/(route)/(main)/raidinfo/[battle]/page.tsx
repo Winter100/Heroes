@@ -7,7 +7,7 @@ import { RaidListType } from '@/app/_type/raidType';
 import RaidInfoDetail from '@/app/_features/raidinfo/components/raid-info-detail';
 import AdBanner from '@/app/_components/adsense/AdBanner';
 
-export const revalidate = false;
+export const dynamic = 'force-static';
 
 type Props = {
   params: Promise<{ battle: string }>;

@@ -7,19 +7,15 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { LiaQuestionCircle } from 'react-icons/lia';
-import { ItemRecipe } from '@/app/_type/itemType';
+import { ItemRecipes } from '@/app/_type/itemType';
 import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
 import { IoMdArrowForward } from 'react-icons/io';
 import SuspenseContainer from './suspense-container';
 
 interface ItemRecipeDetailProps {
-  selectedItem: ItemRecipe;
-  isMaterial: (item: string) => boolean;
+  selectedItem: ItemRecipes;
 }
-const ItemRecipeDetail = ({
-  selectedItem,
-  isMaterial,
-}: ItemRecipeDetailProps) => {
+const ItemRecipeDetail = ({ selectedItem }: ItemRecipeDetailProps) => {
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="flex items-center justify-center gap-4 rounded-md bg-muted/50 p-2">
@@ -92,9 +88,9 @@ const ItemRecipeDetail = ({
                       )}
                     </ItemTitle>
                     <div>
-                      {isMaterial(material.name) && (
+                      {material.hasRecipe && (
                         <SuspenseContainer
-                          link={material.name}
+                          link={`${material.materialId}-${material.name}`}
                           path="/iteminfo"
                         >
                           <ItemTag>제작 정보</ItemTag>

@@ -1,7 +1,7 @@
 import ImageIconUseBorder from '@/app/_components/common/image/ImageIconUseBorder';
 import ItemTitle from '@/app/_components/item/item-title';
 import ItemTooltipItem from '@/app/_components/item/item-tooltip-item';
-import { ItemRecipe } from '@/app/_type/itemType';
+import { ItemRecipes } from '@/app/_type/itemType';
 import {
   Table,
   TableBody,
@@ -19,7 +19,7 @@ import {
 import SuspenseContainer from './suspense-container';
 
 type Props = {
-  recipes: ItemRecipe[];
+  recipes: ItemRecipes[];
 };
 const ItemRecipeTable = ({ recipes }: Props) => {
   return (
@@ -44,7 +44,7 @@ const ItemRecipeTable = ({ recipes }: Props) => {
             <TableCell className="text-center font-medium">
               <SuspenseContainer
                 className="absolute inset-0"
-                link={item.name}
+                link={`${item.id}-${item.name}`}
                 path={`/iteminfo`}
               >
                 {null}
@@ -74,7 +74,7 @@ const ItemRecipeTable = ({ recipes }: Props) => {
             </TableCell>
             <TableCell className="text-center">
               <span className="shrink-0 rounded-sm bg-zinc-800/70 px-2 py-0.5">
-                {item?.materials.length ?? ''}
+                {item?.material_count}
               </span>
             </TableCell>
             <TableCell className="text-center">

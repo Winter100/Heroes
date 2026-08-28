@@ -7,6 +7,8 @@ import { getApi } from '@/app/api/getIApi';
 import EnchantDetail from '@/app/_features/market/components/enchant-detail';
 import AdBanner from '@/app/_components/adsense/AdBanner';
 
+export const dynamic = 'force-static';
+
 type Props = {
   params: Promise<{ item: string }>;
 };

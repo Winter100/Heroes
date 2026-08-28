@@ -7,7 +7,7 @@ import { RaidListType } from '@/app/_type/raidType';
 import { getApi } from '@/app/api/getIApi';
 import { Suspense } from 'react';
 
-export const revalidate = false;
+export const dynamic = 'force-static';
 
 const Page = async () => {
   const raidData = await getApi<RaidListType>(API_PATH.raid, {

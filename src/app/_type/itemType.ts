@@ -17,7 +17,12 @@ export type ItemSetType = {
   item_set_bonus: ItemBonus[];
 };
 
-export interface ItemRecipe {
+export type ItemStaticRecipeType = {
+  id: string;
+};
+
+export interface ItemRecipes {
+  id: number;
   name: string;
   level: string;
   image?: string;
@@ -27,6 +32,7 @@ export interface ItemRecipe {
   grinds: GrindResponse;
   tier: string;
   description?: string;
+  material_count: number;
   sets?: {
     set_name?: string;
     title?: string;
@@ -59,7 +65,9 @@ type GrindItemValueResponse = {
   }[];
 };
 
-interface MaterialsType extends ItemRecipe {
+interface MaterialsType extends ItemRecipes {
+  materialId: number;
+  hasRecipe: boolean;
   option?: string;
   quantity?: number;
 }

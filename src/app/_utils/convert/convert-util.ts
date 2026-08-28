@@ -19,8 +19,8 @@ import {
 } from '@/app/_type/enchantType';
 import { EnchantOptionSort } from '@/app/_utils/enchant';
 import { BasicEventType } from '@/app/_type/homeType';
-import { ItemRecipe } from '@/app/_type/itemType';
 import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
+import { ItemRecipes } from '@/app/_type/itemType';
 
 interface ConvertResult {
   itemName: string;
@@ -373,7 +373,7 @@ export const mergeEnchantPrice = (
 };
 
 export const recipeFilter = (
-  recipes: ItemRecipe[],
+  recipes: ItemRecipes[],
   currentCategory: string | null,
   currentSubCategory?: string | null
 ) => {
@@ -455,3 +455,18 @@ export const mergeEnchantPriceServer = (
     };
   });
 };
+
+export function parseItemSlug(slug: string) {
+  const match = slug.match(/^(\d+)-(.+)$/);
+
+  if (!match) {
+    return null;
+  }
+
+  const [, idStr, encodedName] = match;
+
+  return {
+    itemId: Number(idStr),
+    itemName: decodeURIComponent(encodedName),
+  };
+}
