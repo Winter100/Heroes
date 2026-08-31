@@ -69,7 +69,10 @@ export const API_PATH = {
   partholn: `/partholn`,
   character: `/characters/image`,
   notice: '/notice',
-  enchantPrice: '/enchants/price',
+  enchantTable: '/enchants/table',
+  enchantSSG: '/enchants/ssg',
+  enchantDetailById: '/enchants/id',
+  enchantDetailByName: '/enchants/name',
 };
 
 export const initialTitleList = [
