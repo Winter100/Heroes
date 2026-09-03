@@ -1,5 +1,5 @@
 'use client';
-import { ItemRecipe } from '@/app/_type/itemType';
+import { ItemRecipes } from '@/app/_type/itemType';
 import ItemRecipeTable from './components/item-recipe-table';
 import { recipeFilter } from '@/app/_utils/convert';
 import { useCategory } from '@/app/_hooks/custom/useCategory';
@@ -9,7 +9,7 @@ import ItemInfoTableCategory from './components/item-info-table-category';
 import { ITEM_CATEGORY_MAP } from '@/app/_constant/keyword';
 
 type Props = {
-  recipes: ItemRecipe[];
+  recipes: ItemRecipes[];
 };
 
 const ItemFilteredList = ({ recipes }: Props) => {

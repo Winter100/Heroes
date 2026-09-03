@@ -19,6 +19,7 @@ export type ItemSetType = {
 
 export type ItemStaticRecipeType = {
   id: string;
+  name: string;
 };
 
 export interface ItemRecipes {

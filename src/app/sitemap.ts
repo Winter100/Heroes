@@ -1,16 +1,14 @@
 import { MetadataRoute } from 'next';
 import { getApi } from './api/getIApi';
 import { API_PATH } from './_constant/keyword';
-import { RaidListType } from './_type/raidType';
 import { EnchantOptionType } from './_type/enchantType';
 import { ItemRecipes } from './_type/itemType';
 
-export const revalidate = false;
+export const baseUrl = 'https://www.heroes-dev.com';
 
-const baseUrl = 'https://www.heroes-dev.com';
 export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const results = await Promise.allSettled([
-    getApi<RaidListType>(API_PATH.raid, { next: { tags: [API_PATH.raid] } }),
+    getApi<string[]>(API_PATH.raidSSG, { next: { tags: [API_PATH.raidSSG] } }),
     getApi<{ id: number; name: string }>(API_PATH.enchantSSG, {
       next: { tags: [API_PATH.enchantSSG] },
     }),
@@ -21,19 +19,15 @@ export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
   const [raid, enchant, recipe] = results.map((r) =>
     r.status === 'fulfilled' ? r.value : []
-  ) as [RaidListType[], EnchantOptionType[], ItemRecipes[]];
-
-  const flatRaid = raid
-    .filter((f) => f.raid_name !== '미분류')
-    .flatMap((r) => [...r.monsters]);
+  ) as [string[], EnchantOptionType[], ItemRecipes[]];
 
   const recipeUrls: MetadataRoute.Sitemap = recipe.map((item) => ({
     url: `${baseUrl}/iteminfo/${encodeURIComponent(item.name)}`,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
-  const raidUrls: MetadataRoute.Sitemap = flatRaid.map((raid) => ({
-    url: `${baseUrl}/raidinfo/${encodeURIComponent(raid.battle)}`,
+  const raidUrls: MetadataRoute.Sitemap = raid.map((raid) => ({
+    url: `${baseUrl}/raidinfo/${encodeURIComponent(raid)}`,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));

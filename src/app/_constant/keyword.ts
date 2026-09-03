@@ -66,6 +66,8 @@ export const API_PATH = {
   recipeSSG: `/items/recipe/ssg`,
   itemSetOption: `/items/set-option`,
   raid: `/raids/table`,
+  raidDetailName: `/raids/name`,
+  raidSSG: `/raids/ssg`,
   partholn: `/partholn`,
   character: `/characters/image`,
   notice: '/notice',

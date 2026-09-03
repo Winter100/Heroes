@@ -1,5 +1,5 @@
 'use client';
-import { ItemRecipe } from '@/app/_type/itemType';
+import { ItemRecipes } from '@/app/_type/itemType';
 import ImageIconUseBorder from '../common/image/ImageIconUseBorder';
 import Item from '../common/item/Item';
 import Column from '../layout/Column';
@@ -10,7 +10,7 @@ import ItemGrindGraph from '../common/item/item-grind-graph';
 import { useRef } from 'react';
 import { getPercentageStat } from '@/app/_features/preview/components/menubar/grinding/grinding-preview-stat-container';
 
-const ItemTooltipItem = ({ item }: { item: ItemRecipe }) => {
+const ItemTooltipItem = ({ item }: { item: ItemRecipes }) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
   return (
     <div className="flex flex-col gap-2 p-2 text-zinc-400">

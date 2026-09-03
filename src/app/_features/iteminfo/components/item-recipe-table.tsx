@@ -44,7 +44,8 @@ const ItemRecipeTable = ({ recipes }: Props) => {
             <TableCell className="text-center font-medium">
               <SuspenseContainer
                 className="absolute inset-0"
-                link={`${item.id}-${item.name}`}
+                link={`${item.name}`}
+                // link={`${item.id}-${item.name}`}
                 path={`/iteminfo`}
               >
                 {null}

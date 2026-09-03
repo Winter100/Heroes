@@ -21,6 +21,7 @@ export const useNotice = () => {
         },
       }),
     queryKey: [API_PATH.notice],
+    retry: 1,
     select: (data) => {
       return {
         notice: data.data.notice.notice ?? [],

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     '마비노기 영웅전 캐릭터를 조회하고 레이드에 따른 상한을 조회할 수 있는 기능을 제공합니다.',
 };
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = async ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 

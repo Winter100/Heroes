@@ -2,62 +2,58 @@ import { API_PATH, keyword } from '@/app/_constant/keyword';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe-table-back';
 import CheckError from '@/app/_components/common/check-error';
-import { getApi } from '@/app/api/getIApi';
-import { RaidListType } from '@/app/_type/raidType';
+import { getApi, getApiV2 } from '@/app/api/getIApi';
+import { MonstersType } from '@/app/_type/raidType';
 import RaidInfoDetail from '@/app/_features/raidinfo/components/raid-info-detail';
 import AdBanner from '@/app/_components/adsense/AdBanner';
+import { Metadata } from 'next';
+import { baseUrl } from '@/app/sitemap';
 
 export const dynamic = 'force-static';
+export const dynamicParams = false;
 
 type Props = {
   params: Promise<{ battle: string }>;
 };
 
 export async function generateStaticParams() {
-  const raidList = await getApi<RaidListType>(API_PATH.raid, {
-    next: { tags: [API_PATH.raid] },
+  const raidList = await getApi<string>(API_PATH.raidSSG, {
+    next: { tags: [API_PATH.raidSSG] },
   });
-  const battleList = [
-    ...new Set(raidList.flatMap((raid) => raid.monsters.map((r) => r.battle))),
-  ];
 
-  return battleList.map((battle) => ({
+  return raidList.map((battle) => ({
     battle,
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { battle } = await params;
-
-  const decodeName = decodeURIComponent(battle);
+  const decodeBattleName = decodeURIComponent(battle);
 
   return {
-    title: `${keyword.project.name} ${decodeName}`,
-    description: `${decodeName} 레이드 정보 입니다.`,
+    title: `${keyword.project.name} ${decodeBattleName}`,
+    description: `${decodeBattleName} 레이드 정보 입니다.`,
+    alternates: {
+      canonical: `${baseUrl}/raidinfo/${encodeURIComponent(battle)}`,
+    },
   };
 }
 
 const Page = async ({ params }: Props) => {
-  const raidList = await getApi<RaidListType>(API_PATH.raid, {
-    next: { tags: [API_PATH.raid] },
-  });
   const { battle } = await params;
-  const decodeName = decodeURIComponent(battle);
+  const decodeBattleName = decodeURIComponent(battle);
 
-  const targetMonster = raidList
-    .flatMap((r) => r.monsters)
-    .find((b) => b.battle === decodeName);
+  const path = `${API_PATH.raidDetailName}/${decodeBattleName}`;
+  const raid = await getApiV2<MonstersType>(path, {
+    next: { tags: [path] },
+  });
 
   const renderContent = () => {
-    if (raidList.length === 0) {
-      return <CheckError />;
+    if (!raid) {
+      return <CheckError text={`${battle}을 찾을 수 없습니다.`} />;
     }
 
-    if (!targetMonster) {
-      return <CheckError text={`${decodeName}을 찾을 수 없습니다.`} />;
-    }
-
-    return <RaidInfoDetail selectedRaid={targetMonster} />;
+    return <RaidInfoDetail selectedRaid={raid} />;
   };
 
   return (

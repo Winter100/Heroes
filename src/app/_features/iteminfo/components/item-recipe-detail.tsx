@@ -90,7 +90,7 @@ const ItemRecipeDetail = ({ selectedItem }: ItemRecipeDetailProps) => {
                     <div>
                       {material.hasRecipe && (
                         <SuspenseContainer
-                          link={`${material.materialId}-${material.name}`}
+                          link={`${material.name}`}
                           path="/iteminfo"
                         >
                           <ItemTag>제작 정보</ItemTag>

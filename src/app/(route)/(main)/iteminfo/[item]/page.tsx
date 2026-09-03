@@ -4,9 +4,10 @@ import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe
 import { getApi, getApiV2 } from '@/app/api/getIApi';
 import { ItemRecipes, ItemStaticRecipeType } from '@/app/_type/itemType';
 import AdBanner from '@/app/_components/adsense/AdBanner';
-import { parseItemSlug } from '@/app/_utils/convert';
-import { notFound, redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import ItemRecipeDetail from '@/app/_features/iteminfo/components/item-recipe-detail';
+import { Metadata } from 'next';
+import { baseUrl } from '@/app/sitemap';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
@@ -21,47 +22,41 @@ export async function generateStaticParams() {
   });
 
   return recipes.map((recipe) => ({
-    item: recipe.id.toString(),
+    item: recipe.name,
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { item } = await params;
-  const parseItem = parseItemSlug(item);
-  if (!parseItem?.itemId) return null;
-
-  const path = `${API_PATH.recipes}/${parseItem.itemId}`;
-  const { name } = await getApiV2<ItemRecipes>(path, {
-    next: { tags: [path] },
-  });
-
+  const itemName = decodeURIComponent(item);
   return {
-    title: `${keyword.project.name} ${name}`,
-    description: `${name} 제작 재료 및 승급 재료와 능력치 정보를 제공합니다.`,
+    title: `${keyword.project.name} ${itemName}`,
+    description: `${itemName} 제작 재료 및 승급 재료와 능력치 정보를 제공합니다.`,
+    alternates: {
+      canonical: `${baseUrl}/iteminfo/${encodeURIComponent(item)}`,
+    },
   };
 }
 
 const Page = async ({ params }: Props) => {
+  const recipesSSG = await getApi<ItemStaticRecipeType>(API_PATH.recipeSSG, {
+    next: { tags: [API_PATH.recipeSSG] },
+  });
   const { item } = await params;
-  const parsed = parseItemSlug(item);
 
-  if (!parsed) {
-    notFound();
-  }
+  const decodeItemName = decodeURIComponent(item);
 
-  const { itemId, itemName: slugItemName } = parsed;
+  const itemId = recipesSSG.find(
+    (recipe) => recipe.name === decodeItemName
+  )?.id;
 
   const path = `${API_PATH.recipes}/${itemId}`;
   const recipe = await getApiV2<ItemRecipes>(path, {
     next: { tags: [path] },
   });
 
-  if (!recipe || !recipe.name) {
-    notFound();
-  }
-
-  if (slugItemName !== recipe.name) {
-    redirect(`/iteminfo/${itemId}-${encodeURIComponent(recipe.name)}`);
+  if (decodeItemName !== recipe.name) {
+    permanentRedirect(`/iteminfo/${encodeURIComponent(recipe.name)}`);
   }
 
   return (
