@@ -63,7 +63,7 @@ const PreviewEnchantModal = ({
       </DialogTrigger>
       <DialogContent
         autoFocus={false}
-        className="max-h-full max-w-3xl border-none bg-neutral-900 text-white sm:max-h-[840px]"
+        className="max-h-full max-w-4xl border-none bg-neutral-900 text-white sm:max-h-[840px]"
       >
         <DialogHeader>
           <DialogTitle>

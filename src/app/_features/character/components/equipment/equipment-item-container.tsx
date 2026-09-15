@@ -25,13 +25,13 @@ const EquipmentItemContainer = ({
   const prefixEnchantRank = Number(
     enchantsBySlot
       .get(item.item_equipment_slot_name)
-      ?.prefix.find((e) => e.name === used_prefix_enchant_name)?.rank
+      ?.prefix.find((e) => e.name === used_prefix_enchant_name)?.rank.name
   );
 
   const suffixEnchantRank = Number(
     enchantsBySlot
       .get(item.item_equipment_slot_name)
-      ?.suffix.find((e) => e.name === used_suffix_enchant_name)?.rank
+      ?.suffix.find((e) => e.name === used_suffix_enchant_name)?.rank.name
   );
 
   const src = getImageByName(item.item_name, item.item_equipment_slot_name);

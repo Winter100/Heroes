@@ -175,7 +175,7 @@ const ItemEquipmentContainer = ({
 
             <EnchantSubTitle
               name={prefixEnchant?.name.toString() ?? ''}
-              rank={prefixEnchant?.rank.toString() ?? ''}
+              rank={prefixEnchant?.rank.name ?? ''}
               type="접두"
             />
             <div className="rounded-md border border-muted p-2">
@@ -203,7 +203,7 @@ const ItemEquipmentContainer = ({
             />
             <EnchantSubTitle
               name={suffixEnchant?.name.toString() ?? ''}
-              rank={suffixEnchant?.rank.toString() ?? ''}
+              rank={suffixEnchant?.rank.name ?? ''}
               type="접미"
             />
             <div className="rounded-md border border-muted p-2">

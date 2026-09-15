@@ -94,15 +94,7 @@ export const usePreviewAllData = () => {
         staleTime: Infinity,
         retry: 2,
         select: (data: EnchantOptionType[]) => {
-          return data
-            .map((partholn) => {
-              const { affix, ...rest } = partholn;
-              return {
-                ...rest,
-                affix: affix.toLowerCase() as 'partholn',
-              };
-            })
-            .sort((a, b) => Number(a.rank) - Number(b.rank));
+          return data.sort((a, b) => Number(a.rank) - Number(b.rank));
         },
       },
       {

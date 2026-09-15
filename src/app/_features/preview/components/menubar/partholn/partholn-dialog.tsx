@@ -69,7 +69,7 @@ const PartholnDialog = ({ partholns, selectData, onClick }: Props) => {
                     key={partholn.name}
                   >
                     <TableCell className="text-center">
-                      {partholn.rank}
+                      {partholn.rank.name}
                     </TableCell>
                     {partholn.effects.map((stat) => (
                       <TableCell className="text-center" key={stat.stat_name}>

@@ -27,7 +27,7 @@ const GrindingDialog = ({ items, raid, ocid }: Props) => {
           연마
         </Button>
       </DialogTrigger>
-      <DialogContent className="dark max-h-96 max-w-3xl overflow-y-auto border-none bg-zinc-900 p-2 text-white sm:max-h-[950px] md:p-6">
+      <DialogContent className="dark max-h-96 max-w-4xl overflow-y-auto border-none bg-zinc-900 p-2 text-white sm:max-h-[950px] md:p-6">
         <DialogHeader>
           <DialogTitle className="text-center">연마</DialogTitle>
           <DialogDescription></DialogDescription>

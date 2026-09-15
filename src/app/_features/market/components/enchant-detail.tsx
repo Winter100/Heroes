@@ -18,8 +18,8 @@ const EnchantDetail = ({ selectedItem }: EnchantDetailProps) => {
           className="h-4 w-4 md:h-6 md:w-6"
           imageClassName="rounded-sm"
           src={getEnchantImage(
-            selectedItem?.rank?.toString(),
-            selectedItem?.affix.toLowerCase().toString()
+            selectedItem?.rank.name,
+            selectedItem?.affix.value
           )}
           alt={selectedItem?.name.toString()}
         />
