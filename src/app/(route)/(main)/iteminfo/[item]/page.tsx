@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { item } = await params;
   const itemName = decodeURIComponent(item);
   return {
-    title: `${keyword.project.name} ${itemName}`,
+    title: `${itemName} | ${keyword.project.name} `,
     description: `${itemName} 제작 재료 및 승급 재료와 능력치 정보를 제공합니다.`,
     alternates: {
       canonical: `${baseUrl}/iteminfo/${encodeURIComponent(item)}`,
@@ -44,18 +44,16 @@ const Page = async ({ params }: Props) => {
   });
   const { item } = await params;
 
-  const decodeItemName = decodeURIComponent(item);
+  const decodedName = decodeURIComponent(item);
 
-  const itemId = recipesSSG.find(
-    (recipe) => recipe.name === decodeItemName
-  )?.id;
+  const itemId = recipesSSG.find((recipe) => recipe.name === decodedName)?.id;
 
   const path = `${API_PATH.recipes}/${itemId}`;
   const recipe = await getApiV2<ItemRecipes>(path, {
     next: { tags: [path] },
   });
 
-  if (decodeItemName !== recipe.name) {
+  if (decodedName !== recipe.name) {
     permanentRedirect(`/iteminfo/${encodeURIComponent(recipe.name)}`);
   }
 

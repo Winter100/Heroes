@@ -44,15 +44,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const Page = async ({ params }: Props) => {
   const { enchant: enchantName } = await params;
-  const decodeEnchant = decodeURIComponent(enchantName);
-  const path = `${API_PATH.enchantDetailByName}/${decodeEnchant}`;
+  const decodedName = decodeURIComponent(enchantName);
+  const path = `${API_PATH.enchantDetailByName}/${encodeURIComponent(decodedName)}`;
 
   const enchant = await getApiV2<EnchantOptionType>(path, {
     next: { tags: [path] },
   });
 
   const content = !enchant.name ? (
-    <CheckError text={`${decodeEnchant}을 찾을 수 없습니다.`} />
+    <CheckError text={`${decodedName}을 찾을 수 없습니다.`} />
   ) : (
     <EnchantDetail selectedItem={enchant} />
   );

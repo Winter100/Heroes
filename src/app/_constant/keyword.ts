@@ -42,7 +42,7 @@ export const keyword = {
   },
   project: {
     name: '마영전',
-    url: 'https://heroes-dev.com/',
+    url: 'https://www.heroes-dev.com/',
   },
 };
 

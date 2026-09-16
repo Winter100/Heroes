@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decodeBattleName = decodeURIComponent(battle);
 
   return {
-    title: `${keyword.project.name} ${decodeBattleName}`,
-    description: `${decodeBattleName} 레이드 정보 입니다.`,
+    title: `${decodeBattleName} | ${keyword.project.name} `,
+    description: `${decodeBattleName}의 빠른 전투 및 상한 정보를 제공합니다`,
     alternates: {
       canonical: `${baseUrl}/raidinfo/${encodeURIComponent(battle)}`,
     },
@@ -41,9 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const Page = async ({ params }: Props) => {
   const { battle } = await params;
-  const decodeBattleName = decodeURIComponent(battle);
+  const decodedName = decodeURIComponent(battle);
 
-  const path = `${API_PATH.raidDetailName}/${decodeBattleName}`;
+  const path = `${API_PATH.raidDetailName}/${encodeURIComponent(decodedName)}`;
   const raid = await getApiV2<MonstersType>(path, {
     next: { tags: [path] },
   });

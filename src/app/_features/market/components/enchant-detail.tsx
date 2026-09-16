@@ -23,7 +23,7 @@ const EnchantDetail = ({ selectedItem }: EnchantDetailProps) => {
           )}
           alt={selectedItem?.name.toString()}
         />
-        <div>{selectedItem?.name}</div>
+        <h1>{selectedItem?.name}</h1>
         <span className="text-xs" aria-label="갱신 시간">
           {convertToKST(selectedItem?.date_update ?? '')}
         </span>

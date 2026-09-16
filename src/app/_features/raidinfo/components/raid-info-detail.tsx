@@ -26,7 +26,7 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
           src={selectedRaid.image ?? ''}
           alt={selectedRaid?.battle.toString()}
         />
-        <span>{selectedRaid.battle}</span>
+        <h1>{selectedRaid.battle}</h1>
       </div>
 
       {/* 공격력 변곡점 */}

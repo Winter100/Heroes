@@ -37,7 +37,7 @@ const ItemRecipeDetail = ({ selectedItem }: ItemRecipeDetailProps) => {
             category={selectedItem.category}
             tier={selectedItem.tier}
           >
-            <h3>{selectedItem.name}</h3>
+            <h1>{selectedItem.name}</h1>
           </ItemTitle>
         </div>
       </div>
