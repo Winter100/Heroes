@@ -61,7 +61,7 @@ const PartholnDialog = ({ partholns, selectData, onClick }: Props) => {
                   <TableRow
                     className={cn(
                       'w-full cursor-pointer',
-                      selectData?.rank === partholn.rank && 'text-blue-300'
+                      selectData?.name === partholn.name && 'text-blue-300'
                     )}
                     onClick={() =>
                       onClick('partholn', 'partholn', partholn, null, false)
@@ -69,7 +69,7 @@ const PartholnDialog = ({ partholns, selectData, onClick }: Props) => {
                     key={partholn.name}
                   >
                     <TableCell className="text-center">
-                      {partholn.rank.name}
+                      {partholn.name}
                     </TableCell>
                     {partholn.effects.map((stat) => (
                       <TableCell className="text-center" key={stat.stat_name}>
@@ -91,8 +91,8 @@ export default PartholnDialog;
 
 const PARTHOLN_TITLE = [
   '단계',
-  '스태미나',
   '공격력',
+  '스태미나',
   '방어력',
   '크리티컬',
   '파괴력',
