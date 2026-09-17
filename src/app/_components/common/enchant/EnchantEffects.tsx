@@ -15,8 +15,9 @@ const EnchantEffects = ({
           key={effect.stat_name}
           className={cn('flex items-center gap-1', className)}
         >
-          <div className="truncate text-start text-gray-400">
-            • {effect.stat_name}
+          <div className="flex gap-1">
+            <div className="w-1 text-start text-gray-400">•</div>
+            <div className="text-start text-gray-400">{effect.stat_name}</div>
           </div>
           <div
             className={cn(

@@ -63,7 +63,7 @@ const PreviewEnchantModal = ({
       </DialogTrigger>
       <DialogContent
         autoFocus={false}
-        className="max-h-full max-w-4xl border-none bg-neutral-900 text-white sm:max-h-[840px]"
+        className="max-h-full max-w-4xl border-none bg-neutral-900 text-white"
       >
         <DialogHeader>
           <DialogTitle>
@@ -95,7 +95,7 @@ const PreviewEnchantModal = ({
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="h-96 overflow-y-auto pr-2 sm:h-[480px]">
+          <div className="h-96 overflow-y-auto pr-2 sm:h-[760px]">
             {enchantList?.map((enchant) => (
               <TabsContent key={enchant?.rank} value={enchant?.rank || 'all'}>
                 <div className="grid grid-cols-3 gap-2">
