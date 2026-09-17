@@ -18,12 +18,12 @@ const EnchantDetail = ({ selectedItem }: EnchantDetailProps) => {
           className="h-4 w-4 md:h-6 md:w-6"
           imageClassName="rounded-sm"
           src={getEnchantImage(
-            selectedItem?.rank.toString(),
-            selectedItem?.affix.toLowerCase().toString()
+            selectedItem?.rank.name,
+            selectedItem?.affix.value
           )}
           alt={selectedItem?.name.toString()}
         />
-        <div>{selectedItem?.name}</div>
+        <h1>{selectedItem?.name}</h1>
         <span className="text-xs" aria-label="갱신 시간">
           {convertToKST(selectedItem?.date_update ?? '')}
         </span>

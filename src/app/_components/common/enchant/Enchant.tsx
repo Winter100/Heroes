@@ -8,14 +8,11 @@ import EnchantSubTitle from './EnchantSubTitle';
 import { getEnchantImage, getUniqueBaseStrings } from '@/app/_utils/enchant';
 import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
 import ItemTitle from '../../item/item-title';
-
-const affix = {
-  ['PREFIX']: '접두',
-  ['SUFFIX']: '접미',
-};
+import { affixAsType } from '@/app/_features/market/components/item-enchant-table-server';
 
 const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
-  const convertedAffix = affix[enchant?.affix as keyof typeof affix];
+  const convertedAffix =
+    affixAsType[enchant?.affix.value as keyof typeof affixAsType];
 
   return (
     <Item className="flex flex-col gap-2">
@@ -23,10 +20,7 @@ const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
         <ImageIcon
           className="h-4 w-4 md:h-8 md:w-8"
           imageClassName="rounded-sm"
-          src={getEnchantImage(
-            enchant?.rank.toString(),
-            enchant?.affix.toLowerCase().toString()
-          )}
+          src={getEnchantImage(enchant?.rank.name, enchant?.affix.value)}
           alt={enchant?.name.toString()}
         />
         <Column className="w-full gap-1 pl-2">
@@ -38,7 +32,7 @@ const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
           </ItemTitle>
           <Item.SubDescription className="px-1">
             <Item.Content>
-              {enchant?.rank}랭크 {convertedAffix} 인챈트
+              {enchant?.rank.name}랭크 {convertedAffix} 인챈트
             </Item.Content>
           </Item.SubDescription>
 
@@ -70,16 +64,16 @@ const Enchant = ({ enchant }: { enchant: MergedEnchantType }) => {
         </Column>
       </Row>
 
-      <EnchantIsDestruction rank={enchant?.rank?.toString()} />
+      <EnchantIsDestruction rank={enchant?.rank?.name} />
       <Item.Border />
 
       {/* <EnchantBrin /> */}
       {/* <Item.Border /> */}
 
       <EnchantSubTitle
-        name={enchant?.name?.toString()}
+        name={enchant?.name}
         type={convertedAffix as '접두' | '접미'}
-        rank={enchant?.rank?.toString()}
+        rank={enchant?.rank?.name}
       />
 
       <div className="flex-1 rounded-md border border-gray-500/30 px-1 py-2 text-xs">

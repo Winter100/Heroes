@@ -1,17 +1,17 @@
 import { API_PATH } from '@/app/_constant/keyword';
 import ItemFilteredList from '@/app/_features/iteminfo/item-filtered-list';
 import { getApi } from '@/app/api/getIApi';
-import { ItemRecipe } from '@/app/_type/itemType';
+import { ItemRecipes } from '@/app/_type/itemType';
 import CheckError from '@/app/_components/common/check-error';
 import { Suspense } from 'react';
 import ItemRecipeTable from '@/app/_features/iteminfo/components/item-recipe-table';
 import AdBanner from '@/app/_components/adsense/AdBanner';
 
-export const revalidate = false;
+export const dynamic = 'force-static';
 
 const Page = async () => {
-  const recipes = await getApi<ItemRecipe>(API_PATH.recipe, {
-    next: { tags: [API_PATH.recipe] },
+  const recipes = await getApi<ItemRecipes>(API_PATH.recipes, {
+    next: { tags: [API_PATH.recipes] },
   });
 
   const content =

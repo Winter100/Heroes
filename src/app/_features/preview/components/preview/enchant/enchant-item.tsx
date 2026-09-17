@@ -14,10 +14,7 @@ const EnchantItem = ({ enchant }: { enchant: EnchantOptionType }) => {
         <div className="relative">
           <ImageIcon
             className="h-8 w-8"
-            src={getEnchantImage(
-              enchant?.rank.toString(),
-              enchant?.affix.toString().toLocaleLowerCase()
-            )}
+            src={getEnchantImage(enchant?.rank.name, enchant?.affix.value)}
             alt="e"
           />
           <div
@@ -28,7 +25,7 @@ const EnchantItem = ({ enchant }: { enchant: EnchantOptionType }) => {
                 : 'bg-purple-500'
             )}
           >
-            {enchant?.rank}
+            {enchant?.rank.name}
           </div>
         </div>
         <div className="flex w-full flex-col">

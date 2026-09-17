@@ -31,7 +31,9 @@ export const EnchantOptionSort = (
           effects,
         };
       })
-      .sort((a, b) => a.rank.toString().localeCompare(b.rank.toString()));
+      .sort((a, b) =>
+        a.rank.name.toString().localeCompare(b.rank.name.toString())
+      );
   } else {
     return data.sort((a, b) => {
       const aOrder = getInfusionIndex(a.name.toString());
@@ -69,11 +71,11 @@ export const enchantsByGroupSlot = ({
       }
 
       const group = map.get(slotName)!;
-      if (enchant.affix.toLowerCase() === AFFIX.prefix)
+      if (enchant.affix.value.toString().toLowerCase() === AFFIX.prefix)
         group.prefix.push(enchant);
-      if (enchant.affix.toLowerCase() === AFFIX.suffix)
+      if (enchant.affix.value.toString().toLowerCase() === AFFIX.suffix)
         group.suffix.push(enchant);
-      if (enchant.affix.toLowerCase() === AFFIX.infusion)
+      if (enchant.affix.value.toString().toLowerCase() === AFFIX.infusion)
         group.infusion.push(enchant);
     });
   });
@@ -155,12 +157,12 @@ export const getRankCategoryMap = (
   const suffixSlots = new Set<string>();
 
   enchantList.forEach((item) => {
-    if (item.affix.toUpperCase() === 'PREFIX') {
+    if (item.affix.value === 'prefix') {
       if (!item.slot) return;
       getUniqueBaseStrings(item.slot.map((s) => s.name)).forEach((enchant) =>
         prefixSlots.add(enchant)
       );
-    } else if (item.affix.toUpperCase() === 'SUFFIX') {
+    } else if (item.affix.value === 'suffix') {
       if (!item.slot) return;
       getUniqueBaseStrings(item.slot.map((s) => s.name)).forEach((enchant) =>
         suffixSlots.add(enchant)

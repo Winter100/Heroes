@@ -2,7 +2,6 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
-// Todo 서치파람 push 빼고 네트워크 요청 안생기게 하기
 export const useCategory = (pathName: string) => {
   const router = useRouter();
   const searchParams = useSearchParams();

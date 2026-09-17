@@ -12,7 +12,6 @@ import Column from '../layout/Column';
 import { getImageByName } from '@/app/_utils/get/getImageByName';
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 import ItemTitle from './item-title';
-import Item from '../common/item/Item';
 import { EnchantGroupByAffix } from '@/app/_type/enchantType';
 import { GrindType, ItemSetType } from '@/app/_type/itemType';
 import ItemSetOptionBox from './item-setoption-box';
@@ -117,7 +116,6 @@ const ItemEquipmentContainer = ({
             {item?.item_name && (
               <span className="truncate">{item?.item_name}</span>
             )}
-            <Item.SubDescription className="px-1"></Item.SubDescription>
           </ItemTitle>
         </Column>
       </Row>
@@ -175,7 +173,7 @@ const ItemEquipmentContainer = ({
 
             <EnchantSubTitle
               name={prefixEnchant?.name.toString() ?? ''}
-              rank={prefixEnchant?.rank.toString() ?? ''}
+              rank={prefixEnchant?.rank.name ?? ''}
               type="접두"
             />
             <div className="rounded-md border border-muted p-2">
@@ -203,7 +201,7 @@ const ItemEquipmentContainer = ({
             />
             <EnchantSubTitle
               name={suffixEnchant?.name.toString() ?? ''}
-              rank={suffixEnchant?.rank.toString() ?? ''}
+              rank={suffixEnchant?.rank.name ?? ''}
               type="접미"
             />
             <div className="rounded-md border border-muted p-2">
