@@ -1,25 +1,19 @@
-import { ItemRecipe } from '@/app/_type/itemType';
+import { ItemRecipes } from '@/app/_type/itemType';
 import ItemRecipeDetail from './components/item-recipe-detail';
 import CheckError from '@/app/_components/common/check-error';
 
 type Props = {
-  recipes: ItemRecipe[];
+  recipe: ItemRecipes;
   findItemName: string;
 };
 
-const ItemRecipeFind = ({ recipes, findItemName }: Props) => {
-  const findRecipe = recipes.find((recipe) => recipe.name === findItemName);
-
-  if (!findRecipe)
+// 삭제 예정
+const ItemRecipeFind = ({ recipe, findItemName }: Props) => {
+  if (!recipe) {
     return <CheckError text={`${findItemName}을 찾을 수 없습니다.`} />;
+  }
 
-  const isMaterial = (itemName: string) => {
-    const isMaterial = recipes.some((recipe) => recipe.name === itemName);
-    if (!isMaterial || !itemName) return false;
-    return true;
-  };
-
-  return <ItemRecipeDetail selectedItem={findRecipe} isMaterial={isMaterial} />;
+  return <ItemRecipeDetail selectedItem={recipe} />;
 };
 
 export default ItemRecipeFind;

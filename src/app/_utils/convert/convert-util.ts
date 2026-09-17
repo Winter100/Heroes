@@ -5,59 +5,18 @@ import {
   MergedCharacter,
   SkillData,
 } from '@/app/_type/characterType';
-import { Item_Rating } from '@/app/_type/infoInfoType';
 import { RaidListType } from '@/app/_type/raidType';
 import { extractNumber } from '../get';
 import { enchantEffectOrderMap } from '@/app/_constant/keyword';
 import {
   EnchantFormatingType,
   EnchantGroup,
-  EnchantMergePriceType,
   EnchantOptionType,
-  ItemPriceType,
-  SIMULATION_AFFIX_TYPE,
 } from '@/app/_type/enchantType';
 import { EnchantOptionSort } from '@/app/_utils/enchant';
 import { BasicEventType } from '@/app/_type/homeType';
-import { ItemRecipe } from '@/app/_type/itemType';
 import { MergedEnchantType } from '@/app/_features/market/enchant-fiter-list';
-
-interface ConvertResult {
-  itemName: string;
-  gradeMatch: Item_Rating;
-}
-/**
- * - 아이템 이름과 슬롯을 넣으면 이름과 등급을 리턴
- * @param name
- * @param slot
- * @returns
- */
-export const convertItemNameBySlot = (
-  name: string,
-  slot: string
-): ConvertResult => {
-  if (slot !== 'Right Hand') return { itemName: name, gradeMatch: null };
-
-  const baseNames = ['밀레시안', '아르드리', '오르나', '와드네', '에리우'];
-  const gradeNames: Item_Rating[] = [
-    '일반',
-    '초급',
-    '중급',
-    '고급',
-    '레어',
-    '전설',
-  ];
-
-  const baseMatch = baseNames.find((base) => name.includes(base));
-  if (!baseMatch) return { itemName: name, gradeMatch: null };
-
-  const itemName = `${baseMatch} 무기`;
-  // gradeMatch가 undefined일 수 있으므로 기본값 설정
-  const gradeMatch =
-    gradeNames.find((grade) => name.includes(grade || '')) || null;
-
-  return { itemName, gradeMatch };
-};
+import { ItemRecipes } from '@/app/_type/itemType';
 
 export const convertToKST = (utcDate: string): string => {
   try {
@@ -235,7 +194,7 @@ export const groupByRank = (
   const list = EnchantOptionSort(data, enchantEffectOrderMap, type);
 
   list.forEach((item) => {
-    const rank = item.rank;
+    const rank = item.rank.name;
 
     if (!rankMap.has(rank)) {
       rankMap.set(rank, []);
@@ -275,105 +234,8 @@ export const sortEventsByDate = (items: BasicEventType[]) => {
   });
 };
 
-/**
- * 중복된 아이템을 하나로 합치고, 가격과 날짜를 최신화하는 함수
- * @param items 원본 EnchantPriceItemType 배열
- * @returns 가공이 완료된 EnchantPriceItemType 배열
- */
-function extractEnchantInfo(itemOption: ItemPriceType['item_option']) {
-  if (itemOption.prefix_enchant_preset_1)
-    return {
-      name: itemOption.prefix_enchant_preset_1.trim(),
-      affix: 'PREFIX' as SIMULATION_AFFIX_TYPE,
-    };
-  if (itemOption.prefix_enchant_preset_2)
-    return {
-      name: itemOption.prefix_enchant_preset_2.trim(),
-      affix: 'PREFIX' as SIMULATION_AFFIX_TYPE,
-    };
-  if (itemOption.suffix_enchant_preset_1)
-    return {
-      name: itemOption.suffix_enchant_preset_1.trim(),
-      affix: 'SUFFIX' as SIMULATION_AFFIX_TYPE,
-    };
-  if (itemOption.suffix_enchant_preset_2)
-    return {
-      name: itemOption.suffix_enchant_preset_2.trim(),
-      affix: 'SUFFIX' as SIMULATION_AFFIX_TYPE,
-    };
-
-  return null; // 4개 필드가 모두 비어있는 예외 케이스
-}
-
-/**
- * 인챈트 이름을 기준으로 데이터를 그룹화하고 가격 및 날짜를 정산하는 함수
- */
-export function aggregateByEnchantPreset(
-  items: ItemPriceType[]
-): EnchantFormatingType[] {
-  // Key: 인챈트 이름, Value: 최신 인챈트 데이터
-  const enchantMap = new Map<string, EnchantFormatingType>();
-
-  for (const currentItem of items) {
-    const enchantInfo = extractEnchantInfo(currentItem.item_option);
-
-    // 방어 코드: 인챈트 정보가 없으면 다음 아이템으로 넘어감
-    if (!enchantInfo || !enchantInfo.name) continue;
-
-    const enchantName = enchantInfo.name;
-    const currentItemDate = new Date(currentItem.date_update).getTime();
-    const existing = enchantMap.get(enchantName);
-
-    // Map에 해당 인챈트가 없거나,
-    // 현재 아이템의 날짜가 기존 저장된 아이템의 날짜보다 최신일 경우에만 데이터 세팅(덮어쓰기)
-    if (
-      !existing ||
-      currentItemDate > new Date(existing.date_update).getTime()
-    ) {
-      enchantMap.set(enchantName, {
-        item_name: enchantName,
-        min_price: currentItem.min_price ?? 0,
-        max_price: currentItem.max_price ?? 0,
-        average_price: currentItem.average_price ?? 0,
-        date_update: currentItem.date_update,
-        affix: enchantInfo.affix,
-      });
-    }
-  }
-
-  return Array.from(enchantMap.values());
-}
-
-export const mergeEnchantPrice = (
-  enchants: EnchantOptionType[],
-  priceList: EnchantFormatingType[]
-) => {
-  const enchantMap = new Map<string, EnchantMergePriceType>();
-
-  enchants.forEach((enchant) => {
-    const enchantName = enchant?.name?.toString();
-    const enchantPrice = priceList.find(
-      (price) => price.item_name === enchantName
-    );
-    if (!enchantMap.has(enchantName)) {
-      enchantMap.set(enchantName, {
-        ...enchant,
-        item_name: enchantName,
-        min_price: enchantPrice?.min_price ?? 0,
-        max_price: enchantPrice?.max_price ?? 0,
-        average_price: enchantPrice?.average_price ?? 0,
-        date_update: enchantPrice?.date_update ?? '',
-      });
-    }
-  });
-
-  return Array.from(enchantMap, ([, value]) => ({
-    ...value,
-  }));
-};
-
 export const recipeFilter = (
-  recipes: ItemRecipe[],
+  recipes: ItemRecipes[],
   currentCategory: string | null,
   currentSubCategory?: string | null
 ) => {
@@ -412,11 +274,11 @@ export const enchantFilter = (
   return enchants.filter((item) => {
     // 카테고리만 있고 서브카테고리 없으면 카테고리만 렌더링
     if (currentCategory && !currentSubCategory) {
-      return item.affix.toUpperCase() === curCategory;
+      return item.affix.value === curCategory;
     }
 
     if (curCategory && currentSubCategory) {
-      const isCategory = item.affix.toUpperCase() === curCategory;
+      const isCategory = item.affix.value === curCategory;
       const isSubCategory = item.slot?.some((slot) =>
         slot?.name.includes(currentSubCategory)
       );
@@ -429,8 +291,8 @@ export const enchantFilter = (
 };
 
 const category = {
-  ['접두']: 'PREFIX',
-  ['접미']: 'SUFFIX',
+  ['접두']: 'prefix',
+  ['접미']: 'suffix',
 };
 
 export const convertPriceMap = (priceData: EnchantFormatingType[]) => {
@@ -455,3 +317,18 @@ export const mergeEnchantPriceServer = (
     };
   });
 };
+
+export function parseItemSlug(slug: string) {
+  const match = slug.match(/^(\d+)-(.+)$/);
+
+  if (!match) {
+    return null;
+  }
+
+  const [, idStr, encodedName] = match;
+
+  return {
+    itemId: Number(idStr),
+    itemName: decodeURIComponent(encodedName),
+  };
+}

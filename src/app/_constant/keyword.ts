@@ -42,7 +42,7 @@ export const keyword = {
   },
   project: {
     name: '마영전',
-    url: 'https://heroes-dev.com/',
+    url: 'https://www.heroes-dev.com/',
   },
 };
 
@@ -62,13 +62,19 @@ export const API_PATH = {
   enchant: `/enchants?category=ENCHANT`,
   infusion: `/enchants?category=INFUSION`,
   grind: `/items/grind`,
-  recipe: `/items/recipe`,
+  recipes: `/items/recipe`,
+  recipeSSG: `/items/recipe/ssg`,
   itemSetOption: `/items/set-option`,
   raid: `/raids/table`,
+  raidDetailName: `/raids/name`,
+  raidSSG: `/raids/ssg`,
   partholn: `/partholn`,
   character: `/characters/image`,
   notice: '/notice',
-  enchantPrice: '/enchants/price',
+  enchantTable: '/enchants/table',
+  enchantSSG: '/enchants/ssg',
+  enchantDetailById: '/enchants/id',
+  enchantDetailByName: '/enchants/name',
 };
 
 export const initialTitleList = [

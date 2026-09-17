@@ -72,14 +72,14 @@ const ItemEnchantTableServer = ({ enchants }: ItemEnchantTableServerProps) => {
                         className="h-4 w-4 shrink-0 md:h-6 md:w-6"
                         imageClassName="rounded-sm"
                         src={getEnchantImage(
-                          item?.rank.toString(),
-                          item?.affix.toLowerCase().toString()
+                          item?.rank.name,
+                          item?.affix.value
                         )}
-                        alt={item?.name.toString()}
+                        alt={item?.name}
                       />
                       <strong aria-label="인챈트명">{item?.name}</strong>
                       <span className="shrink-0 rounded-sm bg-zinc-800/70 px-1.5 py-0.5">
-                        {item?.rank}
+                        {item?.rank.name}
                       </span>
                     </div>
                   </TooltipTrigger>
@@ -91,12 +91,15 @@ const ItemEnchantTableServer = ({ enchants }: ItemEnchantTableServerProps) => {
               <TableCell className="text-center">
                 <span
                   className={`inline-flex items-center rounded-full px-2 py-0.5 font-medium ${
-                    affix[item?.affix as keyof typeof affix] === '접두'
+                    affixAsType[
+                      item?.affix.value as keyof typeof affixAsType
+                    ] === '접두'
                       ? 'bg-primary/15 text-primary'
                       : 'bg-purple-600/30 text-foreground'
                   }`}
                 >
-                  {affix[item?.affix as keyof typeof affix] ?? ''}
+                  {affixAsType[item?.affix.value as keyof typeof affixAsType] ??
+                    ''}
                 </span>
               </TableCell>
               <TableCell className="text-center" aria-label="평균가">
@@ -140,7 +143,9 @@ const ItemEnchantTableServer = ({ enchants }: ItemEnchantTableServerProps) => {
 
 export default ItemEnchantTableServer;
 
-const affix = {
+export const affixAsType = {
   ['PREFIX']: '접두',
   ['SUFFIX']: '접미',
+  ['prefix']: '접두',
+  ['suffix']: '접미',
 };

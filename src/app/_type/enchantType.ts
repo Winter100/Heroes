@@ -61,7 +61,6 @@ export interface EnchantFormatingType {
   max_price: number;
   average_price: number;
   date_update: string;
-  affix: SIMULATION_AFFIX_TYPE;
 }
 
 export interface EnchantMergePriceType
@@ -120,9 +119,9 @@ export const SIMULATION_AFFIX_PART = [
 export type SIMULATION_AFFIX_TYPE = (typeof SIMULATION_AFFIX_PART)[number];
 
 export type EnchantOptionType = {
-  rank: string | number;
+  rank: { id: number; name: string };
   name: string;
-  affix: SIMULATION_AFFIX_TYPE;
+  affix: { id: string; value: SIMULATION_AFFIX_TYPE };
   effects: Stat[];
   slot?: { name: string; value: string }[];
   description?: string;
