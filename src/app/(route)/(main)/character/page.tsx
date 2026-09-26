@@ -34,7 +34,7 @@ const Page = async () => {
       <div>
         <AdBanner />
         <Suspense fallback={<Loading />}>
-          <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+          <div className="mx-auto w-full max-w-7xl gap-6 px-4 py-6 sm:px-6">
             <CharacterSearchInput
               className="mx-auto mb-2 w-full max-w-72"
               routeName="character"
