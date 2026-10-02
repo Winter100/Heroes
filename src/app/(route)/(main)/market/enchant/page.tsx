@@ -10,7 +10,7 @@ import { Suspense } from 'react';
 
 const Page = async () => {
   const enchants = await getApi<MergedEnchantType>(API_PATH.enchantTable, {
-    next: { revalidate: 43200 },
+    next: { revalidate: 43200, tags: [API_PATH.enchantTable] },
   });
 
   const content =

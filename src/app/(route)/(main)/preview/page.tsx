@@ -32,7 +32,7 @@ const Page = async () => {
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
-      <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+      <div className="mx-auto w-full max-w-7xl gap-6 px-4 py-6 sm:px-6">
         <AdBanner />
         <Suspense fallback={<Loading />}>
           <CharacterSearchInput
