@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/api/'],
     },
-    sitemap: 'https://heroes-dev.com/sitemap.xml',
+    sitemap: 'https://www.heroes-dev.com/sitemap.xml',
   };
 }

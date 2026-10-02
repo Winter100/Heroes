@@ -1,33 +1,20 @@
 import CheckError from '@/app/_components/common/check-error';
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
+import DetailPageLayout from '@/app/_components/layout/detail-page-layout';
 import { API_PATH, keyword } from '@/app/_constant/keyword';
-import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe-table-back';
 import { EnchantOptionType } from '@/app/_type/enchantType';
-import { getApi, getApiV2 } from '@/app/api/getIApi';
+import { getApiV2 } from '@/app/api/getIApi';
 import EnchantDetail from '@/app/_features/market/components/enchant-detail';
-import AdBanner from '@/app/_components/adsense/AdBanner';
 import { Metadata } from 'next';
 import { baseUrl } from '@/app/sitemap';
+import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-static';
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = false;
 
 type Props = {
   params: Promise<{ enchant: string }>;
 };
-
-export async function generateStaticParams() {
-  const enchants = await getApi<{ id: number; name: string }>(
-    API_PATH.enchantSSG,
-    {
-      next: { tags: [API_PATH.enchantSSG] },
-    }
-  );
-
-  return enchants.map((enchant) => ({
-    enchant: enchant.name,
-  }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { enchant: enchantName } = await params;
@@ -46,27 +33,23 @@ const Page = async ({ params }: Props) => {
   const { enchant: enchantName } = await params;
   const decodedName = decodeURIComponent(enchantName);
   const path = `${API_PATH.enchantDetailByName}/${encodeURIComponent(decodedName)}`;
-
+  const cacheTag = `${API_PATH.enchantDetailByName}/${decodedName}`;
   const enchant = await getApiV2<EnchantOptionType>(path, {
-    next: { tags: [path] },
+    next: { tags: [cacheTag] },
   });
 
-  const content = !enchant.name ? (
-    <CheckError text={`${decodedName}을 찾을 수 없습니다.`} />
-  ) : (
-    <EnchantDetail selectedItem={enchant} />
-  );
+  if (!enchant.name) {
+    notFound();
+  }
 
   return (
-    <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:px-6">
-      <AdBanner />
-      <RoundedContainer className="h-14 bg-muted/50 px-4 font-semibold">
-        <ItemRecipeTableBack />
-      </RoundedContainer>
-      <RoundedContainer className="flex min-h-0 flex-1 flex-col gap-4 p-0">
-        {content}
-      </RoundedContainer>
-    </div>
+    <DetailPageLayout>
+      {enchant.name ? (
+        <EnchantDetail selectedItem={enchant} />
+      ) : (
+        <CheckError text={`${decodedName}을 찾을 수 없습니다.`} />
+      )}
+    </DetailPageLayout>
   );
 };
 
