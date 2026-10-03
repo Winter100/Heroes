@@ -1,8 +1,13 @@
+'use client';
+
 import AdBanner from '@/app/_components/adsense/AdBanner';
 import SideAd from '@/app/_components/adsense/SideAd';
+import ClientErrorBoundary from '@/app/_components/common/error/ClientErrorBoundary';
+import Loading from '@/app/_components/common/Loading';
 import HomeMainContent from '@/app/_features/home/components/HomeMainContent';
+import { Suspense } from 'react';
 
-const Home = async () => {
+const Home = () => {
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
@@ -16,7 +21,17 @@ const Home = async () => {
             }}
           />
         </div>
-        <HomeMainContent />
+        <ClientErrorBoundary>
+          <Suspense
+            fallback={
+              <div className="m-2 flex h-[480px] items-center justify-center bg-muted/50 p-2">
+                <Loading />
+              </div>
+            }
+          >
+            <HomeMainContent />
+          </Suspense>
+        </ClientErrorBoundary>
         <AdBanner />
       </div>
       <SideAd dataSlot="1601053361" position="right" />
