@@ -32,5 +32,5 @@ export const requestApi = async <T>(
     throw new ApiError(response.status, publicMessage);
   }
 
-  return (await response.json()) as T;
+  return response.json();
 };
