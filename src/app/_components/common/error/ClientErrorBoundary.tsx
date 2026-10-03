@@ -1,5 +1,6 @@
 'use client';
 
+import { QueryErrorResetBoundary } from '@tanstack/react-query';
 import type { ReactNode } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from './ErrorFallback';
@@ -9,13 +10,18 @@ type ClientErrorBoundaryProps = {
 };
 
 const ClientErrorBoundary = ({ children }: ClientErrorBoundaryProps) => (
-  <ErrorBoundary
-    fallbackRender={({ resetErrorBoundary }) => (
-      <ErrorFallback onRetry={() => resetErrorBoundary()} />
+  <QueryErrorResetBoundary>
+    {({ reset }) => (
+      <ErrorBoundary
+        onReset={reset}
+        fallbackRender={({ resetErrorBoundary }) => (
+          <ErrorFallback onRetry={() => resetErrorBoundary()} />
+        )}
+      >
+        {children}
+      </ErrorBoundary>
     )}
-  >
-    {children}
-  </ErrorBoundary>
+  </QueryErrorResetBoundary>
 );
 
 export default ClientErrorBoundary;
