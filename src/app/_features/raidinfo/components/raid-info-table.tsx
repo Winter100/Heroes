@@ -39,18 +39,17 @@ const RaidInfoTable = ({ raid }: RaidInfoTableProps) => {
                 key={monster.battle}
                 className="relative h-14 cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
               >
+                <TableCell className="text-center">{r.raid_name}</TableCell>
                 <TableCell className="text-center">
                   <SuspenseContainer
                     aria-label={monster.battle}
-                    className="absolute inset-0"
+                    className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-sky-400"
                     path="/raidinfo"
                     link={monster.battle}
                   >
-                    {null}
+                    {monster.battle}
                   </SuspenseContainer>
-                  {r.raid_name}
                 </TableCell>
-                <TableCell className="text-center">{monster.battle}</TableCell>
                 <TableCell className="text-center">
                   <div className="flex items-center gap-1">
                     <ImageIcon src={monster.image ?? ' '} alt={monster.boss} />
