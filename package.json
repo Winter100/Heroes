@@ -1,12 +1,12 @@
 {
-  "name": "heros",
+  "name": "heroes",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "es": "next lint",
+    "lint": "next lint",
     "ts": "ts-prune"
   },
   "dependencies": {
