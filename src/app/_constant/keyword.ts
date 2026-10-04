@@ -1,45 +1,4 @@
 export const keyword = {
-  statName: {
-    str: '힘',
-    agi: '민첩',
-    int: '지능',
-    wil: '의지',
-    luk: '운',
-    max_hp: '최대 생명력',
-    max_sta: '',
-    balance: '밸런스',
-    att_speed: '공격 속도',
-    att_surplus: '',
-    att: '공격력',
-    def: '방어력',
-    critical: '크리티컬',
-    critical_damage: '크리티컬 대미지',
-    critical_resist: '크리티컬 저항',
-    max_stamina: '최대 스태미나',
-  },
-  slot: {
-    righthand: 'Right Hand',
-    leftthand: 'Left Hand',
-    head: 'Head',
-    upper: 'Upper',
-    lower: 'Lower',
-    hand: 'Hand',
-    leg: 'Leg',
-    materials: 'Materials',
-    accessories: 'Accessories',
-  },
-  itemName: {
-    ardri: '아르드리',
-    orna: '오르나',
-    uaithne: '와드네',
-  },
-  upgradeType: {
-    infusion: 'infusion',
-    prefix: 'prefix',
-    suffix: 'suffix',
-    접두: 'prefix',
-    접미: 'suffix',
-  },
   project: {
     name: '마영전',
     url: 'https://www.heroes-dev.com/',
@@ -54,7 +13,6 @@ export const AFFIX = {
 
 export const LOCALSTORAGE_KEY = {
   ocidList: 'ocidList',
-  characterInfoList: 'characterInfoList',
   waiting: 'waitingRoom',
 };
 
@@ -63,19 +21,28 @@ export const API_PATH = {
   infusion: `/enchants?category=INFUSION`,
   grind: `/items/grind`,
   recipes: `/items/recipe`,
+  recipeByItemName: `/items/recipe/name`,
   recipeSSG: `/items/recipe/ssg`,
   itemSetOption: `/items/set-option`,
   raid: `/raids/table`,
   raidDetailName: `/raids/name`,
   raidSSG: `/raids/ssg`,
   partholn: `/partholn`,
-  character: `/characters/image`,
+  characterImage: `/characters/image`,
   notice: '/notice',
   enchantTable: '/enchants/table',
   enchantSSG: '/enchants/ssg',
   enchantDetailById: '/enchants/id',
   enchantDetailByName: '/enchants/name',
 };
+
+type ApiKeyMap = {
+  readonly [K in keyof typeof API_PATH]: K;
+};
+
+export const API_KEY = Object.fromEntries(
+  Object.keys(API_PATH).map((key) => [key, key])
+) as ApiKeyMap;
 
 export const initialTitleList = [
   { stat_name: '이름', isView: true },
@@ -126,10 +93,7 @@ export const PREVIEW_BEFORE_AND_AFTER_STATS_TITLE = [
 ];
 
 export const SEARCH_PARAMS_KEY = {
-  basic: 'basic',
   ocid: 'ocid',
-  stat: 'stat',
-  guild: 'guild',
   character_name: 'character_name',
   type: 'type',
   item_name: 'item_name',
@@ -180,10 +144,6 @@ export const getInfusionIndex = (text: string) => {
   return index === -1 ? Infinity : index;
 };
 
-// export const ITEM_CATEGORY_MAP = {
-//   category: ['장비', '소모품', '재료'],
-//   subCategory: ['오르나', '와드네', '에리우', '기타'],
-// };
 export const ITEM_CATEGORY_MAP = {
   장비: ['와드네', '에리우', '악세서리'],
   소모품: [],

@@ -2,19 +2,18 @@
 
 import { useEnchantStore } from '@/app/_store/useEnchantStore';
 import PartholnDialog from './partholn-dialog';
-import { usePreviewAllData } from '@/app/_hooks';
+import { EnchantOptionType } from '@/app/_type/enchantType';
 
-const PartholnContainer = () => {
-  const { partholn } = usePreviewAllData();
+const PartholnContainer = ({ partholn }: { partholn: EnchantOptionType[] }) => {
   const simulations = useEnchantStore((state) => state.simulations);
   const setSimulations = useEnchantStore((state) => state.setSimulations);
 
-  const data = simulations?.['partholn']?.partholn.before;
+  const selectData = simulations?.['partholn']?.partholn.before;
 
   return (
     <PartholnDialog
-      partholns={partholn.data ?? []}
-      selectData={data}
+      partholns={partholn}
+      selectData={selectData}
       onClick={setSimulations}
     />
   );
