@@ -3,31 +3,20 @@ import { Suspense } from 'react';
 import Loading from '@/app/_components/common/Loading';
 import PreviewTable from '@/app/_features/preview/components/preview/items/preview-table';
 import SideAd from '@/app/_components/adsense/SideAd';
-import { getApi } from '@/app/api/getIApi';
-import { API_PATH } from '@/app/_constant/keyword';
-import { GrindType, ItemSetType } from '@/app/_type/itemType';
-import { EnchantOptionType } from '@/app/_type/enchantType';
-import { RaidListType } from '@/app/_type/raidType';
+import { API_KEY } from '@/app/_constant/keyword';
 import AdBanner from '@/app/_components/adsense/AdBanner';
+import { getServerData } from '@/app/api/getServerData';
 
 const Page = async () => {
-  const [enchants, infusion, grind, itemSetOption, raid] = await Promise.all([
-    getApi<EnchantOptionType>(API_PATH.enchant, {
-      next: { tags: [API_PATH.enchant] },
-    }),
-    getApi<EnchantOptionType>(API_PATH.infusion, {
-      next: { tags: [API_PATH.infusion] },
-    }),
-    getApi<GrindType>(API_PATH.grind, {
-      next: { tags: [API_PATH.grind] },
-    }),
-    getApi<ItemSetType>(API_PATH.itemSetOption, {
-      next: { tags: [API_PATH.itemSetOption] },
-    }),
-    getApi<RaidListType>(API_PATH.raid, {
-      next: { tags: [API_PATH.raid] },
-    }),
-  ]);
+  const [enchants, infusion, grind, itemSetOption, raid, partholn] =
+    await Promise.all([
+      getServerData(API_KEY.enchant),
+      getServerData(API_KEY.infusion),
+      getServerData(API_KEY.grind),
+      getServerData(API_KEY.itemSetOption),
+      getServerData(API_KEY.raid),
+      getServerData(API_KEY.partholn),
+    ]);
 
   return (
     <>
@@ -46,6 +35,7 @@ const Page = async () => {
               grind={grind}
               itemSetOption={itemSetOption}
               raid={raid}
+              partholn={partholn}
             />
           </div>
         </Suspense>

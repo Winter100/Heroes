@@ -4,30 +4,25 @@ import {
   NoticeEventDataType,
   NoticePatchDataType,
 } from '@/app/_type/homeType';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { getClientApi } from '@/app/api/getClientApi';
+import { useSuspenseQuery } from '@tanstack/react-query';
 
 export const useNotice = () => {
-  return useQuery({
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': `application/json`,
+    },
+  };
+
+  return useSuspenseQuery({
     queryFn: () =>
-      axios.get<{
+      getClientApi<{
         notice: NoticeDataType;
         patchNotice: NoticePatchDataType;
         eventNotice: NoticeEventDataType;
-      }>(`${process.env.NEXT_PUBLIC_BACKEND_URL!}${API_PATH.notice}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': `application/json`,
-        },
-      }),
+      }>(`${API_PATH.notice}`, options),
     queryKey: [API_PATH.notice],
     retry: 1,
-    select: (data) => {
-      return {
-        notice: data.data.notice.notice ?? [],
-        patchNotice: data.data.patchNotice.patch_notice,
-        eventNotice: data.data.eventNotice.event_notice,
-      };
-    },
   });
 };

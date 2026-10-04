@@ -1,18 +1,20 @@
 import { MetadataRoute } from 'next';
-import { getApi } from './api/getIApi';
+import { getServerApi } from './api/getServerApi';
 import { API_PATH } from './_constant/keyword';
 import { EnchantOptionType } from './_type/enchantType';
 import { ItemRecipes } from './_type/itemType';
 
-export const baseUrl = 'https://www.heroes-dev.com';
+export const baseUrl = process.env.NEXT_PUBLIC_FRONT_BASE_URL;
 
 export const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const results = await Promise.allSettled([
-    getApi<string[]>(API_PATH.raidSSG, { next: { tags: [API_PATH.raidSSG] } }),
-    getApi<{ id: number; name: string }>(API_PATH.enchantSSG, {
+    getServerApi<string[]>(API_PATH.raidSSG, {
+      next: { tags: [API_PATH.raidSSG] },
+    }),
+    getServerApi<{ id: number; name: string }[]>(API_PATH.enchantSSG, {
       next: { tags: [API_PATH.enchantSSG] },
     }),
-    getApi<ItemRecipes>(API_PATH.recipes, {
+    getServerApi<ItemRecipes[]>(API_PATH.recipes, {
       next: { tags: [API_PATH.recipes] },
     }),
   ]);

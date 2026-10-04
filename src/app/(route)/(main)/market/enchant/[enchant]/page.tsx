@@ -1,12 +1,10 @@
-import CheckError from '@/app/_components/common/check-error';
 import DetailPageLayout from '@/app/_components/layout/detail-page-layout';
 import { API_PATH, keyword } from '@/app/_constant/keyword';
 import { EnchantOptionType } from '@/app/_type/enchantType';
-import { getApiV2 } from '@/app/api/getIApi';
 import EnchantDetail from '@/app/_features/market/components/enchant-detail';
 import { Metadata } from 'next';
 import { baseUrl } from '@/app/sitemap';
-import { notFound } from 'next/navigation';
+import { getServerDetail } from '@/app/api/getServerDetail';
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
@@ -32,23 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const Page = async ({ params }: Props) => {
   const { enchant: enchantName } = await params;
   const decodedName = decodeURIComponent(enchantName);
-  const path = `${API_PATH.enchantDetailByName}/${encodeURIComponent(decodedName)}`;
+
+  const path = `${API_PATH.enchantDetailByName}/${enchantName}`;
   const cacheTag = `${API_PATH.enchantDetailByName}/${decodedName}`;
-  const enchant = await getApiV2<EnchantOptionType>(path, {
+
+  const enchant = await getServerDetail<EnchantOptionType>(path, {
     next: { tags: [cacheTag] },
   });
 
-  if (!enchant.name) {
-    notFound();
-  }
-
   return (
     <DetailPageLayout>
-      {enchant.name ? (
-        <EnchantDetail selectedItem={enchant} />
-      ) : (
-        <CheckError text={`${decodedName}을 찾을 수 없습니다.`} />
-      )}
+      <EnchantDetail selectedItem={enchant} />
     </DetailPageLayout>
   );
 };
