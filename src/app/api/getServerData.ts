@@ -22,6 +22,7 @@ type ServerDataMap = {
   recipes: ItemRecipes[];
   recipeByItemName: ItemRecipes;
   recipeSSG: ItemStaticRecipeType[];
+  partholn: EnchantOptionType[];
 };
 
 export const getServerData = <K extends keyof ServerDataMap>(
