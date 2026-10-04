@@ -57,14 +57,6 @@ const ItemEnchantTableServer = ({ enchants }: ItemEnchantTableServerProps) => {
               className="relative h-14 cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
             >
               <TableCell>
-                <SuspenseContainer
-                  aria-label={item.name}
-                  className="absolute inset-0"
-                  path="/market/enchant"
-                  link={item.name}
-                >
-                  {null}
-                </SuspenseContainer>
                 <Tooltip delayDuration={100}>
                   <TooltipTrigger className="text-gray-400">
                     <div className="flex items-center gap-1.5 px-1">
@@ -77,7 +69,14 @@ const ItemEnchantTableServer = ({ enchants }: ItemEnchantTableServerProps) => {
                         )}
                         alt={item?.name}
                       />
-                      <strong aria-label="인챈트명">{item?.name}</strong>
+                      <SuspenseContainer
+                        aria-label={item.name}
+                        className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-sky-400"
+                        path="/market/enchant"
+                        link={item.name}
+                      >
+                        <strong aria-label="인챈트명">{item?.name}</strong>
+                      </SuspenseContainer>
                       <span className="shrink-0 rounded-sm bg-zinc-800/70 px-1.5 py-0.5">
                         {item?.rank.name}
                       </span>

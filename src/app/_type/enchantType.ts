@@ -63,49 +63,11 @@ export interface EnchantFormatingType {
   date_update: string;
 }
 
-export interface EnchantMergePriceType
-  extends EnchantFormatingType,
-    EnchantOptionType {}
-
-export interface EnchantTableType extends Omit<EnchantMergePriceType, 'slot'> {
-  slot: string[];
-}
-
 export interface EnchantPriceProps {
   label?: string;
   falseLabel?: string;
   avgPrice: number;
   enchantPriceLoading: boolean;
-}
-
-export enum EnchantTableKeyEnum {
-  rank = 'rank',
-  name = 'name',
-  average_price = 'average_price',
-  max_price = 'max_price',
-  min_price = 'min_price',
-}
-
-export type EnchantKeyType = {
-  rank: EnchantTableKeyEnum.rank;
-  name: EnchantTableKeyEnum.name;
-  average_price: EnchantTableKeyEnum.average_price;
-  max_price: EnchantTableKeyEnum.max_price;
-  min_price: EnchantTableKeyEnum.min_price;
-};
-
-export interface EnchantRankTableProps extends ComponentProps<'table'> {
-  enchantData: {
-    upgreadeType: string;
-    rank: string;
-    name: string;
-    drop_item_list: string[];
-    description: string;
-    stat_value: {
-      stat_name: string;
-      stat_value: string;
-    }[];
-  }[];
 }
 
 export const SIMULATION_AFFIX_PART = [

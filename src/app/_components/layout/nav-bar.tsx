@@ -27,7 +27,7 @@ const navMain = [
     title: '조회',
     nav: [
       { title: '캐릭터 조회', url: '/character' },
-      { title: '상한 조회', url: '/raid' },
+      { title: '간단 조회', url: '/raid' },
       { title: '골드 거래소 조회', url: '/gold' },
     ],
   },

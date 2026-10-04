@@ -41,17 +41,7 @@ const ItemRecipeTable = ({ recipes }: Props) => {
             key={item.name}
             className="relative cursor-pointer border-b border-zinc-600 transition hover:bg-zinc-800/50"
           >
-            <TableCell className="text-center font-medium">
-              <SuspenseContainer
-                className="absolute inset-0"
-                link={`${item.name}`}
-                // link={`${item.id}-${item.name}`}
-                path={`/iteminfo`}
-              >
-                {null}
-              </SuspenseContainer>
-              {i + 1}
-            </TableCell>
+            <TableCell className="text-center font-medium">{i + 1}</TableCell>
             <TableCell className="flex items-center gap-2">
               <Tooltip delayDuration={100}>
                 <TooltipTrigger className="text-base text-gray-400">
@@ -65,13 +55,19 @@ const ItemRecipeTable = ({ recipes }: Props) => {
                   <ItemTooltipItem item={item} />
                 </TooltipContent>
               </Tooltip>
-              <ItemTitle
-                name={item?.name}
-                category={item.category}
-                tier={item?.tier}
+              <SuspenseContainer
+                className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-sky-400"
+                link={`${item.name}`}
+                path={`/iteminfo`}
               >
-                <strong>{item.name}</strong>
-              </ItemTitle>
+                <ItemTitle
+                  name={item?.name}
+                  category={item.category}
+                  tier={item?.tier}
+                >
+                  <strong>{item.name}</strong>
+                </ItemTitle>
+              </SuspenseContainer>
             </TableCell>
             <TableCell className="text-center">
               <span className="shrink-0 rounded-sm bg-zinc-800/70 px-2 py-0.5">

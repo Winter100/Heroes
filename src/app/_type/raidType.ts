@@ -7,16 +7,6 @@ export const item_filter = {
   enchant: '인챈트',
 } as const;
 
-export interface MonstersOmitEntry {
-  raid_name: string;
-  monsters: Omit<MonstersType, 'entry'>[];
-}
-
-export interface MonstersOmitLimit {
-  raid_name: string;
-  monsters: Omit<MonstersType, 'limit'>[];
-}
-
 export interface Drop_items {
   item_name: string;
   item_description?: string[];
