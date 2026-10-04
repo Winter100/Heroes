@@ -1,4 +1,7 @@
 import { MonstersType } from '@/app/_type/raidType';
+import { Simulations } from '@/app/_store/useEnchantStore';
+import { SIMULATION_AFFIX_PART } from '@/app/_type/enchantType';
+import { Stat } from '@/app/_type/previewType';
 
 type StatItem = {
   stat_name: string;
@@ -198,10 +201,6 @@ export const createAccessoriesObject = (items: Item[]) => {
   // 아이템 이름을 제거하고 배열 형태로 변환
   return Object.values(result).flat();
 };
-
-import { Simulations } from '@/app/_store/useEnchantStore';
-import { SIMULATION_AFFIX_PART } from '@/app/_type/enchantType';
-import { Stat } from '@/app/_type/previewType';
 
 /**
  * 모든 아이템의 연마, 인챈트 등으로 변경된 스텟의 합을 더해 리턴합니다.
