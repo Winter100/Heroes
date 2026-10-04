@@ -175,7 +175,7 @@ npm run dev
 브라우저에서 `http://localhost:3000`으로 접속합니다.
 
 ```bash
-npm run es          # Next.js ESLint 검사
+npm run lint          # Next.js ESLint 검사
 npx tsc --noEmit    # TypeScript 타입 검사
 npm run build       # 프로덕션 빌드
 npm run start       # 프로덕션 서버 실행
