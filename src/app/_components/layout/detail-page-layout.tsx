@@ -1,9 +1,13 @@
 import AdBanner from '@/app/_components/adsense/AdBanner';
-import CheckError from '@/app/_components/common/check-error';
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe-table-back';
+import type { ReactNode } from 'react';
 
-const NotFound = () => {
+type DetailPageLayoutProps = {
+  children: ReactNode;
+};
+
+const DetailPageLayout = ({ children }: DetailPageLayoutProps) => {
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:px-6">
       <AdBanner />
@@ -11,10 +15,10 @@ const NotFound = () => {
         <ItemRecipeTableBack />
       </RoundedContainer>
       <RoundedContainer className="flex min-h-0 flex-1 flex-col gap-4 p-0">
-        <CheckError text={`인챈트를 찾을 수 없습니다.`} />
+        {children}
       </RoundedContainer>
     </div>
   );
 };
 
-export default NotFound;
+export default DetailPageLayout;

@@ -2,30 +2,19 @@ import AdBanner from '@/app/_components/adsense/AdBanner';
 import SideAd from '@/app/_components/adsense/SideAd';
 import CharacterSearchInput from '@/app/_components/common/CharacterSearchInput';
 import Loading from '@/app/_components/common/Loading';
-import { API_PATH } from '@/app/_constant/keyword';
+import { API_KEY } from '@/app/_constant/keyword';
 import CharacterInformationContainer from '@/app/_features/character/components/information/character-information-container';
-import { CharacterInfo } from '@/app/_type/characterType';
-import { EnchantOptionType } from '@/app/_type/enchantType';
-import { GrindType, ItemSetType } from '@/app/_type/itemType';
-import { getApi } from '@/app/api/getIApi';
+import { getServerData } from '@/app/api/getServerData';
 import { Suspense } from 'react';
 
 const Page = async () => {
   const [enchants, infusion, itemSetOption, grind, character] =
     await Promise.all([
-      getApi<EnchantOptionType>(API_PATH.enchant, {
-        next: { tags: [API_PATH.enchant] },
-      }),
-      getApi<EnchantOptionType>(API_PATH.infusion, {
-        next: { tags: [API_PATH.infusion] },
-      }),
-      getApi<ItemSetType>(API_PATH.itemSetOption, {
-        next: { tags: [API_PATH.itemSetOption] },
-      }),
-      getApi<GrindType>(API_PATH.grind, { next: { tags: [API_PATH.grind] } }),
-      getApi<CharacterInfo>(API_PATH.character, {
-        next: { tags: [API_PATH.character] },
-      }),
+      getServerData(API_KEY.enchant),
+      getServerData(API_KEY.infusion),
+      getServerData(API_KEY.itemSetOption),
+      getServerData(API_KEY.grind),
+      getServerData(API_KEY.characterImage),
     ]);
 
   return (
@@ -34,7 +23,7 @@ const Page = async () => {
       <div>
         <AdBanner />
         <Suspense fallback={<Loading />}>
-          <div className="mx-auto max-w-7xl gap-6 px-4 py-6 sm:px-6">
+          <div className="mx-auto w-full max-w-7xl gap-6 px-4 py-6 sm:px-6">
             <CharacterSearchInput
               className="mx-auto mb-2 w-full max-w-72"
               routeName="character"

@@ -11,7 +11,7 @@ const NotFound = () => {
         <ItemRecipeTableBack />
       </RoundedContainer>
       <RoundedContainer className="flex min-h-0 flex-1 flex-col gap-4 p-0">
-        <CheckError text={`인챈트를 찾을 수 없습니다.`} />
+        <CheckError text={`레이드를 찾을 수 없습니다.`} />
       </RoundedContainer>
     </div>
   );

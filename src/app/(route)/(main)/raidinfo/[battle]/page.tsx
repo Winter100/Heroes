@@ -1,30 +1,18 @@
 import { API_PATH, keyword } from '@/app/_constant/keyword';
-import RoundedContainer from '@/app/_components/layout/RoundedContainer';
-import ItemRecipeTableBack from '@/app/_features/iteminfo/components/item-recipe-table-back';
-import CheckError from '@/app/_components/common/check-error';
-import { getApi, getApiV2 } from '@/app/api/getIApi';
+import DetailPageLayout from '@/app/_components/layout/detail-page-layout';
 import { MonstersType } from '@/app/_type/raidType';
 import RaidInfoDetail from '@/app/_features/raidinfo/components/raid-info-detail';
-import AdBanner from '@/app/_components/adsense/AdBanner';
 import { Metadata } from 'next';
 import { baseUrl } from '@/app/sitemap';
+import { getServerDetail } from '@/app/api/getServerDetail';
 
 export const dynamic = 'force-static';
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = false;
 
 type Props = {
   params: Promise<{ battle: string }>;
 };
-
-export async function generateStaticParams() {
-  const raidList = await getApi<string>(API_PATH.raidSSG, {
-    next: { tags: [API_PATH.raidSSG] },
-  });
-
-  return raidList.map((battle) => ({
-    battle,
-  }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { battle } = await params;
@@ -34,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${decodeBattleName} | ${keyword.project.name} `,
     description: `${decodeBattleName}의 빠른 전투 및 상한 정보를 제공합니다`,
     alternates: {
-      canonical: `${baseUrl}/raidinfo/${encodeURIComponent(battle)}`,
+      canonical: `${baseUrl}/raidinfo/${encodeURIComponent(decodeBattleName)}`,
     },
   };
 }
@@ -43,29 +31,17 @@ const Page = async ({ params }: Props) => {
   const { battle } = await params;
   const decodedName = decodeURIComponent(battle);
 
-  const path = `${API_PATH.raidDetailName}/${encodeURIComponent(decodedName)}`;
-  const raid = await getApiV2<MonstersType>(path, {
-    next: { tags: [path] },
+  const path = `${API_PATH.raidDetailName}/${battle}`;
+  const cacheTag = `${API_PATH.raidDetailName}/${decodedName}`;
+
+  const raid = await getServerDetail<MonstersType>(path, {
+    next: { tags: [cacheTag] },
   });
 
-  const renderContent = () => {
-    if (!raid) {
-      return <CheckError text={`${battle}을 찾을 수 없습니다.`} />;
-    }
-
-    return <RaidInfoDetail selectedRaid={raid} />;
-  };
-
   return (
-    <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:px-6">
-      <AdBanner />
-      <RoundedContainer className="h-14 bg-muted/50 px-4 font-semibold">
-        <ItemRecipeTableBack />
-      </RoundedContainer>
-      <RoundedContainer className="flex min-h-0 flex-1 flex-col gap-4 p-0">
-        {renderContent()}
-      </RoundedContainer>
-    </div>
+    <DetailPageLayout>
+      <RaidInfoDetail selectedRaid={raid} />
+    </DetailPageLayout>
   );
 };
 

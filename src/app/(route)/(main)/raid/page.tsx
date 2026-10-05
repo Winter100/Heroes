@@ -1,16 +1,13 @@
 import AdBanner from '@/app/_components/adsense/AdBanner';
 import SideAd from '@/app/_components/adsense/SideAd';
 import Loading from '@/app/_components/common/Loading';
-import { API_PATH } from '@/app/_constant/keyword';
+import { API_KEY } from '@/app/_constant/keyword';
 import { LimitTable, LimitTableMenuBar } from '@/app/_features/raid';
-import { RaidListType } from '@/app/_type/raidType';
-import { getApi } from '@/app/api/getIApi';
+import { getServerData } from '@/app/api/getServerData';
 import { Suspense } from 'react';
 
 const Page = async () => {
-  const data = await getApi<RaidListType>(API_PATH.raid, {
-    next: { tags: [API_PATH.raid] },
-  });
+  const data = await getServerData(API_KEY.raid);
   data.sort(
     (a, b) => (a.monsters[0]?.level ?? 0) - (b.monsters[0]?.level ?? 0)
   );

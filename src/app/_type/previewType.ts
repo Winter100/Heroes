@@ -1,20 +1,3 @@
-export interface PreviewSelectedType {
-  slot: string;
-  upgreadeType: string;
-  name: string;
-  stat_value: Stat[];
-}
-
-export interface beforeAndAfterStatsType {
-  rank: string;
-  name: string;
-  stat_value: {
-    stat_name: string;
-    stat_value: string;
-  }[];
-  upgreadeType: string;
-}
-
 export type Stat = {
   stat_name: string;
   stat_value: string | number;

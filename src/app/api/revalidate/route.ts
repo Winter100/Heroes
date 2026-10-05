@@ -2,6 +2,21 @@ import { API_PATH } from '@/app/_constant/keyword';
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
+const DETAIL_TAG_PREFIXES = [
+  `${API_PATH.recipes}/`,
+  `${API_PATH.enchantDetailByName}/`,
+  `${API_PATH.raidDetailName}/`,
+] as const;
+
+const isRevalidatableTag = (tag: string) => {
+  const isApiPath = Object.values(API_PATH).some((path) => path === tag);
+  const isDetailPath = DETAIL_TAG_PREFIXES.some(
+    (prefix) => tag.startsWith(prefix) && tag.length > prefix.length
+  );
+
+  return isApiPath || isDetailPath;
+};
+
 export const POST = async (request: NextRequest) => {
   const searchParams = request.nextUrl.searchParams;
   const tag = searchParams.get('tag');
@@ -21,9 +36,7 @@ export const POST = async (request: NextRequest) => {
     );
   }
 
-  const isValidateTag = Object.values(API_PATH).includes(tag);
-
-  if (!isValidateTag) {
+  if (!isRevalidatableTag(tag)) {
     return NextResponse.json(
       { message: '올바르지 않은 태그입니다.' },
       { status: 401 }

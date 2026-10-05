@@ -24,6 +24,7 @@ import { RaidListType } from '@/app/_type/raidType';
 type Props = {
   enchants: EnchantOptionType[];
   infusion: EnchantOptionType[];
+  partholn: EnchantOptionType[];
   grind: GrindType[];
   itemSetOption: ItemSetType[];
   raid: RaidListType[];
@@ -34,6 +35,7 @@ const PreviewTable = ({
   grind = [],
   itemSetOption = [],
   raid = [],
+  partholn = [],
 }: Props) => {
   const { name, ocid, error, isLoading, equipment } = useCharacterData(grind);
 
@@ -65,7 +67,7 @@ const PreviewTable = ({
       <Row className="w-full items-center justify-end gap-2 text-xs">
         <TourRaidTableContainer ocid={ocid ?? ''} raid={raid} />
         <PreviewStatsSummaryContainer ocid={ocid ?? ''} />
-        <PartholnContainer />
+        <PartholnContainer partholn={partholn} />
         <GrindingSummaryContainer
           items={equipment.data?.items ?? []}
           ocid={ocid ?? ''}
