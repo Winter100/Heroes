@@ -31,7 +31,7 @@ const Page = async ({ params }: Props) => {
   const decodedName = decodeURIComponent(item);
 
   const path = `${API_PATH.recipeByItemName}/${item}`;
-  const cacheTag = `${API_PATH.recipeByItemName}/${decodedName}`;
+  const cacheTag = encodeURI(`${API_PATH.recipeByItemName}/${decodedName}`);
 
   const recipe = await getServerDetail<ItemRecipes>(path, {
     next: { tags: [cacheTag] },
