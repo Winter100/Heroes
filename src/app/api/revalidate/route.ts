@@ -44,7 +44,7 @@ export const POST = async (request: NextRequest) => {
   }
 
   try {
-    revalidateTag(tag);
+    revalidateTag(encodeURI(tag));
     return NextResponse.json(
       {
         revalidated: true,

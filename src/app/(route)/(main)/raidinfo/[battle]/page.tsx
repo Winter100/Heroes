@@ -32,7 +32,7 @@ const Page = async ({ params }: Props) => {
   const decodedName = decodeURIComponent(battle);
 
   const path = `${API_PATH.raidDetailName}/${battle}`;
-  const cacheTag = `${API_PATH.raidDetailName}/${decodedName}`;
+  const cacheTag = encodeURI(`${API_PATH.raidDetailName}/${decodedName}`);
 
   const raid = await getServerDetail<MonstersType>(path, {
     next: { tags: [cacheTag] },

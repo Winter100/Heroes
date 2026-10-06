@@ -32,7 +32,7 @@ const Page = async ({ params }: Props) => {
   const decodedName = decodeURIComponent(enchantName);
 
   const path = `${API_PATH.enchantDetailByName}/${enchantName}`;
-  const cacheTag = `${API_PATH.enchantDetailByName}/${decodedName}`;
+  const cacheTag = encodeURI(`${API_PATH.enchantDetailByName}/${decodedName}`);
 
   const enchant = await getServerDetail<EnchantOptionType>(path, {
     next: { tags: [cacheTag] },
