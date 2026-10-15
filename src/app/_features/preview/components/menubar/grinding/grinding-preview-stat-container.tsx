@@ -1,4 +1,5 @@
 'use client';
+import { EQUIPMENT_TO_CHARACTER_STAT_NAMES } from '@/app/_constant/stats/stat-name';
 import { NewEquipmentType, NewTuning_stat } from '@/app/_type/equipmentType';
 import { useGrindStore } from '@/app/_store/useGrindStore';
 import { useEffect, useRef } from 'react';
@@ -22,11 +23,18 @@ const GrindingPreviewStatContainer = ({
   isViewBtn?: boolean;
   isIncreaseView?: boolean;
 }) => {
+  const simulationStatName =
+    stat_name === '크리티컬 확률' ? '크리티컬' : stat_name;
   const simulatedValue = useGrindStore(
     (state) =>
+      state.simulations[item.item_name]?.grind.after[simulationStatName] ??
       state.simulations[item.item_name]?.grind.after[stat_name] ??
+      state.simulations[item.item_name]?.grind.after[
+        EQUIPMENT_TO_CHARACTER_STAT_NAMES[stat_name] ?? stat_name
+      ] ??
       Number(stat_value)
   );
+
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   const simulationsAfter = useGrindStore(
@@ -41,17 +49,17 @@ const GrindingPreviewStatContainer = ({
   const original = Number(stat_value);
 
   const handleMin = () => {
-    setSimulations(item.item_name, stat_name, min, min, max, original);
+    setSimulations(item.item_name, simulationStatName, min, min, max, original);
   };
 
   const handleMax = () => {
-    setSimulations(item.item_name, stat_name, max, min, max, original);
+    setSimulations(item.item_name, simulationStatName, max, min, max, original);
   };
 
   const handleDecrease = () => {
     setSimulations(
       item.item_name,
-      stat_name,
+      simulationStatName,
       simulatedValue - step,
       min,
       max,
@@ -62,7 +70,7 @@ const GrindingPreviewStatContainer = ({
   const handleIncrease = () => {
     setSimulations(
       item.item_name,
-      stat_name,
+      simulationStatName,
       simulatedValue + step,
       min,
       max,
@@ -76,7 +84,14 @@ const GrindingPreviewStatContainer = ({
       stat_max_value,
       stat_one_value
     );
-    setSimulations(item.item_name, stat_name, newValue, min, max, original);
+    setSimulations(
+      item.item_name,
+      simulationStatName,
+      newValue,
+      min,
+      max,
+      original
+    );
   };
 
   const { increaseValue, minPercentage, reMainPercentage } = getPercentageStat(
@@ -84,6 +99,15 @@ const GrindingPreviewStatContainer = ({
     stat_min_value,
     stat_max_value
   );
+
+  const headerStatValue = original + increaseValue;
+  const headerIncreaseValue = Number.isFinite(increaseValue)
+    ? increaseValue
+    : null;
+  const headerCurrentValue = Number.isFinite(headerStatValue)
+    ? headerStatValue
+    : null;
+  const headerMaxValue = Number.isFinite(max) ? max : null;
 
   const isActivateOption = isLimitPower(item, simulationsAfter, stat_name);
   const isMin = simulatedValue <= min || !isActivateOption;
@@ -113,7 +137,14 @@ const GrindingPreviewStatContainer = ({
       !isActivateOption &&
       simulatedValue !== min
     ) {
-      setSimulations(item.item_name, stat_name, min, min, max, original);
+      setSimulations(
+        item.item_name,
+        simulationStatName,
+        min,
+        min,
+        max,
+        original
+      );
     }
   }, [
     isActivateOption,
@@ -123,6 +154,7 @@ const GrindingPreviewStatContainer = ({
     original,
     setSimulations,
     simulatedValue,
+    simulationStatName,
     stat_name,
   ]);
 
@@ -133,10 +165,10 @@ const GrindingPreviewStatContainer = ({
       {/* 그래프 수치 */}
       <ItemGrindHeader
         isIncreaseView={isIncreaseView}
-        increaseValue={increaseValue}
+        increaseValue={headerIncreaseValue}
         stat_name={stat_name}
-        stat_value={stat_value}
-        stat_max_value={stat_max_value}
+        stat_value={headerCurrentValue}
+        stat_max_value={headerMaxValue}
       />
 
       <div className="flex w-full flex-col items-center justify-center">
