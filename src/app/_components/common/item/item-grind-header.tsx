@@ -1,8 +1,8 @@
 interface Props {
-  increaseValue: number;
+  increaseValue: number | null;
   stat_name: string;
-  stat_value: string;
-  stat_max_value: string;
+  stat_value: string | number | null;
+  stat_max_value: string | number | null;
   isIncreaseView: boolean;
 }
 
@@ -17,16 +17,16 @@ const ItemGrindHeader = ({
     <div className="flex items-center justify-between gap-2">
       <div className="flex flex-row gap-2">
         <p>{stat_name}</p>
-        {isIncreaseView && (
+        {isIncreaseView && increaseValue !== null && (
           <div className="flex items-center justify-center text-[10px] text-green-300">
             {`( +${increaseValue} )`}
           </div>
         )}
       </div>
       <div className="flex items-center justify-center gap-1 text-xs text-fontColor">
-        <p className="flex-1 text-center">{stat_value}</p>
+        <p className="flex-1 text-center">{stat_value ?? '-'}</p>
         <p className="flex-1 text-center">{`/`}</p>
-        <p className="flex-1 text-center">{stat_max_value}</p>
+        <p className="flex-1 text-center">{stat_max_value ?? '-'}</p>
       </div>
     </div>
   );

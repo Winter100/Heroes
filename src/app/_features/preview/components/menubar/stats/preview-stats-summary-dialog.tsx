@@ -1,3 +1,4 @@
+import { CHARACTER_TO_EQUIPMENT_STAT_NAMES } from '@/app/_constant/stats/stat-name';
 import {
   Dialog,
   DialogContent,
@@ -20,12 +21,6 @@ interface Props {
   diffStatsArray: Stat[];
 }
 
-const STAT_NAME_ALIASES: Readonly<Record<string, string>> = {
-  스태미나: '최대 스태미나',
-  생명력: '최대 생명력',
-  '크리티컬 확률': '크리티컬',
-};
-
 const PreviewStatsSummaryDialog = ({
   beforeStats,
   diffStatsArray,
@@ -35,7 +30,7 @@ const PreviewStatsSummaryDialog = ({
     finalStatsArray.find(
       (stat) =>
         stat.stat_name === statName ||
-        stat.stat_name === STAT_NAME_ALIASES[statName]
+        stat.stat_name === CHARACTER_TO_EQUIPMENT_STAT_NAMES[statName]
     )
   ).filter((stat) => stat !== undefined);
 

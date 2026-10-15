@@ -1,15 +1,10 @@
 'use client';
+import { EQUIPMENT_TO_CHARACTER_STAT_NAMES } from '@/app/_constant/stats/stat-name';
 import { useEnchantStore } from '../../_store/useEnchantStore';
 import { useGrindStore } from '../../_store/useGrindStore';
 import { Stat } from '../../_type/previewType';
 import { allStatSumCalculator } from '../../_utils/calculate/calculate-util';
 import { useUserStat } from '../get/useUserStat';
-
-const ENCHANT_STAT_NAMES: Readonly<Record<string, string>> = {
-  크리티컬: '크리티컬 확률',
-  '최대 생명력': '생명력',
-  '최대 스태미나': '스태미나',
-};
 
 export const useSimulationStats = (ocid: string) => {
   const { data: beforeStats, isError } = useUserStat(ocid);
@@ -72,11 +67,11 @@ const getCombinedStats = (
 
   // 2. 기존 인챈트 차감 (-) 및 신규 인챈트 가산 (+)
   Object.entries(beforeEnchantStats).forEach(([name, value]) => {
-    const statName = ENCHANT_STAT_NAMES[name] ?? name;
+    const statName = EQUIPMENT_TO_CHARACTER_STAT_NAMES[name] ?? name;
     if (statsMap[statName] !== undefined) statsMap[statName] -= value;
   });
   Object.entries(afterEnchantStats).forEach(([name, value]) => {
-    const statName = ENCHANT_STAT_NAMES[name] ?? name;
+    const statName = EQUIPMENT_TO_CHARACTER_STAT_NAMES[name] ?? name;
     statsMap[statName] = (statsMap[statName] || 0) + value;
   });
 
