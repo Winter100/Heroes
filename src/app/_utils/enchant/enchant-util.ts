@@ -1,3 +1,4 @@
+import { STAT_NAME_ALIASES } from '@/app/_constant/stats/stat-name';
 import { AFFIX, getInfusionIndex } from '@/app/_constant/keyword';
 import {
   EnchantGroupByAffix,
@@ -100,13 +101,14 @@ export const isLimitPower = (
     item.item_name.includes('와드네') || item.item_name.includes('에리우');
 
   const recentStats = tuning_stat.map((stat) => {
-    const hasNewValue = targetRecord?.[stat.stat_name] !== undefined;
+    const alias = STAT_NAME_ALIASES[stat.stat_name];
+    const simulatedValue =
+      targetRecord?.[stat.stat_name] ??
+      (alias ? targetRecord?.[alias] : undefined);
 
     return {
       ...stat,
-      stat_value: hasNewValue
-        ? targetRecord?.[stat.stat_name].toString()
-        : stat.stat_value.toString(),
+      stat_value: (simulatedValue ?? stat.stat_value).toString(),
     };
   });
 

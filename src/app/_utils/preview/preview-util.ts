@@ -1,3 +1,4 @@
+import { EQUIPMENT_TO_CHARACTER_STAT_NAMES } from '@/app/_constant/stats/stat-name';
 import {
   cach_slot_name,
   slot_name,
@@ -311,7 +312,11 @@ export const getNewTuning = (item: EquipmentType, grind: GrindType[]) => {
 
   const tuning_stat = grinding?.item_value.map((stat) => {
     const tuning_stat = item?.item_option?.tuning_stat;
-    const findStat = tuning_stat?.find((s) => s.stat_name === stat.stat_name);
+    const findStat = tuning_stat?.find(
+      (s) =>
+        s.stat_name === stat.stat_name ||
+        s.stat_name === EQUIPMENT_TO_CHARACTER_STAT_NAMES[stat.stat_name]
+    );
 
     if (findStat) {
       return {
