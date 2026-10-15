@@ -81,7 +81,7 @@ export const limitCalculator = (
         );
       }
 
-      case '크리티컬': {
+      case '크리티컬 확률': {
         const Mstat = monsterInfo?.limit?.find(
           (s) => s?.stat_name === '크리티컬 저항'
         );
@@ -126,7 +126,7 @@ export const limitCalculator = (
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
 
-      case '크리티컬': {
+      case '크리티컬 확률': {
         const Mstat = monsterInfo?.entry?.find(
           (s) => s?.stat_name === '크리티컬'
         );
