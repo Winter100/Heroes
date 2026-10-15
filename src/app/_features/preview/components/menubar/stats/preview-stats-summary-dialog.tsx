@@ -20,13 +20,23 @@ interface Props {
   diffStatsArray: Stat[];
 }
 
+const STAT_NAME_ALIASES: Readonly<Record<string, string>> = {
+  스태미나: '최대 스태미나',
+  생명력: '최대 생명력',
+  '크리티컬 확률': '크리티컬',
+};
+
 const PreviewStatsSummaryDialog = ({
   beforeStats,
   diffStatsArray,
   finalStatsArray,
 }: Props) => {
   const afterStats = PREVIEW_BEFORE_AND_AFTER_STATS_TITLE.map((statName) =>
-    finalStatsArray.find((stat) => stat.stat_name === statName)
+    finalStatsArray.find(
+      (stat) =>
+        stat.stat_name === statName ||
+        stat.stat_name === STAT_NAME_ALIASES[statName]
+    )
   ).filter((stat) => stat !== undefined);
 
   return (
