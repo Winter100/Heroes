@@ -62,7 +62,7 @@ export const initialTitleList = [
 
 export const previewInitialTitleList = [
   { stat_name: '공격력', isView: true },
-  { stat_name: '크리티컬', isView: true },
+  { stat_name: '크리티컬 확률', isView: true },
   { stat_name: '밸런스', isView: true },
   { stat_name: '방어력 관통', isView: true },
   { stat_name: '크리티컬 저항', isView: true },
@@ -80,11 +80,11 @@ export const PREVIEW_BEFORE_AND_AFTER_STATS_TITLE = [
   '지능',
   '의지',
   '행운',
-  '최대 생명력',
-  '최대 스태미나',
+  '생명력',
+  '스태미나',
   '공격속도',
   '추가피해',
-  '크리티컬',
+  '크리티컬 확률',
   '크리티컬 피해량',
   '크리티컬 저항',
   '밸런스',
