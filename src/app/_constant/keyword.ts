@@ -1,7 +1,67 @@
+import { Metadata } from 'next';
+
 export const keyword = {
   project: {
+    title: '망스비',
     name: '마영전',
     url: 'https://www.heroes-dev.com/',
+    description:
+      '마비노기 영웅전 캐릭터를 조회하고 빠른 전투 및 상한 컷을 확인할 수 있으며, 장비의 연마, 정령 합성, 접두, 접미 인챈트 시뮬레이션을 제공합니다.',
+  },
+};
+
+export const metadataOption: Metadata = {
+  applicationName: keyword.project.title,
+  metadataBase: new URL(keyword.project.url),
+  title: keyword.project.title,
+  keywords: [
+    '마비노기 영웅전',
+    '마영전',
+    '마영전 장비 세팅',
+    '마영전 세팅',
+    '마영전 상한',
+    '마영전 캐릭터',
+    '마영전 인챈트',
+  ],
+  description: keyword.project.description,
+  verification: {
+    google: 'NWuO_jx2ujHe0lQeiHDEolhbhews2UnrQccL0yPX4RY',
+    other: {
+      'naver-site-verification': '0414ca73ae92a7ac7f450520ab44cc825197f7d4',
+    },
+  },
+  authors: [
+    { name: keyword.project.title },
+    { name: keyword.project.title, url: keyword.project.url },
+  ],
+  icons: {
+    icon: '/favicon.png',
+  },
+  openGraph: {
+    title: keyword.project.title,
+    siteName: keyword.project.title,
+    description: keyword.project.description,
+    type: 'website',
+    images: [
+      {
+        url: '/bg.jpg',
+        width: 1200,
+        height: 630,
+        alt: '이미지',
+      },
+    ],
+  },
+  twitter: {
+    title: keyword.project.title,
+    description: keyword.project.description,
+    images: [
+      {
+        url: '/bg.jpg',
+        width: 1200,
+        height: 630,
+        alt: '이미지',
+      },
+    ],
   },
 };
 
@@ -122,6 +182,9 @@ const INFUSIONS_SORT_DATA = [
   '밸런스 1',
   '밸런스 2',
   '밸런스 3',
+  '크리티컬 확률 1',
+  '크리티컬 확률 2',
+  '크리티컬 확률 3',
   '크리티컬 1',
   '크리티컬 2',
   '크리티컬 3',

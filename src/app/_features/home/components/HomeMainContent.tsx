@@ -3,9 +3,14 @@
 import RoundedContainer from '@/app/_components/layout/RoundedContainer';
 import BasicNotice from './notice/BasicNotice';
 import { useNotice } from '@/app/_hooks/get/useNotice';
+import HomeNoticeLoading from './HomeNoticeLoading';
 
 const HomeMainContent = () => {
-  const { data } = useNotice();
+  const { data, isLoading } = useNotice();
+
+  if (isLoading || !data) {
+    return <HomeNoticeLoading />;
+  }
 
   return (
     <div className="flex flex-1 flex-col gap-2 p-2">

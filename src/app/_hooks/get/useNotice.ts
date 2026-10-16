@@ -5,17 +5,18 @@ import {
   NoticePatchDataType,
 } from '@/app/_type/homeType';
 import { getClientApi } from '@/app/api/getClientApi';
-import { useSuspenseQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
 export const useNotice = () => {
-  const options = {
+  const options: RequestInit = {
     method: 'GET',
+    cache: 'no-store',
     headers: {
       'Content-Type': `application/json`,
     },
   };
 
-  return useSuspenseQuery({
+  return useQuery({
     queryFn: () =>
       getClientApi<{
         notice: NoticeDataType;
@@ -23,6 +24,12 @@ export const useNotice = () => {
         eventNotice: NoticeEventDataType;
       }>(`${API_PATH.notice}`, options),
     queryKey: [API_PATH.notice],
+    staleTime: Infinity,
+    gcTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    throwOnError: true,
     retry: 1,
   });
 };
