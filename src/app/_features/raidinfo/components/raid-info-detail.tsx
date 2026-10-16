@@ -3,7 +3,6 @@ import ImageIcon from '@/app/_components/common/image/Image-Icon';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -11,6 +10,7 @@ import {
 } from '@/components/ui/table';
 import { limitCalculator } from '@/app/_utils/calculate/calculate-util';
 import ChartAttackPower from '../../preview/components/menubar/chart/chart-attack-power';
+import { raidInfoInitialTitleList } from '@/app/_constant/keyword';
 
 interface RaidInfoDetailProps {
   selectedRaid: MonstersType;
@@ -18,19 +18,21 @@ interface RaidInfoDetailProps {
 
 const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
   return (
-    <div className="flex h-full flex-col gap-4">
-      <div className="flex items-center justify-center gap-4 rounded-md bg-muted/50 p-2">
+    <div className="flex h-full min-w-0 flex-col gap-5 md:gap-6">
+      <div className="flex items-center gap-4 rounded-xl border bg-card px-5 py-6 shadow-sm md:px-6">
         <ImageIcon
-          className="h-4 w-4 md:h-6 md:w-6"
-          imageClassName="rounded-sm"
+          className="h-12 w-12 shrink-0 md:h-14 md:w-14"
+          imageClassName="rounded-lg"
           src={selectedRaid.image ?? ''}
           alt={selectedRaid?.battle.toString()}
         />
-        <h1>{selectedRaid.battle}</h1>
+        <h1 className="break-words text-xl font-semibold tracking-tight md:text-2xl">
+          {selectedRaid.battle}
+        </h1>
       </div>
 
       {/* 공격력 변곡점 */}
-      <div className="rounded-md bg-muted/50 p-2">
+      <div className="overflow-x-auto rounded-xl border bg-card shadow-sm">
         <ChartAttackPower
           bossAttackCap={
             Number(
@@ -45,22 +47,19 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
 
       {/* 빠른 전투 */}
       {selectedRaid.entry && selectedRaid.entry.length > 0 && (
-        <div className="rounded-md bg-muted/50 p-2">
-          <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
+        <div className="overflow-x-auto rounded-xl border bg-card shadow-sm">
+          <h2 className="border-b px-5 py-4 text-sm font-semibold tracking-tight text-foreground">
             빠른 전투
-          </h4>
-          <Table className="w-full table-fixed border-collapse bg-background text-sm">
-            <TableCaption></TableCaption>
-            <TableHeader className="sticky top-0 z-10 bg-zinc-900">
+          </h2>
+          <Table className="w-full min-w-[480px] table-fixed border-collapse text-sm">
+            <TableHeader className="bg-muted/40">
               <TableRow>
                 {selectedRaid.entry?.map((e) => (
-                  <TableHead key={e.stat_name} className="text-center">
+                  <TableHead
+                    key={e.stat_name}
+                    className="px-3 py-3 text-center text-xs font-medium text-muted-foreground"
+                  >
                     <span className="flex items-center justify-center gap-1">
-                      <ImageIcon
-                        className="h-4 w-4"
-                        src={e?.image ?? ''}
-                        alt={e.stat_name}
-                      />
                       {e.stat_name}
                     </span>
                   </TableHead>
@@ -71,10 +70,54 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
               <TableRow className="relative transition">
                 {selectedRaid.entry?.map((e) => (
                   <TableCell
-                    key={e.stat_value}
-                    className="text-center font-medium"
+                    key={e.stat_name}
+                    className="px-3 py-4 text-center font-semibold tabular-nums text-foreground"
                   >
-                    {limitCalculator(selectedRaid, '빠른전투', e?.stat_name, '')
+                    {limitCalculator(
+                      selectedRaid,
+                      '빠른전투',
+                      e?.stat_name,
+                      '0'
+                    )
+                      ?.toString()
+                      .replace(/-/gi, '')}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      )}
+
+      {/* 상한 */}
+      {selectedRaid.limit && selectedRaid.limit.length > 0 && (
+        <div className="overflow-x-auto rounded-xl border bg-card shadow-sm">
+          <h2 className="border-b px-5 py-4 text-sm font-semibold tracking-tight text-foreground">
+            상한
+          </h2>
+          <Table className="w-full min-w-[480px] table-fixed border-collapse text-sm">
+            <TableHeader className="bg-muted/40">
+              <TableRow>
+                {raidInfoInitialTitleList.map((e) => (
+                  <TableHead
+                    key={e.stat_name}
+                    className="px-3 py-3 text-center text-xs font-medium text-muted-foreground"
+                  >
+                    <span className="flex items-center justify-center gap-1">
+                      {e.stat_name}
+                    </span>
+                  </TableHead>
+                ))}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow className="relative transition">
+                {raidInfoInitialTitleList.map((e) => (
+                  <TableCell
+                    key={e.stat_name}
+                    className="px-3 py-4 text-center font-semibold tabular-nums text-foreground"
+                  >
+                    {limitCalculator(selectedRaid, '상한', e?.stat_name, '')
                       ?.toString()
                       .replace(/-/gi, '')}
                   </TableCell>
@@ -87,16 +130,18 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
 
       {/* 클리어 보상 */}
       {selectedRaid.clear && selectedRaid.clear?.length > 0 && (
-        <div className="rounded-md bg-muted/50 p-2">
-          <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
+        <div className="overflow-x-auto rounded-xl border bg-card shadow-sm">
+          <h2 className="border-b px-5 py-4 text-sm font-semibold tracking-tight text-foreground">
             클리어 보상
-          </h4>
-          <Table className="w-full table-fixed border-collapse bg-background text-sm">
-            <TableCaption></TableCaption>
-            <TableHeader className="sticky top-0 z-10 bg-zinc-900">
+          </h2>
+          <Table className="w-full min-w-[480px] table-fixed border-collapse text-sm">
+            <TableHeader className="bg-muted/40">
               <TableRow>
                 {selectedRaid.clear?.map((clear) => (
-                  <TableHead key={clear.name} className="text-center">
+                  <TableHead
+                    key={clear.name}
+                    className="px-3 py-3 text-center text-xs font-medium text-muted-foreground"
+                  >
                     {clear.name}
                   </TableHead>
                 ))}
@@ -107,7 +152,7 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
                 {selectedRaid.clear?.map((clear) => (
                   <TableCell
                     key={clear.name}
-                    className="text-center font-medium"
+                    className="px-3 py-4 text-center font-semibold tabular-nums text-foreground"
                   >
                     {Number(clear.value).toLocaleString()}
                   </TableCell>
@@ -120,16 +165,18 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
 
       {/* 보너스 목표 */}
       {selectedRaid.bonus && selectedRaid.bonus.length > 0 && (
-        <div className="rounded-md bg-muted/50 p-2">
-          <h4 className="p-2 text-center text-sm font-semibold text-zinc-300">
+        <div className="overflow-x-auto rounded-xl border bg-card shadow-sm">
+          <h2 className="border-b px-5 py-4 text-sm font-semibold tracking-tight text-foreground">
             보너스 목표
-          </h4>
-          <Table className="w-full table-fixed border-collapse bg-background text-sm">
-            <TableCaption></TableCaption>
-            <TableHeader className="sticky top-0 z-10 bg-zinc-900">
+          </h2>
+          <Table className="w-full min-w-[480px] table-fixed border-collapse text-sm">
+            <TableHeader className="bg-muted/40">
               <TableRow>
                 {selectedRaid.bonus?.map((bonusList) => (
-                  <TableHead key={bonusList.bonus} className="text-center">
+                  <TableHead
+                    key={bonusList.bonus}
+                    className="px-3 py-3 text-center text-xs font-medium text-muted-foreground"
+                  >
                     {bonusList.bonus}
                   </TableHead>
                 ))}
@@ -139,8 +186,8 @@ const RaidInfoDetail = ({ selectedRaid }: RaidInfoDetailProps) => {
               <TableRow className="relative transition">
                 {selectedRaid.bonus?.map((bonusList) => (
                   <TableCell
-                    key={bonusList.value}
-                    className="text-center font-medium"
+                    key={bonusList.bonus}
+                    className="px-3 py-4 text-center font-semibold tabular-nums text-foreground"
                   >
                     {Number(bonusList.value)?.toLocaleString() ?? ''}
                   </TableCell>

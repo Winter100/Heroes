@@ -132,6 +132,13 @@ export const previewInitialTitleList = [
   { stat_name: '파괴력', isView: true },
 ];
 
+export const raidInfoInitialTitleList = [
+  { stat_name: '공격력', isView: true },
+  { stat_name: '크리티컬 확률', isView: true },
+  { stat_name: '밸런스', isView: true },
+  { stat_name: '크리티컬 저항', isView: true },
+];
+
 export const PREVIEW_BEFORE_AND_AFTER_STATS_TITLE = [
   '공격력',
   '방어력',
