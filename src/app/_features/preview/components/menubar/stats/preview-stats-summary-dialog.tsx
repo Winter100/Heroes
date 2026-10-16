@@ -62,7 +62,7 @@ const PreviewStatsSummaryDialog = ({
             <Column className="gap-1">
               <p className="text-center">변경</p>
               <PreviewStatsBox
-                className="max-w-42 h-96 rounded-lg border border-gray-600 bg-background p-2 text-white"
+                className="h-96 max-w-52 rounded-lg border border-gray-600 bg-background p-2 text-white"
                 stats={afterStats ?? []}
                 simulationsStats={diffStatsArray ?? []}
               />
