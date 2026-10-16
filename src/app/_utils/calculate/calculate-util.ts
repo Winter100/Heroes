@@ -80,7 +80,7 @@ export const limitCalculator = (
           Number(user_stat_value) - (Number(Mstat?.stat_value) - 10000 + 22000)
         );
       }
-
+      case '크리티컬':
       case '크리티컬 확률': {
         const Mstat = monsterInfo?.limit?.find(
           (s) => s?.stat_name === '크리티컬 저항'
@@ -101,7 +101,7 @@ export const limitCalculator = (
       // }
       case '크리티컬 저항': {
         const Mstat = monsterInfo?.limit?.find(
-          (s) => s.stat_name === '크리티컬'
+          (s) => s.stat_name === '크리티컬 확률'
         );
         return Number(user_stat_value) - (Number(Mstat?.stat_value) - 3);
       }
@@ -125,10 +125,10 @@ export const limitCalculator = (
         // const limit = user_limit_stat !== null ? Number(user_limit_stat) : 0;
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }
-
+      case '크리티컬':
       case '크리티컬 확률': {
         const Mstat = monsterInfo?.entry?.find(
-          (s) => s?.stat_name === '크리티컬'
+          (s) => s?.stat_name === '크리티컬 확률'
         );
         return Number(user_stat_value) - Number(Mstat?.stat_value);
       }

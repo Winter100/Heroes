@@ -3,9 +3,13 @@
 import AdBanner from '@/app/_components/adsense/AdBanner';
 import SideAd from '@/app/_components/adsense/SideAd';
 import ClientErrorBoundary from '@/app/_components/common/error/ClientErrorBoundary';
-import Loading from '@/app/_components/common/Loading';
-import HomeMainContent from '@/app/_features/home/components/HomeMainContent';
-import { Suspense } from 'react';
+import HomeNoticeLoading from '@/app/_features/home/components/HomeNoticeLoading';
+import dynamic from 'next/dynamic';
+
+const HomeMainContent = dynamic(
+  () => import('@/app/_features/home/components/HomeMainContent'),
+  { ssr: false, loading: HomeNoticeLoading }
+);
 
 const Home = () => {
   return (
@@ -22,15 +26,7 @@ const Home = () => {
           />
         </div>
         <ClientErrorBoundary>
-          <Suspense
-            fallback={
-              <div className="m-2 flex h-[480px] items-center justify-center bg-muted/50 p-2">
-                <Loading />
-              </div>
-            }
-          >
-            <HomeMainContent />
-          </Suspense>
+          <HomeMainContent />
         </ClientErrorBoundary>
         <AdBanner />
       </div>
