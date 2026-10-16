@@ -8,9 +8,6 @@ import { Suspense } from 'react';
 
 const Page = async () => {
   const data = await getServerData(API_KEY.raid);
-  data.sort(
-    (a, b) => (a.monsters[0]?.level ?? 0) - (b.monsters[0]?.level ?? 0)
-  );
   return (
     <>
       <SideAd dataSlot="2056348937" position="left" />
